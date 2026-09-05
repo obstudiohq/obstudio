@@ -1,6 +1,6 @@
 # Obstudio
 
-From the creators of Radix, Floating UI, and Material UI, Obstudio is an unstyled UI component library for building accessible user interfaces.
+Obstudio is an unstyled React component library for building accessible user interfaces.
 
 ---
 
@@ -21,16 +21,6 @@ To see the latest updates, check out the [releases](https://obstudio.co/react/ov
 - **Discord** For community support, questions, and tips, join our [Discord](https://discord.gg/g6C3hUtuxz).
 - **X** To stay up-to-date on new releases and announcements follow [Obstudio on X](https://x.com/obstudio).
 - **Bluesky** We're also on [Bluesky](https://bsky.app/profile/obstudio.co).
-
-## Team
-
-- **Colm Tuite** [@colmtuite](https://x.com/colmtuite)
-- **Marija Najdova** [@marijanajdova](https://x.com/marijanajdova)
-- **Flavien Delangle** [@flaviendelangle](https://github.com/flaviendelangle)
-- **James Nelson** [@atomiksdev](https://x.com/atomiksdev)
-- **Jenna Smith** [@jjenzz](https://x.com/jjenzz)
-- **Michał Dudak** [@michaldudak](https://x.com/michaldudak)
-- **Aarón García** [@aarongarciah](https://github.com/aarongarciah)
 
 ## License
 
