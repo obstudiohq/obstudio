@@ -1,9 +1,9 @@
 import { expect, vi, describe, it } from 'vitest';
 import { act, screen } from '@mui/internal-test-utils';
-import { DirectionProvider, type TextDirection } from '@base-ui/react/direction-provider';
-import { ToggleGroup } from '@base-ui/react/toggle-group';
-import { Toggle } from '@base-ui/react/toggle';
-import { Toolbar } from '@base-ui/react/toolbar';
+import { DirectionProvider, type TextDirection } from '@obstudio/react/direction-provider';
+import { ToggleGroup } from '@obstudio/react/toggle-group';
+import { Toggle } from '@obstudio/react/toggle';
+import { Toolbar } from '@obstudio/react/toolbar';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { type Orientation } from '../internals/types';
 
@@ -108,7 +108,7 @@ describe('<ToggleGroup />', () => {
       );
 
       expect(console.error).toHaveBeenCalledExactlyOnceWith(
-        'Base UI: A `<Toggle>` component rendered in a `<ToggleGroup>` has no explicit `value` prop. This will cause issues between the Toggle Group and Toggle values. Provide the `<Toggle>` with a `value` prop matching the `<ToggleGroup>` values prop type.',
+        'Obstudio: A `<Toggle>` component rendered in a `<ToggleGroup>` has no explicit `value` prop. This will cause issues between the Toggle Group and Toggle values. Provide the `<Toggle>` with a `value` prop matching the `<ToggleGroup>` values prop type.',
       );
     });
   });

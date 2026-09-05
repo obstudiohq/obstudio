@@ -9,7 +9,7 @@ import { testPropForwarding } from './conformanceTests/propForwarding';
 import { testRefForwarding } from './conformanceTests/refForwarding';
 import { testRenderProp } from './conformanceTests/renderProp';
 import { testClassName } from './conformanceTests/className';
-import { BaseUIRenderResult } from './createRenderer';
+import { ObstudioRenderResult } from './createRenderer';
 
 export type ConformantComponentProps = {
   render?: React.ReactElement<unknown> | ((props: Record<string, unknown>) => React.ReactNode);
@@ -20,7 +20,7 @@ export type ConformantComponentProps = {
   nativeButton?: boolean;
 };
 
-export interface BaseUiConformanceTestsOptions extends Omit<
+export interface ObstudioConformanceTestsOptions extends Omit<
   Partial<ConformanceOptions>,
   'render' | 'mount' | 'skip' | 'classes'
 > {
@@ -30,7 +30,7 @@ export interface BaseUiConformanceTestsOptions extends Omit<
       string | React.JSXElementConstructor<any>
     >,
     options?: RenderOptions | undefined,
-  ) => Promise<BaseUIRenderResult> | MuiRenderResult;
+  ) => Promise<ObstudioRenderResult> | MuiRenderResult;
   skip?: (keyof typeof fullSuite)[];
   testRenderPropWith?: keyof React.JSX.IntrinsicElements;
   button?: boolean;
@@ -50,7 +50,7 @@ const fullSuite = {
 
 function describeConformanceFn(
   minimalElement: React.ReactElement<ConformantComponentProps>,
-  getOptions: () => BaseUiConformanceTestsOptions,
+  getOptions: () => ObstudioConformanceTestsOptions,
 ) {
   const { after: runAfterHook = () => {}, only = Object.keys(fullSuite), skip = [] } = getOptions();
 
@@ -67,4 +67,4 @@ function describeConformanceFn(
   });
 }
 
-export const describeConformance = createDescribe('Base UI component API', describeConformanceFn);
+export const describeConformance = createDescribe('Obstudio component API', describeConformanceFn);

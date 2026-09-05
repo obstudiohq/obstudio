@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Tabs } from '@base-ui/react/tabs';
+import { Tabs } from '@obstudio/react/tabs';
 import { HydrationDelay } from './_tabs-streaming-ssr-client';
 import classes from './tabs-streaming-ssr.module.css';
 

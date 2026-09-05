@@ -1,17 +1,17 @@
 'use client';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { addEventListener } from '@base-ui/utils/addEventListener';
-import { mergeCleanups } from '@base-ui/utils/mergeCleanups';
-import { ownerWindow } from '@base-ui/utils/owner';
-import { useTimeout } from '@base-ui/utils/useTimeout';
+import { addEventListener } from '@obstudio/utils/addEventListener';
+import { mergeCleanups } from '@obstudio/utils/mergeCleanups';
+import { ownerWindow } from '@obstudio/utils/owner';
+import { useTimeout } from '@obstudio/utils/useTimeout';
 import {
   disableFocusInside,
   enableFocusInside,
   isOutsideEvent,
 } from '../../floating-ui-react/utils';
 import { getEmptyRootContext } from '../../floating-ui-react/utils/getEmptyRootContext';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import {
   useNavigationMenuRootContext,
   useNavigationMenuTreeContext,
@@ -34,7 +34,7 @@ const EMPTY_ROOT_CONTEXT = getEmptyRootContext();
  * Positions the navigation menu against the currently active trigger.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+ * Documentation: [Obstudio Navigation Menu](https://obstudio.co/react/components/navigation-menu)
  */
 export const NavigationMenuPositioner = React.forwardRef(function NavigationMenuPositioner(
   componentProps: NavigationMenuPositioner.Props,
@@ -209,7 +209,7 @@ export interface NavigationMenuPositionerState {
 export interface NavigationMenuPositionerProps
   extends
     UseAnchorPositioningSharedParameters,
-    BaseUIComponentProps<'div', NavigationMenuPositionerState> {}
+    ObstudioComponentProps<'div', NavigationMenuPositionerState> {}
 
 export namespace NavigationMenuPositioner {
   export type State = NavigationMenuPositionerState;

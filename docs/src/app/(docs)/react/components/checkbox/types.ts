@@ -1,4 +1,4 @@
-import { Checkbox } from '@base-ui/react/checkbox';
+import { Checkbox } from '@obstudio/react/checkbox';
 import { createMultipleTypes } from 'docs/src/utils/createTypes';
 
 const { types, AdditionalTypes } = createMultipleTypes(import.meta.url, Checkbox);

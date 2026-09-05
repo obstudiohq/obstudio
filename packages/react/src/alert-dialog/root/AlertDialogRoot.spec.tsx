@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { expectType } from '#test-utils';
-import { AlertDialog } from '@base-ui/react/alert-dialog';
-import { Dialog } from '@base-ui/react/dialog';
+import { AlertDialog } from '@obstudio/react/alert-dialog';
+import { Dialog } from '@obstudio/react/dialog';
 
 const numberPayloadHandle = AlertDialog.createHandle<number>();
 const dialogHandle = Dialog.createHandle<number>();

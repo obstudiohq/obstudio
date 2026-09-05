@@ -1,12 +1,13 @@
 import { expect, vi, it } from 'vitest';
 import { screen, act } from '@mui/internal-test-utils';
-import { NumberField } from '@base-ui/react/number-field';
+import { NumberField } from '@obstudio/react/number-field';
 import { createRenderer, isJSDOM } from '#test-utils';
-import { platform } from '@base-ui/utils/platform';
+import { platform } from '@obstudio/utils/platform';
 
-vi.mock('@base-ui/utils/platform', async () => {
-  const actual =
-    await vi.importActual<typeof import('@base-ui/utils/platform')>('@base-ui/utils/platform');
+vi.mock('@obstudio/utils/platform', async () => {
+  const actual = await vi.importActual<typeof import('@obstudio/utils/platform')>(
+    '@obstudio/utils/platform',
+  );
 
   return {
     ...actual,

@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { NavigationMenu } from '@base-ui/react/navigation-menu';
-import { Collapsible } from '@base-ui/react/collapsible';
+import { NavigationMenu } from '@obstudio/react/navigation-menu';
+import { Collapsible } from '@obstudio/react/collapsible';
 import styles from './navigation-menu.module.css';
 
 export default function ExampleNavigationMenu() {
@@ -59,7 +59,7 @@ export default function ExampleNavigationMenu() {
                         <div>
                           <h4 style={{ marginBottom: 10 }}>Quick Start Guide</h4>
                           <p>
-                            All components are included in a single package. Base UI is
+                            All components are included in a single package. Obstudio is
                             tree-shakeable, so your app bundle will contain only the components that
                             you actually use.
                           </p>
@@ -85,7 +85,7 @@ export default function ExampleNavigationMenu() {
                       )}
                       {hoveredLink === '/react/overview/about' && (
                         <div>
-                          <h4 style={{ marginBottom: 10 }}>About Base UI</h4>
+                          <h4 style={{ marginBottom: 10 }}>About Obstudio</h4>
                           <p>
                             Unstyled components that are fully customizable, and built by the MUI
                             team.
@@ -184,7 +184,7 @@ export default function ExampleNavigationMenu() {
           </NavigationMenu.Item>
 
           <NavigationMenu.Item>
-            <Link className={styles.Trigger} href="https://github.com/mui/base-ui">
+            <Link className={styles.Trigger} href="https://github.com/obstudiohq/obstudio">
               GitHub
             </Link>
           </NavigationMenu.Item>
@@ -260,7 +260,7 @@ export default function ExampleNavigationMenu() {
           </NavigationMenu.Item>
 
           <NavigationMenu.Item>
-            <Link className={styles.Trigger} href="https://github.com/mui/base-ui">
+            <Link className={styles.Trigger} href="https://github.com/obstudiohq/obstudio">
               GitHub
             </Link>
           </NavigationMenu.Item>
@@ -366,7 +366,7 @@ export default function ExampleNavigationMenu() {
           </NavigationMenu.Item>
 
           <NavigationMenu.Item>
-            <Link className={styles.Trigger} href="https://github.com/mui/base-ui">
+            <Link className={styles.Trigger} href="https://github.com/obstudiohq/obstudio">
               GitHub
             </Link>
           </NavigationMenu.Item>
@@ -417,7 +417,7 @@ function MixedNestedNavigationMenuContent() {
                     <Link className={styles.LinkCard} href="/react/overview/quick-start">
                       <h3 className={styles.LinkTitle}>Quick start</h3>
                       <p className={styles.LinkDescription}>
-                        Install Base UI and get your first interactive primitive on screen fast.
+                        Install Obstudio and get your first interactive primitive on screen fast.
                       </p>
                     </Link>
                   </li>
@@ -567,12 +567,12 @@ const overviewLinks = [
   {
     href: '/react/overview/releases',
     title: 'Releases',
-    description: 'See what’s new in the latest Base UI versions.',
+    description: 'See what’s new in the latest Obstudio versions.',
   },
   {
     href: '/react/overview/about',
     title: 'About',
-    description: 'Learn more about Base UI and our mission.',
+    description: 'Learn more about Obstudio and our mission.',
   },
 ] as const;
 
@@ -581,19 +581,19 @@ const handbookLinks = [
     href: '/react/handbook/styling',
     title: 'Styling',
     description:
-      'Base UI components can be styled with plain CSS, Tailwind CSS, CSS-in-JS, or CSS Modules.',
+      'Obstudio components can be styled with plain CSS, Tailwind CSS, CSS-in-JS, or CSS Modules.',
   },
   {
     href: '/react/handbook/animation',
     title: 'Animation',
     description:
-      'Base UI components can be animated with CSS transitions, CSS animations, or JavaScript libraries.',
+      'Obstudio components can be animated with CSS transitions, CSS animations, or JavaScript libraries.',
   },
   {
     href: '/react/handbook/composition',
     title: 'Composition',
     description:
-      'Base UI components can be replaced and composed with your own existing components.',
+      'Obstudio components can be replaced and composed with your own existing components.',
   },
 ] as const;
 

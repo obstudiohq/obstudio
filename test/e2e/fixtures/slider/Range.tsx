@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Slider } from '@base-ui/react/slider';
+import { Slider } from '@obstudio/react/slider';
 import styles from './Range.module.css';
 
 export default function RangeSlider() {

@@ -1,5 +1,5 @@
 import { expectType } from '#test-utils';
-import { Slider } from '@base-ui/react/slider';
+import { Slider } from '@obstudio/react/slider';
 import { REASONS } from '../../internals/reasons';
 
 const value: number = 25;

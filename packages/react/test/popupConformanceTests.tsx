@@ -124,11 +124,11 @@ export function popupConformanceTests(config: PopupTestConfig) {
 
     describe('animations', () => {
       beforeEach(() => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
       });
 
       afterEach(() => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
       });
 
       it('removes the popup when there is no exit animation defined', async ({ skip }) => {

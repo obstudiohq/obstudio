@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps, NativeButtonProps } from '../../internals/types';
+import type { ObstudioComponentProps, NativeButtonProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useButton } from '../../internals/use-button';
 import { isTouchLikePointerType, usePressAndHold } from '../../internals/usePressAndHold';
@@ -8,7 +8,7 @@ import { parseNumber } from '../utils/parse';
 import {
   createChangeEventDetails,
   createGenericEventDetails,
-} from '../../internals/createBaseUIEventDetails';
+} from '../../internals/createObstudioEventDetails';
 import type { EventWithOptionalKeyState } from '../utils/types';
 import type { NumberFieldRoot, NumberFieldRootState } from './NumberFieldRoot';
 import { REASONS } from '../../internals/reasons';
@@ -20,7 +20,8 @@ const SELECT_NONE_STYLE: React.CSSProperties = {
   userSelect: 'none',
 };
 
-type StepperButtonProps = NativeButtonProps & BaseUIComponentProps<'button', NumberFieldRootState>;
+type StepperButtonProps = NativeButtonProps &
+  ObstudioComponentProps<'button', NumberFieldRootState>;
 
 /**
  * Shared implementation for the increment and decrement stepper buttons. They differ only in the

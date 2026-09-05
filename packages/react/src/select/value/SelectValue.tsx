@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useSelectRootContext } from '../root/SelectRootContext';
 import { resolveMultipleLabels, resolveSelectedLabel } from '../../internals/resolveValueLabel';
@@ -14,7 +14,7 @@ const stateAttributesMapping: StateAttributesMapping<SelectValueState> = {
  * A text label of the currently selected item.
  * Renders a `<span>` element.
  *
- * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ * Documentation: [Obstudio Select](https://obstudio.co/react/components/select)
  */
 export const SelectValue = React.forwardRef(function SelectValue(
   componentProps: SelectValue.Props,
@@ -79,7 +79,7 @@ export interface SelectValueState {
 }
 
 export interface SelectValueProps extends Omit<
-  BaseUIComponentProps<'span', SelectValueState>,
+  ObstudioComponentProps<'span', SelectValueState>,
   'children'
 > {
   /**

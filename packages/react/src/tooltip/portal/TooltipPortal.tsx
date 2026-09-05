@@ -3,14 +3,14 @@ import * as React from 'react';
 import { useTooltipRootContext } from '../root/TooltipRootContext';
 import { TooltipPortalContext } from './TooltipPortalContext';
 import { FloatingPortalLite } from '../../utils/FloatingPortalLite';
-import { type BaseUIComponentProps } from '../../internals/types';
+import { type ObstudioComponentProps } from '../../internals/types';
 
 /**
  * A portal element that moves the popup to a different part of the DOM.
  * By default, the portal element is appended to `<body>`.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)
+ * Documentation: [Obstudio Tooltip](https://obstudio.co/react/components/tooltip)
  */
 export const TooltipPortal = React.forwardRef(function TooltipPortal(
   props: TooltipPortal.Props,
@@ -35,7 +35,7 @@ export const TooltipPortal = React.forwardRef(function TooltipPortal(
 
 export interface TooltipPortalState {}
 
-export interface TooltipPortalProps extends BaseUIComponentProps<'div', TooltipPortalState> {
+export interface TooltipPortalProps extends ObstudioComponentProps<'div', TooltipPortalState> {
   /**
    * Whether to keep the portal mounted in the DOM while the popup is hidden.
    * @default false

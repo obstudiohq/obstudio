@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import type { FieldRoot } from '../../field/root/FieldRoot';
 import { useFieldRootContext } from '../../internals/field-root-context/FieldRootContext';
@@ -13,7 +13,7 @@ import { useSelectRootContext } from '../root/SelectRootContext';
  * An accessible label that is automatically associated with the select trigger.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ * Documentation: [Obstudio Select](https://obstudio.co/react/components/select)
  */
 export const SelectLabel = React.forwardRef(function SelectLabel(
   componentProps: SelectLabel.Props,
@@ -52,7 +52,7 @@ export const SelectLabel = React.forwardRef(function SelectLabel(
 export type SelectLabelState = FieldRoot.State;
 
 export interface SelectLabelProps extends Omit<
-  BaseUIComponentProps<'div', SelectLabel.State>,
+  ObstudioComponentProps<'div', SelectLabel.State>,
   'id'
 > {}
 

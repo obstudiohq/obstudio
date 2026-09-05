@@ -11,15 +11,15 @@ import {
   reactMajor,
 } from '@mui/internal-test-utils';
 import { createRenderer, isJSDOM, popupConformanceTests } from '#test-utils';
-import { Combobox } from '@base-ui/react/combobox';
-import { Autocomplete } from '@base-ui/react/autocomplete';
-import { DirectionProvider } from '@base-ui/react/direction-provider';
-import { Dialog } from '@base-ui/react/dialog';
-import { Field } from '@base-ui/react/field';
-import { Form } from '@base-ui/react/form';
-import { Input } from '@base-ui/react/input';
-import { Popover } from '@base-ui/react/popover';
-import { useTimeout } from '@base-ui/utils/useTimeout';
+import { Combobox } from '@obstudio/react/combobox';
+import { Autocomplete } from '@obstudio/react/autocomplete';
+import { DirectionProvider } from '@obstudio/react/direction-provider';
+import { Dialog } from '@obstudio/react/dialog';
+import { Field } from '@obstudio/react/field';
+import { Form } from '@obstudio/react/form';
+import { Input } from '@obstudio/react/input';
+import { Popover } from '@obstudio/react/popover';
+import { useTimeout } from '@obstudio/utils/useTimeout';
 import { CompositeRoot } from '../../internals/composite/root/CompositeRoot';
 import { CompositeItem } from '../../internals/composite/item/CompositeItem';
 import { REASONS } from '../../internals/reasons';
@@ -135,7 +135,7 @@ function isElementOrAncestorInert(element: HTMLElement) {
     if (
       current.getAttribute('aria-hidden') === 'true' ||
       current.hasAttribute('inert') ||
-      current.hasAttribute('data-base-ui-inert')
+      current.hasAttribute('data-obstudio-inert')
     ) {
       return true;
     }
@@ -146,7 +146,7 @@ function isElementOrAncestorInert(element: HTMLElement) {
 
 describe('<Combobox.Root />', () => {
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
   });
 
   const { render, renderToString } = createRenderer();
@@ -407,10 +407,10 @@ describe('<Combobox.Root />', () => {
     it.skipIf(isJSDOM)(
       'clears a single-select query and restores the selection when reopening during the close animation',
       async ({ onTestFinished }) => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         onTestFinished(() => {
-          globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+          globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
         });
 
         const style = `
@@ -476,10 +476,10 @@ describe('<Combobox.Root />', () => {
     it.skipIf(isJSDOM)(
       'preserves a typed query when input reopens single-select during the close animation',
       async ({ onTestFinished }) => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         onTestFinished(() => {
-          globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+          globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
         });
 
         const style = `
@@ -4624,7 +4624,7 @@ describe('<Combobox.Root />', () => {
         await waitFor(() => {
           const isScrollLocked =
             trigger.ownerDocument.documentElement.style.overflow === 'hidden' ||
-            trigger.ownerDocument.documentElement.hasAttribute('data-base-ui-scroll-locked') ||
+            trigger.ownerDocument.documentElement.hasAttribute('data-obstudio-scroll-locked') ||
             trigger.ownerDocument.body.style.overflow === 'hidden';
 
           expect(isScrollLocked).toBe(true);
@@ -4663,7 +4663,7 @@ describe('<Combobox.Root />', () => {
 
         const isScrollLocked =
           trigger.ownerDocument.documentElement.style.overflow === 'hidden' ||
-          trigger.ownerDocument.documentElement.hasAttribute('data-base-ui-scroll-locked') ||
+          trigger.ownerDocument.documentElement.hasAttribute('data-obstudio-scroll-locked') ||
           trigger.ownerDocument.body.style.overflow === 'hidden';
 
         expect(isScrollLocked).toBe(false);
@@ -5708,10 +5708,10 @@ describe('<Combobox.Root />', () => {
     it('shows every item when a controlled reopen interrupts a canceled mirrored-selection clear', async ({
       onTestFinished,
     }) => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       onTestFinished(() => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
       });
 
       function App() {
@@ -5778,10 +5778,10 @@ describe('<Combobox.Root />', () => {
     it('keeps the typed filter when items change afterwards (input outside popup)', async ({
       onTestFinished,
     }) => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       onTestFinished(() => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
       });
 
       function App() {
@@ -5843,10 +5843,10 @@ describe('<Combobox.Root />', () => {
     it('keeps filtering when typing reopens the popup (input outside popup)', async ({
       onTestFinished,
     }) => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       onTestFinished(() => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
       });
 
       const { user } = await render(
@@ -5896,10 +5896,10 @@ describe('<Combobox.Root />', () => {
     it('does not re-emit a clear when closing again without typing (multiple, input outside popup)', async ({
       onTestFinished,
     }) => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       onTestFinished(() => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
       });
 
       const onInputValueChange = vi.fn();
@@ -5956,10 +5956,10 @@ describe('<Combobox.Root />', () => {
     it('keeps a keystroke typed into an empty input when items refresh synchronously', async ({
       onTestFinished,
     }) => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       onTestFinished(() => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
       });
 
       function App() {
@@ -6019,11 +6019,11 @@ describe('<Combobox.Root />', () => {
     it('releases the frozen query when controlled open reopens the popup', async ({
       onTestFinished,
     }) => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
       const onInputValueChange = vi.fn();
 
       onTestFinished(() => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
       });
 
       function App() {
@@ -6118,10 +6118,10 @@ describe('<Combobox.Root />', () => {
     it('opens blank when the input only mirrors the selection (single, input inside popup)', async ({
       onTestFinished,
     }) => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       onTestFinished(() => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
       });
 
       function App() {
@@ -6187,10 +6187,10 @@ describe('<Combobox.Root />', () => {
     it('keeps an input value set in the same batch as a controlled reopen (input inside popup)', async ({
       onTestFinished,
     }) => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       onTestFinished(() => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
       });
 
       const onInputValueChange = vi.fn();
@@ -6268,10 +6268,10 @@ describe('<Combobox.Root />', () => {
     });
 
     it('shows every item when selection reopens the popup', async ({ onTestFinished }) => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       onTestFinished(() => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
       });
 
       const { user } = await render(
@@ -6407,7 +6407,7 @@ describe('<Combobox.Root />', () => {
       await waitFor(() => expect(onItemHighlighted.mock.lastCall?.[0]).toBe('2'));
     });
 
-    // https://github.com/mui/base-ui/issues/4947
+    // https://github.com/obstudiohq/obstudio/issues/4947
     it('moves the input caret on ArrowLeft when no item is highlighted in grid mode', async () => {
       const onItemHighlighted = vi.fn();
       const { user } = await render(
@@ -6444,7 +6444,7 @@ describe('<Combobox.Root />', () => {
       expect(onItemHighlighted).not.toHaveBeenCalled();
     });
 
-    // https://github.com/mui/base-ui/issues/4947
+    // https://github.com/obstudiohq/obstudio/issues/4947
     it('moves the input caret on ArrowRight when no item is highlighted in grid mode', async () => {
       const onItemHighlighted = vi.fn();
       const { user } = await render(
@@ -6481,7 +6481,7 @@ describe('<Combobox.Root />', () => {
       expect(onItemHighlighted).not.toHaveBeenCalled();
     });
 
-    // https://github.com/mui/base-ui/issues/4947
+    // https://github.com/obstudiohq/obstudio/issues/4947
     it('keeps grid navigation when autoHighlight surfaces an item before typing arrow keys', async () => {
       const onItemHighlighted = vi.fn();
       const { user } = await render(
@@ -7204,10 +7204,10 @@ describe('<Combobox.Root />', () => {
     it.skipIf(isJSDOM)(
       'clears the pending filter with the "input-clear" reason when reopening interrupts the close animation',
       async ({ onTestFinished }) => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         onTestFinished(() => {
-          globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+          globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
         });
 
         const style = `
@@ -7282,17 +7282,17 @@ describe('<Combobox.Root />', () => {
         expect(cleanupCall?.[1].reason).toBe(REASONS.inputClear);
         expect(cleanupCall?.[1].isItemPress).toBe(undefined);
         // The synthetic placeholder event proves cleanup clears never carry the reopening gesture.
-        expect(cleanupCall?.[1].event.type).toBe('base-ui');
+        expect(cleanupCall?.[1].event.type).toBe('obstudio');
       },
     );
 
     it.skipIf(isJSDOM)(
       'releases the frozen query when reopening during the close animation with the input outside the popup',
       async ({ onTestFinished }) => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         onTestFinished(() => {
-          globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+          globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
         });
 
         const style = `
@@ -7437,10 +7437,10 @@ describe('<Combobox.Root />', () => {
     it.skipIf(isJSDOM)(
       'keeps filtered popup content stable while closing with input inside popup',
       async ({ onTestFinished }) => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         onTestFinished(() => {
-          globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+          globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
         });
 
         const style = `
@@ -7523,10 +7523,10 @@ describe('<Combobox.Root />', () => {
     it.skipIf(isJSDOM)(
       'keeps filtered popup content stable when input changes during the close animation',
       async ({ onTestFinished }) => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         onTestFinished(() => {
-          globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+          globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
         });
 
         const style = `
@@ -7584,10 +7584,10 @@ describe('<Combobox.Root />', () => {
     it.skipIf(isJSDOM)(
       'clears the deferred popup input when reopening during close animation',
       async ({ onTestFinished }) => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         onTestFinished(() => {
-          globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+          globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
         });
 
         const style = `
@@ -7666,10 +7666,10 @@ describe('<Combobox.Root />', () => {
     it.skipIf(isJSDOM)(
       'does not emit another clear when controlled input is already empty on interrupted close',
       async ({ onTestFinished }) => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         onTestFinished(() => {
-          globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+          globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
         });
 
         const style = `
@@ -9781,10 +9781,10 @@ describe('<Combobox.Root />', () => {
     it.skipIf(isJSDOM)(
       'keeps filtered content stable when a controlled close is deferred',
       async ({ onTestFinished }) => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         onTestFinished(() => {
-          globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+          globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
         });
 
         const style = `
@@ -12139,7 +12139,7 @@ describe('<Combobox.Root />', () => {
       });
 
       expect(errorSpy.mock.calls[0][0]).toContain(
-        'Base UI: <Combobox.Label> labels <Combobox.Trigger> only.',
+        'Obstudio: <Combobox.Label> labels <Combobox.Trigger> only.',
       );
       expect(screen.getByTestId('input')).not.toHaveAttribute('aria-labelledby');
       errorSpy.mockRestore();

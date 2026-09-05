@@ -4,9 +4,10 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { useTestInteractions } from '#test-utils';
 import { useClick, useFloating, useListNavigation } from '../index';
 
-vi.mock('@base-ui/utils/platform', async () => {
-  const actual =
-    await vi.importActual<typeof import('@base-ui/utils/platform')>('@base-ui/utils/platform');
+vi.mock('@obstudio/utils/platform', async () => {
+  const actual = await vi.importActual<typeof import('@obstudio/utils/platform')>(
+    '@obstudio/utils/platform',
+  );
 
   return {
     ...actual,

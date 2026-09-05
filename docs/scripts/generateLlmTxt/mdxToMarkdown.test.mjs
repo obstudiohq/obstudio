@@ -59,9 +59,9 @@ describe('mdxToMarkdown', () => {
 
     // Verify extracted metadata
     expect(result.title).toBe('Direction Provider');
-    expect(result.subtitle).toBe('Enables RTL behavior for Base UI components.');
+    expect(result.subtitle).toBe('Enables RTL behavior for Obstudio components.');
     expect(result.description).toBe(
-      'A direction provider component that enables RTL behavior for Base UI components.',
+      'A direction provider component that enables RTL behavior for Obstudio components.',
     );
 
     // Snapshot test the complete result

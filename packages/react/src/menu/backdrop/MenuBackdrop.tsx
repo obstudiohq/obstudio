@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { useMenuRootContext } from '../root/MenuRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { popupTransitionStateMapping } from '../../utils/popupStateMapping';
 import type { TransitionStatus } from '../../internals/useTransitionStatus';
 import { useContextMenuRootContext } from '../../context-menu/root/ContextMenuRootContext';
@@ -12,7 +12,7 @@ import { REASONS } from '../../internals/reasons';
  * An overlay displayed beneath the menu popup.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Obstudio Menu](https://obstudio.co/react/components/menu)
  */
 export const MenuBackdrop = React.forwardRef(function MenuBackdrop(
   componentProps: MenuBackdrop.Props,
@@ -65,7 +65,7 @@ export interface MenuBackdropState {
   transitionStatus: TransitionStatus;
 }
 
-export interface MenuBackdropProps extends BaseUIComponentProps<'div', MenuBackdropState> {}
+export interface MenuBackdropProps extends ObstudioComponentProps<'div', MenuBackdropState> {}
 
 export namespace MenuBackdrop {
   export type State = MenuBackdropState;

@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { Drawer } from '@base-ui/react/drawer';
+import { Drawer } from '@obstudio/react/drawer';
 import styles from './drawer-controlled-opening.module.css';
 
 export default function ControlledOpening() {

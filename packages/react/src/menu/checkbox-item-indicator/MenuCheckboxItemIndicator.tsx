@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { useMenuCheckboxItemContext } from '../checkbox-item/MenuCheckboxItemContext';
 import { useRenderElement } from '../../internals/useRenderElement';
-import { BaseUIComponentProps } from '../../internals/types';
+import { ObstudioComponentProps } from '../../internals/types';
 import { itemMapping } from '../utils/stateAttributesMapping';
 import { TransitionStatus, useTransitionStatus } from '../../internals/useTransitionStatus';
 import { useOpenChangeComplete } from '../../internals/useOpenChangeComplete';
@@ -11,7 +11,7 @@ import { useOpenChangeComplete } from '../../internals/useOpenChangeComplete';
  * Indicates whether the checkbox item is ticked.
  * Renders a `<span>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Obstudio Menu](https://obstudio.co/react/components/menu)
  */
 export const MenuCheckboxItemIndicator = React.forwardRef(function MenuCheckboxItemIndicator(
   componentProps: MenuCheckboxItemIndicator.Props,
@@ -58,7 +58,7 @@ export const MenuCheckboxItemIndicator = React.forwardRef(function MenuCheckboxI
   return element;
 });
 
-export interface MenuCheckboxItemIndicatorProps extends BaseUIComponentProps<
+export interface MenuCheckboxItemIndicatorProps extends ObstudioComponentProps<
   'span',
   MenuCheckboxItemIndicatorState
 > {

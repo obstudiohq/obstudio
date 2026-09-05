@@ -1,5 +1,5 @@
-import { EMPTY_ARRAY } from '@base-ui/utils/empty';
-import { error } from '@base-ui/utils/error';
+import { EMPTY_ARRAY } from '@obstudio/utils/empty';
+import { error } from '@obstudio/utils/error';
 import { flattenLeafItems, stringifyAsLabel } from '../../internals/resolveValueLabel';
 import type { ItemEqualityComparer } from '../../internals/itemEquality';
 import { findCollectionItem, type ComboboxItemCollection } from './itemCollection';
@@ -32,7 +32,7 @@ type HasGroupShape<Item> = Item extends object
 type IsAny<T> = 0 extends 1 & T ? true : false;
 
 type GroupShapedItemsError =
-  'Base UI: items passed to createItems() cannot have an `items` array property because it marks a group. Rename the field or cast the data.';
+  'Obstudio: items passed to createItems() cannot have an `items` array property because it marks a group. Rename the field or cast the data.';
 
 type RejectGroupShapedItems<Item> =
   IsAny<Item> extends true
@@ -82,7 +82,7 @@ export interface CreateComboboxItemsOptions<
  * Create static collections at module scope. Wrap dynamic collections in `React.useMemo()` keyed
  * by their data.
  *
- * Documentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)
+ * Documentation: [Obstudio Combobox](https://obstudio.co/react/components/combobox)
  *
  * @param data The flat or grouped source items, or `undefined` while they are loading.
  * @param options Functions that derive each source item's selection value and display label.

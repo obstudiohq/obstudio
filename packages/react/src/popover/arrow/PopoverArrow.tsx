@@ -3,7 +3,7 @@ import * as React from 'react';
 import { usePopoverPositionerContext } from '../positioner/PopoverPositionerContext';
 import { usePopoverRootContext } from '../root/PopoverRootContext';
 import type { Align, Side } from '../../internals/useAnchorPositioning';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { popupStateMapping } from '../../utils/popupStateMapping';
 import { useRenderElement } from '../../internals/useRenderElement';
 
@@ -11,7 +11,7 @@ import { useRenderElement } from '../../internals/useRenderElement';
  * Displays an element positioned against the popover anchor.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Popover](https://base-ui.com/react/components/popover)
+ * Documentation: [Obstudio Popover](https://obstudio.co/react/components/popover)
  */
 export const PopoverArrow = React.forwardRef(function PopoverArrow(
   componentProps: PopoverArrow.Props,
@@ -59,7 +59,7 @@ export interface PopoverArrowState {
   uncentered: boolean;
 }
 
-export interface PopoverArrowProps extends BaseUIComponentProps<'div', PopoverArrowState> {}
+export interface PopoverArrowProps extends ObstudioComponentProps<'div', PopoverArrowState> {}
 
 export namespace PopoverArrow {
   export type State = PopoverArrowState;

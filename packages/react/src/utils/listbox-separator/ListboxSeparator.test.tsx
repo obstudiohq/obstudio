@@ -1,7 +1,7 @@
 import { expect, describe, it } from 'vitest';
-import { Autocomplete } from '@base-ui/react/autocomplete';
-import { Combobox } from '@base-ui/react/combobox';
-import { Select } from '@base-ui/react/select';
+import { Autocomplete } from '@obstudio/react/autocomplete';
+import { Combobox } from '@obstudio/react/combobox';
+import { Select } from '@obstudio/react/select';
 import { screen } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance } from '#test-utils';
 import { ListboxSeparator } from './ListboxSeparator';

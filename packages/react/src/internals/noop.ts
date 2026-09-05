@@ -1,1 +1,1 @@
-export { NOOP } from '@base-ui/utils/empty';
+export { NOOP } from '@obstudio/utils/empty';

@@ -15,13 +15,13 @@ function App() {
     <div className="min-h-dvh flex justify-center items-center">
       <main className="grid grid-cols-2 gap-4">
         <div className="w-[320px]">
-          <h2 className="my-1 text-lg font-bold text-balance">Base UI + TanStack Start</h2>
+          <h2 className="my-1 text-lg font-bold text-balance">Obstudio + TanStack Start</h2>
           <p className="text-sm">
             This is a{' '}
             <Link href="https://tanstack.com/start/latest/docs/framework/react/overview">
               TanStack Start
             </Link>{' '}
-            app with <Link href="https://base-ui.com">Base UI components</Link> and{' '}
+            app with <Link href="https://obstudio.co">Obstudio components</Link> and{' '}
             <Link href="https://tailwindcss.com/">Tailwind CSS</Link>.
           </p>
         </div>
@@ -64,7 +64,10 @@ function App() {
             <NavigationMenu.Root>
               <NavigationMenu.List>
                 <NavigationMenu.Item>
-                  <NavigationMenu.Link href="https://github.com/mui/base-ui" target="_blank">
+                  <NavigationMenu.Link
+                    href="https://github.com/obstudiohq/obstudio"
+                    target="_blank"
+                  >
                     GitHub
                   </NavigationMenu.Link>
                 </NavigationMenu.Item>
@@ -88,12 +91,12 @@ function App() {
                       <li>
                         <NavigationMenu.Link
                           variant="card"
-                          href="https://base-ui.com/react/handbook/forms#tanstack-form"
+                          href="https://obstudio.co/react/handbook/forms#tanstack-form"
                           target="_blank"
                         >
                           <h3 className="mb-1 text-sm font-medium">TanStack Form Example</h3>
                           <p className="text-sm text-gray-500 dark:text-gray-400">
-                            A guide to integrating Base UI components and TanStack Form.
+                            A guide to integrating Obstudio components and TanStack Form.
                           </p>
                         </NavigationMenu.Link>
                       </li>

@@ -1,6 +1,6 @@
 'use client';
-import { useRender } from '@base-ui/react/use-render';
-import { mergeProps } from '@base-ui/react/merge-props';
+import { useRender } from '@obstudio/react/use-render';
+import { mergeProps } from '@obstudio/react/merge-props';
 import styles from './index.module.css';
 
 interface TextProps extends useRender.ComponentProps<'p'> {}

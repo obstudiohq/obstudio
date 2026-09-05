@@ -1,9 +1,9 @@
 import { expect, vi, describe, beforeEach, afterEach, it } from 'vitest';
 import * as React from 'react';
-import { Tooltip } from '@base-ui/react/tooltip';
+import { Tooltip } from '@obstudio/react/tooltip';
 import { act, fireEvent, flushMicrotasks, screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, isJSDOM, popupConformanceTests, resetBrowserPointer } from '#test-utils';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
+import { useRefWithInit } from '@obstudio/utils/useRefWithInit';
 import { OPEN_DELAY } from '../utils/constants';
 import { REASONS } from '../../internals/reasons';
 
@@ -13,7 +13,7 @@ describe('<Tooltip.Root />', () => {
   beforeEach(resetBrowserPointer);
 
   beforeEach(async () => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
   });
 
   afterEach(async () => {
@@ -449,7 +449,7 @@ describe('<Tooltip.Root />', () => {
       });
 
       it('is called on close when the exit animation finishes', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         const onOpenChangeComplete = vi.fn();
 
@@ -536,7 +536,7 @@ describe('<Tooltip.Root />', () => {
       });
 
       it('is called on open when the enter animation finishes', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         const onOpenChangeComplete = vi.fn();
 
@@ -607,7 +607,7 @@ describe('<Tooltip.Root />', () => {
 
     describe.skipIf(isJSDOM)('animations', () => {
       it('toggles instant animations for adjacent tooltips only while opening', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         const style = `
           .tooltip {
@@ -682,7 +682,7 @@ describe('<Tooltip.Root />', () => {
       });
 
       it('unmounts an exiting tooltip when another tooltip opens', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         const style = `
           .tooltip[data-ending-style] {
@@ -738,7 +738,7 @@ describe('<Tooltip.Root />', () => {
       });
 
       it('inline opacity: 0 is removed before user CSS transitions run', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         // The inline opacity: 0 applied before positioning must be removed
         // before CSS transitions start, so it does not trigger an unwanted
@@ -974,7 +974,7 @@ describe('<Tooltip.Root />', () => {
       });
     });
 
-    describe('BaseUIChangeEventDetails', () => {
+    describe('ObstudioChangeEventDetails', () => {
       it('onOpenChange cancel() prevents opening while uncontrolled', async () => {
         await render(
           <TestTooltip

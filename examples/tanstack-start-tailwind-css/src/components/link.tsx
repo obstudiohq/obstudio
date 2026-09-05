@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 
 export function Link({ className, ...props }: React.ComponentPropsWithoutRef<'a'>) {
-  const external = props.href && !props.href.includes('base-ui') && props.href.startsWith('http');
+  const external = props.href && !props.href.includes('obstudio') && props.href.startsWith('http');
   return (
     <a
       className={clsx(styles, className)}

@@ -2,9 +2,9 @@ import { expect, afterEach, it } from 'vitest';
 import * as React from 'react';
 import userEvent from '@testing-library/user-event';
 import { act, screen, waitFor } from '@mui/internal-test-utils';
-import { AnimationFrame } from '@base-ui/utils/useAnimationFrame';
-import { Timeout } from '@base-ui/utils/useTimeout';
-import { Menu } from '@base-ui/react/menu';
+import { AnimationFrame } from '@obstudio/utils/useAnimationFrame';
+import { Timeout } from '@obstudio/utils/useTimeout';
+import { Menu } from '@obstudio/react/menu';
 import { createRenderer, isJSDOM } from '#test-utils';
 
 const activeTrackers: Array<{ stop(): void }> = [];
@@ -72,7 +72,7 @@ describe.skipIf(isJSDOM)('Menu enter transition', () => {
   });
 
   it('plays the enter transition for a submenu that is open when its parent opens', async () => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
     const submenuTracker = trackStartingStyle('submenu-popup');
 
@@ -110,7 +110,7 @@ describe.skipIf(isJSDOM)('Menu enter transition', () => {
   });
 
   it('plays the enter transition for a controlled-open submenu when its parent opens', async () => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
     const submenuTracker = trackStartingStyle('submenu-popup');
 
@@ -148,7 +148,7 @@ describe.skipIf(isJSDOM)('Menu enter transition', () => {
   });
 
   it('does not play the enter transition for a menu that is open on the first render', async () => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
     const menuTracker = trackStartingStyle('menu-popup');
 
@@ -175,7 +175,7 @@ describe.skipIf(isJSDOM)('Menu enter transition', () => {
   });
 
   it('does not play the enter transition for a submenu inside a menu that is open on the first render', async () => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
     const menuTracker = trackStartingStyle('menu-popup');
     const submenuTracker = trackStartingStyle('submenu-popup');
@@ -218,7 +218,7 @@ describe.skipIf(isJSDOM)('Menu enter transition', () => {
     // its mount cannot be tied to the parent's reveal and the submenu appears without a
     // transition when the parent opens. This test pins the current behavior; a fix needs a
     // visibility-based signal in the shared transition machinery.
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
     const submenuTracker = trackStartingStyle('submenu-popup');
 
@@ -257,7 +257,7 @@ describe.skipIf(isJSDOM)('Menu enter transition', () => {
   });
 
   it('plays the enter transition for a submenu opened by the user', async () => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
     const submenuTracker = trackStartingStyle('submenu-popup');
 
@@ -298,7 +298,7 @@ describe.skipIf(isJSDOM)('Menu enter transition', () => {
     // choice, not the framework's. A consumer without `[data-instant]` CSS gets the parent's
     // enter transition on a keyboard open, so the submenu must go through `'starting'` alongside
     // it — skipping the phase would re-create the detached-panel artifact for keyboard users.
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
     const submenuTracker = trackStartingStyle('submenu-popup');
 
@@ -340,7 +340,7 @@ describe.skipIf(isJSDOM)('Menu enter transition', () => {
   });
 
   it('marks an initially open submenu as instant when its parent opened instantly', async () => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
     const submenuInstantTracker = trackSelector(
       '[data-testid="submenu-popup"][data-instant="click"]',
@@ -446,7 +446,7 @@ describe.skipIf(isJSDOM)('Menu enter transition', () => {
   });
 
   it('clears the inherited instant type when a controlled close interrupts the entry', async () => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
     // The transition keeps the animations-finished cleanup pending long enough for the controlled
     // close to interrupt it; there is no ending style, so closing unmounts without delay.

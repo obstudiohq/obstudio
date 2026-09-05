@@ -4,11 +4,11 @@ export const TYPEAHEAD_RESET_MS = 500;
 export const PATIENT_CLICK_THRESHOLD = 500;
 export const DISABLED_TRANSITIONS_STYLE = { style: { transition: 'none' } };
 
-export const CLICK_TRIGGER_IDENTIFIER = 'data-base-ui-click-trigger';
-export const BASE_UI_SWIPE_IGNORE_ATTRIBUTE = 'data-base-ui-swipe-ignore';
+export const CLICK_TRIGGER_IDENTIFIER = 'data-obstudio-click-trigger';
+export const OBSTUDIO_SWIPE_IGNORE_ATTRIBUTE = 'data-obstudio-swipe-ignore';
 export const LEGACY_SWIPE_IGNORE_ATTRIBUTE = 'data-swipe-ignore';
 
-export const BASE_UI_SWIPE_IGNORE_SELECTOR = `[${BASE_UI_SWIPE_IGNORE_ATTRIBUTE}]`;
+export const OBSTUDIO_SWIPE_IGNORE_SELECTOR = `[${OBSTUDIO_SWIPE_IGNORE_ATTRIBUTE}]`;
 export const LEGACY_SWIPE_IGNORE_SELECTOR = `[${LEGACY_SWIPE_IGNORE_ATTRIBUTE}]`;
 
 /**

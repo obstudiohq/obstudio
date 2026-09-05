@@ -1,5 +1,5 @@
 'use client';
-import { ScrollArea } from '@base-ui/react/scroll-area';
+import { ScrollArea } from '@obstudio/react/scroll-area';
 import styles from './scroll-area-snap.module.css';
 
 const ITEMS = Array.from({ length: 10 }, (_, index) => index + 1);

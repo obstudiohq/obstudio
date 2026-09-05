@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Accordion } from '@base-ui/react/accordion';
+import { Accordion } from '@obstudio/react/accordion';
 
 export default function ExampleAccordion() {
   return (

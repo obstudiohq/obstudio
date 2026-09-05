@@ -1,5 +1,5 @@
 import { describe } from 'vitest';
-import { Progress } from '@base-ui/react/progress';
+import { Progress } from '@obstudio/react/progress';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Progress.Track />', () => {

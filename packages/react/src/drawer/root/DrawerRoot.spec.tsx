@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { expectType } from '#test-utils';
-import { Drawer } from '@base-ui/react/drawer';
+import { Drawer } from '@obstudio/react/drawer';
 import { REASONS } from '../../internals/reasons';
 
 type DrawerChangeHandler = NonNullable<Drawer.Root.Props['onOpenChange']>;

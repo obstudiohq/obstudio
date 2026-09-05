@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { useRenderElement } from '../../internals/useRenderElement';
-import { type BaseUIComponentProps } from '../../internals/types';
+import { type ObstudioComponentProps } from '../../internals/types';
 import { type TransitionStatus } from '../../internals/useTransitionStatus';
 import { useDialogRootContext } from '../root/DialogRootContext';
 import { useDialogPortalContext } from '../portal/DialogPortalContext';
@@ -11,7 +11,7 @@ import { dialogStateAttributesMapping } from '../utils/stateAttributesMapping';
  * A positioning container for the dialog popup that can be made scrollable.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)
+ * Documentation: [Obstudio Dialog](https://obstudio.co/react/components/dialog)
  */
 export const DialogViewport = React.forwardRef(function DialogViewport(
   componentProps: DialogViewport.Props,
@@ -79,7 +79,7 @@ export interface DialogViewportState {
   nestedDialogOpen: boolean;
 }
 
-export interface DialogViewportProps extends BaseUIComponentProps<'div', DialogViewportState> {}
+export interface DialogViewportProps extends ObstudioComponentProps<'div', DialogViewportState> {}
 
 export namespace DialogViewport {
   export type State = DialogViewportState;

@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useComboboxItemContext } from '../item/ComboboxItemContext';
 import { type TransitionStatus, useTransitionStatus } from '../../internals/useTransitionStatus';
 import { useOpenChangeComplete } from '../../internals/useOpenChangeComplete';
@@ -11,7 +11,7 @@ import { transitionStatusMapping } from '../../internals/stateAttributesMapping'
  * Indicates whether the item is selected.
  * Renders a `<span>` element.
  *
- * Documentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)
+ * Documentation: [Obstudio Combobox](https://obstudio.co/react/components/combobox)
  */
 export const ComboboxItemIndicator = React.forwardRef(function ComboboxItemIndicator(
   componentProps: ComboboxItemIndicator.Props,
@@ -78,7 +78,7 @@ const Inner = React.memo(
   ),
 );
 
-export interface ComboboxItemIndicatorProps extends BaseUIComponentProps<
+export interface ComboboxItemIndicatorProps extends ObstudioComponentProps<
   'span',
   ComboboxItemIndicatorState
 > {

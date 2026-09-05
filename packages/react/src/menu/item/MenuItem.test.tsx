@@ -1,7 +1,7 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
 import { act, fireEvent, screen, waitFor } from '@mui/internal-test-utils';
-import { Menu } from '@base-ui/react/menu';
+import { Menu } from '@obstudio/react/menu';
 import { describeConformance, createRenderer, isJSDOM } from '#test-utils';
 
 describe('<Menu.Item />', () => {
@@ -26,7 +26,7 @@ describe('<Menu.Item />', () => {
 
     try {
       await expect(render(<Menu.Item />)).rejects.toThrow(
-        'Base UI: MenuRootContext is missing. Menu parts must be placed within <Menu.Root>.',
+        'Obstudio: MenuRootContext is missing. Menu parts must be placed within <Menu.Root>.',
       );
     } finally {
       errorSpy.mockRestore();
@@ -55,8 +55,8 @@ describe('<Menu.Item />', () => {
     expect(onClick.mock.calls.length).toBe(1);
   });
 
-  it('does not close the menu when onClick prevents Base UI handler', async () => {
-    const onClick = vi.fn((event) => event.preventBaseUIHandler());
+  it('does not close the menu when onClick prevents Obstudio handler', async () => {
+    const onClick = vi.fn((event) => event.preventObstudioHandler());
     const { user } = await render(
       <Menu.Root>
         <Menu.Trigger>Open</Menu.Trigger>
@@ -80,13 +80,13 @@ describe('<Menu.Item />', () => {
     expect(screen.queryByRole('menu')).not.toBe(null);
   });
 
-  it('allows onMouseDown to call preventBaseUIHandler', async () => {
+  it('allows onMouseDown to call preventObstudioHandler', async () => {
     await render(
       <Menu.Root open>
         <Menu.Portal>
           <Menu.Positioner>
             <Menu.Popup>
-              <Menu.Item onMouseDown={(event) => event.preventBaseUIHandler()}>Item</Menu.Item>
+              <Menu.Item onMouseDown={(event) => event.preventObstudioHandler()}>Item</Menu.Item>
             </Menu.Popup>
           </Menu.Positioner>
         </Menu.Portal>

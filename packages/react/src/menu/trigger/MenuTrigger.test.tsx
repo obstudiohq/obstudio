@@ -2,8 +2,8 @@ import * as React from 'react';
 import { expect, vi, describe, it } from 'vitest';
 import userEvent from '@testing-library/user-event';
 import { act, fireEvent, flushMicrotasks, screen } from '@mui/internal-test-utils';
-import { Menu } from '@base-ui/react/menu';
-import { Popover } from '@base-ui/react/popover';
+import { Menu } from '@obstudio/react/menu';
+import { Popover } from '@obstudio/react/popover';
 import { describeConformance, createRenderer, isJSDOM } from '#test-utils';
 import { PATIENT_CLICK_THRESHOLD } from '../../internals/constants';
 
@@ -25,7 +25,7 @@ describe('<Menu.Trigger />', () => {
 
     try {
       await expect(render(<Menu.Trigger />)).rejects.toThrow(
-        'Base UI: <Menu.Trigger> must be either used within a <Menu.Root> component or provided with a handle.',
+        'Obstudio: <Menu.Trigger> must be either used within a <Menu.Root> component or provided with a handle.',
       );
     } finally {
       errorSpy.mockRestore();
@@ -426,11 +426,11 @@ describe('<Menu.Trigger />', () => {
     },
   );
 
-  describe('preventBaseUIHandler', () => {
-    it('prevents opening the menu with a mouse when `preventBaseUIHandler` is called in onMouseDown', async () => {
+  describe('preventObstudioHandler', () => {
+    it('prevents opening the menu with a mouse when `preventObstudioHandler` is called in onMouseDown', async () => {
       await render(
         <Menu.Root>
-          <Menu.Trigger onMouseDown={(event) => event.preventBaseUIHandler()} />
+          <Menu.Trigger onMouseDown={(event) => event.preventObstudioHandler()} />
           <Menu.Portal>
             <Menu.Positioner>
               <Menu.Popup />
@@ -445,10 +445,10 @@ describe('<Menu.Trigger />', () => {
       expect(screen.queryByRole('menu', { hidden: false })).toBe(null);
     });
 
-    it('prevents opening the menu with keyboard when `preventBaseUIHandler` is called in onClick', async () => {
+    it('prevents opening the menu with keyboard when `preventObstudioHandler` is called in onClick', async () => {
       await render(
         <Menu.Root>
-          <Menu.Trigger onClick={(event) => event.preventBaseUIHandler()} />
+          <Menu.Trigger onClick={(event) => event.preventObstudioHandler()} />
           <Menu.Portal>
             <Menu.Positioner>
               <Menu.Popup />

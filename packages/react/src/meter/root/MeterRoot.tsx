@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
-import { visuallyHidden } from '@base-ui/utils/visuallyHidden';
-import { formatNumber } from '@base-ui/utils/formatNumber';
-import { clamp } from '@base-ui/utils/clamp';
+import { visuallyHidden } from '@obstudio/utils/visuallyHidden';
+import { formatNumber } from '@obstudio/utils/formatNumber';
+import { clamp } from '@obstudio/utils/clamp';
 import { MeterRootContext } from './MeterRootContext';
-import { BaseUIComponentProps, HTMLProps } from '../../internals/types';
+import { ObstudioComponentProps, HTMLProps } from '../../internals/types';
 import { valueToPercent } from '../../utils/valueToPercent';
 import { useRenderElement } from '../../internals/useRenderElement';
 
@@ -12,7 +12,7 @@ import { useRenderElement } from '../../internals/useRenderElement';
  * Groups all parts of the meter and provides the value for screen readers.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Meter](https://base-ui.com/react/components/meter)
+ * Documentation: [Obstudio Meter](https://obstudio.co/react/components/meter)
  */
 export const MeterRoot = React.forwardRef(function MeterRoot(
   componentProps: MeterRoot.Props,
@@ -61,7 +61,7 @@ export const MeterRoot = React.forwardRef(function MeterRoot(
       <React.Fragment>
         {children}
         <span role="presentation" style={visuallyHidden}>
-          {/* force NVDA to read the label https://github.com/mui/base-ui/issues/4184 */}x
+          {/* force NVDA to read the label https://github.com/obstudiohq/obstudio/issues/4184 */}x
         </span>
       </React.Fragment>
     ),
@@ -87,7 +87,7 @@ export const MeterRoot = React.forwardRef(function MeterRoot(
 
 export interface MeterRootState {}
 
-export interface MeterRootProps extends BaseUIComponentProps<'div', MeterRootState> {
+export interface MeterRootProps extends ObstudioComponentProps<'div', MeterRootState> {
   /**
    * A string value that provides a user-friendly name for `aria-valuenow`, the current value of the meter.
    */

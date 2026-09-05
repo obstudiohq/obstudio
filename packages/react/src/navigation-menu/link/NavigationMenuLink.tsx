@@ -1,21 +1,21 @@
 'use client';
 import * as React from 'react';
 import { useFloatingTree } from '../../floating-ui-react';
-import type { BaseUIComponentProps, HTMLProps } from '../../internals/types';
+import type { ObstudioComponentProps, HTMLProps } from '../../internals/types';
 import {
   useNavigationMenuRootContext,
   useNavigationMenuTreeContext,
 } from '../root/NavigationMenuRootContext';
 import { isOutsideMenuEvent } from '../utils/isOutsideMenuEvent';
 import { CompositeItem } from '../../internals/composite/item/CompositeItem';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 
 /**
  * A link in the navigation menu that can be used to navigate to a different page or section.
  * Renders an `<a>` element.
  *
- * Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+ * Documentation: [Obstudio Navigation Menu](https://obstudio.co/react/components/navigation-menu)
  */
 export const NavigationMenuLink = React.forwardRef(function NavigationMenuLink(
   componentProps: NavigationMenuLink.Props,
@@ -83,7 +83,7 @@ export interface NavigationMenuLinkState {
   active: boolean;
 }
 
-export interface NavigationMenuLinkProps extends BaseUIComponentProps<
+export interface NavigationMenuLinkProps extends ObstudioComponentProps<
   'a',
   NavigationMenuLinkState,
   React.ComponentPropsWithRef<'a'>

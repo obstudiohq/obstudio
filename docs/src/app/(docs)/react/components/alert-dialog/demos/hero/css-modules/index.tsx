@@ -1,4 +1,4 @@
-import { AlertDialog } from '@base-ui/react/alert-dialog';
+import { AlertDialog } from '@obstudio/react/alert-dialog';
 import styles from './index.module.css';
 
 export default function ExampleAlertDialog() {

@@ -1,11 +1,11 @@
 'use client';
 import * as React from 'react';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import { ownerDocument } from '@base-ui/utils/owner';
-import { fastComponentRef } from '@base-ui/utils/fastHooks';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { EMPTY_OBJECT } from '@base-ui/utils/empty';
+import { useTimeout } from '@obstudio/utils/useTimeout';
+import { ownerDocument } from '@obstudio/utils/owner';
+import { fastComponentRef } from '@obstudio/utils/fastHooks';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { EMPTY_OBJECT } from '@obstudio/utils/empty';
 import {
   safePolygon,
   useClick,
@@ -20,7 +20,7 @@ import { contains } from '../../floating-ui-react/utils';
 import { useMenuRootContext } from '../root/MenuRootContext';
 import { pressableTriggerOpenStateMapping } from '../../utils/popupStateMapping';
 import { useRenderElement } from '../../internals/useRenderElement';
-import { BaseUIComponentProps, NativeButtonProps } from '../../internals/types';
+import { ObstudioComponentProps, NativeButtonProps } from '../../internals/types';
 import { useButton } from '../../internals/use-button/useButton';
 import { isMouseWithinBounds } from '../../utils/getPseudoElementBounds';
 import { CompositeItem } from '../../internals/composite/item/CompositeItem';
@@ -28,7 +28,7 @@ import { useCompositeRootContext } from '../../internals/composite/root/Composit
 import { findRootOwnerId } from '../utils/findRootOwnerId';
 import { usePopupHandleStore, useTriggerDataForwarding } from '../../utils/popups';
 import { useTriggerFocusGuards } from '../../utils/popups/useTriggerFocusGuards';
-import { useBaseUiId } from '../../internals/useBaseUiId';
+import { useObstudioId } from '../../internals/useObstudioId';
 import { REASONS } from '../../internals/reasons';
 import { useMixedToggleClickHandler } from '../../utils/useMixedToggleClickHandler';
 import { MenuHandle } from '../store/MenuHandle';
@@ -42,7 +42,7 @@ import { mergeProps } from '../../merge-props';
  * A button that opens the menu.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Obstudio Menu](https://obstudio.co/react/components/menu)
  */
 export const MenuTrigger = fastComponentRef(function MenuTrigger(
   componentProps: MenuTrigger.Props,
@@ -68,11 +68,11 @@ export const MenuTrigger = fastComponentRef(function MenuTrigger(
   const store = handleStore ?? rootContext?.store;
   if (!store) {
     throw new Error(
-      'Base UI: <Menu.Trigger> must be either used within a <Menu.Root> component or provided with a handle.',
+      'Obstudio: <Menu.Trigger> must be either used within a <Menu.Root> component or provided with a handle.',
     );
   }
 
-  const thisTriggerId = useBaseUiId(idProp);
+  const thisTriggerId = useObstudioId(idProp);
   const isTriggerActive = store.useState('isTriggerActive', thisTriggerId);
   const floatingRootContext = store.useState('floatingRootContext');
   const isOpenedByThisTrigger = store.useState('isOpenedByTrigger', thisTriggerId);
@@ -300,7 +300,7 @@ export interface MenuTrigger {
 }
 
 export interface MenuTriggerProps<Payload = unknown>
-  extends NativeButtonProps, BaseUIComponentProps<'button', MenuTriggerState> {
+  extends NativeButtonProps, ObstudioComponentProps<'button', MenuTriggerState> {
   children?: React.ReactNode;
   /**
    * Whether the component should ignore user interaction.

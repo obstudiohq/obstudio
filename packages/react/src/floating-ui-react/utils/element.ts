@@ -1,6 +1,6 @@
 import { isElement, isHTMLElement } from '@floating-ui/utils/dom';
-import { platform } from '@base-ui/utils/platform';
-import { activeElement, contains, getTarget } from '@base-ui/utils/shadowDom';
+import { platform } from '@obstudio/utils/platform';
+import { activeElement, contains, getTarget } from '@obstudio/utils/shadowDom';
 import { FOCUSABLE_ATTRIBUTE, TYPEABLE_SELECTOR } from './constants';
 import { type PopupTriggerMap } from '../../utils/popups';
 import * as TooltipTriggerDataAttributes from '../../tooltip/trigger/TooltipTriggerDataAttributes';

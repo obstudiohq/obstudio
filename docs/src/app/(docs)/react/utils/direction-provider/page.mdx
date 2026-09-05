@@ -1,9 +1,9 @@
 # Direction Provider
 
-<Subtitle>Enables RTL behavior for Base UI components.</Subtitle>
+<Subtitle>Enables RTL behavior for Obstudio components.</Subtitle>
 <Meta
   name="description"
-  content="A direction provider component that enables RTL behavior for Base UI components."
+  content="A direction provider component that enables RTL behavior for Obstudio components."
 />
 
 import { DemoDirectionProviderHero } from './demos/hero';
@@ -15,7 +15,7 @@ import { DemoDirectionProviderHero } from './demos/hero';
 Import the component and wrap it around your app:
 
 ```jsx title="Anatomy"
-import { DirectionProvider } from '@base-ui/react/direction-provider';
+import { DirectionProvider } from '@obstudio/react/direction-provider';
 
 // prettier-ignore
 <DirectionProvider>
@@ -23,7 +23,7 @@ import { DirectionProvider } from '@base-ui/react/direction-provider';
 </DirectionProvider>
 ```
 
-`<DirectionProvider>` enables child Base UI components to adjust behavior based on RTL text direction, but does not affect HTML and CSS. The `dir="rtl"` HTML attribute or `direction: rtl` CSS style must be set additionally by your own application code.
+`<DirectionProvider>` enables child Obstudio components to adjust behavior based on RTL text direction, but does not affect HTML and CSS. The `dir="rtl"` HTML attribute or `direction: rtl` CSS style must be set additionally by your own application code.
 
 ## API reference
 
@@ -47,10 +47,10 @@ Use this hook to read the current text direction. This is useful for wrapping po
 
 export const metadata = {
   keywords: [
-    'Base UI Direction Provider',
+    'Obstudio Direction Provider',
     'React RTL Context',
     'Text Direction Hook',
-    'useDirection Base UI',
+    'useDirection Obstudio',
     'Headless RTL Components',
     'Internationalization',
     'i18n',

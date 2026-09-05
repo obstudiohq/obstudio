@@ -1,13 +1,13 @@
 'use client';
 import * as React from 'react';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { visuallyHidden, visuallyHiddenInput } from '@base-ui/utils/visuallyHidden';
-import { EMPTY_OBJECT } from '@base-ui/utils/empty';
+import { useControlled } from '@obstudio/utils/useControlled';
+import { useMergedRefs } from '@obstudio/utils/useMergedRefs';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { visuallyHidden, visuallyHiddenInput } from '@obstudio/utils/visuallyHidden';
+import { EMPTY_OBJECT } from '@obstudio/utils/empty';
 import { useRenderElement } from '../../internals/useRenderElement';
-import type { BaseUIComponentProps, NonNativeButtonProps } from '../../internals/types';
-import { useBaseUiId } from '../../internals/useBaseUiId';
+import type { ObstudioComponentProps, NonNativeButtonProps } from '../../internals/types';
+import { useObstudioId } from '../../internals/useObstudioId';
 import { useButton } from '../../internals/use-button';
 import { SwitchRootContext } from './SwitchRootContext';
 import { stateAttributesMapping } from '../stateAttributesMapping';
@@ -19,16 +19,16 @@ import { useFormContext } from '../../internals/form-context/FormContext';
 import { useLabelableContext } from '../../internals/labelable-provider/LabelableContext';
 import { useAriaLabelledBy } from '../../internals/labelable-provider/useAriaLabelledBy';
 import { useLabelableId } from '../../internals/labelable-provider/useLabelableId';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
-import type { BaseUIChangeEventDetails } from '../../types';
+import type { ObstudioChangeEventDetails } from '../../types';
 import { useValueChanged } from '../../internals/useValueChanged';
 
 /**
  * Represents the switch itself.
  * Renders a `<span>` element and a hidden `<input>` beside.
  *
- * Documentation: [Base UI Switch](https://base-ui.com/react/components/switch)
+ * Documentation: [Obstudio Switch](https://obstudio.co/react/components/switch)
  */
 export const SwitchRoot = React.forwardRef(function SwitchRoot(
   componentProps: SwitchRoot.Props,
@@ -78,7 +78,7 @@ export const SwitchRoot = React.forwardRef(function SwitchRoot(
 
   const switchRef = React.useRef<HTMLButtonElement | null>(null);
 
-  const id = useBaseUiId();
+  const id = useObstudioId();
 
   const controlId = useLabelableId({ id: idProp });
   const hiddenInputId = nativeButton ? undefined : controlId;
@@ -258,7 +258,7 @@ export interface SwitchRootState extends FieldRootState {
 }
 
 export interface SwitchRootProps
-  extends NonNativeButtonProps, Omit<BaseUIComponentProps<'span', SwitchRootState>, 'onChange'> {
+  extends NonNativeButtonProps, Omit<ObstudioComponentProps<'span', SwitchRootState>, 'onChange'> {
   /**
    * The id of the hidden input element.
    *
@@ -324,7 +324,7 @@ export interface SwitchRootProps
 }
 
 export type SwitchRootChangeEventReason = typeof REASONS.none;
-export type SwitchRootChangeEventDetails = BaseUIChangeEventDetails<SwitchRoot.ChangeEventReason>;
+export type SwitchRootChangeEventDetails = ObstudioChangeEventDetails<SwitchRoot.ChangeEventReason>;
 
 export namespace SwitchRoot {
   export type State = SwitchRootState;

@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { useTooltipRootContext } from '../root/TooltipRootContext';
 import { useTooltipPositionerContext } from '../positioner/TooltipPositionerContext';
-import { BaseUIComponentProps } from '../../internals/types';
+import { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { popupViewportStateMapping, usePopupViewport } from '../../utils/usePopupViewport';
 
@@ -12,7 +12,7 @@ import { popupViewportStateMapping, usePopupViewport } from '../../utils/usePopu
  * changes based on the trigger, and switching between them is animated.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)
+ * Documentation: [Obstudio Tooltip](https://obstudio.co/react/components/tooltip)
  */
 export const TooltipViewport = React.forwardRef(function TooltipViewport(
   componentProps: TooltipViewport.Props,
@@ -60,7 +60,7 @@ export interface TooltipViewportState {
   instant: 'delay' | 'dismiss' | 'focus' | undefined;
 }
 
-export interface TooltipViewportProps extends BaseUIComponentProps<'div', TooltipViewportState> {
+export interface TooltipViewportProps extends ObstudioComponentProps<'div', TooltipViewportState> {
   /**
    * The content to render inside the transition container.
    */

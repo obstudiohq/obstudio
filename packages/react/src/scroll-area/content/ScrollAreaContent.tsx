@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import type { BaseUIComponentProps } from '../../internals/types';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useScrollAreaViewportContext } from '../viewport/ScrollAreaViewportContext';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useScrollAreaRootContext } from '../root/ScrollAreaRootContext';
@@ -12,7 +12,7 @@ import type { ScrollAreaRootState } from '../root/ScrollAreaRoot';
  * A container for the content of the scroll area.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Scroll Area](https://base-ui.com/react/components/scroll-area)
+ * Documentation: [Obstudio Scroll Area](https://obstudio.co/react/components/scroll-area)
  */
 export const ScrollAreaContent = React.forwardRef(function ScrollAreaContent(
   componentProps: ScrollAreaContent.Props,
@@ -77,7 +77,7 @@ export const ScrollAreaContent = React.forwardRef(function ScrollAreaContent(
 
 export interface ScrollAreaContentState extends ScrollAreaRootState {}
 
-export interface ScrollAreaContentProps extends BaseUIComponentProps<
+export interface ScrollAreaContentProps extends ObstudioComponentProps<
   'div',
   ScrollAreaContentState
 > {}

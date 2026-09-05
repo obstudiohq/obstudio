@@ -1,5 +1,5 @@
 import { vi, describe, it, expect } from 'vitest';
-import { NavigationMenu } from '@base-ui/react/navigation-menu';
+import { NavigationMenu } from '@obstudio/react/navigation-menu';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<NavigationMenu.Arrow />', () => {
@@ -29,7 +29,7 @@ describe('<NavigationMenu.Arrow />', () => {
           </NavigationMenu.Root>,
         ),
       ).rejects.toThrow(
-        'Base UI: NavigationMenuPositionerContext is missing. NavigationMenuPositioner parts must be placed within <NavigationMenu.Positioner>.',
+        'Obstudio: NavigationMenuPositionerContext is missing. NavigationMenuPositioner parts must be placed within <NavigationMenu.Positioner>.',
       );
     } finally {
       errorSpy.mockRestore();

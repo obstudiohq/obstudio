@@ -1,3 +1,3 @@
-# @base-ui/utils
+# @obstudio/utils
 
-A collection of React utility functions for Base UI.
+A collection of React utility functions for Obstudio.

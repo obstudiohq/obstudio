@@ -1,9 +1,9 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
-import { Combobox } from '@base-ui/react/combobox';
+import { Combobox } from '@obstudio/react/combobox';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { fireEvent, screen, waitFor } from '@mui/internal-test-utils';
-import { Field } from '@base-ui/react/field';
+import { Field } from '@obstudio/react/field';
 import { REASONS } from '../../internals/reasons';
 
 describe('<Combobox.Input />', () => {

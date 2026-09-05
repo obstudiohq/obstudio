@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { Autocomplete } from '@base-ui/react/autocomplete';
-import { Drawer } from '@base-ui/react/drawer';
-import { ScrollArea } from '@base-ui/react/scroll-area';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { Autocomplete } from '@obstudio/react/autocomplete';
+import { Drawer } from '@obstudio/react/drawer';
+import { ScrollArea } from '@obstudio/react/scroll-area';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
 import type { SearchResult, Sitemap } from '@mui/internal-docs-infra/useSearch/types';
 import { MagnifyingGlassIcon } from 'docs/src/icons/MagnifyingGlassIcon';
 import { MobileNavContent } from './MobileNavContent';

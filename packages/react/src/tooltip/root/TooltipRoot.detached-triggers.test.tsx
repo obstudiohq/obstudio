@@ -3,7 +3,7 @@ import * as React from 'react';
 import * as ReactDOMClient from 'react-dom/client';
 import * as ReactDOMServer from 'react-dom/server';
 import { createRenderer, isJSDOM, resetBrowserPointer } from '#test-utils';
-import { Tooltip } from '@base-ui/react/tooltip';
+import { Tooltip } from '@obstudio/react/tooltip';
 import {
   screen,
   waitFor,
@@ -19,7 +19,7 @@ describe('<Tooltip.Root />', () => {
   beforeEach(resetBrowserPointer);
 
   beforeEach(async () => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
 
     await act(async () => {
       document.body.click();
@@ -1494,7 +1494,7 @@ describe('<Tooltip.Root />', () => {
     });
 
     it('should not have inline scale style after switching triggers', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       const testTooltip = Tooltip.createHandle<number>();
 

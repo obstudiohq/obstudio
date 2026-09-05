@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useNavigationMenuRootContext } from '../root/NavigationMenuRootContext';
 import { triggerOpenStateMapping } from '../../utils/popupStateMapping';
@@ -9,7 +9,7 @@ import { useNavigationMenuItemContext } from '../item/NavigationMenuItemContext'
 /**
  * An icon that indicates that the trigger button opens a menu.
  *
- * Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+ * Documentation: [Obstudio Navigation Menu](https://obstudio.co/react/components/navigation-menu)
  */
 export const NavigationMenuIcon = React.forwardRef(function NavigationMenuIcon(
   componentProps: NavigationMenuIcon.Props,
@@ -43,7 +43,7 @@ export interface NavigationMenuIconState {
   open: boolean;
 }
 
-export interface NavigationMenuIconProps extends BaseUIComponentProps<
+export interface NavigationMenuIconProps extends ObstudioComponentProps<
   'span',
   NavigationMenuIconState
 > {}

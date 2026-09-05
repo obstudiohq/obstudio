@@ -26,7 +26,7 @@ export default function getBabelConfig(api) {
     (p) => p[2] === '@mui/internal-babel-plugin-display-name',
   );
   displayNamePlugin[1].allowedCallees ??= {};
-  displayNamePlugin[1].allowedCallees['@base-ui/utils/fastHooks'] = [
+  displayNamePlugin[1].allowedCallees['@obstudio/utils/fastHooks'] = [
     'fastComponent',
     'fastComponentRef',
   ];

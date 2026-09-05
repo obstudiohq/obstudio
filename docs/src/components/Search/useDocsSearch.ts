@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { useSearch } from '@mui/internal-docs-infra/useSearch';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
 import { type SearchSitemapLoader } from './searchSitemap';
 import { slugifyWithParentContext } from './searchUtils';
 

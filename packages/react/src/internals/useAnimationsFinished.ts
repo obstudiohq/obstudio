@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { useAnimationFrame } from '@base-ui/utils/useAnimationFrame';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { useAnimationFrame } from '@obstudio/utils/useAnimationFrame';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
 import { resolveRef } from '../utils/resolveRef';
 import * as TransitionStatusDataAttributes from './TransitionStatusDataAttributes';
 
@@ -10,10 +10,10 @@ let pendingCallbacks: Array<() => void> | null = null;
 
 /**
  * Runs the callback in a synchronous flush before the browser paints, so that the
- * browser doesn't paint an intermediate frame: https://github.com/mui/base-ui/issues/979
+ * browser doesn't paint an intermediate frame: https://github.com/obstudiohq/obstudio/issues/979
  * Callbacks that become ready within the same microtask checkpoint (e.g. multiple elements
  * whose animations finish together) are batched into a single commit:
- * https://github.com/mui/base-ui/issues/5481
+ * https://github.com/obstudiohq/obstudio/issues/5481
  */
 function flushBeforePaint(fn: () => void) {
   if (!pendingCallbacks) {
@@ -73,7 +73,7 @@ export function useAnimationsFinished(
       const done = () => {
         if (!batch) {
           // Synchronously flush the unmounting of the component so that the browser doesn't
-          // paint: https://github.com/mui/base-ui/issues/979
+          // paint: https://github.com/obstudiohq/obstudio/issues/979
           // Each callback gets its own commit so that later completions observe the React
           // updates caused by earlier ones.
           ReactDOM.flushSync(fnToExecute);
@@ -90,7 +90,7 @@ export function useAnimationsFinished(
 
       if (
         typeof resolvedElement.getAnimations !== 'function' ||
-        globalThis.BASE_UI_ANIMATIONS_DISABLED
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED
       ) {
         fnToExecute();
         return;

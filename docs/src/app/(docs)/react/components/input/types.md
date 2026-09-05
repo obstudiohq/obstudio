@@ -6,7 +6,7 @@
 
 ### Input
 
-A native input element that automatically works with [Field](https://base-ui.com/react/components/field).
+A native input element that automatically works with [Field](https://obstudio.co/react/components/field).
 Renders an `<input>` element.
 
 **Input Props:**
@@ -69,9 +69,9 @@ type InputChangeEventDetails = {
   reason: 'none';
   /** The native event associated with the custom event. */
   event: Event;
-  /** Cancels Base UI from handling the event. */
+  /** Cancels Obstudio from handling the event. */
   cancel: () => void;
-  /** Allows the event to propagate in cases where Base UI will stop the propagation. */
+  /** Allows the event to propagate in cases where Obstudio will stop the propagation. */
   allowPropagation: () => void;
   /** Indicates whether the event has been canceled. */
   isCanceled: boolean;

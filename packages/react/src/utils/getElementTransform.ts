@@ -1,4 +1,4 @@
-import { ownerWindow } from '@base-ui/utils/owner';
+import { ownerWindow } from '@obstudio/utils/owner';
 
 /**
  * Extracts the 2D translation and scale from the element's computed `transform` matrix.

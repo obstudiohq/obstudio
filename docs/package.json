@@ -16,8 +16,8 @@
     "generate-llms": "node --experimental-strip-types ./scripts/generateLlmTxt/index.mjs"
   },
   "dependencies": {
-    "@base-ui/react": "workspace:*",
-    "@base-ui/utils": "workspace:*",
+    "@obstudio/react": "workspace:*",
+    "@obstudio/utils": "workspace:*",
     "@mdx-js/loader": "^3.1.1",
     "@mdx-js/react": "^3.1.1",
     "@mui/internal-docs-infra": "0.12.1-canary.42",

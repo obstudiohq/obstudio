@@ -1,5 +1,5 @@
 {
-  "name": "@base-ui/monorepo",
+  "name": "@obstudio/monorepo",
   "version": "1.8.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,7 @@
     "deduplicate": "pnpm dedupe",
     "build": "lerna run --no-private build",
     "release:version": "lerna version --no-changelog --no-push --no-git-tag-version --no-private",
-    "release:build": "pnpm docs:generate-llms && cross-env BASE_UI_PUBLISH_DOCS=1 lerna run --concurrency 8 --no-private build --skip-nx-cache --",
+    "release:build": "pnpm docs:generate-llms && cross-env OBSTUDIO_PUBLISH_DOCS=1 lerna run --concurrency 8 --no-private build --skip-nx-cache --",
     "release:changelog": "code-infra generate-changelog",
     "release:changelog:docs": "FORMAT=docs code-infra generate-changelog",
     "release:publish": "code-infra publish --github-release",
@@ -48,7 +48,7 @@
     "pretest:screen-reader": "guidepup install",
     "test:screen-reader": "playwright test --config test/screen-reader/playwright.config.ts",
     "test:screen-reader:setup": "guidepup setup",
-    "test:_unit": "cross-env TZ=UTC vitest --project @base-ui/react --project @base-ui/utils --project docs",
+    "test:_unit": "cross-env TZ=UTC vitest --project @obstudio/react --project @obstudio/utils --project docs",
     "test:jsdom": "cross-env VITEST_ENV=jsdom pnpm test:_unit",
     "test:jsdom:coverage": "pnpm test:jsdom --coverage",
     "test:chromium": "cross-env VITEST_ENV=chromium pnpm test:_unit",
@@ -60,7 +60,7 @@
     "test:browsers": "cross-env VITEST_ENV=all-browsers pnpm test:_unit",
     "test:argos": "code-infra argos-push --folder test/regressions/screenshots/chrome",
     "typescript": "tsc -b tsconfig.json",
-    "types:check": "pnpm --filter @base-ui/react build && pnpm --filter @base-ui/react types:check",
+    "types:check": "pnpm --filter @obstudio/react build && pnpm --filter @obstudio/react types:check",
     "inline-scripts": "tsx ./scripts/inlineScripts.mts",
     "test:benchmark": "pnpm -F ./test/performance benchmark",
     "use-react-18": "code-infra set-version-overrides --pkg react@18"
@@ -68,7 +68,7 @@
   "devDependencies": {
     "@arethetypeswrong/cli": "0.18.5",
     "@babel/plugin-transform-react-constant-elements": "7.29.7",
-    "@base-ui/monorepo-tests": "workspace:*",
+    "@obstudio/monorepo-tests": "workspace:*",
     "@guidepup/guidepup": "0.33.1",
     "@guidepup/playwright": "0.19.1",
     "@guidepup/setup": "0.24.6",

@@ -1,10 +1,10 @@
 import { expect, vi, describe, it } from 'vitest';
-import { Combobox } from '@base-ui/react/combobox';
+import { Combobox } from '@obstudio/react/combobox';
 import { createRenderer } from '#test-utils';
 import { fireEvent, screen } from '@mui/internal-test-utils';
 
-vi.mock('@base-ui/utils/platform', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('@base-ui/utils/platform')>();
+vi.mock('@obstudio/utils/platform', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@obstudio/utils/platform')>();
   return {
     ...actual,
     platform: {

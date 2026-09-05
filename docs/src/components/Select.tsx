@@ -1,4 +1,4 @@
-import { Select } from '@base-ui/react/select';
+import { Select } from '@obstudio/react/select';
 import clsx from 'clsx';
 import { CaretSortIcon } from '../icons/CaretSortIcon';
 import { CheckIcon } from '../icons/CheckIcon';

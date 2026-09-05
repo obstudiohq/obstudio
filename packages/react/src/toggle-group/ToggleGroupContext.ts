@@ -1,14 +1,14 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIChangeEventDetails } from '../internals/createBaseUIEventDetails';
-import type { BaseUIEventReasons } from '../internals/reasons';
+import type { ObstudioChangeEventDetails } from '../internals/createObstudioEventDetails';
+import type { ObstudioEventReasons } from '../internals/reasons';
 
 export interface ToggleGroupContext<Value> {
   value: readonly Value[];
   setGroupValue: (
     newValue: Value,
     nextPressed: boolean,
-    eventDetails: BaseUIChangeEventDetails<BaseUIEventReasons['none']>,
+    eventDetails: ObstudioChangeEventDetails<ObstudioEventReasons['none']>,
   ) => void;
   disabled: boolean;
   /**

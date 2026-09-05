@@ -3,7 +3,7 @@ import * as React from 'react';
 import { usePreviewCardRootContext } from '../root/PreviewCardContext';
 import { usePreviewCardPositionerContext } from '../positioner/PreviewCardPositionerContext';
 import type { Align, Side } from '../../internals/useAnchorPositioning';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { popupTransitionStateMapping } from '../../utils/popupStateMapping';
 import type { TransitionStatus } from '../../internals/useTransitionStatus';
 import { useOpenChangeComplete } from '../../internals/useOpenChangeComplete';
@@ -16,7 +16,7 @@ import { FOCUSABLE_POPUP_PROPS } from '../../utils/popups';
  * A container for the preview card contents.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Preview Card](https://base-ui.com/react/components/preview-card)
+ * Documentation: [Obstudio Preview Card](https://obstudio.co/react/components/preview-card)
  */
 export const PreviewCardPopup = React.forwardRef(function PreviewCardPopup(
   componentProps: PreviewCardPopup.Props,
@@ -94,7 +94,10 @@ export interface PreviewCardPopupState {
   transitionStatus: TransitionStatus;
 }
 
-export interface PreviewCardPopupProps extends BaseUIComponentProps<'div', PreviewCardPopupState> {}
+export interface PreviewCardPopupProps extends ObstudioComponentProps<
+  'div',
+  PreviewCardPopupState
+> {}
 
 export namespace PreviewCardPopup {
   export type State = PreviewCardPopupState;

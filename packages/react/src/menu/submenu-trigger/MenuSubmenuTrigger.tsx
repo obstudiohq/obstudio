@@ -1,16 +1,16 @@
 'use client';
 import * as React from 'react';
-import { isElementDisabled } from '@base-ui/utils/isElementDisabled';
-import { warn } from '@base-ui/utils/warn';
-import { SafeReact } from '@base-ui/utils/safeReact';
-import { EMPTY_OBJECT } from '@base-ui/utils/empty';
-import { platform } from '@base-ui/utils/platform';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { isElementDisabled } from '@obstudio/utils/isElementDisabled';
+import { warn } from '@obstudio/utils/warn';
+import { SafeReact } from '@obstudio/utils/safeReact';
+import { EMPTY_OBJECT } from '@obstudio/utils/empty';
+import { platform } from '@obstudio/utils/platform';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
 import { safePolygon, useClick, useHoverReferenceInteraction } from '../../floating-ui-react';
-import { BaseUIComponentProps, NonNativeButtonProps } from '../../internals/types';
+import { ObstudioComponentProps, NonNativeButtonProps } from '../../internals/types';
 import { useMenuRootContext } from '../root/MenuRootContext';
-import { useBaseUiId } from '../../internals/useBaseUiId';
+import { useObstudioId } from '../../internals/useObstudioId';
 import { triggerOpenStateMapping } from '../../utils/popupStateMapping';
 import { useCompositeListItem } from '../../internals/composite/list/useCompositeListItem';
 import { useMenuItem } from '../item/useMenuItem';
@@ -26,7 +26,7 @@ const VOICE_OVER_EXPANDED_PROPS = { 'aria-expanded': undefined };
  * A menu item that opens a submenu.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Obstudio Menu](https://obstudio.co/react/components/menu)
  */
 export const MenuSubmenuTrigger = React.forwardRef(function MenuSubmenuTrigger(
   componentProps: MenuSubmenuTrigger.Props,
@@ -48,7 +48,7 @@ export const MenuSubmenuTrigger = React.forwardRef(function MenuSubmenuTrigger(
 
   const submenuRootContext = useMenuSubmenuRootContext();
   if (!submenuRootContext?.parentMenu) {
-    throw new Error('Base UI: <Menu.SubmenuTrigger> must be placed in <Menu.SubmenuRoot>.');
+    throw new Error('Obstudio: <Menu.SubmenuTrigger> must be placed in <Menu.SubmenuRoot>.');
   }
 
   const listItem = useCompositeListItem({ guess: true, label });
@@ -56,7 +56,7 @@ export const MenuSubmenuTrigger = React.forwardRef(function MenuSubmenuTrigger(
 
   const { store } = useMenuRootContext();
 
-  const thisTriggerId = useBaseUiId(idProp);
+  const thisTriggerId = useObstudioId(idProp);
   const open = store.useState('open');
   const floatingRootContext = store.useState('floatingRootContext');
   const floatingTreeRoot = store.useState('floatingTreeRoot');
@@ -230,8 +230,8 @@ export interface MenuSubmenuTriggerState {
 }
 
 export interface MenuSubmenuTriggerProps
-  extends NonNativeButtonProps, BaseUIComponentProps<'div', MenuSubmenuTriggerState> {
-  onClick?: BaseUIComponentProps<'div', MenuSubmenuTriggerState>['onClick'] | undefined;
+  extends NonNativeButtonProps, ObstudioComponentProps<'div', MenuSubmenuTriggerState> {
+  onClick?: ObstudioComponentProps<'div', MenuSubmenuTriggerState>['onClick'] | undefined;
   /**
    * Overrides the text label to use when the item is matched during keyboard text navigation.
    */

@@ -13,17 +13,17 @@ describe('ComboboxRootContext', () => {
     {
       useContext: useComboboxRootContext,
       message:
-        'Base UI: ComboboxRootContext is missing. Combobox parts must be placed within <Combobox.Root>.',
+        'Obstudio: ComboboxRootContext is missing. Combobox parts must be placed within <Combobox.Root>.',
     },
     {
       useContext: useComboboxFloatingContext,
       message:
-        'Base UI: ComboboxFloatingContext is missing. Combobox parts must be placed within <Combobox.Root>.',
+        'Obstudio: ComboboxFloatingContext is missing. Combobox parts must be placed within <Combobox.Root>.',
     },
     {
       useContext: useComboboxDerivedItemsContext,
       message:
-        'Base UI: ComboboxItemsContext is missing. Combobox parts must be placed within <Combobox.Root>.',
+        'Obstudio: ComboboxItemsContext is missing. Combobox parts must be placed within <Combobox.Root>.',
     },
   ];
 

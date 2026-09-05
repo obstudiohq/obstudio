@@ -1,24 +1,24 @@
 'use client';
 import * as React from 'react';
-import { NOOP } from '@base-ui/utils/empty';
+import { NOOP } from '@obstudio/utils/empty';
 import { useMenuRootContext } from '../root/MenuRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';
-import { useBaseUiId } from '../../internals/useBaseUiId';
-import type { BaseUIComponentProps, NonNativeButtonProps } from '../../internals/types';
+import { useObstudioId } from '../../internals/useObstudioId';
+import type { ObstudioComponentProps, NonNativeButtonProps } from '../../internals/types';
 import { useMenuRadioGroupContext } from '../radio-group/MenuRadioGroupContext';
 import { MenuRadioItemContext } from './MenuRadioItemContext';
 import { itemMapping } from '../utils/stateAttributesMapping';
 import { useCompositeListItem } from '../../internals/composite/list/useCompositeListItem';
 import { REGULAR_ITEM, useMenuItem } from '../item/useMenuItem';
 import { useMenuPositionerContext } from '../positioner/MenuPositionerContext';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 
 /**
  * A menu item that works like a radio button in a given group.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Obstudio Menu](https://obstudio.co/react/components/menu)
  */
 export const MenuRadioItem = React.forwardRef(function MenuRadioItem(
   componentProps: MenuRadioItem.Props,
@@ -39,7 +39,7 @@ export const MenuRadioItem = React.forwardRef(function MenuRadioItem(
 
   const listItem = useCompositeListItem({ guess: true, label });
   const menuPositionerContext = useMenuPositionerContext(true);
-  const id = useBaseUiId(idProp);
+  const id = useObstudioId(idProp);
 
   const { store } = useMenuRootContext();
   const highlighted = store.useState('isActive', listItem.index);
@@ -118,7 +118,7 @@ export interface MenuRadioItemState {
 }
 
 export interface MenuRadioItemProps
-  extends NonNativeButtonProps, BaseUIComponentProps<'div', MenuRadioItemState> {
+  extends NonNativeButtonProps, ObstudioComponentProps<'div', MenuRadioItemState> {
   /**
    * Value of the radio item.
    * This is the value that will be set in the MenuRadioGroup when the item is selected.
@@ -127,7 +127,7 @@ export interface MenuRadioItemProps
   /**
    * The click handler for the menu item.
    */
-  onClick?: BaseUIComponentProps<'div', MenuRadioItemState>['onClick'] | undefined;
+  onClick?: ObstudioComponentProps<'div', MenuRadioItemState>['onClick'] | undefined;
   /**
    * Whether the component should ignore user interaction.
    * @default false

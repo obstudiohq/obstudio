@@ -1,11 +1,11 @@
 'use client';
 import * as React from 'react';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { EMPTY_ARRAY } from '@base-ui/utils/empty';
-import { areArraysEqual } from '@base-ui/utils/areArraysEqual';
-import { useBaseUiId } from '../internals/useBaseUiId';
+import { useControlled } from '@obstudio/utils/useControlled';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { EMPTY_ARRAY } from '@obstudio/utils/empty';
+import { areArraysEqual } from '@obstudio/utils/areArraysEqual';
+import { useObstudioId } from '../internals/useObstudioId';
 import { useRenderElement } from '../internals/useRenderElement';
 import { CheckboxGroupContext } from './CheckboxGroupContext';
 import type { FieldRootState } from '../field/root/FieldRoot';
@@ -14,10 +14,10 @@ import { useFieldRootContext } from '../internals/field-root-context/FieldRootCo
 import { useRegisterFieldControl } from '../internals/field-register-control/useRegisterFieldControl';
 import { useLabelableContext } from '../internals/labelable-provider/LabelableContext';
 import { useLabelableId } from '../internals/labelable-provider/useLabelableId';
-import type { BaseUIComponentProps } from '../internals/types';
+import type { ObstudioComponentProps } from '../internals/types';
 import { fieldValidityMapping } from '../internals/field-constants/constants';
 import { useCheckboxGroupParent } from './useCheckboxGroupParent';
-import type { BaseUIChangeEventDetails } from '../internals/createBaseUIEventDetails';
+import type { ObstudioChangeEventDetails } from '../internals/createObstudioEventDetails';
 import { REASONS } from '../internals/reasons';
 import { useFormContext } from '../internals/form-context/FormContext';
 import { useValueChanged } from '../internals/useValueChanged';
@@ -25,7 +25,7 @@ import { useValueChanged } from '../internals/useValueChanged';
 /**
  * Provides a shared state to a series of checkboxes.
  *
- * Documentation: [Base UI Checkbox Group](https://base-ui.com/react/components/checkbox-group)
+ * Documentation: [Obstudio Checkbox Group](https://obstudio.co/react/components/checkbox-group)
  */
 export const CheckboxGroup = React.forwardRef(function CheckboxGroup(
   componentProps: CheckboxGroup.Props,
@@ -88,7 +88,7 @@ export const CheckboxGroup = React.forwardRef(function CheckboxGroup(
   // must not point `htmlFor` at one arbitrary checkbox inside the group.
   useLabelableId({ id: null });
 
-  const id = useBaseUiId(idProp);
+  const id = useObstudioId(idProp);
   const getInputControl = validation.getInputControl;
 
   const controlRef = React.useMemo<React.RefObject<HTMLElement | null>>(
@@ -185,7 +185,7 @@ export interface CheckboxGroupState extends FieldRootState {
   disabled: boolean;
 }
 
-export interface CheckboxGroupProps extends BaseUIComponentProps<'div', CheckboxGroupState> {
+export interface CheckboxGroupProps extends ObstudioComponentProps<'div', CheckboxGroupState> {
   /**
    * Names of the checkboxes in the group that should be ticked.
    *
@@ -217,7 +217,7 @@ export interface CheckboxGroupProps extends BaseUIComponentProps<'div', Checkbox
 
 export type CheckboxGroupChangeEventReason = typeof REASONS.none;
 export type CheckboxGroupChangeEventDetails =
-  BaseUIChangeEventDetails<CheckboxGroup.ChangeEventReason>;
+  ObstudioChangeEventDetails<CheckboxGroup.ChangeEventReason>;
 
 export namespace CheckboxGroup {
   export type State = CheckboxGroupState;

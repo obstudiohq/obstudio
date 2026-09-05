@@ -1,13 +1,13 @@
 import { expect, describe, it } from 'vitest';
-import { ScrollArea } from '@base-ui/react/scroll-area';
-import { Select } from '@base-ui/react/select';
-import { CSPProvider } from '@base-ui/react/csp-provider';
+import { ScrollArea } from '@obstudio/react/scroll-area';
+import { Select } from '@obstudio/react/select';
+import { CSPProvider } from '@obstudio/react/csp-provider';
 import { createRenderer } from '#test-utils';
 
 function queryDisableScrollbarStyle() {
   const styles = Array.from(document.querySelectorAll('style'));
   return (
-    styles.find((element) => element.textContent?.includes('.base-ui-disable-scrollbar')) ?? null
+    styles.find((element) => element.textContent?.includes('.obstudio-disable-scrollbar')) ?? null
   );
 }
 

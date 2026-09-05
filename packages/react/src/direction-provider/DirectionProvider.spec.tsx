@@ -5,7 +5,7 @@ import {
   useDirection,
   type DirectionProviderProps,
   type TextDirection,
-} from '@base-ui/react/direction-provider';
+} from '@obstudio/react/direction-provider';
 
 const direction = null as unknown as ReturnType<typeof useDirection>;
 

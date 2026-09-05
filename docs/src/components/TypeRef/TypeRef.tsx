@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { Popover } from '@base-ui/react/popover';
+import { Popover } from '@obstudio/react/popover';
 import { useType } from '@mui/internal-docs-infra/useType';
 import type { TypeRefProps } from '@mui/internal-docs-infra/useType';
 import { Popup } from '../Popup';

@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useRefWithInit } from '@obstudio/utils/useRefWithInit';
 import { NOOP } from '../noop';
-import { useBaseUiId } from '../useBaseUiId';
+import { useObstudioId } from '../useObstudioId';
 import { useLabelableContext } from './LabelableContext';
 
 export function useLabelableId(params: UseLabelableIdParameters = {}) {
@@ -14,7 +14,7 @@ export function useLabelableId(params: UseLabelableIdParameters = {}) {
 
   // Deliberately not seeded with `id`: on React 17 the seed would stick around after the
   // `id` prop is removed, leaving the control on a stale id forever.
-  const defaultId = useBaseUiId();
+  const defaultId = useObstudioId();
 
   const controlSourceRef = useRefWithInit(() => Symbol());
   const hasRegisteredRef = React.useRef(false);

@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useSelectRootContext } from '../root/SelectRootContext';
 import { popupStateMapping } from '../../utils/popupStateMapping';
 import type { StateAttributesMapping } from '../../internals/getStateAttributesProps';
@@ -17,7 +17,7 @@ const stateAttributesMapping: StateAttributesMapping<SelectBackdropState> = {
  * An overlay displayed beneath the select popup.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ * Documentation: [Obstudio Select](https://obstudio.co/react/components/select)
  */
 export const SelectBackdrop = React.forwardRef(function SelectBackdrop(
   componentProps: SelectBackdrop.Props,
@@ -67,7 +67,7 @@ export interface SelectBackdropState {
   transitionStatus: TransitionStatus;
 }
 
-export interface SelectBackdropProps extends BaseUIComponentProps<'div', SelectBackdropState> {}
+export interface SelectBackdropProps extends ObstudioComponentProps<'div', SelectBackdropState> {}
 
 export namespace SelectBackdrop {
   export type State = SelectBackdropState;

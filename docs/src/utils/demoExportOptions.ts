@@ -16,7 +16,7 @@ body {
   font-family: system-ui;
   margin: 0;
 
-  /* iOS 26+ Safari: https://base-ui.com/react/overview/quick-start#ios-26-safari */
+  /* iOS 26+ Safari: https://obstudio.co/react/overview/quick-start#ios-26-safari */
   position: relative;
 }
 
@@ -706,12 +706,12 @@ const SOURCE_CODE_REPO = process.env.SOURCE_CODE_REPO;
 
 export function resolveDependencies(packageName: string): Record<string, string> {
   switch (packageName) {
-    case '@base-ui/react':
-    case '@base-ui/utils': {
+    case '@obstudio/react':
+    case '@obstudio/utils': {
       const version =
-        COMMIT_REF === undefined || SOURCE_CODE_REPO !== 'https://github.com/mui/base-ui'
+        COMMIT_REF === undefined || SOURCE_CODE_REPO !== 'https://github.com/obstudiohq/obstudio'
           ? 'latest' // #npm-tag-reference
-          : `https://pkg.pr.new/mui/base-ui/${packageName}@${COMMIT_REF}`;
+          : `https://pkg.pr.new/obstudiohq/obstudio/${packageName}@${COMMIT_REF}`;
       return { [packageName]: version };
     }
 
@@ -737,7 +737,7 @@ const craTsConfigOptions = {
 };
 
 export const exportOpts: ExportConfig = {
-  titleSuffix: ' - Base UI Example',
+  titleSuffix: ' - Obstudio Example',
   headTemplate: htmlHeadTemplate,
   transformVariant,
   versions,

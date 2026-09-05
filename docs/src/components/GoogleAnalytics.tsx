@@ -18,7 +18,7 @@ export function GoogleAnalytics({ children }: { children?: React.ReactNode }) {
       <GoogleTagManager id={GOOGLE_ANALYTICS_ID_V4} />
       <GoogleAnalyticsProvider
         id={GOOGLE_ANALYTICS_ID_V4}
-        productId="base-ui"
+        productId="obstudio"
         productCategoryId="core"
         currentRoute={currentRoute}
         codeLanguage="ts"

@@ -1,5 +1,5 @@
 import { expectType } from '#test-utils';
-import { Popover } from '@base-ui/react/popover';
+import { Popover } from '@obstudio/react/popover';
 
 const numberPayloadHandle = Popover.createHandle<number>();
 

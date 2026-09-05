@@ -1,6 +1,6 @@
 import * as React from 'react';
 import clsx from 'clsx';
-import { CheckboxGroup as BaseCheckboxGroup } from '@base-ui/react/checkbox-group';
+import { CheckboxGroup as BaseCheckboxGroup } from '@obstudio/react/checkbox-group';
 
 export function CheckboxGroup({ className, ...props }: BaseCheckboxGroup.Props) {
   return (

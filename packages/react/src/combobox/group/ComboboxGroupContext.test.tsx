@@ -15,7 +15,7 @@ describe('ComboboxGroupContext', () => {
 
     try {
       await expect(render(<Consumer />)).rejects.toThrow(
-        'Base UI: ComboboxGroupContext is missing. ComboboxGroup parts must be placed within <Combobox.Group>.',
+        'Obstudio: ComboboxGroupContext is missing. ComboboxGroup parts must be placed within <Combobox.Group>.',
       );
     } finally {
       errorSpy.mockRestore();

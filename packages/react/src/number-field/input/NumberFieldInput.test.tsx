@@ -1,9 +1,9 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
 import { act, screen, fireEvent } from '@mui/internal-test-utils';
-import { NumberField } from '@base-ui/react/number-field';
-import { Field } from '@base-ui/react/field';
-import { SafeReact } from '@base-ui/utils/safeReact';
+import { NumberField } from '@obstudio/react/number-field';
+import { Field } from '@obstudio/react/field';
+import { SafeReact } from '@obstudio/utils/safeReact';
 import { createRenderer, describeConformance } from '#test-utils';
 import { REASONS } from '../../internals/reasons';
 
@@ -37,7 +37,7 @@ describe('<NumberField.Input />', () => {
 
     try {
       await expect(render(<NumberField.Input />)).rejects.toThrow(
-        'Base UI: NumberFieldRootContext is missing. NumberField parts must be placed within <NumberField.Root>.',
+        'Obstudio: NumberFieldRootContext is missing. NumberField parts must be placed within <NumberField.Root>.',
       );
     } finally {
       errorSpy.mockRestore();
@@ -1414,7 +1414,7 @@ describe('<NumberField.Input />', () => {
       expect(pasteEvent.defaultPrevented).toBe(false);
       expect(warnSpy).toHaveBeenCalledTimes(1);
       expect(warnSpy.mock.calls[0]?.[0]).toContain(
-        'Base UI: <NumberField.Input> could not read clipboard text during paste handling.',
+        'Obstudio: <NumberField.Input> could not read clipboard text during paste handling.',
       );
     } finally {
       warnSpy.mockRestore();
@@ -1445,7 +1445,7 @@ describe('<NumberField.Input />', () => {
 
         expect(warnSpy).toHaveBeenCalledTimes(1);
         expect(warnSpy.mock.calls[0]?.[0]).toBe(
-          'Base UI: <NumberField.Input> could not read clipboard text during paste handling. ',
+          'Obstudio: <NumberField.Input> could not read clipboard text during paste handling. ',
         );
       } finally {
         ownerStackSpy.mockRestore();

@@ -30,18 +30,18 @@ It behaves like `Object.assign` (rightmost wins) with a few special cases, so co
   mergeProps({ onClick: a }, { onClick: b });
   ```
 
-  - For React synthetic events, Base UI adds `event.preventBaseUIHandler()`. Calling it prevents Base UI's internal logic from running.
+  - For React synthetic events, Obstudio adds `event.preventObstudioHandler()`. Calling it prevents Obstudio's internal logic from running.
     This does not call `preventDefault()` or `stopPropagation()`.
   - For non-synthetic events (custom events with primitive/object values), this mechanism isn't available and all handlers always execute.
 
-### Preventing Base UI's default behavior
+### Preventing Obstudio's default behavior
 
-import { DemoPreventBaseUIHandler } from './demos/prevent-base-ui-handler';
+import { DemoPreventObstudioHandler } from './demos/prevent-obstudio-handler';
 
 When using the function form of the `render` prop, props are not merged automatically.
-You can use `mergeProps` to combine Base UI's props with your own, and call `preventBaseUIHandler()` to stop Base UI's internal logic from running:
+You can use `mergeProps` to combine Obstudio's props with your own, and call `preventObstudioHandler()` to stop Obstudio's internal logic from running:
 
-<DemoPreventBaseUIHandler />
+<DemoPreventObstudioHandler />
 
 ## Passing a function instead of an object
 

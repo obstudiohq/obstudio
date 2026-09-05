@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { FloatingPortal } from '../../floating-ui-react';
-import { type BaseUIComponentProps } from '../../internals/types';
+import { type ObstudioComponentProps } from '../../internals/types';
 import { useMenuRootContext } from '../root/MenuRootContext';
 import { MenuPortalContext } from './MenuPortalContext';
 
@@ -10,7 +10,7 @@ import { MenuPortalContext } from './MenuPortalContext';
  * By default, the portal element is appended to `<body>`.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Obstudio Menu](https://obstudio.co/react/components/menu)
  */
 export const MenuPortal = React.forwardRef(function MenuPortal(
   props: MenuPortal.Props,
@@ -41,7 +41,7 @@ export const MenuPortal = React.forwardRef(function MenuPortal(
 
 export interface MenuPortalState {}
 
-export interface MenuPortalProps extends BaseUIComponentProps<'div', MenuPortalState> {
+export interface MenuPortalProps extends ObstudioComponentProps<'div', MenuPortalState> {
   /**
    * Whether to keep the portal mounted in the DOM while the popup is hidden.
    * @default false

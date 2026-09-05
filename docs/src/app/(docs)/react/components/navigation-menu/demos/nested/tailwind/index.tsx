@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { NavigationMenu } from '@base-ui/react/navigation-menu';
+import { NavigationMenu } from '@obstudio/react/navigation-menu';
 
 export default function ExampleNavigationMenu() {
   return (
@@ -32,7 +32,7 @@ export default function ExampleNavigationMenu() {
                       <NavigationMenu.Trigger className={linkCardClassName}>
                         <span className="m-0 mb-1 text-sm leading-4 font-normal">Handbook</span>
                         <p className="m-0 text-sm text-neutral-500 dark:text-neutral-400">
-                          How to use Base UI effectively.
+                          How to use Obstudio effectively.
                         </p>
                         <NavigationMenu.Icon className="absolute top-1/2 right-2.5 flex -translate-y-1/2 items-center justify-center transition-transform duration-200 ease-[ease] data-popup-open:rotate-180">
                           <CaretRightIcon />
@@ -175,7 +175,7 @@ const overviewLinks = [
   {
     href: '/react/overview/releases',
     title: 'Releases',
-    description: 'See what’s new in the latest Base UI versions.',
+    description: 'See what’s new in the latest Obstudio versions.',
   },
 ] as const;
 
@@ -184,18 +184,18 @@ const handbookLinks = [
     href: '/react/handbook/styling',
     title: 'Styling',
     description:
-      'Base UI components can be styled with plain CSS, Tailwind CSS, CSS-in-JS, or CSS Modules.',
+      'Obstudio components can be styled with plain CSS, Tailwind CSS, CSS-in-JS, or CSS Modules.',
   },
   {
     href: '/react/handbook/animation',
     title: 'Animation',
     description:
-      'Base UI components can be animated with CSS transitions, CSS animations, or JavaScript libraries.',
+      'Obstudio components can be animated with CSS transitions, CSS animations, or JavaScript libraries.',
   },
   {
     href: '/react/handbook/composition',
     title: 'Composition',
     description:
-      'Base UI components can be replaced and composed with your own existing components.',
+      'Obstudio components can be replaced and composed with your own existing components.',
   },
 ] as const;

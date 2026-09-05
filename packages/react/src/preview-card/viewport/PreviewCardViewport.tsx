@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { usePreviewCardRootContext } from '../root/PreviewCardContext';
 import { usePreviewCardPositionerContext } from '../positioner/PreviewCardPositionerContext';
-import { BaseUIComponentProps } from '../../internals/types';
+import { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { popupViewportStateMapping, usePopupViewport } from '../../utils/usePopupViewport';
 
@@ -12,7 +12,7 @@ import { popupViewportStateMapping, usePopupViewport } from '../../utils/usePopu
  * changes based on the trigger, and switching between them is animated.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Preview Card](https://base-ui.com/react/components/preview-card)
+ * Documentation: [Obstudio Preview Card](https://obstudio.co/react/components/preview-card)
  */
 export const PreviewCardViewport = React.forwardRef(function PreviewCardViewport(
   componentProps: PreviewCardViewport.Props,
@@ -60,7 +60,7 @@ export interface PreviewCardViewportState {
   instant: 'dismiss' | 'focus' | undefined;
 }
 
-export interface PreviewCardViewportProps extends BaseUIComponentProps<
+export interface PreviewCardViewportProps extends ObstudioComponentProps<
   'div',
   PreviewCardViewportState
 > {

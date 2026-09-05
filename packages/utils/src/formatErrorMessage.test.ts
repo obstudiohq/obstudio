@@ -6,14 +6,14 @@ describe('formatErrorMessage', () => {
     it('formats error message with code only', () => {
       const result = formatErrorMessage(123);
       expect(result).toBe(
-        'Base UI error #123; visit https://base-ui.com/production-error?code=123 for the full message.',
+        'Obstudio error #123; visit https://obstudio.co/production-error?code=123 for the full message.',
       );
     });
 
     it('formats error message with code and args', () => {
       const result = formatErrorMessage(456, 'arg1', 'arg2');
       expect(result).toBe(
-        'Base UI error #456; visit https://base-ui.com/production-error?code=456&args%5B%5D=arg1&args%5B%5D=arg2 for the full message.',
+        'Obstudio error #456; visit https://obstudio.co/production-error?code=456&args%5B%5D=arg1&args%5B%5D=arg2 for the full message.',
       );
     });
   });

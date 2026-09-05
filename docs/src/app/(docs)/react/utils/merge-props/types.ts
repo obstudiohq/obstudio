@@ -1,4 +1,4 @@
-import * as MergeProps from '@base-ui/react/merge-props';
+import * as MergeProps from '@obstudio/react/merge-props';
 import { createMultipleTypes } from 'docs/src/utils/createTypes';
 
 const { types } = createMultipleTypes(import.meta.url, MergeProps);

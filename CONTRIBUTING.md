@@ -1,4 +1,4 @@
-# Contributing to Base UI
+# Contributing to Obstudio
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ Treat `package.json` as the source of truth—the versions listed above can fall
 
 ## Sending a pull request
 
-Base UI is community-driven, so pull requests are always welcome, but before working on a large change, it's best to open an issue first to discuss it with the maintainers.
+Obstudio is community-driven, so pull requests are always welcome, but before working on a large change, it's best to open an issue first to discuss it with the maintainers.
 
 When in doubt, keep your pull requests small.
 For the best chances of being accepted, don't bundle more than one feature or bug fix per PR.
@@ -31,9 +31,9 @@ It's often best to create two smaller PRs rather than one big one.
 2. Clone the fork to your local machine and add the upstream remote:
 
 ```bash
-git clone https://github.com/<your username>/base-ui.git
-cd base-ui
-git remote add upstream https://github.com/mui/base-ui.git
+git clone https://github.com/<your username>/obstudio.git
+cd obstudio
+git remote add upstream https://github.com/obstudiohq/obstudio.git
 ```
 
 <!-- #target-branch-reference -->
@@ -63,14 +63,14 @@ git checkout -b my-topic-branch
 git push -u origin HEAD
 ```
 
-7. Go to [the repository](https://github.com/mui/base-ui) and open a pull request.
+7. Go to [the repository](https://github.com/obstudiohq/obstudio) and open a pull request.
 
 The core team actively monitors for new pull requests.
 A maintainer reviews your PR and either merges it, requests changes to it, or closes it with an explanation.
 
 ### Trying changes on the documentation site
 
-The documentation site is built with Base UI and contains examples of all of the components.
+The documentation site is built with Obstudio and contains examples of all of the components.
 This is the best place to experiment with your changes—it's the local development environment used by the maintainers.
 
 To get started, run:
@@ -113,7 +113,7 @@ Make sure the following is true:
 - If a feature is being added:
   - If the result was already achievable with the core library, you've explained why this feature needs to be added to the core.
   - If this is a common use case, you've added an example to the documentation.
-- If adding new features or modifying existing ones, you've included tests to confirm the new behavior. You can read more about the test setup in the test [README](https://github.com/mui/base-ui/blob/HEAD/test/README.md).
+- If adding new features or modifying existing ones, you've included tests to confirm the new behavior. You can read more about the test setup in the test [README](https://github.com/obstudiohq/obstudio/blob/HEAD/test/README.md).
 - If props were added or prop types were changed, you've updated the TypeScript declarations.
 - The branch is not [behind its target branch](https://docs.github.com/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/keeping-your-pull-request-in-sync-with-the-base-branch).
 
@@ -190,7 +190,7 @@ Screenshots are uploaded and compared by Argos in a separate step.
 This typechecks the repository.
 The log of the failed build should list any issues.
 
-#### argos/base-ui
+#### argos/obstudio
 
 This evaluates the screenshots taken in `test/regressions/screenshots/chrome`, and fails if it detects differences.
 This doesn't necessarily mean that your PR gets rejected, as a failure might be intended.
@@ -225,7 +225,7 @@ When you submit a PR, these checks run again on CI, but hopefully your code is a
 2. Create a `types.ts` file next to the page. For a **single-part** component, use `createTypes`:
 
    ```ts
-   import { Toggle } from '@base-ui/react/toggle';
+   import { Toggle } from '@obstudio/react/toggle';
    import { createTypes } from 'docs/src/utils/createTypes';
 
    export const TypesToggle = createTypes(import.meta.url, Toggle);
@@ -234,7 +234,7 @@ When you submit a PR, these checks run again on CI, but hopefully your code is a
    For a **multi-part** component, use `createMultipleTypes`:
 
    ```ts
-   import { Checkbox } from '@base-ui/react/checkbox';
+   import { Checkbox } from '@obstudio/react/checkbox';
    import { createMultipleTypes } from 'docs/src/utils/createTypes';
 
    const { types, AdditionalTypes } = createMultipleTypes(import.meta.url, Checkbox);
@@ -279,7 +279,7 @@ Create a demo component file inside a `demos/` directory next to the page, for e
 
 ```tsx
 import * as React from 'react';
-import { Button } from '@base-ui/react/button';
+import { Button } from '@obstudio/react/button';
 
 export default function ButtonBasic() {
   return (

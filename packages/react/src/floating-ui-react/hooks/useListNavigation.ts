@@ -1,13 +1,13 @@
 'use client';
 import * as React from 'react';
-import { useAnimationFrame } from '@base-ui/utils/useAnimationFrame';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { ownerDocument } from '@base-ui/utils/owner';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useValueAsRef } from '@base-ui/utils/useValueAsRef';
-import { platform } from '@base-ui/utils/platform';
+import { useAnimationFrame } from '@obstudio/utils/useAnimationFrame';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { ownerDocument } from '@obstudio/utils/owner';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useValueAsRef } from '@obstudio/utils/useValueAsRef';
+import { platform } from '@obstudio/utils/platform';
 import { isHTMLElement } from '@floating-ui/utils/dom';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { useFloatingParentNodeId, useFloatingTree } from '../components/FloatingTree';
 import { FloatingTreeStore } from '../components/FloatingTreeStore';
@@ -34,7 +34,7 @@ export const ESCAPE = 'Escape';
 
 // WebKit fires zero-delta `mousemove`/`pointermove` events when the list scrolls
 // beneath a stationary pointer, moving the highlight during keyboard navigation.
-// https://github.com/mui/base-ui/issues/4002
+// https://github.com/obstudiohq/obstudio/issues/4002
 function isStationaryWebKitPointer(event: React.MouseEvent | React.PointerEvent) {
   return platform.engine.webkit && event.movementX === 0 && event.movementY === 0;
 }
@@ -435,7 +435,7 @@ export function useListNavigation(
             // Initially focus the first non-disabled item. `disabledIndices` is deliberately
             // omitted here so attribute-disabled items (`disabled`/`aria-disabled`) are skipped
             // on open even when the consumer passes an empty `disabledIndices` array. Passing it
-            // would regress that behavior (see mui/base-ui#2604).
+            // would regress that behavior (see obstudiohq/obstudio#2604).
             indexRef.current =
               keyRef.current == null ||
               isMainOrientationToEndKey(keyRef.current, orientation, rtl) ||

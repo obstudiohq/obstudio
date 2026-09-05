@@ -1,9 +1,9 @@
 'use client';
 import clsx from 'clsx';
-import { DirectionProvider, useDirection } from '@base-ui/react/direction-provider';
-import { Menu } from '@base-ui/react/menu';
-import { Popover } from '@base-ui/react/popover';
-import { PreviewCard } from '@base-ui/react/preview-card';
+import { DirectionProvider, useDirection } from '@obstudio/react/direction-provider';
+import { Menu } from '@obstudio/react/menu';
+import { Popover } from '@obstudio/react/popover';
+import { PreviewCard } from '@obstudio/react/preview-card';
 import c from './rtl.module.css';
 
 const dir = 'rtl';
@@ -136,13 +136,13 @@ export default function RtlNestedMenu() {
               <PreviewCard.Popup className={c.popup}>
                 <img
                   src="https://pbs.twimg.com/profile_images/1798056009291997184/B-prVmUP_400x400.jpg"
-                  alt="Base UI Logo"
+                  alt="Obstudio Logo"
                   width={80}
                   height={80}
                   style={{ borderRadius: '50%' }}
                 />
-                <h2 style={{ fontSize: 20, margin: 0 }}>Base UI</h2>
-                <p>Unstyled React components and hooks (@base-ui/react), by @MUI_hq.</p>
+                <h2 style={{ fontSize: 20, margin: 0 }}>Obstudio</h2>
+                <p>Unstyled React components and hooks (@obstudio/react), by @MUI_hq.</p>
                 <div style={{ display: 'flex', gap: 10 }}>
                   <span>
                     <strong>1</strong> Following

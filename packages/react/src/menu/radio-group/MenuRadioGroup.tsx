@@ -1,18 +1,18 @@
 'use client';
 import * as React from 'react';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { useControlled } from '@obstudio/utils/useControlled';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
 import { MenuRadioGroupContext } from './MenuRadioGroupContext';
 import { MenuGroupContext } from '../group/MenuGroupContext';
 import { useRenderElement } from '../../internals/useRenderElement';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import type { MenuRoot } from '../root/MenuRoot';
 
 /**
  * Groups related radio items.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Obstudio Menu](https://obstudio.co/react/components/menu)
  */
 export const MenuRadioGroup = React.memo(
   React.forwardRef(function MenuRadioGroup(
@@ -81,7 +81,7 @@ export const MenuRadioGroup = React.memo(
   }),
 );
 
-export interface MenuRadioGroupProps extends BaseUIComponentProps<'div', MenuRadioGroupState> {
+export interface MenuRadioGroupProps extends ObstudioComponentProps<'div', MenuRadioGroupState> {
   /**
    * The content of the component.
    */

@@ -5,13 +5,13 @@ import { useRegisteredLabelId } from '../../utils/useRegisteredLabelId';
 import { useProgressRootContext } from '../root/ProgressRootContext';
 import { progressStateAttributesMapping } from '../root/stateAttributesMapping';
 import type { ProgressRootState } from '../root/ProgressRoot';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 
 /**
  * An accessible label for the progress bar.
  * Renders a `<span>` element.
  *
- * Documentation: [Base UI Progress](https://base-ui.com/react/components/progress)
+ * Documentation: [Obstudio Progress](https://obstudio.co/react/components/progress)
  */
 export const ProgressLabel = React.forwardRef(function ProgressLabel(
   componentProps: ProgressLabel.Props,
@@ -41,7 +41,7 @@ export const ProgressLabel = React.forwardRef(function ProgressLabel(
 
 export interface ProgressLabelState extends ProgressRootState {}
 
-export interface ProgressLabelProps extends BaseUIComponentProps<'span', ProgressLabelState> {}
+export interface ProgressLabelProps extends ObstudioComponentProps<'span', ProgressLabelState> {}
 
 export namespace ProgressLabel {
   export type State = ProgressLabelState;

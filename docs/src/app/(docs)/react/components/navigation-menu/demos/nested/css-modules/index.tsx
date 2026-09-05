@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { NavigationMenu } from '@base-ui/react/navigation-menu';
+import { NavigationMenu } from '@obstudio/react/navigation-menu';
 import styles from './index.module.css';
 
 export default function ExampleNavigationMenu() {
@@ -29,7 +29,7 @@ export default function ExampleNavigationMenu() {
                     <NavigationMenu.Item>
                       <NavigationMenu.Trigger className={styles.LinkCard}>
                         <span className={styles.LinkTitle}>Handbook</span>
-                        <p className={styles.LinkDescription}>How to use Base UI effectively.</p>
+                        <p className={styles.LinkDescription}>How to use Obstudio effectively.</p>
                         <NavigationMenu.Icon className={styles.NestedIcon}>
                           <CaretRightIcon />
                         </NavigationMenu.Icon>
@@ -143,7 +143,7 @@ const overviewLinks = [
   {
     href: '/react/overview/releases',
     title: 'Releases',
-    description: 'See what’s new in the latest Base UI versions.',
+    description: 'See what’s new in the latest Obstudio versions.',
   },
 ] as const;
 
@@ -152,18 +152,18 @@ const handbookLinks = [
     href: '/react/handbook/styling',
     title: 'Styling',
     description:
-      'Base UI components can be styled with plain CSS, Tailwind CSS, CSS-in-JS, or CSS Modules.',
+      'Obstudio components can be styled with plain CSS, Tailwind CSS, CSS-in-JS, or CSS Modules.',
   },
   {
     href: '/react/handbook/animation',
     title: 'Animation',
     description:
-      'Base UI components can be animated with CSS transitions, CSS animations, or JavaScript libraries.',
+      'Obstudio components can be animated with CSS transitions, CSS animations, or JavaScript libraries.',
   },
   {
     href: '/react/handbook/composition',
     title: 'Composition',
     description:
-      'Base UI components can be replaced and composed with your own existing components.',
+      'Obstudio components can be replaced and composed with your own existing components.',
   },
 ] as const;

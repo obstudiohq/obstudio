@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { type BaseUIComponentProps } from '../internals/types';
+import { type ObstudioComponentProps } from '../internals/types';
 import { useFloatingPortalNode } from '../floating-ui-react/components/FloatingPortal';
 
 type PortalContainer =
@@ -39,7 +39,7 @@ export const FloatingPortalLite = React.forwardRef(function FloatingPortalLite(
 
 export interface FloatingPortalLiteState {}
 
-export interface FloatingPortalLiteProps<TState> extends BaseUIComponentProps<'div', TState> {
+export interface FloatingPortalLiteProps<TState> extends ObstudioComponentProps<'div', TState> {
   container?: PortalContainer | undefined;
 }
 

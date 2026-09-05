@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
-import { InteractionType } from '@base-ui/utils/useEnhancedClickHandler';
+import { InteractionType } from '@obstudio/utils/useEnhancedClickHandler';
 import { FloatingFocusManager } from '../../floating-ui-react';
 import { useDialogRootContext } from '../root/DialogRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';
-import { type BaseUIComponentProps } from '../../internals/types';
+import { type ObstudioComponentProps } from '../../internals/types';
 import { type TransitionStatus } from '../../internals/useTransitionStatus';
 import { useDialogPortalContext } from '../portal/DialogPortalContext';
 import { useOpenChangeComplete } from '../../internals/useOpenChangeComplete';
@@ -17,7 +17,7 @@ import { dialogStateAttributesMapping } from '../utils/stateAttributesMapping';
  * A container for the dialog contents.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)
+ * Documentation: [Obstudio Dialog](https://obstudio.co/react/components/dialog)
  */
 export const DialogPopup = React.forwardRef(function DialogPopup(
   componentProps: DialogPopup.Props,
@@ -110,7 +110,7 @@ export const DialogPopup = React.forwardRef(function DialogPopup(
   );
 });
 
-export interface DialogPopupProps extends BaseUIComponentProps<'div', DialogPopupState> {
+export interface DialogPopupProps extends ObstudioComponentProps<'div', DialogPopupState> {
   /**
    * Determines the element to focus when the dialog is opened.
    * By default, focus moves to the first tabbable element inside the popup, except when the dialog

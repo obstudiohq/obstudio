@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { BaseUIComponentProps } from '../../internals/types';
+import { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useSliderRootContext } from '../root/SliderRootContext';
 import type { SliderRootState } from '../root/SliderRoot';
@@ -10,7 +10,7 @@ import { sliderStateAttributesMapping } from '../root/stateAttributesMapping';
  * Contains the slider indicator and represents the entire range of the slider.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Slider](https://base-ui.com/react/components/slider)
+ * Documentation: [Obstudio Slider](https://obstudio.co/react/components/slider)
  */
 export const SliderTrack = React.forwardRef(function SliderTrack(
   componentProps: SliderTrack.Props,
@@ -39,7 +39,7 @@ export const SliderTrack = React.forwardRef(function SliderTrack(
 
 export interface SliderTrackState extends SliderRootState {}
 
-export interface SliderTrackProps extends BaseUIComponentProps<'div', SliderTrackState> {}
+export interface SliderTrackProps extends ObstudioComponentProps<'div', SliderTrackState> {}
 
 export namespace SliderTrack {
   export type State = SliderTrackState;

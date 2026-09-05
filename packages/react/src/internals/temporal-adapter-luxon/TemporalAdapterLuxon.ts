@@ -41,7 +41,7 @@ const FORMATS: TemporalAdapterFormats = {
 };
 
 // Temporarily disabled to avoid docs being built with `| DateTime`
-// declare module '@base-ui/react/internals/temporal' {
+// declare module '@obstudio/react/internals/temporal' {
 //   interface TemporalSupportedObjectLookup {
 //     luxon: DateTime;
 //   }

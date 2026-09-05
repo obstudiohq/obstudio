@@ -1,6 +1,6 @@
-import type { ReactStore } from '@base-ui/utils/store';
+import type { ReactStore } from '@obstudio/utils/store';
 import type { HTMLProps } from '../../internals/types';
-import type { BaseUIChangeEventDetails } from '../../types';
+import type { ObstudioChangeEventDetails } from '../../types';
 import { applyPopupOpenChange, usePopupInteractionProps } from './popupStoreUtils';
 import type { PopupStoreContext, PopupStoreState, popupStoreSelectors } from './store';
 
@@ -10,7 +10,7 @@ type TestState = PopupStoreState<unknown> & {
 
 type TestStore = ReactStore<TestState, PopupStoreContext<never>, typeof popupStoreSelectors>;
 
-type OpenChangeDetails = BaseUIChangeEventDetails<string> & { preventUnmountOnClose(): void };
+type OpenChangeDetails = ObstudioChangeEventDetails<string> & { preventUnmountOnClose(): void };
 
 type OpenChangeStore = {
   readonly context: Pick<PopupStoreContext<OpenChangeDetails>, 'onOpenChange'>;

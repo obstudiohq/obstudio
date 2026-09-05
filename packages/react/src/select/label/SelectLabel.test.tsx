@@ -1,5 +1,5 @@
 import { describe } from 'vitest';
-import { Select } from '@base-ui/react/select';
+import { Select } from '@obstudio/react/select';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Select.Label />', () => {

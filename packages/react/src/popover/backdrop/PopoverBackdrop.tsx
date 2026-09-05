@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { usePopoverRootContext } from '../root/PopoverRootContext';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { popupTransitionStateMapping } from '../../utils/popupStateMapping';
 import type { TransitionStatus } from '../../internals/useTransitionStatus';
 import { useRenderElement } from '../../internals/useRenderElement';
@@ -11,7 +11,7 @@ import { REASONS } from '../../internals/reasons';
  * An overlay displayed beneath the popover.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Popover](https://base-ui.com/react/components/popover)
+ * Documentation: [Obstudio Popover](https://obstudio.co/react/components/popover)
  */
 export const PopoverBackdrop = React.forwardRef(function PopoverBackdrop(
   props: PopoverBackdrop.Props,
@@ -63,7 +63,7 @@ export interface PopoverBackdropState {
   transitionStatus: TransitionStatus;
 }
 
-export interface PopoverBackdropProps extends BaseUIComponentProps<'div', PopoverBackdropState> {}
+export interface PopoverBackdropProps extends ObstudioComponentProps<'div', PopoverBackdropState> {}
 
 export namespace PopoverBackdrop {
   export type State = PopoverBackdropState;

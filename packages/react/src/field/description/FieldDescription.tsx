@@ -1,12 +1,12 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
 import { type FieldRootState } from '../root/FieldRoot';
 import { useFieldRootContext } from '../../internals/field-root-context/FieldRootContext';
 import { useLabelableContext } from '../../internals/labelable-provider/LabelableContext';
 import { fieldValidityMapping } from '../../internals/field-constants/constants';
-import type { BaseUIComponentProps } from '../../internals/types';
-import { useBaseUiId } from '../../internals/useBaseUiId';
+import type { ObstudioComponentProps } from '../../internals/types';
+import { useObstudioId } from '../../internals/useObstudioId';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useFieldItemContext } from '../item/FieldItemContext';
 
@@ -14,7 +14,7 @@ import { useFieldItemContext } from '../item/FieldItemContext';
  * A paragraph with additional information about the field.
  * Renders a `<p>` element.
  *
- * Documentation: [Base UI Field](https://base-ui.com/react/components/field)
+ * Documentation: [Obstudio Field](https://obstudio.co/react/components/field)
  */
 export const FieldDescription = React.forwardRef(function FieldDescription(
   componentProps: FieldDescription.Props,
@@ -22,7 +22,7 @@ export const FieldDescription = React.forwardRef(function FieldDescription(
 ) {
   const { render, id: idProp, className, style, ...elementProps } = componentProps;
 
-  const id = useBaseUiId(idProp);
+  const id = useObstudioId(idProp);
 
   const fieldRootContext = useFieldRootContext(false);
   const fieldItemContext = useFieldItemContext();
@@ -57,7 +57,7 @@ export const FieldDescription = React.forwardRef(function FieldDescription(
 
 export interface FieldDescriptionState extends FieldRootState {}
 
-export interface FieldDescriptionProps extends BaseUIComponentProps<'p', FieldDescriptionState> {}
+export interface FieldDescriptionProps extends ObstudioComponentProps<'p', FieldDescriptionState> {}
 
 export namespace FieldDescription {
   export type State = FieldDescriptionState;

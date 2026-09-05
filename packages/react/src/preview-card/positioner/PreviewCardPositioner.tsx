@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
 import { usePreviewCardRootContext } from '../root/PreviewCardContext';
 import { PreviewCardPositionerContext } from './PreviewCardPositionerContext';
 import { FloatingNode, useFloatingNodeId } from '../../floating-ui-react';
@@ -10,7 +10,7 @@ import {
   useAnchorPositioning,
   type UseAnchorPositioningSharedParameters,
 } from '../../internals/useAnchorPositioning';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { usePreviewCardPortalContext } from '../portal/PreviewCardPortalContext';
 import { POPUP_COLLISION_AVOIDANCE } from '../../internals/constants';
 import { usePositioner } from '../../utils/usePositioner';
@@ -20,7 +20,7 @@ import { createInlineMiddleware } from '../../utils/popups';
  * Positions the popup against the trigger.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Preview Card](https://base-ui.com/react/components/preview-card)
+ * Documentation: [Obstudio Preview Card](https://obstudio.co/react/components/preview-card)
  */
 export const PreviewCardPositioner = React.forwardRef(function PreviewCardPositioner(
   componentProps: PreviewCardPositioner.Props,
@@ -135,7 +135,7 @@ export interface PreviewCardPositionerState {
 export interface PreviewCardPositionerProps
   extends
     UseAnchorPositioningSharedParameters,
-    BaseUIComponentProps<'div', PreviewCardPositionerState> {}
+    ObstudioComponentProps<'div', PreviewCardPositionerState> {}
 
 export namespace PreviewCardPositioner {
   export type State = PreviewCardPositionerState;

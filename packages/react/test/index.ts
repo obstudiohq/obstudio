@@ -1,4 +1,4 @@
-export * from '@base-ui/utils/testUtils';
+export * from '@obstudio/utils/testUtils';
 export { advanceReactClock } from './advanceReactClock';
 export { createRenderer } from './createRenderer';
 export { describeConformance } from './describeConformance';

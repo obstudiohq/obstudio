@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { Tooltip } from '@base-ui/react/tooltip';
+import { Tooltip } from '@obstudio/react/tooltip';
 import { motion, AnimatePresence } from 'motion/react';
 import styles from './transitions.module.css';
 
@@ -30,7 +30,7 @@ export default function TooltipTransitionExperiment() {
         fontFamily: '"IBM Plex Sans", sans-serif',
       }}
     >
-      <h1>Base UI Tooltip Popup Animations</h1>
+      <h1>Obstudio Tooltip Popup Animations</h1>
       <hr />
 
       <h2>Conditional Rendering</h2>
@@ -100,8 +100,8 @@ export default function TooltipTransitionExperiment() {
       <h3>CSS Transition with `@starting-style`</h3>
       <p>
         No longer supported due to{' '}
-        <a href="https://github.com/mui/base-ui/pull/992">
-          https://github.com/mui/base-ui/pull/992
+        <a href="https://github.com/obstudiohq/obstudio/pull/992">
+          https://github.com/obstudiohq/obstudio/pull/992
         </a>
       </p>
       <Tooltip.Root>

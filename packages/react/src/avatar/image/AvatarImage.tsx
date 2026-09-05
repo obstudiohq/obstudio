@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { BaseUIComponentProps } from '../../internals/types';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { ObstudioComponentProps } from '../../internals/types';
 import type { StateAttributesMapping } from '../../internals/getStateAttributesProps';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useAvatarRootContext } from '../root/AvatarRootContext';
@@ -22,7 +22,7 @@ const stateAttributesMapping: StateAttributesMapping<AvatarImageState> = {
  * The image to be displayed in the avatar.
  * Renders an `<img>` element.
  *
- * Documentation: [Base UI Avatar](https://base-ui.com/react/components/avatar)
+ * Documentation: [Obstudio Avatar](https://obstudio.co/react/components/avatar)
  */
 export const AvatarImage = React.forwardRef(function AvatarImage(
   componentProps: AvatarImage.Props,
@@ -185,7 +185,7 @@ export interface AvatarImageState extends AvatarRootState {
   transitionStatus: TransitionStatus;
 }
 
-export interface AvatarImageProps extends BaseUIComponentProps<
+export interface AvatarImageProps extends ObstudioComponentProps<
   'img',
   AvatarImageState,
   React.ComponentPropsWithRef<'img'>

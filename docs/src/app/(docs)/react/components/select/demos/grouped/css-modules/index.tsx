@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Select } from '@base-ui/react/select';
-import { Field } from '@base-ui/react/field';
+import { Select } from '@obstudio/react/select';
+import { Field } from '@obstudio/react/field';
 import styles from './index.module.css';
 
 export default function ExampleSelectGrouped() {

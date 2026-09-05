@@ -1,15 +1,15 @@
 'use client';
 import * as React from 'react';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useOnFirstRender } from '@base-ui/utils/useOnFirstRender';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
-import { useValueAsRef } from '@base-ui/utils/useValueAsRef';
-import { visuallyHidden, visuallyHiddenInput } from '@base-ui/utils/visuallyHidden';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
-import { ReactStore } from '@base-ui/utils/store';
-import { EMPTY_ARRAY, EMPTY_OBJECT } from '@base-ui/utils/empty';
+import { useControlled } from '@obstudio/utils/useControlled';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useOnFirstRender } from '@obstudio/utils/useOnFirstRender';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useMergedRefs } from '@obstudio/utils/useMergedRefs';
+import { useValueAsRef } from '@obstudio/utils/useValueAsRef';
+import { visuallyHidden, visuallyHiddenInput } from '@obstudio/utils/visuallyHidden';
+import { useRefWithInit } from '@obstudio/utils/useRefWithInit';
+import { ReactStore } from '@obstudio/utils/store';
+import { EMPTY_ARRAY, EMPTY_OBJECT } from '@obstudio/utils/empty';
 import { isHTMLElement } from '@floating-ui/utils/dom';
 import {
   ElementProps,
@@ -24,9 +24,9 @@ import { contains, getTarget } from '../../floating-ui-react/utils';
 import {
   createChangeEventDetails,
   createGenericEventDetails,
-  type BaseUIChangeEventDetails,
-  type BaseUIGenericEventDetails,
-} from '../../internals/createBaseUIEventDetails';
+  type ObstudioChangeEventDetails,
+  type ObstudioGenericEventDetails,
+} from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import {
   ComboboxFloatingContext,
@@ -46,7 +46,7 @@ import { useCoreFilter } from './utils/useFilter';
 import { useTransitionStatus } from '../../internals/useTransitionStatus';
 import { useOpenInteractionType } from '../../utils/useOpenInteractionType';
 import { isScrollableY } from '../../utils/scrollable';
-import type { BaseUIEvent, HTMLProps } from '../../internals/types';
+import type { ObstudioEvent, HTMLProps } from '../../internals/types';
 import { useValueChanged } from '../../internals/useValueChanged';
 import { NOOP } from '../../internals/noop';
 import { FOCUSABLE_POPUP_PROPS } from '../../utils/popups';
@@ -165,10 +165,10 @@ export function AriaCombobox<Value = any, Mode extends SelectionMode = 'none', I
 
   if (collection && typeof collection.label !== 'function') {
     throw new Error(
-      'Base UI: the `items` prop received an object that is not a collection, ' +
+      'Obstudio: the `items` prop received an object that is not a collection, ' +
         'so its items cannot be read. Pass an array of items, an array of groups with items, ' +
         'or the result of `createItems()`. ' +
-        'See https://base-ui.com/react/components/combobox#createitems',
+        'See https://obstudio.co/react/components/combobox#createitems',
     );
   }
 
@@ -1393,7 +1393,7 @@ export function AriaCombobox<Value = any, Mode extends SelectionMode = 'none', I
       mergeProps(
         listNavigation.reference,
         {
-          onKeyDown(event: BaseUIEvent<React.KeyboardEvent>) {
+          onKeyDown(event: ObstudioEvent<React.KeyboardEvent>) {
             // In grid mode the navigation hook treats ArrowLeft/ArrowRight as horizontal
             // grid movement. When the input has focus and no item is highlighted the user
             // is still editing the query, so let the input keep its native caret behavior.
@@ -1402,7 +1402,7 @@ export function AriaCombobox<Value = any, Mode extends SelectionMode = 'none', I
               store.state.activeIndex == null &&
               (event.key === 'ArrowLeft' || event.key === 'ArrowRight')
             ) {
-              event.preventBaseUIHandler();
+              event.preventObstudioHandler();
             }
           },
         },
@@ -1940,7 +1940,7 @@ export namespace AriaCombobox {
 
   export type HighlightEventReason =
     typeof REASONS.keyboard | typeof REASONS.pointer | typeof REASONS.none;
-  export type HighlightEventDetails = BaseUIGenericEventDetails<
+  export type HighlightEventDetails = ObstudioGenericEventDetails<
     HighlightEventReason,
     { index: number }
   >;
@@ -1960,7 +1960,7 @@ export namespace AriaCombobox {
     | typeof REASONS.chipRemovePress
     | typeof REASONS.cancelOpen
     | typeof REASONS.none;
-  export type ChangeEventDetails = BaseUIChangeEventDetails<ChangeEventReason> & {
+  export type ChangeEventDetails = ObstudioChangeEventDetails<ChangeEventReason> & {
     /**
      * When `reason` is `input-clear` in multiple mode, indicates whether an item press caused the
      * clear. Automatic cleanup clears omit this property.

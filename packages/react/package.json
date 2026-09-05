@@ -1,30 +1,25 @@
 {
-  "name": "@base-ui/react",
+  "name": "@obstudio/react",
   "version": "1.8.0",
-  "author": "MUI Team",
-  "description": "Base UI is a library of headless ('unstyled') React components and low-level hooks. You gain complete control over your app's CSS and accessibility features.",
+  "author": "Obstudio",
+  "description": "Obstudio is a library of headless ('unstyled') React components and low-level hooks. You gain complete control over your app's CSS and accessibility features.",
   "license": "MIT",
   "keywords": [
     "react",
     "react-component",
-    "mui",
     "unstyled",
-    "base-ui",
+    "obstudio",
     "a11y"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mui/base-ui.git",
+    "url": "git+https://github.com/obstudiohq/obstudio.git",
     "directory": "packages/react"
   },
   "bugs": {
-    "url": "https://github.com/mui/base-ui/issues"
+    "url": "https://github.com/obstudiohq/obstudio/issues"
   },
-  "homepage": "https://base-ui.com",
-  "funding": {
-    "type": "opencollective",
-    "url": "https://opencollective.com/mui-org"
-  },
+  "homepage": "https://obstudio.co",
   "exports": {
     ".": "./src/index.ts",
     "./accordion": "./src/accordion/index.ts",
@@ -73,7 +68,7 @@
     "./use-render": "./src/use-render/index.ts",
     "./internals/composite": "./src/internals/composite/index.ts",
     "./internals/constants": "./src/internals/constants.ts",
-    "./internals/createBaseUIEventDetails": "./src/internals/createBaseUIEventDetails.ts",
+    "./internals/createObstudioEventDetails": "./src/internals/createObstudioEventDetails.ts",
     "./internals/csp-context": "./src/internals/csp-context/index.ts",
     "./internals/direction-context": "./src/internals/direction-context/index.ts",
     "./internals/field-constants": "./src/internals/field-constants/index.ts",
@@ -97,7 +92,7 @@
     "./internals/TimeoutManager": "./src/internals/TimeoutManager.ts",
     "./internals/types": "./src/internals/types.ts",
     "./internals/use-button": "./src/internals/use-button/index.ts",
-    "./internals/useBaseUiId": "./src/internals/useBaseUiId.ts",
+    "./internals/useObstudioId": "./src/internals/useObstudioId.ts",
     "./internals/useAnchorPositioning": "./src/internals/useAnchorPositioning.ts",
     "./internals/useAnimationsFinished": "./src/internals/useAnimationsFinished.ts",
     "./internals/useOpenChangeComplete": "./src/internals/useOpenChangeComplete.tsx",
@@ -108,7 +103,7 @@
   },
   "imports": {
     "#test-utils": "./test/index.ts",
-    "#formatErrorMessage": "@base-ui/utils/formatErrorMessage",
+    "#formatErrorMessage": "@obstudio/utils/formatErrorMessage",
     "#prehydration/tabs/indicator": {
       "browser": "./src/internals/prehydrationScript.stub.ts",
       "default": "./src/tabs/indicator/prehydrationScript.min.ts"
@@ -129,7 +124,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.29.7",
-    "@base-ui/utils": "workspace:*",
+    "@obstudio/utils": "workspace:*",
     "@floating-ui/react-dom": "^2.1.9",
     "@floating-ui/utils": "^0.2.12",
     "use-sync-external-store": "^1.6.0"

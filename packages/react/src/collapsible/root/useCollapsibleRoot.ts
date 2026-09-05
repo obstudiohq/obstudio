@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useBaseUiId } from '../../internals/useBaseUiId';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { useControlled } from '@obstudio/utils/useControlled';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useObstudioId } from '../../internals/useObstudioId';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { useTransitionStatus, TransitionStatus } from '../../internals/useTransitionStatus';
 import type { CollapsibleRoot } from './CollapsibleRoot';
@@ -22,7 +22,7 @@ export function useCollapsibleRoot(
 
   const { mounted, setMounted, transitionStatus } = useTransitionStatus(open, true, true);
 
-  const defaultPanelId = useBaseUiId();
+  const defaultPanelId = useObstudioId();
   // `undefined` uses the initial generated fallback; `null` means the panel unmounted.
   const [registeredPanelId, setPanelIdState] = React.useState<string | null | undefined>();
   const panelId = registeredPanelId === null ? undefined : (registeredPanelId ?? defaultPanelId);

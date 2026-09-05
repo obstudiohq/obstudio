@@ -3,7 +3,7 @@
  *
  * ```
  * // Example taken from the TemporalAdapterDateFns.ts file.
- * declare module '@base-ui/react/internals/temporal' {
+ * declare module '@obstudio/react/internals/temporal' {
  *   interface TemporalSupportedObjectLookup {
  *     'date-fns': Date;
  *   }

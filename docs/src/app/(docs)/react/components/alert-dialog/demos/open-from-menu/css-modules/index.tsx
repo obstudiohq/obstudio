@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { AlertDialog } from '@base-ui/react/alert-dialog';
-import { Menu } from '@base-ui/react/menu';
+import { AlertDialog } from '@obstudio/react/alert-dialog';
+import { Menu } from '@obstudio/react/menu';
 import styles from './index.module.css';
 
 export default function ExampleAlertDialog() {

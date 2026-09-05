@@ -1,5 +1,5 @@
 import { expectType } from '#test-utils';
-import { NumberField } from '@base-ui/react/number-field';
+import { NumberField } from '@obstudio/react/number-field';
 
 // `NumberField.Input` exposes the native `<input>` props in its `render` callback.
 <NumberField.Input

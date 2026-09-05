@@ -1,5 +1,5 @@
 import { expect, vi, describe, it } from 'vitest';
-import { Tooltip } from '@base-ui/react/tooltip';
+import { Tooltip } from '@obstudio/react/tooltip';
 import { screen } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance } from '#test-utils';
 
@@ -46,7 +46,7 @@ describe('<Tooltip.Popup />', () => {
           </Tooltip.Root>,
         ),
       ).rejects.toThrow(
-        'Base UI: TooltipPositionerContext is missing. TooltipPositioner parts must be placed within <Tooltip.Positioner>.',
+        'Obstudio: TooltipPositionerContext is missing. TooltipPositioner parts must be placed within <Tooltip.Positioner>.',
       );
     } finally {
       errorSpy.mockRestore();

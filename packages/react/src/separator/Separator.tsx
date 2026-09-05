@@ -1,13 +1,13 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps, Orientation } from '../internals/types';
+import type { ObstudioComponentProps, Orientation } from '../internals/types';
 import { useRenderElement } from '../internals/useRenderElement';
 
 /**
  * A separator element accessible to screen readers.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Separator](https://base-ui.com/react/components/separator)
+ * Documentation: [Obstudio Separator](https://obstudio.co/react/components/separator)
  */
 export const Separator = React.forwardRef(function SeparatorComponent(
   componentProps: Separator.Props,
@@ -26,7 +26,7 @@ export const Separator = React.forwardRef(function SeparatorComponent(
   return element;
 });
 
-export interface SeparatorProps extends BaseUIComponentProps<'div', SeparatorState> {
+export interface SeparatorProps extends ObstudioComponentProps<'div', SeparatorState> {
   /**
    * The orientation of the separator.
    * @default 'horizontal'

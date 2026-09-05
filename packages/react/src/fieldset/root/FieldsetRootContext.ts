@@ -15,7 +15,7 @@ export function useFieldsetRootContext(optional = false) {
   const context = React.useContext(FieldsetRootContext);
   if (!context && !optional) {
     throw new Error(
-      'Base UI: FieldsetRootContext is missing. Fieldset parts must be placed within <Fieldset.Root>.',
+      'Obstudio: FieldsetRootContext is missing. Fieldset parts must be placed within <Fieldset.Root>.',
     );
   }
   return context;

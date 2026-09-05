@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { BaseUIComponentProps } from '../../internals/types';
-import { useBaseUiId } from '../../internals/useBaseUiId';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { ObstudioComponentProps } from '../../internals/types';
+import { useObstudioId } from '../../internals/useObstudioId';
 import { useComboboxGroupContext } from '../group/ComboboxGroupContext';
 import { useRenderElement } from '../../internals/useRenderElement';
 
@@ -10,7 +10,7 @@ import { useRenderElement } from '../../internals/useRenderElement';
  * An accessible label that is automatically associated with its parent group.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)
+ * Documentation: [Obstudio Combobox](https://obstudio.co/react/components/combobox)
  */
 export const ComboboxGroupLabel = React.forwardRef(function ComboboxGroupLabel(
   componentProps: ComboboxGroupLabel.Props,
@@ -20,7 +20,7 @@ export const ComboboxGroupLabel = React.forwardRef(function ComboboxGroupLabel(
 
   const { setLabelId } = useComboboxGroupContext();
 
-  const id = useBaseUiId(idProp);
+  const id = useObstudioId(idProp);
 
   useIsoLayoutEffect(() => {
     setLabelId(id);
@@ -39,7 +39,7 @@ export const ComboboxGroupLabel = React.forwardRef(function ComboboxGroupLabel(
 
 export interface ComboboxGroupLabelState {}
 
-export interface ComboboxGroupLabelProps extends BaseUIComponentProps<
+export interface ComboboxGroupLabelProps extends ObstudioComponentProps<
   'div',
   ComboboxGroupLabelState
 > {}

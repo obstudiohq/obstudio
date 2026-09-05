@@ -1,5 +1,5 @@
 import { expectType } from '#test-utils';
-import { Toolbar } from '@base-ui/react/toolbar';
+import { Toolbar } from '@obstudio/react/toolbar';
 
 // `Toolbar.Link` exposes the native `<a>` props in its `render` callback.
 <Toolbar.Link

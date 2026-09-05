@@ -1,15 +1,15 @@
 'use client';
 import * as React from 'react';
-import { error } from '@base-ui/utils/error';
-import { SafeReact } from '@base-ui/utils/safeReact';
-import type { InteractionType } from '@base-ui/utils/useEnhancedClickHandler';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { EMPTY_OBJECT } from '@base-ui/utils/empty';
+import { error } from '@obstudio/utils/error';
+import { SafeReact } from '@obstudio/utils/safeReact';
+import type { InteractionType } from '@obstudio/utils/useEnhancedClickHandler';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { EMPTY_OBJECT } from '@obstudio/utils/empty';
 import { FloatingFocusManager } from '../../floating-ui-react';
 import { useDialogRootContext } from '../../dialog/root/DialogRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import type { TransitionStatus } from '../../internals/useTransitionStatus';
 import type { StateAttributesMapping } from '../../internals/getStateAttributesProps';
 import { popupTransitionStateMapping } from '../../utils/popupStateMapping';
@@ -110,7 +110,7 @@ const stateAttributesMapping: StateAttributesMapping<DrawerPopupState> = {
  * A container for the drawer contents.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+ * Documentation: [Obstudio Drawer](https://obstudio.co/react/components/drawer)
  */
 export const DrawerPopup = React.forwardRef(function DrawerPopup(
   componentProps: DrawerPopup.Props,
@@ -408,7 +408,7 @@ export const DrawerPopup = React.forwardRef(function DrawerPopup(
   );
 });
 
-export interface DrawerPopupProps extends BaseUIComponentProps<'div', DrawerPopupState> {
+export interface DrawerPopupProps extends ObstudioComponentProps<'div', DrawerPopupState> {
   /**
    * Determines the element to focus when the drawer is opened.
    *

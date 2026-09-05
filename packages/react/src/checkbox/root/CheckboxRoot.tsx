@@ -1,19 +1,19 @@
 'use client';
 import * as React from 'react';
-import { EMPTY_OBJECT } from '@base-ui/utils/empty';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
-import { visuallyHidden, visuallyHiddenInput } from '@base-ui/utils/visuallyHidden';
-import { ownerWindow } from '@base-ui/utils/owner';
-import { getDefaultFormSubmitter } from '@base-ui/utils/getDefaultFormSubmitter';
+import { EMPTY_OBJECT } from '@obstudio/utils/empty';
+import { useControlled } from '@obstudio/utils/useControlled';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useMergedRefs } from '@obstudio/utils/useMergedRefs';
+import { visuallyHidden, visuallyHiddenInput } from '@obstudio/utils/visuallyHidden';
+import { ownerWindow } from '@obstudio/utils/owner';
+import { getDefaultFormSubmitter } from '@obstudio/utils/getDefaultFormSubmitter';
 import { getCheckboxStateAttributesMapping } from '../utils/getCheckboxStateAttributesMapping';
 import { dispatchClickWithModifiers } from '../../utils/dispatchClickWithModifiers';
 import { useRenderElement } from '../../internals/useRenderElement';
-import { useBaseUiId } from '../../internals/useBaseUiId';
+import { useObstudioId } from '../../internals/useObstudioId';
 import type {
-  BaseUIComponentProps,
-  BaseUIEvent,
+  ObstudioComponentProps,
+  ObstudioEvent,
   NonNativeButtonProps,
 } from '../../internals/types';
 import { mergeProps } from '../../merge-props';
@@ -29,9 +29,9 @@ import { useLabelableId } from '../../internals/labelable-provider/useLabelableI
 import { useCheckboxGroupContext } from '../../checkbox-group/CheckboxGroupContext';
 import { CheckboxRootContext } from './CheckboxRootContext';
 import {
-  BaseUIChangeEventDetails,
+  ObstudioChangeEventDetails,
   createChangeEventDetails,
-} from '../../internals/createBaseUIEventDetails';
+} from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { useValueChanged } from '../../internals/useValueChanged';
 
@@ -41,7 +41,7 @@ export const PARENT_CHECKBOX = 'data-parent';
  * Represents the checkbox itself.
  * Renders a `<span>` element and a hidden `<input>` beside.
  *
- * Documentation: [Base UI Checkbox](https://base-ui.com/react/components/checkbox)
+ * Documentation: [Obstudio Checkbox](https://obstudio.co/react/components/checkbox)
  */
 export const CheckboxRoot = React.forwardRef(function CheckboxRoot(
   componentProps: CheckboxRoot.Props,
@@ -95,7 +95,7 @@ export const CheckboxRoot = React.forwardRef(function CheckboxRoot(
   const name = fieldName ?? nameProp;
   const value = valueProp ?? name;
 
-  const id = useBaseUiId();
+  const id = useObstudioId();
 
   // A `CheckboxGroup` is the field's control and takes its name from `aria-labelledby`, so the
   // checkboxes sharing its labelable scope must not claim the field's control id: they would all
@@ -319,14 +319,14 @@ export const CheckboxRoot = React.forwardRef(function CheckboxRoot(
             validation.commit(groupContext ? groupValue : inputEl.checked);
           }
         },
-        onKeyDown(event: BaseUIEvent<React.KeyboardEvent>) {
+        onKeyDown(event: ObstudioEvent<React.KeyboardEvent>) {
           if (event.key !== 'Enter') {
             return;
           }
 
           // Let consumer `preventDefault()` handlers opt out while defensively stopping
-          // any remaining Base UI Enter handling from treating the checkbox as a button.
-          event.preventBaseUIHandler();
+          // any remaining Obstudio Enter handling from treating the checkbox as a button.
+          event.preventObstudioHandler();
 
           if (event.defaultPrevented) {
             return;
@@ -433,7 +433,7 @@ export interface CheckboxRootState extends FieldRootState {
 export interface CheckboxRootProps
   extends
     NonNativeButtonProps,
-    Omit<BaseUIComponentProps<'span', CheckboxRootState>, 'onChange' | 'value'> {
+    Omit<ObstudioComponentProps<'span', CheckboxRootState>, 'onChange' | 'value'> {
   /**
    * The id of the input element.
    */
@@ -494,7 +494,7 @@ export interface CheckboxRootProps
   /**
    * Whether the checkbox controls a group of child checkboxes.
    *
-   * Must be used in a [Checkbox Group](https://base-ui.com/react/components/checkbox-group).
+   * Must be used in a [Checkbox Group](https://obstudio.co/react/components/checkbox-group).
    * @default false
    */
   parent?: boolean | undefined;
@@ -504,7 +504,7 @@ export interface CheckboxRootProps
    */
   uncheckedValue?: string | undefined;
   /**
-   * The checkbox's value. Identifies it within a [Checkbox Group](https://base-ui.com/react/components/checkbox-group), falling back to `name` when omitted.
+   * The checkbox's value. Identifies it within a [Checkbox Group](https://obstudio.co/react/components/checkbox-group), falling back to `name` when omitted.
    * When submitting a form, a checked box submits `value`; with no `value`, it submits the native "on".
    */
   value?: string | undefined;
@@ -512,7 +512,7 @@ export interface CheckboxRootProps
 
 export type CheckboxRootChangeEventReason = typeof REASONS.none;
 export type CheckboxRootChangeEventDetails =
-  BaseUIChangeEventDetails<CheckboxRoot.ChangeEventReason>;
+  ObstudioChangeEventDetails<CheckboxRoot.ChangeEventReason>;
 
 export namespace CheckboxRoot {
   export type State = CheckboxRootState;

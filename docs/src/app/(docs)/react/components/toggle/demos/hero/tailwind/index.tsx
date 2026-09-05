@@ -1,12 +1,12 @@
 'use client';
 import * as React from 'react';
-import { Toggle } from '@base-ui/react/toggle';
+import { Toggle } from '@obstudio/react/toggle';
 
 export default function ExampleToggle() {
   return (
     <Toggle
       aria-label="Favorite"
-      className="flex size-8 items-center justify-center border-none rounded-none bg-transparent text-neutral-950 dark:text-white select-none hover:not-data-disabled:bg-neutral-100 dark:hover:not-data-disabled:bg-neutral-800 active:not-data-disabled:bg-neutral-200 dark:active:not-data-disabled:bg-neutral-700 data-pressed:text-neutral-950 dark:data-pressed:text-white focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-neutral-950 dark:focus-visible:outline-white"
+      className="flex size-8 items-center justify-center border-none rounded-[8px] bg-transparent text-neutral-950 dark:text-white select-none hover:not-data-disabled:bg-neutral-100 dark:hover:not-data-disabled:bg-neutral-800 active:not-data-disabled:bg-neutral-200 dark:active:not-data-disabled:bg-neutral-700 data-pressed:text-neutral-950 dark:data-pressed:text-white focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-neutral-950 dark:focus-visible:outline-white"
       render={(props, state) => {
         if (state.pressed) {
           return (

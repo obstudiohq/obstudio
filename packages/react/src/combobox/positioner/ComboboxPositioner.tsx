@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { inertValue } from '@base-ui/utils/inertValue';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { inertValue } from '@obstudio/utils/inertValue';
 import { useComboboxFloatingContext, useComboboxRootContext } from '../root/ComboboxRootContext';
 import { ComboboxPositionerContext } from './ComboboxPositionerContext';
 import { useListEmpty } from '../utils/parts';
@@ -12,7 +12,7 @@ import {
   useAnchorPositioning,
   type UseAnchorPositioningSharedParameters,
 } from '../../internals/useAnchorPositioning';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useComboboxPortalContext } from '../portal/ComboboxPortalContext';
 import { DROPDOWN_COLLISION_AVOIDANCE } from '../../internals/constants';
 import { InternalBackdrop } from '../../utils/InternalBackdrop';
@@ -23,7 +23,7 @@ import { useAnchoredPopupScrollLock } from '../../utils/useAnchoredPopupScrollLo
  * Positions the popup against the trigger.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)
+ * Documentation: [Obstudio Combobox](https://obstudio.co/react/components/combobox)
  */
 export const ComboboxPositioner = React.forwardRef(function ComboboxPositioner(
   componentProps: ComboboxPositioner.Props,
@@ -159,7 +159,7 @@ export interface ComboboxPositionerState {
 export interface ComboboxPositionerProps
   extends
     UseAnchorPositioningSharedParameters,
-    BaseUIComponentProps<'div', ComboboxPositionerState> {}
+    ObstudioComponentProps<'div', ComboboxPositionerState> {}
 
 export namespace ComboboxPositioner {
   export type State = ComboboxPositionerState;

@@ -1,5 +1,5 @@
-import { Toggle } from '@base-ui/react/toggle';
-import { ToggleGroup } from '@base-ui/react/toggle-group';
+import { Toggle } from '@obstudio/react/toggle';
+import { ToggleGroup } from '@obstudio/react/toggle-group';
 import styles from './index.module.css';
 
 export default function ExampleToggleGroupMultiple() {

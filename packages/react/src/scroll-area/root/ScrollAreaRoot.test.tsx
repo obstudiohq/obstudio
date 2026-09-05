@@ -1,6 +1,6 @@
 import { expect, describe, it } from 'vitest';
 import * as React from 'react';
-import { ScrollArea } from '@base-ui/react/scroll-area';
+import { ScrollArea } from '@obstudio/react/scroll-area';
 import { act, fireEvent, flushMicrotasks, screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, isJSDOM } from '#test-utils';
 import { describeConformance } from '../../../test/describeConformance';

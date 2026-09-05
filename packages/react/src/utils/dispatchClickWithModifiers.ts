@@ -1,4 +1,4 @@
-import { ownerWindow } from '@base-ui/utils/owner';
+import { ownerWindow } from '@obstudio/utils/owner';
 
 interface ModifierState {
   shiftKey: boolean;

@@ -1,5 +1,5 @@
 import { expect, vi, describe, it } from 'vitest';
-import { PreviewCard } from '@base-ui/react/preview-card';
+import { PreviewCard } from '@obstudio/react/preview-card';
 import { screen } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance } from '#test-utils';
 
@@ -24,7 +24,7 @@ describe('<PreviewCard.Popup />', () => {
 
     try {
       await expect(render(<PreviewCard.Popup />)).rejects.toThrow(
-        'Base UI: PreviewCardRootContext is missing. PreviewCard parts must be placed within <PreviewCard.Root>.',
+        'Obstudio: PreviewCardRootContext is missing. PreviewCard parts must be placed within <PreviewCard.Root>.',
       );
     } finally {
       errorSpy.mockRestore();
@@ -44,7 +44,7 @@ describe('<PreviewCard.Popup />', () => {
           </PreviewCard.Root>,
         ),
       ).rejects.toThrow(
-        'Base UI: PreviewCardPositionerContext is missing. PreviewCardPositioner parts must be placed within <PreviewCard.Positioner>.',
+        'Obstudio: PreviewCardPositionerContext is missing. PreviewCardPositioner parts must be placed within <PreviewCard.Positioner>.',
       );
     } finally {
       errorSpy.mockRestore();

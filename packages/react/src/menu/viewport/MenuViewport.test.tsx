@@ -1,6 +1,6 @@
 import { expect, describe, it, beforeEach, afterEach } from 'vitest';
 import * as React from 'react';
-import { Menu } from '@base-ui/react/menu';
+import { Menu } from '@obstudio/react/menu';
 import { screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 
@@ -95,11 +95,11 @@ describe('<Menu.Viewport />', () => {
 
   describe.skipIf(isJSDOM)('morphing containers with multiple triggers and payloads', () => {
     beforeEach(() => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
     });
 
     afterEach(() => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
     });
 
     it('should create morphing containers during transitions', async () => {

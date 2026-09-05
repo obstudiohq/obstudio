@@ -1,5 +1,5 @@
 import { isElement } from '@floating-ui/utils/dom';
-import { Timeout } from '@base-ui/utils/useTimeout';
+import { Timeout } from '@obstudio/utils/useTimeout';
 import type { Rect, Side } from './types';
 import type { HandleClose, HandleCloseOptions } from './hooks/useHoverShared';
 import { contains, getTarget } from './utils/element';

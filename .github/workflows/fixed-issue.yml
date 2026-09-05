@@ -118,15 +118,15 @@ jobs:
 
             const typeText = isNewFeature ? 'feature' : 'fix';
 
-            const commentBody = `This ${typeText} will be available in the next npm release of Base UI.
+            const commentBody = `This ${typeText} will be available in the next npm release of Obstudio.
 
-            In the meantime, use the [canary build](https://base-ui.com/react/overview/releases#canary-releases) from [PR #${prNumber}](${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/pull/${prNumber}):
+            In the meantime, use the [canary build](https://obstudio.co/react/overview/releases#canary-releases) from [PR #${prNumber}](${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/pull/${prNumber}):
 
             \`\`\`sh
-            npm i https://pkg.pr.new/@base-ui/react@${shortCommit}
+            npm i https://pkg.pr.new/@obstudio/react@${shortCommit}
             \`\`\`
 
-            This installs a complete package for \`@base-ui/react\` with the ${typeText} included. It is hosted by pkg.pr.new rather than npm, and the URL is available for up to six months.`;
+            This installs a complete package for \`@obstudio/react\` with the ${typeText} included. It is hosted by pkg.pr.new rather than npm, and the URL is available for up to six months.`;
 
             await github.rest.issues.createComment({
               owner: context.repo.owner,

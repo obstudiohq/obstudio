@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { expect, vi, describe, it } from 'vitest';
 import { createRenderer, isJSDOM } from '#test-utils';
-import { ScrollArea } from '@base-ui/react/scroll-area';
+import { ScrollArea } from '@obstudio/react/scroll-area';
 import { fireEvent, screen, waitFor } from '@mui/internal-test-utils';
 import { describeConformance } from '../../../test/describeConformance';
 import { DirectionProvider } from '../../direction-provider/DirectionProvider';
@@ -33,7 +33,7 @@ describe('<ScrollArea.Thumb />', () => {
           </ScrollArea.Root>,
         ),
       ).rejects.toThrow(
-        'Base UI: ScrollAreaScrollbarContext is missing. ScrollAreaScrollbar parts must be placed within <ScrollArea.Scrollbar>.',
+        'Obstudio: ScrollAreaScrollbarContext is missing. ScrollAreaScrollbar parts must be placed within <ScrollArea.Scrollbar>.',
       );
     } finally {
       errorSpy.mockRestore();

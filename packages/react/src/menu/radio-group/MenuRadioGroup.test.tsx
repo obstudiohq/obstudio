@@ -1,6 +1,6 @@
 import { expect, describe, it } from 'vitest';
 import { screen } from '@mui/internal-test-utils';
-import { Menu } from '@base-ui/react/menu';
+import { Menu } from '@obstudio/react/menu';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Menu.RadioGroup />', () => {

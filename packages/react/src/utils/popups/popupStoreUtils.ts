@@ -1,13 +1,13 @@
 'use client';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { ReactStore } from '@base-ui/utils/store';
-import { EMPTY_OBJECT } from '@base-ui/utils/empty';
-import type { InteractionType } from '@base-ui/utils/useEnhancedClickHandler';
-import { useId } from '@base-ui/utils/useId';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
+import { ReactStore } from '@obstudio/utils/store';
+import { EMPTY_OBJECT } from '@obstudio/utils/empty';
+import type { InteractionType } from '@obstudio/utils/useEnhancedClickHandler';
+import { useId } from '@obstudio/utils/useId';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useRefWithInit } from '@obstudio/utils/useRefWithInit';
 import { FOCUSABLE_ATTRIBUTE } from '../../floating-ui-react/utils/constants';
 import { useFloatingParentNodeId } from '../../floating-ui-react/components/FloatingTree';
 import {
@@ -19,8 +19,8 @@ import { useOpenChangeComplete } from '../../internals/useOpenChangeComplete';
 import type { HTMLProps } from '../../internals/types';
 import {
   createChangeEventDetails,
-  type BaseUIChangeEventDetails,
-} from '../../internals/createBaseUIEventDetails';
+  type ObstudioChangeEventDetails,
+} from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import {
   PopupStoreState,
@@ -46,7 +46,7 @@ export function createDefaultInitialFocus(popupRef: React.RefObject<HTMLElement 
 
 type PopupStoreWithOpen<
   State extends PopupStoreState<unknown>,
-  SetOpenEventDetails extends BaseUIChangeEventDetails<string>,
+  SetOpenEventDetails extends ObstudioChangeEventDetails<string>,
 > = PopupTriggerDataStore<State> &
   Pick<SyncedFloatingRootContextStore<State>, 'useSyncedValue'> & {
     setOpen(open: boolean, eventDetails: SetOpenEventDetails): void;
@@ -72,7 +72,7 @@ export interface PopupRootStoreHandle<Store> {
  */
 export function usePopupRootStore<
   State extends PopupStoreState<unknown>,
-  SetOpenEventDetails extends BaseUIChangeEventDetails<string>,
+  SetOpenEventDetails extends ObstudioChangeEventDetails<string>,
   Store extends PopupStoreWithOpen<State, SetOpenEventDetails>,
 >(
   createStore: (floatingId: string | undefined, nested: boolean) => Store,
@@ -242,7 +242,7 @@ export function applyPopupOpenChange<
   State extends PopupStoreState<unknown> & {
     instantType?: 'delay' | 'dismiss' | 'focus' | undefined;
   },
-  EventDetails extends BaseUIChangeEventDetails<string>,
+  EventDetails extends ObstudioChangeEventDetails<string>,
   ExtraKey extends keyof State = never,
 >(
   store: {
@@ -398,7 +398,7 @@ export type PayloadChildRenderFunction<Payload> = (arg: {
  * trigger is claimed as the active trigger. When the active trigger id is still registered but its
  * element changed, the active element is refreshed. When the active trigger id is missing from the
  * registry but the same element is still registered under a different id (e.g. the rendered trigger
- * carries its own DOM `id` that differs from Base UI's internal trigger id), the active id is
+ * carries its own DOM `id` that differs from Obstudio's internal trigger id), the active id is
  * reassociated to the registered id instead of being treated as lost. When the active trigger
  * unregisters, the default path preserves existing ownership so non-closing popup families do not
  * silently claim a different trigger while staying open.
@@ -414,7 +414,7 @@ export type PayloadChildRenderFunction<Payload> = (arg: {
  * @param options Options for active trigger unmount behavior.
  */
 export function useImplicitActiveTrigger<State extends PopupStoreState<unknown>>(
-  store: PopupStoreWithOpen<State, BaseUIChangeEventDetails<typeof REASONS.none>>,
+  store: PopupStoreWithOpen<State, ObstudioChangeEventDetails<typeof REASONS.none>>,
   options: {
     closeOnActiveTriggerUnmount?: boolean | undefined;
   } = {},

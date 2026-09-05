@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { Combobox as BaseCombobox } from '@base-ui/react/combobox';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { Combobox as BaseCombobox } from '@obstudio/react/combobox';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
 import styles from './creatable-tags.module.css';
 
 const INITIAL_ITEMS = [

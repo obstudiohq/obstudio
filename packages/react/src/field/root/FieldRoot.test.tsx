@@ -1,15 +1,15 @@
 import { vi, expect, describe, it } from 'vitest';
 import * as React from 'react';
-import { Form } from '@base-ui/react/form';
-import { NumberField } from '@base-ui/react/number-field';
-import { Radio } from '@base-ui/react/radio';
-import { RadioGroup } from '@base-ui/react/radio-group';
-import { Select } from '@base-ui/react/select';
-import { Checkbox } from '@base-ui/react/checkbox';
-import { CheckboxGroup } from '@base-ui/react/checkbox-group';
-import { Switch } from '@base-ui/react/switch';
-import { Slider } from '@base-ui/react/slider';
-import { Field } from '@base-ui/react/field';
+import { Form } from '@obstudio/react/form';
+import { NumberField } from '@obstudio/react/number-field';
+import { Radio } from '@obstudio/react/radio';
+import { RadioGroup } from '@obstudio/react/radio-group';
+import { Select } from '@obstudio/react/select';
+import { Checkbox } from '@obstudio/react/checkbox';
+import { CheckboxGroup } from '@obstudio/react/checkbox-group';
+import { Switch } from '@obstudio/react/switch';
+import { Slider } from '@obstudio/react/slider';
+import { Field } from '@obstudio/react/field';
 import {
   act,
   fireEvent,
@@ -1033,7 +1033,7 @@ describe('<Field.Root />', () => {
           </Field.Root>
 
           <Field.Root name="input" validate={validateSpy}>
-            <Field.Control data-testid="input" type="url" defaultValue="https://base-ui.com" />
+            <Field.Control data-testid="input" type="url" defaultValue="https://obstudio.co" />
           </Field.Root>
 
           <Field.Root name="number-field">
@@ -1087,7 +1087,7 @@ describe('<Field.Root />', () => {
       expect(validateSpy.mock.calls[0][1]).toEqual({
         checkbox: true,
         'checkbox-group': ['apple', 'banana'],
-        input: 'https://base-ui.com',
+        input: 'https://obstudio.co',
         'number-field': 13,
         'radio-group': 'cats',
         select: 'sans',

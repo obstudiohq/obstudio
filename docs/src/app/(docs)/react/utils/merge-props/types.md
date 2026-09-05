@@ -8,14 +8,14 @@
 
 **Parameters:**
 
-| Parameter | Type                                | Default | Description |
-| :-------- | :---------------------------------- | :------ | :---------- |
-| event     | `BaseUIEvent<React.SyntheticEvent>` | -       | -           |
+| Parameter | Type                                  | Default | Description |
+| :-------- | :------------------------------------ | :------ | :---------- |
+| event     | `ObstudioEvent<React.SyntheticEvent>` | -       | -           |
 
 **Return Value:**
 
 ```tsx
-type ReturnValue = BaseUIEvent<React.SyntheticEvent>;
+type ReturnValue = ObstudioEvent<React.SyntheticEvent>;
 ```
 
 ### mergeClassNames
@@ -40,7 +40,7 @@ the conflicting ones from others. This doesn't apply to event handlers, `classNa
 
 Event handlers are merged and called in right-to-left order (rightmost handler executes first, leftmost last).
 For React synthetic events, the rightmost handler can prevent prior (left-positioned) handlers from executing
-by calling `event.preventBaseUIHandler()`. For non-synthetic events (custom events with primitive/object values),
+by calling `event.preventObstudioHandler()`. For non-synthetic events (custom events with primitive/object values),
 all handlers always execute without prevention capability.
 
 The `className` prop is merged by concatenating classes in right-to-left order (rightmost class appears first in the string).
@@ -51,8 +51,8 @@ The function will receive the merged props up to that point (going from left to 
 so in the case of `(obj1, obj2, fn, obj3)`, `fn` will receive the merged props of `obj1` and `obj2`.
 The function is responsible for chaining event handlers if needed (that is, we don't run the merge logic).
 
-Event handlers returned by the functions are not automatically prevented when `preventBaseUIHandler` is called.
-They must check `event.baseUIHandlerPrevented` themselves and bail out if it's true.
+Event handlers returned by the functions are not automatically prevented when `preventObstudioHandler` is called.
+They must check `event.obstudioHandlerPrevented` themselves and bail out if it's true.
 
 **Parameters:**
 
@@ -69,7 +69,7 @@ They must check `event.baseUIHandlerPrevented` themselves and bail out if it's t
 The merged props.
 
 ```tsx
-type ReturnValue = WithBaseUIEvent<React.ComponentPropsWithRef<ElementType>>;
+type ReturnValue = WithObstudioEvent<React.ComponentPropsWithRef<ElementType>>;
 ```
 
 ### mergePropsN
@@ -92,5 +92,5 @@ fewer prop sets for better performance.
 The merged props.
 
 ```tsx
-type ReturnValue = WithBaseUIEvent<React.ComponentPropsWithRef<ElementType>>;
+type ReturnValue = WithObstudioEvent<React.ComponentPropsWithRef<ElementType>>;
 ```

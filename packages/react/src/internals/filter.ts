@@ -1,4 +1,4 @@
-import { stringifyLocale } from '@base-ui/utils/stringifyLocale';
+import { stringifyLocale } from '@obstudio/utils/stringifyLocale';
 import { stringifyAsLabel } from './resolveValueLabel';
 
 const filterCache = new Map<string, Filter>();

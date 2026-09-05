@@ -8,7 +8,7 @@ import {
   type Align,
   type UseAnchorPositioningSharedParameters,
 } from '../../internals/useAnchorPositioning';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useTooltipPortalContext } from '../portal/TooltipPortalContext';
 import { POPUP_COLLISION_AVOIDANCE } from '../../internals/constants';
 import { usePositioner } from '../../utils/usePositioner';
@@ -17,7 +17,7 @@ import { usePositioner } from '../../utils/usePositioner';
  * Positions the tooltip against the trigger.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)
+ * Documentation: [Obstudio Tooltip](https://obstudio.co/react/components/tooltip)
  */
 export const TooltipPositioner = React.forwardRef(function TooltipPositioner(
   componentProps: TooltipPositioner.Props,
@@ -132,7 +132,7 @@ export interface TooltipPositionerState {
 
 export interface TooltipPositionerProps
   extends
-    BaseUIComponentProps<'div', TooltipPositionerState>,
+    ObstudioComponentProps<'div', TooltipPositionerState>,
     Omit<UseAnchorPositioningSharedParameters, 'side'> {
   /**
    * Which side of the anchor element to align the popup against.

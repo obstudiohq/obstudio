@@ -23,7 +23,7 @@ const withMdx = nextMdx({
       [
         '@mui/internal-docs-infra/pipeline/transformMarkdownMetadata',
         {
-          titleSuffix: ' · Base UI',
+          titleSuffix: ' · Obstudio',
           extractToIndex: {
             include: ['src/app/react'],
             exclude: [
@@ -77,7 +77,7 @@ const typesGenerationOptions = {
   ordering,
   descriptionReplacements: [
     { pattern: '\\n\\nDocumentation: .*$', replacement: '', flags: 'm' },
-    { pattern: 'Base UI', replacement: 'Base UI', flags: 'g' },
+    { pattern: 'Obstudio', replacement: 'Obstudio', flags: 'g' },
   ],
 };
 
@@ -154,8 +154,8 @@ const nextConfig = {
   env: {
     // docs-infra
     LIB_VERSION: rootPackage.version,
-    SOURCE_CODE_REPO: 'https://github.com/mui/base-ui',
-    BASE_URL: 'https://base-ui.com',
+    SOURCE_CODE_REPO: 'https://github.com/obstudiohq/obstudio',
+    BASE_URL: 'https://obstudio.co',
   },
   ...(process.env.NODE_ENV === 'production' && { distDir: 'export', output: 'export' }),
   devIndicators: false,

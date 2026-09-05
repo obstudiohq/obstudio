@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import * as React from 'react';
-import { Drawer } from '@base-ui/react/drawer';
+import { Drawer } from '@obstudio/react/drawer';
 import { act, fireEvent, flushMicrotasks, screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, firePointer, isJSDOM, waitSingleFrame } from '#test-utils';
 import { REASONS } from '../../internals/reasons';
@@ -9,9 +9,9 @@ import { useDrawerRootContext } from './DrawerRootContext';
 
 const useIdMockState = vi.hoisted(() => ({ returnUndefined: false }));
 
-vi.mock('@base-ui/utils/useId', async () => {
+vi.mock('@obstudio/utils/useId', async () => {
   const actual =
-    await vi.importActual<typeof import('@base-ui/utils/useId')>('@base-ui/utils/useId');
+    await vi.importActual<typeof import('@obstudio/utils/useId')>('@obstudio/utils/useId');
   return {
     ...actual,
     useId(...args: Parameters<typeof actual.useId>) {
@@ -21,9 +21,10 @@ vi.mock('@base-ui/utils/useId', async () => {
   };
 });
 
-vi.mock('@base-ui/utils/platform', async () => {
-  const actual =
-    await vi.importActual<typeof import('@base-ui/utils/platform')>('@base-ui/utils/platform');
+vi.mock('@obstudio/utils/platform', async () => {
+  const actual = await vi.importActual<typeof import('@obstudio/utils/platform')>(
+    '@obstudio/utils/platform',
+  );
   return {
     ...actual,
     platform: {
@@ -938,7 +939,7 @@ describe('<Drawer.Root />', () => {
 
     try {
       await expect(render(<MissingRootContextConsumer />)).rejects.toThrow(
-        'Base UI: DrawerRootContext is missing. Drawer parts must be placed within <Drawer.Root>.',
+        'Obstudio: DrawerRootContext is missing. Drawer parts must be placed within <Drawer.Root>.',
       );
     } finally {
       errorSpy.mockRestore();

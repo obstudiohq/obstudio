@@ -2,13 +2,13 @@ import * as React from 'react';
 import { expect } from 'vitest';
 import type {
   ConformantComponentProps,
-  BaseUiConformanceTestsOptions,
+  ObstudioConformanceTestsOptions,
 } from '../describeConformance';
 import { throwMissingPropError } from './utils';
 
 async function verifyRef(
   element: React.ReactElement<ConformantComponentProps>,
-  render: BaseUiConformanceTestsOptions['render'],
+  render: ObstudioConformanceTestsOptions['render'],
   onRef: (instance: unknown, element: HTMLElement | null) => void,
 ) {
   if (!render) {
@@ -26,7 +26,7 @@ async function verifyRef(
 
 export function testRefForwarding(
   element: React.ReactElement<ConformantComponentProps>,
-  getOptions: () => BaseUiConformanceTestsOptions,
+  getOptions: () => ObstudioConformanceTestsOptions,
 ) {
   describe('ref', () => {
     it(`attaches the ref`, async () => {

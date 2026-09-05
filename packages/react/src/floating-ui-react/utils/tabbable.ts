@@ -1,5 +1,5 @@
 import { getComputedStyle, getNodeName, isHTMLElement, isShadowRoot } from '@floating-ui/utils/dom';
-import { ownerDocument } from '@base-ui/utils/owner';
+import { ownerDocument } from '@obstudio/utils/owner';
 import { activeElement, contains } from './element';
 import { isElementVisible } from './composite';
 

@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
+import { useMergedRefs } from '@obstudio/utils/useMergedRefs';
 import { useCompositeRootContext } from '../root/CompositeRootContext';
 import {
   useCompositeListItem,

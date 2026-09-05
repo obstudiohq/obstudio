@@ -1,12 +1,12 @@
 import { expect, describe, it } from 'vitest';
 import * as React from 'react';
 import { createRenderer, fireEvent, screen } from '@mui/internal-test-utils';
-import { Checkbox } from '@base-ui/react/checkbox';
-import { CheckboxGroup } from '@base-ui/react/checkbox-group';
-import { Field } from '@base-ui/react/field';
-import { Fieldset } from '@base-ui/react/fieldset';
-import { RadioGroup } from '@base-ui/react/radio-group';
-import { Slider } from '@base-ui/react/slider';
+import { Checkbox } from '@obstudio/react/checkbox';
+import { CheckboxGroup } from '@obstudio/react/checkbox-group';
+import { Field } from '@obstudio/react/field';
+import { Fieldset } from '@obstudio/react/fieldset';
+import { RadioGroup } from '@obstudio/react/radio-group';
+import { Slider } from '@obstudio/react/slider';
 import { describeConformance } from '../../../test/describeConformance';
 
 describe('<Fieldset.Root />', () => {
@@ -83,7 +83,7 @@ describe('<Fieldset.Root />', () => {
     expect(screen.getByTestId('root')).not.toHaveAttribute('data-disabled');
   });
 
-  it('passes disabled to rendered Base UI roots', async () => {
+  it('passes disabled to rendered Obstudio roots', async () => {
     await render(
       <div>
         <Fieldset.Root disabled render={<RadioGroup data-testid="radio-group" />} />

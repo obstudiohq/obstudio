@@ -1,4 +1,4 @@
-import { Input } from '@base-ui/react/input';
+import { Input } from '@obstudio/react/input';
 
 export default function ExampleInput() {
   return (

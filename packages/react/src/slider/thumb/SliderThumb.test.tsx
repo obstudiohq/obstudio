@@ -1,10 +1,10 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
 import { act, fireEvent, screen, waitFor } from '@mui/internal-test-utils';
-import { Slider } from '@base-ui/react/slider';
-import { Field } from '@base-ui/react/field';
+import { Slider } from '@obstudio/react/slider';
+import { Field } from '@obstudio/react/field';
 import { createRenderer, describeConformance, isJSDOM, mergeRefs } from '#test-utils';
-import { platform } from '@base-ui/utils/platform';
+import { platform } from '@obstudio/utils/platform';
 import { createTouches, getHorizontalSliderRect } from '../utils/test-utils';
 
 const isWebKit = platform.engine.webkit;

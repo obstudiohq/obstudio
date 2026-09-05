@@ -4,12 +4,12 @@ import { flushMicrotasks, randomStringValue, screen } from '@mui/internal-test-u
 import { throwMissingPropError } from './utils';
 import type {
   ConformantComponentProps,
-  BaseUiConformanceTestsOptions,
+  ObstudioConformanceTestsOptions,
 } from '../describeConformance';
 
 export function testPropForwarding(
   element: React.ReactElement<ConformantComponentProps>,
-  getOptions: () => BaseUiConformanceTestsOptions,
+  getOptions: () => ObstudioConformanceTestsOptions,
 ) {
   const { render, testRenderPropWith: Element = 'div', button = false } = getOptions();
 

@@ -1,5 +1,5 @@
 import { expectType } from '#test-utils';
-import { createGenericEventDetails } from './createBaseUIEventDetails';
+import { createGenericEventDetails } from './createObstudioEventDetails';
 import { REASONS } from './reasons';
 
 const incrementDetails = createGenericEventDetails(REASONS.incrementPress);

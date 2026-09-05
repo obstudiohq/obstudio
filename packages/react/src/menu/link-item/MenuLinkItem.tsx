@@ -2,8 +2,8 @@
 import * as React from 'react';
 import { useMenuRootContext } from '../root/MenuRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';
-import { useBaseUiId } from '../../internals/useBaseUiId';
-import type { BaseUIComponentProps, HTMLProps } from '../../internals/types';
+import { useObstudioId } from '../../internals/useObstudioId';
+import type { ObstudioComponentProps, HTMLProps } from '../../internals/types';
 import { useCompositeListItem } from '../../internals/composite/list/useCompositeListItem';
 import { useMenuPositionerContext } from '../positioner/MenuPositionerContext';
 import { useMenuItemCommonProps } from '../item/useMenuItemCommonProps';
@@ -15,7 +15,7 @@ import { mergeProps } from '../../merge-props';
  * A link in the menu that can be used to navigate to a different page or section.
  * Renders an `<a>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Obstudio Menu](https://obstudio.co/react/components/menu)
  */
 export const MenuLinkItem = React.forwardRef(function MenuLinkItem(
   componentProps: MenuLinkItem.Props,
@@ -37,7 +37,7 @@ export const MenuLinkItem = React.forwardRef(function MenuLinkItem(
   const menuPositionerContext = useMenuPositionerContext(true);
   const nodeId = menuPositionerContext?.context.nodeId;
 
-  const id = useBaseUiId(idProp);
+  const id = useObstudioId(idProp);
 
   const { store } = useMenuRootContext();
   const highlighted = store.useState('isActive', listItem.index);
@@ -80,7 +80,7 @@ export interface MenuLinkItemState {
   highlighted: boolean;
 }
 
-export interface MenuLinkItemProps extends BaseUIComponentProps<
+export interface MenuLinkItemProps extends ObstudioComponentProps<
   'a',
   MenuLinkItemState,
   React.ComponentPropsWithRef<'a'>

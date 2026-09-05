@@ -1,11 +1,11 @@
 'use client';
 import * as React from 'react';
-import { addEventListener } from '@base-ui/utils/addEventListener';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { ownerWindow } from '@base-ui/utils/owner';
-import { platform } from '@base-ui/utils/platform';
+import { addEventListener } from '@obstudio/utils/addEventListener';
+import { useControlled } from '@obstudio/utils/useControlled';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { ownerWindow } from '@obstudio/utils/owner';
+import { platform } from '@obstudio/utils/platform';
 import {
   DrawerRootContext,
   type DrawerNestedSwipeProgressStore,
@@ -15,8 +15,8 @@ import {
 } from './DrawerRootContext';
 import {
   createChangeEventDetails,
-  type BaseUIChangeEventDetails,
-} from '../../internals/createBaseUIEventDetails';
+  type ObstudioChangeEventDetails,
+} from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { useDialogRootContext } from '../../dialog/root/DialogRootContext';
 import { useRenderDialogRoot } from '../../dialog/root/useRenderDialogRoot';
@@ -28,7 +28,7 @@ import type { PayloadChildRenderFunction } from '../../utils/popups';
  * Groups all parts of the drawer.
  * Doesn't render its own HTML element.
  *
- * Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+ * Documentation: [Obstudio Drawer](https://obstudio.co/react/components/drawer)
  */
 export function DrawerRoot<Payload = unknown>(props: DrawerRoot.Props<Payload>) {
   const {
@@ -366,14 +366,14 @@ export type DrawerRootChangeEventReason =
   | typeof REASONS.none;
 
 export type DrawerRootChangeEventDetails =
-  BaseUIChangeEventDetails<DrawerRoot.ChangeEventReason> & {
+  ObstudioChangeEventDetails<DrawerRoot.ChangeEventReason> & {
     preventUnmountOnClose(): void;
   };
 
 export type DrawerRootSnapPointChangeEventReason = DrawerRootChangeEventReason;
 
 export type DrawerRootSnapPointChangeEventDetails =
-  BaseUIChangeEventDetails<DrawerRootSnapPointChangeEventReason>;
+  ObstudioChangeEventDetails<DrawerRootSnapPointChangeEventReason>;
 
 export namespace DrawerRoot {
   export type State = DrawerRootState;

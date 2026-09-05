@@ -1,7 +1,7 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
 import { screen } from '@mui/internal-test-utils';
-import { Collapsible } from '@base-ui/react/collapsible';
+import { Collapsible } from '@obstudio/react/collapsible';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { REASONS } from '../../internals/reasons';
 
@@ -104,7 +104,7 @@ describe('<Collapsible.Root />', () => {
     });
   });
 
-  describe('BaseUIChangeEventDetails', () => {
+  describe('ObstudioChangeEventDetails', () => {
     it('calls onOpenChange with eventDetails', async () => {
       const handleOpenChange = vi.fn();
 

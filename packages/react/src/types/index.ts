@@ -1,9 +1,9 @@
 import type * as React from 'react';
 
 export type {
-  BaseUIChangeEventDetails,
-  BaseUIGenericEventDetails,
-} from '../internals/createBaseUIEventDetails';
+  ObstudioChangeEventDetails,
+  ObstudioGenericEventDetails,
+} from '../internals/createObstudioEventDetails';
 
 export type HTMLProps<T = any> = React.HTMLAttributes<T> & {
   ref?: React.Ref<T> | undefined;
@@ -20,7 +20,7 @@ export type ComponentRenderFn<Props, State> = (
   state: State,
 ) => React.ReactElement<unknown>;
 
-export type BaseUIEvent<E extends React.SyntheticEvent<Element, Event>> = E & {
-  preventBaseUIHandler: () => void;
-  readonly baseUIHandlerPrevented?: boolean | undefined;
+export type ObstudioEvent<E extends React.SyntheticEvent<Element, Event>> = E & {
+  preventObstudioHandler: () => void;
+  readonly obstudioHandlerPrevented?: boolean | undefined;
 };

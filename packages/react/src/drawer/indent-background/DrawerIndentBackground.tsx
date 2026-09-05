@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import type { StateAttributesMapping } from '../../internals/getStateAttributesProps';
-import { BaseUIComponentProps } from '../../internals/types';
+import { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useDrawerProviderContext } from '../provider/DrawerProviderContext';
 
@@ -18,7 +18,7 @@ const stateAttributesMapping: StateAttributesMapping<DrawerIndentBackgroundState
  * An element placed before `<Drawer.Indent>` to render a background layer that can be styled based on whether any drawer is open.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+ * Documentation: [Obstudio Drawer](https://obstudio.co/react/components/drawer)
  */
 export const DrawerIndentBackground = React.forwardRef(function DrawerIndentBackground(
   componentProps: DrawerIndentBackground.Props,
@@ -48,7 +48,7 @@ export interface DrawerIndentBackgroundState {
   active: boolean;
 }
 
-export interface DrawerIndentBackgroundProps extends BaseUIComponentProps<
+export interface DrawerIndentBackgroundProps extends ObstudioComponentProps<
   'div',
   DrawerIndentBackgroundState
 > {}

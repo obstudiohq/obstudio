@@ -17,19 +17,19 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    template: '%s · Base UI',
-    default: 'Base UI',
+    template: '%s · Obstudio',
+    default: 'Obstudio',
   },
   twitter: {
-    site: '@base_ui',
+    site: '@obstudio',
     card: 'summary_large_image',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
     title: {
-      template: '%s · Base UI',
-      default: 'Base UI',
+      template: '%s · Obstudio',
+      default: 'Obstudio',
     },
     ttl: 604800,
   },

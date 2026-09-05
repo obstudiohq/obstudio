@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
-import { visuallyHiddenInput } from '@base-ui/utils/visuallyHidden';
+import { useMergedRefs } from '@obstudio/utils/useMergedRefs';
+import { visuallyHiddenInput } from '@obstudio/utils/visuallyHidden';
 import { useButton } from '../../internals/use-button';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { useComboboxRootContext } from '../root/ComboboxRootContext';
 

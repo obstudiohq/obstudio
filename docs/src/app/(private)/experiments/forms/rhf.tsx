@@ -1,17 +1,17 @@
 'use client';
 import * as React from 'react';
 import { useForm, Controller, type Mode } from 'react-hook-form';
-import { Form } from '@base-ui/react/form';
-import { Fieldset } from '@base-ui/react/fieldset';
-import { Field } from '@base-ui/react/field';
-import { Checkbox } from '@base-ui/react/checkbox';
-import { Switch } from '@base-ui/react/switch';
-import { Slider } from '@base-ui/react/slider';
-import { NumberField } from '@base-ui/react/number-field';
-import { Select } from '@base-ui/react/select';
-import { RadioGroup } from '@base-ui/react/radio-group';
-import { Radio } from '@base-ui/react/radio';
-import { CheckboxGroup } from '@base-ui/react/checkbox-group';
+import { Form } from '@obstudio/react/form';
+import { Fieldset } from '@obstudio/react/fieldset';
+import { Field } from '@obstudio/react/field';
+import { Checkbox } from '@obstudio/react/checkbox';
+import { Switch } from '@obstudio/react/switch';
+import { Slider } from '@obstudio/react/slider';
+import { NumberField } from '@obstudio/react/number-field';
+import { Select } from '@obstudio/react/select';
+import { RadioGroup } from '@obstudio/react/radio-group';
+import { Radio } from '@obstudio/react/radio';
+import { CheckboxGroup } from '@obstudio/react/checkbox-group';
 
 import styles from './form.module.css';
 import { CheckIcon, ChevronUpDownIcon, HorizontalRuleIcon } from './_icons';

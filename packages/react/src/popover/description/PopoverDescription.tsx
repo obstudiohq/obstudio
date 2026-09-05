@@ -1,15 +1,15 @@
 'use client';
 import * as React from 'react';
 import { usePopoverRootContext } from '../root/PopoverRootContext';
-import type { BaseUIComponentProps } from '../../internals/types';
-import { useBaseUiId } from '../../internals/useBaseUiId';
+import type { ObstudioComponentProps } from '../../internals/types';
+import { useObstudioId } from '../../internals/useObstudioId';
 import { useRenderElement } from '../../internals/useRenderElement';
 
 /**
  * A paragraph with additional information about the popover.
  * Renders a `<p>` element.
  *
- * Documentation: [Base UI Popover](https://base-ui.com/react/components/popover)
+ * Documentation: [Obstudio Popover](https://obstudio.co/react/components/popover)
  */
 export const PopoverDescription = React.forwardRef(function PopoverDescription(
   componentProps: PopoverDescription.Props,
@@ -19,7 +19,7 @@ export const PopoverDescription = React.forwardRef(function PopoverDescription(
 
   const store = usePopoverRootContext();
 
-  const id = useBaseUiId(elementProps.id);
+  const id = useObstudioId(elementProps.id);
 
   store.useSyncedValueWithCleanup('descriptionElementId', id);
 
@@ -33,7 +33,7 @@ export const PopoverDescription = React.forwardRef(function PopoverDescription(
 
 export interface PopoverDescriptionState {}
 
-export interface PopoverDescriptionProps extends BaseUIComponentProps<
+export interface PopoverDescriptionProps extends ObstudioComponentProps<
   'p',
   PopoverDescriptionState
 > {}

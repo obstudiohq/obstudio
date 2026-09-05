@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Menu } from '@base-ui/react/menu';
+import { Menu } from '@obstudio/react/menu';
 import { benchmark, ElementTiming } from '@mui/internal-benchmark';
 import { createRows, MountList } from './shared';
 

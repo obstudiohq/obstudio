@@ -1,6 +1,6 @@
 import { expect, vi, describe, it } from 'vitest';
 import { screen } from '@mui/internal-test-utils';
-import { Accordion } from '@base-ui/react/accordion';
+import { Accordion } from '@obstudio/react/accordion';
 import { describeConformance, createRenderer, isJSDOM } from '#test-utils';
 
 describe('<Accordion.Item />', () => {
@@ -11,7 +11,7 @@ describe('<Accordion.Item />', () => {
 
     try {
       await expect(render(<Accordion.Item />)).rejects.toThrow(
-        'Base UI: AccordionRootContext is missing. Accordion parts must be placed within <Accordion.Root>.',
+        'Obstudio: AccordionRootContext is missing. Accordion parts must be placed within <Accordion.Root>.',
       );
     } finally {
       errorSpy.mockRestore();

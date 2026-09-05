@@ -1,4 +1,4 @@
-import { NumberField } from '@base-ui/react/number-field';
+import { NumberField } from '@obstudio/react/number-field';
 import { createMultipleTypes } from 'docs/src/utils/createTypes';
 
 const { types, AdditionalTypes } = createMultipleTypes(import.meta.url, NumberField);

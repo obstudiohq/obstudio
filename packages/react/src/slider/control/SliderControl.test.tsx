@@ -1,7 +1,7 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
 import { fireEvent, screen, waitFor } from '@mui/internal-test-utils';
-import { Slider } from '@base-ui/react/slider';
+import { Slider } from '@obstudio/react/slider';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { createTouches, getHorizontalSliderRect } from '../utils/test-utils';
 
@@ -32,7 +32,7 @@ describe('<Slider.Control />', () => {
 
     try {
       await expect(render(<Slider.Control />)).rejects.toThrow(
-        'Base UI: SliderRootContext is missing. Slider parts must be placed within <Slider.Root>.',
+        'Obstudio: SliderRootContext is missing. Slider parts must be placed within <Slider.Root>.',
       );
     } finally {
       errorSpy.mockRestore();

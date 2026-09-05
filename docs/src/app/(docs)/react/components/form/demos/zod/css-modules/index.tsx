@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
 import { z } from 'zod';
-import { Field } from '@base-ui/react/field';
-import { Form } from '@base-ui/react/form';
-import { Button } from '@base-ui/react/button';
+import { Field } from '@obstudio/react/field';
+import { Form } from '@obstudio/react/form';
+import { Button } from '@obstudio/react/button';
 import styles from './index.module.css';
 
 const schema = z.object({

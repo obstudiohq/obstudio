@@ -169,9 +169,9 @@ type FieldDescriptionState = {
 The form control to label and validate.
 Renders an `<input>` element.
 
-You can omit this part and use any Base UI input component instead. For example,
-[Input](https://base-ui.com/react/components/input), [Checkbox](https://base-ui.com/react/components/checkbox),
-or [Select](https://base-ui.com/react/components/select), among others, will work with Field out of the box.
+You can omit this part and use any Obstudio input component instead. For example,
+[Input](https://obstudio.co/react/components/input), [Checkbox](https://obstudio.co/react/components/checkbox),
+or [Select](https://obstudio.co/react/components/select), among others, will work with Field out of the box.
 
 **Control Props:**
 
@@ -232,9 +232,9 @@ type FieldControlChangeEventDetails = {
   reason: 'none';
   /** The native event associated with the custom event. */
   event: Event;
-  /** Cancels Base UI from handling the event. */
+  /** Cancels Obstudio from handling the event. */
   cancel: () => void;
-  /** Allows the event to propagate in cases where Base UI will stop the propagation. */
+  /** Allows the event to propagate in cases where Obstudio will stop the propagation. */
   allowPropagation: () => void;
   /** Indicates whether the event has been canceled. */
   isCanceled: boolean;

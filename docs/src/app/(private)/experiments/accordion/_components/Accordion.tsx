@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import clsx from 'clsx';
-import { Accordion } from '@base-ui/react/accordion';
+import { Accordion } from '@obstudio/react/accordion';
 import { Plus } from 'lucide-react';
 import styles from './Accordion.module.css';
 

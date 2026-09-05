@@ -3,8 +3,8 @@ import * as React from 'react';
 import { REGULAR_ITEM, useMenuItem } from './useMenuItem';
 import { useMenuRootContext } from '../root/MenuRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';
-import { useBaseUiId } from '../../internals/useBaseUiId';
-import type { BaseUIComponentProps, NonNativeButtonProps } from '../../internals/types';
+import { useObstudioId } from '../../internals/useObstudioId';
+import type { ObstudioComponentProps, NonNativeButtonProps } from '../../internals/types';
 import { useCompositeListItem } from '../../internals/composite/list/useCompositeListItem';
 import { useMenuPositionerContext } from '../positioner/MenuPositionerContext';
 
@@ -12,7 +12,7 @@ import { useMenuPositionerContext } from '../positioner/MenuPositionerContext';
  * An individual interactive item in the menu.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Obstudio Menu](https://obstudio.co/react/components/menu)
  */
 export const MenuItem = React.forwardRef(function MenuItem(
   componentProps: MenuItem.Props,
@@ -32,7 +32,7 @@ export const MenuItem = React.forwardRef(function MenuItem(
 
   const listItem = useCompositeListItem({ guess: true, label });
   const menuPositionerContext = useMenuPositionerContext(true);
-  const id = useBaseUiId(idProp);
+  const id = useObstudioId(idProp);
 
   const { store } = useMenuRootContext();
   const rootDisabled = store.useState('disabled');
@@ -75,11 +75,11 @@ export interface MenuItemState {
 }
 
 export interface MenuItemProps
-  extends NonNativeButtonProps, BaseUIComponentProps<'div', MenuItemState> {
+  extends NonNativeButtonProps, ObstudioComponentProps<'div', MenuItemState> {
   /**
    * The click handler for the menu item.
    */
-  onClick?: BaseUIComponentProps<'div', MenuItemState>['onClick'] | undefined;
+  onClick?: ObstudioComponentProps<'div', MenuItemState>['onClick'] | undefined;
   /**
    * Whether the component should ignore user interaction.
    * @default false

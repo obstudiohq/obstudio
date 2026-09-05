@@ -68,7 +68,7 @@ function useNavigationMenuRootContext<Value = any>(optional?: boolean) {
   );
   if (context === undefined && !optional) {
     throw new Error(
-      'Base UI: NavigationMenuRootContext is missing. Navigation Menu parts must be placed within <NavigationMenu.Root>.',
+      'Obstudio: NavigationMenuRootContext is missing. Navigation Menu parts must be placed within <NavigationMenu.Root>.',
     );
   }
   return context;

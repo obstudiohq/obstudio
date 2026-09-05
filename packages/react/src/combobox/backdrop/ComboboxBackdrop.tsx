@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useComboboxRootContext } from '../root/ComboboxRootContext';
 import { popupStateMapping } from '../../utils/popupStateMapping';
 import type { StateAttributesMapping } from '../../internals/getStateAttributesProps';
@@ -17,7 +17,7 @@ const stateAttributesMapping: StateAttributesMapping<ComboboxBackdropState> = {
  * An overlay displayed beneath the popup.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)
+ * Documentation: [Obstudio Combobox](https://obstudio.co/react/components/combobox)
  */
 export const ComboboxBackdrop = React.forwardRef(function ComboboxBackdrop(
   componentProps: ComboboxBackdrop.Props,
@@ -54,7 +54,10 @@ export const ComboboxBackdrop = React.forwardRef(function ComboboxBackdrop(
   });
 });
 
-export interface ComboboxBackdropProps extends BaseUIComponentProps<'div', ComboboxBackdropState> {}
+export interface ComboboxBackdropProps extends ObstudioComponentProps<
+  'div',
+  ComboboxBackdropState
+> {}
 
 export interface ComboboxBackdropState {
   /**

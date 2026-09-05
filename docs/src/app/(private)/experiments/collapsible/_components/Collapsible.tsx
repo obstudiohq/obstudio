@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import clsx from 'clsx';
-import { Collapsible } from '@base-ui/react/collapsible';
+import { Collapsible } from '@obstudio/react/collapsible';
 import { ChevronRight } from 'lucide-react';
 import styles from './Collapsible.module.css';
 

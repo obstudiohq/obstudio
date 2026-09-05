@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { inertValue } from '@base-ui/utils/inertValue';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { inertValue } from '@obstudio/utils/inertValue';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
 import { FloatingNode, useFloatingNodeId } from '../../floating-ui-react';
 import { usePopoverRootContext } from '../root/PopoverRootContext';
 import { PopoverPositionerContext } from './PopoverPositionerContext';
@@ -11,7 +11,7 @@ import {
   type Align,
   type UseAnchorPositioningSharedParameters,
 } from '../../internals/useAnchorPositioning';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { usePopoverPortalContext } from '../portal/PopoverPortalContext';
 import { InternalBackdrop } from '../../utils/InternalBackdrop';
 import { REASONS } from '../../internals/reasons';
@@ -24,7 +24,7 @@ import { useAnchoredPopupScrollLock } from '../../utils/useAnchoredPopupScrollLo
  * Positions the popover against the trigger.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Popover](https://base-ui.com/react/components/popover)
+ * Documentation: [Obstudio Popover](https://obstudio.co/react/components/popover)
  */
 export const PopoverPositioner = React.forwardRef(function PopoverPositioner(
   componentProps: PopoverPositioner.Props,
@@ -186,7 +186,7 @@ export interface PopoverPositionerState {
 export interface PopoverPositionerProps
   extends
     UseAnchorPositioningSharedParameters,
-    BaseUIComponentProps<'div', PopoverPositionerState> {}
+    ObstudioComponentProps<'div', PopoverPositionerState> {}
 
 export namespace PopoverPositioner {
   export type State = PopoverPositionerState;

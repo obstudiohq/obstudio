@@ -1,18 +1,18 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
 import { useSelectRootContext, useSelectRootPropsContext } from '../root/SelectRootContext';
 import { useCompositeListItem } from '../../internals/composite/list/useCompositeListItem';
 import type {
-  BaseUIComponentProps,
-  BaseUIEvent,
+  ObstudioComponentProps,
+  ObstudioEvent,
   HTMLProps,
   NonNativeButtonProps,
 } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { SelectItemContext } from './SelectItemContext';
 import { useButton } from '../../internals/use-button';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import {
   compareItemEquality,
@@ -25,7 +25,7 @@ import { isVirtualClick } from '../../floating-ui-react/utils/event';
  * An individual option in the select popup.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ * Documentation: [Obstudio Select](https://obstudio.co/react/components/select)
  */
 export const SelectItem = React.memo(
   React.forwardRef(function SelectItem(
@@ -153,7 +153,7 @@ export const SelectItem = React.memo(
       role: 'option',
       'aria-selected': selected,
       tabIndex: open && highlighted ? 0 : -1,
-      onKeyDown(event: BaseUIEvent<React.KeyboardEvent>) {
+      onKeyDown(event: ObstudioEvent<React.KeyboardEvent>) {
         store.set('activeIndex', index);
 
         if (event.key === ' ' && store.context.typingRef.current) {
@@ -267,7 +267,7 @@ export interface SelectItemState {
 }
 
 export interface SelectItemProps
-  extends NonNativeButtonProps, Omit<BaseUIComponentProps<'div', SelectItemState>, 'id'> {
+  extends NonNativeButtonProps, Omit<ObstudioComponentProps<'div', SelectItemState>, 'id'> {
   children?: React.ReactNode;
   /**
    * A unique value that identifies this select item.

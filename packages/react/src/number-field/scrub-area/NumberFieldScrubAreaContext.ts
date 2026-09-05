@@ -16,7 +16,7 @@ export function useNumberFieldScrubAreaContext() {
   const context = React.useContext(NumberFieldScrubAreaContext);
   if (context === undefined) {
     throw new Error(
-      'Base UI: NumberFieldScrubAreaContext is missing. NumberFieldScrubArea parts must be placed within <NumberField.ScrubArea>.',
+      'Obstudio: NumberFieldScrubAreaContext is missing. NumberFieldScrubArea parts must be placed within <NumberField.ScrubArea>.',
     );
   }
   return context;

@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
 import clsx from 'clsx';
-import { ContextMenu } from '@base-ui/react/context-menu';
-import { Menu } from '@base-ui/react/menu';
-import { Popover } from '@base-ui/react/popover';
+import { ContextMenu } from '@obstudio/react/context-menu';
+import { Menu } from '@obstudio/react/menu';
+import { Popover } from '@obstudio/react/popover';
 import styles from './context-menu.module.css';
 
 export default function ContextMenuExperiment() {

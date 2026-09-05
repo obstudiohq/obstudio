@@ -17,7 +17,7 @@ export function useMeterRootContext() {
   const context = React.useContext(MeterRootContext);
   if (context === undefined) {
     throw new Error(
-      'Base UI: MeterRootContext is missing. Meter parts must be placed within <Meter.Root>.',
+      'Obstudio: MeterRootContext is missing. Meter parts must be placed within <Meter.Root>.',
     );
   }
 

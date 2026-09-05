@@ -1,4 +1,4 @@
-import { Autocomplete } from '@base-ui/react/autocomplete';
+import { Autocomplete } from '@obstudio/react/autocomplete';
 import { createMultipleTypes } from 'docs/src/utils/createTypes';
 
 const { types, AdditionalTypes } = createMultipleTypes(import.meta.url, Autocomplete);

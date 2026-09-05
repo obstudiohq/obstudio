@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { inertValue } from '@base-ui/utils/inertValue';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useTimeout } from '@base-ui/utils/useTimeout';
+import { inertValue } from '@obstudio/utils/inertValue';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useTimeout } from '@obstudio/utils/useTimeout';
 import { FloatingNode } from '../../floating-ui-react';
 import { MenuPositionerContext } from './MenuPositionerContext';
 import { useMenuRootContext } from '../root/MenuRootContext';
@@ -13,13 +13,13 @@ import {
   type Side,
   type UseAnchorPositioningSharedParameters,
 } from '../../internals/useAnchorPositioning';
-import { BaseUIComponentProps } from '../../internals/types';
+import { ObstudioComponentProps } from '../../internals/types';
 import { CompositeList } from '../../internals/composite/list/CompositeList';
 import { InternalBackdrop } from '../../utils/InternalBackdrop';
 import { useMenuPortalContext } from '../portal/MenuPortalContext';
 import { DROPDOWN_COLLISION_AVOIDANCE, POPUP_COLLISION_AVOIDANCE } from '../../internals/constants';
 import { useContextMenuRootContext } from '../../context-menu/root/ContextMenuRootContext';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { MenuOpenEventDetails } from '../utils/types';
 import { useAnimationsFinished } from '../../internals/useAnimationsFinished';
@@ -30,7 +30,7 @@ import { useAnchoredPopupScrollLock } from '../../utils/useAnchoredPopupScrollLo
  * Positions the menu popup against the trigger.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Obstudio Menu](https://obstudio.co/react/components/menu)
  */
 export const MenuPositioner = React.forwardRef(function MenuPositioner(
   componentProps: MenuPositioner.Props,
@@ -352,7 +352,7 @@ export interface MenuPositionerState {
 export interface MenuPositionerProps
   extends
     Omit<UseAnchorPositioningSharedParameters, 'side' | 'align'>,
-    BaseUIComponentProps<'div', MenuPositionerState> {
+    ObstudioComponentProps<'div', MenuPositionerState> {
   /**
    * How to align the popup relative to the specified side.
    *

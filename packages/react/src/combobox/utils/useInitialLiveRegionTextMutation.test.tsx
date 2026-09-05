@@ -1,5 +1,5 @@
 import { expect, describe, it } from 'vitest';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
 import { createRenderer } from '#test-utils';
 import { screen } from '@mui/internal-test-utils';
 import {

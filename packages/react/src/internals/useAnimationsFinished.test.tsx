@@ -1,8 +1,8 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
 import { act, flushMicrotasks, screen, waitFor } from '@mui/internal-test-utils';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
 import { createRenderer } from '#test-utils';
 import { useAnimationsFinished } from './useAnimationsFinished';
 
@@ -54,8 +54,8 @@ describe('useAnimationsFinished', () => {
   const { render } = createRenderer();
 
   it('waits for a replacement animation after an animation is canceled', async () => {
-    const animationsDisabled = globalThis.BASE_UI_ANIMATIONS_DISABLED;
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+    const animationsDisabled = globalThis.OBSTUDIO_ANIMATIONS_DISABLED;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
     const initialAnimation = createAnimation();
     const replacementAnimation = createAnimation();
@@ -96,13 +96,13 @@ describe('useAnimationsFinished', () => {
 
       expect(onFinished).toHaveBeenCalledTimes(1);
     } finally {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = animationsDisabled;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = animationsDisabled;
     }
   });
 
   it('finishes when a canceled animation has no replacement', async () => {
-    const animationsDisabled = globalThis.BASE_UI_ANIMATIONS_DISABLED;
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+    const animationsDisabled = globalThis.OBSTUDIO_ANIMATIONS_DISABLED;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
     const initialAnimation = createAnimation();
     const onFinished = vi.fn();
@@ -133,13 +133,13 @@ describe('useAnimationsFinished', () => {
 
       expect(onFinished).toHaveBeenCalledTimes(1);
     } finally {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = animationsDisabled;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = animationsDisabled;
     }
   });
 
   it('batches opted-in callbacks that finish in the same microtask into a single commit', async () => {
-    const animationsDisabled = globalThis.BASE_UI_ANIMATIONS_DISABLED;
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+    const animationsDisabled = globalThis.OBSTUDIO_ANIMATIONS_DISABLED;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
     const first = createAnimation();
     const second = createAnimation();
@@ -199,13 +199,13 @@ describe('useAnimationsFinished', () => {
       expect(screen.queryByTestId('item-1')).toBeNull();
       expect(commitCount).toBe(commitCountBefore + 1);
     } finally {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = animationsDisabled;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = animationsDisabled;
     }
   });
 
   it('skips a callback whose signal aborts while the batch is flushing', async () => {
-    const animationsDisabled = globalThis.BASE_UI_ANIMATIONS_DISABLED;
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+    const animationsDisabled = globalThis.OBSTUDIO_ANIMATIONS_DISABLED;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
     const first = createAnimation();
     const second = createAnimation();
@@ -244,13 +244,13 @@ describe('useAnimationsFinished', () => {
       expect(onFirstFinished).toHaveBeenCalledTimes(1);
       expect(onSecondFinished).not.toHaveBeenCalled();
     } finally {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = animationsDisabled;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = animationsDisabled;
     }
   });
 
   it('commits each callback separately by default so later callbacks observe earlier updates', async () => {
-    const animationsDisabled = globalThis.BASE_UI_ANIMATIONS_DISABLED;
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+    const animationsDisabled = globalThis.OBSTUDIO_ANIMATIONS_DISABLED;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
     const first = createAnimation();
     const second = createAnimation();
@@ -329,7 +329,7 @@ describe('useAnimationsFinished', () => {
 
       expect(onSecondUnmount).not.toHaveBeenCalled();
     } finally {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = animationsDisabled;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = animationsDisabled;
     }
   });
 });

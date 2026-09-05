@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import type { ReactStore } from '@base-ui/utils/store';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import type { ReactStore } from '@obstudio/utils/store';
 import { isElement } from '@floating-ui/utils/dom';
-import { BaseUIChangeEventDetails } from '../../types';
+import { ObstudioChangeEventDetails } from '../../types';
 import { PopupStoreContext, PopupStoreSelectors, PopupStoreState } from '../../utils/popups';
 import { FloatingRootState, FloatingRootStore } from '../components/FloatingRootStore';
 
@@ -18,7 +18,7 @@ export type SyncedFloatingRootContextStore<State extends PopupStoreState<unknown
 
 export interface UseSyncedFloatingRootContextOptions<
   State extends PopupStoreState<unknown>,
-  OpenChangeEventDetails extends BaseUIChangeEventDetails<string>,
+  OpenChangeEventDetails extends ObstudioChangeEventDetails<string>,
 > {
   popupStore: SyncedFloatingRootContextStore<State>;
   /**
@@ -37,7 +37,7 @@ export interface UseSyncedFloatingRootContextOptions<
  */
 export function useSyncedFloatingRootContext<
   State extends PopupStoreState<unknown>,
-  OpenChangeEventDetails extends BaseUIChangeEventDetails<string>,
+  OpenChangeEventDetails extends ObstudioChangeEventDetails<string>,
 >(options: UseSyncedFloatingRootContextOptions<State, OpenChangeEventDetails>): FloatingRootStore {
   const {
     popupStore,
@@ -57,7 +57,7 @@ export function useSyncedFloatingRootContext<
 
   const handleOpenChange = onOpenChange as (
     open: boolean,
-    eventDetails: BaseUIChangeEventDetails<string>,
+    eventDetails: ObstudioChangeEventDetails<string>,
   ) => void;
 
   const internalStoreRef = React.useRef<FloatingRootStore | null>(null);

@@ -1,5 +1,5 @@
 'use client';
-import { Toast } from '@base-ui/react/toast';
+import { Toast } from '@obstudio/react/toast';
 import styles from './index.module.css';
 
 export default function PulseToast() {

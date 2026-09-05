@@ -1,6 +1,6 @@
 # Repository Guidelines
 
-This repository contains the source code and documentation for Base UI: a headless, unstyled React component library.
+This repository contains the source code and documentation for Obstudio: a headless, unstyled React component library.
 
 ## Project structure
 
@@ -12,15 +12,15 @@ This repository contains the source code and documentation for Base UI: a headl
 
 ## Agent skills
 
-- The shared `/base-ui-review` skill lives in `.agents/skills/base-ui-review/SKILL.md`. Update that file when the Base UI review workflow changes.
-- Claude Code discovers the same shared skill through `.claude/skills/base-ui-review/SKILL.md`, which delegates to the `.agents` copy.
-- The review skill is opt-in: only run it when the user explicitly asks for it by name (`/base-ui-review`). Do not trigger it from a generic review request or after finishing a change.
+- The shared `/obstudio-review` skill lives in `.agents/skills/obstudio-review/SKILL.md`. Update that file when the Obstudio review workflow changes.
+- Claude Code discovers the same shared skill through `.claude/skills/obstudio-review/SKILL.md`, which delegates to the `.agents` copy.
+- The review skill is opt-in: only run it when the user explicitly asks for it by name (`/obstudio-review`). Do not trigger it from a generic review request or after finishing a change.
 
 ## Code guidelines
 
-- Always use the `useTimeout` utility from `@base-ui/utils/useTimeout` instead of `window.setTimeout`, and `useAnimationFrame` from `@base-ui/utils/useAnimationFrame` instead of `requestAnimationFrame`. Search for other example usage in the codebase if unsure how to use them.
-- Use the `useStableCallback` utility from `@base-ui/utils/useStableCallback` instead of `React.useCallback` if the function is called within an effect or event handler. The utility cannot be used to memoize functions that are called directly in the body of a component (during render), so continue with `React.useCallback` in those scenarios.
-- Always use the `useIsoLayoutEffect` utility from `@base-ui/utils/useIsoLayoutEffect` instead of `React.useLayoutEffect`.
+- Always use the `useTimeout` utility from `@obstudio/utils/useTimeout` instead of `window.setTimeout`, and `useAnimationFrame` from `@obstudio/utils/useAnimationFrame` instead of `requestAnimationFrame`. Search for other example usage in the codebase if unsure how to use them.
+- Use the `useStableCallback` utility from `@obstudio/utils/useStableCallback` instead of `React.useCallback` if the function is called within an effect or event handler. The utility cannot be used to memoize functions that are called directly in the body of a component (during render), so continue with `React.useCallback` in those scenarios.
+- Always use the `useIsoLayoutEffect` utility from `@obstudio/utils/useIsoLayoutEffect` instead of `React.useLayoutEffect`.
 - Always use the shadow DOM-safe utilities for DOM traversal and event targeting: `contains`, `getTarget`, and `activeElement`. Always use the owner utilities `ownerDocument` and `ownerWindow` instead of global `document`/`window` lookups when the code is tied to a DOM node, including realm-sensitive checks such as `instanceof`.
 - Avoid duplicating logic where necessary. If two components can share logic (such as event handlers), define the logic/handlers in the parent and share it through a context to the child; use the existing context if it exists.
 
@@ -66,9 +66,9 @@ Every error message must:
 
 Format:
 
-- Prefix with `Base UI:`
+- Prefix with `Obstudio:`
 - Use string concatenation for readability
-- Include a documentation link when applicable (`https://base-ui.com/...`)
+- Include a documentation link when applicable (`https://obstudio.co/...`)
 
 ### Error Minifier
 

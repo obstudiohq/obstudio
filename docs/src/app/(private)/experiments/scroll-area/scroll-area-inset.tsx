@@ -1,5 +1,5 @@
-import { ScrollArea } from '@base-ui/react/scroll-area';
-import { DirectionProvider } from '@base-ui/react/direction-provider';
+import { ScrollArea } from '@obstudio/react/scroll-area';
+import { DirectionProvider } from '@obstudio/react/direction-provider';
 import styles from './scroll-area-inset.module.css';
 
 export default function ScrollAreaInset() {

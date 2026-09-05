@@ -13,7 +13,7 @@ async function main() {
       // Validate every page with `mui:recommended` (applied automatically).
       { config: true },
       {
-        // The Accordion hero demo renders `Accordion.Header` as `<h3>` (Base UI's
+        // The Accordion hero demo renders `Accordion.Header` as `<h3>` (Obstudio's
         // default, following the ARIA APG) right after the page's `<h1>`, before
         // the first `<h2>`. That's a genuine heading-level skip which html-validate
         // can only silence with an inline directive comment scoped to the demo

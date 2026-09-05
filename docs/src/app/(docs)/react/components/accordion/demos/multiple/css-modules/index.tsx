@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Accordion } from '@base-ui/react/accordion';
+import { Accordion } from '@obstudio/react/accordion';
 import styles from '../../_index.module.css';
 
 export default function ExampleAccordion() {
@@ -8,13 +8,13 @@ export default function ExampleAccordion() {
       <Accordion.Item className={styles.Item}>
         <Accordion.Header className={styles.Header}>
           <Accordion.Trigger className={styles.Trigger}>
-            What is Base UI?
+            What is Obstudio?
             <PlusIcon className={styles.Icon} />
           </Accordion.Trigger>
         </Accordion.Header>
         <Accordion.Panel className={styles.Panel}>
           <div className={styles.Content}>
-            Base UI is a library of high-quality unstyled React components for design systems and
+            Obstudio is a library of high-quality unstyled React components for design systems and
             web apps.
           </div>
         </Accordion.Panel>
@@ -43,7 +43,7 @@ export default function ExampleAccordion() {
           </Accordion.Trigger>
         </Accordion.Header>
         <Accordion.Panel className={styles.Panel}>
-          <div className={styles.Content}>Of course! Base UI is free and open source.</div>
+          <div className={styles.Content}>Of course! Obstudio is free and open source.</div>
         </Accordion.Panel>
       </Accordion.Item>
     </Accordion.Root>

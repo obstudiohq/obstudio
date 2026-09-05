@@ -1,6 +1,6 @@
 import { expect, describe, it } from 'vitest';
 import { screen } from '@mui/internal-test-utils';
-import { Meter } from '@base-ui/react/meter';
+import { Meter } from '@obstudio/react/meter';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 
 describe('<Meter.Indicator />', () => {

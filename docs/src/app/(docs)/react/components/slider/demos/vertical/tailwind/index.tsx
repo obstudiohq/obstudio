@@ -1,4 +1,4 @@
-import { Slider } from '@base-ui/react/slider';
+import { Slider } from '@obstudio/react/slider';
 
 export default function VerticalSlider() {
   return (

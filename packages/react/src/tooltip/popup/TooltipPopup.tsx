@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { useTooltipRootContext } from '../root/TooltipRootContext';
 import { useTooltipPositionerContext } from '../positioner/TooltipPositionerContext';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import type { Align, Side } from '../../internals/useAnchorPositioning';
 import { popupTransitionStateMapping } from '../../utils/popupStateMapping';
 import type { TransitionStatus } from '../../internals/useTransitionStatus';
@@ -16,7 +16,7 @@ import { FOCUSABLE_POPUP_PROPS } from '../../utils/popups';
  * A container for the tooltip contents.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)
+ * Documentation: [Obstudio Tooltip](https://obstudio.co/react/components/tooltip)
  */
 export const TooltipPopup = React.forwardRef(function TooltipPopup(
   componentProps: TooltipPopup.Props,
@@ -98,7 +98,7 @@ export interface TooltipPopupState {
   transitionStatus: TransitionStatus;
 }
 
-export interface TooltipPopupProps extends BaseUIComponentProps<'div', TooltipPopupState> {}
+export interface TooltipPopupProps extends ObstudioComponentProps<'div', TooltipPopupState> {}
 
 export namespace TooltipPopup {
   export type State = TooltipPopupState;

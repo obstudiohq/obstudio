@@ -1,4 +1,4 @@
-import { Toast } from '@base-ui/react/toast';
+import { Toast } from '@obstudio/react/toast';
 
 /**
  * @internal

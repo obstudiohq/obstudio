@@ -1,13 +1,13 @@
 'use client';
 import * as React from 'react';
-import { addEventListener } from '@base-ui/utils/addEventListener';
-import { mergeCleanups } from '@base-ui/utils/mergeCleanups';
-import { ownerDocument, ownerWindow } from '@base-ui/utils/owner';
-import { visuallyHidden } from '@base-ui/utils/visuallyHidden';
-import { useTimeout } from '@base-ui/utils/useTimeout';
+import { addEventListener } from '@obstudio/utils/addEventListener';
+import { mergeCleanups } from '@obstudio/utils/mergeCleanups';
+import { ownerDocument, ownerWindow } from '@obstudio/utils/owner';
+import { visuallyHidden } from '@obstudio/utils/visuallyHidden';
+import { useTimeout } from '@obstudio/utils/useTimeout';
 import { activeElement, contains, getTarget } from '../../floating-ui-react/utils';
 import { FocusGuard } from '../../utils/FocusGuard';
-import type { BaseUIComponentProps, HTMLProps } from '../../internals/types';
+import type { ObstudioComponentProps, HTMLProps } from '../../internals/types';
 import { useToastProviderContext } from '../provider/ToastProviderContext';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { isFocusVisible } from '../utils/focusVisible';
@@ -17,7 +17,7 @@ import * as ToastViewportCssVars from './ToastViewportCssVars';
  * A container viewport for toasts.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+ * Documentation: [Obstudio Toast](https://obstudio.co/react/components/toast)
  */
 export const ToastViewport = React.forwardRef(function ToastViewport(
   componentProps: ToastViewport.Props,
@@ -287,7 +287,7 @@ export interface ToastViewportState {
   expanded: boolean;
 }
 
-export interface ToastViewportProps extends BaseUIComponentProps<'div', ToastViewportState> {}
+export interface ToastViewportProps extends ObstudioComponentProps<'div', ToastViewportState> {}
 
 export namespace ToastViewport {
   export type State = ToastViewportState;

@@ -1,5 +1,5 @@
 import { expect, describe, it } from 'vitest';
-import { ScrollArea } from '@base-ui/react/scroll-area';
+import { ScrollArea } from '@obstudio/react/scroll-area';
 import { screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, isJSDOM } from '#test-utils';
 import { describeConformance } from '../../../test/describeConformance';

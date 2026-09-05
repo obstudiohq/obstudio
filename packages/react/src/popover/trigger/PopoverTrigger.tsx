@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { fastComponentRef } from '@base-ui/utils/fastHooks';
+import { fastComponentRef } from '@obstudio/utils/fastHooks';
 import { usePopoverRootContext } from '../root/PopoverRootContext';
 import { useButton } from '../../internals/use-button/useButton';
-import type { BaseUIComponentProps, NativeButtonProps } from '../../internals/types';
+import type { ObstudioComponentProps, NativeButtonProps } from '../../internals/types';
 import {
   triggerOpenStateMapping,
   pressableTriggerOpenStateMapping,
@@ -14,7 +14,7 @@ import { CLICK_TRIGGER_IDENTIFIER } from '../../internals/constants';
 import { safePolygon, useClick, useHoverReferenceInteraction } from '../../floating-ui-react';
 import { OPEN_DELAY } from '../utils/constants';
 import { PopoverHandle } from '../store/PopoverHandle';
-import { useBaseUiId } from '../../internals/useBaseUiId';
+import { useObstudioId } from '../../internals/useObstudioId';
 import { FocusGuard } from '../../utils/FocusGuard';
 import { REASONS } from '../../internals/reasons';
 import { usePopupHandleStore, useTriggerDataForwarding } from '../../utils/popups';
@@ -25,7 +25,7 @@ import { useOpenMethodTriggerProps } from '../../utils/useOpenInteractionType';
  * A button that opens the popover.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Popover](https://base-ui.com/react/components/popover)
+ * Documentation: [Obstudio Popover](https://obstudio.co/react/components/popover)
  */
 export const PopoverTrigger = fastComponentRef(function PopoverTrigger(
   componentProps: PopoverTrigger.Props,
@@ -51,11 +51,11 @@ export const PopoverTrigger = fastComponentRef(function PopoverTrigger(
   const store = handleStore ?? rootStore;
   if (!store) {
     throw new Error(
-      'Base UI: <Popover.Trigger> must be either used within a <Popover.Root> component or provided with a handle.',
+      'Obstudio: <Popover.Trigger> must be either used within a <Popover.Root> component or provided with a handle.',
     );
   }
 
-  const thisTriggerId = useBaseUiId(idProp);
+  const thisTriggerId = useObstudioId(idProp);
   const isTriggerActive = store.useState('isTriggerActive', thisTriggerId);
   const floatingContext = store.useState('floatingRootContext');
   const isOpenedByThisTrigger = store.useState('isOpenedByTrigger', thisTriggerId);
@@ -184,7 +184,7 @@ export interface PopoverTriggerState {
 }
 
 export type PopoverTriggerProps<Payload = unknown> = NativeButtonProps &
-  BaseUIComponentProps<'button', PopoverTriggerState> & {
+  ObstudioComponentProps<'button', PopoverTriggerState> & {
     /**
      * Whether the component renders a native `<button>` element when replacing it
      * via the `render` prop.

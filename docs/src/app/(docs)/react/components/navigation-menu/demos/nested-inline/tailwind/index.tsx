@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { NavigationMenu } from '@base-ui/react/navigation-menu';
-import { useMediaQuery } from '@base-ui/react/unstable-use-media-query';
+import { NavigationMenu } from '@obstudio/react/navigation-menu';
+import { useMediaQuery } from '@obstudio/react/unstable-use-media-query';
 import { audienceMenus, guideLinks, guidesPanel } from '../data';
 
 export default function ExampleNavigationMenu() {
@@ -104,7 +104,7 @@ export default function ExampleNavigationMenu() {
         </NavigationMenu.Item>
 
         <NavigationMenu.Item>
-          <Link className={triggerClassName} href="https://github.com/mui/base-ui">
+          <Link className={triggerClassName} href="https://github.com/obstudiohq/obstudio">
             GitHub
           </Link>
         </NavigationMenu.Item>

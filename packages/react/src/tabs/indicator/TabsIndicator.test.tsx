@@ -1,7 +1,7 @@
 import { afterEach, expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
-import { Tabs } from '@base-ui/react/tabs';
-import { CSPProvider } from '@base-ui/react/csp-provider';
+import { Tabs } from '@obstudio/react/tabs';
+import { CSPProvider } from '@obstudio/react/csp-provider';
 import { act, waitFor, screen } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { getCssDimensions } from '../../utils/getCssDimensions';

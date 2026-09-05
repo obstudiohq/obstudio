@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { Button } from '@base-ui/react/button';
-import { Tooltip } from '@base-ui/react/tooltip';
+import { Button } from '@obstudio/react/button';
+import { Tooltip } from '@obstudio/react/tooltip';
 import styles from './disabled.module.css';
 
 const demoTooltip = Tooltip.createHandle();

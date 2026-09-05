@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import type { BaseUIComponentProps, Orientation as BaseOrientation } from '../../internals/types';
+import { useControlled } from '@obstudio/utils/useControlled';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import type { ObstudioComponentProps, Orientation as BaseOrientation } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { CompositeList } from '../../internals/composite/list/CompositeList';
 import type { CompositeMetadata } from '../../internals/composite/list/CompositeList';
@@ -13,15 +13,15 @@ import type { TabsTab } from '../tab/TabsTab';
 import type { TabsPanel } from '../panel/TabsPanel';
 import {
   createChangeEventDetails,
-  type BaseUIChangeEventDetails,
-} from '../../internals/createBaseUIEventDetails';
+  type ObstudioChangeEventDetails,
+} from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 
 /**
  * Groups the tabs and the corresponding panels.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Tabs](https://base-ui.com/react/components/tabs)
+ * Documentation: [Obstudio Tabs](https://obstudio.co/react/components/tabs)
  */
 export const TabsRoot = React.forwardRef(function TabsRoot(
   componentProps: TabsRoot.Props,
@@ -80,7 +80,7 @@ export const TabsRoot = React.forwardRef(function TabsRoot(
   // Compute activation direction during render when value changes so children see
   // the correct direction on their very first render after the selection update.
   // The previous value snapshot is stored in state and synced after commit.
-  // https://github.com/mui/base-ui/issues/3873
+  // https://github.com/obstudiohq/obstudio/issues/3873
   if (previousValue !== value) {
     tabActivationDirection = computeActivationDirection(previousValue, value, orientation, tabMap);
 
@@ -420,7 +420,7 @@ export interface TabsRootState {
   tabActivationDirection: TabsTab.ActivationDirection;
 }
 
-export interface TabsRootProps extends BaseUIComponentProps<'div', TabsRootState> {
+export interface TabsRootProps extends ObstudioComponentProps<'div', TabsRootState> {
   /**
    * The value of the currently active `Tab`. Use when the component is controlled.
    * When the value is `null`, no Tab will be active.
@@ -461,7 +461,7 @@ export interface TabsRootProps extends BaseUIComponentProps<'div', TabsRootState
 
 export type TabsRootChangeEventReason =
   typeof REASONS.none | typeof REASONS.disabled | typeof REASONS.missing | typeof REASONS.initial;
-export type TabsRootChangeEventDetails = BaseUIChangeEventDetails<
+export type TabsRootChangeEventDetails = ObstudioChangeEventDetails<
   TabsRoot.ChangeEventReason,
   { activationDirection: TabsTab.ActivationDirection }
 >;

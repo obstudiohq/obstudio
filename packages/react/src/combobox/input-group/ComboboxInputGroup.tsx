@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
 import { useRenderElement } from '../../internals/useRenderElement';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useFieldRootContext } from '../../internals/field-root-context/FieldRootContext';
 import type { FieldRoot } from '../../field/root/FieldRoot';
 import { useComboboxRootContext } from '../root/ComboboxRootContext';
@@ -16,7 +16,7 @@ import { contains } from '../../floating-ui-react/utils/element';
  * A wrapper for the input and its associated controls.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)
+ * Documentation: [Obstudio Combobox](https://obstudio.co/react/components/combobox)
  */
 export const ComboboxInputGroup = React.forwardRef(function ComboboxInputGroup(
   componentProps: ComboboxInputGroup.Props,
@@ -97,7 +97,7 @@ export interface ComboboxInputGroupState extends FieldRoot.State {
   placeholder: boolean;
 }
 
-export interface ComboboxInputGroupProps extends BaseUIComponentProps<
+export interface ComboboxInputGroupProps extends ObstudioComponentProps<
   'div',
   ComboboxInputGroup.State
 > {}

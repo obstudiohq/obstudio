@@ -2,12 +2,12 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { isNode } from '@floating-ui/utils/dom';
-import { addEventListener } from '@base-ui/utils/addEventListener';
-import { mergeCleanups } from '@base-ui/utils/mergeCleanups';
-import { useId } from '@base-ui/utils/useId';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { EMPTY_OBJECT } from '@base-ui/utils/empty';
+import { addEventListener } from '@obstudio/utils/addEventListener';
+import { mergeCleanups } from '@obstudio/utils/mergeCleanups';
+import { useId } from '@obstudio/utils/useId';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { EMPTY_OBJECT } from '@obstudio/utils/empty';
 import { FocusGuard } from '../../utils/FocusGuard';
 import {
   enableFocusInside,
@@ -16,7 +16,7 @@ import {
   getNextTabbable,
   isOutsideEvent,
 } from '../utils/tabbable';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { createAttribute } from '../utils/createAttribute';
 import {
@@ -24,7 +24,7 @@ import {
   type UseRenderElementComponentProps,
 } from '../../internals/useRenderElement';
 import { ownerVisuallyHidden } from '../../internals/constants';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 
 type FocusManagerState = null | {
   modal: boolean;
@@ -301,7 +301,7 @@ export interface FloatingPortalState {}
 
 export namespace FloatingPortal {
   export type State = FloatingPortalState;
-  export interface Props<TState> extends BaseUIComponentProps<'div', TState> {
+  export interface Props<TState> extends ObstudioComponentProps<'div', TState> {
     /**
      * A parent element to render the portal element into.
      */

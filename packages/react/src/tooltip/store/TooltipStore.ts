@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { ReactStore } from '@base-ui/utils/store';
-import { NOOP } from '@base-ui/utils/empty';
+import { ReactStore } from '@obstudio/utils/store';
+import { NOOP } from '@obstudio/utils/empty';
 import { type TooltipRoot } from '../root/TooltipRoot';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { NullStore } from '../../utils/NullStore';
 import type { AdaptiveOriginMiddleware } from '../../utils/adaptiveOriginConstants';

@@ -1,7 +1,7 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
 import { fireEvent, screen, waitFor } from '@mui/internal-test-utils';
-import { Accordion } from '@base-ui/react/accordion';
+import { Accordion } from '@obstudio/react/accordion';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { REASONS } from '../../internals/reasons';
 
@@ -29,7 +29,7 @@ describe('<Accordion.Root />', () => {
       );
 
       expect(warnSpy).toHaveBeenCalledWith(
-        'Base UI: The `keepMounted={false}` prop on `Accordion.Root` is ignored when `hiddenUntilFound` is enabled, since panels must remain mounted while closed.',
+        'Obstudio: The `keepMounted={false}` prop on `Accordion.Root` is ignored when `hiddenUntilFound` is enabled, since panels must remain mounted while closed.',
       );
       expect(screen.getByText('Panel').getAttribute('hidden')).toBe('until-found');
     } finally {
@@ -470,12 +470,12 @@ describe('<Accordion.Root />', () => {
     );
   });
 
-  it('allows onMouseUp to call preventBaseUIHandler on the trigger', async () => {
+  it('allows onMouseUp to call preventObstudioHandler on the trigger', async () => {
     await render(
       <Accordion.Root>
         <Accordion.Item value={0}>
           <Accordion.Header>
-            <Accordion.Trigger onMouseUp={(event) => event.preventBaseUIHandler()}>
+            <Accordion.Trigger onMouseUp={(event) => event.preventObstudioHandler()}>
               Trigger 1
             </Accordion.Trigger>
           </Accordion.Header>
@@ -589,7 +589,7 @@ describe('<Accordion.Root />', () => {
     });
   });
 
-  describe('BaseUIChangeEventDetails', () => {
+  describe('ObstudioChangeEventDetails', () => {
     it('onOpenChange cancel() prevents opening while uncontrolled', async () => {
       const onValueChange = vi.fn();
 
@@ -901,7 +901,7 @@ describe('<Accordion.Root />', () => {
       expect(onValueChange.mock.calls.length).toBe(1);
       expect(onValueChange.mock.lastCall?.[0]).toEqual([0]);
       expect(onValueChange.mock.lastCall?.[1].reason).toBe(REASONS.triggerPress);
-      expect(onValueChange.mock.lastCall?.[1].event.type).not.toBe('base-ui');
+      expect(onValueChange.mock.lastCall?.[1].event.type).not.toBe('obstudio');
 
       trigger2.focus();
       await user.keyboard('[Space]');
@@ -909,7 +909,7 @@ describe('<Accordion.Root />', () => {
       expect(onValueChange.mock.calls.length).toBe(2);
       expect(onValueChange.mock.lastCall?.[0]).toEqual([0, 1]);
       expect(onValueChange.mock.lastCall?.[1].reason).toBe(REASONS.triggerPress);
-      expect(onValueChange.mock.lastCall?.[1].event.type).not.toBe('base-ui');
+      expect(onValueChange.mock.lastCall?.[1].event.type).not.toBe('obstudio');
     });
 
     it('custom item value', async () => {

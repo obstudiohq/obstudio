@@ -1,12 +1,12 @@
 {
-  "name": "@base-ui/monorepo-tests",
+  "name": "@obstudio/monorepo-tests",
   "private": true,
   "scripts": {
     "typescript": "tsgo -p tsconfig.json"
   },
   "devDependencies": {
-    "@base-ui/react": "workspace:*",
-    "@base-ui/utils": "workspace:*",
+    "@obstudio/react": "workspace:*",
+    "@obstudio/utils": "workspace:*",
     "@playwright/test": "1.62.1",
     "@testing-library/dom": "10.4.1",
     "@testing-library/jest-dom": "6.9.1",

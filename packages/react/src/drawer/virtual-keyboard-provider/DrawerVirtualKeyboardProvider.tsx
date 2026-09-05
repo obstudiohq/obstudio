@@ -1,12 +1,12 @@
 'use client';
 import * as React from 'react';
 import { getComputedStyle, getParentNode, isHTMLElement } from '@floating-ui/utils/dom';
-import { addEventListener } from '@base-ui/utils/addEventListener';
-import { ownerDocument, ownerWindow } from '@base-ui/utils/owner';
-import { useAnimationFrame } from '@base-ui/utils/useAnimationFrame';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { clamp } from '@base-ui/utils/clamp';
-import { useTimeout } from '@base-ui/utils/useTimeout';
+import { addEventListener } from '@obstudio/utils/addEventListener';
+import { ownerDocument, ownerWindow } from '@obstudio/utils/owner';
+import { useAnimationFrame } from '@obstudio/utils/useAnimationFrame';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { clamp } from '@obstudio/utils/clamp';
+import { useTimeout } from '@obstudio/utils/useTimeout';
 import { useDialogRootContext } from '../../dialog/root/DialogRootContext';
 import {
   activeElement,
@@ -80,7 +80,7 @@ const KEYBOARD_TAP_BLOCKED = Symbol('KeyboardTapBlocked');
 /**
  * Provides keyboard-aware focus and scroll handling for bottom-sheet drawers with form fields.
  *
- * Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+ * Documentation: [Obstudio Drawer](https://obstudio.co/react/components/drawer)
  */
 export function DrawerVirtualKeyboardProvider(props: DrawerVirtualKeyboardProvider.Props) {
   const { children } = props;

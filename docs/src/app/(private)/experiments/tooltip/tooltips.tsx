@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { Tooltip } from '@base-ui/react/tooltip';
-import { StoreInspector } from '@base-ui/utils/store';
+import { Tooltip } from '@obstudio/react/tooltip';
+import { StoreInspector } from '@obstudio/utils/store';
 import demoStyles from 'docs/src/app/(docs)/react/components/tooltip/demos/detached-triggers-full/css-modules/index.module.css';
 import { SettingsMetadata, useExperimentSettings } from '../_components/SettingsPanel';
 import styles from './tooltips.module.css';

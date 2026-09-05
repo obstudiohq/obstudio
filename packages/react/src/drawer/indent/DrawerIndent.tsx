@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { BaseUIComponentProps } from '../../internals/types';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { ObstudioComponentProps } from '../../internals/types';
 import type { StateAttributesMapping } from '../../internals/getStateAttributesProps';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useDrawerProviderContext } from '../provider/DrawerProviderContext';
@@ -22,7 +22,7 @@ const stateAttributesMapping: StateAttributesMapping<DrawerIndentState> = {
  * Applies `data-active` when any drawer within the nearest `<Drawer.Provider>` is open.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+ * Documentation: [Obstudio Drawer](https://obstudio.co/react/components/drawer)
  */
 export const DrawerIndent = React.forwardRef(function DrawerIndent(
   componentProps: DrawerIndent.Props,
@@ -94,7 +94,7 @@ export interface DrawerIndentState {
   active: boolean;
 }
 
-export interface DrawerIndentProps extends BaseUIComponentProps<'div', DrawerIndentState> {}
+export interface DrawerIndentProps extends ObstudioComponentProps<'div', DrawerIndentState> {}
 
 export namespace DrawerIndent {
   export type State = DrawerIndentState;

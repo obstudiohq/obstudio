@@ -1,5 +1,5 @@
 'use client';
-import { Drawer } from '@base-ui/react/drawer';
+import { Drawer } from '@obstudio/react/drawer';
 import demoStyles from 'docs/src/app/(docs)/react/components/drawer/demos/virtual-keyboard-aware/css-modules/index.module.css';
 import styles from './virtual-keyboard-aware.module.css';
 

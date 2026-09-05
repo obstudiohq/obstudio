@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { AnimationFrame } from '@base-ui/utils/useAnimationFrame';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { AnimationFrame } from '@obstudio/utils/useAnimationFrame';
 
 export type TransitionStatus = 'starting' | 'ending' | 'idle' | undefined;
 
@@ -62,7 +62,7 @@ export function useTransitionStatus(
 
     const frame = AnimationFrame.request(() => {
       // Avoid `flushSync` here due to Firefox.
-      // See https://github.com/mui/base-ui/pull/3424
+      // See https://github.com/obstudiohq/obstudio/pull/3424
       setTransitionStatus(undefined);
     });
 

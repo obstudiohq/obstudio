@@ -1,4 +1,4 @@
-import { areArraysEqual } from '@base-ui/utils/areArraysEqual';
+import { areArraysEqual } from '@obstudio/utils/areArraysEqual';
 
 export type ItemEqualityComparer<Item = any, Value = Item> = (
   itemValue: Item,

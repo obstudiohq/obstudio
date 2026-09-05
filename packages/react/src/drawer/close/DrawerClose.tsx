@@ -1,18 +1,18 @@
 'use client';
 import type * as React from 'react';
 import { DialogClose } from '../../dialog/close/DialogClose';
-import type { BaseUIComponentProps, NativeButtonProps } from '../../internals/types';
+import type { ObstudioComponentProps, NativeButtonProps } from '../../internals/types';
 
 /**
  * A button that closes the drawer.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+ * Documentation: [Obstudio Drawer](https://obstudio.co/react/components/drawer)
  */
 export const DrawerClose = DialogClose as DrawerClose;
 
 export interface DrawerCloseProps
-  extends NativeButtonProps, BaseUIComponentProps<'button', DrawerCloseState> {}
+  extends NativeButtonProps, ObstudioComponentProps<'button', DrawerCloseState> {}
 
 export interface DrawerCloseState {
   /**

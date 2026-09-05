@@ -1,5 +1,5 @@
 import { expect, vi, describe, it } from 'vitest';
-import { Accordion } from '@base-ui/react/accordion';
+import { Accordion } from '@obstudio/react/accordion';
 import { describeConformance, createRenderer } from '#test-utils';
 
 describe('<Accordion.Header />', () => {
@@ -10,7 +10,7 @@ describe('<Accordion.Header />', () => {
 
     try {
       await expect(render(<Accordion.Header />)).rejects.toThrow(
-        'Base UI: AccordionItemContext is missing. Accordion parts must be placed within <Accordion.Item>.',
+        'Obstudio: AccordionItemContext is missing. Accordion parts must be placed within <Accordion.Item>.',
       );
     } finally {
       errorSpy.mockRestore();

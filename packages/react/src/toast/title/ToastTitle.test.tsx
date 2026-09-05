@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { expect, vi, describe, it } from 'vitest';
-import { Toast } from '@base-ui/react/toast';
+import { Toast } from '@obstudio/react/toast';
 import { createRenderer, describeConformance } from '#test-utils';
 import { screen } from '@mui/internal-test-utils';
 import { List, Button } from '../utils/test-utils';
@@ -39,7 +39,7 @@ describe('<Toast.Title />', () => {
           </Toast.Provider>,
         ),
       ).rejects.toThrow(
-        'Base UI: ToastRootContext is missing. Toast parts must be used within <Toast.Root>.',
+        'Obstudio: ToastRootContext is missing. Toast parts must be used within <Toast.Root>.',
       );
     } finally {
       errorSpy.mockRestore();

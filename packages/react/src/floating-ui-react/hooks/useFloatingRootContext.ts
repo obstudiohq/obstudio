@@ -1,10 +1,10 @@
 'use client';
 import { isElement } from '@floating-ui/utils/dom';
-import { useId } from '@base-ui/utils/useId';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
+import { useId } from '@obstudio/utils/useId';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useRefWithInit } from '@obstudio/utils/useRefWithInit';
 import { PopupTriggerMap } from '../../utils/popups';
-import type { BaseUIChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import type { ObstudioChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { useFloatingParentNodeId } from '../components/FloatingTree';
 import {
   FloatingRootStore,
@@ -14,7 +14,7 @@ import type { ReferenceType } from '../types';
 
 export interface UseFloatingRootContextOptions {
   open?: boolean | undefined;
-  onOpenChange?(open: boolean, eventDetails: BaseUIChangeEventDetails<string>): void;
+  onOpenChange?(open: boolean, eventDetails: ObstudioChangeEventDetails<string>): void;
   elements?:
     | {
         reference?: ReferenceType | null | undefined;

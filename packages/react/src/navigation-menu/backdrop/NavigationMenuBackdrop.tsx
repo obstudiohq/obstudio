@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useNavigationMenuRootContext } from '../root/NavigationMenuRootContext';
 import type { TransitionStatus } from '../../internals/useTransitionStatus';
@@ -10,7 +10,7 @@ import { popupTransitionStateMapping } from '../../utils/popupStateMapping';
  * A backdrop for the navigation menu popup.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+ * Documentation: [Obstudio Navigation Menu](https://obstudio.co/react/components/navigation-menu)
  */
 export const NavigationMenuBackdrop = React.forwardRef(function NavigationMenuBackdrop(
   componentProps: NavigationMenuBackdrop.Props,
@@ -56,7 +56,7 @@ export interface NavigationMenuBackdropState {
   transitionStatus: TransitionStatus;
 }
 
-export interface NavigationMenuBackdropProps extends BaseUIComponentProps<
+export interface NavigationMenuBackdropProps extends ObstudioComponentProps<
   'div',
   NavigationMenuBackdropState
 > {}

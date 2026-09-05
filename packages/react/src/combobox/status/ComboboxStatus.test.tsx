@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { expect, describe, it } from 'vitest';
-import { Combobox } from '@base-ui/react/combobox';
+import { Combobox } from '@obstudio/react/combobox';
 import { createRenderer, describeConformance } from '#test-utils';
 import { screen, waitFor } from '@mui/internal-test-utils';
 import { INITIAL_LIVE_REGION_TEXT_MUTATION_RESET_DELAY } from '../utils/useInitialLiveRegionTextMutation';

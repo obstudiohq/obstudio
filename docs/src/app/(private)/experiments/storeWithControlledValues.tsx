@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
-import { ReactStore } from '@base-ui/utils/store';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { useRefWithInit } from '@obstudio/utils/useRefWithInit';
+import { ReactStore } from '@obstudio/utils/store';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
 import styles from './storeWithControlledValues.module.css';
 
 export default function Playground() {

@@ -12,7 +12,7 @@ export function SandboxLink(props: SandboxLinkProps) {
     createCodeSandbox({
       demoFiles: files,
       demoLanguage: 'ts',
-      title: 'Base UI experiment',
+      title: 'Obstudio experiment',
       dependencies: {
         react: '^19',
         'react-dom': '^19',

@@ -126,7 +126,7 @@ function getTarget(event: Event) {
 }
 
 /**
- * Minimal shape of a store owner (such as a Base UI popup handle) that exposes a live store to
+ * Minimal shape of a store owner (such as a Obstudio popup handle) that exposes a live store to
  * inspect. Typed structurally so this dev utility stays decoupled from the component packages'
  * handle types. The exposed store is loosely typed on purpose: handles narrow it for their public
  * API, but at runtime it is a full `Store`, which the inspector casts to internally.
@@ -163,7 +163,7 @@ export type StoreInspectorProps = StoreInspectorBaseProps &
       }
     | {
         /**
-         * A store owner (such as a Base UI popup handle) whose live `store` is inspected.
+         * A store owner (such as a Obstudio popup handle) whose live `store` is inspected.
          */
         handle: StoreOwner;
         store?: undefined;

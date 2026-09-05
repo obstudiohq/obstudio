@@ -1,12 +1,12 @@
 'use client';
 import * as React from 'react';
-import { useAnimationFrame } from '@base-ui/utils/useAnimationFrame';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import { EMPTY_OBJECT } from '@base-ui/utils/empty';
+import { useAnimationFrame } from '@obstudio/utils/useAnimationFrame';
+import { useTimeout } from '@obstudio/utils/useTimeout';
+import { EMPTY_OBJECT } from '@obstudio/utils/empty';
 import type { ElementProps, FloatingContext, FloatingRootContext } from '../types';
 import { getTarget, isTypeableElement } from '../utils/element';
 import { isMouseLikePointerType, isVirtualPointerEvent } from '../utils/event';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 
 export interface UseClickProps {

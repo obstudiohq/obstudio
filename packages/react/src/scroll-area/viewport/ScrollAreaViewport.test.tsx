@@ -1,8 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { expect, vi, describe, it } from 'vitest';
-import { ScrollArea } from '@base-ui/react/scroll-area';
-import { DirectionProvider } from '@base-ui/react/direction-provider';
+import { ScrollArea } from '@obstudio/react/scroll-area';
+import { DirectionProvider } from '@obstudio/react/direction-provider';
 import { createRenderer, isJSDOM, describeConformance } from '#test-utils';
 import { act, fireEvent, screen, waitFor } from '@mui/internal-test-utils';
 import { SCROLL_TIMEOUT } from '../constants';
@@ -490,7 +490,7 @@ describe('<ScrollArea.Viewport />', () => {
 
     try {
       await expect(render(<ScrollArea.Viewport />)).rejects.toThrow(
-        'Base UI: ScrollAreaRootContext is missing. ScrollArea parts must be placed within <ScrollArea.Root>.',
+        'Obstudio: ScrollAreaRootContext is missing. ScrollArea parts must be placed within <ScrollArea.Root>.',
       );
     } finally {
       errorSpy.mockRestore();

@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { useMeterRootContext } from '../root/MeterRootContext';
 import type { MeterRootState } from '../root/MeterRoot';
-import { BaseUIComponentProps } from '../../internals/types';
+import { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useRegisteredLabelId } from '../../utils/useRegisteredLabelId';
 
@@ -10,7 +10,7 @@ import { useRegisteredLabelId } from '../../utils/useRegisteredLabelId';
  * An accessible label for the meter.
  * Renders a `<span>` element.
  *
- * Documentation: [Base UI Meter](https://base-ui.com/react/components/meter)
+ * Documentation: [Obstudio Meter](https://obstudio.co/react/components/meter)
  */
 export const MeterLabel = React.forwardRef(function MeterLabel(
   componentProps: MeterLabel.Props,
@@ -36,7 +36,7 @@ export const MeterLabel = React.forwardRef(function MeterLabel(
 
 export interface MeterLabelState extends MeterRootState {}
 
-export interface MeterLabelProps extends BaseUIComponentProps<'span', MeterLabelState> {}
+export interface MeterLabelProps extends ObstudioComponentProps<'span', MeterLabelState> {}
 
 export namespace MeterLabel {
   export type State = MeterLabelState;

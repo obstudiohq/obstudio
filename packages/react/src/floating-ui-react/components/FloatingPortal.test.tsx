@@ -38,7 +38,7 @@ describe.skipIf(!isJSDOM)('FloatingPortal', () => {
     await flushMicrotasks();
 
     const parent = screen.getByTestId('floating').parentElement;
-    expect(parent?.hasAttribute('data-base-ui-portal')).toBe(true);
+    expect(parent?.hasAttribute('data-obstudio-portal')).toBe(true);
     expect(parent?.parentElement).toBe(customRoot);
     customRoot.remove();
   });
@@ -51,7 +51,7 @@ describe.skipIf(!isJSDOM)('FloatingPortal', () => {
     fireEvent.click(screen.getByTestId('reference'));
     await flushMicrotasks();
     const parent = screen.getByTestId('floating').parentElement;
-    expect(parent?.hasAttribute('data-base-ui-portal')).toBe(true);
+    expect(parent?.hasAttribute('data-obstudio-portal')).toBe(true);
     expect(parent?.parentElement).toBe(el);
     document.body.removeChild(el);
   });
@@ -135,7 +135,7 @@ describe.skipIf(!isJSDOM)('FloatingPortal', () => {
     const portal = document.querySelector('[data-testid="portal-element"]') as HTMLElement | null;
     expect(portal).not.toBeNull();
     expect(portal).toHaveClass('closed');
-    expect(portal).toHaveAttribute('data-base-ui-portal');
+    expect(portal).toHaveAttribute('data-obstudio-portal');
   });
 
   test('uses the rendered portal ID for the aria-owns relationship', async () => {

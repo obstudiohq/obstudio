@@ -1,6 +1,6 @@
 import * as React from 'react';
 import clsx from 'clsx';
-import { Select } from '@base-ui/react/select';
+import { Select } from '@obstudio/react/select';
 
 export function Root(props: Select.Root.Props<any>) {
   return <Select.Root {...props} />;

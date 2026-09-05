@@ -1,15 +1,15 @@
 'use client';
 import * as React from 'react';
-import { addEventListener } from '@base-ui/utils/addEventListener';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
-import { AnimationFrame } from '@base-ui/utils/useAnimationFrame';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useValueAsRef } from '@base-ui/utils/useValueAsRef';
-import { warn } from '@base-ui/utils/warn';
-import { ownerWindow } from '@base-ui/utils/owner';
+import { addEventListener } from '@obstudio/utils/addEventListener';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useMergedRefs } from '@obstudio/utils/useMergedRefs';
+import { AnimationFrame } from '@obstudio/utils/useAnimationFrame';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useValueAsRef } from '@obstudio/utils/useValueAsRef';
+import { warn } from '@obstudio/utils/warn';
+import { ownerWindow } from '@obstudio/utils/owner';
 import { HTMLProps } from '../../internals/types';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { useOpenChangeComplete } from '../../internals/useOpenChangeComplete';
 import { useAnimationsFinished } from '../../internals/useAnimationsFinished';
@@ -299,7 +299,7 @@ export function useCollapsiblePanel(
   // `[data-ending-style]` is already present. Chrome can still register the
   // exit transition one frame later when an Accordion closes one item while
   // opening another, so wait one frame before watching animations.
-  // See https://github.com/mui/base-ui/issues/3099
+  // See https://github.com/obstudiohq/obstudio/issues/3099
   React.useEffect(() => {
     if (open || !mounted || panelTransitionStatus !== 'ending') {
       return undefined;

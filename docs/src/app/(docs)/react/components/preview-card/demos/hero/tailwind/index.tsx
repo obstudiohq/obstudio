@@ -1,4 +1,4 @@
-import { PreviewCard } from '@base-ui/react/preview-card';
+import { PreviewCard } from '@obstudio/react/preview-card';
 
 export default function ExamplePreviewCard() {
   return (

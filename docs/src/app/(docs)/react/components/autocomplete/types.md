@@ -103,9 +103,9 @@ type AutocompleteRootChangeEventDetails = (
   | { reason: 'cancel-open'; event: MouseEvent }
   | { reason: 'none'; event: Event }
 ) & {
-  /** Cancels Base UI from handling the event. */
+  /** Cancels Obstudio from handling the event. */
   cancel: () => void;
-  /** Allows the event to propagate in cases where Base UI will stop the propagation. */
+  /** Allows the event to propagate in cases where Obstudio will stop the propagation. */
   allowPropagation: () => void;
   /** Indicates whether the event has been canceled. */
   isCanceled: boolean;
@@ -639,7 +639,7 @@ Renders a `<div>` element.
 | Prop         | Type                                                                                            | Default | Description                                                                                                                                                                                                                             |
 | :----------- | :---------------------------------------------------------------------------------------------- | :------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | value        | `any`                                                                                           | `null`  | A unique value that identifies this item.                                                                                                                                                                                               |
-| onClick      | `((event: BaseUIEvent<React.MouseEvent<HTMLDivElement, MouseEvent>>) => void)`                  | -       | An optional click handler for the item when selected.&#xA;It fires when clicking the item with the pointer, as well as when pressing `Enter` with the keyboard if the item is highlighted when the `Input` or `List` element has focus. |
+| onClick      | `((event: ObstudioEvent<React.MouseEvent<HTMLDivElement, MouseEvent>>) => void)`                | -       | An optional click handler for the item when selected.&#xA;It fires when clicking the item with the pointer, as well as when pressing `Enter` with the keyboard if the item is highlighted when the `Input` or `List` element has focus. |
 | index        | `number`                                                                                        | -       | The index of the item in the list. Improves performance when specified by avoiding the need to calculate the index automatically from the DOM.                                                                                          |
 | nativeButton | `boolean`                                                                                       | `false` | Whether the component renders a native `<button>` element when replacing it&#xA;via the `render` prop.&#xA;Set to `true` if the rendered element is a native button.                                                                    |
 | disabled     | `boolean`                                                                                       | `false` | Whether the component should ignore user interaction.                                                                                                                                                                                   |

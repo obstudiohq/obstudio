@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
 import { FieldRootContext } from '../../internals/field-root-context/FieldRootContext';
 import {
   DEFAULT_VALIDITY_STATE,
@@ -11,7 +11,7 @@ import { useFieldsetRootContext } from '../../fieldset/root/FieldsetRootContext'
 import type { Form } from '../../form';
 import { useFormContext } from '../../internals/form-context/FormContext';
 import { LabelableProvider } from '../../internals/labelable-provider';
-import { BaseUIComponentProps } from '../../internals/types';
+import { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useFieldValidation } from './useFieldValidation';
 import { useFieldControlRegistration } from '../../internals/field-register-control/useFieldControlRegistration';
@@ -197,7 +197,7 @@ const FieldRootInner = React.forwardRef(function FieldRootInner(
  * Groups all parts of the field.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Field](https://base-ui.com/react/components/field)
+ * Documentation: [Obstudio Field](https://obstudio.co/react/components/field)
  */
 export const FieldRoot = React.forwardRef(function FieldRoot(
   componentProps: FieldRoot.Props,
@@ -261,7 +261,7 @@ export interface FieldRootState {
   focused: boolean;
 }
 
-export interface FieldRootProps extends BaseUIComponentProps<'div', FieldRootState> {
+export interface FieldRootProps extends ObstudioComponentProps<'div', FieldRootState> {
   /**
    * Whether the component should ignore user interaction.
    * Takes precedence over the `disabled` prop on the `<Field.Control>` component.

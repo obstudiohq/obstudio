@@ -1,8 +1,8 @@
 import { expect, vi, describe, it } from 'vitest';
-import { Combobox } from '@base-ui/react/combobox';
+import { Combobox } from '@obstudio/react/combobox';
 import { fireEvent, screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance } from '#test-utils';
-import { Field } from '@base-ui/react/field';
+import { Field } from '@obstudio/react/field';
 
 describe('<Combobox.Chips />', () => {
   const { render } = createRenderer();
@@ -73,7 +73,7 @@ describe('<Combobox.Chips />', () => {
           data-testid="chips"
           onMouseDown={(event) => {
             handleMouseDown(event);
-            event.preventBaseUIHandler();
+            event.preventObstudioHandler();
           }}
         >
           <Combobox.Chip>apple</Combobox.Chip>
@@ -112,7 +112,7 @@ describe('<Combobox.Chips />', () => {
             data-testid="chip"
             onMouseDown={(event) => {
               handleMouseDown(event);
-              event.preventBaseUIHandler();
+              event.preventObstudioHandler();
             }}
           >
             apple
@@ -139,7 +139,7 @@ describe('<Combobox.Chips />', () => {
     expect(screen.queryByRole('listbox')).toBe(null);
   });
 
-  it('lets nested chip onContextMenu call preventBaseUIHandler', async () => {
+  it('lets nested chip onContextMenu call preventObstudioHandler', async () => {
     const handleContextMenu = vi.fn();
 
     await render(
@@ -149,7 +149,7 @@ describe('<Combobox.Chips />', () => {
             data-testid="chip"
             onContextMenu={(event) => {
               handleContextMenu(event);
-              event.preventBaseUIHandler();
+              event.preventObstudioHandler();
             }}
           >
             apple

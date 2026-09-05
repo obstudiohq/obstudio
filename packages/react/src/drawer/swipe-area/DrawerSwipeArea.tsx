@@ -1,14 +1,14 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { ownerDocument } from '@base-ui/utils/owner';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { ownerDocument } from '@obstudio/utils/owner';
 import { useDialogRootContext } from '../../dialog/root/DialogRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import type { StateAttributesMapping } from '../../internals/getStateAttributesProps';
 import { NOOP } from '../../internals/noop';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { getDisplacement, useSwipeDismiss, type SwipeDirection } from '../../utils/useSwipeDismiss';
 import { getElementTransform } from '../../utils/getElementTransform';
@@ -16,7 +16,7 @@ import * as DrawerPopupCssVars from '../popup/DrawerPopupCssVars';
 import * as DrawerPopupDataAttributes from '../popup/DrawerPopupDataAttributes';
 import * as DrawerBackdropCssVars from '../backdrop/DrawerBackdropCssVars';
 import { useDrawerRootContext, type DrawerSwipeDirection } from '../root/DrawerRootContext';
-import { useBaseUiId } from '../../internals/useBaseUiId';
+import { useObstudioId } from '../../internals/useObstudioId';
 import { useTriggerRegistration } from '../../utils/popups';
 import { useDrawerProviderContext } from '../provider/DrawerProviderContext';
 import { isVirtualClick } from '../../floating-ui-react/utils/event';
@@ -73,7 +73,7 @@ function resolveTouchAction(direction: DrawerSwipeDirection) {
  * An invisible area that listens for swipe gestures to open the drawer.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+ * Documentation: [Obstudio Drawer](https://obstudio.co/react/components/drawer)
  */
 export const DrawerSwipeArea = React.forwardRef(function DrawerSwipeArea(
   componentProps: DrawerSwipeArea.Props,
@@ -105,7 +105,7 @@ export const DrawerSwipeArea = React.forwardRef(function DrawerSwipeArea(
   const popupTransitionRef = React.useRef<string | null>(null);
   const releaseGuardCleanupRef = React.useRef<() => void>(NOOP);
 
-  const swipeAreaId = useBaseUiId(componentProps.id);
+  const swipeAreaId = useObstudioId(componentProps.id);
   const registerTrigger = useTriggerRegistration(swipeAreaId, store);
 
   // `registerTrigger` is stable, so the ref does not re-fire when the id changes: re-register the
@@ -488,7 +488,7 @@ export const DrawerSwipeArea = React.forwardRef(function DrawerSwipeArea(
   });
 });
 
-export interface DrawerSwipeAreaProps extends BaseUIComponentProps<'div', DrawerSwipeAreaState> {
+export interface DrawerSwipeAreaProps extends ObstudioComponentProps<'div', DrawerSwipeAreaState> {
   /**
    * Whether the swipe area is disabled.
    * @default false

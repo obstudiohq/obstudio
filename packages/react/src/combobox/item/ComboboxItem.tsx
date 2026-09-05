@@ -1,14 +1,18 @@
 'use client';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
 import {
   useComboboxRootContext,
   useComboboxHasItemsContext,
   useComboboxDerivedItemsContext,
 } from '../root/ComboboxRootContext';
 import { useCompositeListItem } from '../../internals/composite/list/useCompositeListItem';
-import type { BaseUIComponentProps, HTMLProps, NonNativeButtonProps } from '../../internals/types';
+import type {
+  ObstudioComponentProps,
+  HTMLProps,
+  NonNativeButtonProps,
+} from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { ComboboxItemContext } from './ComboboxItemContext';
 import { useButton } from '../../internals/use-button';
@@ -253,7 +257,7 @@ function ComboboxItemVirtualizedIndex(props: {
  * An individual item in the list.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)
+ * Documentation: [Obstudio Combobox](https://obstudio.co/react/components/combobox)
  */
 export const ComboboxItem = React.memo(
   React.forwardRef(function ComboboxItem(
@@ -299,13 +303,13 @@ export interface ComboboxItemState {
 }
 
 export interface ComboboxItemProps
-  extends NonNativeButtonProps, Omit<BaseUIComponentProps<'div', ComboboxItemState>, 'id'> {
+  extends NonNativeButtonProps, Omit<ObstudioComponentProps<'div', ComboboxItemState>, 'id'> {
   children?: React.ReactNode;
   /**
    * An optional click handler for the item when selected.
    * It fires when clicking the item with the pointer, as well as when pressing `Enter` with the keyboard if the item is highlighted when the `Input` or `List` element has focus.
    */
-  onClick?: BaseUIComponentProps<'div', ComboboxItemState>['onClick'] | undefined;
+  onClick?: ObstudioComponentProps<'div', ComboboxItemState>['onClick'] | undefined;
   /**
    * The index of the item in the list. Improves performance when specified by avoiding the need to calculate the index automatically from the DOM.
    */

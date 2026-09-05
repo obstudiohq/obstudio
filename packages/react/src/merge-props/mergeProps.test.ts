@@ -1,6 +1,6 @@
 import { expect, vi, describe, it } from 'vitest';
-import { mergeProps, mergePropsN } from '@base-ui/react/merge-props';
-import type { BaseUIEvent } from '../internals/types';
+import { mergeProps, mergePropsN } from '@obstudio/react/merge-props';
+import type { ObstudioEvent } from '../internals/types';
 
 describe('mergeProps', () => {
   it('merges event handlers', () => {
@@ -82,8 +82,8 @@ describe('mergeProps', () => {
       {},
       {
         onMouseDown(event) {
-          event.preventBaseUIHandler();
-          prevented = event.baseUIHandlerPrevented === true;
+          event.preventObstudioHandler();
+          prevented = event.obstudioHandlerPrevented === true;
         },
       },
     );
@@ -99,8 +99,8 @@ describe('mergeProps', () => {
     const mergedProps = mergeProps<'button'>(
       {
         onMouseDown(event) {
-          event.preventBaseUIHandler();
-          prevented = event.baseUIHandlerPrevented === true;
+          event.preventObstudioHandler();
+          prevented = event.obstudioHandlerPrevented === true;
         },
       },
       {
@@ -119,8 +119,8 @@ describe('mergeProps', () => {
     const mergedProps = mergePropsN<'button'>([
       {
         onMouseDown(event) {
-          event.preventBaseUIHandler();
-          prevented = event.baseUIHandlerPrevented === true;
+          event.preventObstudioHandler();
+          prevented = event.obstudioHandlerPrevented === true;
         },
       },
       {
@@ -140,8 +140,8 @@ describe('mergeProps', () => {
       {},
       {
         onContextMenu(event) {
-          event.preventBaseUIHandler();
-          prevented = event.baseUIHandlerPrevented === true;
+          event.preventObstudioHandler();
+          prevented = event.obstudioHandlerPrevented === true;
         },
       },
     );
@@ -234,7 +234,7 @@ describe('mergeProps', () => {
     expect(mergedProps.className).toBe(undefined);
   });
 
-  it('does not prevent internal handler if event.preventBaseUIHandler() is not called', () => {
+  it('does not prevent internal handler if event.preventObstudioHandler() is not called', () => {
     let ran = false;
 
     const mergedProps = mergeProps<'button'>(
@@ -253,7 +253,7 @@ describe('mergeProps', () => {
     expect(ran).toBe(true);
   });
 
-  it('prevents internal handler if event.preventBaseUIHandler() is called', () => {
+  it('prevents internal handler if event.preventObstudioHandler() is called', () => {
     let ran = false;
 
     const mergedProps = mergeProps<'button'>(
@@ -269,7 +269,7 @@ describe('mergeProps', () => {
       },
       {
         onClick: function onClick1(event) {
-          event.preventBaseUIHandler();
+          event.preventObstudioHandler();
         },
       },
     );
@@ -280,7 +280,7 @@ describe('mergeProps', () => {
     expect(ran).toBe(false);
   });
 
-  it('prevents handlers merged after event.preventBaseUIHandler() is called', () => {
+  it('prevents handlers merged after event.preventObstudioHandler() is called', () => {
     const log: string[] = [];
 
     const mergedProps = mergeProps<any>(
@@ -290,8 +290,8 @@ describe('mergeProps', () => {
         },
       },
       {
-        onClick(event: BaseUIEvent<React.MouseEvent>) {
-          event.preventBaseUIHandler();
+        onClick(event: ObstudioEvent<React.MouseEvent>) {
+          event.preventObstudioHandler();
           log.push('1');
         },
       },
@@ -376,12 +376,12 @@ describe('mergeProps', () => {
 
     const mergedProps = mergeProps<any>(
       {
-        onMouseDown(_event: BaseUIEvent<React.MouseEvent>, details: { reason: string }) {
+        onMouseDown(_event: ObstudioEvent<React.MouseEvent>, details: { reason: string }) {
           log.push(['ours', details.reason]);
         },
       },
       {
-        onMouseDown(_event: BaseUIEvent<React.MouseEvent>, details: { reason: string }) {
+        onMouseDown(_event: ObstudioEvent<React.MouseEvent>, details: { reason: string }) {
           log.push(['theirs', details.reason]);
         },
       },
@@ -411,7 +411,7 @@ describe('mergeProps', () => {
     expect(mergedProps.title).toBe('internal title 1');
   });
 
-  it('sets baseUIHandlerPrevented to true after calling preventBaseUIHandler()', () => {
+  it('sets obstudioHandlerPrevented to true after calling preventObstudioHandler()', () => {
     let observedFlag: boolean | undefined;
 
     const mergedProps = mergeProps<'button'>(
@@ -420,8 +420,8 @@ describe('mergeProps', () => {
       },
       {
         onClick(event) {
-          event.preventBaseUIHandler();
-          observedFlag = event.baseUIHandlerPrevented;
+          event.preventObstudioHandler();
+          observedFlag = event.obstudioHandlerPrevented;
         },
       },
     );
@@ -539,9 +539,9 @@ describe('mergeProps', () => {
           },
         },
         (props) => ({
-          onClick(event: BaseUIEvent<React.MouseEvent>) {
-            // Call preventBaseUIHandler to signal prevention
-            event.preventBaseUIHandler();
+          onClick(event: ObstudioEvent<React.MouseEvent>) {
+            // Call preventObstudioHandler to signal prevention
+            event.preventObstudioHandler();
             log.push('getter-handler');
             // Manually calling the previous handler - this bypasses automatic prevention!
             props.onClick?.({ nativeEvent: new MouseEvent('click') } as any);
@@ -549,7 +549,7 @@ describe('mergeProps', () => {
         }),
         {
           onClick() {
-            // This handler does NOT call preventBaseUIHandler, so getter-handler runs
+            // This handler does NOT call preventObstudioHandler, so getter-handler runs
             log.push('last-handler');
           },
         },
@@ -558,11 +558,11 @@ describe('mergeProps', () => {
       mergedProps.onClick?.({ nativeEvent: new MouseEvent('click') } as any);
 
       // last-handler runs first, then getter-handler (not prevented), then getter-handler
-      // manually calls first-handler which runs despite preventBaseUIHandler being called
+      // manually calls first-handler which runs despite preventObstudioHandler being called
       expect(log).toEqual(['last-handler', 'getter-handler', 'first-handler']);
     });
 
-    it('allows props getter handlers to check baseUIHandlerPrevented manually', () => {
+    it('allows props getter handlers to check obstudioHandlerPrevented manually', () => {
       const log: string[] = [];
 
       const mergedProps = mergeProps<'button'>(
@@ -572,19 +572,19 @@ describe('mergeProps', () => {
           },
         },
         (props) => ({
-          onClick(event: BaseUIEvent<React.MouseEvent>) {
-            // Call preventBaseUIHandler to signal prevention
-            event.preventBaseUIHandler();
+          onClick(event: ObstudioEvent<React.MouseEvent>) {
+            // Call preventObstudioHandler to signal prevention
+            event.preventObstudioHandler();
             log.push('getter-handler');
             // Check the flag before manually calling previous handlers - this respects prevention
-            if (!event.baseUIHandlerPrevented) {
+            if (!event.obstudioHandlerPrevented) {
               props.onClick?.({ nativeEvent: new MouseEvent('click') } as any);
             }
           },
         }),
         {
           onClick() {
-            // This handler does NOT call preventBaseUIHandler, so getter-handler runs
+            // This handler does NOT call preventObstudioHandler, so getter-handler runs
             log.push('last-handler');
           },
         },

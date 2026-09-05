@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { BaseUIComponentProps } from '../../internals/types';
+import { ObstudioComponentProps } from '../../internals/types';
 import type { MeterRootState } from '../root/MeterRoot';
 import { useMeterRootContext } from '../root/MeterRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';
@@ -9,7 +9,7 @@ import { useRenderElement } from '../../internals/useRenderElement';
  * Visualizes the position of the value along the range.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Meter](https://base-ui.com/react/components/meter)
+ * Documentation: [Obstudio Meter](https://obstudio.co/react/components/meter)
  */
 export const MeterIndicator = React.forwardRef(function MeterIndicator(
   componentProps: MeterIndicator.Props,
@@ -36,7 +36,7 @@ export const MeterIndicator = React.forwardRef(function MeterIndicator(
 
 export interface MeterIndicatorState extends MeterRootState {}
 
-export interface MeterIndicatorProps extends BaseUIComponentProps<'div', MeterIndicatorState> {}
+export interface MeterIndicatorProps extends ObstudioComponentProps<'div', MeterIndicatorState> {}
 
 export namespace MeterIndicator {
   export type State = MeterIndicatorState;

@@ -32,9 +32,6 @@ importers:
       '@babel/plugin-transform-react-constant-elements':
         specifier: 7.29.7
         version: 7.29.7(@babel/core@7.29.7(supports-color@7.2.0))
-      '@base-ui/monorepo-tests':
-        specifier: workspace:*
-        version: link:test
       '@guidepup/guidepup':
         specifier: 0.33.1
         version: 0.33.1
@@ -59,6 +56,9 @@ importers:
       '@next/eslint-plugin-next':
         specifier: 16.3.1
         version: 16.3.1(eslint@10.8.1(jiti@2.7.0)(supports-color@7.2.0))
+      '@obstudio/monorepo-tests':
+        specifier: workspace:*
+        version: link:test
       '@playwright/test':
         specifier: 1.62.1
         version: 1.62.1
@@ -167,12 +167,6 @@ importers:
 
   docs:
     dependencies:
-      '@base-ui/react':
-        specifier: workspace:*
-        version: link:../packages/react/build
-      '@base-ui/utils':
-        specifier: workspace:*
-        version: link:../packages/utils/build
       '@mdx-js/loader':
         specifier: ^3.1.1
         version: 3.1.1(supports-color@10.2.2)(webpack@5.109.2(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.26)(uglify-js@3.19.3))
@@ -185,6 +179,12 @@ importers:
       '@next/mdx':
         specifier: ^16.3.1
         version: 16.3.1(@mdx-js/loader@3.1.1(supports-color@10.2.2)(webpack@5.109.2(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.26)(uglify-js@3.19.3)))(@mdx-js/react@3.1.1(@types/react@19.2.18)(react@19.2.8))
+      '@obstudio/react':
+        specifier: workspace:*
+        version: link:../packages/react/build
+      '@obstudio/utils':
+        specifier: workspace:*
+        version: link:../packages/utils/build
       '@react-spring/web':
         specifier: ^10.1.2
         version: 10.1.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -348,15 +348,15 @@ importers:
       '@babel/runtime':
         specifier: ^7.29.7
         version: 7.29.7
-      '@base-ui/utils':
-        specifier: workspace:*
-        version: link:../utils/build
       '@floating-ui/react-dom':
         specifier: ^2.1.9
         version: 2.1.9(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@floating-ui/utils':
         specifier: ^0.2.12
         version: 0.2.12
+      '@obstudio/utils':
+        specifier: workspace:*
+        version: link:../utils/build
       use-sync-external-store:
         specifier: ^1.6.0
         version: 1.6.0(react@19.2.8)
@@ -512,10 +512,10 @@ importers:
 
   test:
     devDependencies:
-      '@base-ui/react':
+      '@obstudio/react':
         specifier: workspace:*
         version: link:../packages/react/build
-      '@base-ui/utils':
+      '@obstudio/utils':
         specifier: workspace:*
         version: link:../packages/utils/build
       '@playwright/test':
@@ -563,15 +563,15 @@ importers:
 
   test/bundle-size:
     dependencies:
-      '@base-ui/react':
-        specifier: workspace:*
-        version: link:../../packages/react/build
-      '@base-ui/utils':
-        specifier: workspace:*
-        version: link:../../packages/utils/build
       '@mui/internal-bundle-size-checker':
         specifier: 1.0.9-canary.83
         version: 1.0.9-canary.83(@types/node@22.20.1)(esbuild@0.28.2)(jiti@2.7.0)(rolldown@1.2.4)(terser@5.49.2)(tsx@4.23.12)(yaml@2.9.0)
+      '@obstudio/react':
+        specifier: workspace:*
+        version: link:../../packages/react/build
+      '@obstudio/utils':
+        specifier: workspace:*
+        version: link:../../packages/utils/build
       radix-ui:
         specifier: ^1.4.3
         version: 1.4.3(@types/react-dom@19.2.4(@types/react@19.2.18))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -582,16 +582,16 @@ importers:
 
   test/node-resolution:
     dependencies:
-      '@base-ui/react':
+      '@obstudio/react':
         specifier: workspace:*
         version: link:../../packages/react/build
-      '@base-ui/utils':
+      '@obstudio/utils':
         specifier: workspace:*
         version: link:../../packages/utils/build
 
   test/performance:
     dependencies:
-      '@base-ui/react':
+      '@obstudio/react':
         specifier: workspace:*
         version: link:../../packages/react/build
       react:
@@ -619,7 +619,7 @@ importers:
 
   test/public-types:
     dependencies:
-      '@base-ui/react':
+      '@obstudio/react':
         specifier: workspace:*
         version: link:../../packages/react/build
       react:

@@ -46,7 +46,7 @@ export class PopupTriggerMap {
         // TODO: fix mui/no-guarded-throw
         // eslint-disable-next-line mui/no-guarded-throw
         throw new Error(
-          'Base UI: A trigger element cannot be registered under multiple IDs in PopupTriggerMap.',
+          'Obstudio: A trigger element cannot be registered under multiple IDs in PopupTriggerMap.',
         );
       }
 

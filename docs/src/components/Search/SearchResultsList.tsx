@@ -2,7 +2,7 @@ import * as React from 'react';
 import Link from 'next/link';
 import clsx from 'clsx';
 import type { SearchResult, SearchResults } from '@mui/internal-docs-infra/useSearch/types';
-import { Autocomplete } from '@base-ui/react/autocomplete';
+import { Autocomplete } from '@obstudio/react/autocomplete';
 import { getDisplayTitle } from '../../utils/getDisplayTitle';
 import { normalizeSearchGroup } from './searchUtils';
 

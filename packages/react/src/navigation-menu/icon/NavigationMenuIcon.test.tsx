@@ -1,5 +1,5 @@
 import { vi, describe, it, expect } from 'vitest';
-import { NavigationMenu } from '@base-ui/react/navigation-menu';
+import { NavigationMenu } from '@obstudio/react/navigation-menu';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<NavigationMenu.Icon />', () => {
@@ -27,7 +27,7 @@ describe('<NavigationMenu.Icon />', () => {
           </NavigationMenu.Root>,
         ),
       ).rejects.toThrow(
-        'Base UI: NavigationMenuItem parts must be used within a <NavigationMenu.Item>.',
+        'Obstudio: NavigationMenuItem parts must be used within a <NavigationMenu.Item>.',
       );
     } finally {
       errorSpy.mockRestore();

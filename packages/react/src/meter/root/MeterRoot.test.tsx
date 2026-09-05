@@ -1,5 +1,5 @@
 import { expect, vi, describe, it } from 'vitest';
-import { Meter } from '@base-ui/react/meter';
+import { Meter } from '@obstudio/react/meter';
 import { screen } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance } from '#test-utils';
 

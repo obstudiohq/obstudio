@@ -87,14 +87,14 @@ export default function Layout({ children }: React.PropsWithChildren) {
                       <SideNav.Section>
                         <SideNav.List>
                           <SideNav.Item
-                            href="https://github.com/mui/base-ui"
+                            href="https://github.com/obstudiohq/obstudio"
                             icon={<GitHubIcon />}
                             external
                           >
                             GitHub
                           </SideNav.Item>
                           <SideNav.Item
-                            href="https://www.npmjs.com/package/@base-ui/react"
+                            href="https://www.npmjs.com/package/@obstudio/react"
                             icon={<NpmIcon />}
                             external
                           >
@@ -126,7 +126,7 @@ export const metadata: Metadata = {
   title: null,
   description: null,
   twitter: {
-    site: '@base_ui',
+    site: '@obstudio',
     card: 'summary_large_image',
   },
   openGraph: {
@@ -135,7 +135,7 @@ export const metadata: Metadata = {
     type: 'article',
     locale: 'en_US',
     url: './',
-    authors: ['https://base-ui.com'],
+    authors: ['https://obstudio.co'],
     ttl: 604800,
   },
   metadataBase: process.env.BASE_URL,

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { Drawer } from '@base-ui/react/drawer';
+import { Drawer } from '@obstudio/react/drawer';
 import { screen } from '@mui/internal-test-utils';
 import { createRenderer } from '#test-utils';
 

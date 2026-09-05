@@ -4,12 +4,12 @@
     return;
   }
 
-  const control = firstThumb.closest('[data-base-ui-slider-control]');
+  const control = firstThumb.closest('[data-obstudio-slider-control]');
   if (!control) {
     return;
   }
 
-  const indicator = control.querySelector('[data-base-ui-slider-indicator]');
+  const indicator = control.querySelector('[data-obstudio-slider-indicator]');
   const controlRect = control.getBoundingClientRect();
   const vertical = control.getAttribute('data-orientation') === 'vertical';
   const side = vertical ? 'height' : 'width';

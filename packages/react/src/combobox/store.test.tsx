@@ -2,7 +2,7 @@ import { expect, vi, describe, beforeEach, it } from 'vitest';
 import * as React from 'react';
 import { screen } from '@mui/internal-test-utils';
 import { createRenderer } from '#test-utils';
-import { Autocomplete } from '@base-ui/react/autocomplete';
+import { Autocomplete } from '@obstudio/react/autocomplete';
 import { useComboboxRootContext } from './root/ComboboxRootContext';
 import type { ComboboxStore } from './store';
 
@@ -16,7 +16,7 @@ import type { ComboboxStore } from './store';
  */
 describe('combobox store synchronization', () => {
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
   });
 
   const { render, renderToString } = createRenderer();

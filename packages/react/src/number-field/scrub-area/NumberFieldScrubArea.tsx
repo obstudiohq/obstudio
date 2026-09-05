@@ -1,20 +1,20 @@
 'use client';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { addEventListener } from '@base-ui/utils/addEventListener';
-import { mergeCleanups } from '@base-ui/utils/mergeCleanups';
-import { ownerWindow, ownerDocument } from '@base-ui/utils/owner';
-import { platform } from '@base-ui/utils/platform';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import type { BaseUIComponentProps, HTMLProps } from '../../internals/types';
+import { addEventListener } from '@obstudio/utils/addEventListener';
+import { mergeCleanups } from '@obstudio/utils/mergeCleanups';
+import { ownerWindow, ownerDocument } from '@obstudio/utils/owner';
+import { platform } from '@obstudio/utils/platform';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useTimeout } from '@obstudio/utils/useTimeout';
+import type { ObstudioComponentProps, HTMLProps } from '../../internals/types';
 import { useNumberFieldRootContext } from '../root/NumberFieldRootContext';
 import type { NumberFieldRootState } from '../root/NumberFieldRoot';
 import { stateAttributesMapping } from '../utils/stateAttributesMapping';
 import { NumberFieldScrubAreaContext } from './NumberFieldScrubAreaContext';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { getViewportRect } from '../utils/getViewportRect';
-import { createGenericEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createGenericEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { getTarget } from '../../floating-ui-react/utils';
 
@@ -28,7 +28,7 @@ const SCRUB_AREA_STYLE: React.CSSProperties = {
  * An interactive area where the user can click and drag to change the field value.
  * Renders a `<span>` element.
  *
- * Documentation: [Base UI Number Field](https://base-ui.com/react/components/number-field)
+ * Documentation: [Obstudio Number Field](https://obstudio.co/react/components/number-field)
  */
 export const NumberFieldScrubArea = React.forwardRef(function NumberFieldScrubArea(
   componentProps: NumberFieldScrubArea.Props,
@@ -365,7 +365,7 @@ export const NumberFieldScrubArea = React.forwardRef(function NumberFieldScrubAr
 
 export interface NumberFieldScrubAreaState extends NumberFieldRootState {}
 
-export interface NumberFieldScrubAreaProps extends BaseUIComponentProps<
+export interface NumberFieldScrubAreaProps extends ObstudioComponentProps<
   'span',
   NumberFieldScrubAreaState
 > {

@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { usePreviewCardRootContext } from '../root/PreviewCardContext';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { popupTransitionStateMapping } from '../../utils/popupStateMapping';
 import type { TransitionStatus } from '../../internals/useTransitionStatus';
 import { useRenderElement } from '../../internals/useRenderElement';
@@ -10,7 +10,7 @@ import { useRenderElement } from '../../internals/useRenderElement';
  * A presentational overlay displayed beneath the popup.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Preview Card](https://base-ui.com/react/components/preview-card)
+ * Documentation: [Obstudio Preview Card](https://obstudio.co/react/components/preview-card)
  */
 export const PreviewCardBackdrop = React.forwardRef(function PreviewCardBackdrop(
   componentProps: PreviewCardBackdrop.Props,
@@ -60,7 +60,7 @@ export interface PreviewCardBackdropState {
   transitionStatus: TransitionStatus;
 }
 
-export interface PreviewCardBackdropProps extends BaseUIComponentProps<
+export interface PreviewCardBackdropProps extends ObstudioComponentProps<
   'div',
   PreviewCardBackdropState
 > {}

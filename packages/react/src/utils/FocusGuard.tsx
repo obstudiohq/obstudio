@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { platform } from '@base-ui/utils/platform';
-import { visuallyHidden } from '@base-ui/utils/visuallyHidden';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { platform } from '@obstudio/utils/platform';
+import { visuallyHidden } from '@obstudio/utils/visuallyHidden';
 
 /**
  * @internal
@@ -36,7 +36,7 @@ export const FocusGuard = React.forwardRef(function FocusGuard(
       style={visuallyHidden}
       aria-hidden={role ? undefined : true}
       {...restProps}
-      data-base-ui-focus-guard=""
+      data-obstudio-focus-guard=""
     />
   );
 });

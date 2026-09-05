@@ -1,13 +1,13 @@
 'use client';
 import * as React from 'react';
-import { fastComponent } from '@base-ui/utils/fastHooks';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { fastComponent } from '@obstudio/utils/fastHooks';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
 import { useDismiss, FloatingTree } from '../../floating-ui-react';
 import { PreviewCardRootContext, usePreviewCardRootContext } from './PreviewCardContext';
 import {
   createChangeEventDetails,
-  type BaseUIChangeEventDetails,
-} from '../../internals/createBaseUIEventDetails';
+  type ObstudioChangeEventDetails,
+} from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { PreviewCardStore } from '../store/PreviewCardStore';
 import {
@@ -111,7 +111,7 @@ function PreviewCardInteractions<Payload>({ store }: { store: PreviewCardStore<P
  * Groups all parts of the preview card.
  * Doesn't render its own HTML element.
  *
- * Documentation: [Base UI Preview Card](https://base-ui.com/react/components/preview-card)
+ * Documentation: [Obstudio Preview Card](https://obstudio.co/react/components/preview-card)
  */
 export const PreviewCardRoot = fastComponent(function PreviewCardRoot<Payload>(
   props: PreviewCardRoot.Props<Payload>,
@@ -195,7 +195,7 @@ export type PreviewCardRootChangeEventReason =
   | typeof REASONS.none;
 
 export type PreviewCardRootChangeEventDetails =
-  BaseUIChangeEventDetails<PreviewCardRoot.ChangeEventReason> & {
+  ObstudioChangeEventDetails<PreviewCardRoot.ChangeEventReason> & {
     preventUnmountOnClose(): void;
   };
 

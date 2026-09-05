@@ -103,7 +103,7 @@
    * We disable it also on all portal elements because popups from demos are rendered outside [data-demo].
    */
   [data-demo],
-  [data-base-ui-portal],
+  [data-obstudio-portal],
   [data-testid='testcase'] {
     font-feature-settings: normal;
   }
@@ -166,7 +166,7 @@
 
     /* Functional colors */
     --color-content: white;
-    --color-background: var(--gray-s2);
+    --color-background: #fbfbf9;
     --color-foreground: var(--gray-t2);
     --color-border: var(--blackA-2);
     --color-popup: white;

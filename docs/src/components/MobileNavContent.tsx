@@ -40,14 +40,14 @@ export function MobileNavContent({ sitemap }: MobileNavContentProps) {
       <MobileNav.Section>
         <MobileNav.Heading>Resources</MobileNav.Heading>
         <MobileNav.List>
-          <MobileNav.Item href="https://www.npmjs.com/package/@base-ui/react">
+          <MobileNav.Item href="https://www.npmjs.com/package/@obstudio/react">
             <NpmIcon />
             <span className="MobileNavResourceRow">
               <span className="MobileNavLinkText">npm package</span>
               <span className="MobileNavVersion">{process.env.LIB_VERSION}</span>
             </span>
           </MobileNav.Item>
-          <MobileNav.Item href="https://github.com/mui/base-ui">
+          <MobileNav.Item href="https://github.com/obstudiohq/obstudio">
             <GitHubIcon />
             <span className="MobileNavLinkText">GitHub</span>
           </MobileNav.Item>

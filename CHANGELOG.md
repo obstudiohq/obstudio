@@ -490,7 +490,7 @@ _Jun 18, 2026_
 ### OTP Field
 
 - 🚨 **Breaking change:** Unmark preview<br />
-  the namespace export is renamed `OTPFieldPreview` → `OTPField` and should be imported as: `{ OTPField } from '@base-ui/react/otp-field'` (#5029) by @atomiks
+  the namespace export is renamed `OTPFieldPreview` → `OTPField` and should be imported as: `{ OTPField } from '@obstudio/react/otp-field'` (#5029) by @atomiks
 - Avoid password manager bubbles after first input (#4868) by @atomiks
 
 ### Popover
@@ -709,7 +709,7 @@ _Apr 13, 2026_
 ### General changes
 
 - Improve `render` prop warning accuracy (#4324, #4363) by @atomiks
-- Fix `preventBaseUIHandler` runtime wrapping (#4330) by @atomiks
+- Fix `preventObstudioHandler` runtime wrapping (#4330) by @atomiks
 - Fix Uncaught TypeError: Converting circular structure to JSON (#4452) by @Profesor08
 - Expose `form` prop on hidden inputs (#4352) by @atomiks
 - Add `suppressHydrationWarning` to hidden inputs (#4482) by @devxoul
@@ -847,7 +847,7 @@ _Mar 12, 2026_
 - Snap `--anchor-width` and `--anchor-height` to device pixel grid (#4082) by @flaviendelangle
 - Fix outside press dismissal when a component is portaled into a shadow DOM (#4230) by @dmitri-gb
 - Fix nested hoverable popups (#4206) by @dmitri-gb
-- Apply `data-base-ui-inert` to highest-level node (#3955) by @atomiks
+- Apply `data-obstudio-inert` to highest-level node (#3955) by @atomiks
 - Fix portable types (#4058) by @cgatian
 
 ### Accordion
@@ -888,14 +888,14 @@ _Mar 12, 2026_
 ### Drawer
 
 - **Breaking change:** `Drawer` is no longer marked as preview<br />
-  `Drawer` is now stable and should be imported as `{ Drawer } from '@base-ui/react/drawer'` (#4293) by @atomiks
+  `Drawer` is now stable and should be imported as `{ Drawer } from '@obstudio/react/drawer'` (#4293) by @atomiks
 - Fix React 17 support (#4178) by @atomiks
 - Include border in frontmost height variable (#4202) by @atomiks
 - Improve touch selection (#4104) by @atomiks
 - Preserve cross-axis scrolling during touch gestures (#4187) by @atomiks
 - Prevent swipe dismissal when component is controlled (#4133) by @flaviendelangle
 - Add `SwipeArea` part (#4102) by @atomiks
-- Make `data-base-ui-swipe-ignore` explicit for touch interactions (#4295) by @atomiks
+- Make `data-obstudio-swipe-ignore` explicit for touch interactions (#4295) by @atomiks
 - Disable inheritance for swipe CSS variables (#4099) by @atomiks
 
 ### Field
@@ -1165,7 +1165,7 @@ _Jan 15, 2026_
 - Fix click and drags outside a nested popup component from closing its parents (#3571) by @atomiks
 - Fix forwarded ref types (#3638) by @atomiks
 - Fix detached trigger remounting (#3724) by @atomiks
-- Include `ref` in `BaseUIComponentProps` (#2813) by @atomiks
+- Include `ref` in `ObstudioComponentProps` (#2813) by @atomiks
 - Remove duplicated `disabled` prop (#3650) by @seongminn
 - Allow `actionsRef` to be `null` (#3682) by @mj12albert
 
@@ -1302,8 +1302,8 @@ _Dec 11, 2025_
 
 ### General changes
 
-- **Breaking change:** Rename packages to use the `@base-ui` org.<br />
-  The package name has changed from `@base-ui-components/react` to `@base-ui/react`.
+- **Breaking change:** Rename packages to use the `@obstudio` org.<br />
+  The package name has changed from `@obstudio/react` to `@obstudio/react`.
   (#3462) by @mnajdova
 
 ### Combobox
@@ -1769,7 +1769,7 @@ _Oct 1, 2025_
 ### General changes
 
 - **Breaking change:** Generic event details.
-  The main exported type is now `BaseUIChangeEventDetails` (with a paired `BaseUIGenericEventDetails`), not `BaseUIEventDetails`.
+  The main exported type is now `ObstudioChangeEventDetails` (with a paired `ObstudioGenericEventDetails`), not `ObstudioEventDetails`.
   (#2796) by @atomiks
 - Update `disabled` prop of buttons when ref changes (#2756) by @chuganzy
 - Refine event details (#2698) by @atomiks
@@ -1884,7 +1884,7 @@ _Oct 1, 2025_
 ### Toast
 
 - **Breaking change:** Support variable height stacking.
-  Toasts that have varying heights no longer force a `data-expanded` expanded state on the viewport. CSS should be amended to ensure larger toasts don't overflow a small toast stacked at the front. See this [diff](https://github.com/mui/base-ui/pull/2742/files#diff-e378460dafb74fe0c90ef960ad0ef1c38d68d74b63815520bb437f9041361917) for new styles, along with general improvements to stacking styles.
+  Toasts that have varying heights no longer force a `data-expanded` expanded state on the viewport. CSS should be amended to ensure larger toasts don't overflow a small toast stacked at the front. See this [diff](https://github.com/obstudiohq/obstudio/pull/2742/files#diff-e378460dafb74fe0c90ef960ad0ef1c38d68d74b63815520bb437f9041361917) for new styles, along with general improvements to stacking styles.
   (#2742) by @atomiks
 - Reduce stickiness of expanded state (#2770) by @atomiks
 - Ensure toast is frozen at its current visual transform while swiping (#2769) by @atomiks
@@ -1910,8 +1910,8 @@ _Sep 3, 2025_
 
 ### General changes
 
-- **Breaking change:** Base UI event details.
-  Custom event callbacks provide BaseUIEventDetails object as their second parameter.
+- **Breaking change:** Obstudio event details.
+  Custom event callbacks provide ObstudioEventDetails object as their second parameter.
   This object contains the source event, reason and methods to customize the behavior (where applicable).
   For example, `onOpenChange(open, event, reason)` becomes `onOpenChange(open, eventDetails)`, where `eventDetails` contains `event` and `reason` properties.
 
@@ -2316,7 +2316,7 @@ _Jul 1, 2025_
 
 - **Breaking change:** Print raw value in `Select.Value`.
   `<Select.Value>` now prints the raw value by default unless an `items` prop is specified on `Select.Root`.
-  See https://base-ui.com/react/components/select#formatting-the-value for more information.
+  See https://obstudio.co/react/components/select#formatting-the-value for more information.
   (#2087) by @atomiks
 - Performance: avoid re-renders (#1961) by @romgrk
 - Fix close toggle when rendering non-native button (#2071) by @atomiks
@@ -2404,7 +2404,7 @@ _May 29, 2025_
   (#1919) by @atomiks
 - Improve `Label` logic that prevents text selection on double click (#1784) by @atomiks
 - Fix validation inconsistency (#1779) by @atomiks
-- Fix integration of Base UI components (#1755) by @atomiks
+- Fix integration of Obstudio components (#1755) by @atomiks
 - Set `valueMissing` to false if only error and not dirtied (#1810) by @atomiks
 - `validate` with latest value on blur (#1850) by @atomiks
 - Revalidate only `required` on change (#1840) by @atomiks
@@ -2414,7 +2414,7 @@ _May 29, 2025_
 
 ### Form
 
-- Fix integration of Base UI components (#1755) by @atomiks
+- Fix integration of Obstudio components (#1755) by @atomiks
 - Select inputs on focus (#1858) by @atomiks
 - Exclude number formatting from form value (#1957) by @mj12albert
 - Integrate range sliders with Form and Field (#1929) by @mj12albert
@@ -2904,12 +2904,12 @@ _Jan 10, 2025_
   The AlertDialog must explicitly include the Portal part wrapping the Popup.
   The `keepMounted` prop was removed from the Popup.
   It's only present on the Portal part.
-  [#1222](https://github.com/mui/base-ui/pull/1222) @atomiks
-- Don't call `onNestedDialogOpen` when unmounting a closed nested dialog [#1280](https://github.com/mui/base-ui/pull/1280) @mj12albert
-- Fix the nesting of different dialogs [#1167](https://github.com/mui/base-ui/pull/1167) @mnajdova
-- Remove `useFloating` call from the Popup [#1300](https://github.com/mui/base-ui/pull/1300) @michaldudak
-- Set `pointer-events` on `InternalBackdrop` based on `open` state [#1221](https://github.com/mui/base-ui/pull/1221) @atomiks
-- Use internal backdrop for pointer modality [#1161](https://github.com/mui/base-ui/pull/1161) @atomiks
+  [#1222](https://github.com/obstudiohq/obstudio/pull/1222) @atomiks
+- Don't call `onNestedDialogOpen` when unmounting a closed nested dialog [#1280](https://github.com/obstudiohq/obstudio/pull/1280) @mj12albert
+- Fix the nesting of different dialogs [#1167](https://github.com/obstudiohq/obstudio/pull/1167) @mnajdova
+- Remove `useFloating` call from the Popup [#1300](https://github.com/obstudiohq/obstudio/pull/1300) @michaldudak
+- Set `pointer-events` on `InternalBackdrop` based on `open` state [#1221](https://github.com/obstudiohq/obstudio/pull/1221) @atomiks
+- Use internal backdrop for pointer modality [#1161](https://github.com/obstudiohq/obstudio/pull/1161) @atomiks
 
 ### Dialog
 
@@ -2917,12 +2917,12 @@ _Jan 10, 2025_
   The Dialog must explicitly include the Portal part wrapping the Popup.
   The `keepMounted` prop was removed from the Popup.
   It's only present on the Portal part.
-  [#1222](https://github.com/mui/base-ui/pull/1222) @atomiks
-- Don't call `onNestedDialogOpen` when unmounting a closed nested dialog [#1280](https://github.com/mui/base-ui/pull/1280) @mj12albert
-- Fix the nesting of different dialogs [#1167](https://github.com/mui/base-ui/pull/1167) @mnajdova
-- Remove `useFloating` call from the Popup [#1300](https://github.com/mui/base-ui/pull/1300) @michaldudak
-- Set `pointer-events` on `InternalBackdrop` based on `open` state [#1221](https://github.com/mui/base-ui/pull/1221) @atomiks
-- Use internal backdrop for pointer modality [#1161](https://github.com/mui/base-ui/pull/1161) @atomiks
+  [#1222](https://github.com/obstudiohq/obstudio/pull/1222) @atomiks
+- Don't call `onNestedDialogOpen` when unmounting a closed nested dialog [#1280](https://github.com/obstudiohq/obstudio/pull/1280) @mj12albert
+- Fix the nesting of different dialogs [#1167](https://github.com/obstudiohq/obstudio/pull/1167) @mnajdova
+- Remove `useFloating` call from the Popup [#1300](https://github.com/obstudiohq/obstudio/pull/1300) @michaldudak
+- Set `pointer-events` on `InternalBackdrop` based on `open` state [#1221](https://github.com/obstudiohq/obstudio/pull/1221) @atomiks
+- Use internal backdrop for pointer modality [#1161](https://github.com/obstudiohq/obstudio/pull/1161) @atomiks
 
 ### Menu
 
@@ -2930,19 +2930,19 @@ _Jan 10, 2025_
   The Menu must explicitly include the Portal part wrapping the Positioner.
   The `keepMounted` prop was removed from the Positioner.
   It's only present on the Portal part.
-  [#1222](https://github.com/mui/base-ui/pull/1222) @atomiks
-- Apply `aria-hidden` to `Arrow` parts [#1196](https://github.com/mui/base-ui/pull/1196) @atomiks
-- Fix `focusableWhenDisabled` components [#1313](https://github.com/mui/base-ui/pull/1313) @mj12albert
-- Fix `openOnHover` issues [#1191](https://github.com/mui/base-ui/pull/1191) @atomiks
-- Fix closing the menu when clicking on checkboxitem/radioitem [#1301](https://github.com/mui/base-ui/pull/1301) @michaldudak
-- Fix Enter key preventDefault when rendering links [#1251](https://github.com/mui/base-ui/pull/1251) @mj12albert
-- Handle pseudo-element bounds in mouseup detection [#1250](https://github.com/mui/base-ui/pull/1250) @atomiks
-- Set `pointer-events` on `InternalBackdrop` based on `open` state [#1221](https://github.com/mui/base-ui/pull/1221) @atomiks
-- Use internal backdrop for pointer modality [#1161](https://github.com/mui/base-ui/pull/1161) @atomiks
+  [#1222](https://github.com/obstudiohq/obstudio/pull/1222) @atomiks
+- Apply `aria-hidden` to `Arrow` parts [#1196](https://github.com/obstudiohq/obstudio/pull/1196) @atomiks
+- Fix `focusableWhenDisabled` components [#1313](https://github.com/obstudiohq/obstudio/pull/1313) @mj12albert
+- Fix `openOnHover` issues [#1191](https://github.com/obstudiohq/obstudio/pull/1191) @atomiks
+- Fix closing the menu when clicking on checkboxitem/radioitem [#1301](https://github.com/obstudiohq/obstudio/pull/1301) @michaldudak
+- Fix Enter key preventDefault when rendering links [#1251](https://github.com/obstudiohq/obstudio/pull/1251) @mj12albert
+- Handle pseudo-element bounds in mouseup detection [#1250](https://github.com/obstudiohq/obstudio/pull/1250) @atomiks
+- Set `pointer-events` on `InternalBackdrop` based on `open` state [#1221](https://github.com/obstudiohq/obstudio/pull/1221) @atomiks
+- Use internal backdrop for pointer modality [#1161](https://github.com/obstudiohq/obstudio/pull/1161) @atomiks
 
 ### NumberField
 
-- Correctly handle quick touches [#1294](https://github.com/mui/base-ui/pull/1294) @atomiks
+- Correctly handle quick touches [#1294](https://github.com/obstudiohq/obstudio/pull/1294) @atomiks
 
 ### Popover
 
@@ -2950,9 +2950,9 @@ _Jan 10, 2025_
   The Popover must explicitly include the Portal part wrapping the Positioner.
   The `keepMounted` prop was removed from the Positioner.
   It's only present on the Portal part.
-  [#1222](https://github.com/mui/base-ui/pull/1222) @atomiks
-- Apply `aria-hidden` to `Arrow` parts [#1196](https://github.com/mui/base-ui/pull/1196) @atomiks
-- Fix PopoverTrigger and TooltipTrigger prop types [#1209](https://github.com/mui/base-ui/pull/1209) @mnajdova
+  [#1222](https://github.com/obstudiohq/obstudio/pull/1222) @atomiks
+- Apply `aria-hidden` to `Arrow` parts [#1196](https://github.com/obstudiohq/obstudio/pull/1196) @atomiks
+- Fix PopoverTrigger and TooltipTrigger prop types [#1209](https://github.com/obstudiohq/obstudio/pull/1209) @mnajdova
 
 ### PreviewCard
 
@@ -2960,18 +2960,18 @@ _Jan 10, 2025_
   The PreviewCard must explicitly include the Portal part wrapping the Positioner.
   The `keepMounted` prop was removed from the Positioner.
   It's only present on the Portal part.
-  [#1222](https://github.com/mui/base-ui/pull/1222) @atomiks
-- Apply `aria-hidden` to `Arrow` parts [#1196](https://github.com/mui/base-ui/pull/1196) @atomiks
-- Use `FloatingPortalLite` [#1278](https://github.com/mui/base-ui/pull/1278) @atomiks
+  [#1222](https://github.com/obstudiohq/obstudio/pull/1222) @atomiks
+- Apply `aria-hidden` to `Arrow` parts [#1196](https://github.com/obstudiohq/obstudio/pull/1196) @atomiks
+- Use `FloatingPortalLite` [#1278](https://github.com/obstudiohq/obstudio/pull/1278) @atomiks
 
 ### Progress
 
-- Set zero width when value is zero [#1204](https://github.com/mui/base-ui/pull/1204) @mj12albert
+- Set zero width when value is zero [#1204](https://github.com/obstudiohq/obstudio/pull/1204) @mj12albert
 
 ### ScrollArea
 
-- Differentiate `x`/`y` orientation `data-scrolling` [#1188](https://github.com/mui/base-ui/pull/1188) @atomiks
-- Read `DirectionProvider` and use logical positioning CSS props [#1194](https://github.com/mui/base-ui/pull/1194) @mj12albert
+- Differentiate `x`/`y` orientation `data-scrolling` [#1188](https://github.com/obstudiohq/obstudio/pull/1188) @atomiks
+- Read `DirectionProvider` and use logical positioning CSS props [#1194](https://github.com/obstudiohq/obstudio/pull/1194) @mj12albert
 
 ### Select
 
@@ -2979,28 +2979,28 @@ _Jan 10, 2025_
   The Select must explicitly include the Portal part wrapping the Positioner.
   The `keepMounted` prop was removed from the Positioner.
   It's only present on the Portal part.
-  [#1222](https://github.com/mui/base-ui/pull/1222) @atomiks
-- Allow `id` to be passed to trigger [#1174](https://github.com/mui/base-ui/pull/1174) @atomiks
-- Fallback to standard positioning when pinch-zoomed in Safari [#1139](https://github.com/mui/base-ui/pull/1139) @atomiks
-- Fix `focusableWhenDisabled` components [#1313](https://github.com/mui/base-ui/pull/1313) @mj12albert
-- Fix highlight flash on Safari [#1233](https://github.com/mui/base-ui/pull/1233) @atomiks
-- Handle pseudo-element bounds in mouseup detection [#1250](https://github.com/mui/base-ui/pull/1250) @atomiks
-- Use internal backdrop for pointer modality [#1161](https://github.com/mui/base-ui/pull/1161) @atomiks
+  [#1222](https://github.com/obstudiohq/obstudio/pull/1222) @atomiks
+- Allow `id` to be passed to trigger [#1174](https://github.com/obstudiohq/obstudio/pull/1174) @atomiks
+- Fallback to standard positioning when pinch-zoomed in Safari [#1139](https://github.com/obstudiohq/obstudio/pull/1139) @atomiks
+- Fix `focusableWhenDisabled` components [#1313](https://github.com/obstudiohq/obstudio/pull/1313) @mj12albert
+- Fix highlight flash on Safari [#1233](https://github.com/obstudiohq/obstudio/pull/1233) @atomiks
+- Handle pseudo-element bounds in mouseup detection [#1250](https://github.com/obstudiohq/obstudio/pull/1250) @atomiks
+- Use internal backdrop for pointer modality [#1161](https://github.com/obstudiohq/obstudio/pull/1161) @atomiks
 
 ### Separator
 
-- Support vertical orientation [#1304](https://github.com/mui/base-ui/pull/1304) @mj12albert
+- Support vertical orientation [#1304](https://github.com/obstudiohq/obstudio/pull/1304) @mj12albert
 
 ### Slider
 
-- Ensure `onValueCommitted` is called with the same value as latest `onValueChange` [#1296](https://github.com/mui/base-ui/pull/1296) @mj12albert
-- Replace internal map with `Composite` metadata [#1082](https://github.com/mui/base-ui/pull/1082) @mj12albert
-- Set `position: relative` on range slider indicator [#1175](https://github.com/mui/base-ui/pull/1175) @mj12albert
-- Use un-rounded values to position thumbs [#1219](https://github.com/mui/base-ui/pull/1219) @mj12albert
+- Ensure `onValueCommitted` is called with the same value as latest `onValueChange` [#1296](https://github.com/obstudiohq/obstudio/pull/1296) @mj12albert
+- Replace internal map with `Composite` metadata [#1082](https://github.com/obstudiohq/obstudio/pull/1082) @mj12albert
+- Set `position: relative` on range slider indicator [#1175](https://github.com/obstudiohq/obstudio/pull/1175) @mj12albert
+- Use un-rounded values to position thumbs [#1219](https://github.com/obstudiohq/obstudio/pull/1219) @mj12albert
 
 ### Tabs
 
-- Expose width/height state in tabs indicator [#1288](https://github.com/mui/base-ui/pull/1288) @aarongarciah
+- Expose width/height state in tabs indicator [#1288](https://github.com/obstudiohq/obstudio/pull/1288) @aarongarciah
 
 ### Tooltip
 
@@ -3008,10 +3008,10 @@ _Jan 10, 2025_
   The Tooltip must explicitly include the Portal part wrapping the Positioner.
   The `keepMounted` prop was removed from the Positioner.
   It's only present on the Portal part.
-  [#1222](https://github.com/mui/base-ui/pull/1222) @atomiks
-- Apply `aria-hidden` to `Arrow` parts [#1196](https://github.com/mui/base-ui/pull/1196) @atomiks
-- Fix PopoverTrigger and TooltipTrigger prop types [#1209](https://github.com/mui/base-ui/pull/1209) @mnajdova
-- Use `FloatingPortalLite` [#1278](https://github.com/mui/base-ui/pull/1278) @atomiks
+  [#1222](https://github.com/obstudiohq/obstudio/pull/1222) @atomiks
+- Apply `aria-hidden` to `Arrow` parts [#1196](https://github.com/obstudiohq/obstudio/pull/1196) @atomiks
+- Fix PopoverTrigger and TooltipTrigger prop types [#1209](https://github.com/obstudiohq/obstudio/pull/1209) @mnajdova
+- Use `FloatingPortalLite` [#1278](https://github.com/obstudiohq/obstudio/pull/1278) @atomiks
 
 ## v1.0.0-alpha.4
 

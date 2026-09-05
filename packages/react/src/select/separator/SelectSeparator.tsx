@@ -1,9 +1,9 @@
 'use client';
 import type * as React from 'react';
 import { ListboxSeparator } from '../../utils/listbox-separator/ListboxSeparator';
-import type { BaseUIComponentProps, Orientation } from '../../internals/types';
+import type { ObstudioComponentProps, Orientation } from '../../internals/types';
 
-export interface SelectSeparatorProps extends BaseUIComponentProps<'div', SelectSeparatorState> {
+export interface SelectSeparatorProps extends ObstudioComponentProps<'div', SelectSeparatorState> {
   /**
    * The orientation of the separator.
    * @default 'horizontal'
@@ -22,7 +22,7 @@ export interface SelectSeparatorState {
  * A visual separator between items or groups.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ * Documentation: [Obstudio Select](https://obstudio.co/react/components/select)
  */
 export const SelectSeparator = ListboxSeparator as React.ForwardRefExoticComponent<
   SelectSeparatorProps & React.RefAttributes<HTMLDivElement>

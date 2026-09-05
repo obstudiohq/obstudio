@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { error } from '@base-ui/utils/error';
-import { SafeReact } from '@base-ui/utils/safeReact';
-import type { BaseUIComponentProps } from '../../internals/types';
+import { error } from '@obstudio/utils/error';
+import { SafeReact } from '@obstudio/utils/safeReact';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import type { FieldRoot } from '../../field/root/FieldRoot';
 import { useFieldRootContext } from '../../internals/field-root-context/FieldRootContext';
@@ -15,7 +15,7 @@ import { useComboboxRootContext } from '../root/ComboboxRootContext';
  * An accessible label that is automatically associated with the combobox trigger.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)
+ * Documentation: [Obstudio Combobox](https://obstudio.co/react/components/combobox)
  */
 export const ComboboxLabel = React.forwardRef(function ComboboxLabel(
   componentProps: ComboboxLabel.Props,
@@ -73,7 +73,7 @@ export const ComboboxLabel = React.forwardRef(function ComboboxLabel(
 export interface ComboboxLabelState extends FieldRoot.State {}
 
 export interface ComboboxLabelProps extends Omit<
-  BaseUIComponentProps<'div', ComboboxLabelState>,
+  ObstudioComponentProps<'div', ComboboxLabelState>,
   'id'
 > {}
 

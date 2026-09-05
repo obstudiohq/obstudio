@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
 import { triggerOpenStateMapping } from '../../utils/collapsibleOpenStateMapping';
-import { BaseUIComponentProps, NativeButtonProps } from '../../internals/types';
+import { ObstudioComponentProps, NativeButtonProps } from '../../internals/types';
 import { useButton } from '../../internals/use-button';
 import { useCollapsibleRootContext } from '../../collapsible/root/CollapsibleRootContext';
 import type { AccordionItemState } from '../item/AccordionItem';
@@ -13,7 +13,7 @@ import { useRenderElement } from '../../internals/useRenderElement';
  * A button that opens and closes the corresponding panel.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Accordion](https://base-ui.com/react/components/accordion)
+ * Documentation: [Obstudio Accordion](https://obstudio.co/react/components/accordion)
  */
 
 export const AccordionTrigger = React.forwardRef(function AccordionTrigger(
@@ -71,7 +71,7 @@ export const AccordionTrigger = React.forwardRef(function AccordionTrigger(
 export interface AccordionTriggerState extends AccordionItemState {}
 
 export interface AccordionTriggerProps
-  extends NativeButtonProps, BaseUIComponentProps<'button', AccordionTriggerState> {}
+  extends NativeButtonProps, ObstudioComponentProps<'button', AccordionTriggerState> {}
 
 export namespace AccordionTrigger {
   export type State = AccordionTriggerState;

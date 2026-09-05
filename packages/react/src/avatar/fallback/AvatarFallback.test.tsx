@@ -1,6 +1,6 @@
 import { Mock, vi, expect, describe, beforeEach, afterEach, it } from 'vitest';
 import * as React from 'react';
-import { Avatar } from '@base-ui/react/avatar';
+import { Avatar } from '@obstudio/react/avatar';
 import { waitFor, screen } from '@mui/internal-test-utils';
 import { describeConformance, createRenderer, isJSDOM } from '#test-utils';
 import { useImageLoadingStatus } from '../image/useImageLoadingStatus';
@@ -239,11 +239,11 @@ describe('<Avatar.Fallback />', () => {
 
   describe.skipIf(isJSDOM)('regression', () => {
     afterEach(() => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
     });
 
     it('keeps only one of image or fallback mounted when switching to image', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       mockLoadingStatus((src) => (src ? 'loaded' : 'error'));
 

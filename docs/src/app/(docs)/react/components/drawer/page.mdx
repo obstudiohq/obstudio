@@ -19,7 +19,7 @@ import { DemoDrawerHero } from './demos/hero';
 Import the component and assemble its parts:
 
 ```jsx title="Anatomy"
-import { Drawer } from '@base-ui/react/drawer';
+import { Drawer } from '@obstudio/react/drawer';
 
 <Drawer.Provider>
   <Drawer.IndentBackground />
@@ -44,9 +44,9 @@ import { Drawer } from '@base-ui/react/drawer';
 </Drawer.Provider>;
 ```
 
-Drawer supports swipe gestures to dismiss. Set `swipeDirection` to control which direction dismisses the drawer. `<Drawer.Content>` allows text selection of its children without swipe interference when using a mouse pointer. Add `data-base-ui-swipe-ignore` to a descendant when you need to opt that element out of swipe dismissal for all input types.
+Drawer supports swipe gestures to dismiss. Set `swipeDirection` to control which direction dismisses the drawer. `<Drawer.Content>` allows text selection of its children without swipe interference when using a mouse pointer. Add `data-obstudio-swipe-ignore` to a descendant when you need to opt that element out of swipe dismissal for all input types.
 
-Use `<Drawer.VirtualKeyboardProvider>` when a bottom sheet contains form fields and you want Base UI to manage keyboard-aware focus and scroll handling for software keyboards. Drawers without this provider are unaffected.
+Use `<Drawer.VirtualKeyboardProvider>` when a bottom sheet contains form fields and you want Obstudio to manage keyboard-aware focus and scroll handling for software keyboards. Drawers without this provider are unaffected.
 
 ## Examples
 
@@ -450,6 +450,6 @@ export const metadata = {
     'Controlled Drawer State',
     'Accessible Drawer',
     'Headless React Components',
-    'Base UI',
+    'Obstudio',
   ],
 };

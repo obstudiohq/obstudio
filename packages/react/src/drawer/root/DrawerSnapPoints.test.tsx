@@ -1,6 +1,6 @@
 import { expect, describe, it } from 'vitest';
 import * as React from 'react';
-import { Drawer } from '@base-ui/react/drawer';
+import { Drawer } from '@obstudio/react/drawer';
 import { screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer } from '#test-utils';
 import type { DrawerSnapPoint } from './DrawerRootContext';

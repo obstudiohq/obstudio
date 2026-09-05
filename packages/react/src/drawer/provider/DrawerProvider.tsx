@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
 import {
   DrawerProviderContext,
   type DrawerVisualState,
@@ -11,7 +11,7 @@ import {
  * Provides a shared context for coordinating global Drawer UI, such as indent/background effects based on whether any Drawer is open.
  * Doesn't render its own HTML element.
  *
- * Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+ * Documentation: [Obstudio Drawer](https://obstudio.co/react/components/drawer)
  */
 export function DrawerProvider(props: DrawerProvider.Props) {
   const { children } = props;

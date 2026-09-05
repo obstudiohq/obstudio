@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Checkbox } from '@base-ui/react/checkbox';
+import { Checkbox } from '@obstudio/react/checkbox';
 import { benchmark } from '@mui/internal-benchmark';
 import { createRows, MountList } from './shared';
 

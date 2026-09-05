@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import type { BaseUIComponentProps } from '../../internals/types';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useToastRootContext } from '../root/ToastRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';
 
@@ -9,7 +9,7 @@ import { useRenderElement } from '../../internals/useRenderElement';
  * A container for the contents of a toast.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+ * Documentation: [Obstudio Toast](https://obstudio.co/react/components/toast)
  */
 export const ToastContent = React.forwardRef(function ToastContent(
   componentProps: ToastContent.Props,
@@ -66,7 +66,7 @@ export interface ToastContentState {
   behind: boolean;
 }
 
-export interface ToastContentProps extends BaseUIComponentProps<'div', ToastContentState> {}
+export interface ToastContentProps extends ObstudioComponentProps<'div', ToastContentState> {}
 
 export namespace ToastContent {
   export type State = ToastContentState;

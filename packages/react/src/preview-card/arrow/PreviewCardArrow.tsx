@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { usePreviewCardPositionerContext } from '../positioner/PreviewCardPositionerContext';
 import { usePreviewCardRootContext } from '../root/PreviewCardContext';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import type { Align, Side } from '../../internals/useAnchorPositioning';
 import { popupStateMapping } from '../../utils/popupStateMapping';
 import { useRenderElement } from '../../internals/useRenderElement';
@@ -11,7 +11,7 @@ import { useRenderElement } from '../../internals/useRenderElement';
  * Displays an element positioned against the preview card anchor.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Preview Card](https://base-ui.com/react/components/preview-card)
+ * Documentation: [Obstudio Preview Card](https://obstudio.co/react/components/preview-card)
  */
 export const PreviewCardArrow = React.forwardRef(function PreviewCardArrow(
   componentProps: PreviewCardArrow.Props,
@@ -60,7 +60,10 @@ export interface PreviewCardArrowState {
   uncentered: boolean;
 }
 
-export interface PreviewCardArrowProps extends BaseUIComponentProps<'div', PreviewCardArrowState> {}
+export interface PreviewCardArrowProps extends ObstudioComponentProps<
+  'div',
+  PreviewCardArrowState
+> {}
 
 export namespace PreviewCardArrow {
   export type State = PreviewCardArrowState;

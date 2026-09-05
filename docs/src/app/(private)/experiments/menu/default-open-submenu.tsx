@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
-import { Menu } from '@base-ui/react/menu';
+import { Menu } from '@obstudio/react/menu';
 import styles from './menu.module.css';
 
 /**
- * Repro for https://github.com/mui/base-ui/issues/4224: a `defaultOpen` submenu inside a menu that
+ * Repro for https://github.com/obstudiohq/obstudio/issues/4224: a `defaultOpen` submenu inside a menu that
  * is opened by the user. The submenu should animate in alongside its parent rather than appearing
  * fully formed. Slowed down so the enter transition is easy to see.
  */

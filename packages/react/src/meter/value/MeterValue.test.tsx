@@ -1,6 +1,6 @@
 import { expect, vi, describe, it } from 'vitest';
 import { screen } from '@mui/internal-test-utils';
-import { Meter } from '@base-ui/react/meter';
+import { Meter } from '@obstudio/react/meter';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Meter.Value />', () => {

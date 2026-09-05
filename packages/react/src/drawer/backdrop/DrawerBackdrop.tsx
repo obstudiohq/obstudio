@@ -3,7 +3,7 @@ import * as React from 'react';
 import { useDialogRootContext } from '../../dialog/root/DialogRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { type TransitionStatus } from '../../internals/useTransitionStatus';
-import { type BaseUIComponentProps } from '../../internals/types';
+import { type ObstudioComponentProps } from '../../internals/types';
 import { popupTransitionStateMapping } from '../../utils/popupStateMapping';
 import * as DrawerPopupCssVars from '../popup/DrawerPopupCssVars';
 import * as DrawerBackdropCssVars from './DrawerBackdropCssVars';
@@ -12,7 +12,7 @@ import * as DrawerBackdropCssVars from './DrawerBackdropCssVars';
  * An overlay displayed beneath the popup.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+ * Documentation: [Obstudio Drawer](https://obstudio.co/react/components/drawer)
  */
 export const DrawerBackdrop = React.forwardRef(function DrawerBackdrop(
   componentProps: DrawerBackdrop.Props,
@@ -54,7 +54,7 @@ export const DrawerBackdrop = React.forwardRef(function DrawerBackdrop(
   });
 });
 
-export interface DrawerBackdropProps extends BaseUIComponentProps<'div', DrawerBackdropState> {
+export interface DrawerBackdropProps extends ObstudioComponentProps<'div', DrawerBackdropState> {
   /**
    * Whether the backdrop is forced to render even when nested.
    * @default false

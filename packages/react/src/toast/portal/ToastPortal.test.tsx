@@ -1,6 +1,6 @@
 import { describe } from 'vitest';
 import * as React from 'react';
-import { Toast } from '@base-ui/react/toast';
+import { Toast } from '@obstudio/react/toast';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Toast.Portal />', () => {

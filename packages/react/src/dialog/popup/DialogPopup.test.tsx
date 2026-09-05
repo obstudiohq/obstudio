@@ -1,7 +1,7 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
-import { Dialog } from '@base-ui/react/dialog';
-import { AlertDialog } from '@base-ui/react/alert-dialog';
+import { Dialog } from '@obstudio/react/dialog';
+import { AlertDialog } from '@obstudio/react/alert-dialog';
 import { act, fireEvent, waitFor, screen } from '@mui/internal-test-utils';
 import { describeConformance, createRenderer, isJSDOM, waitSingleFrame } from '#test-utils';
 
@@ -24,7 +24,7 @@ describe('<Dialog.Popup />', () => {
 
     try {
       await expect(render(<Dialog.Popup />)).rejects.toThrow(
-        'Base UI: DialogRootContext is missing. Dialog parts must be placed within <Dialog.Root>.',
+        'Obstudio: DialogRootContext is missing. Dialog parts must be placed within <Dialog.Root>.',
       );
     } finally {
       errorSpy.mockRestore();

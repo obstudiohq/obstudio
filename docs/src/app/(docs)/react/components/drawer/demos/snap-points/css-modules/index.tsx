@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { Drawer } from '@base-ui/react/drawer';
+import { Drawer } from '@obstudio/react/drawer';
 import styles from './index.module.css';
 
 const TOP_MARGIN_REM = 1;

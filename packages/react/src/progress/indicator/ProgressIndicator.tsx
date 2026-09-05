@@ -4,13 +4,13 @@ import { useRenderElement } from '../../internals/useRenderElement';
 import type { ProgressRootState } from '../root/ProgressRoot';
 import { useProgressRootContext } from '../root/ProgressRootContext';
 import { progressStateAttributesMapping } from '../root/stateAttributesMapping';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 
 /**
  * Visualizes the completion status of the task.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Progress](https://base-ui.com/react/components/progress)
+ * Documentation: [Obstudio Progress](https://obstudio.co/react/components/progress)
  */
 export const ProgressIndicator = React.forwardRef(function ProgressIndicator(
   componentProps: ProgressIndicator.Props,
@@ -46,7 +46,7 @@ export const ProgressIndicator = React.forwardRef(function ProgressIndicator(
 
 export interface ProgressIndicatorState extends ProgressRootState {}
 
-export interface ProgressIndicatorProps extends BaseUIComponentProps<
+export interface ProgressIndicatorProps extends ObstudioComponentProps<
   'div',
   ProgressIndicatorState
 > {}

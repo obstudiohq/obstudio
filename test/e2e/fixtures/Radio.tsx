@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Radio } from '@base-ui/react/radio';
-import { RadioGroup } from '@base-ui/react/radio-group';
+import { Radio } from '@obstudio/react/radio';
+import { RadioGroup } from '@obstudio/react/radio-group';
 import styles from './Radio.module.css';
 
 export default function ExampleRadioGroup() {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { NavigationMenu } from '@base-ui/react/navigation-menu';
+import { NavigationMenu } from '@obstudio/react/navigation-menu';
 
 const topTriggerStyle: React.CSSProperties = {
   boxSizing: 'border-box',

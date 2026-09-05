@@ -18,7 +18,7 @@ export function useAccordionItemContext() {
   const context = React.useContext(AccordionItemContext);
   if (context === undefined) {
     throw new Error(
-      'Base UI: AccordionItemContext is missing. Accordion parts must be placed within <Accordion.Item>.',
+      'Obstudio: AccordionItemContext is missing. Accordion parts must be placed within <Accordion.Item>.',
     );
   }
   return context;

@@ -1,17 +1,17 @@
 'use client';
 import * as React from 'react';
 import { getNodeName, isHTMLElement } from '@floating-ui/utils/dom';
-import { addEventListener } from '@base-ui/utils/addEventListener';
-import { mergeCleanups } from '@base-ui/utils/mergeCleanups';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
-import { useValueAsRef } from '@base-ui/utils/useValueAsRef';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import { platform } from '@base-ui/utils/platform';
-import type { InteractionType } from '@base-ui/utils/useEnhancedClickHandler';
-import { useAnimationFrame } from '@base-ui/utils/useAnimationFrame';
-import { ownerDocument, ownerWindow } from '@base-ui/utils/owner';
+import { addEventListener } from '@obstudio/utils/addEventListener';
+import { mergeCleanups } from '@obstudio/utils/mergeCleanups';
+import { useMergedRefs } from '@obstudio/utils/useMergedRefs';
+import { useValueAsRef } from '@obstudio/utils/useValueAsRef';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useTimeout } from '@obstudio/utils/useTimeout';
+import { platform } from '@obstudio/utils/platform';
+import type { InteractionType } from '@obstudio/utils/useEnhancedClickHandler';
+import { useAnimationFrame } from '@obstudio/utils/useAnimationFrame';
+import { ownerDocument, ownerWindow } from '@obstudio/utils/owner';
 import { FocusGuard } from '../../utils/FocusGuard';
 import {
   activeElement,
@@ -34,7 +34,7 @@ import {
 import { getNodeAncestors, getNodeChildren } from '../utils/nodes';
 import { isElementVisible } from '../utils/composite';
 import type { FloatingContext, FloatingRootContext } from '../types';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { createAttribute } from '../utils/createAttribute';
 import { enqueueFocus } from '../utils/enqueueFocus';

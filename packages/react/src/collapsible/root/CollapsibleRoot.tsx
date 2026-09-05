@@ -1,19 +1,19 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { BaseUIComponentProps } from '../../internals/types';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useCollapsibleRoot, type UseCollapsibleRootReturnValue } from './useCollapsibleRoot';
 import { CollapsibleRootContext } from './CollapsibleRootContext';
 import { collapsibleStateAttributesMapping } from './stateAttributesMapping';
-import type { BaseUIChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import type { ObstudioChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 
 /**
  * Groups all parts of the collapsible.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Collapsible](https://base-ui.com/react/components/collapsible)
+ * Documentation: [Obstudio Collapsible](https://obstudio.co/react/components/collapsible)
  */
 export const CollapsibleRoot = React.forwardRef(function CollapsibleRoot(
   componentProps: CollapsibleRoot.Props,
@@ -76,7 +76,7 @@ export interface CollapsibleRootState extends Pick<
   'open' | 'disabled' | 'transitionStatus'
 > {}
 
-export interface CollapsibleRootProps extends BaseUIComponentProps<'div', CollapsibleRootState> {
+export interface CollapsibleRootProps extends ObstudioComponentProps<'div', CollapsibleRootState> {
   /**
    * Whether the collapsible panel is currently open.
    *
@@ -104,7 +104,7 @@ export interface CollapsibleRootProps extends BaseUIComponentProps<'div', Collap
 
 export type CollapsibleRootChangeEventReason = typeof REASONS.triggerPress | typeof REASONS.none;
 export type CollapsibleRootChangeEventDetails =
-  BaseUIChangeEventDetails<CollapsibleRootChangeEventReason>;
+  ObstudioChangeEventDetails<CollapsibleRootChangeEventReason>;
 
 export namespace CollapsibleRoot {
   export type State = CollapsibleRootState;

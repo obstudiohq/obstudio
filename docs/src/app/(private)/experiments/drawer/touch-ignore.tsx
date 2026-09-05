@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import clsx from 'clsx';
-import { Drawer } from '@base-ui/react/drawer';
+import { Drawer } from '@obstudio/react/drawer';
 import styles from './touch-ignore.module.css';
 
 type EventName = 'plain div click' | 'ignored div click' | 'native button click' | 'drawer closed';
@@ -23,7 +23,7 @@ export default function DrawerTouchIgnoreExperiment() {
         <p className={styles.Lead}>
           Use this to compare touch behavior inside <code>Drawer.Content</code>. The plain div
           should still participate in swipe-to-dismiss, while the explicit{' '}
-          <code>data-base-ui-swipe-ignore</code> div should preserve taps.
+          <code>data-obstudio-swipe-ignore</code> div should preserve taps.
         </p>
       </div>
 
@@ -33,7 +33,7 @@ export default function DrawerTouchIgnoreExperiment() {
           <ol className={styles.InstructionsList}>
             <li>Tap the plain div on a touch device. It should still be part of swipe handling.</li>
             <li>
-              Tap the <code>data-base-ui-swipe-ignore</code> div. Its click counter should
+              Tap the <code>data-obstudio-swipe-ignore</code> div. Its click counter should
               increment.
             </li>
             <li>Tap the native button. It should continue to work as before.</li>
@@ -101,7 +101,7 @@ export default function DrawerTouchIgnoreExperiment() {
                   {/* Intentional non-interactive div to reproduce explicit swipe-ignore behavior. */}
                   {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                   <div
-                    data-base-ui-swipe-ignore
+                    data-obstudio-swipe-ignore
                     className={clsx(styles.Tile, styles.TileEmerald)}
                     onClick={() => {
                       setIgnoredDivClicks((value) => value + 1);
@@ -109,7 +109,7 @@ export default function DrawerTouchIgnoreExperiment() {
                     }}
                   >
                     <div className={clsx(styles.TileTitle, styles.TileTitleEmerald)}>
-                      Div with data-base-ui-swipe-ignore
+                      Div with data-obstudio-swipe-ignore
                     </div>
                     <div className={clsx(styles.TileDescription, styles.TileDescriptionEmerald)}>
                       Tapping here should preserve the click even on touch.

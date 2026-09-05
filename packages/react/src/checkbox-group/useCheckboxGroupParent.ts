@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { EMPTY_ARRAY } from '@base-ui/utils/empty';
-import type { BaseUIChangeEventDetails } from '../internals/createBaseUIEventDetails';
-import type { BaseUIEventReasons } from '../internals/reasons';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { EMPTY_ARRAY } from '@obstudio/utils/empty';
+import type { ObstudioChangeEventDetails } from '../internals/createObstudioEventDetails';
+import type { ObstudioEventReasons } from '../internals/reasons';
 
 export function useCheckboxGroupParent(
   params: UseCheckboxGroupParentParameters,
@@ -145,7 +145,7 @@ export interface UseCheckboxGroupParentParameters {
   onValueChange?:
     | ((
         value: string[],
-        eventDetails: BaseUIChangeEventDetails<BaseUIEventReasons['none']>,
+        eventDetails: ObstudioChangeEventDetails<ObstudioEventReasons['none']>,
       ) => void)
     | undefined;
 }
@@ -162,14 +162,14 @@ export interface UseCheckboxGroupParentReturnValue {
     'aria-controls': string | undefined;
     onCheckedChange: (
       checked: boolean,
-      eventDetails: BaseUIChangeEventDetails<BaseUIEventReasons['none']>,
+      eventDetails: ObstudioChangeEventDetails<ObstudioEventReasons['none']>,
     ) => void;
   };
   getChildProps: (value: string) => {
     checked: boolean;
     onCheckedChange: (
       checked: boolean,
-      eventDetails: BaseUIChangeEventDetails<BaseUIEventReasons['none']>,
+      eventDetails: ObstudioChangeEventDetails<ObstudioEventReasons['none']>,
     ) => void;
   };
 }

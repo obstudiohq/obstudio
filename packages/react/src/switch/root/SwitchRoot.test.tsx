@@ -1,10 +1,10 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
 import { act, fireEvent, screen, waitFor } from '@mui/internal-test-utils';
-import { Switch } from '@base-ui/react/switch';
+import { Switch } from '@obstudio/react/switch';
 import { describeConformance, createRenderer, isJSDOM } from '#test-utils';
-import { Field } from '@base-ui/react/field';
-import { Form } from '@base-ui/react/form';
+import { Field } from '@obstudio/react/field';
+import { Form } from '@obstudio/react/form';
 
 describe('<Switch.Root />', () => {
   const { render } = createRenderer();

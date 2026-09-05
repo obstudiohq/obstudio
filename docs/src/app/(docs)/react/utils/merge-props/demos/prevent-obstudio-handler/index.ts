@@ -1,4 +1,4 @@
 import { createDemoWithVariants } from 'docs/src/utils/createDemo';
 import CssModules from './css-modules';
 
-export const DemoPreventBaseUIHandler = createDemoWithVariants(import.meta.url, { CssModules });
+export const DemoPreventObstudioHandler = createDemoWithVariants(import.meta.url, { CssModules });

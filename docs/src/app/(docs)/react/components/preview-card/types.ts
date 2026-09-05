@@ -1,4 +1,4 @@
-import { PreviewCard } from '@base-ui/react/preview-card';
+import { PreviewCard } from '@obstudio/react/preview-card';
 import { createMultipleTypes } from 'docs/src/utils/createTypes';
 
 const { types, AdditionalTypes } = createMultipleTypes(import.meta.url, PreviewCard);

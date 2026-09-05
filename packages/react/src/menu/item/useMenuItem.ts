@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
+import { useMergedRefs } from '@obstudio/utils/useMergedRefs';
 import { useButton } from '../../internals/use-button';
 import { mergeProps } from '../../merge-props';
 import { HTMLProps } from '../../internals/types';

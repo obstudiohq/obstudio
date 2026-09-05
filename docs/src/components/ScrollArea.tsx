@@ -1,4 +1,4 @@
-import { ScrollArea } from '@base-ui/react/scroll-area';
+import { ScrollArea } from '@obstudio/react/scroll-area';
 import clsx from 'clsx';
 import './ScrollArea.css';
 

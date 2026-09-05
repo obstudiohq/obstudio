@@ -1,6 +1,6 @@
 import { describe } from 'vitest';
 import * as React from 'react';
-import { Popover } from '@base-ui/react/popover';
+import { Popover } from '@obstudio/react/popover';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Popover.Portal />', () => {

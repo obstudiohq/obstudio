@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { BaseUIComponentProps, HTMLProps } from '../../internals/types';
+import { ObstudioComponentProps, HTMLProps } from '../../internals/types';
 import { useFocusableWhenDisabled } from '../../utils/useFocusableWhenDisabled';
 import type { ToolbarRootState } from '../root/ToolbarRoot';
 import { useToolbarRootContext } from '../root/ToolbarRootContext';
@@ -11,7 +11,7 @@ import { CompositeItem } from '../../internals/composite/item/CompositeItem';
  * A native input element that integrates with Toolbar keyboard navigation.
  * Renders an `<input>` element.
  *
- * Documentation: [Base UI Toolbar](https://base-ui.com/react/components/toolbar)
+ * Documentation: [Obstudio Toolbar](https://obstudio.co/react/components/toolbar)
  */
 export const ToolbarInput = React.forwardRef(function ToolbarInput(
   componentProps: ToolbarInput.Props,
@@ -86,7 +86,7 @@ export interface ToolbarInputState extends ToolbarRootState {
   focusable: boolean;
 }
 
-export interface ToolbarInputProps extends BaseUIComponentProps<'input', ToolbarInputState> {
+export interface ToolbarInputProps extends ObstudioComponentProps<'input', ToolbarInputState> {
   /**
    * When `true` the item is disabled.
    * @default false

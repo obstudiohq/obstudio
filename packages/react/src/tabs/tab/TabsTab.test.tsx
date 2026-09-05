@@ -2,7 +2,7 @@ import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
 import { Link, MemoryRouter } from 'react-router';
 import { act, fireEvent, screen } from '@mui/internal-test-utils';
-import { Tabs } from '@base-ui/react/tabs';
+import { Tabs } from '@obstudio/react/tabs';
 import { createRenderer, describeConformance, isJSDOM, mergeRefs } from '#test-utils';
 
 const UnstableRefTab = React.forwardRef(function UnstableRefTab(
@@ -109,7 +109,7 @@ describe('<Tabs.Tab />', () => {
           </Tabs.Root>,
         ),
       ).rejects.toThrow(
-        'Base UI: TabsListContext is missing. TabsList parts must be placed within <Tabs.List>.',
+        'Obstudio: TabsListContext is missing. TabsList parts must be placed within <Tabs.List>.',
       );
     } finally {
       errorSpy.mockRestore();

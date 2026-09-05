@@ -1,12 +1,12 @@
-# Base UI
+# Obstudio
 
-From the creators of Radix, Floating UI, and Material UI, Base UI is an unstyled UI component library for building accessible user interfaces.
+From the creators of Radix, Floating UI, and Material UI, Obstudio is an unstyled UI component library for building accessible user interfaces.
 
 ---
 
 ## Documentation
 
-To get started, check out the [Base UI documentation](https://base-ui.com/react/overview/quick-start).
+To get started, check out the [Obstudio documentation](https://obstudio.co/react/overview/quick-start).
 
 ## Contributing
 
@@ -14,13 +14,13 @@ Read our [contributing guide](/CONTRIBUTING.md) to learn about our development p
 
 ## Releases
 
-To see the latest updates, check out the [releases](https://base-ui.com/react/overview/releases).
+To see the latest updates, check out the [releases](https://obstudio.co/react/overview/releases).
 
 ## Community
 
 - **Discord** For community support, questions, and tips, join our [Discord](https://discord.gg/g6C3hUtuxz).
-- **X** To stay up-to-date on new releases and announcements follow [Base UI on X](https://x.com/base_ui).
-- **Bluesky** We're also on [Bluesky](https://bsky.app/profile/base-ui.com).
+- **X** To stay up-to-date on new releases and announcements follow [Obstudio on X](https://x.com/obstudio).
+- **Bluesky** We're also on [Bluesky](https://bsky.app/profile/obstudio.co).
 
 ## Team
 

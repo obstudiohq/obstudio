@@ -18,7 +18,7 @@ import {
   useClick,
 } from '../index';
 import { REASONS } from '../../internals/reasons';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import type { UseDismissProps } from './useDismiss';
 import { normalizeProp } from './useDismiss';
 

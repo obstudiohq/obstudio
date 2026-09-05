@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { addEventListener } from '@base-ui/utils/addEventListener';
-import type { BaseUIComponentProps, HTMLProps } from '../../internals/types';
+import { addEventListener } from '@obstudio/utils/addEventListener';
+import type { ObstudioComponentProps, HTMLProps } from '../../internals/types';
 import { contains, getTarget } from '../../floating-ui-react/utils';
 import { useScrollAreaRootContext } from '../root/ScrollAreaRootContext';
 import { ScrollAreaScrollbarContext } from './ScrollAreaScrollbarContext';
@@ -17,7 +17,7 @@ import * as ScrollAreaScrollbarCssVars from './ScrollAreaScrollbarCssVars';
  * A vertical or horizontal scrollbar for the scroll area.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Scroll Area](https://base-ui.com/react/components/scroll-area)
+ * Documentation: [Obstudio Scroll Area](https://obstudio.co/react/components/scroll-area)
  */
 export const ScrollAreaScrollbar = React.forwardRef(function ScrollAreaScrollbar(
   componentProps: ScrollAreaScrollbar.Props,
@@ -251,7 +251,7 @@ export interface ScrollAreaScrollbarState extends ScrollAreaRootState {
   orientation: 'vertical' | 'horizontal';
 }
 
-export interface ScrollAreaScrollbarProps extends BaseUIComponentProps<
+export interface ScrollAreaScrollbarProps extends ObstudioComponentProps<
   'div',
   ScrollAreaScrollbarState
 > {

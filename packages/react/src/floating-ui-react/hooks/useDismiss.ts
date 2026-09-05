@@ -1,11 +1,11 @@
 'use client';
 /* eslint-disable no-underscore-dangle */
 import * as React from 'react';
-import { addEventListener } from '@base-ui/utils/addEventListener';
-import { mergeCleanups } from '@base-ui/utils/mergeCleanups';
-import { ownerDocument } from '@base-ui/utils/owner';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { Timeout, useTimeout } from '@base-ui/utils/useTimeout';
+import { addEventListener } from '@obstudio/utils/addEventListener';
+import { mergeCleanups } from '@obstudio/utils/mergeCleanups';
+import { ownerDocument } from '@obstudio/utils/owner';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { Timeout, useTimeout } from '@obstudio/utils/useTimeout';
 import {
   getComputedStyle,
   getParentNode,
@@ -14,11 +14,11 @@ import {
   isLastTraversableNode,
   isShadowRoot,
 } from '@floating-ui/utils/dom';
-import { platform } from '@base-ui/utils/platform';
+import { platform } from '@obstudio/utils/platform';
 import { useFloatingTree } from '../components/FloatingTree';
 import { FloatingTreeStore } from '../components/FloatingTreeStore';
 import type { ElementProps, FloatingContext, FloatingRootContext } from '../types';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import type { FloatingUIOpenChangeDetails } from '../../internals/types';
 import { REASONS } from '../../internals/reasons';
 import { createAttribute } from '../utils/createAttribute';
@@ -780,7 +780,7 @@ export function useDismiss(
       onKeyDown: closeOnEscapeKeyDown,
       // `onMouseDown` may be blocked if `event.preventDefault()` is called in
       // `onPointerDown`, such as with <NumberField.ScrubArea>.
-      // See https://github.com/mui/base-ui/pull/3379
+      // See https://github.com/obstudiohq/obstudio/pull/3379
       onPointerDown: markInsidePressStartPrevented,
       onMouseDown: markInsidePressStartPrevented,
       onClickCapture: markInsideReactTree,

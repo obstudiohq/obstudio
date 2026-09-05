@@ -2,13 +2,13 @@ import * as React from 'react';
 import { expect } from 'vitest';
 import type {
   ConformantComponentProps,
-  BaseUiConformanceTestsOptions,
+  ObstudioConformanceTestsOptions,
 } from '../describeConformance';
 import { throwMissingPropError } from './utils';
 
 export function testClassName(
   element: React.ReactElement<ConformantComponentProps>,
-  getOptions: () => BaseUiConformanceTestsOptions,
+  getOptions: () => ObstudioConformanceTestsOptions,
 ) {
   describe('prop: className', () => {
     const { render } = getOptions();

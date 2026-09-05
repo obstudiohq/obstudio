@@ -2,7 +2,7 @@ import { expect, vi, describe, beforeEach, it } from 'vitest';
 import * as React from 'react';
 import type { UserEvent } from '@testing-library/user-event';
 import { act, flushMicrotasks, screen, waitFor, within } from '@mui/internal-test-utils';
-import { AlertDialog } from '@base-ui/react/alert-dialog';
+import { AlertDialog } from '@obstudio/react/alert-dialog';
 import { createRenderer, isJSDOM, popupConformanceTests } from '#test-utils';
 import { REASONS } from '../../internals/reasons';
 import { useDialogRootContext } from '../../dialog/root/DialogRootContext';
@@ -11,7 +11,7 @@ describe('<AlertDialog.Root />', () => {
   const { render } = createRenderer();
 
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
   });
 
   popupConformanceTests({
@@ -1092,7 +1092,7 @@ describe('<AlertDialog.Root />', () => {
     });
 
     it('is called on close when the exit animation finishes', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       const onOpenChangeComplete = vi.fn();
 
@@ -1175,7 +1175,7 @@ describe('<AlertDialog.Root />', () => {
     });
 
     it('is called on open when the enter animation finishes', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       const onOpenChangeComplete = vi.fn();
 

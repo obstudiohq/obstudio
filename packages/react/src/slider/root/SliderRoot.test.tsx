@@ -1,12 +1,12 @@
 import { expect, vi, describe, beforeAll, it } from 'vitest';
 import * as React from 'react';
 import { act, flushMicrotasks, fireEvent, screen, waitFor } from '@mui/internal-test-utils';
-import { DirectionProvider, type TextDirection } from '@base-ui/react/direction-provider';
-import { Field } from '@base-ui/react/field';
-import { Slider } from '@base-ui/react/slider';
-import { Form } from '@base-ui/react/form';
+import { DirectionProvider, type TextDirection } from '@obstudio/react/direction-provider';
+import { Field } from '@obstudio/react/field';
+import { Slider } from '@obstudio/react/slider';
+import { Form } from '@obstudio/react/form';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
-import { platform } from '@base-ui/utils/platform';
+import { platform } from '@obstudio/utils/platform';
 import { REASONS } from '../../internals/reasons';
 import {
   ARROW_RIGHT,
@@ -93,7 +93,7 @@ describe('<Slider.Root />', () => {
     // eslint-disable-next-line vitest/no-unneeded-async-expect-function
     await expect(async () => {
       await render(<TestSlider defaultValue={10} min={10} max={10} />);
-    }).toWarnDev('Base UI: Slider `max` must be greater than `min`.');
+    }).toWarnDev('Obstudio: Slider `max` must be greater than `min`.');
   });
 
   describe('server-side rendering', () => {

@@ -230,7 +230,7 @@ function transformJsx() {
 
           case 'InstallationBlock': {
             const pkg =
-              node.attributes?.find((attr) => attr.name === 'package')?.value || '@base-ui/react';
+              node.attributes?.find((attr) => attr.name === 'package')?.value || '@obstudio/react';
 
             const nodes = INSTALLATION_PACKAGE_MANAGERS.flatMap((packageManager) => [
               mdx.heading(3, packageManager.label),

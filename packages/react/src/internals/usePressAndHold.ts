@@ -1,11 +1,11 @@
 'use client';
 import * as React from 'react';
-import { addEventListener } from '@base-ui/utils/addEventListener';
-import { NOOP } from '@base-ui/utils/empty';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import { useInterval } from '@base-ui/utils/useInterval';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { ownerWindow } from '@base-ui/utils/owner';
+import { addEventListener } from '@obstudio/utils/addEventListener';
+import { NOOP } from '@obstudio/utils/empty';
+import { useTimeout } from '@obstudio/utils/useTimeout';
+import { useInterval } from '@obstudio/utils/useInterval';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { ownerWindow } from '@obstudio/utils/owner';
 
 const DEFAULT_TICK_DELAY = 60;
 const DEFAULT_START_DELAY = 400;

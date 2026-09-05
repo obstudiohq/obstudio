@@ -1,11 +1,11 @@
 {
   "private": true,
-  "description": "Performance benchmark workspace for Base UI",
+  "description": "Performance benchmark workspace for Obstudio",
   "scripts": {
     "benchmark": "vitest run"
   },
   "dependencies": {
-    "@base-ui/react": "workspace:*",
+    "@obstudio/react": "workspace:*",
     "react": "19.2.8",
     "react-dom": "19.2.8"
   },

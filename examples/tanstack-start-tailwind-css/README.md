@@ -1,12 +1,12 @@
-# Base UI + TanStack Start
+# Obstudio + TanStack Start
 
-This is a simple [TanStack Start](https://tanstack.com/start/latest/docs/framework/react/overview) app with [Base UI components](https://base-ui.com/react/overview/quick-start) styled using [Tailwind CSS](https://tailwindcss.com/).
+This is a simple [TanStack Start](https://tanstack.com/start/latest/docs/framework/react/overview) app with [Obstudio components](https://obstudio.co/react/overview/quick-start) styled using [Tailwind CSS](https://tailwindcss.com/).
 
 ## Getting started
 
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/sandbox/github/mui/base-ui/tree/master/examples/tanstack-start-tailwind-css)
+[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/sandbox/github/obstudiohq/obstudio/tree/master/examples/tanstack-start-tailwind-css)
 
-[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/mui/base-ui/tree/master/examples/tanstack-start-tailwind-css)
+[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/obstudiohq/obstudio/tree/master/examples/tanstack-start-tailwind-css)
 
 **Note:** TanStack Start Server Functions used in the combobox example may not work in StackBlitz due to lack of AsyncLocalStorage support.
 

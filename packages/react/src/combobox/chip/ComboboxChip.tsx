@@ -2,13 +2,13 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { useRenderElement } from '../../internals/useRenderElement';
-import { BaseUIComponentProps } from '../../internals/types';
+import { ObstudioComponentProps } from '../../internals/types';
 import { useComboboxChipsContext } from '../chips/ComboboxChipsContext';
 import { useComboboxRootContext } from '../root/ComboboxRootContext';
 import { useCompositeListItem } from '../../internals/composite/list/useCompositeListItem';
 import { ComboboxChipContext } from './ComboboxChipContext';
 import { stopEvent } from '../../floating-ui-react/utils';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { useDirection } from '../../internals/direction-context/DirectionContext';
 import { getChipNavigationKeys, getIndexAfterChipRemoval } from '../utils/parts';
@@ -17,7 +17,7 @@ import { getChipNavigationKeys, getIndexAfterChipRemoval } from '../utils/parts'
  * An individual chip that represents a value in a multiselectable input.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)
+ * Documentation: [Obstudio Combobox](https://obstudio.co/react/components/combobox)
  */
 export const ComboboxChip = React.forwardRef(function ComboboxChip(
   componentProps: ComboboxChip.Props,
@@ -143,7 +143,7 @@ export interface ComboboxChipState {
   disabled: boolean;
 }
 
-export interface ComboboxChipProps extends BaseUIComponentProps<'div', ComboboxChipState> {}
+export interface ComboboxChipProps extends ObstudioComponentProps<'div', ComboboxChipState> {}
 
 export namespace ComboboxChip {
   export type State = ComboboxChipState;

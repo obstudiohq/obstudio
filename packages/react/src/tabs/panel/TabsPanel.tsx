@@ -1,14 +1,14 @@
 'use client';
 import * as React from 'react';
-import { inertValue } from '@base-ui/utils/inertValue';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useBaseUiId } from '../../internals/useBaseUiId';
+import { inertValue } from '@obstudio/utils/inertValue';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useObstudioId } from '../../internals/useObstudioId';
 import type { StateAttributesMapping } from '../../internals/getStateAttributesProps';
 import { transitionStatusMapping } from '../../internals/stateAttributesMapping';
 import { useOpenChangeComplete } from '../../internals/useOpenChangeComplete';
 import { type TransitionStatus, useTransitionStatus } from '../../internals/useTransitionStatus';
 import { useRenderElement } from '../../internals/useRenderElement';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useCompositeListItem } from '../../internals/composite/list/useCompositeListItem';
 import { tabsStateAttributesMapping } from '../root/stateAttributesMapping';
 import { useTabsRootContext } from '../root/TabsRootContext';
@@ -25,7 +25,7 @@ const stateAttributesMapping: StateAttributesMapping<TabsPanelState> = {
  * A panel displayed when the corresponding tab is active.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Tabs](https://base-ui.com/react/components/tabs)
+ * Documentation: [Obstudio Tabs](https://obstudio.co/react/components/tabs)
  */
 export const TabsPanel = React.forwardRef(function TabsPanel(
   componentProps: TabsPanel.Props,
@@ -41,7 +41,7 @@ export const TabsPanel = React.forwardRef(function TabsPanel(
     registerMountedTabPanel,
   } = useTabsRootContext();
 
-  const id = useBaseUiId();
+  const id = useObstudioId();
 
   const { ref: listItemRef, index } = useCompositeListItem();
 
@@ -124,7 +124,7 @@ export interface TabsPanelState extends TabsRootState {
   transitionStatus: TransitionStatus;
 }
 
-export interface TabsPanelProps extends BaseUIComponentProps<'div', TabsPanelState> {
+export interface TabsPanelProps extends ObstudioComponentProps<'div', TabsPanelState> {
   /**
    * The value of the TabPanel. It will be shown when the Tab with the corresponding value is active.
    */

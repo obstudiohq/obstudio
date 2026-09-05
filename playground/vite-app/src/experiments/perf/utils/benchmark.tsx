@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useTimeout } from '@base-ui/utils/useTimeout';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useTimeout } from '@obstudio/utils/useTimeout';
 import styles from '../perf.module.css';
 
 const DOM_SETTLE_QUIET_WINDOW_MS = 32;

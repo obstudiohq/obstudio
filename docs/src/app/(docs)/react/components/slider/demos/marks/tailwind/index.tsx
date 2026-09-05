@@ -1,4 +1,4 @@
-import { Slider } from '@base-ui/react/slider';
+import { Slider } from '@obstudio/react/slider';
 
 const MIN = 0;
 const MAX = 100;

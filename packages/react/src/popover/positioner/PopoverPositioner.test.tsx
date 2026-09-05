@@ -1,8 +1,8 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
-import { DirectionProvider } from '@base-ui/react/direction-provider';
-import { Popover } from '@base-ui/react/popover';
-import { Tooltip } from '@base-ui/react/tooltip';
+import { DirectionProvider } from '@obstudio/react/direction-provider';
+import { Popover } from '@obstudio/react/popover';
+import { Tooltip } from '@obstudio/react/tooltip';
 import { act, screen, waitFor } from '@mui/internal-test-utils';
 import {
   createRenderer,
@@ -44,7 +44,7 @@ describe('<Popover.Positioner />', () => {
             <Popover.Positioner />
           </Popover.Root>,
         ),
-      ).rejects.toThrow('Base UI: <Popover.Portal> is missing.');
+      ).rejects.toThrow('Obstudio: <Popover.Portal> is missing.');
     } finally {
       errorSpy.mockRestore();
     }
@@ -314,7 +314,7 @@ describe('<Popover.Positioner />', () => {
     });
   });
 
-  // https://github.com/mui/base-ui/issues/5131
+  // https://github.com/obstudiohq/obstudio/issues/5131
   it.skipIf(isJSDOM)('rests exactly at collisionPadding from the colliding edge', async () => {
     const collisionPadding = 12;
     let setOpen!: React.Dispatch<React.SetStateAction<boolean>>;

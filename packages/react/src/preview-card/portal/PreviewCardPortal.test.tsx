@@ -1,6 +1,6 @@
 import { describe } from 'vitest';
 import * as React from 'react';
-import { PreviewCard } from '@base-ui/react/preview-card';
+import { PreviewCard } from '@obstudio/react/preview-card';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<PreviewCard.Portal />', () => {

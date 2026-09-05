@@ -1,6 +1,6 @@
 import { expect, describe, it } from 'vitest';
-import { Toolbar } from '@base-ui/react/toolbar';
-import { DirectionProvider, type TextDirection } from '@base-ui/react/direction-provider';
+import { Toolbar } from '@obstudio/react/toolbar';
+import { DirectionProvider, type TextDirection } from '@obstudio/react/direction-provider';
 import { screen } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { type Orientation } from '../../internals/types';
@@ -58,7 +58,7 @@ describe('<Toolbar.Root />', () => {
             <DirectionProvider direction={direction as TextDirection}>
               <Toolbar.Root dir={direction} orientation={orientation as Orientation}>
                 <Toolbar.Button />
-                <Toolbar.Link href="https://base-ui.com">Link</Toolbar.Link>
+                <Toolbar.Link href="https://obstudio.co">Link</Toolbar.Link>
                 <Toolbar.Group>
                   <Toolbar.Button />
                   <Toolbar.Button />
@@ -128,11 +128,11 @@ describe('<Toolbar.Root />', () => {
       await render(
         <Toolbar.Root disabled>
           <Toolbar.Button />
-          <Toolbar.Link href="https://base-ui.com">Link</Toolbar.Link>
+          <Toolbar.Link href="https://obstudio.co">Link</Toolbar.Link>
           <Toolbar.Input defaultValue="" />
           <Toolbar.Group>
             <Toolbar.Button />
-            <Toolbar.Link href="https://base-ui.com">Link</Toolbar.Link>
+            <Toolbar.Link href="https://obstudio.co">Link</Toolbar.Link>
             <Toolbar.Input defaultValue="" />
           </Toolbar.Group>
         </Toolbar.Root>,

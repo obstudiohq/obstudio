@@ -1,9 +1,9 @@
-import { ContextMenu } from '@base-ui/react/context-menu';
+import { ContextMenu } from '@obstudio/react/context-menu';
 
 export default function ExampleMenu() {
   return (
     <ContextMenu.Root>
-      <ContextMenu.Trigger className="flex aspect-5/3 w-full max-w-64 items-center justify-center rounded-none border border-neutral-950 bg-white text-neutral-950 select-none text-sm dark:border-white dark:bg-neutral-950 dark:text-white">
+      <ContextMenu.Trigger className="flex aspect-5/3 w-full max-w-64 items-center justify-center rounded-[8px] border border-neutral-950 bg-white text-neutral-950 select-none text-sm dark:border-white dark:bg-neutral-950 dark:text-white">
         Right click here
       </ContextMenu.Trigger>
       <ContextMenu.Portal>

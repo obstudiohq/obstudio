@@ -6,7 +6,7 @@ export const DialogPortalContext = React.createContext<boolean | undefined>(unde
 export function useDialogPortalContext() {
   const value = React.useContext(DialogPortalContext);
   if (value === undefined) {
-    throw new Error('Base UI: <Dialog.Portal> is missing.');
+    throw new Error('Obstudio: <Dialog.Portal> is missing.');
   }
   return value;
 }

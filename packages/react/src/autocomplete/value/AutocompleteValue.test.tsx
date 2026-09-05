@@ -1,6 +1,6 @@
 import { expect, describe, it } from 'vitest';
 import { screen } from '@mui/internal-test-utils';
-import { Autocomplete } from '@base-ui/react/autocomplete';
+import { Autocomplete } from '@obstudio/react/autocomplete';
 import { createRenderer } from '#test-utils';
 
 describe('<Autocomplete.Value />', () => {

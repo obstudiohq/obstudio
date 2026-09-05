@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useScrollAreaRootContext } from '../root/ScrollAreaRootContext';
 import { useScrollAreaScrollbarContext } from '../scrollbar/ScrollAreaScrollbarContext';
 import { useRenderElement } from '../../internals/useRenderElement';
@@ -9,7 +9,7 @@ import { useRenderElement } from '../../internals/useRenderElement';
  * The draggable part of the scrollbar that indicates the current scroll position.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Scroll Area](https://base-ui.com/react/components/scroll-area)
+ * Documentation: [Obstudio Scroll Area](https://obstudio.co/react/components/scroll-area)
  */
 export const ScrollAreaThumb = React.forwardRef(function ScrollAreaThumb(
   componentProps: ScrollAreaThumb.Props,
@@ -70,7 +70,7 @@ export interface ScrollAreaThumbState {
   orientation: 'horizontal' | 'vertical';
 }
 
-export interface ScrollAreaThumbProps extends BaseUIComponentProps<'div', ScrollAreaThumbState> {}
+export interface ScrollAreaThumbProps extends ObstudioComponentProps<'div', ScrollAreaThumbState> {}
 
 export namespace ScrollAreaThumb {
   export type State = ScrollAreaThumbState;

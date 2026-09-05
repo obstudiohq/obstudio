@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import * as React from 'react';
-import { Drawer } from '@base-ui/react/drawer';
+import { Drawer } from '@obstudio/react/drawer';
 import { screen } from '@mui/internal-test-utils';
 import { createRenderer } from '#test-utils';
 import { useDrawerProviderContext } from './DrawerProviderContext';

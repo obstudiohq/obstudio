@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { FloatingPortal } from '../../floating-ui-react';
-import { type BaseUIComponentProps } from '../../internals/types';
+import { type ObstudioComponentProps } from '../../internals/types';
 import { usePopoverRootContext } from '../root/PopoverRootContext';
 import { PopoverPortalContext } from './PopoverPortalContext';
 
@@ -10,7 +10,7 @@ import { PopoverPortalContext } from './PopoverPortalContext';
  * By default, the portal element is appended to `<body>`.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Popover](https://base-ui.com/react/components/popover)
+ * Documentation: [Obstudio Popover](https://obstudio.co/react/components/popover)
  */
 export const PopoverPortal = React.forwardRef(function PopoverPortal(
   props: PopoverPortal.Props,
@@ -35,7 +35,7 @@ export const PopoverPortal = React.forwardRef(function PopoverPortal(
 
 export interface PopoverPortalState {}
 
-export interface PopoverPortalProps extends BaseUIComponentProps<'div', PopoverPortalState> {
+export interface PopoverPortalProps extends ObstudioComponentProps<'div', PopoverPortalState> {
   /**
    * Whether to keep the portal mounted in the DOM while the popup is hidden.
    * @default false

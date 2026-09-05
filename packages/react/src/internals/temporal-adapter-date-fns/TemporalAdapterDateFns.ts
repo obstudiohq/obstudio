@@ -93,7 +93,7 @@ const FORMATS: TemporalAdapterFormats = {
   localizedNumericDate: 'P', // Note: Day and month are padded on enUS unlike Luxon
 };
 
-declare module '@base-ui/react/internals/temporal' {
+declare module '@obstudio/react/internals/temporal' {
   interface TemporalSupportedObjectLookup {
     'date-fns': Date;
   }

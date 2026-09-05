@@ -1,6 +1,6 @@
 import * as React from 'react';
 import clsx from 'clsx';
-import { Combobox } from '@base-ui/react/combobox';
+import { Combobox } from '@obstudio/react/combobox';
 
 export function Root(props: Combobox.Root.Props<any, any>) {
   return <Combobox.Root {...props} />;

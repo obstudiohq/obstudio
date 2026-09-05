@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import { EMPTY_ARRAY } from '@base-ui/utils/empty';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useTimeout } from '@obstudio/utils/useTimeout';
+import { EMPTY_ARRAY } from '@obstudio/utils/empty';
 import { isElementVisible, isListIndexDisabled, type DisabledIndices } from '../utils/composite';
 import type { ElementProps, FloatingContext, FloatingRootContext } from '../types';
 import { contains } from '../utils/element';

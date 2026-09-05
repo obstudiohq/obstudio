@@ -4,7 +4,7 @@ import { useCheckboxRootContext } from '../root/CheckboxRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { getCheckboxStateAttributesMapping } from '../utils/getCheckboxStateAttributesMapping';
 import type { CheckboxRootState } from '../root/CheckboxRoot';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useOpenChangeComplete } from '../../internals/useOpenChangeComplete';
 import { type TransitionStatus, useTransitionStatus } from '../../internals/useTransitionStatus';
 import type { StateAttributesMapping } from '../../internals/getStateAttributesProps';
@@ -14,7 +14,7 @@ import { transitionStatusMapping } from '../../internals/stateAttributesMapping'
  * Indicates whether the checkbox is ticked.
  * Renders a `<span>` element.
  *
- * Documentation: [Base UI Checkbox](https://base-ui.com/react/components/checkbox)
+ * Documentation: [Obstudio Checkbox](https://obstudio.co/react/components/checkbox)
  */
 export const CheckboxIndicator = React.forwardRef(function CheckboxIndicator(
   componentProps: CheckboxIndicator.Props,
@@ -77,7 +77,7 @@ export interface CheckboxIndicatorState extends CheckboxRootState {
   transitionStatus: TransitionStatus;
 }
 
-export interface CheckboxIndicatorProps extends BaseUIComponentProps<
+export interface CheckboxIndicatorProps extends ObstudioComponentProps<
   'span',
   CheckboxIndicatorState
 > {

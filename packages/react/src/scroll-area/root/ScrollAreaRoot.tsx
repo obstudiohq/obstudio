@@ -1,14 +1,14 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import type { BaseUIComponentProps, HTMLProps } from '../../internals/types';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useTimeout } from '@obstudio/utils/useTimeout';
+import type { ObstudioComponentProps, HTMLProps } from '../../internals/types';
 import { ScrollAreaRootContext } from './ScrollAreaRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { SCROLL_TIMEOUT } from '../constants';
 import { getOffset } from '../utils/getOffset';
 import { styleDisableScrollbar } from '../../utils/styles';
-import { useBaseUiId } from '../../internals/useBaseUiId';
+import { useObstudioId } from '../../internals/useObstudioId';
 import { scrollAreaStateAttributesMapping } from './stateAttributes';
 import { contains } from '../../floating-ui-react/utils';
 import { useCSPContext } from '../../internals/csp-context/CSPContext';
@@ -29,7 +29,7 @@ export type Coords = typeof DEFAULT_COORDS;
  * Groups all parts of the scroll area.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Scroll Area](https://base-ui.com/react/components/scroll-area)
+ * Documentation: [Obstudio Scroll Area](https://obstudio.co/react/components/scroll-area)
  */
 export const ScrollAreaRoot = React.forwardRef(function ScrollAreaRoot(
   componentProps: ScrollAreaRoot.Props,
@@ -45,7 +45,7 @@ export const ScrollAreaRoot = React.forwardRef(function ScrollAreaRoot(
 
   const { xStart, xEnd, yStart, yEnd } = normalizeOverflowEdgeThreshold(overflowEdgeThresholdProp);
 
-  const rootId = useBaseUiId();
+  const rootId = useObstudioId();
 
   const scrollYTimeout = useTimeout();
   const scrollXTimeout = useTimeout();
@@ -383,7 +383,7 @@ export interface ScrollAreaRootState {
   cornerHidden: boolean;
 }
 
-export interface ScrollAreaRootProps extends BaseUIComponentProps<'div', ScrollAreaRootState> {
+export interface ScrollAreaRootProps extends ObstudioComponentProps<'div', ScrollAreaRootState> {
   /**
    * The threshold in pixels that must be passed before the overflow edge attributes are applied.
    * Accepts a single number for all edges or an object to configure them individually.

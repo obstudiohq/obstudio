@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { ReactStore } from '@base-ui/utils/store';
-import { type InteractionType } from '@base-ui/utils/useEnhancedClickHandler';
+import { ReactStore } from '@obstudio/utils/store';
+import { type InteractionType } from '@obstudio/utils/useEnhancedClickHandler';
 import { type DialogRoot } from '../root/DialogRoot';
 import { NullStore } from '../../utils/NullStore';
 import {

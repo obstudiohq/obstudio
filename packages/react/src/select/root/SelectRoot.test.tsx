@@ -1,8 +1,8 @@
 import { expect, vi, describe, beforeEach, it } from 'vitest';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Select } from '@base-ui/react/select';
-import { Popover } from '@base-ui/react/popover';
+import { Select } from '@obstudio/react/select';
+import { Popover } from '@obstudio/react/popover';
 import {
   act,
   fireEvent,
@@ -13,12 +13,12 @@ import {
   reactMajor,
 } from '@mui/internal-test-utils';
 import { createRenderer, isJSDOM, popupConformanceTests, wait } from '#test-utils';
-import { Field } from '@base-ui/react/field';
-import { Form } from '@base-ui/react/form';
+import { Field } from '@obstudio/react/field';
+import { Form } from '@obstudio/react/form';
 
 describe('<Select.Root />', () => {
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
   });
 
   const { render, renderToString } = createRenderer();
@@ -642,7 +642,7 @@ describe('<Select.Root />', () => {
     expect(screen.getByRole('listbox')).not.toBe(null);
   });
 
-  describe('BaseUIChangeEventDetails', () => {
+  describe('ObstudioChangeEventDetails', () => {
     it('onOpenChange cancel() prevents opening while uncontrolled', async () => {
       await render(
         <Select.Root
@@ -1421,7 +1421,7 @@ describe('<Select.Root />', () => {
       it('keeps touch interaction type when reopening quickly after close', async ({
         onTestFinished,
       }) => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
         let nextFrameId = 0;
         const frameCallbacks = new Map<number, FrameRequestCallback>();
 
@@ -1441,7 +1441,7 @@ describe('<Select.Root />', () => {
         onTestFinished(() => {
           requestAnimationFrameSpy.mockRestore();
           cancelAnimationFrameSpy.mockRestore();
-          globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+          globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
         });
 
         const style = `
@@ -1477,7 +1477,7 @@ describe('<Select.Root />', () => {
 
         const isScrollLocked = () =>
           trigger.ownerDocument.documentElement.style.overflow === 'hidden' ||
-          trigger.ownerDocument.documentElement.hasAttribute('data-base-ui-scroll-locked') ||
+          trigger.ownerDocument.documentElement.hasAttribute('data-obstudio-scroll-locked') ||
           trigger.ownerDocument.body.style.overflow === 'hidden';
 
         function fireTouchPress() {
@@ -1537,10 +1537,10 @@ describe('<Select.Root />', () => {
       });
 
       it('keeps touch positioning during the close transition', async ({ onTestFinished }) => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         onTestFinished(() => {
-          globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+          globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
         });
 
         const style = `
@@ -1641,9 +1641,9 @@ describe('<Select.Root />', () => {
       it('recomputes positioning before the popup becomes visible again after touch dismiss', async ({
         onTestFinished,
       }) => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
         onTestFinished(() => {
-          globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+          globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
         });
 
         const onOpenChangeComplete = vi.fn();
@@ -1807,7 +1807,7 @@ describe('<Select.Root />', () => {
         await waitFor(() => {
           const isScrollLocked =
             trigger.ownerDocument.documentElement.style.overflow === 'hidden' ||
-            trigger.ownerDocument.documentElement.hasAttribute('data-base-ui-scroll-locked') ||
+            trigger.ownerDocument.documentElement.hasAttribute('data-obstudio-scroll-locked') ||
             trigger.ownerDocument.body.style.overflow === 'hidden';
 
           expect(isScrollLocked).toBe(true);
@@ -1843,7 +1843,7 @@ describe('<Select.Root />', () => {
 
         const isScrollLocked =
           trigger.ownerDocument.documentElement.style.overflow === 'hidden' ||
-          trigger.ownerDocument.documentElement.hasAttribute('data-base-ui-scroll-locked') ||
+          trigger.ownerDocument.documentElement.hasAttribute('data-obstudio-scroll-locked') ||
           trigger.ownerDocument.body.style.overflow === 'hidden';
 
         expect(isScrollLocked).toBe(false);
@@ -2081,10 +2081,10 @@ describe('<Select.Root />', () => {
     it.skipIf(isJSDOM)(
       'keeps a scroll arrow mounted while its exit animation runs',
       async ({ onTestFinished }) => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         onTestFinished(() => {
-          globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+          globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
         });
 
         let scrollTop = 0;
@@ -2589,7 +2589,7 @@ describe('<Select.Root />', () => {
     });
 
     it('is called on close when the exit animation finishes', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       const onOpenChangeComplete = vi.fn();
 
@@ -2676,7 +2676,7 @@ describe('<Select.Root />', () => {
     });
 
     it('is called on open when the enter animation finishes', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       const onOpenChangeComplete = vi.fn();
 

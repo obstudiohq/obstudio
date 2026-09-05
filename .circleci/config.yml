@@ -28,7 +28,7 @@ default-job: &default-job
     &default-environment # expose it globally otherwise we have to thread it from each job to the install command
     BROWSERSTACK_FORCE: << pipeline.parameters.browserstack-force >>
     COREPACK_ENABLE_DOWNLOAD_PROMPT: '0'
-  working_directory: /tmp/base-ui
+  working_directory: /tmp/obstudio
   executor:
     name: code-infra/mui-node
     node-version: '22.23.2'
@@ -184,13 +184,13 @@ jobs:
           command: pnpm code-infra validate-built-types
       - run:
           name: Check stripped public types
-          command: pnpm --filter @base-ui/react types:check
+          command: pnpm --filter @obstudio/react types:check
       - run:
           name: Check public types
           command: pnpm -r run release:test
       - run:
           name: Test Node.js module resolution
-          command: pnpm -F @base-ui/test-node-resolution test
+          command: pnpm -F @obstudio/test-node-resolution test
       - run:
           name: Verify built packages
           command: pnpm -r test:package

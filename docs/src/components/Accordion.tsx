@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import clsx from 'clsx';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
 import { useGoogleAnalytics } from 'docs/src/blocks/GoogleAnalyticsProvider';
 import { observeScrollableInner } from '../utils/observeScrollableInner';
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import clsx from 'clsx';
-import { Input as BaseInput } from '@base-ui/react/input';
+import { Input as BaseInput } from '@obstudio/react/input';
 
 export const Input = React.forwardRef<HTMLInputElement, BaseInput.Props>(function (
   { className, ...props }: BaseInput.Props,

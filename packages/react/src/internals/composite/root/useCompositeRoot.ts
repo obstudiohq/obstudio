@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
-import { isElementDisabled } from '@base-ui/utils/isElementDisabled';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { EMPTY_ARRAY } from '@base-ui/utils/empty';
+import { isElementDisabled } from '@obstudio/utils/isElementDisabled';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useMergedRefs } from '@obstudio/utils/useMergedRefs';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { EMPTY_ARRAY } from '@obstudio/utils/empty';
 import type { TextDirection } from '../../direction-context/DirectionContext';
 import {
   COMPOSITE_KEYS,

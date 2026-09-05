@@ -1,5 +1,5 @@
 'use client';
-import { PreviewCard } from '@base-ui/react/preview-card';
+import { PreviewCard } from '@obstudio/react/preview-card';
 
 const demoPreviewCard = PreviewCard.createHandle();
 

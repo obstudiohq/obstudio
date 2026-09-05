@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps, NativeButtonProps } from '../../internals/types';
+import type { ObstudioComponentProps, NativeButtonProps } from '../../internals/types';
 import { useToastRootContext } from '../root/ToastRootContext';
 import { useButton } from '../../internals/use-button/useButton';
 import { useRenderElement } from '../../internals/useRenderElement';
@@ -10,7 +10,7 @@ import { hasRenderableChildren } from '../utils/isRenderableNode';
  * Performs an action when clicked.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+ * Documentation: [Obstudio Toast](https://obstudio.co/react/components/toast)
  */
 export const ToastAction = React.forwardRef(function ToastAction(
   componentProps: ToastAction.Props,
@@ -62,7 +62,7 @@ export interface ToastActionState {
 }
 
 export interface ToastActionProps
-  extends NativeButtonProps, BaseUIComponentProps<'button', ToastActionState> {}
+  extends NativeButtonProps, ObstudioComponentProps<'button', ToastActionState> {}
 
 export namespace ToastAction {
   export type State = ToastActionState;

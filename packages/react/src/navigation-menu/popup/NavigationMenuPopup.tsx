@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useNavigationMenuRootContext } from '../root/NavigationMenuRootContext';
 import type { TransitionStatus } from '../../internals/useTransitionStatus';
-import { useBaseUiId } from '../../internals/useBaseUiId';
+import { useObstudioId } from '../../internals/useObstudioId';
 import { useNavigationMenuPositionerContext } from '../positioner/NavigationMenuPositionerContext';
 import { useDirection } from '../../internals/direction-context/DirectionContext';
 import { popupTransitionStateMapping } from '../../utils/popupStateMapping';
@@ -15,7 +15,7 @@ import { getDisabledMountTransitionStyles } from '../../internals/getDisabledMou
  * A container for the navigation menu contents.
  * Renders a `<nav>` element.
  *
- * Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+ * Documentation: [Obstudio Navigation Menu](https://obstudio.co/react/components/navigation-menu)
  */
 export const NavigationMenuPopup = React.forwardRef(function NavigationMenuPopup(
   componentProps: NavigationMenuPopup.Props,
@@ -27,7 +27,7 @@ export const NavigationMenuPopup = React.forwardRef(function NavigationMenuPopup
   const positioning = useNavigationMenuPositionerContext();
   const direction = useDirection();
 
-  const id = useBaseUiId(idProp);
+  const id = useObstudioId(idProp);
 
   const state: NavigationMenuPopupState = {
     open,
@@ -93,7 +93,7 @@ export interface NavigationMenuPopupState {
   anchorHidden: boolean;
 }
 
-export interface NavigationMenuPopupProps extends BaseUIComponentProps<
+export interface NavigationMenuPopupProps extends ObstudioComponentProps<
   'nav',
   NavigationMenuPopupState
 > {}

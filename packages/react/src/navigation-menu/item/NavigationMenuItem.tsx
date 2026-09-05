@@ -1,18 +1,18 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import {
   NavigationMenuItemContext,
   NavigationMenuItemContextValue,
 } from './NavigationMenuItemContext';
-import { useBaseUiId } from '../../internals/useBaseUiId';
+import { useObstudioId } from '../../internals/useObstudioId';
 
 /**
  * An individual navigation menu item.
  * Renders a `<li>` element.
  *
- * Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+ * Documentation: [Obstudio Navigation Menu](https://obstudio.co/react/components/navigation-menu)
  */
 export const NavigationMenuItem = React.forwardRef(function NavigationMenuItem(
   componentProps: NavigationMenuItem.Props,
@@ -20,7 +20,7 @@ export const NavigationMenuItem = React.forwardRef(function NavigationMenuItem(
 ) {
   const { render, className, style, value: valueProp, ...elementProps } = componentProps;
 
-  const fallbackValue = useBaseUiId();
+  const fallbackValue = useObstudioId();
   const value = valueProp ?? fallbackValue;
 
   const element = useRenderElement('li', componentProps, {
@@ -39,7 +39,7 @@ export const NavigationMenuItem = React.forwardRef(function NavigationMenuItem(
 
 export interface NavigationMenuItemState {}
 
-export interface NavigationMenuItemProps extends BaseUIComponentProps<
+export interface NavigationMenuItemProps extends ObstudioComponentProps<
   'li',
   NavigationMenuItemState
 > {

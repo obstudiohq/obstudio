@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
-import { Menu } from '@base-ui/react/menu';
-import { Tooltip } from '@base-ui/react/tooltip';
-import { Popover } from '@base-ui/react/popover';
-import { Dialog } from '@base-ui/react/dialog';
-import { PreviewCard } from '@base-ui/react/preview-card';
+import { Menu } from '@obstudio/react/menu';
+import { Tooltip } from '@obstudio/react/tooltip';
+import { Popover } from '@obstudio/react/popover';
+import { Dialog } from '@obstudio/react/dialog';
+import { PreviewCard } from '@obstudio/react/preview-card';
 import menuDemoStyles from 'docs/src/app/(docs)/react/components/menu/demos/submenu/css-modules/index.module.css';
 import tooltipDemoStyles from 'docs/src/app/(docs)/react/components/tooltip/demos/hero/css-modules/index.module.css';
 import popoverDemoStyles from 'docs/src/app/(docs)/react/components/popover/demos/_index.module.css';

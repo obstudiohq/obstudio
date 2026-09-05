@@ -1,6 +1,6 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
-import { Menu } from '@base-ui/react/menu';
+import { Menu } from '@obstudio/react/menu';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { act, fireEvent, screen, waitFor } from '@mui/internal-test-utils';
 
@@ -31,7 +31,7 @@ describe('<Menu.RadioItemIndicator />', () => {
 
     try {
       await expect(render(<Menu.RadioItemIndicator />)).rejects.toThrow(
-        'Base UI: MenuRadioItemContext is missing. MenuRadioItem parts must be placed within <Menu.RadioItem>.',
+        'Obstudio: MenuRadioItemContext is missing. MenuRadioItem parts must be placed within <Menu.RadioItem>.',
       );
     } finally {
       errorSpy.mockRestore();
@@ -99,7 +99,7 @@ describe('<Menu.RadioItemIndicator />', () => {
   );
 
   it.skipIf(isJSDOM)('should remove the indicator when the animation finishes', async () => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
     let animationFinished = false;
     const notifyAnimationFinished = () => {
@@ -165,7 +165,7 @@ describe('<Menu.RadioItemIndicator />', () => {
   it.skipIf(isJSDOM)(
     'keeps the indicator mounted to play its exit animation when unchecked without keepMounted',
     async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       function Test() {
         const style = `

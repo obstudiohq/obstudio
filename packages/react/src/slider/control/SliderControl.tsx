@@ -1,19 +1,19 @@
 'use client';
 import * as React from 'react';
 import { isElement } from '@floating-ui/utils/dom';
-import { addEventListener } from '@base-ui/utils/addEventListener';
-import { ownerDocument, ownerWindow } from '@base-ui/utils/owner';
-import { useAnimationFrame } from '@base-ui/utils/useAnimationFrame';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useValueAsRef } from '@base-ui/utils/useValueAsRef';
-import { clamp } from '@base-ui/utils/clamp';
+import { addEventListener } from '@obstudio/utils/addEventListener';
+import { ownerDocument, ownerWindow } from '@obstudio/utils/owner';
+import { useAnimationFrame } from '@obstudio/utils/useAnimationFrame';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useValueAsRef } from '@obstudio/utils/useValueAsRef';
+import { clamp } from '@obstudio/utils/clamp';
 import { activeElement, contains, getTarget } from '../../floating-ui-react/utils';
 import type { Coords } from '../../floating-ui-react/types';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import {
   createChangeEventDetails,
   createGenericEventDetails,
-} from '../../internals/createBaseUIEventDetails';
+} from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useDirection } from '../../internals/direction-context/DirectionContext';
@@ -80,7 +80,7 @@ function getFingerCoords(
  * The clickable, interactive part of the slider.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Slider](https://base-ui.com/react/components/slider)
+ * Documentation: [Obstudio Slider](https://obstudio.co/react/components/slider)
  */
 export const SliderControl = React.forwardRef(function SliderControl(
   componentProps: SliderControl.Props,
@@ -454,7 +454,7 @@ export const SliderControl = React.forwardRef(function SliderControl(
     ref: [forwardedRef, registerFieldControlRef, controlRef, setStylesRef],
     props: [
       {
-        ['data-base-ui-slider-control' as string]: renderBeforeHydration ? '' : undefined,
+        ['data-obstudio-slider-control' as string]: renderBeforeHydration ? '' : undefined,
         onPointerDown(event) {
           const control = controlRef.current;
           const target = getTarget(event.nativeEvent);
@@ -530,7 +530,7 @@ interface FingerState {
 
 export interface SliderControlState extends SliderRootState {}
 
-export interface SliderControlProps extends BaseUIComponentProps<'div', SliderControlState> {}
+export interface SliderControlProps extends ObstudioComponentProps<'div', SliderControlState> {}
 
 export namespace SliderControl {
   export type State = SliderControlState;

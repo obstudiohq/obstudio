@@ -1,9 +1,11 @@
 # CSP Provider
 
-<Subtitle>Configures CSP-related behavior for inline tags rendered by Base UI components.</Subtitle>
+<Subtitle>
+  Configures CSP-related behavior for inline tags rendered by Obstudio components.
+</Subtitle>
 <Meta
   name="description"
-  content="A CSP provider component that applies a nonce to inline <style> and <script> tags rendered by Base UI components, and can disable inline <style> elements."
+  content="A CSP provider component that applies a nonce to inline <style> and <script> tags rendered by Obstudio components, and can disable inline <style> elements."
 />
 
 ## Anatomy
@@ -11,7 +13,7 @@
 Import the component and wrap it around your app:
 
 ```jsx title="Anatomy"
-import { CSPProvider } from '@base-ui/react/csp-provider';
+import { CSPProvider } from '@obstudio/react/csp-provider';
 
 // prettier-ignore
 <CSPProvider nonce="...">
@@ -19,9 +21,9 @@ import { CSPProvider } from '@base-ui/react/csp-provider';
 </CSPProvider>
 ```
 
-Some Base UI components render inline `<style>` or `<script>` tags for functionality such as removing scrollbars or pre-hydration behavior. Under a strict Content Security Policy (CSP), these tags may be blocked unless they include a matching [nonce](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/nonce) attribute.
+Some Obstudio components render inline `<style>` or `<script>` tags for functionality such as removing scrollbars or pre-hydration behavior. Under a strict Content Security Policy (CSP), these tags may be blocked unless they include a matching [nonce](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/nonce) attribute.
 
-`CSPProvider` allows configuring this behavior globally for all Base UI components within its tree.
+`CSPProvider` allows configuring this behavior globally for all Obstudio components within its tree.
 
 ## Supplying a nonce
 
@@ -45,14 +47,14 @@ const csp = [
 Then:
 
 ```jsx title="Providing the nonce"
-import { CSPProvider } from '@base-ui/react/csp-provider';
+import { CSPProvider } from '@obstudio/react/csp-provider';
 
 function App({ nonce }) {
   return <CSPProvider nonce={nonce}>{/* ... */}</CSPProvider>;
 }
 ```
 
-This will ensure that all inline `<style>` and `<script>` tags rendered by Base UI components include the correct nonce attribute, allowing them to function under your CSP.
+This will ensure that all inline `<style>` and `<script>` tags rendered by Obstudio components include the correct nonce attribute, allowing them to function under your CSP.
 
 ## Disable inline style elements
 
@@ -60,10 +62,10 @@ You can avoid supplying a `nonce` if you disable inline `<style>` elements entir
 
 ```html
 <style>
-  .base-ui-disable-scrollbar {
+  .obstudio-disable-scrollbar {
     scrollbar-width: none;
   }
-  .base-ui-disable-scrollbar::-webkit-scrollbar {
+  .obstudio-disable-scrollbar::-webkit-scrollbar {
     display: none;
   }
 </style>
@@ -87,7 +89,7 @@ If your CSP blocks inline style _attributes_ in addition to _elements_, you have
 
 1. Relax your CSP by adding `'unsafe-inline'` to the `style-src-attr` directive (or using only `style-src-elem` instead of `style-src`). Style attributes specifically pose a less severe security risk than style elements, but this approach may not be acceptable in high-security environments.
 2. Render the affected components only on the client, so that no inline styles are present in the initial HTML.
-3. Manually unset inline styles and specify them in your CSS instead. Any component can have its inline styles unset, such as `<ScrollArea.Viewport style={{ overflow: undefined  }}>`. Note that you'll need to ensure you vet upgrades for any new inline styles added by Base UI components.
+3. Manually unset inline styles and specify them in your CSS instead. Any component can have its inline styles unset, such as `<ScrollArea.Viewport style={{ overflow: undefined  }}>`. Note that you'll need to ensure you vet upgrades for any new inline styles added by Obstudio components.
 
 ## API reference
 
@@ -97,7 +99,7 @@ import { TypesCSPProvider } from './types';
 
 export const metadata = {
   keywords: [
-    'Base UI CSP Provider',
+    'Obstudio CSP Provider',
     'Content Security Policy',
     'CSP nonce',
     'React CSP',

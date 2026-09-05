@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { expect, vi, describe, it } from 'vitest';
-import { ScrollArea } from '@base-ui/react/scroll-area';
+import { ScrollArea } from '@obstudio/react/scroll-area';
 import { createRenderer, isJSDOM } from '#test-utils';
 import { screen, waitFor } from '@mui/internal-test-utils';
 import { describeConformance } from '../../../test/describeConformance';
@@ -30,7 +30,7 @@ describe('<ScrollArea.Content />', () => {
           </ScrollArea.Root>,
         ),
       ).rejects.toThrow(
-        'Base UI: ScrollAreaViewportContext missing. ScrollAreaViewport parts must be placed within <ScrollArea.Viewport>.',
+        'Obstudio: ScrollAreaViewportContext missing. ScrollAreaViewport parts must be placed within <ScrollArea.Viewport>.',
       );
     } finally {
       errorSpy.mockRestore();

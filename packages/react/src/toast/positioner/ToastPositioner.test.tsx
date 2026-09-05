@@ -1,6 +1,6 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
-import { Toast } from '@base-ui/react/toast';
+import { Toast } from '@obstudio/react/toast';
 import { act, screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import type { ToastManagerAddOptions } from '../useToastManager';
@@ -174,7 +174,7 @@ describe('<Toast.Positioner />', () => {
 
     try {
       await expect(render(<Toast.Positioner toast={toast} />)).rejects.toThrow(
-        'Base UI: useToastManager must be used within <Toast.Provider>.',
+        'Obstudio: useToastManager must be used within <Toast.Provider>.',
       );
     } finally {
       errorSpy.mockRestore();

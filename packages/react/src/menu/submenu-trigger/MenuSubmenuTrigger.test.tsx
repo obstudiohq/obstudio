@@ -1,9 +1,9 @@
 import { afterEach, beforeEach, vi, expect, describe, it } from 'vitest';
 import { act, fireEvent, waitFor, screen } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
-import { DirectionProvider } from '@base-ui/react/direction-provider';
-import { Menu } from '@base-ui/react/menu';
-import { SafeReact } from '@base-ui/utils/safeReact';
+import { DirectionProvider } from '@obstudio/react/direction-provider';
+import { Menu } from '@obstudio/react/menu';
+import { SafeReact } from '@obstudio/utils/safeReact';
 import { useMenuRootContext } from '../root/MenuRootContext';
 import type { MenuStore } from '../store/MenuStore';
 
@@ -14,7 +14,7 @@ describe('<Menu.SubmenuTrigger />', () => {
   const { render } = createRenderer();
 
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
   });
 
   async function waitForAnimationFrame() {
@@ -95,7 +95,7 @@ describe('<Menu.SubmenuTrigger />', () => {
 
     try {
       await expect(render(<Menu.SubmenuTrigger />)).rejects.toThrow(
-        'Base UI: <Menu.SubmenuTrigger> must be placed in <Menu.SubmenuRoot>.',
+        'Obstudio: <Menu.SubmenuTrigger> must be placed in <Menu.SubmenuRoot>.',
       );
     } finally {
       errorSpy.mockRestore();
@@ -304,7 +304,7 @@ describe('<Menu.SubmenuTrigger />', () => {
       expect(warnSpy).toHaveBeenCalledTimes(1);
       expect(warnSpy).toHaveBeenCalledWith(
         expect.stringContaining(
-          'Base UI: A disabled element was detected on <Menu.SubmenuTrigger>. To properly disable the trigger, use the `disabled` prop on the component instead of setting it on the rendered element.',
+          'Obstudio: A disabled element was detected on <Menu.SubmenuTrigger>. To properly disable the trigger, use the `disabled` prop on the component instead of setting it on the rendered element.',
         ),
       );
       expect(warnSpy.mock.lastCall?.[0]).not.toContain('undefined');
@@ -338,7 +338,7 @@ describe('<Menu.SubmenuTrigger />', () => {
 
           expect(warnSpy).toHaveBeenCalledTimes(1);
           expect(warnSpy).toHaveBeenCalledWith(
-            'Base UI: A disabled element was detected on <Menu.SubmenuTrigger>. To properly disable the trigger, use the `disabled` prop on the component instead of setting it on the rendered element.',
+            'Obstudio: A disabled element was detected on <Menu.SubmenuTrigger>. To properly disable the trigger, use the `disabled` prop on the component instead of setting it on the rendered element.',
           );
         } finally {
           ownerStackSpy.mockRestore();

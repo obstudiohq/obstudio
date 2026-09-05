@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useProgressRootContext } from '../root/ProgressRootContext';
 import type { ProgressRootState } from '../root/ProgressRoot';
@@ -9,7 +9,7 @@ import { progressStateAttributesMapping } from '../root/stateAttributesMapping';
  * A text element displaying the current value.
  * Renders a `<span>` element.
  *
- * Documentation: [Base UI Progress](https://base-ui.com/react/components/progress)
+ * Documentation: [Obstudio Progress](https://obstudio.co/react/components/progress)
  */
 export const ProgressValue = React.forwardRef(function ProgressValue(
   componentProps: ProgressValue.Props,
@@ -47,7 +47,7 @@ export const ProgressValue = React.forwardRef(function ProgressValue(
 export interface ProgressValueState extends ProgressRootState {}
 
 export interface ProgressValueProps extends Omit<
-  BaseUIComponentProps<'span', ProgressValueState>,
+  ObstudioComponentProps<'span', ProgressValueState>,
   'children'
 > {
   children?:

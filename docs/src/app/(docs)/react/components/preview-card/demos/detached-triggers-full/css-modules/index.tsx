@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { PreviewCard } from '@base-ui/react/preview-card';
+import { PreviewCard } from '@obstudio/react/preview-card';
 import styles from './index.module.css';
 
 const demoPreviewCard = PreviewCard.createHandle<React.ReactElement>();

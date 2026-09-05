@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { OTPField } from '@base-ui/react/otp-field';
+import { OTPField } from '@obstudio/react/otp-field';
 
 const OTP_LENGTH = 6;
 
@@ -21,7 +21,7 @@ export default function ExampleOTPField() {
         {Array.from({ length: OTP_LENGTH }, (_, index) => (
           <OTPField.Input
             key={index}
-            className="m-0 h-10 w-10 rounded-none border border-neutral-950 bg-white dark:bg-neutral-950 text-center font-inherit text-base font-normal text-neutral-950 focus:outline-2 focus:-outline-offset-1 focus:outline-neutral-950 dark:focus:outline-white dark:border-white dark:text-white"
+            className="m-0 h-10 w-10 rounded-[8px] border border-neutral-950 bg-white dark:bg-neutral-950 text-center font-inherit text-base font-normal text-neutral-950 focus:outline-2 focus:-outline-offset-1 focus:outline-neutral-950 dark:focus:outline-white dark:border-white dark:text-white"
             aria-label={index === 0 ? undefined : `Character ${index + 1} of ${OTP_LENGTH}`}
           />
         ))}

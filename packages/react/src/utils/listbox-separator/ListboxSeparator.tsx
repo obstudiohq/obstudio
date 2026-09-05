@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps, Orientation } from '../../internals/types';
+import type { ObstudioComponentProps, Orientation } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 
 /**
@@ -24,7 +24,10 @@ export const ListboxSeparator = React.forwardRef(function ListboxSeparator(
   });
 });
 
-export interface ListboxSeparatorProps extends BaseUIComponentProps<'div', ListboxSeparatorState> {
+export interface ListboxSeparatorProps extends ObstudioComponentProps<
+  'div',
+  ListboxSeparatorState
+> {
   /**
    * The orientation of the separator.
    * @default 'horizontal'

@@ -1,4 +1,4 @@
-import { ReactStore } from '@base-ui/utils/store';
+import { ReactStore } from '@obstudio/utils/store';
 
 type SelectorFunction<State> = (state: State, ...args: any[]) => any;
 

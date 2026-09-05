@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { Tooltip } from '@base-ui/react/tooltip';
+import { Tooltip } from '@obstudio/react/tooltip';
 import { HeadphonesIcon, StopwatchIcon, TrashIcon } from '../../icons-tw';
 
 const demoTooltip = Tooltip.createHandle<React.ReactNode>();

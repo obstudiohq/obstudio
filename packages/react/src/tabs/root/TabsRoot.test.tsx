@@ -1,10 +1,10 @@
 import { expect, vi, describe, beforeEach, it } from 'vitest';
 import * as React from 'react';
 import { act, flushMicrotasks, fireEvent, screen, waitFor, within } from '@mui/internal-test-utils';
-import { DirectionProvider, type TextDirection } from '@base-ui/react/direction-provider';
-import { Popover } from '@base-ui/react/popover';
-import { Dialog } from '@base-ui/react/dialog';
-import { Tabs } from '@base-ui/react/tabs';
+import { DirectionProvider, type TextDirection } from '@obstudio/react/direction-provider';
+import { Popover } from '@obstudio/react/popover';
+import { Dialog } from '@obstudio/react/dialog';
+import { Tabs } from '@obstudio/react/tabs';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 
 describe('<Tabs.Root />', () => {
@@ -392,7 +392,7 @@ describe('<Tabs.Root />', () => {
       await expect(async () => {
         await setProps({ defaultValue: 1 });
       }).toErrorDev(
-        'Base UI: A component is changing the default value state of an uncontrolled Tabs after being initialized.',
+        'Obstudio: A component is changing the default value state of an uncontrolled Tabs after being initialized.',
       );
 
       expect(tabs[0]).toHaveAttribute('aria-selected', 'true');
@@ -708,7 +708,7 @@ describe('<Tabs.Root />', () => {
       expect(handleChange.mock.calls[0][0]).toBe(1);
       expect(handleChange.mock.calls[0][1].reason).toBe('initial');
       expect(handleChange.mock.calls[0][1].event).toBeInstanceOf(Event);
-      expect(handleChange.mock.calls[0][1].event.type).toBe('base-ui');
+      expect(handleChange.mock.calls[0][1].event.type).toBe('obstudio');
       expect(handleChange.mock.calls[0][1].trigger).toBe(undefined);
       expect(handleChange.mock.calls[0][1].activationDirection).toBe('none');
 

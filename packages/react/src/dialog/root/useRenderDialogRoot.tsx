@@ -4,7 +4,7 @@ import { DialogInteractions } from './useDialogRoot';
 import { DialogRootContext, useDialogRootContext } from './DialogRootContext';
 import { DialogStore } from '../store/DialogStore';
 import type { DialogRootProps } from './DialogRoot';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import {
   useImplicitActiveTrigger,

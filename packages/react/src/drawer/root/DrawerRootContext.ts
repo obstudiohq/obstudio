@@ -106,7 +106,7 @@ export function useDrawerRootContext(optional?: boolean) {
 
   if (optional !== true && drawerRootContext === undefined) {
     throw new Error(
-      'Base UI: DrawerRootContext is missing. Drawer parts must be placed within <Drawer.Root>.',
+      'Obstudio: DrawerRootContext is missing. Drawer parts must be placed within <Drawer.Root>.',
     );
   }
 

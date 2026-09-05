@@ -1,23 +1,23 @@
 'use client';
 import * as React from 'react';
-import { addEventListener } from '@base-ui/utils/addEventListener';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useValueAsRef } from '@base-ui/utils/useValueAsRef';
-import { useForcedRerendering } from '@base-ui/utils/useForcedRerendering';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
-import { visuallyHidden, visuallyHiddenInput } from '@base-ui/utils/visuallyHidden';
-import { ownerDocument } from '@base-ui/utils/owner';
-import { platform } from '@base-ui/utils/platform';
-import { formatNumber } from '@base-ui/utils/formatNumber';
+import { addEventListener } from '@obstudio/utils/addEventListener';
+import { useControlled } from '@obstudio/utils/useControlled';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useValueAsRef } from '@obstudio/utils/useValueAsRef';
+import { useForcedRerendering } from '@obstudio/utils/useForcedRerendering';
+import { useMergedRefs } from '@obstudio/utils/useMergedRefs';
+import { visuallyHidden, visuallyHiddenInput } from '@obstudio/utils/visuallyHidden';
+import { ownerDocument } from '@obstudio/utils/owner';
+import { platform } from '@obstudio/utils/platform';
+import { formatNumber } from '@obstudio/utils/formatNumber';
 import { activeElement } from '../../floating-ui-react/utils';
 import { InputMode, NumberFieldRootContext } from './NumberFieldRootContext';
 import { useFieldRootContext } from '../../internals/field-root-context/FieldRootContext';
 import { useFormContext } from '../../internals/form-context/FormContext';
 import type { FieldRootState } from '../../field/root/FieldRoot';
 import { useLabelableId } from '../../internals/labelable-provider/useLabelableId';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { stateAttributesMapping } from '../utils/stateAttributesMapping';
 import { useRenderElement } from '../../internals/useRenderElement';
 import {
@@ -36,17 +36,17 @@ import type { ChangeEventCustomProperties, IncrementValueParameters } from '../u
 import {
   createChangeEventDetails,
   createGenericEventDetails,
-  type BaseUIChangeEventDetails,
-  type BaseUIGenericEventDetails,
+  type ObstudioChangeEventDetails,
+  type ObstudioGenericEventDetails,
   type ReasonToEvent,
-} from '../../internals/createBaseUIEventDetails';
+} from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 
 /**
  * Groups all parts of the number field and manages its state.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Number Field](https://base-ui.com/react/components/number-field)
+ * Documentation: [Obstudio Number Field](https://obstudio.co/react/components/number-field)
  */
 export const NumberFieldRoot = React.forwardRef(function NumberFieldRoot(
   componentProps: NumberFieldRoot.Props,
@@ -537,7 +537,7 @@ export const NumberFieldRoot = React.forwardRef(function NumberFieldRoot(
 });
 
 export interface NumberFieldRootProps extends Omit<
-  BaseUIComponentProps<'div', NumberFieldRootState>,
+  ObstudioComponentProps<'div', NumberFieldRootState>,
   'onChange'
 > {
   /**
@@ -704,7 +704,7 @@ export type NumberFieldRootChangeEventReason =
   | typeof REASONS.wheel
   | typeof REASONS.scrub
   | typeof REASONS.none;
-export type NumberFieldRootChangeEventDetails = BaseUIChangeEventDetails<
+export type NumberFieldRootChangeEventDetails = ObstudioChangeEventDetails<
   NumberFieldRootChangeEventReason,
   ChangeEventCustomProperties
 >;
@@ -721,7 +721,7 @@ export type NumberFieldRootCommitEventReason =
   | typeof REASONS.scrub
   | typeof REASONS.none;
 export type NumberFieldRootCommitEventDetails =
-  BaseUIGenericEventDetails<NumberFieldRoot.CommitEventReason>;
+  ObstudioGenericEventDetails<NumberFieldRoot.CommitEventReason>;
 
 export namespace NumberFieldRoot {
   export type State = NumberFieldRootState;

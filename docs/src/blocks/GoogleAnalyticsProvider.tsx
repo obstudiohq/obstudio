@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { useMediaQuery } from '@base-ui/react/unstable-use-media-query';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { useMediaQuery } from '@obstudio/react/unstable-use-media-query';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
 
 declare global {
   interface Window {

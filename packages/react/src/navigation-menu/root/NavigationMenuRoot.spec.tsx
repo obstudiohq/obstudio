@@ -1,5 +1,5 @@
 import { expectType } from '#test-utils';
-import { NavigationMenu } from '@base-ui/react/navigation-menu';
+import { NavigationMenu } from '@obstudio/react/navigation-menu';
 
 const stringValue = 'item-1';
 const nullableValue: string | null = 'item-1';

@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useScrollLock } from '@base-ui/utils/useScrollLock';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useScrollLock } from '@obstudio/utils/useScrollLock';
 import { useDismiss } from '../../floating-ui-react';
 import { contains, getTarget } from '../../floating-ui-react/utils';
 import { DialogStore } from '../store/DialogStore';
@@ -66,14 +66,14 @@ export function DialogInteractions({
       if (isTopmost && !disablePointerDismissal) {
         // Only close if the click occurred on the dialog's owning backdrop.
         // This supports multiple modal dialogs that aren't nested in the React tree:
-        // https://github.com/mui/base-ui/issues/1320
+        // https://github.com/obstudiohq/obstudio/issues/1320
         if (modal) {
           const internalBackdrop = store.context.internalBackdropRef.current;
           const backdrop = store.context.backdropRef.current;
           return internalBackdrop || backdrop
             ? internalBackdrop === target ||
                 backdrop === target ||
-                (contains(target, popupElement) && !target?.hasAttribute('data-base-ui-portal'))
+                (contains(target, popupElement) && !target?.hasAttribute('data-obstudio-portal'))
             : true;
         }
         return true;

@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { Dialog } from '@base-ui/react/dialog';
-import { ScrollArea } from '@base-ui/react/scroll-area';
+import { Dialog } from '@obstudio/react/dialog';
+import { ScrollArea } from '@obstudio/react/scroll-area';
 
 export default function OutsideScrollDialog() {
   const popupRef = React.useRef<HTMLDivElement>(null);

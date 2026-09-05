@@ -1,6 +1,6 @@
 import { expect, vi, describe, beforeEach, it, afterEach } from 'vitest';
 import * as React from 'react';
-import { Checkbox } from '@base-ui/react/checkbox';
+import { Checkbox } from '@obstudio/react/checkbox';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { screen, waitFor } from '@mui/internal-test-utils';
 import { CheckboxRootContext } from '../root/CheckboxRootContext';
@@ -20,7 +20,7 @@ const testContext = {
 
 describe('<Checkbox.Indicator />', () => {
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
   });
 
   const { render } = createRenderer();
@@ -39,7 +39,7 @@ describe('<Checkbox.Indicator />', () => {
 
     try {
       await expect(render(<Checkbox.Indicator />)).rejects.toThrow(
-        'Base UI: CheckboxRootContext is missing. Checkbox parts must be placed within <Checkbox.Root>.',
+        'Obstudio: CheckboxRootContext is missing. Checkbox parts must be placed within <Checkbox.Root>.',
       );
     } finally {
       errorSpy.mockRestore();
@@ -143,7 +143,7 @@ describe('<Checkbox.Indicator />', () => {
       skip();
     }
 
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
     let animationFinished = false;
     const notifyAnimationFinished = () => {
@@ -195,11 +195,11 @@ describe('<Checkbox.Indicator />', () => {
 
   describe.skipIf(isJSDOM)('animations', () => {
     afterEach(() => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
     });
 
     it('triggers enter animation via data-starting-style when mounting', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       let transitionFinished = false;
       const getAnimations = vi.fn((): Animation[] => []);
@@ -263,7 +263,7 @@ describe('<Checkbox.Indicator />', () => {
     });
 
     it('applies data-ending-style before unmount', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       const style = `
         @keyframes test-anim {
@@ -313,7 +313,7 @@ describe('<Checkbox.Indicator />', () => {
     });
 
     it('removes all indicators in a single commit when multiple checkboxes are unchecked', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       const style = `
         @keyframes test-anim {

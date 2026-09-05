@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { Combobox } from '@base-ui/react/combobox';
+import { Combobox } from '@obstudio/react/combobox';
 
 export default function ExampleMultipleCombobox() {
   const id = React.useId();

@@ -1,6 +1,6 @@
 import { expect, vi, describe, beforeEach, it } from 'vitest';
 import * as React from 'react';
-import { Popover } from '@base-ui/react/popover';
+import { Popover } from '@obstudio/react/popover';
 import {
   createRenderer,
   describeConformance,
@@ -37,7 +37,7 @@ describe('<Popover.Trigger />', () => {
 
     try {
       await expect(render(<Popover.Trigger>Toggle</Popover.Trigger>)).rejects.toThrow(
-        'Base UI: <Popover.Trigger> must be either used within a <Popover.Root> component or provided with a handle.',
+        'Obstudio: <Popover.Trigger> must be either used within a <Popover.Root> component or provided with a handle.',
       );
     } finally {
       errorSpy.mockRestore();

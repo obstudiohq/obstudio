@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { useMergedRefs, useMergedRefsN } from '@base-ui/utils/useMergedRefs';
-import { getReactElementRef } from '@base-ui/utils/getReactElementRef';
-import { mergeObjects } from '@base-ui/utils/mergeObjects';
-import { warn } from '@base-ui/utils/warn';
-import { EMPTY_OBJECT } from '@base-ui/utils/empty';
-import type { BaseUIComponentProps, ComponentRenderFn, HTMLProps } from './types';
+import { useMergedRefs, useMergedRefsN } from '@obstudio/utils/useMergedRefs';
+import { getReactElementRef } from '@obstudio/utils/getReactElementRef';
+import { mergeObjects } from '@obstudio/utils/mergeObjects';
+import { warn } from '@obstudio/utils/warn';
+import { EMPTY_OBJECT } from '@obstudio/utils/empty';
+import type { ObstudioComponentProps, ComponentRenderFn, HTMLProps } from './types';
 import { getStateAttributesProps, StateAttributesMapping } from './getStateAttributesProps';
 import { resolveClassName } from '../utils/resolveClassName';
 import { resolveStyle } from '../utils/resolveStyle';
@@ -13,7 +13,7 @@ import { mergeProps, mergePropsN, mergeClassNames } from '../merge-props';
 type IntrinsicTagName = keyof React.JSX.IntrinsicElements;
 
 /**
- * Renders a Base UI element.
+ * Renders a Obstudio element.
  *
  * @param element The default HTML element to render. Can be overridden by the `render` prop.
  * @param componentProps An object containing the `render` and `className` props to be used for element customization. Other props are ignored.
@@ -157,7 +157,7 @@ function unwrapLazyRenderProp<State>(
 
 function evaluateRenderProp<T extends React.ElementType, S>(
   element: IntrinsicTagName | undefined,
-  render: BaseUIComponentProps<T, S>['render'],
+  render: ObstudioComponentProps<T, S>['render'],
   props: React.HTMLAttributes<any> & React.RefAttributes<any>,
   state: S,
 ): React.ReactElement {
@@ -185,9 +185,9 @@ function evaluateRenderProp<T extends React.ElementType, S>(
         // eslint-disable-next-line mui/no-guarded-throw
         throw new Error(
           [
-            'Base UI: The `render` prop was provided an invalid React element as `React.isValidElement(render)` is `false`.',
+            'Obstudio: The `render` prop was provided an invalid React element as `React.isValidElement(render)` is `false`.',
             'A valid React element must be provided to the `render` prop because it is cloned with props to replace the default element.',
-            'https://base-ui.com/r/invalid-render-prop',
+            'https://obstudio.co/r/invalid-render-prop',
           ].join('\n'),
         );
       }
@@ -202,7 +202,7 @@ function evaluateRenderProp<T extends React.ElementType, S>(
   }
   // Unreachable, but the typings on `useRenderElement` need to be reworked
   // to annotate it correctly.
-  throw new Error('Base UI: Render element or function are not defined.');
+  throw new Error('Obstudio: Render element or function are not defined.');
 }
 
 function warnIfRenderPropLooksLikeComponent(renderFn: { name: string }) {
@@ -222,10 +222,10 @@ function warnIfRenderPropLooksLikeComponent(renderFn: { name: string }) {
   warn(
     `The \`render\` prop received a function named \`${functionName}\` that starts with an uppercase letter.`,
     'This usually means a React component was passed directly as `render={Component}`.',
-    'Base UI calls `render` as a plain function, which can break the Rules of Hooks during reconciliation.',
+    'Obstudio calls `render` as a plain function, which can break the Rules of Hooks during reconciliation.',
     'If this is an intentional render callback, rename it to start with a lowercase letter.',
     'Use `render={<Component />}` or `render={(props) => <Component {...props} />}` instead.',
-    'https://base-ui.com/r/invalid-render-prop',
+    'https://obstudio.co/r/invalid-render-prop',
   );
 }
 

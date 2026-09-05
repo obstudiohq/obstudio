@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { Popover } from '@base-ui/react/popover';
+import { Popover } from '@obstudio/react/popover';
 import { motion, AnimatePresence } from 'motion/react';
 
 function ConditionallyMounted() {

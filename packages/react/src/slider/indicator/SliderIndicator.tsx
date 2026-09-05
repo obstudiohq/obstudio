@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { valueToPercent } from '../../utils/valueToPercent';
 import { useIsHydrating } from '../../utils/useIsHydrating';
 import { useRenderElement } from '../../internals/useRenderElement';
@@ -48,7 +48,7 @@ function getIndicatorStyles(
  * Visualizes the current value of the slider.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Slider](https://base-ui.com/react/components/slider)
+ * Documentation: [Obstudio Slider](https://obstudio.co/react/components/slider)
  */
 export const SliderIndicator = React.forwardRef(function SliderIndicator(
   componentProps: SliderIndicator.Props,
@@ -78,7 +78,7 @@ export const SliderIndicator = React.forwardRef(function SliderIndicator(
     ref: forwardedRef,
     props: [
       {
-        ['data-base-ui-slider-indicator' as string]: renderBeforeHydration ? '' : undefined,
+        ['data-obstudio-slider-indicator' as string]: renderBeforeHydration ? '' : undefined,
         style,
         suppressHydrationWarning: renderBeforeHydration || undefined,
       },
@@ -92,7 +92,7 @@ export const SliderIndicator = React.forwardRef(function SliderIndicator(
 
 export interface SliderIndicatorState extends SliderRootState {}
 
-export interface SliderIndicatorProps extends BaseUIComponentProps<'div', SliderIndicatorState> {}
+export interface SliderIndicatorProps extends ObstudioComponentProps<'div', SliderIndicatorState> {}
 
 export namespace SliderIndicator {
   export type State = SliderIndicatorState;

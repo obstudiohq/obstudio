@@ -1,7 +1,7 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
 import { act, screen } from '@mui/internal-test-utils';
-import { Toggle } from '@base-ui/react/toggle';
+import { Toggle } from '@obstudio/react/toggle';
 import { createRenderer, describeConformance } from '#test-utils';
 import { ToggleGroup } from '../toggle-group/ToggleGroup';
 

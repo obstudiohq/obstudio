@@ -1,15 +1,15 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
 import { type FieldRootState } from '../root/FieldRoot';
 import { useFieldRootContext } from '../../internals/field-root-context/FieldRootContext';
 import { useLabelableContext } from '../../internals/labelable-provider/LabelableContext';
 import { fieldValidityMapping } from '../../internals/field-constants/constants';
 import { useFormContext } from '../../internals/form-context/FormContext';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import type { StateAttributesMapping } from '../../internals/getStateAttributesProps';
 import { useRenderElement } from '../../internals/useRenderElement';
-import { useBaseUiId } from '../../internals/useBaseUiId';
+import { useObstudioId } from '../../internals/useObstudioId';
 import { useOpenChangeComplete } from '../../internals/useOpenChangeComplete';
 import { transitionStatusMapping } from '../../internals/stateAttributesMapping';
 import { type TransitionStatus, useTransitionStatus } from '../../internals/useTransitionStatus';
@@ -23,7 +23,7 @@ const stateAttributesMapping: StateAttributesMapping<FieldErrorState> = {
  * An error message displayed if the field control fails validation.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Field](https://base-ui.com/react/components/field)
+ * Documentation: [Obstudio Field](https://obstudio.co/react/components/field)
  */
 export const FieldError = React.forwardRef(function FieldError(
   componentProps: FieldError.Props,
@@ -31,7 +31,7 @@ export const FieldError = React.forwardRef(function FieldError(
 ) {
   const { render, id: idProp, className, match, style, ...elementProps } = componentProps;
 
-  const id = useBaseUiId(idProp);
+  const id = useObstudioId(idProp);
 
   const { validityData, state: fieldState, name } = useFieldRootContext(false);
   const { setMessageIds } = useLabelableContext();
@@ -142,7 +142,7 @@ export interface FieldErrorState extends FieldRootState {
   transitionStatus: TransitionStatus;
 }
 
-export interface FieldErrorProps extends BaseUIComponentProps<'div', FieldErrorState> {
+export interface FieldErrorProps extends ObstudioComponentProps<'div', FieldErrorState> {
   /**
    * Determines whether to show the error message according to the field's
    * [ValidityState](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState).

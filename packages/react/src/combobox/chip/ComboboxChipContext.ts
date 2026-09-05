@@ -11,7 +11,7 @@ export function useComboboxChipContext() {
   const context = React.useContext(ComboboxChipContext);
   if (!context) {
     throw new Error(
-      'Base UI: ComboboxChipContext is missing. ComboboxChip parts must be placed within <Combobox.Chip>.',
+      'Obstudio: ComboboxChipContext is missing. ComboboxChip parts must be placed within <Combobox.Chip>.',
     );
   }
   return context;

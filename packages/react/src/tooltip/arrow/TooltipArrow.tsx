@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { useTooltipPositionerContext } from '../positioner/TooltipPositionerContext';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import type { Side, Align } from '../../internals/useAnchorPositioning';
 import { popupStateMapping } from '../../utils/popupStateMapping';
 import { useRenderElement } from '../../internals/useRenderElement';
@@ -11,7 +11,7 @@ import { useTooltipRootContext } from '../root/TooltipRootContext';
  * Displays an element positioned against the tooltip anchor.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)
+ * Documentation: [Obstudio Tooltip](https://obstudio.co/react/components/tooltip)
  */
 export const TooltipArrow = React.forwardRef(function TooltipArrow(
   componentProps: TooltipArrow.Props,
@@ -66,7 +66,7 @@ export interface TooltipArrowState {
   instant: 'delay' | 'dismiss' | 'focus' | undefined;
 }
 
-export interface TooltipArrowProps extends BaseUIComponentProps<'div', TooltipArrowState> {}
+export interface TooltipArrowProps extends ObstudioComponentProps<'div', TooltipArrowState> {}
 
 export namespace TooltipArrow {
   export type State = TooltipArrowState;

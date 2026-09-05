@@ -1,6 +1,6 @@
 import { expect, vi, describe, beforeEach, afterEach, it } from 'vitest';
 import * as React from 'react';
-import { Avatar } from '@base-ui/react/avatar';
+import { Avatar } from '@obstudio/react/avatar';
 import { act, fireEvent, screen, waitFor } from '@mui/internal-test-utils';
 import { describeConformance, createRenderer, isJSDOM } from '#test-utils';
 
@@ -333,7 +333,7 @@ describe('<Avatar.Image />', () => {
           <Avatar.Image
             data-testid="image"
             keepMounted
-            onLoad={(event) => event.preventBaseUIHandler()}
+            onLoad={(event) => event.preventObstudioHandler()}
             onLoadingStatusChange={onLoadingStatusChange}
             src="avatar.png"
           />
@@ -840,11 +840,11 @@ describe('<Avatar.Image />', () => {
 
   describe.skipIf(isJSDOM)('animations', () => {
     afterEach(() => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
     });
 
     it('triggers enter animation via data-starting-style when mounting', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       let transitionFinished = false;
       const getAnimations = vi.fn((): Animation[] => []);
@@ -909,7 +909,7 @@ describe('<Avatar.Image />', () => {
     });
 
     it('applies data-ending-style before unmount', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       const style = `
         @keyframes test-anim {
@@ -963,7 +963,7 @@ describe('<Avatar.Image />', () => {
     });
 
     it('does not apply the not-loaded state attributes without keepMounted', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       const style = `
         @keyframes test-anim {
@@ -1015,7 +1015,7 @@ describe('<Avatar.Image />', () => {
     });
 
     it('does not apply data-ending-style with keepMounted', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
       restoreImage();
       restoreImage = () => {};
 
@@ -1063,7 +1063,7 @@ describe('<Avatar.Image />', () => {
     });
 
     it('does not replay the enter animation for a cached image on hydration', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
       restoreImage();
       restoreImage = () => {};
 

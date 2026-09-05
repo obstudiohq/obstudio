@@ -1,7 +1,7 @@
 import { expect, describe, it } from 'vitest';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Toast } from '@base-ui/react/toast';
+import { Toast } from '@obstudio/react/toast';
 import { act, screen, fireEvent, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import type { ToastManagerAddOptions } from '../useToastManager';
@@ -254,8 +254,8 @@ describe('<Toast.Root />', () => {
   it.skipIf(isJSDOM)(
     'clears the starting state and restores the height when re-adding an ending toast',
     async () => {
-      const animationsDisabled = globalThis.BASE_UI_ANIMATIONS_DISABLED;
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      const animationsDisabled = globalThis.OBSTUDIO_ANIMATIONS_DISABLED;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       function App() {
         const { add, close, toasts } = Toast.useToastManager();
@@ -318,7 +318,7 @@ describe('<Toast.Root />', () => {
           expect(toastRoot.style.getPropertyValue('--toast-height')).toBe(initialHeight);
         });
       } finally {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = animationsDisabled;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = animationsDisabled;
       }
     },
   );
@@ -398,8 +398,8 @@ describe('<Toast.Root />', () => {
   it.skipIf(isJSDOM)(
     'keeps stacking intact when re-adding an ending toast among other toasts',
     async () => {
-      const animationsDisabled = globalThis.BASE_UI_ANIMATIONS_DISABLED;
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      const animationsDisabled = globalThis.OBSTUDIO_ANIMATIONS_DISABLED;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       function App() {
         const { add, close, toasts } = Toast.useToastManager();
@@ -477,14 +477,14 @@ describe('<Toast.Root />', () => {
         expect(toast2.style.getPropertyValue('--toast-index')).toBe('1');
         expect(screen.getByTestId('content-t2')).toHaveAttribute('data-behind');
       } finally {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = animationsDisabled;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = animationsDisabled;
       }
     },
   );
 
   it.skipIf(isJSDOM)('clears swipe state when re-adding a swipe-dismissed toast', async () => {
-    const animationsDisabled = globalThis.BASE_UI_ANIMATIONS_DISABLED;
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+    const animationsDisabled = globalThis.OBSTUDIO_ANIMATIONS_DISABLED;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
     function App() {
       const { add, toasts } = Toast.useToastManager();
@@ -557,15 +557,15 @@ describe('<Toast.Root />', () => {
       expect(toastRoot.style.getPropertyValue('--toast-swipe-movement-x')).toBe('0px');
       expect(toastRoot.style.getPropertyValue('--toast-swipe-movement-y')).toBe('0px');
     } finally {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = animationsDisabled;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = animationsDisabled;
     }
   });
 
   it.skipIf(isJSDOM)(
     'clears swipe state when a retained root is reused for another toast',
     async () => {
-      const animationsDisabled = globalThis.BASE_UI_ANIMATIONS_DISABLED;
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      const animationsDisabled = globalThis.OBSTUDIO_ANIMATIONS_DISABLED;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       function App() {
         const { add, toasts } = Toast.useToastManager();
@@ -640,7 +640,7 @@ describe('<Toast.Root />', () => {
         expect(swipedRoot.style.getPropertyValue('--toast-swipe-movement-x')).toBe('0px');
         expect(swipedRoot.style.getPropertyValue('--toast-swipe-movement-y')).toBe('0px');
       } finally {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = animationsDisabled;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = animationsDisabled;
       }
     },
   );
@@ -648,8 +648,8 @@ describe('<Toast.Root />', () => {
   it.skipIf(isJSDOM)(
     'moves focus to the next toast when closing in an index-keyed list',
     async () => {
-      const animationsDisabled = globalThis.BASE_UI_ANIMATIONS_DISABLED;
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      const animationsDisabled = globalThis.OBSTUDIO_ANIMATIONS_DISABLED;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       function App() {
         const { add, toasts } = Toast.useToastManager();
@@ -706,7 +706,7 @@ describe('<Toast.Root />', () => {
           expect(screen.getByTestId('root-1')).toHaveFocus();
         });
       } finally {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = animationsDisabled;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = animationsDisabled;
       }
     },
   );
@@ -1451,12 +1451,12 @@ describe('<Toast.Root />', () => {
       expect(afterSwipeEvent.defaultPrevented).toBe(false);
     });
 
-    it('does not start swiping from elements with the data-base-ui-swipe-ignore attribute', async () => {
+    it('does not start swiping from elements with the data-obstudio-swipe-ignore attribute', async () => {
       await render(
         <Toast.Provider>
           <Toast.Viewport>
             <Toast.Root toast={toast} data-testid="toast-root" swipeDirection="up">
-              <div data-base-ui-swipe-ignore data-testid="ignore-target">
+              <div data-obstudio-swipe-ignore data-testid="ignore-target">
                 Ignore swipe
               </div>
             </Toast.Root>
@@ -1611,7 +1611,7 @@ describe('<Toast.Root />', () => {
   });
 
   describe('object identity', () => {
-    // Regression test for https://github.com/mui/base-ui/issues/3922
+    // Regression test for https://github.com/obstudiohq/obstudio/issues/3922
     // Toast calculations should use ID-based lookups, not referential equality
     it('works correctly when toast objects are recreated (not referentially equal)', async () => {
       // This component wraps useToastManager and creates NEW toast objects

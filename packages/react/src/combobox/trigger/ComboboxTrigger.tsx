@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import { ownerDocument } from '@base-ui/utils/owner';
-import { BaseUIComponentProps, NativeButtonProps } from '../../internals/types';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useTimeout } from '@obstudio/utils/useTimeout';
+import { ownerDocument } from '@obstudio/utils/owner';
+import { ObstudioComponentProps, NativeButtonProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useButton } from '../../internals/use-button';
 import {
@@ -17,7 +17,7 @@ import { useLabelableContext } from '../../internals/labelable-provider/Labelabl
 import { stopEvent, contains, getTarget } from '../../floating-ui-react/utils';
 import { isMouseWithinBounds } from '../../utils/getPseudoElementBounds';
 import type { FieldRootState } from '../../field/root/FieldRoot';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { useClick, useTypeahead } from '../../floating-ui-react';
 import type { Side } from '../../internals/useAnchorPositioning';
@@ -30,7 +30,7 @@ import { useListEmpty, usePopupSide } from '../utils/parts';
  * A button that opens the popup.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)
+ * Documentation: [Obstudio Combobox](https://obstudio.co/react/components/combobox)
  */
 export const ComboboxTrigger = React.forwardRef(function ComboboxTrigger(
   componentProps: ComboboxTrigger.Props,
@@ -289,7 +289,7 @@ export interface ComboboxTriggerState extends FieldRootState {
 }
 
 export interface ComboboxTriggerProps
-  extends NativeButtonProps, BaseUIComponentProps<'button', ComboboxTriggerState> {
+  extends NativeButtonProps, ObstudioComponentProps<'button', ComboboxTriggerState> {
   /**
    * Whether the component should ignore user interaction.
    * @default false

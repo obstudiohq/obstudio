@@ -1,4 +1,4 @@
-import { ownerWindow } from '@base-ui/utils/owner';
+import { ownerWindow } from '@obstudio/utils/owner';
 
 // Calculates the bounds the virtual cursor wraps within, as absolute edge coordinates.
 export function getViewportRect(teleportDistance: number | undefined, scrubAreaEl: HTMLElement) {

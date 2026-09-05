@@ -21,7 +21,7 @@ exports.handler = async (event) => {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
-      // Token from https://app.netlify.com/projects/base-ui/configuration/env#content
+      // Token from https://app.netlify.com/projects/obstudio/configuration/env#content
       'Circle-Token': process.env.CIRCLE_CI_TOKEN,
     },
     body: JSON.stringify({

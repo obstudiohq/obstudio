@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { Popover } from '@base-ui/react/popover';
+import { Popover } from '@obstudio/react/popover';
 import { AnimatePresence, motion } from 'motion/react';
 import styles from './index.module.css';
 

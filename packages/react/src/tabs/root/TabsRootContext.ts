@@ -46,7 +46,7 @@ export function useTabsRootContext() {
   const context = React.useContext(TabsRootContext);
   if (context === undefined) {
     throw new Error(
-      'Base UI: TabsRootContext is missing. Tabs parts must be placed within <Tabs.Root>.',
+      'Obstudio: TabsRootContext is missing. Tabs parts must be placed within <Tabs.Root>.',
     );
   }
 

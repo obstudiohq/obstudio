@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { Combobox } from '@base-ui/react/combobox';
+import { Combobox } from '@obstudio/react/combobox';
 import styles from './priority-combobox.module.css';
 
 function CustomCombobox(props: { items: Priority[] }) {

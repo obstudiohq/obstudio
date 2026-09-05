@@ -28,10 +28,10 @@ The `mergeProps` function merges two or more sets of React props together. It sa
 2. `className` strings
 3. `style` properties
 
-`mergeProps` merges objects from left to right, so that subsequent objects' properties in the arguments overwrite previous ones. Merging props is useful when creating custom components, as well as inside the callback version of the `render` prop for any Base UI component.
+`mergeProps` merges objects from left to right, so that subsequent objects' properties in the arguments overwrite previous ones. Merging props is useful when creating custom components, as well as inside the callback version of the `render` prop for any Obstudio component.
 
 ```tsx title="Using mergeProps in the render callback"
-import { mergeProps } from '@base-ui/react/merge-props';
+import { mergeProps } from '@obstudio/react/merge-props';
 import styles from './index.module.css';
 
 function Button() {
@@ -128,7 +128,7 @@ function Button({ render, ...props }: ButtonProps) {
 
 ## Migrating from Radix UI
 
-Radix UI uses an `asChild` prop, while Base UI uses a `render` prop. Learn more about how composition works in Base UI in the [composition guide](/react/handbook/composition).
+Radix UI uses an `asChild` prop, while Obstudio uses a `render` prop. Learn more about how composition works in Obstudio in the [composition guide](/react/handbook/composition).
 
 In Radix UI, the `Slot` component lets you implement an `asChild` prop.
 
@@ -146,10 +146,10 @@ function Button({ asChild, ...props }) {
 </Button>;
 ```
 
-In Base UI, `useRender` lets you implement a `render` prop. The example below is the equivalent implementation to the Radix example above.
+In Obstudio, `useRender` lets you implement a `render` prop. The example below is the equivalent implementation to the Radix example above.
 
-```jsx title="Base UI render prop"
-import { useRender } from '@base-ui/react/use-render';
+```jsx title="Obstudio render prop"
+import { useRender } from '@obstudio/react/use-render';
 
 function Button({ render, ...props }) {
   return useRender({
@@ -167,7 +167,7 @@ function Button({ render, ...props }) {
 
 The `render` prop is primarily designed for composing event handlers and behavioral props. In most cases it should render the same tag as the default element.
 
-Using `render` for polymorphism (rendering a different tag) requires more care, as some default props may not be valid on the new element. For example, `type="button"` is only valid on a `<button>`. Since the component can't know what element `render` will produce at render time and before hydration, props like these need an explicit signal. This is why Base UI's [Button](/react/components/button) provides a `nativeButton` prop to control which defaults are applied.
+Using `render` for polymorphism (rendering a different tag) requires more care, as some default props may not be valid on the new element. For example, `type="button"` is only valid on a `<button>`. Since the component can't know what element `render` will produce at render time and before hydration, props like these need an explicit signal. This is why Obstudio's [Button](/react/components/button) provides a `nativeButton` prop to control which defaults are applied.
 
 ## API reference
 
@@ -183,7 +183,7 @@ const element = useRender({
 
 export const metadata = {
   keywords: [
-    'Base UI useRender',
+    'Obstudio useRender',
     'React Render Prop Hook',
     'Merge Props Helper',
     'Merge Refs Hook',

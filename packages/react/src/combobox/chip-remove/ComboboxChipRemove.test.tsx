@@ -1,5 +1,5 @@
 import { expect, vi, describe, it } from 'vitest';
-import { Combobox } from '@base-ui/react/combobox';
+import { Combobox } from '@obstudio/react/combobox';
 import { createRenderer, describeConformance } from '#test-utils';
 import { act, fireEvent, screen, waitFor } from '@mui/internal-test-utils';
 
@@ -33,7 +33,7 @@ describe('<Combobox.ChipRemove />', () => {
           </Combobox.Root>,
         ),
       ).rejects.toThrow(
-        'Base UI: ComboboxChipContext is missing. ComboboxChip parts must be placed within <Combobox.Chip>.',
+        'Obstudio: ComboboxChipContext is missing. ComboboxChip parts must be placed within <Combobox.Chip>.',
       );
     } finally {
       errorSpy.mockRestore();

@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { usePopoverRootContext } from '../root/PopoverRootContext';
 import { usePopoverPositionerContext } from '../positioner/PopoverPositionerContext';
-import { BaseUIComponentProps } from '../../internals/types';
+import { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { popupViewportStateMapping, usePopupViewport } from '../../utils/usePopupViewport';
 
@@ -12,7 +12,7 @@ import { popupViewportStateMapping, usePopupViewport } from '../../utils/usePopu
  * changes based on the trigger, and switching between them is animated.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Popover](https://base-ui.com/react/components/popover)
+ * Documentation: [Obstudio Popover](https://obstudio.co/react/components/popover)
  */
 export const PopoverViewport = React.forwardRef(function PopoverViewport(
   componentProps: PopoverViewport.Props,
@@ -60,7 +60,7 @@ export interface PopoverViewportState {
   instant: 'dismiss' | 'click' | 'focus' | 'trigger-change' | undefined;
 }
 
-export interface PopoverViewportProps extends BaseUIComponentProps<'div', PopoverViewportState> {
+export interface PopoverViewportProps extends ObstudioComponentProps<'div', PopoverViewportState> {
   /**
    * The content to render inside the transition container.
    */

@@ -1,19 +1,19 @@
 'use client';
 import * as React from 'react';
-import { visuallyHidden } from '@base-ui/utils/visuallyHidden';
-import { formatNumber } from '@base-ui/utils/formatNumber';
-import { clamp } from '@base-ui/utils/clamp';
+import { visuallyHidden } from '@obstudio/utils/visuallyHidden';
+import { formatNumber } from '@obstudio/utils/formatNumber';
+import { clamp } from '@obstudio/utils/clamp';
 import { valueToPercent } from '../../utils/valueToPercent';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { ProgressRootContext } from './ProgressRootContext';
 import { progressStateAttributesMapping } from './stateAttributesMapping';
-import { BaseUIComponentProps, HTMLProps } from '../../internals/types';
+import { ObstudioComponentProps, HTMLProps } from '../../internals/types';
 
 /**
  * Groups all parts of the progress bar and provides the task completion status to screen readers.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Progress](https://base-ui.com/react/components/progress)
+ * Documentation: [Obstudio Progress](https://obstudio.co/react/components/progress)
  */
 export const ProgressRoot = React.forwardRef(function ProgressRoot(
   componentProps: ProgressRoot.Props,
@@ -74,7 +74,7 @@ export const ProgressRoot = React.forwardRef(function ProgressRoot(
       <React.Fragment>
         {children}
         <span role="presentation" style={visuallyHidden}>
-          {/* force NVDA to read the label https://github.com/mui/base-ui/issues/4184 */}x
+          {/* force NVDA to read the label https://github.com/obstudiohq/obstudio/issues/4184 */}x
         </span>
       </React.Fragment>
     ),
@@ -112,7 +112,7 @@ export interface ProgressRootState {
   status: ProgressStatus;
 }
 
-export interface ProgressRootProps extends BaseUIComponentProps<'div', ProgressRootState> {
+export interface ProgressRootProps extends ObstudioComponentProps<'div', ProgressRootState> {
   /**
    * A string value that provides a user-friendly name for `aria-valuenow`, the current value of the progress bar.
    */

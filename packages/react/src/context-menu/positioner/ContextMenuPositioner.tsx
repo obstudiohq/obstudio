@@ -5,7 +5,7 @@ import {
   type MenuPositionerProps,
   type MenuPositionerState,
 } from '../../menu/positioner/MenuPositioner';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 
 export interface ContextMenuPositionerState extends MenuPositionerState {}
 
@@ -13,7 +13,7 @@ export interface ContextMenuPositionerState extends MenuPositionerState {}
  * Positions the context menu popup against the pointer or a custom anchor.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Context Menu](https://base-ui.com/react/components/context-menu)
+ * Documentation: [Obstudio Context Menu](https://obstudio.co/react/components/context-menu)
  */
 export const ContextMenuPositioner: React.ForwardRefExoticComponent<
   ContextMenuPositionerProps & React.RefAttributes<HTMLDivElement>
@@ -23,7 +23,7 @@ export interface ContextMenuPositionerProps
   extends
     Omit<
       MenuPositionerProps,
-      | keyof BaseUIComponentProps<'div', ContextMenuPositionerState>
+      | keyof ObstudioComponentProps<'div', ContextMenuPositionerState>
       | 'anchor'
       | 'positionMethod'
       | 'side'
@@ -32,7 +32,7 @@ export interface ContextMenuPositionerProps
       | 'alignOffset'
       | 'arrowPadding'
     >,
-    BaseUIComponentProps<'div', ContextMenuPositionerState> {
+    ObstudioComponentProps<'div', ContextMenuPositionerState> {
   /**
    * An element to position the popup against.
    * By default, root context menus are positioned at the pointer, and submenus are positioned

@@ -2,7 +2,7 @@
 # maintainer comments "@claude review" on a PR; the reusable workflow gates on team
 # membership, then reviews the diff and posts a comment. All the logic (and its
 # security model) lives in the called workflow; here we only wire up the trigger and
-# pass base-ui's own local review skill. See mui/mui-public/.github/workflows/claude-review.yml.
+# pass obstudio's own local review skill. See mui/mui-public/.github/workflows/claude-review.yml.
 name: Claude review
 
 on:
@@ -19,4 +19,4 @@ jobs:
       id-token: write # mint the GitHub OIDC token exchanged for a Claude token via WIF
       pull-requests: write # the reusable workflow posts the review comment (commenting on a PR needs pull-requests: write)
     with:
-      review-skill: base-ui-review
+      review-skill: obstudio-review

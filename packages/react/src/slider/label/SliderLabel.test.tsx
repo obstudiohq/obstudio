@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { Slider } from '@base-ui/react/slider';
-import { Field } from '@base-ui/react/field';
+import { Slider } from '@obstudio/react/slider';
+import { Field } from '@obstudio/react/field';
 import { screen } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance } from '#test-utils';
 

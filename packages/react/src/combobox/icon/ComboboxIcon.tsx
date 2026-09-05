@@ -1,13 +1,13 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 
 /**
  * An icon that indicates that the trigger button opens the popup.
  * Renders a `<span>` element.
  *
- * Documentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)
+ * Documentation: [Obstudio Combobox](https://obstudio.co/react/components/combobox)
  */
 export const ComboboxIcon = React.forwardRef(function ComboboxIcon(
   componentProps: ComboboxIcon.Props,
@@ -31,7 +31,7 @@ export const ComboboxIcon = React.forwardRef(function ComboboxIcon(
 
 export interface ComboboxIconState {}
 
-export interface ComboboxIconProps extends BaseUIComponentProps<'span', ComboboxIconState> {}
+export interface ComboboxIconProps extends ObstudioComponentProps<'span', ComboboxIconState> {}
 
 export namespace ComboboxIcon {
   export type State = ComboboxIconState;

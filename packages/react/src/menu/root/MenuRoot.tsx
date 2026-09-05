@@ -1,12 +1,12 @@
 'use client';
 import * as React from 'react';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useId } from '@base-ui/utils/useId';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
-import { EMPTY_ARRAY, EMPTY_OBJECT } from '@base-ui/utils/empty';
-import { fastComponent } from '@base-ui/utils/fastHooks';
+import { useTimeout } from '@obstudio/utils/useTimeout';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useId } from '@obstudio/utils/useId';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useRefWithInit } from '@obstudio/utils/useRefWithInit';
+import { EMPTY_ARRAY, EMPTY_OBJECT } from '@obstudio/utils/empty';
+import { fastComponent } from '@obstudio/utils/fastHooks';
 import {
   FloatingTree,
   useDismiss,
@@ -23,8 +23,8 @@ import { useDirection } from '../../internals/direction-context/DirectionContext
 import { useOpenInteractionType } from '../../utils/useOpenInteractionType';
 import {
   createChangeEventDetails,
-  type BaseUIChangeEventDetails,
-} from '../../internals/createBaseUIEventDetails';
+  type ObstudioChangeEventDetails,
+} from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import {
   ContextMenuRootContext,
@@ -50,7 +50,7 @@ import { useMenuSubmenuRootContext } from '../submenu-root/MenuSubmenuRootContex
  * Groups all parts of the menu.
  * Doesn't render its own HTML element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Obstudio Menu](https://obstudio.co/react/components/menu)
  */
 export const MenuRoot = fastComponent(function MenuRoot<Payload>(props: MenuRoot.Props<Payload>) {
   const {
@@ -177,7 +177,7 @@ export const MenuRoot = fastComponent(function MenuRoot<Payload>(props: MenuRoot
   if (process.env.NODE_ENV !== 'production') {
     if (parent.type !== undefined && modalProp !== undefined) {
       console.warn(
-        'Base UI: The `modal` prop is not supported on nested menus. It will be ignored.',
+        'Obstudio: The `modal` prop is not supported on nested menus. It will be ignored.',
       );
     }
   }
@@ -777,7 +777,7 @@ export type MenuRootChangeEventReason =
   | typeof REASONS.imperativeAction
   | typeof REASONS.none;
 
-export type MenuRootChangeEventDetails = BaseUIChangeEventDetails<MenuRoot.ChangeEventReason> & {
+export type MenuRootChangeEventDetails = ObstudioChangeEventDetails<MenuRoot.ChangeEventReason> & {
   preventUnmountOnClose(): void;
 };
 

@@ -1,7 +1,7 @@
 import { expect, vi, describe, beforeEach, it } from 'vitest';
 import * as React from 'react';
-import { Tooltip } from '@base-ui/react/tooltip';
-import { Toolbar } from '@base-ui/react/toolbar';
+import { Tooltip } from '@obstudio/react/tooltip';
+import { Toolbar } from '@obstudio/react/toolbar';
 import { act, fireEvent, flushMicrotasks, screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance, isJSDOM, resetBrowserPointer } from '#test-utils';
 
@@ -24,7 +24,7 @@ describe('<Tooltip.Trigger />', () => {
 
     try {
       await expect(render(<Tooltip.Trigger>Trigger</Tooltip.Trigger>)).rejects.toThrow(
-        'Base UI: <Tooltip.Trigger> must be either used within a <Tooltip.Root> component or provided with a handle.',
+        'Obstudio: <Tooltip.Trigger> must be either used within a <Tooltip.Root> component or provided with a handle.',
       );
     } finally {
       errorSpy.mockRestore();

@@ -1,7 +1,7 @@
 import { expect, vi, describe, it } from 'vitest';
-import { Toolbar } from '@base-ui/react/toolbar';
-import { NumberField } from '@base-ui/react/number-field';
-import { DirectionProvider } from '@base-ui/react/direction-provider';
+import { Toolbar } from '@obstudio/react/toolbar';
+import { NumberField } from '@obstudio/react/number-field';
+import { DirectionProvider } from '@obstudio/react/direction-provider';
 import { screen } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { NOOP } from '../../internals/noop';

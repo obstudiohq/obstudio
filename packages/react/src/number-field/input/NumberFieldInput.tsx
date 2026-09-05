@@ -1,11 +1,11 @@
 'use client';
 import * as React from 'react';
-import { SafeReact } from '@base-ui/utils/safeReact';
-import { warn } from '@base-ui/utils/warn';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { formatNumber } from '@base-ui/utils/formatNumber';
+import { SafeReact } from '@obstudio/utils/safeReact';
+import { warn } from '@obstudio/utils/warn';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { formatNumber } from '@obstudio/utils/formatNumber';
 import { useNumberFieldRootContext } from '../root/NumberFieldRootContext';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useFieldRootContext } from '../../internals/field-root-context/FieldRootContext';
 import { useRegisterFieldControl } from '../../internals/field-register-control/useRegisterFieldControl';
 import { useFormContext } from '../../internals/form-context/FormContext';
@@ -26,7 +26,7 @@ import { useRenderElement } from '../../internals/useRenderElement';
 import {
   createChangeEventDetails,
   createGenericEventDetails,
-} from '../../internals/createBaseUIEventDetails';
+} from '../../internals/createObstudioEventDetails';
 import { useValueChanged } from '../../internals/useValueChanged';
 import { REASONS } from '../../internals/reasons';
 import { hasNumberFormatRoundingOptions, removeFloatingPointErrors } from '../utils/validate';
@@ -45,7 +45,7 @@ const NAVIGATE_KEYS = new Set([
  * The native input control in the number field.
  * Renders an `<input>` element.
  *
- * Documentation: [Base UI Number Field](https://base-ui.com/react/components/number-field)
+ * Documentation: [Obstudio Number Field](https://obstudio.co/react/components/number-field)
  */
 export const NumberFieldInput = React.forwardRef(function NumberFieldInput(
   componentProps: NumberFieldInput.Props,
@@ -464,7 +464,7 @@ export const NumberFieldInput = React.forwardRef(function NumberFieldInput(
 
 export interface NumberFieldInputState extends NumberFieldRootState {}
 
-export interface NumberFieldInputProps extends BaseUIComponentProps<
+export interface NumberFieldInputProps extends ObstudioComponentProps<
   'input',
   NumberFieldInputState,
   React.ComponentPropsWithRef<'input'>

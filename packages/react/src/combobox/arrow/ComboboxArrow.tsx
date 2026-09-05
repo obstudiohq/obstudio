@@ -4,14 +4,14 @@ import { useComboboxPositionerContext } from '../positioner/ComboboxPositionerCo
 import { useComboboxRootContext } from '../root/ComboboxRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';
 import type { Side, Align } from '../../internals/useAnchorPositioning';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { popupStateMapping } from '../../utils/popupStateMapping';
 
 /**
  * Displays an element positioned against the anchor.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)
+ * Documentation: [Obstudio Combobox](https://obstudio.co/react/components/combobox)
  */
 export const ComboboxArrow = React.forwardRef(function ComboboxArrow(
   componentProps: ComboboxArrow.Props,
@@ -62,7 +62,7 @@ export interface ComboboxArrowState {
   uncentered: boolean;
 }
 
-export interface ComboboxArrowProps extends BaseUIComponentProps<'div', ComboboxArrowState> {}
+export interface ComboboxArrowProps extends ObstudioComponentProps<'div', ComboboxArrowState> {}
 
 export namespace ComboboxArrow {
   export type State = ComboboxArrowState;

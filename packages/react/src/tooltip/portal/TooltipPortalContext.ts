@@ -6,7 +6,7 @@ export const TooltipPortalContext = React.createContext<boolean | undefined>(und
 export function useTooltipPortalContext() {
   const value = React.useContext(TooltipPortalContext);
   if (value === undefined) {
-    throw new Error('Base UI: <Tooltip.Portal> is missing.');
+    throw new Error('Obstudio: <Tooltip.Portal> is missing.');
   }
   return value;
 }

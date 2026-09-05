@@ -1,5 +1,5 @@
 'use client';
-import { Drawer } from '@base-ui/react/drawer';
+import { Drawer } from '@obstudio/react/drawer';
 
 export default function ExampleDrawerNested() {
   return (

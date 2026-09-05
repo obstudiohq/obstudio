@@ -1,16 +1,20 @@
 'use client';
 import * as React from 'react';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { visuallyHidden, visuallyHiddenInput } from '@base-ui/utils/visuallyHidden';
-import { EMPTY_OBJECT } from '@base-ui/utils/empty';
-import type { BaseUIComponentProps, HTMLProps, NonNativeButtonProps } from '../../internals/types';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { useMergedRefs } from '@obstudio/utils/useMergedRefs';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { visuallyHidden, visuallyHiddenInput } from '@obstudio/utils/visuallyHidden';
+import { EMPTY_OBJECT } from '@obstudio/utils/empty';
+import type {
+  ObstudioComponentProps,
+  HTMLProps,
+  NonNativeButtonProps,
+} from '../../internals/types';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { NOOP } from '../../internals/noop';
 import { stateAttributesMapping } from '../utils/stateAttributesMapping';
 import { dispatchClickWithModifiers } from '../../utils/dispatchClickWithModifiers';
-import { useBaseUiId } from '../../internals/useBaseUiId';
+import { useObstudioId } from '../../internals/useObstudioId';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useButton } from '../../internals/use-button';
 import { ACTIVE_COMPOSITE_ITEM } from '../../internals/composite/constants';
@@ -29,7 +33,7 @@ import { RadioRootContext } from './RadioRootContext';
  * Represents the radio button itself.
  * Renders a `<span>` element and a hidden `<input>` beside.
  *
- * Documentation: [Base UI Radio](https://base-ui.com/react/components/radio)
+ * Documentation: [Obstudio Radio](https://obstudio.co/react/components/radio)
  */
 export const RadioRoot = React.forwardRef(function RadioRoot<Value>(
   componentProps: RadioRoot.Props<Value>,
@@ -112,7 +116,7 @@ export const RadioRoot = React.forwardRef(function RadioRoot<Value>(
     registerInputRef(inputRef.current);
   }, [checked, disabled, registerInputRef]);
 
-  const id = useBaseUiId();
+  const id = useObstudioId();
   const inputId = useLabelableId({ id: idProp });
   const hiddenInputId = nativeButton ? undefined : inputId;
   const ariaLabelledBy = useAriaLabelledBy(
@@ -308,7 +312,7 @@ export interface RadioRootState extends FieldRootState {
 }
 
 export interface RadioRootProps<Value = any>
-  extends NonNativeButtonProps, Omit<BaseUIComponentProps<'span', RadioRootState>, 'value'> {
+  extends NonNativeButtonProps, Omit<ObstudioComponentProps<'span', RadioRootState>, 'value'> {
   /**
    * The unique identifying value of the radio in a group.
    */

@@ -1,25 +1,25 @@
 'use client';
 import * as React from 'react';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { error } from '@base-ui/utils/error';
-import { useBaseUiId } from '../internals/useBaseUiId';
+import { useControlled } from '@obstudio/utils/useControlled';
+import { error } from '@obstudio/utils/error';
+import { useObstudioId } from '../internals/useObstudioId';
 import { useRenderElement } from '../internals/useRenderElement';
-import type { BaseUIComponentProps, NativeButtonProps } from '../internals/types';
+import type { ObstudioComponentProps, NativeButtonProps } from '../internals/types';
 import { useToggleGroupContext } from '../toggle-group/ToggleGroupContext';
 import type { ToolbarRoot } from '../toolbar/root/ToolbarRoot';
 import { useButton } from '../internals/use-button/useButton';
 import { CompositeItem } from '../internals/composite/item/CompositeItem';
 import {
-  type BaseUIChangeEventDetails,
+  type ObstudioChangeEventDetails,
   createChangeEventDetails,
-} from '../internals/createBaseUIEventDetails';
+} from '../internals/createObstudioEventDetails';
 import { REASONS } from '../internals/reasons';
 
 /**
  * A two-state button that can be on or off.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Toggle](https://base-ui.com/react/components/toggle)
+ * Documentation: [Obstudio Toggle](https://obstudio.co/react/components/toggle)
  */
 export const Toggle = React.forwardRef(function Toggle<Value extends string>(
   componentProps: Toggle.Props<Value>,
@@ -41,7 +41,7 @@ export const Toggle = React.forwardRef(function Toggle<Value extends string>(
   } = componentProps;
 
   // `|| undefined` handles cases, where value is falsy (i.e. "")
-  const value = useBaseUiId(valueProp || undefined);
+  const value = useObstudioId(valueProp || undefined);
   const groupContext = useToggleGroupContext();
   const groupValue = groupContext?.value ?? [];
 
@@ -156,7 +156,7 @@ export interface ToggleState {
 }
 
 export interface ToggleProps<Value extends string>
-  extends NativeButtonProps, BaseUIComponentProps<'button', ToggleState> {
+  extends NativeButtonProps, ObstudioComponentProps<'button', ToggleState> {
   /**
    * Whether the toggle button is currently pressed.
    * This is the controlled counterpart of `defaultPressed`.
@@ -187,7 +187,7 @@ export interface ToggleProps<Value extends string>
 
 export type ToggleChangeEventReason = typeof REASONS.none;
 
-export type ToggleChangeEventDetails = BaseUIChangeEventDetails<Toggle.ChangeEventReason>;
+export type ToggleChangeEventDetails = ObstudioChangeEventDetails<Toggle.ChangeEventReason>;
 
 export namespace Toggle {
   export type State = ToggleState;

@@ -1,7 +1,7 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
 import { screen, fireEvent, act } from '@mui/internal-test-utils';
-import { NumberField } from '@base-ui/react/number-field';
+import { NumberField } from '@obstudio/react/number-field';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { CHANGE_VALUE_TICK_DELAY, START_AUTO_CHANGE_DELAY } from '../utils/constants';
 

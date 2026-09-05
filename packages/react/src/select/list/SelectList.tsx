@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps, HTMLProps } from '../../internals/types';
+import type { ObstudioComponentProps, HTMLProps } from '../../internals/types';
 import { useSelectRootContext, useSelectRootPropsContext } from '../root/SelectRootContext';
 import { useSelectPositionerContext } from '../positioner/SelectPositionerContext';
 import { useRenderElement } from '../../internals/useRenderElement';
@@ -11,7 +11,7 @@ import { LIST_FUNCTIONAL_STYLES } from '../popup/utils';
  * A container for the select items.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ * Documentation: [Obstudio Select](https://obstudio.co/react/components/select)
  */
 export const SelectList = React.forwardRef(function SelectList(
   componentProps: SelectList.Props,
@@ -50,7 +50,7 @@ export const SelectList = React.forwardRef(function SelectList(
   });
 });
 
-export interface SelectListProps extends BaseUIComponentProps<'div', SelectListState> {}
+export interface SelectListProps extends ObstudioComponentProps<'div', SelectListState> {}
 
 export interface SelectListState {}
 

@@ -2,14 +2,14 @@
 import * as React from 'react';
 import { useDialogRootContext } from '../root/DialogRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';
-import { useBaseUiId } from '../../internals/useBaseUiId';
-import type { BaseUIComponentProps } from '../../internals/types';
+import { useObstudioId } from '../../internals/useObstudioId';
+import type { ObstudioComponentProps } from '../../internals/types';
 
 /**
  * A paragraph with additional information about the dialog.
  * Renders a `<p>` element.
  *
- * Documentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)
+ * Documentation: [Obstudio Dialog](https://obstudio.co/react/components/dialog)
  */
 export const DialogDescription = React.forwardRef(function DialogDescription(
   componentProps: DialogDescription.Props,
@@ -19,7 +19,7 @@ export const DialogDescription = React.forwardRef(function DialogDescription(
 
   const store = useDialogRootContext();
 
-  const id = useBaseUiId(idProp);
+  const id = useObstudioId(idProp);
 
   store.useSyncedValueWithCleanup('descriptionElementId', id);
 
@@ -29,7 +29,10 @@ export const DialogDescription = React.forwardRef(function DialogDescription(
   });
 });
 
-export interface DialogDescriptionProps extends BaseUIComponentProps<'p', DialogDescriptionState> {}
+export interface DialogDescriptionProps extends ObstudioComponentProps<
+  'p',
+  DialogDescriptionState
+> {}
 
 export interface DialogDescriptionState {}
 

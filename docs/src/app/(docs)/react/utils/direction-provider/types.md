@@ -6,7 +6,7 @@
 
 ### DirectionProvider
 
-Enables RTL behavior for Base UI components.
+Enables RTL behavior for Obstudio components.
 
 **DirectionProvider Props:**
 

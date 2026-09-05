@@ -1,10 +1,10 @@
 import { expect, vi, describe, it } from 'vitest';
-import { OTPField } from '@base-ui/react/otp-field';
+import { OTPField } from '@obstudio/react/otp-field';
 import { screen } from '@mui/internal-test-utils';
 import { createRenderer } from '#test-utils';
 
-vi.mock('@base-ui/utils/safeReact', async (importOriginal) => {
-  const original = await importOriginal<typeof import('@base-ui/utils/safeReact')>();
+vi.mock('@obstudio/utils/safeReact', async (importOriginal) => {
+  const original = await importOriginal<typeof import('@obstudio/utils/safeReact')>();
 
   return {
     SafeReact: {

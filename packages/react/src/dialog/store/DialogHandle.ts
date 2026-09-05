@@ -1,5 +1,5 @@
 import { DialogStore, createNullDialogStore, type DialogHandleStore } from './DialogStore';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { BasePopupHandle } from '../../utils/popups/popupHandle';
 
@@ -44,7 +44,7 @@ export class DialogHandle<Payload> extends BasePopupHandle<
     if (attachedStore === null) {
       if (process.env.NODE_ENV !== 'production') {
         console.warn(
-          'Base UI: DialogHandle.openWithPayload() was called while no root using this handle is mounted. ' +
+          'Obstudio: DialogHandle.openWithPayload() was called while no root using this handle is mounted. ' +
             'The call and its payload were ignored; mount a root with this handle before opening it imperatively.',
         );
       }

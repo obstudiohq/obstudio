@@ -8,15 +8,15 @@ import {
   resetBrowserPointer,
   wait,
 } from '#test-utils';
-import { Menubar } from '@base-ui/react/menubar';
-import { Menu } from '@base-ui/react/menu';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
+import { Menubar } from '@obstudio/react/menubar';
+import { Menu } from '@obstudio/react/menu';
+import { useRefWithInit } from '@obstudio/utils/useRefWithInit';
 import { useMenubarContext } from './MenubarContext';
 
 describe('<Menubar />', () => {
   beforeEach(async () => {
     await resetBrowserPointer();
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
   });
 
   const { render } = createRenderer();
@@ -38,7 +38,7 @@ describe('<Menubar />', () => {
 
     try {
       await expect(render(<ContextConsumer />)).rejects.toThrow(
-        'Base UI: MenubarContext is missing. Menubar parts must be placed within <Menubar>.',
+        'Obstudio: MenubarContext is missing. Menubar parts must be placed within <Menubar>.',
       );
     } finally {
       errorSpy.mockRestore();
@@ -336,7 +336,7 @@ describe('<Menubar />', () => {
         });
       });
 
-      // https://github.com/mui/base-ui/issues/2092
+      // https://github.com/obstudiohq/obstudio/issues/2092
       it('should respect closeOnClick on nested items when the menu was opened on hover', async () => {
         const { userEvent: user } = await import('vitest/browser');
         const { render: vbrRender } = await import('vitest-browser-react');
@@ -814,7 +814,7 @@ describe('<Menubar />', () => {
         await waitFor(() => {
           const isScrollLocked =
             doc.documentElement.style.overflow === 'hidden' ||
-            doc.documentElement.hasAttribute('data-base-ui-scroll-locked') ||
+            doc.documentElement.hasAttribute('data-obstudio-scroll-locked') ||
             doc.body.style.overflow === 'hidden';
 
           expect(isScrollLocked).toBe(true);
@@ -847,7 +847,7 @@ describe('<Menubar />', () => {
 
         const isScrollLocked =
           doc.documentElement.style.overflow === 'hidden' ||
-          doc.documentElement.hasAttribute('data-base-ui-scroll-locked') ||
+          doc.documentElement.hasAttribute('data-obstudio-scroll-locked') ||
           doc.body.style.overflow === 'hidden';
 
         expect(isScrollLocked).toBe(false);
@@ -891,7 +891,7 @@ describe('<Menubar />', () => {
         await waitFor(() => {
           const isScrollLocked =
             doc.documentElement.style.overflow === 'hidden' ||
-            doc.documentElement.hasAttribute('data-base-ui-scroll-locked') ||
+            doc.documentElement.hasAttribute('data-obstudio-scroll-locked') ||
             doc.body.style.overflow === 'hidden';
 
           expect(isScrollLocked).toBe(true);
@@ -909,7 +909,7 @@ describe('<Menubar />', () => {
         await waitFor(() => {
           const isScrollLocked =
             doc.documentElement.style.overflow === 'hidden' ||
-            doc.documentElement.hasAttribute('data-base-ui-scroll-locked') ||
+            doc.documentElement.hasAttribute('data-obstudio-scroll-locked') ||
             doc.body.style.overflow === 'hidden';
 
           expect(isScrollLocked).toBe(false);
@@ -1098,7 +1098,7 @@ describe('<Menubar />', () => {
     await user.click(screen.getByTestId('file-trigger'));
 
     const fileMenu = await screen.findByTestId('file-menu');
-    const fileMenuPortal = fileMenu.closest('[data-base-ui-portal]');
+    const fileMenuPortal = fileMenu.closest('[data-obstudio-portal]');
     const fileMenuPortalId = fileMenuPortal?.id ?? '';
     const owner = screen.getByRole('menubar').querySelector('span[aria-owns]');
 
@@ -1114,7 +1114,7 @@ describe('<Menubar />', () => {
     await user.click(screen.getByTestId('file-trigger'));
 
     const fileMenu = await screen.findByTestId('file-menu');
-    const fileMenuPortal = fileMenu.closest('[data-base-ui-portal]');
+    const fileMenuPortal = fileMenu.closest('[data-obstudio-portal]');
     const fileMenuPortalId = fileMenuPortal?.id ?? '';
     const owner = fileMenu.ownerDocument.querySelector('span[aria-owns]');
 

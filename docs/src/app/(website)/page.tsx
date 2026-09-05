@@ -1,6 +1,6 @@
 import * as React from 'react';
 import type { Metadata, Viewport } from 'next';
-import { Accordion } from '@base-ui/react/accordion';
+import { Accordion } from '@obstudio/react/accordion';
 import { Link } from 'docs/src/components/Link';
 import { Paper } from './logos/Paper';
 import { Zed } from './logos/Zed';
@@ -22,8 +22,8 @@ export default function Homepage() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'WebSite',
-            name: 'Base UI',
-            url: 'https://base-ui.com',
+            name: 'Obstudio',
+            url: 'https://obstudio.co',
           }),
         }}
       />
@@ -36,14 +36,14 @@ export default function Homepage() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Organization',
-            name: 'Base UI',
+            name: 'Obstudio',
             url: process.env.BASE_URL,
             logo: `${process.env.BASE_URL}/static/favicon.svg`,
             sameAs: [
               process.env.SOURCE_CODE_REPO,
-              'https://x.com/base_ui',
-              'https://www.npmjs.com/package/@base-ui/react',
-              'https://bsky.app/profile/base-ui.com',
+              'https://x.com/obstudio',
+              'https://www.npmjs.com/package/@obstudio/react',
+              'https://bsky.app/profile/obstudio.co',
             ],
           }),
         }}
@@ -66,7 +66,7 @@ export default function Homepage() {
             comprehensive UI component library for building accessible user interfaces with React.
           </p>
           <p className="Text sz-2">
-            Each Base UI component is meticulously designed for composability, consistency, and
+            Each Obstudio component is meticulously designed for composability, consistency, and
             craft. The library's architecture prioritizes flexibility—without imposing visual
             opinions—helping teams craft distinctive interfaces that are fundamentally accessible
             and reliable.
@@ -77,7 +77,7 @@ export default function Homepage() {
             details.
           </p>
           <p className="Text sz-2">
-            Base UI is built to last. It is designed with care and maintained with intent. Our
+            Obstudio is built to last. It is designed with care and maintained with intent. Our
             mission is to provide a future-proof foundation for professional interface design on the
             Web.
           </p>
@@ -92,7 +92,7 @@ export default function Homepage() {
         </div>
         <ul
           className="List bui-gcs-1 bui-gce-9 bp3:bui-gcs-3 bui-d-g bui-gtc-2 bp2:bui-gtc-4 bp3:bui-gtc-6 bui-g-8 bp2:bui-g-9"
-          aria-label="companies using Base UI"
+          aria-label="companies using Obstudio"
         >
           <li>
             <div className="bui-d-f bui-fd-c bui-g-2">
@@ -227,7 +227,7 @@ export default function Homepage() {
             >
               <Accordion.Header className="AccordionWebsiteHeader">
                 <Accordion.Trigger className="AccordionWebsiteTrigger Text sz-2" itemProp="name">
-                  What is Base UI?
+                  What is Obstudio?
                   <PlusIcon className="AccordionWebsiteIcon AccordionWebsiteIconPlus" />
                   <MinusIcon className="AccordionWebsiteIcon AccordionWebsiteIconMinus" />
                 </Accordion.Trigger>
@@ -239,8 +239,8 @@ export default function Homepage() {
                 itemType="https://schema.org/Answer"
               >
                 <p className="Text sz-2" itemProp="text">
-                  Base UI is a library of unstyled UI components for building accessible component
-                  libraries, user interfaces, web applications, and websites with React. Base UI
+                  Obstudio is a library of unstyled UI components for building accessible component
+                  libraries, user interfaces, web applications, and websites with React. Obstudio
                   components are highly configurable, composable, and customizable.
                 </p>
               </Accordion.Panel>
@@ -253,7 +253,7 @@ export default function Homepage() {
             >
               <Accordion.Header className="AccordionWebsiteHeader">
                 <Accordion.Trigger className="AccordionWebsiteTrigger Text sz-2" itemProp="name">
-                  Does Base UI work with any styling library?
+                  Does Obstudio work with any styling library?
                   <PlusIcon className="AccordionWebsiteIcon AccordionWebsiteIconPlus" />
                   <MinusIcon className="AccordionWebsiteIcon AccordionWebsiteIconMinus" />
                 </Accordion.Trigger>
@@ -265,10 +265,11 @@ export default function Homepage() {
                 itemType="https://schema.org/Answer"
               >
                 <p className="Text sz-2" itemProp="text">
-                  Yes. Base UI works with Tailwind, CSS Modules, CSS-in-JS, plain CSS, and any other
-                  styling library you prefer. It also works with JavaScript animation libraries like
-                  Motion, or just plain CSS transitions. Base UI is an unstyled component library.
-                  The package does not bundle any CSS, and does not prescribe any styling solution.
+                  Yes. Obstudio works with Tailwind, CSS Modules, CSS-in-JS, plain CSS, and any
+                  other styling library you prefer. It also works with JavaScript animation
+                  libraries like Motion, or just plain CSS transitions. Obstudio is an unstyled
+                  component library. The package does not bundle any CSS, and does not prescribe any
+                  styling solution.
                 </p>
               </Accordion.Panel>
             </Accordion.Item>
@@ -280,7 +281,7 @@ export default function Homepage() {
             >
               <Accordion.Header className="AccordionWebsiteHeader">
                 <Accordion.Trigger className="AccordionWebsiteTrigger Text sz-2" itemProp="name">
-                  Which accessibility standards does Base UI follow?
+                  Which accessibility standards does Obstudio follow?
                   <PlusIcon className="AccordionWebsiteIcon AccordionWebsiteIconPlus" />
                   <MinusIcon className="AccordionWebsiteIcon AccordionWebsiteIconMinus" />
                 </Accordion.Trigger>
@@ -300,8 +301,8 @@ export default function Homepage() {
                   <Link href="https://www.w3.org/TR/WCAG22/#new-features-in-wcag-2-2">
                     WCAG 2.2 standard
                   </Link>
-                  . Base UI is compliant with all Success Criteria levels relating to component
-                  behavior. However, in most cases, we go way beyond these guides. Base UI
+                  . Obstudio is compliant with all Success Criteria levels relating to component
+                  behavior. However, in most cases, we go way beyond these guides. Obstudio
                   components are tested across a wide range of browsers, devices, platforms, and
                   environments, and are designed to be accessible.
                 </p>
@@ -315,7 +316,7 @@ export default function Homepage() {
             >
               <Accordion.Header className="AccordionWebsiteHeader">
                 <Accordion.Trigger className="AccordionWebsiteTrigger Text sz-2" itemProp="name">
-                  How does Base UI differ from Radix UI?
+                  How does Obstudio differ from Radix UI?
                   <PlusIcon className="AccordionWebsiteIcon AccordionWebsiteIconPlus" />
                   <MinusIcon className="AccordionWebsiteIcon AccordionWebsiteIconMinus" />
                 </Accordion.Trigger>
@@ -329,14 +330,14 @@ export default function Homepage() {
                 <div className="bui-d-f bui-fd-c bui-g-4" itemProp="text">
                   <p className="Text sz-2">
                     In terms of API design, both libraries are very similar. We intentionally kept
-                    our APIs close to Radix UI for an easier migration path. Base UI provides more
-                    complex components such as Combobox and Autocomplete. Base UI also provides
+                    our APIs close to Radix UI for an easier migration path. Obstudio provides more
+                    complex components such as Combobox and Autocomplete. Obstudio also provides
                     deeper feature support such as input scrubbing, nested dialogs, and triggering
-                    menus on hover. Base UI is more robust and more polished in terms of a11y and
+                    menus on hover. Obstudio is more robust and more polished in terms of a11y and
                     edge case handling.
                   </p>
                   <p className="Text sz-2">
-                    But the most important difference is that Base UI is actively maintained and
+                    But the most important difference is that Obstudio is actively maintained and
                     developed, with a dedicated team of 7 developers, designers, and managers
                     working on it full-time.
                   </p>
@@ -351,7 +352,7 @@ export default function Homepage() {
             >
               <Accordion.Header className="AccordionWebsiteHeader">
                 <Accordion.Trigger className="AccordionWebsiteTrigger Text sz-2" itemProp="name">
-                  Can I use Base UI without React?
+                  Can I use Obstudio without React?
                   <PlusIcon className="AccordionWebsiteIcon AccordionWebsiteIconPlus" />
                   <MinusIcon className="AccordionWebsiteIcon AccordionWebsiteIconMinus" />
                 </Accordion.Trigger>
@@ -363,7 +364,7 @@ export default function Homepage() {
                 itemType="https://schema.org/Answer"
               >
                 <p className="Text sz-2" itemProp="text">
-                  Base UI is a React library. It is not designed to be used without React. We may
+                  Obstudio is a React library. It is not designed to be used without React. We may
                   consider supporting other libraries at some point, but for the foreseeable future,
                   React is our primary focus.
                 </p>
@@ -377,7 +378,7 @@ export default function Homepage() {
             >
               <Accordion.Header className="AccordionWebsiteHeader">
                 <Accordion.Trigger className="AccordionWebsiteTrigger Text sz-2" itemProp="name">
-                  Is Base UI free for commercial use?
+                  Is Obstudio free for commercial use?
                   <PlusIcon className="AccordionWebsiteIcon AccordionWebsiteIconPlus" />
                   <MinusIcon className="AccordionWebsiteIcon AccordionWebsiteIconMinus" />
                 </Accordion.Trigger>
@@ -389,7 +390,7 @@ export default function Homepage() {
                 itemType="https://schema.org/Answer"
               >
                 <p className="Text sz-2" itemProp="text">
-                  Yes. Base UI is licensed under the MIT license, and is free for commercial use.
+                  Yes. Obstudio is licensed under the MIT license, and is free for commercial use.
                   You are free to use it in your commercial projects, and to modify it to suit your
                   needs.
                 </p>
@@ -434,7 +435,7 @@ const description = 'Unstyled UI components for building accessible web apps and
 export const metadata: Metadata = {
   description,
   twitter: {
-    site: '@base_ui',
+    site: '@obstudio',
     card: 'summary_large_image',
     description,
   },

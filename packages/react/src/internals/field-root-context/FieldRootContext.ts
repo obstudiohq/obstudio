@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { EMPTY_OBJECT } from '@base-ui/utils/empty';
+import { EMPTY_OBJECT } from '@obstudio/utils/empty';
 import { NOOP } from '../noop';
 import { DEFAULT_FIELD_ROOT_STATE, DEFAULT_VALIDITY_STATE } from '../field-constants/constants';
 import type { FieldValidityData, FieldRootState } from '../../field/root/FieldRoot';
@@ -67,7 +67,7 @@ export function useFieldRootContext(optional = true) {
 
   if (context.setValidityData === NOOP && !optional) {
     throw new Error(
-      'Base UI: FieldRootContext is missing. Field parts must be placed within <Field.Root>.',
+      'Obstudio: FieldRootContext is missing. Field parts must be placed within <Field.Root>.',
     );
   }
 

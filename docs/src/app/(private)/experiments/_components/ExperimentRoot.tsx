@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
 import clsx from 'clsx';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
 import { ShowSidebar } from './ShowSidebar';
 import classes from './ExperimentRoot.module.css';
 
@@ -16,7 +16,7 @@ export const ExperimentRootContext = React.createContext<ExperimentRootContext |
 
 // Shared by all experiments rather than stored per experiment, so that hiding the sidebar keeps
 // it hidden while moving between them.
-const STORAGE_KEY = 'base-ui-experiments-sidebar';
+const STORAGE_KEY = 'obstudio-experiments-sidebar';
 
 export function ExperimentRoot(props: ExperimentRootProps) {
   const { children, sidebar } = props;

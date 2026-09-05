@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import clsx from 'clsx';
-import { Slider } from '@base-ui/react/slider';
+import { Slider } from '@obstudio/react/slider';
 import '../../../../demo-data/theme/css-modules/theme.css';
 import styles from './inset.module.css';
 

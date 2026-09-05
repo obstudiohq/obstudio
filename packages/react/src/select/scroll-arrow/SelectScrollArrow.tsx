@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import type { BaseUIComponentProps } from '../../internals/types';
+import { useTimeout } from '@obstudio/utils/useTimeout';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useSelectRootContext } from '../root/SelectRootContext';
 import { useSelectPositionerContext } from '../positioner/SelectPositionerContext';
 import { Side } from '../../internals/useAnchorPositioning';
@@ -168,7 +168,7 @@ export interface SelectScrollArrowState {
   transitionStatus: TransitionStatus;
 }
 
-export interface SelectScrollArrowProps extends BaseUIComponentProps<
+export interface SelectScrollArrowProps extends ObstudioComponentProps<
   'div',
   SelectScrollArrowState
 > {

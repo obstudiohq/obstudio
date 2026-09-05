@@ -1,7 +1,7 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
 import { act, fireEvent, screen } from '@mui/internal-test-utils';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
+import { useMergedRefs } from '@obstudio/utils/useMergedRefs';
 import { createRenderer, isJSDOM } from '#test-utils';
 import { useButton } from './useButton';
 import { CompositeRoot } from '../composite/root/CompositeRoot';
@@ -561,7 +561,7 @@ describe('useButton', () => {
       expect(handleReset).toHaveBeenCalledTimes(1);
     });
 
-    it('does not click composite buttons when keydown calls preventBaseUIHandler', async () => {
+    it('does not click composite buttons when keydown calls preventObstudioHandler', async () => {
       const handleClick = vi.fn();
 
       function TestButton(props: React.ButtonHTMLAttributes<HTMLButtonElement>) {
@@ -576,9 +576,9 @@ describe('useButton', () => {
           onKeyDown={(event) =>
             (
               event as React.KeyboardEvent<HTMLButtonElement> & {
-                preventBaseUIHandler: () => void;
+                preventObstudioHandler: () => void;
               }
-            ).preventBaseUIHandler()
+            ).preventObstudioHandler()
           }
           onClick={handleClick}
         />,
@@ -593,7 +593,7 @@ describe('useButton', () => {
       expect(handleClick).toHaveBeenCalledTimes(0);
     });
 
-    it('does not click non-composite buttons when keydown/keyup calls preventBaseUIHandler', async () => {
+    it('does not click non-composite buttons when keydown/keyup calls preventObstudioHandler', async () => {
       const handleClick = vi.fn();
 
       function TestButton(props: React.HTMLAttributes<HTMLSpanElement>) {
@@ -602,16 +602,16 @@ describe('useButton', () => {
         return <span {...getButtonProps(props)} />;
       }
 
-      const preventBaseUIHandler = (event: React.SyntheticEvent) =>
+      const preventObstudioHandler = (event: React.SyntheticEvent) =>
         (
-          event as React.SyntheticEvent & { preventBaseUIHandler: () => void }
-        ).preventBaseUIHandler();
+          event as React.SyntheticEvent & { preventObstudioHandler: () => void }
+        ).preventObstudioHandler();
 
       await render(
         <TestButton
           tabIndex={0}
-          onKeyDown={preventBaseUIHandler}
-          onKeyUp={preventBaseUIHandler}
+          onKeyDown={preventObstudioHandler}
+          onKeyUp={preventObstudioHandler}
           onClick={handleClick}
         />,
       );
@@ -847,7 +847,7 @@ describe('useButton', () => {
       expect(errorSpy).toHaveBeenCalledTimes(1);
       expect(errorSpy).toHaveBeenCalledWith(
         expect.stringContaining(
-          'Base UI: A component that acts as a button expected a native <button> because ' +
+          'Obstudio: A component that acts as a button expected a native <button> because ' +
             'the `nativeButton` prop is true. Rendering a non-<button> removes native button semantics, ' +
             'which can impact forms and accessibility. Use a real <button> in the `render` prop, or set ' +
             '`nativeButton` to `false`.',
@@ -868,8 +868,8 @@ describe('useButton', () => {
       expect(errorSpy).toHaveBeenCalledTimes(1);
       expect(errorSpy).toHaveBeenCalledWith(
         expect.stringContaining(
-          'Base UI: A component that acts as a button expected a non-<button> because ' +
-            'the `nativeButton` prop is false. Rendering a <button> keeps native behavior while Base UI ' +
+          'Obstudio: A component that acts as a button expected a non-<button> because ' +
+            'the `nativeButton` prop is false. Rendering a <button> keeps native behavior while Obstudio ' +
             'applies non-native attributes and handlers, which can add unintended extra attributes ' +
             '(such as `role` or `aria-disabled`). Use a non-<button> in the `render` prop, or set ' +
             '`nativeButton` to `true`.',

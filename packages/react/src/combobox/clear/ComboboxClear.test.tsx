@@ -1,6 +1,6 @@
 import { expect, describe, it } from 'vitest';
-import { Combobox } from '@base-ui/react/combobox';
-import { Autocomplete } from '@base-ui/react/autocomplete';
+import { Combobox } from '@obstudio/react/combobox';
+import { Autocomplete } from '@obstudio/react/autocomplete';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { fireEvent, screen, waitFor } from '@mui/internal-test-utils';
 
@@ -254,7 +254,7 @@ describe('<Combobox.Clear />', () => {
 
   describe.skipIf(isJSDOM)('animations', () => {
     it('triggers enter animation via data-starting-style when becoming visible', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       let animationFinished = false;
       const notifyAnimationFinished = () => {
@@ -310,7 +310,7 @@ describe('<Combobox.Clear />', () => {
     });
 
     it('triggers exit animation via data-ending-style before unmount', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       let animationFinished = false;
       const notifyAnimationFinished = () => {

@@ -1,4 +1,4 @@
-import { Switch } from '@base-ui/react/switch';
+import { Switch } from '@obstudio/react/switch';
 
 export default function ExampleSwitch() {
   return (

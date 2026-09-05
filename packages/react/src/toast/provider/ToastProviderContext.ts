@@ -9,7 +9,7 @@ export const ToastContext = React.createContext<ToastContext | undefined>(undefi
 export function useToastProviderContext() {
   const context = React.useContext(ToastContext);
   if (!context) {
-    throw new Error('Base UI: useToastManager must be used within <Toast.Provider>.');
+    throw new Error('Obstudio: useToastManager must be used within <Toast.Provider>.');
   }
   return context;
 }

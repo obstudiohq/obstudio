@@ -1,5 +1,5 @@
 import { expectType } from '#test-utils';
-import { NumberField } from '@base-ui/react/number-field';
+import { NumberField } from '@obstudio/react/number-field';
 import { REASONS } from '../../internals/reasons';
 
 type NumberFieldChangeHandler = NonNullable<NumberField.Root.Props['onValueChange']>;

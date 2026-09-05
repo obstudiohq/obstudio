@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { useTimeout } from '@base-ui/utils/useTimeout';
+import { useTimeout } from '@obstudio/utils/useTimeout';
 import { getSearchResultCount, type GroupedSearchResults } from './searchUtils';
 
 interface UseDeferredEmptySearchResultsParameters<Results extends GroupedSearchResults> {

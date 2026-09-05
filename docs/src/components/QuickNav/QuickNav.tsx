@@ -2,7 +2,7 @@
 import * as React from 'react';
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
-import { ScrollArea } from '@base-ui/react/scroll-area';
+import { ScrollArea } from '@obstudio/react/scroll-area';
 import { useGoogleAnalytics } from 'docs/src/blocks/GoogleAnalyticsProvider';
 import './QuickNav.css';
 

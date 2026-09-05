@@ -1,4 +1,4 @@
-import { ownerDocument, ownerWindow } from '@base-ui/utils/owner';
+import { ownerDocument, ownerWindow } from '@obstudio/utils/owner';
 import { getSide } from '@floating-ui/utils';
 import { Middleware } from '../floating-ui-react';
 import { DEFAULT_SIDES } from './adaptiveOriginConstants';

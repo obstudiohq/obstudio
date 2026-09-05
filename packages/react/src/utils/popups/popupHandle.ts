@@ -1,8 +1,8 @@
-import { AnimationFrame } from '@base-ui/utils/useAnimationFrame';
+import { AnimationFrame } from '@obstudio/utils/useAnimationFrame';
 import {
   createChangeEventDetails,
-  type BaseUIChangeEventDetails,
-} from '../../internals/createBaseUIEventDetails';
+  type ObstudioChangeEventDetails,
+} from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import type { PopupTriggerMap } from './popupTriggerMap';
 
@@ -51,7 +51,7 @@ export interface PopupHandleStoreWithTriggers {
 export interface PopupHandleStoreWithOpen extends PopupHandleStoreWithTriggers {
   setOpen(
     open: boolean,
-    eventDetails: BaseUIChangeEventDetails<typeof REASONS.imperativeAction>,
+    eventDetails: ObstudioChangeEventDetails<typeof REASONS.imperativeAction>,
   ): void;
 }
 
@@ -165,7 +165,7 @@ export class BasePopupHandle<
         (dev.overlapWarningFrame ??= AnimationFrame.create()).request(() => {
           if (this.attachedStores.length > 1) {
             console.warn(
-              'Base UI: A handle is attached to more than one mounted root at the same time. ' +
+              'Obstudio: A handle is attached to more than one mounted root at the same time. ' +
                 'The most recently mounted root takes over and the previous one stops being controlled by the handle. ' +
                 'A handle should be used by a single root that stays mounted for the lifetime of the handle.',
             );
@@ -218,7 +218,7 @@ export class BasePopupHandle<
     if (attachedStore === null) {
       if (process.env.NODE_ENV !== 'production') {
         console.warn(
-          `Base UI: ${this.componentName}Handle.open() was called while no root using this handle is mounted. ` +
+          `Obstudio: ${this.componentName}Handle.open() was called while no root using this handle is mounted. ` +
             'The call was ignored; mount a root with this handle before opening it imperatively.',
         );
       }
@@ -243,7 +243,7 @@ export class BasePopupHandle<
     if (triggerId && !triggerElement) {
       if (this.throwOnMissingTrigger) {
         throw new Error(
-          `Base UI: ${this.componentName}Handle.open() was called with the trigger id "${triggerId}", ` +
+          `Obstudio: ${this.componentName}Handle.open() was called with the trigger id "${triggerId}", ` +
             'but no matching trigger is registered with this handle. ' +
             'An anchored popup cannot open without a trigger to anchor to. ' +
             `Pass the id of a mounted ${this.componentName}.Trigger that has this handle set on its "handle" prop.`,
@@ -252,7 +252,7 @@ export class BasePopupHandle<
 
       if (process.env.NODE_ENV !== 'production') {
         console.warn(
-          `Base UI: ${this.componentName}Handle.open: No trigger found with id "${triggerId}". ` +
+          `Obstudio: ${this.componentName}Handle.open: No trigger found with id "${triggerId}". ` +
             'The popup will open, but the trigger will not be associated with it.',
         );
       }
@@ -276,7 +276,7 @@ export class BasePopupHandle<
     if (attachedStore === null) {
       if (process.env.NODE_ENV !== 'production') {
         console.warn(
-          `Base UI: ${this.componentName}Handle.close() was called while no root using this handle is mounted. ` +
+          `Obstudio: ${this.componentName}Handle.close() was called while no root using this handle is mounted. ` +
             'The call was ignored.',
         );
       }

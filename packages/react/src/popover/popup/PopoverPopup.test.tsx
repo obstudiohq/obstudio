@@ -1,7 +1,7 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
-import { Popover } from '@base-ui/react/popover';
-import { Toolbar } from '@base-ui/react/toolbar';
+import { Popover } from '@obstudio/react/popover';
+import { Toolbar } from '@obstudio/react/toolbar';
 import { act, fireEvent, flushMicrotasks, screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance, isJSDOM, waitSingleFrame } from '#test-utils';
 
@@ -27,7 +27,7 @@ describe('<Popover.Popup />', () => {
 
     try {
       await expect(render(<Popover.Popup />)).rejects.toThrow(
-        'Base UI: PopoverRootContext is missing. Popover parts must be placed within <Popover.Root>.',
+        'Obstudio: PopoverRootContext is missing. Popover parts must be placed within <Popover.Root>.',
       );
     } finally {
       errorSpy.mockRestore();
@@ -47,7 +47,7 @@ describe('<Popover.Popup />', () => {
           </Popover.Root>,
         ),
       ).rejects.toThrow(
-        'Base UI: PopoverPositionerContext is missing. PopoverPositioner parts must be placed within <Popover.Positioner>.',
+        'Obstudio: PopoverPositionerContext is missing. PopoverPositioner parts must be placed within <Popover.Positioner>.',
       );
     } finally {
       errorSpy.mockRestore();

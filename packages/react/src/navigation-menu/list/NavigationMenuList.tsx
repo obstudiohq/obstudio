@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { EMPTY_OBJECT } from '@base-ui/utils/empty';
+import { EMPTY_OBJECT } from '@obstudio/utils/empty';
 import { useDismiss, useHoverFloatingInteraction } from '../../floating-ui-react';
 import { getTarget } from '../../floating-ui-react/utils';
-import type { BaseUIComponentProps, HTMLProps } from '../../internals/types';
+import type { ObstudioComponentProps, HTMLProps } from '../../internals/types';
 import { CompositeRoot } from '../../internals/composite/root/CompositeRoot';
 import {
   useNavigationMenuRootContext,
@@ -18,7 +18,7 @@ import { useRenderElement } from '../../internals/useRenderElement';
  * Contains a list of navigation menu items.
  * Renders a `<ul>` element.
  *
- * Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+ * Documentation: [Obstudio Navigation Menu](https://obstudio.co/react/components/navigation-menu)
  */
 export const NavigationMenuList = React.forwardRef(function NavigationMenuList(
   componentProps: NavigationMenuList.Props,
@@ -131,7 +131,7 @@ export interface NavigationMenuListState {
   open: boolean;
 }
 
-export interface NavigationMenuListProps extends BaseUIComponentProps<
+export interface NavigationMenuListProps extends ObstudioComponentProps<
   'ul',
   NavigationMenuListState
 > {}

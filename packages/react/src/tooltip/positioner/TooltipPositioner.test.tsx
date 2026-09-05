@@ -1,6 +1,6 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
-import { Tooltip } from '@base-ui/react/tooltip';
+import { Tooltip } from '@obstudio/react/tooltip';
 import { screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance, isJSDOM, waitForPositioned } from '#test-utils';
 
@@ -30,7 +30,7 @@ describe('<Tooltip.Positioner />', () => {
 
     try {
       await expect(render(<Tooltip.Positioner />)).rejects.toThrow(
-        'Base UI: TooltipRootContext is missing. Tooltip parts must be placed within <Tooltip.Root>.',
+        'Obstudio: TooltipRootContext is missing. Tooltip parts must be placed within <Tooltip.Root>.',
       );
     } finally {
       errorSpy.mockRestore();
@@ -47,7 +47,7 @@ describe('<Tooltip.Positioner />', () => {
             <Tooltip.Positioner />
           </Tooltip.Root>,
         ),
-      ).rejects.toThrow('Base UI: <Tooltip.Portal> is missing.');
+      ).rejects.toThrow('Obstudio: <Tooltip.Portal> is missing.');
     } finally {
       errorSpy.mockRestore();
     }

@@ -2,9 +2,9 @@ import { afterEach, beforeEach, expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
 import userEvent from '@testing-library/user-event';
 import { act, flushMicrotasks, screen, waitFor } from '@mui/internal-test-utils';
-import { ContextMenu } from '@base-ui/react/context-menu';
-import { Menu } from '@base-ui/react/menu';
-import { Menubar } from '@base-ui/react/menubar';
+import { ContextMenu } from '@obstudio/react/context-menu';
+import { Menu } from '@obstudio/react/menu';
+import { Menubar } from '@obstudio/react/menubar';
 import {
   describeConformance,
   createRenderer,
@@ -55,7 +55,7 @@ describe('<Menu.Positioner />', () => {
             <Menu.Positioner />
           </Menu.Root>,
         ),
-      ).rejects.toThrow('Base UI: <Menu.Portal> is missing.');
+      ).rejects.toThrow('Obstudio: <Menu.Portal> is missing.');
     } finally {
       errorSpy.mockRestore();
     }

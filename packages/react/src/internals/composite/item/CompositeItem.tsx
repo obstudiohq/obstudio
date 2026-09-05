@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { EMPTY_OBJECT, EMPTY_ARRAY } from '@base-ui/utils/empty';
+import { EMPTY_OBJECT, EMPTY_ARRAY } from '@obstudio/utils/empty';
 import { useRenderElement } from '../../useRenderElement';
 import { useCompositeItem } from './useCompositeItem';
-import type { BaseUIComponentProps } from '../../types';
+import type { ObstudioComponentProps } from '../../types';
 import { StateAttributesMapping } from '../../getStateAttributesProps';
 
 export function CompositeItem<Metadata, State extends Record<string, any>>(
@@ -36,7 +36,7 @@ export function CompositeItem<Metadata, State extends Record<string, any>>(
 export interface CompositeItemState {}
 
 export interface CompositeItemProps<Metadata, State extends Record<string, any>> extends Pick<
-  BaseUIComponentProps<any, State>,
+  ObstudioComponentProps<any, State>,
   'render' | 'className' | 'style'
 > {
   children?: React.ReactNode;

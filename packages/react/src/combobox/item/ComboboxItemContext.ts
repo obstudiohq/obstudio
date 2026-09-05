@@ -12,7 +12,7 @@ export function useComboboxItemContext() {
   const context = React.useContext(ComboboxItemContext);
   if (!context) {
     throw new Error(
-      'Base UI: ComboboxItemContext is missing. ComboboxItem parts must be placed within <Combobox.Item>.',
+      'Obstudio: ComboboxItemContext is missing. ComboboxItem parts must be placed within <Combobox.Item>.',
     );
   }
   return context;

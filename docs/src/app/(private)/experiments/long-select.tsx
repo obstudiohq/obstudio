@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { Select } from '@base-ui/react/select';
+import { Select } from '@obstudio/react/select';
 import styles from './long-select.module.css';
 
 export default function ExampleSelect() {

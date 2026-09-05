@@ -1,5 +1,5 @@
 'use client';
-import { Autocomplete } from '@base-ui/react/autocomplete';
+import { Autocomplete } from '@obstudio/react/autocomplete';
 
 export default function ExampleAutocomplete() {
   return (

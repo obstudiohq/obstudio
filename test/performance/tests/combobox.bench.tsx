@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Combobox } from '@base-ui/react/combobox';
+import { Combobox } from '@obstudio/react/combobox';
 import { benchmark, ElementTiming } from '@mui/internal-benchmark';
 import { createRows } from './shared';
 

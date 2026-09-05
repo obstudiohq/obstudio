@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { DirectionProvider } from '@base-ui/react/direction-provider';
-import { Select } from '@base-ui/react/select';
+import { DirectionProvider } from '@obstudio/react/direction-provider';
+import { Select } from '@obstudio/react/select';
 
 const OPTIONS = [
   { value: 'arabic', label: 'العربية الفصحى' },

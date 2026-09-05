@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { Menu } from '@base-ui/react/menu';
+import { Menu } from '@obstudio/react/menu';
 
 type MenuContent = {
   heading: string;

@@ -15,7 +15,7 @@ describe('ComboboxPositionerContext', () => {
 
     try {
       await expect(render(<Consumer />)).rejects.toThrow(
-        'Base UI: <Combobox.Popup> and <Combobox.Arrow> must be used within the <Combobox.Positioner> component',
+        'Obstudio: <Combobox.Popup> and <Combobox.Arrow> must be used within the <Combobox.Positioner> component',
       );
     } finally {
       errorSpy.mockRestore();

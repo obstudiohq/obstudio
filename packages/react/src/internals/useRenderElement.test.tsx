@@ -3,15 +3,15 @@ import { vi, expect, describe, it } from 'vitest';
 import * as React from 'react';
 import { createRenderer } from '#test-utils';
 import { reactMajor } from '@mui/internal-test-utils';
-import { EMPTY_OBJECT } from '@base-ui/utils/empty';
-import type { BaseUIComponentProps, ComponentRenderFn, HTMLProps } from './types';
+import { EMPTY_OBJECT } from '@obstudio/utils/empty';
+import type { ObstudioComponentProps, ComponentRenderFn, HTMLProps } from './types';
 import { useRenderElement } from './useRenderElement';
 
 describe('useRenderElement', () => {
   const { render } = createRenderer();
 
   const TestComponent = React.forwardRef(function TestComponent(
-    componentProps: BaseUIComponentProps<'div', { active?: boolean }> & { active?: boolean },
+    componentProps: ObstudioComponentProps<'div', { active?: boolean }> & { active?: boolean },
     forwardedRef: React.ForwardedRef<HTMLDivElement>,
   ) {
     const { className, render: renderProp, active, style, ...elementProps } = componentProps;
@@ -28,7 +28,7 @@ describe('useRenderElement', () => {
   });
 
   const DirectPropsTestComponent = React.forwardRef(function DirectPropsTestComponent(
-    componentProps: BaseUIComponentProps<'div', { active?: boolean }> & { active?: boolean },
+    componentProps: ObstudioComponentProps<'div', { active?: boolean }> & { active?: boolean },
     forwardedRef: React.ForwardedRef<HTMLDivElement>,
   ) {
     const { className, render: renderProp, active, style, ...elementProps } = componentProps;
@@ -41,7 +41,7 @@ describe('useRenderElement', () => {
   });
 
   const ArrayPropsTestComponent = React.forwardRef(function ArrayPropsTestComponent(
-    componentProps: BaseUIComponentProps<'div', { active?: boolean }> & { active?: boolean },
+    componentProps: ObstudioComponentProps<'div', { active?: boolean }> & { active?: boolean },
     forwardedRef: React.ForwardedRef<HTMLDivElement>,
   ) {
     const { className, render: renderProp, active, style, ...elementProps } = componentProps;
@@ -135,7 +135,7 @@ describe('useRenderElement', () => {
 
   it('makes single prop objects preventable', async () => {
     const handleMouseDown = vi.fn((event) => {
-      event.preventBaseUIHandler();
+      event.preventObstudioHandler();
     });
 
     const { container } = await render(<DirectPropsTestComponent onMouseDown={handleMouseDown} />);
@@ -150,7 +150,7 @@ describe('useRenderElement', () => {
 
   it('makes multi-prop arrays preventable when the event handler is first', async () => {
     const handleMouseDown = vi.fn((event) => {
-      event.preventBaseUIHandler();
+      event.preventObstudioHandler();
     });
 
     const { container } = await render(<ArrayPropsTestComponent onMouseDown={handleMouseDown} />);
@@ -165,7 +165,7 @@ describe('useRenderElement', () => {
 
   it('makes obscure single-prop events preventable', async () => {
     const handleContextMenu = vi.fn((event) => {
-      event.preventBaseUIHandler();
+      event.preventObstudioHandler();
     });
 
     const { container } = await render(
@@ -182,7 +182,7 @@ describe('useRenderElement', () => {
 
   it('makes obscure multi-prop array events preventable when the event handler is first', async () => {
     const handleContextMenu = vi.fn((event) => {
-      event.preventBaseUIHandler();
+      event.preventObstudioHandler();
     });
 
     const { container } = await render(
@@ -308,7 +308,7 @@ describe('useRenderElement', () => {
 
       expect(warnSpy.mock.calls.length).toBe(1);
       expect(warnSpy.mock.calls[0][0]).toContain(
-        'Base UI: The `render` prop received a function named `UppercaseRenderPropWarningTestComponent` that starts with an uppercase letter.',
+        'Obstudio: The `render` prop received a function named `UppercaseRenderPropWarningTestComponent` that starts with an uppercase letter.',
       );
       expect(warnSpy.mock.calls[0][0]).toContain(
         'Use `render={<Component />}` or `render={(props) => <Component {...props} />}` instead.',
@@ -602,7 +602,7 @@ describe('useRenderElement', () => {
           }
 
           expect(error?.message).toMatch(
-            /Base UI: The `render` prop was provided an invalid React element/,
+            /Obstudio: The `render` prop was provided an invalid React element/,
           );
         },
       );
@@ -626,7 +626,7 @@ describe('useRenderElement', () => {
 
         expect(error).not.toBe(null);
         expect(error?.message).toMatch(
-          /Base UI: The `render` prop was provided an invalid React element/,
+          /Obstudio: The `render` prop was provided an invalid React element/,
         );
       },
     );
@@ -653,7 +653,7 @@ describe('useRenderElement', () => {
     // This test verifies that the hook doesn't attempt to mutate EMPTY_OBJECT
     // which would throw a TypeError in strict mode since it's frozen.
     const MinimalComponent = React.forwardRef(function MinimalComponent(
-      componentProps: BaseUIComponentProps<'div', Record<string, never>>,
+      componentProps: ObstudioComponentProps<'div', Record<string, never>>,
       forwardedRef: React.ForwardedRef<HTMLDivElement>,
     ) {
       // Using EMPTY_OBJECT as state and no additional props simulates the edge case

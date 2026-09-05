@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import type { BaseUIComponentProps } from '../../internals/types';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import {
   useComboboxDerivedItemsContext,
@@ -18,7 +18,7 @@ import { clickHighlightedItem } from '../utils/parts';
  * A list container for the items.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)
+ * Documentation: [Obstudio Combobox](https://obstudio.co/react/components/combobox)
  */
 export const ComboboxList = React.forwardRef(function ComboboxList(
   componentProps: ComboboxList.Props,
@@ -132,7 +132,7 @@ export interface ComboboxListState {
 }
 
 export interface ComboboxListProps extends Omit<
-  BaseUIComponentProps<'div', ComboboxListState>,
+  ObstudioComponentProps<'div', ComboboxListState>,
   'children'
 > {
   children?: React.ReactNode | ((item: any, index: number) => React.ReactNode);

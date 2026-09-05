@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { Checkbox } from '@base-ui/react/checkbox';
-import { Dialog } from '@base-ui/react/dialog';
-import { Menu } from '@base-ui/react/menu';
-import { Popover } from '@base-ui/react/popover';
-import { ScrollArea } from '@base-ui/react/scroll-area';
-import { Select } from '@base-ui/react/select';
-import { Slider } from '@base-ui/react/slider';
-import { Tabs } from '@base-ui/react/tabs';
-import { Tooltip } from '@base-ui/react/tooltip';
+import { Checkbox } from '@obstudio/react/checkbox';
+import { Dialog } from '@obstudio/react/dialog';
+import { Menu } from '@obstudio/react/menu';
+import { Popover } from '@obstudio/react/popover';
+import { ScrollArea } from '@obstudio/react/scroll-area';
+import { Select } from '@obstudio/react/select';
+import { Slider } from '@obstudio/react/slider';
+import { Tabs } from '@obstudio/react/tabs';
+import { Tooltip } from '@obstudio/react/tooltip';
 import { benchmark } from '@mui/internal-benchmark';
 import { createRows } from './shared';
 

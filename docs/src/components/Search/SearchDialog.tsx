@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
 import type { SearchResult } from '@mui/internal-docs-infra/useSearch/types';
-import { Autocomplete } from '@base-ui/react/autocomplete';
-import { Dialog } from '@base-ui/react/dialog';
-import { ScrollArea } from '@base-ui/react/scroll-area';
-import { useTimeout } from '@base-ui/utils/useTimeout';
+import { Autocomplete } from '@obstudio/react/autocomplete';
+import { Dialog } from '@obstudio/react/dialog';
+import { ScrollArea } from '@obstudio/react/scroll-area';
+import { useTimeout } from '@obstudio/utils/useTimeout';
 import { CornerDownLeft } from 'lucide-react';
 import { MagnifyingGlassIcon } from 'docs/src/icons/MagnifyingGlassIcon';
 import { handleModifiedEnterNavigation, searchResultToString } from './searchUtils';

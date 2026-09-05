@@ -1,17 +1,17 @@
 'use client';
 import * as React from 'react';
-import { mergeProps } from '@base-ui/react/merge-props';
-import { Toggle } from '@base-ui/react/toggle';
+import { mergeProps } from '@obstudio/react/merge-props';
+import { Toggle } from '@obstudio/react/toggle';
 import styles from './index.module.css';
 
-export default function ExamplePreventBaseUIHandler() {
+export default function ExamplePreventObstudioHandler() {
   const [locked, setLocked] = React.useState(true);
   const [pressed, setPressed] = React.useState(true);
   const getToggleProps = (props: React.ComponentProps<'button'>) =>
     mergeProps<'button'>(props, {
       onClick(event) {
         if (locked) {
-          event.preventBaseUIHandler();
+          event.preventObstudioHandler();
         }
       },
     });

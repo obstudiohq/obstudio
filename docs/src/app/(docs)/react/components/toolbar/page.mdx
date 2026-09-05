@@ -21,7 +21,7 @@ To ensure that toolbars are accessible and helpful, follow these guidelines:
 Import the component and assemble its parts:
 
 ```jsx title="Anatomy"
-import { Toolbar } from '@base-ui/react/toolbar';
+import { Toolbar } from '@obstudio/react/toolbar';
 
 <Toolbar.Root>
   <Toolbar.Button />
@@ -39,7 +39,7 @@ import { Toolbar } from '@base-ui/react/toolbar';
 
 ### Using with Menu
 
-All Base UI popup components that provide a `Trigger` component can be integrated with a toolbar by passing the trigger to `<Toolbar.Button>` with the `render` prop:
+All Obstudio popup components that provide a `Trigger` component can be integrated with a toolbar by passing the trigger to `<Toolbar.Button>` with the `render` prop:
 
 ```tsx title="Using popups with toolbar"
 return (
@@ -134,6 +134,6 @@ export const metadata = {
     'Headless Toolbar Component',
     'Accessible Toolbar',
     'Popup Trigger Toolbar',
-    'Base UI',
+    'Obstudio',
   ],
 };

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { expect, vi, describe, it } from 'vitest';
-import { Meter } from '@base-ui/react/meter';
+import { Meter } from '@obstudio/react/meter';
 import { fireEvent, screen } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance } from '#test-utils';
 
@@ -51,7 +51,7 @@ describe('<Meter.Label />', () => {
 
     try {
       await expect(render(<Meter.Label />)).rejects.toThrow(
-        'Base UI: MeterRootContext is missing. Meter parts must be placed within <Meter.Root>.',
+        'Obstudio: MeterRootContext is missing. Meter parts must be placed within <Meter.Root>.',
       );
     } finally {
       errorSpy.mockRestore();

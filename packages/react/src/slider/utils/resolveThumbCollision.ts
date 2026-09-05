@@ -1,4 +1,4 @@
-import { clamp } from '@base-ui/utils/clamp';
+import { clamp } from '@obstudio/utils/clamp';
 import { getPushedThumbValues } from './getPushedThumbValues';
 import { SliderRootContext } from '../root/SliderRootContext';
 

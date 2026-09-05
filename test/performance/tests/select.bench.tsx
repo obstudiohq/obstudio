@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Select } from '@base-ui/react/select';
+import { Select } from '@obstudio/react/select';
 import { benchmark, ElementTiming } from '@mui/internal-benchmark';
 import { createRows, MountList } from './shared';
 

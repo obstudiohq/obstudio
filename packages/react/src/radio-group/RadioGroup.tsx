@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import type { BaseUIComponentProps, HTMLProps } from '../internals/types';
-import { useBaseUiId } from '../internals/useBaseUiId';
+import { useControlled } from '@obstudio/utils/useControlled';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import type { ObstudioComponentProps, HTMLProps } from '../internals/types';
+import { useObstudioId } from '../internals/useObstudioId';
 import { contains } from '../floating-ui-react/utils';
 import { SHIFT } from '../internals/composite/composite';
 import { CompositeRoot } from '../internals/composite/root/CompositeRoot';
@@ -17,7 +17,7 @@ import { useFormContext } from '../internals/form-context/FormContext';
 import { useLabelableContext } from '../internals/labelable-provider/LabelableContext';
 import { useValueChanged } from '../internals/useValueChanged';
 import { RadioGroupContext } from './RadioGroupContext';
-import type { BaseUIChangeEventDetails } from '../internals/createBaseUIEventDetails';
+import type { ObstudioChangeEventDetails } from '../internals/createObstudioEventDetails';
 import { REASONS } from '../internals/reasons';
 
 const MODIFIER_KEYS = [SHIFT];
@@ -26,7 +26,7 @@ const MODIFIER_KEYS = [SHIFT];
  * Provides a shared state to a series of radio buttons.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Radio Group](https://base-ui.com/react/components/radio)
+ * Documentation: [Obstudio Radio Group](https://obstudio.co/react/components/radio)
  */
 export const RadioGroup = React.forwardRef(function RadioGroup<Value>(
   componentProps: RadioGroup.Props<Value>,
@@ -67,7 +67,7 @@ export const RadioGroup = React.forwardRef(function RadioGroup<Value>(
 
   const disabled = fieldDisabled || disabledProp;
   const name = fieldName ?? nameProp;
-  const id = useBaseUiId(idProp);
+  const id = useObstudioId(idProp);
 
   const [checkedValue, setCheckedValueUnwrapped] = useControlled({
     controlled: externalValue,
@@ -289,7 +289,7 @@ export interface RadioGroupState extends FieldRootState {
 }
 
 export interface RadioGroupProps<Value = any> extends Omit<
-  BaseUIComponentProps<'div', RadioGroupState>,
+  ObstudioComponentProps<'div', RadioGroupState>,
   'value'
 > {
   /**
@@ -340,7 +340,7 @@ export interface RadioGroupProps<Value = any> extends Omit<
 
 export type RadioGroupChangeEventReason = typeof REASONS.none;
 
-export type RadioGroupChangeEventDetails = BaseUIChangeEventDetails<RadioGroup.ChangeEventReason>;
+export type RadioGroupChangeEventDetails = ObstudioChangeEventDetails<RadioGroup.ChangeEventReason>;
 
 export namespace RadioGroup {
   export type State = RadioGroupState;

@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { useAnimationFrame } from '@base-ui/utils/useAnimationFrame';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { NOOP, EMPTY_OBJECT } from '@base-ui/utils/empty';
+import { useAnimationFrame } from '@obstudio/utils/useAnimationFrame';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { NOOP, EMPTY_OBJECT } from '@obstudio/utils/empty';
 import { useAnimationsFinished } from '../internals/useAnimationsFinished';
 import { getCssDimensions } from './getCssDimensions';
 import { Dimensions } from '../floating-ui-react/types';

@@ -1,12 +1,12 @@
 import { expect, vi, describe, beforeEach, it } from 'vitest';
 import * as React from 'react';
-import { Menu } from '@base-ui/react/menu';
+import { Menu } from '@obstudio/react/menu';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { act, fireEvent, screen, waitFor } from '@mui/internal-test-utils';
 
 describe('<Menu.CheckboxItemIndicator />', () => {
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
   });
 
   const { render } = createRenderer();
@@ -33,7 +33,7 @@ describe('<Menu.CheckboxItemIndicator />', () => {
 
     try {
       await expect(render(<Menu.CheckboxItemIndicator />)).rejects.toThrow(
-        'Base UI: MenuCheckboxItemContext is missing. MenuCheckboxItem parts must be placed within <Menu.CheckboxItem>.',
+        'Obstudio: MenuCheckboxItemContext is missing. MenuCheckboxItem parts must be placed within <Menu.CheckboxItem>.',
       );
     } finally {
       errorSpy.mockRestore();
@@ -94,7 +94,7 @@ describe('<Menu.CheckboxItemIndicator />', () => {
   );
 
   it.skipIf(isJSDOM)('should remove the indicator when the animation finishes', async () => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
     let animationFinished = false;
     const notifyAnimationFinished = () => {
@@ -155,7 +155,7 @@ describe('<Menu.CheckboxItemIndicator />', () => {
   it.skipIf(isJSDOM)(
     'keeps the indicator mounted to play its exit animation when unchecked without keepMounted',
     async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       function Test() {
         const style = `

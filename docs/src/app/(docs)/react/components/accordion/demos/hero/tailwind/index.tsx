@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Accordion } from '@base-ui/react/accordion';
+import { Accordion } from '@obstudio/react/accordion';
 
 export default function ExampleAccordion() {
   return (
@@ -7,13 +7,13 @@ export default function ExampleAccordion() {
       <Accordion.Item>
         <Accordion.Header>
           <Accordion.Trigger className="group flex w-full items-center justify-between gap-4 bg-transparent px-3 py-2 text-left text-sm font-normal text-neutral-950 select-none hover:not-data-disabled:bg-neutral-100 focus-visible:relative focus-visible:z-1 focus-visible:outline-2 focus-visible:outline-neutral-950 dark:focus-visible:outline-white dark:text-white dark:hover:not-data-disabled:bg-neutral-800">
-            What is Base UI?
+            What is Obstudio?
             <PlusIcon className="shrink-0 transition-transform duration-100 ease-[ease-out] group-data-panel-open:rotate-45" />
           </Accordion.Trigger>
         </Accordion.Header>
         <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-sm transition-[height] duration-150 ease-[ease-out] data-ending-style:h-0 data-starting-style:h-0">
           <div className="px-3 py-2">
-            Base UI is a library of high-quality unstyled React components for design systems and
+            Obstudio is a library of high-quality unstyled React components for design systems and
             web apps.
           </div>
         </Accordion.Panel>
@@ -42,7 +42,7 @@ export default function ExampleAccordion() {
           </Accordion.Trigger>
         </Accordion.Header>
         <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-sm transition-[height] duration-150 ease-[ease-out] data-ending-style:h-0 data-starting-style:h-0">
-          <div className="px-3 py-2">Of course! Base UI is free and open source.</div>
+          <div className="px-3 py-2">Of course! Obstudio is free and open source.</div>
         </Accordion.Panel>
       </Accordion.Item>
     </Accordion.Root>

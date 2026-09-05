@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Field } from '@base-ui/react/field';
+import { Field } from '@obstudio/react/field';
 import styles from './Input.module.css';
 
 export default function InputValidateOnChange() {

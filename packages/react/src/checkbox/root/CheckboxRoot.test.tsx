@@ -1,10 +1,10 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
 import { act, fireEvent, screen, waitFor } from '@mui/internal-test-utils';
-import { Checkbox } from '@base-ui/react/checkbox';
-import { CheckboxGroup } from '@base-ui/react/checkbox-group';
-import { Field } from '@base-ui/react/field';
-import { Form } from '@base-ui/react/form';
+import { Checkbox } from '@obstudio/react/checkbox';
+import { CheckboxGroup } from '@obstudio/react/checkbox-group';
+import { Field } from '@obstudio/react/field';
+import { Form } from '@obstudio/react/form';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 
 describe('<Checkbox.Root />', () => {

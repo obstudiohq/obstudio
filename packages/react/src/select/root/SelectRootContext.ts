@@ -29,7 +29,7 @@ export function useSelectRootContext() {
   const store = React.useContext(SelectRootContext);
   if (store === undefined) {
     throw new Error(
-      'Base UI: SelectRootContext is missing. Select parts must be placed within <Select.Root>.',
+      'Obstudio: SelectRootContext is missing. Select parts must be placed within <Select.Root>.',
     );
   }
   return store;
@@ -39,7 +39,7 @@ export function useSelectRootPropsContext() {
   const context = React.useContext(SelectRootPropsContext);
   if (context === undefined) {
     throw new Error(
-      'Base UI: SelectRootPropsContext is missing. Select parts must be placed within <Select.Root>.',
+      'Obstudio: SelectRootPropsContext is missing. Select parts must be placed within <Select.Root>.',
     );
   }
   return context;
@@ -49,7 +49,7 @@ export function useSelectFloatingContext() {
   const context = React.useContext(SelectFloatingContext);
   if (context === undefined) {
     throw new Error(
-      'Base UI: SelectFloatingContext is missing. Select parts must be placed within <Select.Root>.',
+      'Obstudio: SelectFloatingContext is missing. Select parts must be placed within <Select.Root>.',
     );
   }
   return context;

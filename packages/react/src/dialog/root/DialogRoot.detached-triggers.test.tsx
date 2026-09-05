@@ -2,15 +2,15 @@ import { expect, vi, describe, beforeEach, it } from 'vitest';
 import * as React from 'react';
 import type { UserEvent } from '@testing-library/user-event';
 import { act, fireEvent, screen, waitFor, within } from '@mui/internal-test-utils';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { Dialog } from '@base-ui/react/dialog';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { Dialog } from '@obstudio/react/dialog';
 import { createRenderer, isJSDOM } from '#test-utils';
 
 describe('<Dialog.Root />', () => {
   const { render, renderToString, clock } = createRenderer();
 
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
   });
 
   describe('handle-backed root ownership', () => {

@@ -1,7 +1,7 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
 import { createRenderer, fireEvent, screen, waitFor } from '@mui/internal-test-utils';
-import { Fieldset } from '@base-ui/react/fieldset';
+import { Fieldset } from '@obstudio/react/fieldset';
 import { describeConformance, isJSDOM } from '#test-utils';
 
 describe('<Fieldset.Legend />', () => {
@@ -71,7 +71,7 @@ describe('<Fieldset.Legend />', () => {
 
     try {
       expect(() => render(<Fieldset.Legend />)).toThrow(
-        'Base UI: FieldsetRootContext is missing. Fieldset parts must be placed within <Fieldset.Root>.',
+        'Obstudio: FieldsetRootContext is missing. Fieldset parts must be placed within <Fieldset.Root>.',
       );
     } finally {
       errorSpy.mockRestore();

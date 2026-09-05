@@ -1,4 +1,4 @@
-import { OTPField } from '@base-ui/react/otp-field';
+import { OTPField } from '@obstudio/react/otp-field';
 import { createMultipleTypes } from 'docs/src/utils/createTypes';
 
 const { types, AdditionalTypes } = createMultipleTypes(import.meta.url, OTPField);

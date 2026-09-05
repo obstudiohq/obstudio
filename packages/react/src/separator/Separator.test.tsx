@@ -1,6 +1,6 @@
 import { expect, describe, it } from 'vitest';
 import { screen } from '@mui/internal-test-utils';
-import { Separator } from '@base-ui/react/separator';
+import { Separator } from '@obstudio/react/separator';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Separator />', () => {

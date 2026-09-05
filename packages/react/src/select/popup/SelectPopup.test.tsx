@@ -1,8 +1,8 @@
 import { expect, describe, it, afterEach } from 'vitest';
 import * as React from 'react';
-import { Select } from '@base-ui/react/select';
-import { Toolbar } from '@base-ui/react/toolbar';
-import { DirectionProvider } from '@base-ui/react/direction-provider';
+import { Select } from '@obstudio/react/select';
+import { Toolbar } from '@obstudio/react/toolbar';
+import { DirectionProvider } from '@obstudio/react/direction-provider';
 import { act, fireEvent, ignoreActWarnings, screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 
@@ -33,7 +33,7 @@ describe('<Select.Popup />', () => {
           </Select.Root>,
         ),
       ).rejects.toThrow(
-        'Base UI: SelectPositionerContext is missing. SelectPositioner parts must be placed within <Select.Positioner>.',
+        'Obstudio: SelectPositionerContext is missing. SelectPositioner parts must be placed within <Select.Positioner>.',
       );
     } finally {
       errorSpy.mockRestore();

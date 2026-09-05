@@ -1,9 +1,9 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
 import { act, screen, fireEvent } from '@mui/internal-test-utils';
-import { NumberField as NumberFieldBase } from '@base-ui/react/number-field';
-import { Field } from '@base-ui/react/field';
-import { Form } from '@base-ui/react/form';
+import { NumberField as NumberFieldBase } from '@obstudio/react/number-field';
+import { Field } from '@obstudio/react/field';
+import { Form } from '@obstudio/react/form';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { REASONS } from '../../internals/reasons';
 

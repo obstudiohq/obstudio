@@ -2,7 +2,7 @@ import { expect, describe } from 'vitest';
 import * as React from 'react';
 import { MemoryRouter, Route, Routes, Link, useLocation } from 'react-router';
 import { act, screen, waitFor } from '@mui/internal-test-utils';
-import { Menu } from '@base-ui/react/menu';
+import { Menu } from '@obstudio/react/menu';
 import { describeConformance, createRenderer, isJSDOM } from '#test-utils';
 
 describe('<Menu.LinkItem />', () => {

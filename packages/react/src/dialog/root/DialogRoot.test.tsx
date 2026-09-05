@@ -2,17 +2,17 @@ import { expect, vi, describe, beforeEach, it, afterEach } from 'vitest';
 import type { CDPSession } from '@vitest/browser-playwright';
 import * as React from 'react';
 import { act, fireEvent, screen, waitFor, flushMicrotasks } from '@mui/internal-test-utils';
-import { AlertDialog } from '@base-ui/react/alert-dialog';
-import { Dialog } from '@base-ui/react/dialog';
+import { AlertDialog } from '@obstudio/react/alert-dialog';
+import { Dialog } from '@obstudio/react/dialog';
 import { createRenderer, isJSDOM, popupConformanceTests, wait } from '#test-utils';
-import { Menu } from '@base-ui/react/menu';
-import { Select } from '@base-ui/react/select';
-import { NumberField } from '@base-ui/react/number-field';
-import { ScrollArea } from '@base-ui/react/scroll-area';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { platform } from '@base-ui/utils/platform';
-import { useTimeout } from '@base-ui/utils/useTimeout';
+import { Menu } from '@obstudio/react/menu';
+import { Select } from '@obstudio/react/select';
+import { NumberField } from '@obstudio/react/number-field';
+import { ScrollArea } from '@obstudio/react/scroll-area';
+import { useRefWithInit } from '@obstudio/utils/useRefWithInit';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { platform } from '@obstudio/utils/platform';
+import { useTimeout } from '@obstudio/utils/useTimeout';
 import { REASONS } from '../../internals/reasons';
 import { useDialogRootContext } from './DialogRootContext';
 import { DialogStore } from '../store/DialogStore';
@@ -22,7 +22,7 @@ describe('<Dialog.Root />', () => {
   const { render } = createRenderer();
 
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
   });
 
   popupConformanceTests({
@@ -827,7 +827,7 @@ describe('<Dialog.Root />', () => {
     }
   `;
 
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       const notifyTransitionEnd = vi.fn();
 
@@ -1343,7 +1343,7 @@ describe('<Dialog.Root />', () => {
       });
 
       it('is called on close when the exit animation finishes', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         const onOpenChangeComplete = vi.fn();
 
@@ -1423,7 +1423,7 @@ describe('<Dialog.Root />', () => {
       });
 
       it('is called on open when the enter animation finishes', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         const onOpenChangeComplete = vi.fn();
 
@@ -1471,7 +1471,7 @@ describe('<Dialog.Root />', () => {
       });
 
       it('waits for a restarted enter animation to finish', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         const onOpenChangeComplete = vi.fn();
 
@@ -1542,7 +1542,7 @@ describe('<Dialog.Root />', () => {
       });
 
       it('does not get called on open when dismissed during the enter animation', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         const onOpenChangeComplete = vi.fn();
 
@@ -2252,8 +2252,8 @@ function isPageLocked() {
   return /hidden|clip/.test(getComputedStyle(htmlScrolls ? html : document.body).overflowY);
 }
 
-// When <html> is the viewport scroller, Base UI hides its overflow to lock the page. An external
-// <body> lock never touches <html>, so this distinguishes a lock Base UI applied itself from one
+// When <html> is the viewport scroller, Obstudio hides its overflow to lock the page. An external
+// <body> lock never touches <html>, so this distinguishes a lock Obstudio applied itself from one
 // it is still waiting to take over.
 function hasOwnScrollLock(doc: Document) {
   return doc.documentElement.style.overflowX === 'hidden';

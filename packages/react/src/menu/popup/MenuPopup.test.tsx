@@ -1,6 +1,6 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
-import { Menu } from '@base-ui/react/menu';
+import { Menu } from '@obstudio/react/menu';
 import { createRenderer, describeConformance } from '#test-utils';
 import { act, fireEvent, waitFor, screen } from '@mui/internal-test-utils';
 import { ToolbarRootContext } from '../../toolbar/root/ToolbarRootContext';
@@ -32,7 +32,7 @@ describe('<Menu.Popup />', () => {
           </Menu.Root>,
         ),
       ).rejects.toThrow(
-        'Base UI: MenuPositionerContext is missing. MenuPositioner parts must be placed within <Menu.Positioner>.',
+        'Obstudio: MenuPositionerContext is missing. MenuPositioner parts must be placed within <Menu.Positioner>.',
       );
     } finally {
       errorSpy.mockRestore();

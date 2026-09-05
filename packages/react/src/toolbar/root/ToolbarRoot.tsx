@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import {
-  BaseUIComponentProps,
+  ObstudioComponentProps,
   Orientation as BaseOrientation,
   HTMLProps,
 } from '../../internals/types';
@@ -13,7 +13,7 @@ import { ToolbarRootContext } from './ToolbarRootContext';
  * A container for grouping a set of controls, such as buttons, toggle groups, or menus.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Toolbar](https://base-ui.com/react/components/toolbar)
+ * Documentation: [Obstudio Toolbar](https://obstudio.co/react/components/toolbar)
  */
 export const ToolbarRoot = React.forwardRef(function ToolbarRoot(
   componentProps: ToolbarRoot.Props,
@@ -96,7 +96,7 @@ export interface ToolbarRootState {
   orientation: ToolbarRoot.Orientation;
 }
 
-export interface ToolbarRootProps extends BaseUIComponentProps<'div', ToolbarRootState> {
+export interface ToolbarRootProps extends ObstudioComponentProps<'div', ToolbarRootState> {
   disabled?: boolean | undefined;
   /**
    * The orientation of the toolbar.

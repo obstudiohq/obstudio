@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useTimeout } from '@base-ui/utils/useTimeout';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useTimeout } from '@obstudio/utils/useTimeout';
 import type { SearchResult } from '@mui/internal-docs-infra/useSearch/types';
 import { useGoogleAnalytics } from 'docs/src/blocks/GoogleAnalyticsProvider';
 

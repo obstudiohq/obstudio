@@ -10,7 +10,7 @@ Shape of the render prop: a function that takes props to be spread on the elemen
 
 ### useRender
 
-Renders a Base UI element.
+Renders a Obstudio element.
 
 **useRender Parameters:**
 

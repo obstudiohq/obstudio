@@ -10,7 +10,7 @@ export function useSwitchRootContext() {
   const context = React.useContext(SwitchRootContext);
   if (context === undefined) {
     throw new Error(
-      'Base UI: SwitchRootContext is missing. Switch parts must be placed within <Switch.Root>.',
+      'Obstudio: SwitchRootContext is missing. Switch parts must be placed within <Switch.Root>.',
     );
   }
 

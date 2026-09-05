@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { useSelectPositionerContext } from '../positioner/SelectPositionerContext';
 import { useSelectRootContext } from '../root/SelectRootContext';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import type { Align, Side } from '../../internals/useAnchorPositioning';
 import { popupTransitionStateMapping } from '../../utils/popupStateMapping';
 import { useRenderElement } from '../../internals/useRenderElement';
@@ -11,7 +11,7 @@ import { useRenderElement } from '../../internals/useRenderElement';
  * Displays an element positioned against the select popup anchor.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ * Documentation: [Obstudio Select](https://obstudio.co/react/components/select)
  */
 export const SelectArrow = React.forwardRef(function SelectArrow(
   componentProps: SelectArrow.Props,
@@ -65,7 +65,7 @@ export interface SelectArrowState {
   uncentered: boolean;
 }
 
-export interface SelectArrowProps extends BaseUIComponentProps<'div', SelectArrowState> {}
+export interface SelectArrowProps extends ObstudioComponentProps<'div', SelectArrowState> {}
 
 export namespace SelectArrow {
   export type State = SelectArrowState;

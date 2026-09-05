@@ -12,7 +12,7 @@ export function usePopoverRootContext(optional?: boolean) {
   const context = React.useContext(PopoverRootContext);
   if (context === undefined && !optional) {
     throw new Error(
-      'Base UI: PopoverRootContext is missing. Popover parts must be placed within <Popover.Root>.',
+      'Obstudio: PopoverRootContext is missing. Popover parts must be placed within <Popover.Root>.',
     );
   }
   return context;

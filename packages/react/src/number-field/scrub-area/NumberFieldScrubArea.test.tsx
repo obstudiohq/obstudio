@@ -1,9 +1,9 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
 import { screen, act, fireEvent, reactMajor } from '@mui/internal-test-utils';
-import { NumberField } from '@base-ui/react/number-field';
+import { NumberField } from '@obstudio/react/number-field';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
-import { platform } from '@base-ui/utils/platform';
+import { platform } from '@obstudio/utils/platform';
 
 const isWebKit = platform.engine.webkit;
 

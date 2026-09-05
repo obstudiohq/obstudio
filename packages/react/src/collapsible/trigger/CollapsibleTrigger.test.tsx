@@ -1,6 +1,6 @@
 import { expect, vi, describe, it } from 'vitest';
 import { createRenderer, screen } from '@mui/internal-test-utils';
-import { Collapsible } from '@base-ui/react/collapsible';
+import { Collapsible } from '@obstudio/react/collapsible';
 import { describeConformance } from '../../../test/describeConformance';
 
 describe('<Collapsible.Trigger />', () => {
@@ -11,7 +11,7 @@ describe('<Collapsible.Trigger />', () => {
 
     try {
       expect(() => render(<Collapsible.Trigger />)).toThrow(
-        'Base UI: CollapsibleRootContext is missing. Collapsible parts must be placed within <Collapsible.Root>.',
+        'Obstudio: CollapsibleRootContext is missing. Collapsible parts must be placed within <Collapsible.Root>.',
       );
     } finally {
       errorSpy.mockRestore();

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Autocomplete } from '@base-ui/react/autocomplete';
-import { Combobox } from '@base-ui/react/combobox';
+import { Autocomplete } from '@obstudio/react/autocomplete';
+import { Combobox } from '@obstudio/react/combobox';
 
 const objectItems = [
   { value: 'a', label: 'apple' },

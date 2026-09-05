@@ -1,5 +1,5 @@
-import { DirectionProvider } from '@base-ui/react/direction-provider';
-import { Slider } from '@base-ui/react/slider';
+import { DirectionProvider } from '@obstudio/react/direction-provider';
+import { Slider } from '@obstudio/react/slider';
 import styles from './index.module.css';
 
 export default function ExampleDirectionProvider() {

@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { Drawer } from '@base-ui/react/drawer';
-import { Slider } from '@base-ui/react/slider';
+import { Drawer } from '@obstudio/react/drawer';
+import { Slider } from '@obstudio/react/slider';
 import styles from './drawer-slider.module.css';
 
 export default function DrawerSliderExperiment() {

@@ -13,7 +13,7 @@ export function useAvatarRootContext() {
   const context = React.useContext(AvatarRootContext);
   if (context === undefined) {
     throw new Error(
-      'Base UI: AvatarRootContext is missing. Avatar parts must be placed within <Avatar.Root>.',
+      'Obstudio: AvatarRootContext is missing. Avatar parts must be placed within <Avatar.Root>.',
     );
   }
   return context;

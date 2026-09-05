@@ -10,9 +10,9 @@ import {
   isOutsideEvent,
 } from '../../floating-ui-react/utils';
 import {
-  type BaseUIChangeEventDetails,
+  type ObstudioChangeEventDetails,
   createChangeEventDetails,
-} from '../../internals/createBaseUIEventDetails';
+} from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 
 /**
@@ -20,7 +20,7 @@ import { REASONS } from '../../internals/reasons';
  * Both PopoverStore and MenuStore satisfy this interface.
  */
 interface TriggerFocusGuardStore {
-  setOpen(open: boolean, eventDetails: BaseUIChangeEventDetails<typeof REASONS.focusOut>): void;
+  setOpen(open: boolean, eventDetails: ObstudioChangeEventDetails<typeof REASONS.focusOut>): void;
   select(key: 'positionerElement'): HTMLElement | null;
   context: {
     readonly beforeContentFocusGuardRef: React.RefObject<HTMLElement | null>;

@@ -1,13 +1,13 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { EMPTY_OBJECT } from '@base-ui/utils/empty';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { EMPTY_OBJECT } from '@obstudio/utils/empty';
 import {
   createGenericEventDetails,
-  type BaseUIGenericEventDetails,
-} from '../internals/createBaseUIEventDetails';
+  type ObstudioGenericEventDetails,
+} from '../internals/createObstudioEventDetails';
 import { REASONS } from '../internals/reasons';
-import type { BaseUIComponentProps } from '../internals/types';
+import type { ObstudioComponentProps } from '../internals/types';
 import { FormContext } from '../internals/form-context/FormContext';
 import { useRenderElement } from '../internals/useRenderElement';
 import { useValueChanged } from '../internals/useValueChanged';
@@ -16,7 +16,7 @@ import { useValueChanged } from '../internals/useValueChanged';
  * A native form element with consolidated error handling.
  * Renders a `<form>` element.
  *
- * Documentation: [Base UI Form](https://base-ui.com/react/components/form)
+ * Documentation: [Obstudio Form](https://obstudio.co/react/components/form)
  */
 export const Form = React.forwardRef(function Form<
   FormValues extends Record<string, any> = Record<string, any>,
@@ -178,7 +178,7 @@ export const Form = React.forwardRef(function Form<
 };
 
 export type FormSubmitEventReason = typeof REASONS.none;
-export type FormSubmitEventDetails = BaseUIGenericEventDetails<Form.SubmitEventReason>;
+export type FormSubmitEventDetails = ObstudioGenericEventDetails<Form.SubmitEventReason>;
 
 export type FormValidationMode = 'onSubmit' | 'onBlur' | 'onChange';
 
@@ -190,7 +190,7 @@ export interface FormState {}
 
 export interface FormProps<
   FormValues extends Record<string, any> = Record<string, any>,
-> extends BaseUIComponentProps<'form', FormState, React.ComponentPropsWithRef<'form'>> {
+> extends ObstudioComponentProps<'form', FormState, React.ComponentPropsWithRef<'form'>> {
   /**
    * Determines when the form should be validated.
    * The `validationMode` prop on `<Field.Root>` takes precedence over this.

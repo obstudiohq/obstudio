@@ -1,5 +1,5 @@
 import { describe } from 'vitest';
-import { NavigationMenu } from '@base-ui/react/navigation-menu';
+import { NavigationMenu } from '@obstudio/react/navigation-menu';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<NavigationMenu.Popup />', () => {

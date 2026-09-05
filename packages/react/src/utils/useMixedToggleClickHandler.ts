@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { ownerDocument } from '@base-ui/utils/owner';
-import { EMPTY_OBJECT } from '@base-ui/utils/empty';
-import { BaseUIEvent } from '../internals/types';
+import { ownerDocument } from '@obstudio/utils/owner';
+import { EMPTY_OBJECT } from '@obstudio/utils/empty';
+import { ObstudioEvent } from '../internals/types';
 
 /**
  * Returns `click` and `mousedown` handlers that fix the behavior of triggers of popups that are toggled by different events.
@@ -32,10 +32,10 @@ export function useMixedToggleClickHandler(params: UseMixedToggleClickHandlerPar
           );
         }
       },
-      onClick: (event: BaseUIEvent<React.MouseEvent>) => {
+      onClick: (event: ObstudioEvent<React.MouseEvent>) => {
         if (ignoreClickRef.current) {
           ignoreClickRef.current = false;
-          event.preventBaseUIHandler();
+          event.preventObstudioHandler();
         }
       },
     };

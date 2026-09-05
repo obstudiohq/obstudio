@@ -1,6 +1,6 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
-import { Combobox } from '@base-ui/react/combobox';
+import { Combobox } from '@obstudio/react/combobox';
 import { createRenderer } from '#test-utils';
 import { act, fireEvent, flushMicrotasks, screen, waitFor } from '@mui/internal-test-utils';
 
@@ -137,7 +137,7 @@ describe('Combobox.createItems', () => {
       expect(screen.getByTestId<HTMLInputElement>('input').value).toBe('Bob');
     });
 
-    // Closes the use case from https://github.com/mui/base-ui/issues/5228
+    // Closes the use case from https://github.com/obstudiohq/obstudio/issues/5228
     it('supports rich API-loaded items with primitive ID values end to end', async () => {
       let resolveAssignment = (_response: AssignmentResponse) => {};
       const assignmentRequest = new Promise<AssignmentResponse>((resolve) => {
@@ -245,7 +245,7 @@ describe('Combobox.createItems', () => {
     });
 
     // Covers the paginated async-search use case from
-    // https://github.com/mui/base-ui/issues/3818.
+    // https://github.com/obstudiohq/obstudio/issues/3818.
     it('keeps separately fetched selected metadata outside paginated search results', async () => {
       interface Employee {
         id: string;

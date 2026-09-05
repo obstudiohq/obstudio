@@ -1,16 +1,16 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import type { BaseUIComponentProps } from '../../internals/types';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
-import { useBaseUiId } from '../../internals/useBaseUiId';
+import { useObstudioId } from '../../internals/useObstudioId';
 import { useMenuGroupRootContext } from '../group/MenuGroupContext';
 
 /**
  * An accessible label that is automatically associated with its parent group.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Obstudio Menu](https://obstudio.co/react/components/menu)
  */
 export const MenuGroupLabel = React.forwardRef(function MenuGroupLabel(
   componentProps: MenuGroupLabel.Props,
@@ -18,7 +18,7 @@ export const MenuGroupLabel = React.forwardRef(function MenuGroupLabel(
 ) {
   const { render, className, style, id: idProp, ...elementProps } = componentProps;
 
-  const id = useBaseUiId(idProp);
+  const id = useObstudioId(idProp);
 
   const setLabelId = useMenuGroupRootContext();
 
@@ -39,7 +39,7 @@ export const MenuGroupLabel = React.forwardRef(function MenuGroupLabel(
   });
 });
 
-export interface MenuGroupLabelProps extends BaseUIComponentProps<'div', MenuGroupLabelState> {}
+export interface MenuGroupLabelProps extends ObstudioComponentProps<'div', MenuGroupLabelState> {}
 
 export interface MenuGroupLabelState {}
 

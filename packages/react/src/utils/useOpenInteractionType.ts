@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { InteractionType, useEnhancedClickHandler } from '@base-ui/utils/useEnhancedClickHandler';
-import { platform } from '@base-ui/utils/platform';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { InteractionType, useEnhancedClickHandler } from '@obstudio/utils/useEnhancedClickHandler';
+import { platform } from '@obstudio/utils/platform';
 import { useValueChanged } from '../internals/useValueChanged';
 
 export function useOpenMethodTriggerProps(

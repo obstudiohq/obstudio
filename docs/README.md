@@ -1,6 +1,6 @@
 # Docs
 
-This is the documentation of Base UI.
+This is the documentation of Obstudio.
 
 To start the docs site in development mode, from the project root, run:
 
@@ -15,7 +15,7 @@ Package managers other than pnpm (like npm or Yarn) are not supported and don't 
 ## How can I add a new demo to the documentation?
 
 [You can follow this guide](../CONTRIBUTING.md)
-on how to get started contributing to Base UI.
+on how to get started contributing to Obstudio.
 
 ## Error code extraction
 
@@ -29,7 +29,7 @@ This updates the `./src/error-codes.json` file with the newly extracted errors.
 
 Important: If you just altered the text of an error, you are allowed to update the existing error code with the new text in `./src/error-codes.json`, but only under the following conditions:
 
-1. There hasn't been an update to the semantic meaning of the error message. Error codes need to outlive Base UI versions, so the same code must mean the same thing across versions.
+1. There hasn't been an update to the semantic meaning of the error message. Error codes need to outlive Obstudio versions, so the same code must mean the same thing across versions.
 2. There hasn't been a change in parameters, no added and no removed.
 
 In both of those cases, always create a new error code lline in `./src/error-codes.json`.

@@ -1,4 +1,4 @@
-import { Tabs } from '@base-ui/react/tabs';
+import { Tabs } from '@obstudio/react/tabs';
 import styles from './index.module.css';
 
 export default function ExampleAnimatedTabs() {

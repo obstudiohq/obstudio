@@ -1,5 +1,5 @@
-import { ownerWindow } from '@base-ui/utils/owner';
-import { platform } from '@base-ui/utils/platform';
+import { ownerWindow } from '@obstudio/utils/owner';
+import { platform } from '@obstudio/utils/platform';
 
 interface ElementBounds {
   left: number;

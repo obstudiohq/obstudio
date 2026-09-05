@@ -3,14 +3,14 @@ import * as React from 'react';
 import type { SwitchRootState } from '../root/SwitchRoot';
 import { useSwitchRootContext } from '../root/SwitchRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { stateAttributesMapping } from '../stateAttributesMapping';
 
 /**
  * The movable part of the switch that indicates whether the switch is on or off.
  * Renders a `<span>`.
  *
- * Documentation: [Base UI Switch](https://base-ui.com/react/components/switch)
+ * Documentation: [Obstudio Switch](https://obstudio.co/react/components/switch)
  */
 export const SwitchThumb = React.forwardRef(function SwitchThumb(
   componentProps: SwitchThumb.Props,
@@ -28,7 +28,7 @@ export const SwitchThumb = React.forwardRef(function SwitchThumb(
   });
 });
 
-export interface SwitchThumbProps extends BaseUIComponentProps<'span', SwitchThumbState> {}
+export interface SwitchThumbProps extends ObstudioComponentProps<'span', SwitchThumbState> {}
 
 export interface SwitchThumbState extends SwitchRootState {}
 

@@ -2,10 +2,10 @@
 import * as React from 'react';
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
-import { Dialog } from '@base-ui/react/dialog';
-import { Drawer } from '@base-ui/react/drawer';
-import { platform } from '@base-ui/utils/platform';
-import { useTimeout } from '@base-ui/utils/useTimeout';
+import { Dialog } from '@obstudio/react/dialog';
+import { Drawer } from '@obstudio/react/drawer';
+import { platform } from '@obstudio/utils/platform';
+import { useTimeout } from '@obstudio/utils/useTimeout';
 import { MagnifyingGlassIcon } from 'docs/src/icons/MagnifyingGlassIcon';
 import { loadSearchSitemap } from './Search/searchSitemap';
 import { MobileNavContext } from './MobileNavContext';
@@ -82,13 +82,13 @@ export function SearchControls({
   );
 
   const handleDesktopTriggerClick = React.useCallback((event: DialogTriggerClickEvent) => {
-    event?.preventBaseUIHandler();
+    event?.preventObstudioHandler();
     preloadSearchSitemap();
     setOpenTarget('desktop');
   }, []);
 
   const handleMobileTriggerClick = React.useCallback((event: DrawerTriggerClickEvent) => {
-    event?.preventBaseUIHandler();
+    event?.preventObstudioHandler();
     preloadSearchSitemap();
     scrollTopAfterMobileCloseRef.current = false;
     setOpenTarget('mobile');

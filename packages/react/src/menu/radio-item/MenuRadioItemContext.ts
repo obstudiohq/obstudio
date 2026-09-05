@@ -15,7 +15,7 @@ export function useMenuRadioItemContext() {
   const context = React.useContext(MenuRadioItemContext);
   if (context === undefined) {
     throw new Error(
-      'Base UI: MenuRadioItemContext is missing. MenuRadioItem parts must be placed within <Menu.RadioItem>.',
+      'Obstudio: MenuRadioItemContext is missing. MenuRadioItem parts must be placed within <Menu.RadioItem>.',
     );
   }
 

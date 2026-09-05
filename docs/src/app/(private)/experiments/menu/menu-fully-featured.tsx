@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { Menu } from '@base-ui/react/menu';
+import { Menu } from '@obstudio/react/menu';
 import clsx from 'clsx';
 import NextLink from 'next/link';
 import { SettingsMetadata, useExperimentSettings } from '../_components/SettingsPanel';
@@ -62,10 +62,10 @@ export default function MenuFullyFeatured() {
                 Item 2
               </Menu.Item>
               <Menu.LinkItem
-                href="https://base-ui.com"
+                href="https://obstudio.co"
                 className={clsx(classes.Item, classes.LinkItem)}
               >
-                Link 1 (base-ui.com)
+                Link 1 (obstudio.co)
               </Menu.LinkItem>
               <Menu.LinkItem
                 render={<a href="https://github.com">Link 2 (github.com)</a>}

@@ -7,7 +7,7 @@ import { safePolygon } from '../safePolygon';
 import { useHoverInteractionSharedState } from './useHoverInteractionSharedState';
 import { useHoverReferenceInteraction } from './useHoverReferenceInteraction';
 import { REASONS } from '../../internals/reasons';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 
 describe.skipIf(!isJSDOM)('useHoverReferenceInteraction', () => {
   it('updates the handleClose options during render', () => {

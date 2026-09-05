@@ -1,6 +1,6 @@
 'use client';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useRefWithInit } from '@obstudio/utils/useRefWithInit';
 import { useFieldRootContext } from '../field-root-context/FieldRootContext';
 import type { FieldControlRegistration } from './useFieldControlRegistration';
 

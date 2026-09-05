@@ -1,14 +1,14 @@
 'use client';
 import * as React from 'react';
-import { useTimeout, Timeout } from '@base-ui/utils/useTimeout';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { useTimeout, Timeout } from '@obstudio/utils/useTimeout';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
 
 import { getDelay } from '../hooks/useHoverShared';
 import type { FloatingRootContext, Delay, FloatingContext } from '../types';
 import {
-  BaseUIChangeEventDetails,
+  ObstudioChangeEventDetails,
   createChangeEventDetails,
-} from '../../internals/createBaseUIEventDetails';
+} from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 
 interface ContextValue {
@@ -19,7 +19,7 @@ interface ContextValue {
   timeout: Timeout;
   currentIdRef: React.RefObject<string | null | undefined>;
   currentContextRef: React.RefObject<{
-    onOpenChange: (open: boolean, eventDetails: BaseUIChangeEventDetails<any>) => void;
+    onOpenChange: (open: boolean, eventDetails: ObstudioChangeEventDetails<any>) => void;
     setIsInstantPhase: (value: boolean) => void;
   } | null>;
 }

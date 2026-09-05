@@ -1,6 +1,6 @@
 import { afterEach, expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
-import { PreviewCard } from '@base-ui/react/preview-card';
+import { PreviewCard } from '@obstudio/react/preview-card';
 import { fireEvent, screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance, isJSDOM, waitForPositioned } from '#test-utils';
 
@@ -94,7 +94,7 @@ describe('<PreviewCard.Positioner />', () => {
             <PreviewCard.Positioner />
           </PreviewCard.Root>,
         ),
-      ).rejects.toThrow('Base UI: <PreviewCard.Portal> is missing.');
+      ).rejects.toThrow('Obstudio: <PreviewCard.Portal> is missing.');
     } finally {
       errorSpy.mockRestore();
     }
@@ -380,7 +380,7 @@ describe('<PreviewCard.Positioner />', () => {
 
   describe.skipIf(isJSDOM)('multiline inline trigger', () => {
     afterEach(() => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
       window.scrollTo(0, 0);
       document.documentElement.style.height = '';
       document.body.style.height = '';
@@ -610,7 +610,7 @@ describe('<PreviewCard.Positioner />', () => {
     });
 
     it('re-anchors to a newly entered line while reopening during close transition', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
       const style = `
         @keyframes preview-card-inline-reentry-close-transition {
           from { opacity: 1; }

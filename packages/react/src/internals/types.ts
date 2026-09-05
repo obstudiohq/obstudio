@@ -1,10 +1,10 @@
 import type * as React from 'react';
-import type { BaseUIEvent, ComponentRenderFn, HTMLProps } from '../types';
+import type { ObstudioEvent, ComponentRenderFn, HTMLProps } from '../types';
 
-export type { HTMLProps, BaseUIEvent, ComponentRenderFn };
+export type { HTMLProps, ObstudioEvent, ComponentRenderFn };
 
-export type MaybeBaseUIEvent<E extends React.SyntheticEvent<Element, Event>> = E &
-  Partial<Pick<BaseUIEvent<E>, 'preventBaseUIHandler' | 'baseUIHandlerPrevented'>>;
+export type MaybeObstudioEvent<E extends React.SyntheticEvent<Element, Event>> = E &
+  Partial<Pick<ObstudioEvent<E>, 'preventObstudioHandler' | 'obstudioHandlerPrevented'>>;
 
 export interface FloatingUIOpenChangeDetails {
   open: boolean;
@@ -14,31 +14,31 @@ export interface FloatingUIOpenChangeDetails {
   triggerElement?: Element | undefined;
 }
 
-type WithPreventBaseUIHandler<T> = T extends (event: infer E) => any
+type WithPreventObstudioHandler<T> = T extends (event: infer E) => any
   ? E extends React.SyntheticEvent<Element, Event>
-    ? (event: BaseUIEvent<E>) => ReturnType<T>
+    ? (event: ObstudioEvent<E>) => ReturnType<T>
     : T
   : T extends undefined
     ? undefined
     : T;
 
 /**
- * Adds a `preventBaseUIHandler` method to all event handlers.
+ * Adds a `preventObstudioHandler` method to all event handlers.
  */
-export type WithBaseUIEvent<T> = {
-  [K in keyof T]: WithPreventBaseUIHandler<T[K]>;
+export type WithObstudioEvent<T> = {
+  [K in keyof T]: WithPreventObstudioHandler<T[K]>;
 };
 
 /**
- * Props shared by all Base UI components.
+ * Props shared by all Obstudio components.
  * Contains `className` (string or callback taking the component's state as an argument) and `render` (function to customize rendering).
  */
-export type BaseUIComponentProps<
+export type ObstudioComponentProps<
   ElementType extends React.ElementType,
   State,
   RenderFunctionProps = HTMLProps,
 > = Omit<
-  WithBaseUIEvent<React.ComponentPropsWithRef<ElementType>>,
+  WithObstudioEvent<React.ComponentPropsWithRef<ElementType>>,
   'className' | 'color' | 'defaultValue' | 'defaultChecked' | 'style'
 > & {
   /**

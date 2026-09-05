@@ -11,7 +11,7 @@ export default function NotFoundPage() {
           <p className="Text sz-2">
             This page couldn't be found. Please return to the{' '}
             <Link href="/react/overview/quick-start">docs</Link> or create a corresponding issue on{' '}
-            <Link href="https://github.com/mui/base-ui">GitHub</Link>.
+            <Link href="https://github.com/obstudiohq/obstudio">GitHub</Link>.
           </p>
         </div>
       </section>

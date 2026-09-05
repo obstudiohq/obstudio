@@ -23,7 +23,7 @@ export function useComboboxPositionerContext(optional?: boolean) {
   const context = React.useContext(ComboboxPositionerContext);
   if (context === undefined && !optional) {
     throw new Error(
-      'Base UI: <Combobox.Popup> and <Combobox.Arrow> must be used within the <Combobox.Positioner> component',
+      'Obstudio: <Combobox.Popup> and <Combobox.Arrow> must be used within the <Combobox.Positioner> component',
     );
   }
   return context;

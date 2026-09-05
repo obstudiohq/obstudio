@@ -70,7 +70,7 @@ describe('useControlled', () => {
     expect(() => {
       setProps({ value: 'foobar' });
     }).toErrorDev(
-      'Base UI: A component is changing the uncontrolled value state of TestComponent to be controlled.',
+      'Obstudio: A component is changing the uncontrolled value state of TestComponent to be controlled.',
     );
   });
 
@@ -104,7 +104,7 @@ describe('useControlled', () => {
     expect(() => {
       rerender({ controlled: undefined });
     }).toErrorDev(
-      'Base UI: A component is changing the controlled value state of TestHook to be uncontrolled.',
+      'Obstudio: A component is changing the controlled value state of TestHook to be uncontrolled.',
     );
 
     expect(result.current[0]).toBe('default');
@@ -127,7 +127,7 @@ describe('useControlled', () => {
       expect(() => {
         setProps({ defaultValue: 1 });
       }).toErrorDev(
-        'Base UI: A component is changing the default value state of an uncontrolled TestComponent after being initialized.',
+        'Obstudio: A component is changing the default value state of an uncontrolled TestComponent after being initialized.',
       );
     });
 
@@ -229,7 +229,7 @@ describe('useControlled', () => {
       expect(() => {
         setProps({ defaultValue: 1 });
       }).toErrorDev(
-        'Base UI: A component is changing the default value state of an uncontrolled TestComponent after being initialized.',
+        'Obstudio: A component is changing the default value state of an uncontrolled TestComponent after being initialized.',
       );
 
       expect(() => {
@@ -265,7 +265,7 @@ describe('useControlled', () => {
       expect(() => {
         setProps({ defaultValue: items[1] });
       }).toErrorDev(
-        'Base UI: A component is changing the default value state of an uncontrolled TestComponent after being initialized.',
+        'Obstudio: A component is changing the default value state of an uncontrolled TestComponent after being initialized.',
       );
 
       expect(() => {
@@ -290,7 +290,7 @@ describe('useControlled', () => {
       expect(() => {
         setProps({ defaultValue: s2 });
       }).toErrorDev(
-        'Base UI: A component is changing the default value state of an uncontrolled TestComponent after being initialized.',
+        'Obstudio: A component is changing the default value state of an uncontrolled TestComponent after being initialized.',
       );
 
       expect(() => {

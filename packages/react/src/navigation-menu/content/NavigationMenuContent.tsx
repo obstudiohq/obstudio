@@ -1,13 +1,13 @@
 'use client';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { inertValue } from '@base-ui/utils/inertValue';
-import { EMPTY_OBJECT } from '@base-ui/utils/empty';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { inertValue } from '@obstudio/utils/inertValue';
+import { EMPTY_OBJECT } from '@obstudio/utils/empty';
 import { FloatingNode } from '../../floating-ui-react';
 import { contains, getTarget } from '../../floating-ui-react/utils';
-import type { BaseUIComponentProps, HTMLProps } from '../../internals/types';
+import type { ObstudioComponentProps, HTMLProps } from '../../internals/types';
 import {
   useNavigationMenuRootContext,
   useNavigationMenuTreeContext,
@@ -39,7 +39,7 @@ const stateAttributesMapping: StateAttributesMapping<NavigationMenuContentState>
  * when the item is active.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+ * Documentation: [Obstudio Navigation Menu](https://obstudio.co/react/components/navigation-menu)
  */
 export const NavigationMenuContent = React.forwardRef(function NavigationMenuContent(
   componentProps: NavigationMenuContent.Props,
@@ -110,7 +110,7 @@ export const NavigationMenuContent = React.forwardRef(function NavigationMenuCon
   const commonProps: HTMLProps<HTMLDivElement> = {
     onFocus(event) {
       const target = getTarget(event.nativeEvent) as Element | null;
-      if (target?.hasAttribute('data-base-ui-focus-guard')) {
+      if (target?.hasAttribute('data-obstudio-focus-guard')) {
         return;
       }
       setFocusInside(true);
@@ -188,7 +188,7 @@ export interface NavigationMenuContentState {
   activationDirection: 'left' | 'right' | 'up' | 'down' | null;
 }
 
-export interface NavigationMenuContentProps extends BaseUIComponentProps<
+export interface NavigationMenuContentProps extends ObstudioComponentProps<
   'div',
   NavigationMenuContentState
 > {

@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import type { RadioRootState } from '../root/RadioRoot';
 import { useRadioRootContext } from '../root/RadioRootContext';
@@ -12,7 +12,7 @@ import { type TransitionStatus, useTransitionStatus } from '../../internals/useT
  * Indicates whether the radio button is selected.
  * Renders a `<span>` element.
  *
- * Documentation: [Base UI Radio](https://base-ui.com/react/components/radio)
+ * Documentation: [Obstudio Radio](https://obstudio.co/react/components/radio)
  */
 export const RadioIndicator = React.forwardRef(function RadioIndicator(
   componentProps: RadioIndicator.Props,
@@ -61,7 +61,7 @@ export const RadioIndicator = React.forwardRef(function RadioIndicator(
   return element;
 });
 
-export interface RadioIndicatorProps extends BaseUIComponentProps<'span', RadioIndicatorState> {
+export interface RadioIndicatorProps extends ObstudioComponentProps<'span', RadioIndicatorState> {
   /**
    * Whether to keep the HTML element in the DOM when the radio button is inactive.
    * @default false

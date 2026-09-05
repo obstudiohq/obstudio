@@ -1,8 +1,8 @@
 import { describe, expect } from 'vitest';
 import * as React from 'react';
 import { screen, waitFor } from '@mui/internal-test-utils';
-import { DirectionProvider, type TextDirection } from '@base-ui/react/direction-provider';
-import { Slider } from '@base-ui/react/slider';
+import { DirectionProvider, type TextDirection } from '@obstudio/react/direction-provider';
+import { Slider } from '@obstudio/react/slider';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 
 describe('<Slider.Indicator />', () => {

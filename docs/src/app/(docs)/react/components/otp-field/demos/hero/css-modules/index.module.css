@@ -32,7 +32,7 @@
   border: 1px solid oklch(14.5% 0 0deg);
   width: 2.5rem;
   height: 2.5rem;
-  border-radius: 0;
+  border-radius: 8px;
   font-family: inherit;
   font-size: 1rem;
   line-height: 1.5rem;

@@ -1,12 +1,12 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { RadioGroup } from '@base-ui/react/radio-group';
-import { Radio } from '@base-ui/react/radio';
-import { Field } from '@base-ui/react/field';
-import { Fieldset } from '@base-ui/react/fieldset';
-import { Form } from '@base-ui/react/form';
-import { DirectionProvider, type TextDirection } from '@base-ui/react/direction-provider';
+import { RadioGroup } from '@obstudio/react/radio-group';
+import { Radio } from '@obstudio/react/radio';
+import { Field } from '@obstudio/react/field';
+import { Fieldset } from '@obstudio/react/fieldset';
+import { Form } from '@obstudio/react/form';
+import { DirectionProvider, type TextDirection } from '@obstudio/react/direction-provider';
 import { isJSDOM, createRenderer } from '#test-utils';
 import { act, screen, fireEvent } from '@mui/internal-test-utils';
 import { describeConformance } from '../../test/describeConformance';

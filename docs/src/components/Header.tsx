@@ -13,7 +13,7 @@ export function Header() {
       <div className="HeaderInner">
         <SkipNav>Skip to contents</SkipNav>
         <NextLink href="/" className="HeaderLogoLink" aria-label="Go to the homepage">
-          <Logo aria-label="Base UI" />
+          <Logo aria-label="Obstudio" />
         </NextLink>
         <div className="HeaderSearch">
           <SearchControls

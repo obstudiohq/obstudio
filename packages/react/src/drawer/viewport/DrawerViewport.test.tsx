@@ -1,10 +1,10 @@
 import { describe, expect, it, vi } from 'vitest';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Combobox } from '@base-ui/react/combobox';
-import { Drawer } from '@base-ui/react/drawer';
-import { Slider } from '@base-ui/react/slider';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { Combobox } from '@obstudio/react/combobox';
+import { Drawer } from '@obstudio/react/drawer';
+import { Slider } from '@obstudio/react/slider';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
 import { act, fireEvent, flushMicrotasks, screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance, firePointer, isJSDOM } from '#test-utils';
 import { useDialogRootContext } from '../../dialog/root/DialogRootContext';
@@ -262,7 +262,7 @@ describe('<Drawer.Viewport />', () => {
             <Drawer.Viewport>
               <Drawer.Popup>
                 <div data-testid="target">Target</div>
-                <div data-base-ui-swipe-ignore data-testid="ignored">
+                <div data-obstudio-swipe-ignore data-testid="ignored">
                   Ignore
                 </div>
               </Drawer.Popup>
@@ -477,7 +477,7 @@ describe('<Drawer.Viewport />', () => {
     }
   });
 
-  it('allows clicks on non-interactive elements without data-base-ui-swipe-ignore', async () => {
+  it('allows clicks on non-interactive elements without data-obstudio-swipe-ignore', async () => {
     const handleClick = vi.fn();
     const handleOpenChange = vi.fn();
 
@@ -533,7 +533,7 @@ describe('<Drawer.Viewport />', () => {
     expect(backdrop).not.toHaveAttribute('data-swiping');
   });
 
-  it('does not start touch swipes from elements with data-base-ui-swipe-ignore', async () => {
+  it('does not start touch swipes from elements with data-obstudio-swipe-ignore', async () => {
     const handleOpenChange = vi.fn();
 
     await render(
@@ -543,7 +543,7 @@ describe('<Drawer.Viewport />', () => {
           <Drawer.Viewport data-testid="viewport">
             <Drawer.Popup>
               <Drawer.Content>
-                <div data-testid="target" data-base-ui-swipe-ignore>
+                <div data-testid="target" data-obstudio-swipe-ignore>
                   Action
                 </div>
               </Drawer.Content>

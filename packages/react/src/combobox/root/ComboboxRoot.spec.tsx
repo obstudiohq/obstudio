@@ -3,7 +3,7 @@ import {
   Combobox,
   type ComboboxItemCollection,
   type CreateComboboxItemsOptions,
-} from '@base-ui/react/combobox';
+} from '@obstudio/react/combobox';
 import { expectType } from '#test-utils';
 import { mergeProps } from '../../merge-props';
 import { REASONS } from '../../internals/reasons';

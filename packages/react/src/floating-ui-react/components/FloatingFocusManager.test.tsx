@@ -5,8 +5,8 @@ import { test, vi, expect, beforeEach, describe } from 'vitest';
 
 /* eslint-disable react/jsx-fragments */
 import userEvent from '@testing-library/user-event';
-import type { InteractionType } from '@base-ui/utils/useEnhancedClickHandler';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import type { InteractionType } from '@obstudio/utils/useEnhancedClickHandler';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
 import {
   flushMicrotasks,
   act,
@@ -943,7 +943,7 @@ describe('FloatingFocusManager', () => {
               {open && (
                 <FloatingFocusManager context={context} modal={false}>
                   <div role="dialog" ref={refs.setFloating} data-testid="floating">
-                    <button data-base-ui-click-trigger="" data-testid="nested-trigger" />
+                    <button data-obstudio-click-trigger="" data-testid="nested-trigger" />
                   </div>
                 </FloatingFocusManager>
               )}
@@ -1266,17 +1266,17 @@ describe('FloatingFocusManager', () => {
         expect(screen.getByTestId('aria-live')).not.toHaveAttribute('inert');
         expect(screen.getByTestId('btn-1')).not.toHaveAttribute('inert');
         expect(screen.getByTestId('btn-2')).not.toHaveAttribute('inert');
-        expect(screen.getByTestId('reference')).toHaveAttribute('data-base-ui-inert');
-        expect(screen.getByTestId('outside-wrapper')).toHaveAttribute('data-base-ui-inert');
-        expect(screen.getByTestId('btn-1')).not.toHaveAttribute('data-base-ui-inert');
-        expect(screen.getByTestId('btn-2')).not.toHaveAttribute('data-base-ui-inert');
+        expect(screen.getByTestId('reference')).toHaveAttribute('data-obstudio-inert');
+        expect(screen.getByTestId('outside-wrapper')).toHaveAttribute('data-obstudio-inert');
+        expect(screen.getByTestId('btn-1')).not.toHaveAttribute('data-obstudio-inert');
+        expect(screen.getByTestId('btn-2')).not.toHaveAttribute('data-obstudio-inert');
 
         fireEvent.click(screen.getByTestId('reference'));
 
-        expect(screen.getByTestId('reference')).not.toHaveAttribute('data-base-ui-inert');
-        expect(screen.getByTestId('outside-wrapper')).not.toHaveAttribute('data-base-ui-inert');
-        expect(screen.getByTestId('btn-1')).not.toHaveAttribute('data-base-ui-inert');
-        expect(screen.getByTestId('btn-2')).not.toHaveAttribute('data-base-ui-inert');
+        expect(screen.getByTestId('reference')).not.toHaveAttribute('data-obstudio-inert');
+        expect(screen.getByTestId('outside-wrapper')).not.toHaveAttribute('data-obstudio-inert');
+        expect(screen.getByTestId('btn-1')).not.toHaveAttribute('data-obstudio-inert');
+        expect(screen.getByTestId('btn-2')).not.toHaveAttribute('data-obstudio-inert');
       });
 
       test('false - keeps marker on top-level outside ancestor when reference has siblings', async () => {
@@ -1317,23 +1317,23 @@ describe('FloatingFocusManager', () => {
         await flushMicrotasks();
 
         expect(screen.getByTestId('floating')).not.toHaveAttribute('inert');
-        expect(screen.getByTestId('outside-wrapper')).toHaveAttribute('data-base-ui-inert');
-        expect(screen.getByTestId('outside-sibling')).toHaveAttribute('data-base-ui-inert');
-        expect(screen.getByTestId('reference')).not.toHaveAttribute('data-base-ui-inert');
-        expect(screen.getByTestId('btn-1')).not.toHaveAttribute('data-base-ui-inert');
-        expect(screen.getByTestId('btn-2')).not.toHaveAttribute('data-base-ui-inert');
-        expect(screen.getByTestId('nested-wrapper')).not.toHaveAttribute('data-base-ui-inert');
-        expect(screen.getByTestId('nested-btn')).not.toHaveAttribute('data-base-ui-inert');
+        expect(screen.getByTestId('outside-wrapper')).toHaveAttribute('data-obstudio-inert');
+        expect(screen.getByTestId('outside-sibling')).toHaveAttribute('data-obstudio-inert');
+        expect(screen.getByTestId('reference')).not.toHaveAttribute('data-obstudio-inert');
+        expect(screen.getByTestId('btn-1')).not.toHaveAttribute('data-obstudio-inert');
+        expect(screen.getByTestId('btn-2')).not.toHaveAttribute('data-obstudio-inert');
+        expect(screen.getByTestId('nested-wrapper')).not.toHaveAttribute('data-obstudio-inert');
+        expect(screen.getByTestId('nested-btn')).not.toHaveAttribute('data-obstudio-inert');
 
         fireEvent.click(screen.getByTestId('reference'));
 
-        expect(screen.getByTestId('outside-wrapper')).not.toHaveAttribute('data-base-ui-inert');
-        expect(screen.getByTestId('outside-sibling')).not.toHaveAttribute('data-base-ui-inert');
-        expect(screen.getByTestId('reference')).not.toHaveAttribute('data-base-ui-inert');
-        expect(screen.getByTestId('btn-1')).not.toHaveAttribute('data-base-ui-inert');
-        expect(screen.getByTestId('btn-2')).not.toHaveAttribute('data-base-ui-inert');
-        expect(screen.getByTestId('nested-wrapper')).not.toHaveAttribute('data-base-ui-inert');
-        expect(screen.getByTestId('nested-btn')).not.toHaveAttribute('data-base-ui-inert');
+        expect(screen.getByTestId('outside-wrapper')).not.toHaveAttribute('data-obstudio-inert');
+        expect(screen.getByTestId('outside-sibling')).not.toHaveAttribute('data-obstudio-inert');
+        expect(screen.getByTestId('reference')).not.toHaveAttribute('data-obstudio-inert');
+        expect(screen.getByTestId('btn-1')).not.toHaveAttribute('data-obstudio-inert');
+        expect(screen.getByTestId('btn-2')).not.toHaveAttribute('data-obstudio-inert');
+        expect(screen.getByTestId('nested-wrapper')).not.toHaveAttribute('data-obstudio-inert');
+        expect(screen.getByTestId('nested-btn')).not.toHaveAttribute('data-obstudio-inert');
       });
     });
 
@@ -1785,9 +1785,13 @@ describe('FloatingFocusManager', () => {
         await flushMicrotasks();
 
         expect(screen.getByTestId('floating')).toBeInTheDocument();
-        expect(screen.getByTestId('reference')).not.toHaveAttribute('data-base-ui-inert');
-        expect(screen.getByTestId('reference-sibling-1')).not.toHaveAttribute('data-base-ui-inert');
-        expect(screen.getByTestId('reference-sibling-2')).not.toHaveAttribute('data-base-ui-inert');
+        expect(screen.getByTestId('reference')).not.toHaveAttribute('data-obstudio-inert');
+        expect(screen.getByTestId('reference-sibling-1')).not.toHaveAttribute(
+          'data-obstudio-inert',
+        );
+        expect(screen.getByTestId('reference-sibling-2')).not.toHaveAttribute(
+          'data-obstudio-inert',
+        );
       });
 
       test('renders the aria-owns owner without changing regular reference semantics', async () => {
@@ -1824,7 +1828,7 @@ describe('FloatingFocusManager', () => {
         await flushMicrotasks();
 
         const reference = screen.getByTestId('reference');
-        const portalNode = screen.getByTestId('floating').closest('[data-base-ui-portal]');
+        const portalNode = screen.getByTestId('floating').closest('[data-obstudio-portal]');
         const portalNodeId = portalNode?.id ?? '';
         const owner = portalNode?.ownerDocument.querySelector('span[aria-owns]');
 
@@ -1867,7 +1871,7 @@ describe('FloatingFocusManager', () => {
         await userEvent.click(screen.getByTestId('reference'));
         await flushMicrotasks();
 
-        const portalNode = screen.getByTestId('floating').closest('[data-base-ui-portal]');
+        const portalNode = screen.getByTestId('floating').closest('[data-obstudio-portal]');
         const owner = portalNode?.ownerDocument.querySelector('span[aria-owns]');
 
         expect(portalNode).not.toBe(null);

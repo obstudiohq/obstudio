@@ -1,5 +1,5 @@
 import { describe } from 'vitest';
-import { Popover } from '@base-ui/react/popover';
+import { Popover } from '@obstudio/react/popover';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Popover.Arrow />', () => {

@@ -1,4 +1,4 @@
-import { EMPTY_OBJECT } from '@base-ui/utils/empty';
+import { EMPTY_OBJECT } from '@obstudio/utils/empty';
 import { REASONS } from './reasons';
 
 interface ReasonToEventMap {
@@ -53,7 +53,7 @@ export type ReasonToEvent<Reason extends string> = Reason extends keyof ReasonTo
   ? ReasonToEventMap[Reason]
   : Event;
 
-type BaseUIChangeEventDetail<Reason extends string, CustomProperties extends object> = {
+type ObstudioChangeEventDetail<Reason extends string, CustomProperties extends object> = {
   /**
    * The reason for the event.
    */
@@ -63,11 +63,11 @@ type BaseUIChangeEventDetail<Reason extends string, CustomProperties extends obj
    */
   event: ReasonToEvent<Reason>;
   /**
-   * Cancels Base UI from handling the event.
+   * Cancels Obstudio from handling the event.
    */
   cancel: () => void;
   /**
-   * Allows the event to propagate in cases where Base UI will stop the propagation.
+   * Allows the event to propagate in cases where Obstudio will stop the propagation.
    */
   allowPropagation: () => void;
   /**
@@ -85,17 +85,17 @@ type BaseUIChangeEventDetail<Reason extends string, CustomProperties extends obj
 } & CustomProperties;
 
 /**
- * Details of custom change events emitted by Base UI components.
+ * Details of custom change events emitted by Obstudio components.
  */
-export type BaseUIChangeEventDetails<
+export type ObstudioChangeEventDetails<
   Reason extends string,
   CustomProperties extends object = {},
-> = Reason extends string ? BaseUIChangeEventDetail<Reason, CustomProperties> & {} : never;
+> = Reason extends string ? ObstudioChangeEventDetail<Reason, CustomProperties> & {} : never;
 
 /**
- * Details of custom generic events emitted by Base UI components.
+ * Details of custom generic events emitted by Obstudio components.
  */
-type BaseUIGenericEventDetail<Reason extends string, CustomProperties extends object> = {
+type ObstudioGenericEventDetail<Reason extends string, CustomProperties extends object> = {
   /**
    * The reason for the event.
    */
@@ -106,14 +106,14 @@ type BaseUIGenericEventDetail<Reason extends string, CustomProperties extends ob
   event: ReasonToEvent<Reason>;
 } & CustomProperties;
 
-export type BaseUIGenericEventDetails<
+export type ObstudioGenericEventDetails<
   Reason extends string,
   CustomProperties extends object = {},
-> = Reason extends string ? BaseUIGenericEventDetail<Reason, CustomProperties> & {} : never;
+> = Reason extends string ? ObstudioGenericEventDetail<Reason, CustomProperties> & {} : never;
 
 /**
- * Creates a Base UI event details object with the given reason and utilities
- * for preventing Base UI's internal event handling.
+ * Creates a Obstudio event details object with the given reason and utilities
+ * for preventing Obstudio's internal event handling.
  */
 export function createChangeEventDetails<
   Reason extends string,
@@ -123,13 +123,13 @@ export function createChangeEventDetails<
   event?: ReasonToEvent<Reason>,
   trigger?: Element,
   customProperties?: CustomProperties,
-): BaseUIChangeEventDetails<Reason, CustomProperties> {
+): ObstudioChangeEventDetails<Reason, CustomProperties> {
   let canceled = false;
   let allowPropagation = false;
   const custom = customProperties ?? (EMPTY_OBJECT as CustomProperties);
-  const details: BaseUIChangeEventDetail<Reason, CustomProperties> = {
+  const details: ObstudioChangeEventDetail<Reason, CustomProperties> = {
     reason,
-    event: (event ?? new Event('base-ui')) as ReasonToEvent<Reason>,
+    event: (event ?? new Event('obstudio')) as ReasonToEvent<Reason>,
     cancel() {
       canceled = true;
     },
@@ -145,7 +145,7 @@ export function createChangeEventDetails<
     trigger,
     ...custom,
   };
-  return details as BaseUIChangeEventDetails<Reason, CustomProperties>;
+  return details as ObstudioChangeEventDetails<Reason, CustomProperties>;
 }
 
 export function createGenericEventDetails<
@@ -155,12 +155,12 @@ export function createGenericEventDetails<
   reason: Reason,
   event?: ReasonToEvent<Reason>,
   customProperties?: CustomProperties,
-): BaseUIGenericEventDetails<Reason, CustomProperties> {
+): ObstudioGenericEventDetails<Reason, CustomProperties> {
   const custom = customProperties ?? (EMPTY_OBJECT as CustomProperties);
-  const details: BaseUIGenericEventDetail<Reason, CustomProperties> = {
+  const details: ObstudioGenericEventDetail<Reason, CustomProperties> = {
     reason,
-    event: (event ?? new Event('base-ui')) as ReasonToEvent<Reason>,
+    event: (event ?? new Event('obstudio')) as ReasonToEvent<Reason>,
     ...custom,
   };
-  return details as BaseUIGenericEventDetails<Reason, CustomProperties>;
+  return details as ObstudioGenericEventDetails<Reason, CustomProperties>;
 }

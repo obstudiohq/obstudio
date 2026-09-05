@@ -1,15 +1,15 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useRefWithInit } from '@obstudio/utils/useRefWithInit';
 import { HTMLProps } from '../types';
-import { useBaseUiId } from '../useBaseUiId';
+import { useObstudioId } from '../useObstudioId';
 import { LabelableContext, useLabelableContext } from './LabelableContext';
 
 export const LabelableProvider: React.FC<LabelableProvider.Props> = function LabelableProvider(
   props,
 ) {
-  const defaultId = useBaseUiId();
+  const defaultId = useObstudioId();
 
   const [controlIdState, setControlIdState] = React.useState<string | null | undefined>(defaultId);
   const [labelId, setLabelId] = React.useState<string | undefined>();

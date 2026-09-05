@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { Menu } from '@base-ui/react/menu';
-import { Menubar } from '@base-ui/react/menubar';
+import { Menu } from '@obstudio/react/menu';
+import { Menubar } from '@obstudio/react/menubar';
 import { SettingsMetadata, useExperimentSettings } from './_components/SettingsPanel';
 import '../../../demo-data/theme/css-modules/theme.css';
 import menuClasses from './menu/menu.module.css';

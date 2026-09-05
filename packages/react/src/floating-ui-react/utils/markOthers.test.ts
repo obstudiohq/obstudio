@@ -102,7 +102,7 @@ test('multiple cleanups with differing controlAttribute', () => {
   const cleanup2 = markOthers([target2]);
 
   expect(target.getAttribute('aria-hidden')).not.toBe('true');
-  expect(target.getAttribute('data-base-ui-inert')).toBe('');
+  expect(target.getAttribute('data-obstudio-inert')).toBe('');
 
   cleanup();
 
@@ -110,7 +110,7 @@ test('multiple cleanups with differing controlAttribute', () => {
 
   cleanup2();
 
-  expect(target.getAttribute('data-base-ui-inert')).toBe(null);
+  expect(target.getAttribute('data-obstudio-inert')).toBe(null);
 });
 
 test('mixed controlAttribute usage (aria-hidden/inert/none)', () => {
@@ -133,37 +133,37 @@ test('mixed controlAttribute usage (aria-hidden/inert/none)', () => {
 
   expect(other.getAttribute('aria-hidden')).toBe('true');
   expect(other.hasAttribute('inert')).toBe(false);
-  expect(other.getAttribute('data-base-ui-inert')).toBe('');
+  expect(other.getAttribute('data-obstudio-inert')).toBe('');
 
   const cleanupB = markOthers([B], { inert: true });
 
   expect(other.getAttribute('aria-hidden')).toBe('true');
   expect(other.getAttribute('inert')).toBe('');
-  expect(other.getAttribute('data-base-ui-inert')).toBe('');
+  expect(other.getAttribute('data-obstudio-inert')).toBe('');
 
   const cleanupC = markOthers([C]);
 
   expect(other.getAttribute('aria-hidden')).toBe('true');
   expect(other.getAttribute('inert')).toBe('');
-  expect(other.getAttribute('data-base-ui-inert')).toBe('');
+  expect(other.getAttribute('data-obstudio-inert')).toBe('');
 
   cleanupC();
 
   expect(other.getAttribute('aria-hidden')).toBe('true');
   expect(other.getAttribute('inert')).toBe('');
-  expect(other.getAttribute('data-base-ui-inert')).toBe('');
+  expect(other.getAttribute('data-obstudio-inert')).toBe('');
 
   cleanupB();
 
   expect(other.getAttribute('aria-hidden')).toBe('true');
   expect(other.hasAttribute('inert')).toBe(false);
-  expect(other.getAttribute('data-base-ui-inert')).toBe('');
+  expect(other.getAttribute('data-obstudio-inert')).toBe('');
 
   cleanupA();
 
   expect(other.hasAttribute('aria-hidden')).toBe(false);
   expect(other.hasAttribute('inert')).toBe(false);
-  expect(other.hasAttribute('data-base-ui-inert')).toBe(false);
+  expect(other.hasAttribute('data-obstudio-inert')).toBe(false);
 });
 
 test('tracks externally controlled attributes per control attribute', () => {
@@ -247,19 +247,19 @@ test('does not let mark-only overlap disturb control cleanup bookkeeping', () =>
     cleanupMarkOnly = markOthers([keep], { mark: true });
     cleanupControlOnly = markOthers([keep], { ariaHidden: true, mark: false });
 
-    expect(outside).toHaveAttribute('data-base-ui-inert');
+    expect(outside).toHaveAttribute('data-obstudio-inert');
     expect(outside).toHaveAttribute('aria-hidden', 'true');
 
     cleanupMarkOnly();
     cleanupMarkOnly = undefined;
 
-    expect(outside).not.toHaveAttribute('data-base-ui-inert');
+    expect(outside).not.toHaveAttribute('data-obstudio-inert');
     expect(outside).toHaveAttribute('aria-hidden', 'true');
 
     cleanupControlOnly();
     cleanupControlOnly = undefined;
 
-    expect(outside).not.toHaveAttribute('data-base-ui-inert');
+    expect(outside).not.toHaveAttribute('data-obstudio-inert');
     expect(outside).not.toHaveAttribute('aria-hidden');
   } finally {
     cleanupControlOnly?.();

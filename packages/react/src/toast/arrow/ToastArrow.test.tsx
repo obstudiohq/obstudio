@@ -1,6 +1,6 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
-import { Toast } from '@base-ui/react/toast';
+import { Toast } from '@obstudio/react/toast';
 import { screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 
@@ -80,7 +80,7 @@ describe('<Toast.Arrow />', () => {
           </Toast.Provider>,
         ),
       ).rejects.toThrow(
-        'Base UI: ToastPositionerContext is missing. ToastPositioner parts must be placed within <Toast.Positioner>.',
+        'Obstudio: ToastPositionerContext is missing. ToastPositioner parts must be placed within <Toast.Positioner>.',
       );
     } finally {
       errorSpy.mockRestore();

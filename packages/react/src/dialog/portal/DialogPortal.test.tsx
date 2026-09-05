@@ -1,6 +1,6 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
-import { Dialog } from '@base-ui/react/dialog';
+import { Dialog } from '@obstudio/react/dialog';
 import { createRenderer, describeConformance } from '#test-utils';
 import { screen } from '@mui/internal-test-utils';
 
@@ -24,7 +24,7 @@ describe('<Dialog.Portal />', () => {
             <Dialog.Viewport />
           </Dialog.Root>,
         ),
-      ).rejects.toThrow('Base UI: <Dialog.Portal> is missing.');
+      ).rejects.toThrow('Obstudio: <Dialog.Portal> is missing.');
     } finally {
       errorSpy.mockRestore();
     }

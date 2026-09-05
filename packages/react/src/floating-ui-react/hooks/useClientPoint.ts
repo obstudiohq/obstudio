@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { addEventListener } from '@base-ui/utils/addEventListener';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { addEventListener } from '@obstudio/utils/addEventListener';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
 import { getWindow } from '@floating-ui/utils/dom';
 import type { ContextData, ElementProps, FloatingContext, FloatingRootContext } from '../types';
 import { contains, getTarget } from '../utils/element';

@@ -8,8 +8,8 @@ import {
   screen,
   waitFor,
 } from '@mui/internal-test-utils';
-import { Collapsible } from '@base-ui/react/collapsible';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { Collapsible } from '@obstudio/react/collapsible';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { REASONS } from '../../internals/reasons';
 
@@ -65,7 +65,7 @@ describe('<Collapsible.Panel />', () => {
       );
 
       expect(warnSpy).toHaveBeenCalledWith(
-        'Base UI: The `keepMounted={false}` prop on `Collapsible.Panel` is ignored when `hiddenUntilFound` is enabled, since the panel must remain mounted while closed.',
+        'Obstudio: The `keepMounted={false}` prop on `Collapsible.Panel` is ignored when `hiddenUntilFound` is enabled, since the panel must remain mounted while closed.',
       );
       expect(screen.getByText(PANEL_CONTENT).getAttribute('hidden')).toBe('until-found');
     } finally {
@@ -406,7 +406,7 @@ describe('<Collapsible.Panel />', () => {
         expect(panel.style.getPropertyValue('justify-content')).toBe('initial');
         expect(panel.style.getPropertyPriority('justify-content')).toBe('important');
         expect(warnSpy).toHaveBeenCalledWith(
-          'Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.',
+          'Obstudio: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.',
         );
 
         await act(async () => {
@@ -471,8 +471,8 @@ describe('<Collapsible.Panel />', () => {
     });
 
     it('keeps the measured size when an open animation finishes during a close commit', async () => {
-      const animationsDisabled = globalThis.BASE_UI_ANIMATIONS_DISABLED;
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      const animationsDisabled = globalThis.OBSTUDIO_ANIMATIONS_DISABLED;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
       const abortSpy = vi.spyOn(AbortController.prototype, 'abort').mockImplementation(() => {});
       let animationStarted = false;
       const animation = new Animation(new KeyframeEffect(null, [], 10_000), document.timeline);
@@ -535,13 +535,13 @@ describe('<Collapsible.Panel />', () => {
       } finally {
         animation.cancel();
         abortSpy.mockRestore();
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = animationsDisabled;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = animationsDisabled;
       }
     });
 
     it('does not restart the entrance transition when a close animation finishes after reopening', async () => {
-      const animationsDisabled = globalThis.BASE_UI_ANIMATIONS_DISABLED;
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      const animationsDisabled = globalThis.OBSTUDIO_ANIMATIONS_DISABLED;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
       const abortSpy = vi.spyOn(AbortController.prototype, 'abort').mockImplementation(() => {});
       let closeAnimationStarted = false;
       const closeAnimation = new Animation(new KeyframeEffect(null, [], 10_000), document.timeline);
@@ -595,7 +595,7 @@ describe('<Collapsible.Panel />', () => {
       } finally {
         closeAnimation.cancel();
         abortSpy.mockRestore();
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = animationsDisabled;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = animationsDisabled;
       }
     });
   });

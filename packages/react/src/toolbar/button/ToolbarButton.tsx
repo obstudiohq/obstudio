@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { EMPTY_OBJECT } from '@base-ui/utils/empty';
-import { BaseUIComponentProps, NativeButtonProps } from '../../internals/types';
+import { EMPTY_OBJECT } from '@obstudio/utils/empty';
+import { ObstudioComponentProps, NativeButtonProps } from '../../internals/types';
 import { useButton } from '../../internals/use-button';
 import type { ToolbarRootState } from '../root/ToolbarRoot';
 import { useToolbarRootContext } from '../root/ToolbarRootContext';
@@ -12,7 +12,7 @@ import { CompositeItem } from '../../internals/composite/item/CompositeItem';
  * A button that can be used as-is or as a trigger for other components.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Toolbar](https://base-ui.com/react/components/toolbar)
+ * Documentation: [Obstudio Toolbar](https://obstudio.co/react/components/toolbar)
  */
 export const ToolbarButton = React.forwardRef(function ToolbarButton(
   componentProps: ToolbarButton.Props,
@@ -62,12 +62,12 @@ export const ToolbarButton = React.forwardRef(function ToolbarButton(
       refs={[forwardedRef, buttonRef]}
       props={[
         elementProps,
-        // When a render prop is provided (typically another Base UI component
+        // When a render prop is provided (typically another Obstudio component
         // like Menu.Trigger), forward `disabled` so the rendered component can
         // derive its own disabled state. For the default toolbar button, avoid
         // forwarding a React `disabled` prop so focusable disabled buttons remain
         // hoverable for interactions like tooltips.
-        // TODO: follow up after https://github.com/mui/base-ui/issues/1976#issuecomment-2916905663
+        // TODO: follow up after https://github.com/obstudiohq/obstudio/issues/1976#issuecomment-2916905663
         render ? { disabled } : EMPTY_OBJECT,
         getButtonProps,
       ]}
@@ -87,7 +87,7 @@ export interface ToolbarButtonState extends ToolbarRootState {
 }
 
 export interface ToolbarButtonProps
-  extends NativeButtonProps, BaseUIComponentProps<'button', ToolbarButtonState> {
+  extends NativeButtonProps, ObstudioComponentProps<'button', ToolbarButtonState> {
   /**
    * When `true` the item is disabled.
    * @default false

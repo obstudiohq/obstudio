@@ -1,6 +1,6 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
-import { Select } from '@base-ui/react/select';
+import { Select } from '@obstudio/react/select';
 import {
   act,
   fireEvent,
@@ -982,9 +982,9 @@ describe('<Select.Item />', () => {
       expect(screen.getByTestId('value').textContent).toBe('Select font');
     });
 
-    it('should not select item when onClick calls preventBaseUIHandler during drag-to-select', async () => {
+    it('should not select item when onClick calls preventObstudioHandler during drag-to-select', async () => {
       ignoreActWarnings();
-      const handleClick = vi.fn((event) => event.preventBaseUIHandler());
+      const handleClick = vi.fn((event) => event.preventObstudioHandler());
 
       await renderFakeTimers(
         <Select.Root>

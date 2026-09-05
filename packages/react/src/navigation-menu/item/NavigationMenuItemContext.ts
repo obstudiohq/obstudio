@@ -13,7 +13,7 @@ export function useNavigationMenuItemContext() {
   const value = React.useContext(NavigationMenuItemContext);
   if (!value) {
     throw new Error(
-      'Base UI: NavigationMenuItem parts must be used within a <NavigationMenu.Item>.',
+      'Obstudio: NavigationMenuItem parts must be used within a <NavigationMenu.Item>.',
     );
   }
   return value;

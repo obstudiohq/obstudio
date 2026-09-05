@@ -3,13 +3,13 @@ import { expect } from 'vitest';
 import { randomStringValue, screen } from '@mui/internal-test-utils';
 import type {
   ConformantComponentProps,
-  BaseUiConformanceTestsOptions,
+  ObstudioConformanceTestsOptions,
 } from '../describeConformance';
 import { throwMissingPropError } from './utils';
 
 export function testRenderProp(
   element: React.ReactElement<ConformantComponentProps>,
-  getOptions: () => BaseUiConformanceTestsOptions,
+  getOptions: () => ObstudioConformanceTestsOptions,
 ) {
   const {
     render,
@@ -27,7 +27,7 @@ export function testRenderProp(
   const Wrapper = React.forwardRef<any, { children?: React.ReactNode }>(
     function Wrapper(props, forwardedRef) {
       return wrappingAllowed ? (
-        <div data-testid="base-ui-wrapper">
+        <div data-testid="obstudio-wrapper">
           <Element ref={forwardedRef} {...props} data-testid="wrapped" />
         </div>
       ) : (
@@ -52,7 +52,7 @@ export function testRenderProp(
       );
 
       if (wrappingAllowed) {
-        expect(screen.queryByTestId('base-ui-wrapper')).not.toBe(null);
+        expect(screen.queryByTestId('obstudio-wrapper')).not.toBe(null);
       }
       expect(screen.queryByTestId('wrapped')).not.toBe(null);
       expect(screen.queryByTestId('wrapped')).toHaveAttribute('data-test-value', testValue);
@@ -69,7 +69,7 @@ export function testRenderProp(
       );
 
       if (wrappingAllowed) {
-        expect(screen.queryByTestId('base-ui-wrapper')).not.toBe(null);
+        expect(screen.queryByTestId('obstudio-wrapper')).not.toBe(null);
       }
       expect(screen.queryByTestId('wrapped')).not.toBe(null);
       expect(screen.queryByTestId('wrapped')).toHaveAttribute('data-test-value', testValue);
@@ -84,7 +84,7 @@ export function testRenderProp(
       );
 
       if (wrappingAllowed) {
-        expect(screen.queryByTestId('base-ui-wrapper')).not.toBe(null);
+        expect(screen.queryByTestId('obstudio-wrapper')).not.toBe(null);
       } else {
         expect(screen.queryByTestId('wrapped')).not.toBe(null);
       }

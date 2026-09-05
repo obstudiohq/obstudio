@@ -1,13 +1,13 @@
 'use client';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { addEventListener } from '@base-ui/utils/addEventListener';
-import { ownerDocument } from '@base-ui/utils/owner';
-import { inertValue } from '@base-ui/utils/inertValue';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { addEventListener } from '@obstudio/utils/addEventListener';
+import { ownerDocument } from '@obstudio/utils/owner';
+import { inertValue } from '@obstudio/utils/inertValue';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
 import { activeElement, contains, getTarget } from '../../floating-ui-react/utils';
-import type { BaseUIComponentProps, HTMLProps } from '../../internals/types';
+import type { ObstudioComponentProps, HTMLProps } from '../../internals/types';
 import type { ToastObject as ToastObjectType } from '../useToastManager';
 import { ToastRootContext } from './ToastRootContext';
 import { transitionStatusMapping } from '../../internals/stateAttributesMapping';
@@ -17,7 +17,7 @@ import { StateAttributesMapping } from '../../internals/getStateAttributesProps'
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useOpenChangeComplete } from '../../internals/useOpenChangeComplete';
 import {
-  BASE_UI_SWIPE_IGNORE_SELECTOR,
+  OBSTUDIO_SWIPE_IGNORE_SELECTOR,
   LEGACY_SWIPE_IGNORE_SELECTOR,
 } from '../../internals/constants';
 import { getDisplacement } from '../../utils/useSwipeDismiss';
@@ -36,13 +36,13 @@ const SWIPE_THRESHOLD = 40;
 const REVERSE_CANCEL_THRESHOLD = 10;
 const OPPOSITE_DIRECTION_DAMPING_FACTOR = 0.5;
 const MIN_DRAG_THRESHOLD = 1;
-const TOAST_SWIPE_IGNORE_SELECTOR = `${BASE_UI_SWIPE_IGNORE_SELECTOR},${LEGACY_SWIPE_IGNORE_SELECTOR}`;
+const TOAST_SWIPE_IGNORE_SELECTOR = `${OBSTUDIO_SWIPE_IGNORE_SELECTOR},${LEGACY_SWIPE_IGNORE_SELECTOR}`;
 
 /**
  * Groups all parts of an individual toast.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+ * Documentation: [Obstudio Toast](https://obstudio.co/react/components/toast)
  */
 export const ToastRoot = React.forwardRef(function ToastRoot(
   componentProps: ToastRoot.Props,
@@ -541,7 +541,7 @@ export interface ToastRootState {
   swipeDirection: 'up' | 'down' | 'left' | 'right' | undefined;
 }
 
-export interface ToastRootProps extends BaseUIComponentProps<'div', ToastRootState> {
+export interface ToastRootProps extends ObstudioComponentProps<'div', ToastRootState> {
   /**
    * The toast to render.
    */

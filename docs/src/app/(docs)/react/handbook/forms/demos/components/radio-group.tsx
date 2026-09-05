@@ -1,6 +1,6 @@
 import * as React from 'react';
 import clsx from 'clsx';
-import { RadioGroup as BaseRadioGroup } from '@base-ui/react/radio-group';
+import { RadioGroup as BaseRadioGroup } from '@obstudio/react/radio-group';
 
 export function RadioGroup<Value>({ className, ...props }: BaseRadioGroup.Props<Value>) {
   return (

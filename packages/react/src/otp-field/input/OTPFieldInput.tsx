@@ -1,16 +1,16 @@
 'use client';
 import * as React from 'react';
-import { SafeReact } from '@base-ui/utils/safeReact';
-import { warn } from '@base-ui/utils/warn';
+import { SafeReact } from '@obstudio/utils/safeReact';
+import { warn } from '@obstudio/utils/warn';
 import { stopEvent } from '../../floating-ui-react/utils';
 import { useCompositeListItem } from '../../internals/composite/list/useCompositeListItem';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useDirection } from '../../internals/direction-context/DirectionContext';
 import { useRenderElement } from '../../internals/useRenderElement';
 import {
   createChangeEventDetails,
   createGenericEventDetails,
-} from '../../internals/createBaseUIEventDetails';
+} from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { useOTPFieldRootContext, getOTPFieldInputState } from '../root/OTPFieldRootContext';
 import type { OTPFieldRootState } from '../root/OTPFieldRoot';
@@ -21,7 +21,7 @@ import { normalizeOTPValueWithDetails, removeOTPCharacter, replaceOTPValue } fro
  * An individual OTP character input.
  * Renders an `<input>` element.
  *
- * Documentation: [Base UI OTP Field](https://base-ui.com/react/components/otp-field)
+ * Documentation: [Obstudio OTP Field](https://obstudio.co/react/components/otp-field)
  */
 export const OTPFieldInput = React.forwardRef(function OTPFieldInput(
   componentProps: OTPFieldInput.Props,
@@ -345,7 +345,7 @@ export interface OTPFieldInputState extends Omit<OTPFieldRootState, 'filled' | '
   value: string;
 }
 
-export interface OTPFieldInputProps extends BaseUIComponentProps<
+export interface OTPFieldInputProps extends ObstudioComponentProps<
   'input',
   OTPFieldInputState,
   React.ComponentPropsWithRef<'input'>

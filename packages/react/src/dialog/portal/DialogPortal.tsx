@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { inertValue } from '@base-ui/utils/inertValue';
+import { inertValue } from '@obstudio/utils/inertValue';
 import { FloatingPortal } from '../../floating-ui-react';
-import { type BaseUIComponentProps } from '../../internals/types';
+import { type ObstudioComponentProps } from '../../internals/types';
 import { useDialogRootContext } from '../root/DialogRootContext';
 import { DialogPortalContext } from './DialogPortalContext';
 import { InternalBackdrop } from '../../utils/InternalBackdrop';
@@ -12,7 +12,7 @@ import { InternalBackdrop } from '../../utils/InternalBackdrop';
  * By default, the portal element is appended to `<body>`.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)
+ * Documentation: [Obstudio Dialog](https://obstudio.co/react/components/dialog)
  */
 export const DialogPortal = React.forwardRef(function DialogPortal(
   props: DialogPortal.Props,
@@ -44,7 +44,7 @@ export const DialogPortal = React.forwardRef(function DialogPortal(
 
 export interface DialogPortalState {}
 
-export interface DialogPortalProps extends BaseUIComponentProps<'div', DialogPortalState> {
+export interface DialogPortalProps extends ObstudioComponentProps<'div', DialogPortalState> {
   /**
    * Whether to keep the portal mounted in the DOM while the popup is hidden.
    * @default false

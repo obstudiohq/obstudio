@@ -1,12 +1,12 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Form } from '@base-ui/react/form';
-import { Checkbox } from '@base-ui/react/checkbox';
-import { Field } from '@base-ui/react/field';
-import { Fieldset } from '@base-ui/react/fieldset';
-import { NumberField } from '@base-ui/react/number-field';
-import { Switch } from '@base-ui/react/switch';
+import { Form } from '@obstudio/react/form';
+import { Checkbox } from '@obstudio/react/checkbox';
+import { Field } from '@obstudio/react/field';
+import { Fieldset } from '@obstudio/react/fieldset';
+import { NumberField } from '@obstudio/react/number-field';
+import { Switch } from '@obstudio/react/switch';
 import {
   createRenderer,
   fireEvent,

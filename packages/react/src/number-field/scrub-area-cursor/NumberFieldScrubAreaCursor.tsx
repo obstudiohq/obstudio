@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { platform } from '@base-ui/utils/platform';
-import { ownerDocument } from '@base-ui/utils/owner';
+import { platform } from '@obstudio/utils/platform';
+import { ownerDocument } from '@obstudio/utils/owner';
 import { useNumberFieldRootContext } from '../root/NumberFieldRootContext';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import type { NumberFieldRootState } from '../root/NumberFieldRoot';
 import { stateAttributesMapping } from '../utils/stateAttributesMapping';
 import { useNumberFieldScrubAreaContext } from '../scrub-area/NumberFieldScrubAreaContext';
@@ -24,7 +24,7 @@ const CURSOR_STYLE: React.CSSProperties = {
  * This component uses the [Pointer Lock API](https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API), which may prompt the browser to display a related notification. It is disabled
  * in Safari to avoid a layout shift that this notification causes there.
  *
- * Documentation: [Base UI Number Field](https://base-ui.com/react/components/number-field)
+ * Documentation: [Obstudio Number Field](https://obstudio.co/react/components/number-field)
  */
 export const NumberFieldScrubAreaCursor = React.forwardRef(function NumberFieldScrubAreaCursor(
   componentProps: NumberFieldScrubAreaCursor.Props,
@@ -60,7 +60,7 @@ export const NumberFieldScrubAreaCursor = React.forwardRef(function NumberFieldS
 
 export interface NumberFieldScrubAreaCursorState extends NumberFieldRootState {}
 
-export interface NumberFieldScrubAreaCursorProps extends BaseUIComponentProps<
+export interface NumberFieldScrubAreaCursorProps extends ObstudioComponentProps<
   'span',
   NumberFieldScrubAreaCursorState
 > {}

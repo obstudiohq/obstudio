@@ -4,14 +4,14 @@ import { useMenuPositionerContext } from '../positioner/MenuPositionerContext';
 import { useMenuRootContext } from '../root/MenuRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';
 import type { Side, Align } from '../../internals/useAnchorPositioning';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { popupStateMapping } from '../../utils/popupStateMapping';
 
 /**
  * Displays an element positioned against the menu anchor.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Obstudio Menu](https://obstudio.co/react/components/menu)
  */
 export const MenuArrow = React.forwardRef(function MenuArrow(
   componentProps: MenuArrow.Props,
@@ -61,7 +61,7 @@ export interface MenuArrowState {
   uncentered: boolean;
 }
 
-export interface MenuArrowProps extends BaseUIComponentProps<'div', MenuArrowState> {}
+export interface MenuArrowProps extends ObstudioComponentProps<'div', MenuArrowState> {}
 
 export namespace MenuArrow {
   export type State = MenuArrowState;

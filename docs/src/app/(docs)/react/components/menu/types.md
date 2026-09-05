@@ -82,9 +82,9 @@ type MenuRootChangeEventDetails = (
   | { reason: 'cancel-open'; event: MouseEvent }
   | { reason: 'imperative-action'; event: Event }
 ) & {
-  /** Cancels Base UI from handling the event. */
+  /** Cancels Obstudio from handling the event. */
   cancel: () => void;
-  /** Allows the event to propagate in cases where Base UI will stop the propagation. */
+  /** Allows the event to propagate in cases where Obstudio will stop the propagation. */
   allowPropagation: () => void;
   /** Indicates whether the event has been canceled. */
   isCanceled: boolean;
@@ -413,7 +413,7 @@ Renders a `<div>` element.
 | Prop         | Type                                                                                    | Default | Description                                                                                                                                                                                   |
 | :----------- | :-------------------------------------------------------------------------------------- | :------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | label        | `string`                                                                                | -       | Overrides the text label to use when the item is matched during keyboard text navigation.                                                                                                     |
-| onClick      | `((event: BaseUIEvent<React.MouseEvent<HTMLDivElement, MouseEvent>>) => void)`          | -       | The click handler for the menu item.                                                                                                                                                          |
+| onClick      | `((event: ObstudioEvent<React.MouseEvent<HTMLDivElement, MouseEvent>>) => void)`        | -       | The click handler for the menu item.                                                                                                                                                          |
 | closeOnClick | `boolean`                                                                               | `true`  | Whether to close the menu when the item is clicked.                                                                                                                                           |
 | nativeButton | `boolean`                                                                               | `false` | Whether the component renders a native `<button>` element when replacing it&#xA;via the `render` prop.&#xA;Set to `true` if the rendered element is a native button.                          |
 | disabled     | `boolean`                                                                               | `false` | Whether the component should ignore user interaction.                                                                                                                                         |
@@ -635,9 +635,9 @@ type MenuSubmenuRootChangeEventDetails = (
   | { reason: 'cancel-open'; event: MouseEvent }
   | { reason: 'imperative-action'; event: Event }
 ) & {
-  /** Cancels Base UI from handling the event. */
+  /** Cancels Obstudio from handling the event. */
   cancel: () => void;
-  /** Allows the event to propagate in cases where Base UI will stop the propagation. */
+  /** Allows the event to propagate in cases where Obstudio will stop the propagation. */
   allowPropagation: () => void;
   /** Indicates whether the event has been canceled. */
   isCanceled: boolean;
@@ -659,7 +659,7 @@ Renders a `<div>` element.
 | Prop         | Type                                                                                              | Default | Description                                                                                                                                                                                   |
 | :----------- | :------------------------------------------------------------------------------------------------ | :------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | label        | `string`                                                                                          | -       | Overrides the text label to use when the item is matched during keyboard text navigation.                                                                                                     |
-| onClick      | `((event: BaseUIEvent<React.MouseEvent<HTMLDivElement, MouseEvent>>) => void)`                    | -       | -                                                                                                                                                                                             |
+| onClick      | `((event: ObstudioEvent<React.MouseEvent<HTMLDivElement, MouseEvent>>) => void)`                  | -       | -                                                                                                                                                                                             |
 | nativeButton | `boolean`                                                                                         | `false` | Whether the component renders a native `<button>` element when replacing it&#xA;via the `render` prop.&#xA;Set to `true` if the rendered element is a native button.                          |
 | disabled     | `boolean`                                                                                         | `false` | Whether the component should ignore user interaction.                                                                                                                                         |
 | openOnHover  | `boolean`                                                                                         | `true`  | Whether the menu should also open when the trigger is hovered.                                                                                                                                |
@@ -762,9 +762,9 @@ type MenuRadioGroupChangeEventDetails = (
   | { reason: 'cancel-open'; event: MouseEvent }
   | { reason: 'imperative-action'; event: Event }
 ) & {
-  /** Cancels Base UI from handling the event. */
+  /** Cancels Obstudio from handling the event. */
   cancel: () => void;
-  /** Allows the event to propagate in cases where Base UI will stop the propagation. */
+  /** Allows the event to propagate in cases where Obstudio will stop the propagation. */
   allowPropagation: () => void;
   /** Indicates whether the event has been canceled. */
   isCanceled: boolean;
@@ -787,7 +787,7 @@ Renders a `<div>` element.
 | :----------- | :------------------------------------------------------------------------------------------- | :------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | label        | `string`                                                                                     | -       | Overrides the text label to use when the item is matched during keyboard text navigation.                                                                                                     |
 | value\*      | `any`                                                                                        | -       | Value of the radio item.&#xA;This is the value that will be set in the Menu.RadioGroup when the item is selected.                                                                             |
-| onClick      | `((event: BaseUIEvent<React.MouseEvent<HTMLDivElement, MouseEvent>>) => void)`               | -       | The click handler for the menu item.                                                                                                                                                          |
+| onClick      | `((event: ObstudioEvent<React.MouseEvent<HTMLDivElement, MouseEvent>>) => void)`             | -       | The click handler for the menu item.                                                                                                                                                          |
 | closeOnClick | `boolean`                                                                                    | `false` | Whether to close the menu when the item is clicked.                                                                                                                                           |
 | nativeButton | `boolean`                                                                                    | `false` | Whether the component renders a native `<button>` element when replacing it&#xA;via the `render` prop.&#xA;Set to `true` if the rendered element is a native button.                          |
 | disabled     | `boolean`                                                                                    | `false` | Whether the component should ignore user interaction.                                                                                                                                         |
@@ -877,7 +877,7 @@ Renders a `<div>` element.
 | defaultChecked  | `boolean`                                                                                       | `false` | Whether the checkbox item is initially ticked. To render a controlled checkbox item, use the `checked` prop instead.                                                                          |
 | checked         | `boolean`                                                                                       | -       | Whether the checkbox item is currently ticked. To render an uncontrolled checkbox item, use the `defaultChecked` prop instead.                                                                |
 | onCheckedChange | `((checked: boolean, eventDetails: Menu.CheckboxItem.ChangeEventDetails) => void)`              | -       | Event handler called when the checkbox item is ticked or unticked.                                                                                                                            |
-| onClick         | `((event: BaseUIEvent<React.MouseEvent<HTMLDivElement, MouseEvent>>) => void)`                  | -       | The click handler for the menu item.                                                                                                                                                          |
+| onClick         | `((event: ObstudioEvent<React.MouseEvent<HTMLDivElement, MouseEvent>>) => void)`                | -       | The click handler for the menu item.                                                                                                                                                          |
 | closeOnClick    | `boolean`                                                                                       | `false` | Whether to close the menu when the item is clicked.                                                                                                                                           |
 | nativeButton    | `boolean`                                                                                       | `false` | Whether the component renders a native `<button>` element when replacing it&#xA;via the `render` prop.&#xA;Set to `true` if the rendered element is a native button.                          |
 | disabled        | `boolean`                                                                                       | `false` | Whether the component should ignore user interaction.                                                                                                                                         |
@@ -948,9 +948,9 @@ type MenuCheckboxItemChangeEventDetails = (
   | { reason: 'cancel-open'; event: MouseEvent }
   | { reason: 'imperative-action'; event: Event }
 ) & {
-  /** Cancels Base UI from handling the event. */
+  /** Cancels Obstudio from handling the event. */
   cancel: () => void;
-  /** Allows the event to propagate in cases where Base UI will stop the propagation. */
+  /** Allows the event to propagate in cases where Obstudio will stop the propagation. */
   allowPropagation: () => void;
   /** Indicates whether the event has been canceled. */
   isCanceled: boolean;

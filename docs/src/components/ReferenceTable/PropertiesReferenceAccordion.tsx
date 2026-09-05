@@ -1,6 +1,6 @@
 import * as React from 'react';
 import clsx from 'clsx';
-import { visuallyHidden } from '@base-ui/utils/visuallyHidden';
+import { visuallyHidden } from '@obstudio/utils/visuallyHidden';
 import type { EnhancedProperty } from '@mui/internal-docs-infra/useTypes';
 import { stringOrHastToString } from '@mui/internal-docs-infra/pipeline/hastUtils';
 import { Link } from 'docs/src/components/Link';

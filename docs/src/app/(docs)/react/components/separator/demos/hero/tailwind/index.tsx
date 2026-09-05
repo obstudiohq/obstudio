@@ -1,4 +1,4 @@
-import { Separator } from '@base-ui/react/separator';
+import { Separator } from '@obstudio/react/separator';
 
 export default function ExampleSeparator() {
   return (

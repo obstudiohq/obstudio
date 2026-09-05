@@ -1,6 +1,6 @@
 import { expect, describe, it } from 'vitest';
 import * as React from 'react';
-import { Select } from '@base-ui/react/select';
+import { Select } from '@obstudio/react/select';
 import { screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 

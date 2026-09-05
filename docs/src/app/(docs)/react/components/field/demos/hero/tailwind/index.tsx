@@ -1,4 +1,4 @@
-import { Field } from '@base-ui/react/field';
+import { Field } from '@obstudio/react/field';
 
 export default function ExampleField() {
   return (

@@ -44,7 +44,7 @@ const OneLevelImportMessage = [
 
 const NO_RESTRICTED_IMPORTS_PATTERNS_DEEPLY_NESTED = [
   {
-    regex: '@base-ui/react/(?:(?!internals/).+|internals/.+)/.+',
+    regex: '@obstudio/react/(?:(?!internals/).+|internals/.+)/.+',
     message: OneLevelImportMessage,
   },
 ];
@@ -76,7 +76,7 @@ export default defineConfig(
     },
   },
   {
-    name: 'Base UI overrides',
+    name: 'Obstudio overrides',
     files: [`**/*${EXTENSION_TS}`],
     settings: {
       'import/resolver': {

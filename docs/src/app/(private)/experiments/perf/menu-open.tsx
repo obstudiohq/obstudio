@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { Menu } from '@base-ui/react/menu';
+import { Menu } from '@obstudio/react/menu';
 import menuDemoStyles from 'docs/src/app/(docs)/react/components/menu/demos/submenu/css-modules/index.module.css';
 import * as ReactDOM from 'react-dom';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
 import styles from './perf.module.css';
 import { logResults, removeOutliers } from './utils/benchmark';
 import { waitSingleFrame } from './utils/wait';

@@ -1,7 +1,7 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
-import { Popover } from '@base-ui/react/popover';
-import { Tooltip } from '@base-ui/react/tooltip';
+import { Popover } from '@obstudio/react/popover';
+import { Tooltip } from '@obstudio/react/tooltip';
 import { act, fireEvent, screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance } from '#test-utils';
 import { REASONS } from '../../internals/reasons';
@@ -12,7 +12,7 @@ function isElementOrAncestorInert(element: HTMLElement) {
     if (
       current.getAttribute('aria-hidden') === 'true' ||
       current.hasAttribute('inert') ||
-      current.hasAttribute('data-base-ui-inert')
+      current.hasAttribute('data-obstudio-inert')
     ) {
       return true;
     }

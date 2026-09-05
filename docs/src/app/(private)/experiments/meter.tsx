@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { Meter } from '@base-ui/react/meter';
+import { Meter } from '@obstudio/react/meter';
 import { SettingsMetadata, useExperimentSettings } from './_components/SettingsPanel';
 import styles from './meter.module.css';
 

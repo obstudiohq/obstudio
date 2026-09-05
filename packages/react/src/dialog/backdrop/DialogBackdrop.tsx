@@ -3,14 +3,14 @@ import * as React from 'react';
 import { useDialogRootContext } from '../root/DialogRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { type TransitionStatus } from '../../internals/useTransitionStatus';
-import { type BaseUIComponentProps } from '../../internals/types';
+import { type ObstudioComponentProps } from '../../internals/types';
 import { popupTransitionStateMapping } from '../../utils/popupStateMapping';
 
 /**
  * An overlay displayed beneath the popup.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)
+ * Documentation: [Obstudio Dialog](https://obstudio.co/react/components/dialog)
  */
 export const DialogBackdrop = React.forwardRef(function DialogBackdrop(
   componentProps: DialogBackdrop.Props,
@@ -49,7 +49,7 @@ export const DialogBackdrop = React.forwardRef(function DialogBackdrop(
   });
 });
 
-export interface DialogBackdropProps extends BaseUIComponentProps<'div', DialogBackdropState> {
+export interface DialogBackdropProps extends ObstudioComponentProps<'div', DialogBackdropState> {
   /**
    * Whether the backdrop is forced to render even when nested.
    * @default false

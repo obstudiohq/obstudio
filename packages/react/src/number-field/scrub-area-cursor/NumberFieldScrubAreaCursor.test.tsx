@@ -1,8 +1,8 @@
 import { expect, vi, it } from 'vitest';
 import * as React from 'react';
 import { screen, act } from '@mui/internal-test-utils';
-import { NumberField } from '@base-ui/react/number-field';
-import { platform } from '@base-ui/utils/platform';
+import { NumberField } from '@obstudio/react/number-field';
+import { platform } from '@obstudio/utils/platform';
 import { createRenderer, describeConformance } from '#test-utils';
 import { NumberFieldScrubAreaContext } from '../scrub-area/NumberFieldScrubAreaContext';
 
@@ -54,7 +54,7 @@ describe.skipIf(isWebKit)('<NumberField.ScrubAreaCursor />', () => {
           </NumberField.Root>,
         ),
       ).rejects.toThrow(
-        'Base UI: NumberFieldScrubAreaContext is missing. NumberFieldScrubArea parts must be placed within <NumberField.ScrubArea>.',
+        'Obstudio: NumberFieldScrubAreaContext is missing. NumberFieldScrubArea parts must be placed within <NumberField.ScrubArea>.',
       );
     } finally {
       errorSpy.mockRestore();

@@ -1,11 +1,11 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { platform } from '@base-ui/utils/platform';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import { clamp } from '@base-ui/utils/clamp';
-import type { BaseUIComponentProps } from '../../internals/types';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { platform } from '@obstudio/utils/platform';
+import { useTimeout } from '@obstudio/utils/useTimeout';
+import { clamp } from '@obstudio/utils/clamp';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useScrollAreaRootContext } from '../root/ScrollAreaRootContext';
 import { ScrollAreaViewportContext } from './ScrollAreaViewportContext';
 import { useRenderElement } from '../../internals/useRenderElement';
@@ -70,7 +70,7 @@ function removeCSSVariableInheritance() {
  * The actual scrollable container of the scroll area.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Scroll Area](https://base-ui.com/react/components/scroll-area)
+ * Documentation: [Obstudio Scroll Area](https://obstudio.co/react/components/scroll-area)
  */
 export const ScrollAreaViewport = React.forwardRef(function ScrollAreaViewport(
   componentProps: ScrollAreaViewport.Props,
@@ -425,7 +425,7 @@ export const ScrollAreaViewport = React.forwardRef(function ScrollAreaViewport(
   );
 });
 
-export interface ScrollAreaViewportProps extends BaseUIComponentProps<
+export interface ScrollAreaViewportProps extends ObstudioComponentProps<
   'div',
   ScrollAreaViewportState
 > {}

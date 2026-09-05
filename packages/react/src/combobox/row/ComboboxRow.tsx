@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { BaseUIComponentProps } from '../../internals/types';
+import { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { ComboboxRowContext } from './ComboboxRowContext';
 
@@ -9,7 +9,7 @@ import { ComboboxRowContext } from './ComboboxRowContext';
  * Enable `grid` on the root component to turn the listbox into a grid.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)
+ * Documentation: [Obstudio Combobox](https://obstudio.co/react/components/combobox)
  */
 export const ComboboxRow = React.forwardRef(function ComboboxRow(
   componentProps: ComboboxRow.Props,
@@ -27,7 +27,7 @@ export const ComboboxRow = React.forwardRef(function ComboboxRow(
 
 export interface ComboboxRowState {}
 
-export interface ComboboxRowProps extends BaseUIComponentProps<'div', ComboboxRowState> {}
+export interface ComboboxRowProps extends ObstudioComponentProps<'div', ComboboxRowState> {}
 
 export namespace ComboboxRow {
   export type State = ComboboxRowState;

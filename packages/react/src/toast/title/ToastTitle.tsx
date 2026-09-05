@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useToastLabelElement, useToastLabelPart } from '../utils/useToastLabelPart';
 
@@ -8,7 +8,7 @@ import { useToastLabelElement, useToastLabelPart } from '../utils/useToastLabelP
  * A title that labels the toast.
  * Renders an `<h2>` element.
  *
- * Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+ * Documentation: [Obstudio Toast](https://obstudio.co/react/components/toast)
  */
 export const ToastTitle = React.forwardRef(function ToastTitle(
   componentProps: ToastTitle.Props,
@@ -43,7 +43,7 @@ export interface ToastTitleState {
   type: string | undefined;
 }
 
-export interface ToastTitleProps extends BaseUIComponentProps<'h2', ToastTitleState> {}
+export interface ToastTitleProps extends ObstudioComponentProps<'h2', ToastTitleState> {}
 
 export namespace ToastTitle {
   export type State = ToastTitleState;

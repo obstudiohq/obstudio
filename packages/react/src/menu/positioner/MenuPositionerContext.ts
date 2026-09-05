@@ -17,7 +17,7 @@ export function useMenuPositionerContext(optional?: boolean) {
   const context = React.useContext(MenuPositionerContext);
   if (context === undefined && !optional) {
     throw new Error(
-      'Base UI: MenuPositionerContext is missing. MenuPositioner parts must be placed within <Menu.Positioner>.',
+      'Obstudio: MenuPositionerContext is missing. MenuPositioner parts must be placed within <Menu.Positioner>.',
     );
   }
   return context;

@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { platform } from '@base-ui/utils/platform';
-import { BaseUIComponentProps } from '../../internals/types';
-import { useBaseUiId } from '../../internals/useBaseUiId';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { platform } from '@obstudio/utils/platform';
+import { ObstudioComponentProps } from '../../internals/types';
+import { useObstudioId } from '../../internals/useObstudioId';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useComboboxInputValueContext, useComboboxRootContext } from '../root/ComboboxRootContext';
 import { triggerStateAttributesMapping } from '../utils/stateAttributesMapping';
@@ -18,7 +18,7 @@ import { useLabelableContext } from '../../internals/labelable-provider/Labelabl
 import { useComboboxChipsContext } from '../chips/ComboboxChipsContext';
 import { stopEvent } from '../../floating-ui-react/utils';
 import { useComboboxPositionerContext } from '../positioner/ComboboxPositionerContext';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import type { Side } from '../../internals/useAnchorPositioning';
 import { useDirection } from '../../internals/direction-context/DirectionContext';
@@ -35,7 +35,7 @@ import {
  * A text input to search for items in the list.
  * Renders an `<input>` element.
  *
- * Documentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)
+ * Documentation: [Obstudio Combobox](https://obstudio.co/react/components/combobox)
  */
 export const ComboboxInput = React.forwardRef(function ComboboxInput(
   componentProps: ComboboxInput.Props,
@@ -64,7 +64,7 @@ export const ComboboxInput = React.forwardRef(function ComboboxInput(
   const hasPositionerParent = Boolean(positioning);
   const store = useComboboxRootContext();
   // `inputValue` can't be placed in the store.
-  // https://github.com/mui/base-ui/issues/2703
+  // https://github.com/obstudiohq/obstudio/issues/2703
   const inputValue = useComboboxInputValueContext();
   const direction = useDirection();
 
@@ -91,7 +91,7 @@ export const ComboboxInput = React.forwardRef(function ComboboxInput(
 
   const isInsidePopup = hasPositionerParent || inline;
   const focusManagerModal = !isInsidePopup || modal;
-  const id = useBaseUiId(idProp ?? (!isInsidePopup ? rootId : undefined));
+  const id = useObstudioId(idProp ?? (!isInsidePopup ? rootId : undefined));
   const fieldStateForInput = hasPositionerParent ? DEFAULT_FIELD_STATE_ATTRIBUTES : fieldState;
 
   const [composingValue, setComposingValue] = React.useState<string | null>(null);
@@ -283,7 +283,7 @@ export const ComboboxInput = React.forwardRef(function ComboboxInput(
           // We can't rely on this check for Android due to how it handles composition
           // events with some keyboards (e.g. Samsung keyboard with predictive text on
           // treats all text as always-composing).
-          // https://github.com/mui/base-ui/issues/2942
+          // https://github.com/obstudiohq/obstudio/issues/2942
           if (isComposingRef.current) {
             const nextVal = event.currentTarget.value;
             setComposingValue(nextVal);
@@ -494,7 +494,7 @@ export interface ComboboxInputState extends FieldRootState {
   readOnly: boolean;
 }
 
-export interface ComboboxInputProps extends BaseUIComponentProps<'input', ComboboxInputState> {
+export interface ComboboxInputProps extends ObstudioComponentProps<'input', ComboboxInputState> {
   /**
    * Whether the component should ignore user interaction.
    * @default false

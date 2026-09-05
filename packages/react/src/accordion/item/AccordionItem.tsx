@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
-import { BaseUIComponentProps } from '../../internals/types';
-import { useBaseUiId } from '../../internals/useBaseUiId';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useMergedRefs } from '@obstudio/utils/useMergedRefs';
+import { ObstudioComponentProps } from '../../internals/types';
+import { useObstudioId } from '../../internals/useObstudioId';
 import {
   useCollapsibleRoot,
   type UseCollapsibleRootParameters,
@@ -16,14 +16,14 @@ import { useAccordionRootContext } from '../root/AccordionRootContext';
 import { AccordionItemContext } from './AccordionItemContext';
 import { accordionStateAttributesMapping } from './stateAttributesMapping';
 import { useRenderElement } from '../../internals/useRenderElement';
-import { type BaseUIChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { type ObstudioChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 
 /**
  * Groups an accordion header with the corresponding panel.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Accordion](https://base-ui.com/react/components/accordion)
+ * Documentation: [Obstudio Accordion](https://obstudio.co/react/components/accordion)
  */
 export const AccordionItem = React.forwardRef(function AccordionItem(
   componentProps: AccordionItem.Props,
@@ -49,7 +49,7 @@ export const AccordionItem = React.forwardRef(function AccordionItem(
     value: openValues,
   } = useAccordionRootContext();
 
-  const fallbackValue = useBaseUiId();
+  const fallbackValue = useObstudioId();
 
   const value = valueProp ?? fallbackValue;
 
@@ -104,7 +104,7 @@ export const AccordionItem = React.forwardRef(function AccordionItem(
     [collapsible.mounted, disabled, index, isOpen, rootState],
   );
 
-  const defaultTriggerId = useBaseUiId();
+  const defaultTriggerId = useObstudioId();
   // `undefined` uses the initial generated fallback; `null` means the trigger unmounted.
   const [registeredTriggerId, setTriggerId] = React.useState<string | null | undefined>();
   const triggerId =
@@ -154,7 +154,7 @@ export interface AccordionItemState extends AccordionRootState {
 
 export interface AccordionItemProps
   extends
-    BaseUIComponentProps<'div', AccordionItemState>,
+    ObstudioComponentProps<'div', AccordionItemState>,
     Partial<Pick<UseCollapsibleRootParameters, 'disabled'>> {
   /**
    * A unique value that identifies this accordion item.
@@ -180,7 +180,7 @@ export interface AccordionItemProps
 export type AccordionItemChangeEventReason = typeof REASONS.triggerPress | typeof REASONS.none;
 
 export type AccordionItemChangeEventDetails =
-  BaseUIChangeEventDetails<AccordionItem.ChangeEventReason>;
+  ObstudioChangeEventDetails<AccordionItem.ChangeEventReason>;
 
 export namespace AccordionItem {
   export type State = AccordionItemState;

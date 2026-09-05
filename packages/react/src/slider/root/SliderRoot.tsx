@@ -1,21 +1,21 @@
 'use client';
 import * as React from 'react';
-import { ownerDocument } from '@base-ui/utils/owner';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { warn } from '@base-ui/utils/warn';
-import { clamp } from '@base-ui/utils/clamp';
-import { areArraysEqual } from '@base-ui/utils/areArraysEqual';
-import type { BaseUIComponentProps, Orientation } from '../../internals/types';
+import { ownerDocument } from '@obstudio/utils/owner';
+import { useControlled } from '@obstudio/utils/useControlled';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { warn } from '@obstudio/utils/warn';
+import { clamp } from '@obstudio/utils/clamp';
+import { areArraysEqual } from '@obstudio/utils/areArraysEqual';
+import type { ObstudioComponentProps, Orientation } from '../../internals/types';
 import {
   createChangeEventDetails,
   createGenericEventDetails,
-  type BaseUIChangeEventDetails,
-  type BaseUIGenericEventDetails,
-} from '../../internals/createBaseUIEventDetails';
+  type ObstudioChangeEventDetails,
+  type ObstudioGenericEventDetails,
+} from '../../internals/createObstudioEventDetails';
 import { useValueChanged } from '../../internals/useValueChanged';
-import { useBaseUiId } from '../../internals/useBaseUiId';
+import { useObstudioId } from '../../internals/useObstudioId';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { activeElement, contains } from '../../floating-ui-react/utils';
 import {
@@ -50,7 +50,7 @@ function areValuesEqual(
  * Groups all parts of the slider.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Slider](https://base-ui.com/react/components/slider)
+ * Documentation: [Obstudio Slider](https://obstudio.co/react/components/slider)
  */
 export const SliderRoot = React.forwardRef(function SliderRoot<
   Value extends number | readonly number[],
@@ -81,7 +81,7 @@ export const SliderRoot = React.forwardRef(function SliderRoot<
     ...elementProps
   } = componentProps;
 
-  const id = useBaseUiId(idProp);
+  const id = useObstudioId(idProp);
   const defaultLabelId = getDefaultLabelId(id);
   const onValueChange = useStableCallback(
     onValueChangeProp as (
@@ -445,7 +445,7 @@ export interface SliderRootState extends FieldRootState {
 
 export interface SliderRootProps<
   Value extends number | readonly number[] = number | readonly number[],
-> extends BaseUIComponentProps<'div', SliderRootState> {
+> extends ObstudioComponentProps<'div', SliderRootState> {
   /**
    * The uncontrolled value of the slider when it's initially rendered.
    *
@@ -586,7 +586,7 @@ export type SliderRootChangeEventReason =
   | typeof REASONS.drag
   | typeof REASONS.keyboard
   | typeof REASONS.none;
-export type SliderRootChangeEventDetails = BaseUIChangeEventDetails<
+export type SliderRootChangeEventDetails = ObstudioChangeEventDetails<
   SliderRoot.ChangeEventReason,
   SliderRootChangeEventCustomProperties
 >;
@@ -597,7 +597,8 @@ export type SliderRootCommitEventReason =
   | typeof REASONS.drag
   | typeof REASONS.keyboard
   | typeof REASONS.none;
-export type SliderRootCommitEventDetails = BaseUIGenericEventDetails<SliderRoot.CommitEventReason>;
+export type SliderRootCommitEventDetails =
+  ObstudioGenericEventDetails<SliderRoot.CommitEventReason>;
 
 export namespace SliderRoot {
   export type State = SliderRootState;

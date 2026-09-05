@@ -1,8 +1,8 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
 import { createRenderer, fireEvent, screen } from '@mui/internal-test-utils';
-import { CheckboxGroup } from '@base-ui/react/checkbox-group';
-import { Checkbox } from '@base-ui/react/checkbox';
+import { CheckboxGroup } from '@obstudio/react/checkbox-group';
+import { Checkbox } from '@obstudio/react/checkbox';
 
 describe('useCheckboxGroupParent', () => {
   const { render } = createRenderer();

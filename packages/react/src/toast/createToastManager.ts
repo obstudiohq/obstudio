@@ -1,4 +1,4 @@
-import { generateId } from '@base-ui/utils/generateId';
+import { generateId } from '@obstudio/utils/generateId';
 import type {
   ToastObject,
   ToastManagerAddOptions,

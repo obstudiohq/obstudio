@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { ContextMenu } from '@base-ui/react/context-menu';
-import { Menu } from '@base-ui/react/menu';
+import { ContextMenu } from '@obstudio/react/context-menu';
+import { Menu } from '@obstudio/react/menu';
 
 export default function ContextMenuWithMenuDemo() {
   return (

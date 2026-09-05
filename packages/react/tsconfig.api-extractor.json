@@ -3,9 +3,9 @@
   "compilerOptions": {
     "rootDir": ".",
     "paths": {
-      "@base-ui/react": ["./build/index.d.ts"],
-      "@base-ui/react/*": ["./build/*"],
-      "@base-ui/utils/*": ["../utils/build/*"]
+      "@obstudio/react": ["./build/index.d.ts"],
+      "@obstudio/react/*": ["./build/*"],
+      "@obstudio/utils/*": ["../utils/build/*"]
     }
   },
   "files": ["src/global.d.ts", "build/index.d.ts"],

@@ -6,7 +6,7 @@ export const PopoverPortalContext = React.createContext<boolean | undefined>(und
 export function usePopoverPortalContext() {
   const value = React.useContext(PopoverPortalContext);
   if (value === undefined) {
-    throw new Error('Base UI: <Popover.Portal> is missing.');
+    throw new Error('Obstudio: <Popover.Portal> is missing.');
   }
   return value;
 }

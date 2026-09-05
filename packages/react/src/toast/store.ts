@@ -1,7 +1,7 @@
-import { ReactStore } from '@base-ui/utils/store';
-import { generateId } from '@base-ui/utils/generateId';
-import { ownerDocument } from '@base-ui/utils/owner';
-import { Timeout } from '@base-ui/utils/useTimeout';
+import { ReactStore } from '@obstudio/utils/store';
+import { generateId } from '@obstudio/utils/generateId';
+import { ownerDocument } from '@obstudio/utils/owner';
+import { Timeout } from '@obstudio/utils/useTimeout';
 import {
   ToastManagerAddOptions,
   ToastManagerPromiseOptions,

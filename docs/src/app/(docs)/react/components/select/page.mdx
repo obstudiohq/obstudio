@@ -21,7 +21,7 @@ import { DemoSelectHero } from './demos/hero';
 Import the component and assemble its parts:
 
 ```jsx title="Anatomy"
-import { Select } from '@base-ui/react/select';
+import { Select } from '@obstudio/react/select';
 
 <Select.Root>
   <Select.Label />
@@ -77,7 +77,7 @@ The following example shows a typed wrapper around the Select component with cor
 
 ```tsx title="Specifying generic type parameters"
 import * as React from 'react';
-import { Select } from '@base-ui/react/select';
+import { Select } from '@obstudio/react/select';
 
 export function MySelect<Value, Multiple extends boolean | undefined = false>(
   props: Select.Root.Props<Value, Multiple>,
@@ -325,6 +325,6 @@ export const metadata = {
     'Accessible Select',
     'Align Item with Trigger',
     'Headless React Components',
-    'Base UI',
+    'Obstudio',
   ],
 };

@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
-import { addEventListener } from '@base-ui/utils/addEventListener';
-import { platform } from '@base-ui/utils/platform';
-import { mergeCleanups } from '@base-ui/utils/mergeCleanups';
-import { ownerDocument } from '@base-ui/utils/owner';
-import { useTimeout } from '@base-ui/utils/useTimeout';
+import { addEventListener } from '@obstudio/utils/addEventListener';
+import { platform } from '@obstudio/utils/platform';
+import { mergeCleanups } from '@obstudio/utils/mergeCleanups';
+import { ownerDocument } from '@obstudio/utils/owner';
+import { useTimeout } from '@obstudio/utils/useTimeout';
 import { getWindow, isElement, isHTMLElement } from '@floating-ui/utils/dom';
 import type { ElementProps, FloatingContext, FloatingRootContext } from '../types';
 import { createAttribute } from '../utils/createAttribute';
@@ -16,7 +16,7 @@ import {
   isTypeableElement,
   matchesFocusVisible,
 } from '../utils/element';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { FloatingUIOpenChangeDetails } from '../../internals/types';
 

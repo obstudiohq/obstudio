@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import clsx from 'clsx';
-import type { Accordion as BaseAccordion } from '@base-ui/react/accordion';
+import type { Accordion as BaseAccordion } from '@obstudio/react/accordion';
 import * as Accordion from './_components/Accordion';
 import layoutStyles from './accordion.module.css';
 import styles from './transitions.module.css';
@@ -19,9 +19,9 @@ export const settingsMetadata: SettingsMetadata<Settings> = {
 
 const ITEMS = [
   {
-    title: 'What is Base UI?',
+    title: 'What is Obstudio?',
     content:
-      'Base UI is a library of high-quality unstyled React components for design systems and web apps.',
+      'Obstudio is a library of high-quality unstyled React components for design systems and web apps.',
   },
   {
     title: 'How do I get started?',
@@ -30,7 +30,7 @@ const ITEMS = [
   },
   {
     title: 'Can I use it for my project?',
-    content: 'Of course! Base UI is free and open source.',
+    content: 'Of course! Obstudio is free and open source.',
   },
 ] as const;
 
@@ -129,7 +129,7 @@ function ComplexAccordion() {
               <label>
                 Project name
                 <br />
-                <input defaultValue="Base UI design system" type="text" />
+                <input defaultValue="Obstudio design system" type="text" />
               </label>
             </p>
             <p>
@@ -171,7 +171,7 @@ function ComplexAccordion() {
         <Accordion.Panel className={styles.panel}>
           <Accordion.Content>
             <p>
-              Base UI is a library of high-quality unstyled React components for design systems and
+              Obstudio is a library of high-quality unstyled React components for design systems and
               web apps.
             </p>
             <p>
@@ -195,7 +195,7 @@ function ComplexAccordion() {
         <Accordion.Panel className={styles.panel}>
           <Accordion.Content>
             <p>
-              Base UI is a library of high-quality unstyled React components for design systems and
+              Obstudio is a library of high-quality unstyled React components for design systems and
               web apps.
             </p>
             <p>
@@ -209,7 +209,7 @@ function ComplexAccordion() {
               </label>
             </p>
             <p>
-              Base UI is a library of high-quality unstyled React components for design systems and
+              Obstudio is a library of high-quality unstyled React components for design systems and
               web apps.
             </p>
           </Accordion.Content>
@@ -270,7 +270,7 @@ export default function CssTransitions() {
         <pre>
           switch items:{' '}
           <a
-            href="https://github.com/mui/base-ui/issues/3099"
+            href="https://github.com/obstudiohq/obstudio/issues/3099"
             style={{ color: 'var(--color-blue)', textDecoration: 'underline' }}
             target="_blank"
           >

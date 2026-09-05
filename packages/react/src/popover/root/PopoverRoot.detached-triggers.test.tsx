@@ -3,12 +3,12 @@ import * as React from 'react';
 import type { UserEvent } from '@testing-library/user-event';
 import { createRenderer, isJSDOM } from '#test-utils';
 import { act, screen, waitFor } from '@mui/internal-test-utils';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { Popover } from '@base-ui/react/popover';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { Popover } from '@obstudio/react/popover';
 
 describe('<Popover.Root />', () => {
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
   });
 
   const { render, clock } = createRenderer();
@@ -1178,14 +1178,14 @@ describe('<Popover.Root />', () => {
           ),
         ).toBeLessThanOrEqual(1);
       });
-      expect(trigger2.previousElementSibling).toHaveAttribute('data-base-ui-focus-guard');
-      expect(trigger2.nextElementSibling).toHaveAttribute('data-base-ui-focus-guard');
+      expect(trigger2.previousElementSibling).toHaveAttribute('data-obstudio-focus-guard');
+      expect(trigger2.nextElementSibling).toHaveAttribute('data-obstudio-focus-guard');
 
       await user.click(screen.getByTestId('close'));
       expect(screen.queryByTestId('content')).toBe(null);
       expect(screen.getByTestId('active-trigger').textContent).toBe('trigger-2');
-      expect(trigger2.previousElementSibling).not.toHaveAttribute('data-base-ui-focus-guard');
-      expect(trigger2.nextElementSibling).not.toHaveAttribute('data-base-ui-focus-guard');
+      expect(trigger2.previousElementSibling).not.toHaveAttribute('data-obstudio-focus-guard');
+      expect(trigger2.nextElementSibling).not.toHaveAttribute('data-obstudio-focus-guard');
     });
 
     it('allows setting an initially open popover', async () => {
@@ -1217,7 +1217,7 @@ describe('<Popover.Root />', () => {
     });
 
     it('should not have inline scale style after switching triggers', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       const testPopover = Popover.createHandle<number>();
 

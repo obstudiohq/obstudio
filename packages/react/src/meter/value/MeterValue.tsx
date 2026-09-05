@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useMeterRootContext } from '../root/MeterRootContext';
 import type { MeterRootState } from '../root/MeterRoot';
 import { useRenderElement } from '../../internals/useRenderElement';
@@ -9,7 +9,7 @@ import { useRenderElement } from '../../internals/useRenderElement';
  * A text element displaying the current value.
  * Renders a `<span>` element.
  *
- * Documentation: [Base UI Meter](https://base-ui.com/react/components/meter)
+ * Documentation: [Obstudio Meter](https://obstudio.co/react/components/meter)
  */
 export const MeterValue = React.forwardRef(function MeterValue(
   componentProps: MeterValue.Props,
@@ -34,7 +34,7 @@ export const MeterValue = React.forwardRef(function MeterValue(
 export interface MeterValueState extends MeterRootState {}
 
 export interface MeterValueProps extends Omit<
-  BaseUIComponentProps<'span', MeterValueState>,
+  ObstudioComponentProps<'span', MeterValueState>,
   'children'
 > {
   children?: null | ((formattedValue: string, value: number) => React.ReactNode) | undefined;

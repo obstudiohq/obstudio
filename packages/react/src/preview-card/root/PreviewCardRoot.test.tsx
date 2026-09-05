@@ -1,8 +1,8 @@
 import { expect, vi, describe, beforeEach, it } from 'vitest';
 import * as React from 'react';
-import { PreviewCard } from '@base-ui/react/preview-card';
+import { PreviewCard } from '@obstudio/react/preview-card';
 import { act, fireEvent, screen, flushMicrotasks, waitFor } from '@mui/internal-test-utils';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
+import { useRefWithInit } from '@obstudio/utils/useRefWithInit';
 import {
   advanceReactClock,
   createRenderer,
@@ -19,7 +19,7 @@ describe('<PreviewCard.Root />', () => {
   beforeEach(resetBrowserPointer);
 
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
   });
 
   const { render, clock } = createRenderer();
@@ -417,7 +417,7 @@ describe('<PreviewCard.Root />', () => {
       });
     });
 
-    describe('BaseUIChangeEventDetails', () => {
+    describe('ObstudioChangeEventDetails', () => {
       it('onOpenChange cancel() prevents opening while uncontrolled', async () => {
         await render(
           <TestPreviewCard
@@ -581,7 +581,7 @@ describe('<PreviewCard.Root />', () => {
       });
 
       it('is called on close when the exit animation finishes', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         const onOpenChangeComplete = vi.fn();
 
@@ -669,7 +669,7 @@ describe('<PreviewCard.Root />', () => {
       });
 
       it('is called on open when the enter animation finishes', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         const onOpenChangeComplete = vi.fn();
 

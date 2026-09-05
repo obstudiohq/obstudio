@@ -1,17 +1,17 @@
 'use client';
 import * as React from 'react';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { NOOP } from '@base-ui/utils/empty';
+import { useControlled } from '@obstudio/utils/useControlled';
+import { NOOP } from '@obstudio/utils/empty';
 import { MenuCheckboxItemContext } from './MenuCheckboxItemContext';
 import { REGULAR_ITEM, useMenuItem } from '../item/useMenuItem';
 import { useCompositeListItem } from '../../internals/composite/list/useCompositeListItem';
 import { useMenuRootContext } from '../root/MenuRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';
-import { useBaseUiId } from '../../internals/useBaseUiId';
-import type { BaseUIComponentProps, NonNativeButtonProps } from '../../internals/types';
+import { useObstudioId } from '../../internals/useObstudioId';
+import type { ObstudioComponentProps, NonNativeButtonProps } from '../../internals/types';
 import { itemMapping } from '../utils/stateAttributesMapping';
 import { useMenuPositionerContext } from '../positioner/MenuPositionerContext';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import type { MenuRoot } from '../root/MenuRoot';
 
@@ -19,7 +19,7 @@ import type { MenuRoot } from '../root/MenuRoot';
  * A menu item that toggles a setting on or off.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Obstudio Menu](https://obstudio.co/react/components/menu)
  */
 export const MenuCheckboxItem = React.forwardRef(function MenuCheckboxItem(
   componentProps: MenuCheckboxItem.Props,
@@ -42,7 +42,7 @@ export const MenuCheckboxItem = React.forwardRef(function MenuCheckboxItem(
 
   const listItem = useCompositeListItem({ guess: true, label });
   const menuPositionerContext = useMenuPositionerContext(true);
-  const id = useBaseUiId(idProp);
+  const id = useObstudioId(idProp);
 
   const { store } = useMenuRootContext();
   const rootDisabled = store.useState('disabled');
@@ -128,7 +128,7 @@ export interface MenuCheckboxItemState {
 }
 
 export interface MenuCheckboxItemProps
-  extends NonNativeButtonProps, BaseUIComponentProps<'div', MenuCheckboxItemState> {
+  extends NonNativeButtonProps, ObstudioComponentProps<'div', MenuCheckboxItemState> {
   /**
    * Whether the checkbox item is currently ticked.
    *
@@ -150,7 +150,7 @@ export interface MenuCheckboxItemProps
   /**
    * The click handler for the menu item.
    */
-  onClick?: BaseUIComponentProps<'div', MenuCheckboxItemState>['onClick'] | undefined;
+  onClick?: ObstudioComponentProps<'div', MenuCheckboxItemState>['onClick'] | undefined;
   /**
    * Whether the component should ignore user interaction.
    * @default false

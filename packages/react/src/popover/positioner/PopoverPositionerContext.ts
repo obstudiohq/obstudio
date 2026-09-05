@@ -20,7 +20,7 @@ export function usePopoverPositionerContext() {
   const context = React.useContext(PopoverPositionerContext);
   if (!context) {
     throw new Error(
-      'Base UI: PopoverPositionerContext is missing. PopoverPositioner parts must be placed within <Popover.Positioner>.',
+      'Obstudio: PopoverPositionerContext is missing. PopoverPositioner parts must be placed within <Popover.Positioner>.',
     );
   }
   return context;

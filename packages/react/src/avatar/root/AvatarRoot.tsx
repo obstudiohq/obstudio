@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { BaseUIComponentProps } from '../../internals/types';
+import { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { AvatarRootContext } from './AvatarRootContext';
 import { avatarStateAttributesMapping } from './stateAttributesMapping';
@@ -9,7 +9,7 @@ import { avatarStateAttributesMapping } from './stateAttributesMapping';
  * Displays a user's profile picture, initials, or fallback icon.
  * Renders a `<span>` element.
  *
- * Documentation: [Base UI Avatar](https://base-ui.com/react/components/avatar)
+ * Documentation: [Obstudio Avatar](https://obstudio.co/react/components/avatar)
  */
 export const AvatarRoot = React.forwardRef(function AvatarRoot(
   componentProps: AvatarRoot.Props,
@@ -50,7 +50,7 @@ export interface AvatarRootState {
   imageLoadingStatus: ImageLoadingStatus;
 }
 
-export interface AvatarRootProps extends BaseUIComponentProps<'span', AvatarRootState> {}
+export interface AvatarRootProps extends ObstudioComponentProps<'span', AvatarRootState> {}
 
 export namespace AvatarRoot {
   export type State = AvatarRootState;

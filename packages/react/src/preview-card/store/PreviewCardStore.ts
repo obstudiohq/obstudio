@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ReactStore } from '@base-ui/utils/store';
+import { ReactStore } from '@obstudio/utils/store';
 import {
   applyPopupOpenChange,
   createInitialPopupStoreState,

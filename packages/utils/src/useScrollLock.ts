@@ -189,7 +189,7 @@ function preventScrollInsetScrollbars(referenceElement: Element | null) {
 
     body.scrollTop = scrollTop;
     body.scrollLeft = scrollLeft;
-    html.setAttribute('data-base-ui-scroll-locked', '');
+    html.setAttribute('data-obstudio-scroll-locked', '');
     html.style.scrollBehavior = 'unset';
   }
 
@@ -200,7 +200,7 @@ function preventScrollInsetScrollbars(referenceElement: Element | null) {
     if (!updateGutterOnly) {
       html.scrollTop = scrollTop;
       html.scrollLeft = scrollLeft;
-      html.removeAttribute('data-base-ui-scroll-locked');
+      html.removeAttribute('data-obstudio-scroll-locked');
       html.style.scrollBehavior = originalHtmlScrollBehavior;
     }
   }
@@ -263,7 +263,7 @@ class ScrollLocker {
     const body = doc.body;
     const win = ownerWindow(html);
 
-    // The page is already locked, either by the site author or by a non-Base UI overlay that
+    // The page is already locked, either by the site author or by a non-Obstudio overlay that
     // hasn't cleaned up yet. Leave it alone and wait for the lock to clear before taking over,
     // otherwise we'd snapshot the locked state and restore it after our own lock is released.
     if (isPageScrollLocked(win, html, body)) {

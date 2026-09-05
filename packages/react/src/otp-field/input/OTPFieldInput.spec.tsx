@@ -1,5 +1,5 @@
 import { expectType } from '#test-utils';
-import { OTPField } from '@base-ui/react/otp-field';
+import { OTPField } from '@obstudio/react/otp-field';
 
 // @ts-expect-error - slot order is inferred from render order
 const noExplicitIndexSupport = <OTPField.Input index={0} />;

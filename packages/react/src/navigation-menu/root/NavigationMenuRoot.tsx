@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
 import { isHTMLElement } from '@floating-ui/utils/dom';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { ownerDocument } from '@base-ui/utils/owner';
+import { useControlled } from '@obstudio/utils/useControlled';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { ownerDocument } from '@obstudio/utils/owner';
 import {
   FloatingNode,
   FloatingTree,
@@ -20,10 +20,10 @@ import {
   NavigationMenuTreeContext,
   useNavigationMenuRootContext,
 } from './NavigationMenuRootContext';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useOpenChangeComplete } from '../../internals/useOpenChangeComplete';
 import { useTransitionStatus } from '../../internals/useTransitionStatus';
-import { type BaseUIChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { type ObstudioChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import * as NavigationMenuPositionerCssVars from '../positioner/NavigationMenuPositionerCssVars';
 import { setSharedFixedSize } from '../utils/setSharedFixedSize';
@@ -58,7 +58,7 @@ function getPositionerFixedSize(positionerElement: HTMLElement) {
  * Groups all parts of the navigation menu.
  * Renders a `<nav>` element at the root, or `<div>` element when nested.
  *
- * Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+ * Documentation: [Obstudio Navigation Menu](https://obstudio.co/react/components/navigation-menu)
  */
 export const NavigationMenuRoot = React.forwardRef(function NavigationMenuRoot<Value = any>(
   componentProps: NavigationMenuRoot.Props<Value>,
@@ -362,7 +362,7 @@ export interface NavigationMenuRootState {
   nested: boolean;
 }
 
-export interface NavigationMenuRootProps<Value = any> extends BaseUIComponentProps<
+export interface NavigationMenuRootProps<Value = any> extends ObstudioComponentProps<
   'nav',
   NavigationMenuRootState
 > {
@@ -427,7 +427,7 @@ export type NavigationMenuRootChangeEventReason =
   | typeof REASONS.none;
 
 export type NavigationMenuRootChangeEventDetails =
-  BaseUIChangeEventDetails<NavigationMenuRoot.ChangeEventReason>;
+  ObstudioChangeEventDetails<NavigationMenuRoot.ChangeEventReason>;
 
 export namespace NavigationMenuRoot {
   export type State = NavigationMenuRootState;

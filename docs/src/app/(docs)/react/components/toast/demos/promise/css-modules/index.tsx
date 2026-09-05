@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { Toast } from '@base-ui/react/toast';
+import { Toast } from '@obstudio/react/toast';
 import styles from './index.module.css';
 
 export default function PromiseToastExample() {

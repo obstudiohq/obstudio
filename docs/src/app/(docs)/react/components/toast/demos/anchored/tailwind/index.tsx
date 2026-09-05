@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { Toast } from '@base-ui/react/toast';
-import { Button } from '@base-ui/react/button';
-import { Tooltip } from '@base-ui/react/tooltip';
+import { Toast } from '@obstudio/react/toast';
+import { Button } from '@obstudio/react/button';
+import { Tooltip } from '@obstudio/react/tooltip';
 
 const stackedToastManager = Toast.createToastManager();
 const anchoredToastManager = Toast.createToastManager();

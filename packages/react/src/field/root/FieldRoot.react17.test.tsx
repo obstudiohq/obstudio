@@ -1,12 +1,12 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { Field } from '@base-ui/react/field';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { Field } from '@obstudio/react/field';
 import { fireEvent, screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer } from '#test-utils';
 
-vi.mock('@base-ui/utils/safeReact', async (importOriginal) => {
-  const original = await importOriginal<typeof import('@base-ui/utils/safeReact')>();
+vi.mock('@obstudio/utils/safeReact', async (importOriginal) => {
+  const original = await importOriginal<typeof import('@obstudio/utils/safeReact')>();
 
   return {
     SafeReact: {

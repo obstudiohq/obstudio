@@ -5,7 +5,7 @@ import { useRenderElement } from '../internals/useRenderElement';
 import { StateAttributesMapping } from '../internals/getStateAttributesProps';
 
 /**
- * Renders a Base UI element.
+ * Renders a Obstudio element.
  *
  * @public
  */

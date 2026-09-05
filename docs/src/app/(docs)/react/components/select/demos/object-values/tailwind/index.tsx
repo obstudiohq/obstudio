@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { Select } from '@base-ui/react/select';
+import { Select } from '@obstudio/react/select';
 
 export default function ObjectValueSelect() {
   return (

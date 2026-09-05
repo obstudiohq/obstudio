@@ -6,7 +6,7 @@ export const ComboboxPortalContext = React.createContext<boolean | undefined>(un
 export function useComboboxPortalContext() {
   const context = React.useContext(ComboboxPortalContext);
   if (context === undefined) {
-    throw new Error('Base UI: <Combobox.Portal> is missing.');
+    throw new Error('Obstudio: <Combobox.Portal> is missing.');
   }
   return context;
 }

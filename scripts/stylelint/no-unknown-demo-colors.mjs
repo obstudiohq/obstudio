@@ -8,7 +8,7 @@ const currentDirectory = path.dirname(fileURLToPath(import.meta.url));
 
 const defaultThemePath = path.join(currentDirectory, '../../docs/src/css/index.css');
 
-const ruleName = 'base-ui/no-unknown-demo-colors';
+const ruleName = 'obstudio/no-unknown-demo-colors';
 
 const messages = stylelint.utils.ruleMessages(ruleName, {
   rejected: (color) =>

@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
 import { getSide, getAlignment, type Rect, getSideAxis } from '@floating-ui/utils';
-import { ownerDocument, ownerWindow } from '@base-ui/utils/owner';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useValueAsRef } from '@base-ui/utils/useValueAsRef';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { ownerDocument, ownerWindow } from '@obstudio/utils/owner';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useValueAsRef } from '@obstudio/utils/useValueAsRef';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
 import {
   autoUpdate,
   flip,
@@ -25,7 +25,7 @@ import {
   type Middleware,
   type FloatingTreeStore,
 } from '../floating-ui-react';
-import { useBaseUIFloating } from '../floating-ui-react/hooks/useFloating';
+import { useObstudioFloating } from '../floating-ui-react/hooks/useFloating';
 import { useDirection } from './direction-context/DirectionContext';
 import { arrow } from '../floating-ui-react/middleware/arrow';
 import { hide } from '../utils/hideMiddleware';
@@ -128,7 +128,7 @@ type UseFloatingHook = (options: UseFloatingOptions) => UseFloatingReturn;
 export function useAnchorPositioning(
   params: UseAnchorPositioningParameters & { floatingRootContext: FloatingRootContext },
 ): UseAnchorPositioningReturnValue {
-  return useAnchorPositioningWithHook(params, useBaseUIFloating as UseFloatingHook);
+  return useAnchorPositioningWithHook(params, useObstudioFloating as UseFloatingHook);
 }
 
 export function useAnchorPositioningWithHook(

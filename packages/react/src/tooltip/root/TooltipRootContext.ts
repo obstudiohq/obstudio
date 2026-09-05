@@ -12,7 +12,7 @@ export function useTooltipRootContext(optional?: boolean) {
   const context = React.useContext(TooltipRootContext);
   if (context === undefined && !optional) {
     throw new Error(
-      'Base UI: TooltipRootContext is missing. Tooltip parts must be placed within <Tooltip.Root>.',
+      'Obstudio: TooltipRootContext is missing. Tooltip parts must be placed within <Tooltip.Root>.',
     );
   }
 

@@ -1,5 +1,5 @@
 import { expect, describe, it } from 'vitest';
-import { Toolbar } from '@base-ui/react/toolbar';
+import { Toolbar } from '@obstudio/react/toolbar';
 import { screen } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance } from '#test-utils';
 import { NOOP } from '../../internals/noop';
@@ -39,7 +39,7 @@ describe('<Toolbar.Link />', () => {
     it('renders an anchor', async () => {
       await render(
         <Toolbar.Root>
-          <Toolbar.Link data-testid="link" href="https://base-ui.com" />
+          <Toolbar.Link data-testid="link" href="https://obstudio.co" />
         </Toolbar.Root>,
       );
 

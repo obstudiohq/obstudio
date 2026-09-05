@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { BaseUIComponentProps } from '../../internals/types';
+import { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useInitialLiveRegionTextMutation } from '../utils/useInitialLiveRegionTextMutation';
 
@@ -13,7 +13,7 @@ import { useInitialLiveRegionTextMutation } from '../utils/useInitialLiveRegionT
  * rendering. Prefer updating or conditionally rendering its children instead.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)
+ * Documentation: [Obstudio Combobox](https://obstudio.co/react/components/combobox)
  */
 export const ComboboxStatus = React.forwardRef(function ComboboxStatus(
   componentProps: ComboboxStatus.Props,
@@ -39,7 +39,7 @@ export const ComboboxStatus = React.forwardRef(function ComboboxStatus(
 
 export interface ComboboxStatusState {}
 
-export interface ComboboxStatusProps extends BaseUIComponentProps<'div', ComboboxStatusState> {}
+export interface ComboboxStatusProps extends ObstudioComponentProps<'div', ComboboxStatusState> {}
 
 export namespace ComboboxStatus {
   export type State = ComboboxStatusState;

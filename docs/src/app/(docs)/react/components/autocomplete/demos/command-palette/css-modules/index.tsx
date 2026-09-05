@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { Dialog } from '@base-ui/react/dialog';
-import { Autocomplete } from '@base-ui/react/autocomplete';
-import { ScrollArea } from '@base-ui/react/scroll-area';
+import { Dialog } from '@obstudio/react/dialog';
+import { Autocomplete } from '@obstudio/react/autocomplete';
+import { ScrollArea } from '@obstudio/react/scroll-area';
 import styles from './index.module.css';
 
 export default function ExampleAutocompleteCommandPalette() {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Field } from '@base-ui/react/field';
+import { Field } from '@obstudio/react/field';
 
 function App() {
   const ref = React.useRef<HTMLTextAreaElement>(null);

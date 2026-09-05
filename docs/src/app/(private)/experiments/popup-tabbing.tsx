@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { Combobox } from '@base-ui/react/combobox';
-import { Menu } from '@base-ui/react/menu';
-import { Popover } from '@base-ui/react/popover';
-import { Switch } from '@base-ui/react/switch';
+import { Combobox } from '@obstudio/react/combobox';
+import { Menu } from '@obstudio/react/menu';
+import { Popover } from '@obstudio/react/popover';
+import { Switch } from '@obstudio/react/switch';
 import styles from './popup-tabbing.module.css';
 
 function ExampleMenu() {

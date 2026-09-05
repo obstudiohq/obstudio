@@ -33,8 +33,8 @@ export function Link(props: LinkProps) {
   );
 
   // Sometimes link come from component descriptions; in this case, remove the domain
-  if (pathname.startsWith('https://base-ui.com/')) {
-    pathname = pathname.replace('https://base-ui.com/', '/');
+  if (pathname.startsWith('https://obstudio.co/')) {
+    pathname = pathname.replace('https://obstudio.co/', '/');
   }
 
   if (

@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { Drawer } from '@base-ui/react/drawer';
-import { ScrollArea } from '@base-ui/react/scroll-area';
+import { Drawer } from '@obstudio/react/drawer';
+import { ScrollArea } from '@obstudio/react/scroll-area';
 
 const ITEMS = [
   { href: '/react/overview', label: 'Overview' },

@@ -1,13 +1,13 @@
 # Forms
 
-<Subtitle>A guide to building forms with Base UI components.</Subtitle>
-<Meta name="description" content="A guide to building forms with Base UI components." />
+<Subtitle>A guide to building forms with Obstudio components.</Subtitle>
+<Meta name="description" content="A guide to building forms with Obstudio components." />
 
-Base UI form control components extend the native [constraint validation API](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#the-constraint-validation-api) so you can build forms for collecting user input or providing control over an interface. They also integrate seamlessly with third-party libraries like [React Hook Form](#react-hook-form) and [TanStack Form](#tanstack-form).
+Obstudio form control components extend the native [constraint validation API](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#the-constraint-validation-api) so you can build forms for collecting user input or providing control over an interface. They also integrate seamlessly with third-party libraries like [React Hook Form](#react-hook-form) and [TanStack Form](#tanstack-form).
 
-import { DemoBaseUIForm } from './demos/hero';
+import { DemoObstudioForm } from './demos/hero';
 
-<DemoBaseUIForm />
+<DemoObstudioForm />
 
 ## Naming form controls
 
@@ -29,8 +29,8 @@ Use `<Field.Label>` or a native `<label>` to label the following controls:
 You can implicitly label `<Checkbox>`, `<Radio>` and `<Switch>` components by enclosing them with `<Field.Label>`:
 
 ```tsx title="Implicitly labeling a switch"
-import { Field } from '@base-ui/react/field';
-import { Switch } from '@base-ui/react/switch';
+import { Field } from '@obstudio/react/field';
+import { Switch } from '@obstudio/react/switch';
 
 <Field.Root>
   <Field.Label>
@@ -57,10 +57,10 @@ If no visible label is rendered, provide `aria-label` on the actual form control
 `<Field.Description>` automatically assigns an accessible description:
 
 ```tsx title="Labeling select and slider"
-import { Form } from '@base-ui/react/form';
-import { Field } from '@base-ui/react/field';
-import { Select } from '@base-ui/react/select';
-import { Slider } from '@base-ui/react/slider';
+import { Form } from '@obstudio/react/form';
+import { Field } from '@obstudio/react/field';
+import { Select } from '@obstudio/react/select';
+import { Slider } from '@obstudio/react/slider';
 
 <Form>
   <Field.Root>
@@ -90,12 +90,12 @@ import { Slider } from '@base-ui/react/slider';
 Compose `<Fieldset>` when a single label applies to multiple controls, such as a range slider with multiple thumbs or a section that combines several inputs. For checkbox and radio groups, keep the group label in `<Fieldset.Legend>` and wrap each option with `<Field.Item>`:
 
 ```tsx title="Composing range slider and radio group with fieldset"
-import { Form } from '@base-ui/react/form';
-import { Field } from '@base-ui/react/field';
-import { Fieldset } from '@base-ui/react/fieldset';
-import { Radio } from '@base-ui/react/radio';
-import { RadioGroup } from '@base-ui/react/radio-group';
-import { Slider } from '@base-ui/react/slider';
+import { Form } from '@obstudio/react/form';
+import { Field } from '@obstudio/react/field';
+import { Fieldset } from '@obstudio/react/fieldset';
+import { Radio } from '@obstudio/react/radio';
+import { RadioGroup } from '@obstudio/react/radio-group';
+import { Slider } from '@obstudio/react/slider';
 
 <Form>
   <Field.Root>
@@ -129,11 +129,11 @@ import { Slider } from '@base-ui/react/slider';
 `<Field.Item>` should enclose each checkbox or radio option so every control has its own label and description:
 
 ```tsx title="Explicitly labeling checkboxes in a checkbox group"
-import { Form } from '@base-ui/react/form';
-import { Field } from '@base-ui/react/field';
-import { Fieldset } from '@base-ui/react/fieldset';
-import { Checkbox } from '@base-ui/react/checkbox';
-import { CheckboxGroup } from '@base-ui/react/checkbox-group';
+import { Form } from '@obstudio/react/form';
+import { Field } from '@obstudio/react/field';
+import { Fieldset } from '@obstudio/react/fieldset';
+import { Checkbox } from '@obstudio/react/checkbox';
+import { CheckboxGroup } from '@obstudio/react/checkbox-group';
 
 <Field.Root>
   <Fieldset.Root render={<CheckboxGroup />}>
@@ -161,9 +161,9 @@ import { CheckboxGroup } from '@base-ui/react/checkbox-group';
 Pass the `name` prop to `<Field.Root>` to include the wrapped control's value when a parent form is submitted:
 
 ```tsx title="Assigning field name to combobox"
-import { Form } from '@base-ui/react/form';
-import { Field } from '@base-ui/react/field';
-import { Combobox } from '@base-ui/react/combobox';
+import { Form } from '@obstudio/react/form';
+import { Field } from '@obstudio/react/field';
+import { Combobox } from '@obstudio/react/combobox';
 
 <Form>
   {/* @highlight-start */}
@@ -181,7 +181,7 @@ import { Combobox } from '@base-ui/react/combobox';
 You can take over form submission using the native `onSubmit`, or custom `onFormSubmit` props:
 
 ```tsx title="Native submission using onSubmit"
-import { Form } from '@base-ui/react/form';
+import { Form } from '@obstudio/react/form';
 
 <Form
   // @highlight-start
@@ -203,7 +203,7 @@ import { Form } from '@base-ui/react/form';
 When using `onFormSubmit`, you receive form values as a JavaScript object, with `eventDetails` provided as a second argument. Additionally, `preventDefault()` is automatically called on the native submit event:
 
 ```tsx title="Submission using onFormSubmit"
-import { Form } from '@base-ui/react/form';
+import { Form } from '@obstudio/react/form';
 
 <Form
   // @highlight-start
@@ -223,7 +223,7 @@ import { Form } from '@base-ui/react/form';
 
 ## Constraint validation
 
-Base UI form components support native HTML validation attributes for many validation rules:
+Obstudio form components support native HTML validation attributes for many validation rules:
 
 - `required` specifies a required field.
 - `minLength` and `maxLength` specify a valid length for text fields.
@@ -231,7 +231,7 @@ Base UI form components support native HTML validation attributes for many vali
 - `step` specifies an increment that numeric field values must be an integral multiple of.
 
 ```tsx title="Defining constraint validation on a text field"
-import { Field } from '@base-ui/react/field';
+import { Field } from '@obstudio/react/field';
 
 <Field.Root name="website">
   <Field.Control type="url" required pattern="https?://.*" />
@@ -239,12 +239,12 @@ import { Field } from '@base-ui/react/field';
 </Field.Root>;
 ```
 
-Base UI form components use a hidden input to participate in native form submission and validation.
+Obstudio form components use a hidden input to participate in native form submission and validation.
 To anchor the hidden input near a control so the native validation bubble points to the correct area, ensure the component has been given a `name`, and wrap controls in a relatively positioned container for best results.
 
 ```tsx title="Positioning hidden inputs"
-import { Field } from '@base-ui/react/field';
-import { Select } from '@base-ui/react/select';
+import { Field } from '@obstudio/react/field';
+import { Select } from '@obstudio/react/select';
 
 <Field.Root name="apple">
   <Select.Root>
@@ -269,7 +269,7 @@ Use the `validationMode` prop to configure when validation is performed:
 `validationDebounceTime` can be used to debounce the function in use cases such as asynchronous requests or text fields that validate `onChange`.
 
 ```tsx title="Text input using custom asynchronous validation"
-import { Field } from '@base-ui/react/field';
+import { Field } from '@obstudio/react/field';
 
 <Field.Root
   name="username"
@@ -308,8 +308,8 @@ You can pass errors returned by (post-submission) server-side validation to the 
 This should be an object with field names as keys, and an error string or array of strings as the value. Once a field's value changes, any corresponding error in `errors` will be cleared from the field state.
 
 ```tsx title="Displaying errors returned by server-side validation"
-import { Form } from '@base-ui/react/form';
-import { Field } from '@base-ui/react/field';
+import { Form } from '@obstudio/react/form';
+import { Field } from '@obstudio/react/field';
 
 async function submitToServer(/* payload */) {
   return {
@@ -339,8 +339,8 @@ When using [Server Functions with Form Actions](https://react.dev/reference/rsc/
 // app/form.tsx
 /* prettier-ignore */
 'use client';
-import { Form } from '@base-ui/react/form';
-import { Field } from '@base-ui/react/field';
+import { Form } from '@obstudio/react/form';
+import { Field } from '@obstudio/react/field';
 import { login } from './actions';
 
 // @highlight-text "state" "formAction"
@@ -382,7 +382,7 @@ Use `<Field.Error>` without `children` to automatically display the field's nati
 
 ## React Hook Form
 
-[React Hook Form](https://react-hook-form.com) is a popular library that you can integrate with Base UI to externally manage form and field state for your existing components.
+[React Hook Form](https://react-hook-form.com) is a popular library that you can integrate with Obstudio to externally manage form and field state for your existing components.
 
 import { DemoReactHookForm } from './demos/react-hook-form';
 
@@ -407,9 +407,9 @@ const { control, handleSubmit } = useForm<FormValues>({
 
 Use the `<Controller>` component to integrate with any `<Field>` component, forwarding the `name`, `field`, and `fieldState` render props to the appropriate part:
 
-```tsx title="Integrating the controller component with Base UI field"
+```tsx title="Integrating the controller component with Obstudio field"
 import { useForm, Controller } from "react-hook-form";
-import { Field } from '@base-ui/react/field';
+import { Field } from '@obstudio/react/field';
 
 const { control, handleSubmit} = useForm({
   defaultValues: {
@@ -451,7 +451,7 @@ const { control, handleSubmit} = useForm({
 />
 ```
 
-For React Hook Form to focus invalid fields when performing validation, you must ensure that any wrapping components forward the `ref` to the underlying Base UI component. You can typically accomplish this using the `inputRef` prop, or directly as the `ref` for components that render an input element like `<NumberField.Input>`.
+For React Hook Form to focus invalid fields when performing validation, you must ensure that any wrapping components forward the `ref` to the underlying Obstudio component. You can typically accomplish this using the `inputRef` prop, or directly as the `ref` for components that render an input element like `<NumberField.Input>`.
 
 ### Field validation
 
@@ -459,7 +459,7 @@ Specify `rules` on the `<Controller>` in the same format as [`register`](https:/
 
 ```tsx title="Defining validation rules and displaying errors"
 import { Controller } from "react-hook-form";
-import { Field } from '@base-ui/react/field';
+import { Field } from '@obstudio/react/field';
 
 <Controller
   {/* @highlight-start */}
@@ -508,7 +508,7 @@ Wrap your submit handler function with `handleSubmit` to receive the form values
 
 ```tsx title="Form submission handler"
 import { useForm } from 'react-hook-form';
-import { Form } from '@base-ui/react/form';
+import { Form } from '@obstudio/react/form';
 
 interface FormValues {
   username: string;
@@ -527,7 +527,7 @@ async function submitForm(data: FormValues) {
 
 ## TanStack Form
 
-[TanStack Form](https://tanstack.com/form/v1/docs/overview) is a form library with a function-based API for orchestrating validations that can also be integrated with Base UI.
+[TanStack Form](https://tanstack.com/form/v1/docs/overview) is a form library with a function-based API for orchestrating validations that can also be integrated with Obstudio.
 
 import { DemoTanstackForm } from './demos/tanstack-form';
 
@@ -560,11 +560,11 @@ const form = useForm<FormValues>({
 
 ### Integrate components
 
-Use the `<form.Field>` component from the form instance to integrate with Base UI components using the `children` prop, forwarding the various `field` render props to the appropriate part:
+Use the `<form.Field>` component from the form instance to integrate with Obstudio components using the `children` prop, forwarding the various `field` render props to the appropriate part:
 
-```tsx title="Integrating TanStack Form with Base UI components"
+```tsx title="Integrating TanStack Form with Obstudio components"
 import { useForm } from '@tanstack/react-form';
-import { Field } from '@base-ui/react/field';
+import { Field } from '@obstudio/react/field';
 
 const form = useForm(/* defaultValues, other parameters */)
 
@@ -603,7 +603,7 @@ const form = useForm(/* defaultValues, other parameters */)
 </form>
 ```
 
-The Base UI `<Form>` component is not needed when using TanStack Form.
+The Obstudio `<Form>` component is not needed when using TanStack Form.
 
 ### Form validation
 
@@ -657,7 +657,7 @@ const form = useForm({
 You can pass additional validator functions to individual `<form.Field>` components to add validations on top of the form-level validators:
 
 ```tsx title="Field-level validators"
-import { Field } from '@base-ui/react/field';
+import { Field } from '@obstudio/react/field';
 import { useForm } from '@tanstack/react-form';
 
 const form = useForm();
@@ -717,7 +717,7 @@ const form = useForm({
 
 export const metadata = {
   keywords: [
-    'Base UI Forms',
+    'Obstudio Forms',
     'React Accessible Forms',
     'Field Validation Handbook',
     'React Hook Form Integration',

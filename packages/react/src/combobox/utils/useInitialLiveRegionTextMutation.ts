@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { platform } from '@base-ui/utils/platform';
-import { useTimeout } from '@base-ui/utils/useTimeout';
+import { platform } from '@obstudio/utils/platform';
+import { useTimeout } from '@obstudio/utils/useTimeout';
 
 // Word Joiner is invisible and zero-width, so it forces a text mutation without shifting layout.
 const LIVE_REGION_MARKER = '\u2060';

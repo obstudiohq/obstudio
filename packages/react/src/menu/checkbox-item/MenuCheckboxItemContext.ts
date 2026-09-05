@@ -15,7 +15,7 @@ export function useMenuCheckboxItemContext() {
   const context = React.useContext(MenuCheckboxItemContext);
   if (context === undefined) {
     throw new Error(
-      'Base UI: MenuCheckboxItemContext is missing. MenuCheckboxItem parts must be placed within <Menu.CheckboxItem>.',
+      'Obstudio: MenuCheckboxItemContext is missing. MenuCheckboxItem parts must be placed within <Menu.CheckboxItem>.',
     );
   }
 

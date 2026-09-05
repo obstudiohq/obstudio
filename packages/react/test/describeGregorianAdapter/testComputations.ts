@@ -1,5 +1,5 @@
 import { expect } from 'vitest';
-// TODO Temporal: Replace with `@base-ui/react/types` import when Temporal components will become public.
+// TODO Temporal: Replace with `@obstudio/react/types` import when Temporal components will become public.
 import {
   TemporalAdapter,
   TemporalSupportedObject,

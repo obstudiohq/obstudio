@@ -23,7 +23,7 @@ export const ComboboxDerivedItemsContext = React.createContext<
 >(undefined);
 export const ComboboxHasItemsContext = React.createContext<boolean>(false);
 // `inputValue` can't be placed in the store.
-// https://github.com/mui/base-ui/issues/2703
+// https://github.com/obstudiohq/obstudio/issues/2703
 export const ComboboxInputValueContext =
   React.createContext<React.ComponentProps<'input'>['value']>('');
 
@@ -31,7 +31,7 @@ export function useComboboxRootContext() {
   const context = React.useContext(ComboboxRootContext) as ComboboxStore | undefined;
   if (!context) {
     throw new Error(
-      'Base UI: ComboboxRootContext is missing. Combobox parts must be placed within <Combobox.Root>.',
+      'Obstudio: ComboboxRootContext is missing. Combobox parts must be placed within <Combobox.Root>.',
     );
   }
   return context;
@@ -41,7 +41,7 @@ export function useComboboxFloatingContext() {
   const context = React.useContext(ComboboxFloatingContext);
   if (!context) {
     throw new Error(
-      'Base UI: ComboboxFloatingContext is missing. Combobox parts must be placed within <Combobox.Root>.',
+      'Obstudio: ComboboxFloatingContext is missing. Combobox parts must be placed within <Combobox.Root>.',
     );
   }
   return context;
@@ -51,7 +51,7 @@ export function useComboboxDerivedItemsContext() {
   const context = React.useContext(ComboboxDerivedItemsContext);
   if (!context) {
     throw new Error(
-      'Base UI: ComboboxItemsContext is missing. Combobox parts must be placed within <Combobox.Root>.',
+      'Obstudio: ComboboxItemsContext is missing. Combobox parts must be placed within <Combobox.Root>.',
     );
   }
   return context;

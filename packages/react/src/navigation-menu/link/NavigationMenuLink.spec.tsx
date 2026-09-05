@@ -1,5 +1,5 @@
 import { expectType } from '#test-utils';
-import { NavigationMenu } from '@base-ui/react/navigation-menu';
+import { NavigationMenu } from '@obstudio/react/navigation-menu';
 
 // `NavigationMenu.Link` exposes the native `<a>` props in its `render` callback.
 <NavigationMenu.Link

@@ -1,7 +1,7 @@
 import { expect, describe, it } from 'vitest';
 /* eslint-disable testing-library/render-result-naming-convention */
 import * as React from 'react';
-import { useRender } from '@base-ui/react/use-render';
+import { useRender } from '@obstudio/react/use-render';
 import { createRenderer } from '#test-utils';
 
 describe('useRender', () => {

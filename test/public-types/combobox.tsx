@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Combobox, type ComboboxItemCollection } from '@base-ui/react/combobox';
+import { Combobox, type ComboboxItemCollection } from '@obstudio/react/combobox';
 
 interface User {
   id: number;

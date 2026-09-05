@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { useId } from '@base-ui/utils/useId';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { useId } from '@obstudio/utils/useId';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
 import { useToastRootContext } from '../root/ToastRootContext';
 import { hasRenderableChildren } from './isRenderableNode';
 

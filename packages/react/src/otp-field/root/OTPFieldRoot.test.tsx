@@ -1,10 +1,10 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
-import { SafeReact } from '@base-ui/utils/safeReact';
+import { SafeReact } from '@obstudio/utils/safeReact';
 import { act, fireEvent, screen } from '@mui/internal-test-utils';
-import { OTPField as OTPFieldBase } from '@base-ui/react/otp-field';
-import { Field } from '@base-ui/react/field';
-import { Form } from '@base-ui/react/form';
+import { OTPField as OTPFieldBase } from '@obstudio/react/otp-field';
+import { Field } from '@obstudio/react/field';
+import { Form } from '@obstudio/react/form';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { REASONS } from '../../internals/reasons';
 
@@ -1285,7 +1285,7 @@ describe('<OTPField.Root />', () => {
         expect(handleSubmit).not.toHaveBeenCalled();
       });
 
-      it('does not call flushSync inside a layout effect when auto-submitting a Base UI Form', async () => {
+      it('does not call flushSync inside a layout effect when auto-submitting a Obstudio Form', async () => {
         const handleSubmit = vi.fn((event: React.FormEvent<HTMLFormElement>) => {
           event.preventDefault();
         });
@@ -1312,7 +1312,7 @@ describe('<OTPField.Root />', () => {
         }
       });
 
-      it('blocks invalid Base UI Form auto-submit without calling flushSync inside a layout effect', async () => {
+      it('blocks invalid Obstudio Form auto-submit without calling flushSync inside a layout effect', async () => {
         const handleSubmit = vi.fn((event: React.FormEvent<HTMLFormElement>) => {
           event.preventDefault();
         });
@@ -1542,7 +1542,7 @@ describe('<OTPField.Root />', () => {
 
     expect(warnSpy.mock.calls.length).toBe(1);
     expect(warnSpy.mock.calls[0]?.[0]).toContain(
-      'Base UI: <OTPField.Root> `length` must match the number of rendered <OTPField.Input /> parts.',
+      'Obstudio: <OTPField.Root> `length` must match the number of rendered <OTPField.Input /> parts.',
     );
     expect(warnSpy.mock.calls[0]?.[0]).toContain('Received `length={6}` but rendered 5 inputs.');
 
@@ -1585,7 +1585,7 @@ describe('<OTPField.Root />', () => {
 
         expect(warnSpy).toHaveBeenCalledTimes(1);
         expect(warnSpy.mock.calls[0]?.[0]).toContain(
-          `Base UI: <OTPField.Root> \`length\` must be a positive integer. Received \`length={${String(invalidLength)}}\`.`,
+          `Obstudio: <OTPField.Root> \`length\` must be a positive integer. Received \`length={${String(invalidLength)}}\`.`,
         );
       } finally {
         ownerStackSpy?.mockRestore();

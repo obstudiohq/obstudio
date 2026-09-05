@@ -1,10 +1,10 @@
 import { describe, expect, it, vi } from 'vitest';
 import * as React from 'react';
-import { AlertDialog } from '@base-ui/react/alert-dialog';
-import { Dialog } from '@base-ui/react/dialog';
-import { Drawer } from '@base-ui/react/drawer';
-import { SafeReact } from '@base-ui/utils/safeReact';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { AlertDialog } from '@obstudio/react/alert-dialog';
+import { Dialog } from '@obstudio/react/dialog';
+import { Drawer } from '@obstudio/react/drawer';
+import { SafeReact } from '@obstudio/utils/safeReact';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
 import { act, fireEvent, screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { useDialogRootContext } from '../../dialog/root/DialogRootContext';
@@ -57,7 +57,7 @@ describe('<Drawer.Popup />', () => {
     await waitFor(() => {
       expect(consoleErrorSpy).toHaveBeenCalledWith(
         expect.stringContaining(
-          'Base UI: <Drawer.Popup> expected to be rendered within <Drawer.Viewport>.',
+          'Obstudio: <Drawer.Popup> expected to be rendered within <Drawer.Viewport>.',
         ),
       );
     });
@@ -83,7 +83,7 @@ describe('<Drawer.Popup />', () => {
 
       await waitFor(() => {
         expect(consoleErrorSpy).toHaveBeenCalledWith(
-          'Base UI: <Drawer.Popup> expected to be rendered within <Drawer.Viewport>. ' +
+          'Obstudio: <Drawer.Popup> expected to be rendered within <Drawer.Viewport>. ' +
             'Omitting the viewport disables drawer swipe handling and touch scroll locking. ' +
             'Wrap <Drawer.Popup> in <Drawer.Viewport>.',
         );
@@ -624,7 +624,7 @@ describe('<Drawer.Popup />', () => {
   it.skipIf(isJSDOM)(
     'clears parent nested drawer state when a nested drawer starts closing before unmount',
     async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       const style = `
         @keyframes test-drawer-exit {
@@ -687,13 +687,13 @@ describe('<Drawer.Popup />', () => {
           expect(screen.queryByTestId('child-popup')).toBeNull();
         });
       } finally {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
       }
     },
   );
 
   it.skipIf(isJSDOM)('keeps a fixed height applied while a nested drawer closes', async () => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
     const style = `
         @keyframes test-drawer-exit {
@@ -808,14 +808,14 @@ describe('<Drawer.Popup />', () => {
         expect(screen.queryByTestId('child-popup')).toBeNull();
       });
     } finally {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
     }
   });
 
   it.skipIf(isJSDOM)(
     'restores a fixed height before nested state when reopening a nested drawer',
     async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       const style = `
         .animation-test-parent-popup {
@@ -912,7 +912,7 @@ describe('<Drawer.Popup />', () => {
         });
         observer.disconnect();
       } finally {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
       }
     },
   );

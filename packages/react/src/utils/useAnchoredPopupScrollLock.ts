@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { ownerDocument } from '@base-ui/utils/owner';
-import { useScrollLock } from '@base-ui/utils/useScrollLock';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { ownerDocument } from '@obstudio/utils/owner';
+import { useScrollLock } from '@obstudio/utils/useScrollLock';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
 
 // Touch-opened popups normally avoid scroll locking so users can still swipe outside to dismiss.
 // This hook re-enables scroll lock only when the popup is effectively full-width.

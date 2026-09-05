@@ -1,5 +1,5 @@
 import { expect, vi, describe, it } from 'vitest';
-import { Select } from '@base-ui/react/select';
+import { Select } from '@obstudio/react/select';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Select.ItemText />', () => {
@@ -31,7 +31,7 @@ describe('<Select.ItemText />', () => {
           </Select.Root>,
         ),
       ).rejects.toThrow(
-        'Base UI: SelectItemContext is missing. SelectItem parts must be placed within <Select.Item>.',
+        'Obstudio: SelectItemContext is missing. SelectItem parts must be placed within <Select.Item>.',
       );
     } finally {
       errorSpy.mockRestore();

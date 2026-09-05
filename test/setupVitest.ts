@@ -3,12 +3,12 @@ import setupVitest from '@mui/internal-test-utils/setupVitest';
 // eslint-disable-next-line import/no-relative-packages
 import '../packages/react/test/addVitestMatchers';
 import '@testing-library/jest-dom/vitest';
-import { reset as resetBuiltError } from '@base-ui/utils/error';
-import { resetAnimationFrameScheduler as resetBuiltScheduler } from '@base-ui/utils/useAnimationFrame';
+import { reset as resetBuiltError } from '@obstudio/utils/error';
+import { resetAnimationFrameScheduler as resetBuiltScheduler } from '@obstudio/utils/useAnimationFrame';
 
 declare global {
   // eslint-disable-next-line vars-on-top
-  var BASE_UI_ANIMATIONS_DISABLED: boolean;
+  var OBSTUDIO_ANIMATIONS_DISABLED: boolean;
 }
 
 let resetSourceError = () => {};
@@ -29,7 +29,7 @@ beforeAll(async () => {
 
 afterEach(() => {
   vi.resetAllMocks();
-  globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+  globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
   resetBuiltError();
   resetSourceError();
   // Drop animation frame callbacks that were scheduled but never ran (e.g. under fake timers torn
@@ -39,7 +39,7 @@ afterEach(() => {
   resetSourceScheduler();
 });
 
-globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
 
 if (typeof window !== 'undefined' && window?.navigator?.userAgent?.includes('jsdom')) {
   globalThis.requestAnimationFrame = (cb) => {

@@ -6,7 +6,7 @@ export const MenuPortalContext = React.createContext<boolean | undefined>(undefi
 export function useMenuPortalContext() {
   const value = React.useContext(MenuPortalContext);
   if (value === undefined) {
-    throw new Error('Base UI: <Menu.Portal> is missing.');
+    throw new Error('Obstudio: <Menu.Portal> is missing.');
   }
   return value;
 }

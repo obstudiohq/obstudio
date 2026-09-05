@@ -10,7 +10,7 @@ export function useCheckboxRootContext() {
   const context = React.useContext(CheckboxRootContext);
   if (context === undefined) {
     throw new Error(
-      'Base UI: CheckboxRootContext is missing. Checkbox parts must be placed within <Checkbox.Root>.',
+      'Obstudio: CheckboxRootContext is missing. Checkbox parts must be placed within <Checkbox.Root>.',
     );
   }
 

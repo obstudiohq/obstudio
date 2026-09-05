@@ -1,7 +1,7 @@
 'use client';
 
-import { ScrollArea } from '@base-ui/react/scroll-area';
-import { Tabs } from '@base-ui/react/tabs';
+import { ScrollArea } from '@obstudio/react/scroll-area';
+import { Tabs } from '@obstudio/react/tabs';
 
 import './index.css';
 

@@ -2,12 +2,12 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { isElement } from '@floating-ui/utils/dom';
-import { addEventListener } from '@base-ui/utils/addEventListener';
-import { ownerDocument, ownerWindow } from '@base-ui/utils/owner';
-import { useAnimationFrame } from '@base-ui/utils/useAnimationFrame';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { clamp } from '@base-ui/utils/clamp';
+import { addEventListener } from '@obstudio/utils/addEventListener';
+import { ownerDocument, ownerWindow } from '@obstudio/utils/owner';
+import { useAnimationFrame } from '@obstudio/utils/useAnimationFrame';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { clamp } from '@obstudio/utils/clamp';
 import { useDialogRootContext } from '../../dialog/root/DialogRootContext';
 import { DialogViewport } from '../../dialog/viewport/DialogViewport';
 import * as DialogViewportDataAttributes from '../../dialog/viewport/DialogViewportDataAttributes';
@@ -31,14 +31,14 @@ import * as DrawerPopupDataAttributes from '../popup/DrawerPopupDataAttributes';
 import * as DrawerBackdropCssVars from '../backdrop/DrawerBackdropCssVars';
 import { DRAWER_CONTENT_ATTRIBUTE } from '../content/drawerContentAttribute';
 import { REASONS } from '../../internals/reasons';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { activeElement, contains, getTarget } from '../../floating-ui-react/utils';
 import { DrawerViewportContext } from './DrawerViewportContext';
 import { TransitionStatusDataAttributes } from '../../internals/stateAttributesMapping';
 import { findScrollableTouchTarget, type ScrollAxis } from '../../utils/scrollable';
-import { BASE_UI_SWIPE_IGNORE_SELECTOR } from '../../internals/constants';
+import { OBSTUDIO_SWIPE_IGNORE_SELECTOR } from '../../internals/constants';
 import { getElementAtPoint } from '../../utils/getElementAtPoint';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import type { TransitionStatus } from '../../internals/useTransitionStatus';
 import { useDrawerVirtualKeyboardContext } from '../virtual-keyboard-provider/DrawerVirtualKeyboardContext';
 
@@ -73,7 +73,7 @@ interface TouchScrollState {
  * A positioning container for the drawer popup that can be made scrollable.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+ * Documentation: [Obstudio Drawer](https://obstudio.co/react/components/drawer)
  */
 export const DrawerViewport = React.forwardRef(function DrawerViewport(
   props: DrawerViewport.Props,
@@ -1048,7 +1048,7 @@ export interface DrawerViewportState {
   nestedDialogOpen: boolean;
 }
 
-export interface DrawerViewportProps extends BaseUIComponentProps<'div', DrawerViewportState> {}
+export interface DrawerViewportProps extends ObstudioComponentProps<'div', DrawerViewportState> {}
 
 export namespace DrawerViewport {
   export type Props = DrawerViewportProps;
@@ -1060,7 +1060,7 @@ function setBackdropSwipingAttribute(backdropElement: HTMLElement | null, swipin
 }
 
 function isSwipeIgnoredTarget(target: Element | null): boolean {
-  return Boolean(target?.closest(BASE_UI_SWIPE_IGNORE_SELECTOR));
+  return Boolean(target?.closest(OBSTUDIO_SWIPE_IGNORE_SELECTOR));
 }
 
 function isDrawerContentTarget(target: Element | null): boolean {

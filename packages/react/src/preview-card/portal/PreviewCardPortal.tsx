@@ -3,14 +3,14 @@ import * as React from 'react';
 import { usePreviewCardRootContext } from '../root/PreviewCardContext';
 import { PreviewCardPortalContext } from './PreviewCardPortalContext';
 import { FloatingPortalLite } from '../../utils/FloatingPortalLite';
-import { type BaseUIComponentProps } from '../../internals/types';
+import { type ObstudioComponentProps } from '../../internals/types';
 
 /**
  * A portal element that moves the popup to a different part of the DOM.
  * By default, the portal element is appended to `<body>`.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Preview Card](https://base-ui.com/react/components/preview-card)
+ * Documentation: [Obstudio Preview Card](https://obstudio.co/react/components/preview-card)
  */
 export const PreviewCardPortal = React.forwardRef(function PreviewCardPortal(
   props: PreviewCardPortal.Props,
@@ -35,7 +35,7 @@ export const PreviewCardPortal = React.forwardRef(function PreviewCardPortal(
 
 export interface PreviewCardPortalState {}
 
-export interface PreviewCardPortalProps extends BaseUIComponentProps<
+export interface PreviewCardPortalProps extends ObstudioComponentProps<
   'div',
   PreviewCardPortalState
 > {

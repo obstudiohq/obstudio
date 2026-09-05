@@ -2,15 +2,15 @@ import { expect, vi, describe, beforeEach, it } from 'vitest';
 import * as React from 'react';
 import { act, fireEvent, flushMicrotasks, screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, isJSDOM } from '#test-utils';
-import { Autocomplete } from '@base-ui/react/autocomplete';
-import { Field } from '@base-ui/react/field';
-import { Form } from '@base-ui/react/form';
-import { Input } from '@base-ui/react/input';
-import { Switch } from '@base-ui/react/switch';
+import { Autocomplete } from '@obstudio/react/autocomplete';
+import { Field } from '@obstudio/react/field';
+import { Form } from '@obstudio/react/form';
+import { Input } from '@obstudio/react/input';
+import { Switch } from '@obstudio/react/switch';
 
 describe('<Autocomplete.Root />', () => {
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
   });
 
   const { render, renderToString } = createRenderer();
@@ -1669,7 +1669,7 @@ describe('<Autocomplete.Root />', () => {
                 <Autocomplete.Positioner>
                   <Autocomplete.Popup>
                     <Autocomplete.List>
-                      <Autocomplete.Item value="base-ui">base-ui</Autocomplete.Item>
+                      <Autocomplete.Item value="obstudio">obstudio</Autocomplete.Item>
                     </Autocomplete.List>
                   </Autocomplete.Popup>
                 </Autocomplete.Positioner>

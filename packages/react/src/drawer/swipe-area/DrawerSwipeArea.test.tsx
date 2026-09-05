@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 import * as React from 'react';
-import { Drawer } from '@base-ui/react/drawer';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { Drawer } from '@obstudio/react/drawer';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
 import {
   act,
   fireEvent,
@@ -21,9 +21,9 @@ import type { DialogStore } from '../../dialog/store/DialogStore';
 const useIdMockState = vi.hoisted(() => ({ returnUndefined: false }));
 const eventUtilsMockState = vi.hoisted(() => ({ forceVirtualClick: false }));
 
-vi.mock('@base-ui/utils/useId', async () => {
+vi.mock('@obstudio/utils/useId', async () => {
   const actual =
-    await vi.importActual<typeof import('@base-ui/utils/useId')>('@base-ui/utils/useId');
+    await vi.importActual<typeof import('@obstudio/utils/useId')>('@obstudio/utils/useId');
   return {
     ...actual,
     useId(...args: Parameters<typeof actual.useId>) {
@@ -1383,7 +1383,7 @@ describe('<Drawer.SwipeArea />', () => {
       // The flash only reproduces on a *re-grab*, i.e. when the popup is already mounted as the open
       // commit lands. A real exit animation keeps the popup mounted (`mounted` stays true) through
       // the close, so the re-grab below drives a fresh open while it is still in the DOM.
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       const style = `
         @keyframes swipe-regrab-exit {
@@ -1460,7 +1460,7 @@ describe('<Drawer.SwipeArea />', () => {
         // The viewport's open-reset must not have clobbered the swipe area's value back to `0px`.
         expect(popup.style.getPropertyValue('--drawer-swipe-movement-y')).toBe('120px');
       } finally {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
       }
     },
   );

@@ -1,15 +1,15 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { usePopoverRootContext } from '../root/PopoverRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';
-import { useBaseUiId } from '../../internals/useBaseUiId';
+import { useObstudioId } from '../../internals/useObstudioId';
 
 /**
  * A heading that labels the popover.
  * Renders an `<h2>` element.
  *
- * Documentation: [Base UI Popover](https://base-ui.com/react/components/popover)
+ * Documentation: [Obstudio Popover](https://obstudio.co/react/components/popover)
  */
 export const PopoverTitle = React.forwardRef(function PopoverTitle(
   componentProps: PopoverTitle.Props,
@@ -19,7 +19,7 @@ export const PopoverTitle = React.forwardRef(function PopoverTitle(
 
   const store = usePopoverRootContext();
 
-  const id = useBaseUiId(elementProps.id);
+  const id = useObstudioId(elementProps.id);
 
   store.useSyncedValueWithCleanup('titleElementId', id);
 
@@ -33,7 +33,7 @@ export const PopoverTitle = React.forwardRef(function PopoverTitle(
 
 export interface PopoverTitleState {}
 
-export interface PopoverTitleProps extends BaseUIComponentProps<
+export interface PopoverTitleProps extends ObstudioComponentProps<
   'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
   PopoverTitleState
 > {}

@@ -2,15 +2,15 @@
 import * as React from 'react';
 import type { UseFieldValidationReturnValue } from '../field/root/useFieldValidation';
 import type { UseCheckboxGroupParentReturnValue } from './useCheckboxGroupParent';
-import type { BaseUIChangeEventDetails } from '../internals/createBaseUIEventDetails';
-import type { BaseUIEventReasons } from '../internals/reasons';
+import type { ObstudioChangeEventDetails } from '../internals/createObstudioEventDetails';
+import type { ObstudioEventReasons } from '../internals/reasons';
 import type { LabelableContext } from '../internals/labelable-provider/LabelableContext';
 
 export interface CheckboxGroupContext {
   value: string[];
   setValue: (
     value: string[],
-    eventDetails: BaseUIChangeEventDetails<BaseUIEventReasons['none']>,
+    eventDetails: ObstudioChangeEventDetails<ObstudioEventReasons['none']>,
   ) => void;
   allValues: string[] | undefined;
   parent: UseCheckboxGroupParentReturnValue;

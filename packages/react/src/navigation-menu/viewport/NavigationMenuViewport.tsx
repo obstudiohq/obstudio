@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useId } from '@base-ui/utils/useId';
-import { inertValue } from '@base-ui/utils/inertValue';
-import type { BaseUIComponentProps } from '../../internals/types';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useId } from '@obstudio/utils/useId';
+import { inertValue } from '@obstudio/utils/inertValue';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useNavigationMenuRootContext } from '../root/NavigationMenuRootContext';
 import { FocusGuard } from '../../utils/FocusGuard';
@@ -67,7 +67,7 @@ function Guards({ children }: { children: React.ReactNode }) {
  * The clipping viewport of the navigation menu's current content.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+ * Documentation: [Obstudio Navigation Menu](https://obstudio.co/react/components/navigation-menu)
  */
 export const NavigationMenuViewport = React.forwardRef(function NavigationMenuViewport(
   componentProps: NavigationMenuViewport.Props,
@@ -133,7 +133,7 @@ export const NavigationMenuViewport = React.forwardRef(function NavigationMenuVi
 
 export interface NavigationMenuViewportState {}
 
-export interface NavigationMenuViewportProps extends BaseUIComponentProps<
+export interface NavigationMenuViewportProps extends ObstudioComponentProps<
   'div',
   NavigationMenuViewportState
 > {}

@@ -1,6 +1,6 @@
 import { expect, vi, describe, it } from 'vitest';
-import { Combobox } from '@base-ui/react/combobox';
-import { SafeReact } from '@base-ui/utils/safeReact';
+import { Combobox } from '@obstudio/react/combobox';
+import { SafeReact } from '@obstudio/utils/safeReact';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 
 describe('<Combobox.Label />', () => {

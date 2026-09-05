@@ -4,7 +4,7 @@ import {
   DirectionProvider,
   useDirection,
   type TextDirection,
-} from '@base-ui/react/direction-provider';
+} from '@obstudio/react/direction-provider';
 import { screen } from '@mui/internal-test-utils';
 import { createRenderer } from '#test-utils';
 

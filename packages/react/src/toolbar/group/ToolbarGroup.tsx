@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { useRenderElement } from '../../internals/useRenderElement';
-import { BaseUIComponentProps } from '../../internals/types';
+import { ObstudioComponentProps } from '../../internals/types';
 import { useToolbarRootContext } from '../root/ToolbarRootContext';
 import type { ToolbarRootState } from '../root/ToolbarRoot';
 import { ToolbarGroupContext } from './ToolbarGroupContext';
@@ -10,7 +10,7 @@ import { ToolbarGroupContext } from './ToolbarGroupContext';
  * Groups several toolbar items or toggles.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Toolbar](https://base-ui.com/react/components/toolbar)
+ * Documentation: [Obstudio Toolbar](https://obstudio.co/react/components/toolbar)
  */
 export const ToolbarGroup = React.forwardRef(function ToolbarGroup(
   componentProps: ToolbarGroup.Props,
@@ -53,7 +53,7 @@ export const ToolbarGroup = React.forwardRef(function ToolbarGroup(
 
 export interface ToolbarGroupState extends ToolbarRootState {}
 
-export interface ToolbarGroupProps extends BaseUIComponentProps<'div', ToolbarGroupState> {
+export interface ToolbarGroupProps extends ObstudioComponentProps<'div', ToolbarGroupState> {
   /**
    * When `true` all toolbar items in the group are disabled.
    * @default false

@@ -2,15 +2,15 @@ import { expect, vi, describe, beforeEach, it } from 'vitest';
 import * as React from 'react';
 import { screen } from '@mui/internal-test-utils';
 import { createRenderer } from '#test-utils';
-import { Select } from '@base-ui/react/select';
+import { Select } from '@obstudio/react/select';
 import { useSelectRootContext } from './root/SelectRootContext';
 import type { SelectStore } from './store';
-import { createChangeEventDetails } from '../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../internals/createObstudioEventDetails';
 import { REASONS } from '../internals/reasons';
 
 describe('select store synchronization', () => {
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
   });
 
   const { render } = createRenderer();

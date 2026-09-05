@@ -1,9 +1,9 @@
 'use client';
 import type * as React from 'react';
 import { ListboxSeparator } from '../../utils/listbox-separator/ListboxSeparator';
-import type { BaseUIComponentProps, Orientation } from '../../internals/types';
+import type { ObstudioComponentProps, Orientation } from '../../internals/types';
 
-export interface ComboboxSeparatorProps extends BaseUIComponentProps<
+export interface ComboboxSeparatorProps extends ObstudioComponentProps<
   'div',
   ComboboxSeparatorState
 > {
@@ -25,7 +25,7 @@ export interface ComboboxSeparatorState {
  * A visual separator between items or groups.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)
+ * Documentation: [Obstudio Combobox](https://obstudio.co/react/components/combobox)
  */
 export const ComboboxSeparator = ListboxSeparator as React.ForwardRefExoticComponent<
   ComboboxSeparatorProps & React.RefAttributes<HTMLDivElement>

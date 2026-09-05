@@ -1,6 +1,6 @@
 import * as React from 'react';
 import clsx from 'clsx';
-import { Autocomplete } from '@base-ui/react/autocomplete';
+import { Autocomplete } from '@obstudio/react/autocomplete';
 
 export function Root(props: Autocomplete.Root.Props<any>) {
   return <Autocomplete.Root {...props} />;

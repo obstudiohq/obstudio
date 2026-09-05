@@ -14,7 +14,7 @@ export function useTabsListContext() {
   const context = React.useContext(TabsListContext);
   if (context === undefined) {
     throw new Error(
-      'Base UI: TabsListContext is missing. TabsList parts must be placed within <Tabs.List>.',
+      'Obstudio: TabsListContext is missing. TabsList parts must be placed within <Tabs.List>.',
     );
   }
 

@@ -1,6 +1,6 @@
 import { expect, describe, it } from 'vitest';
 import * as React from 'react';
-import { Field } from '@base-ui/react/field';
+import { Field } from '@obstudio/react/field';
 import { screen } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance } from '#test-utils';
 
@@ -148,7 +148,7 @@ describe('<Field.Label />', () => {
         expect(errorSpy).toHaveBeenCalledTimes(1);
         expect(errorSpy).toHaveBeenCalledWith(
           expect.stringContaining(
-            'Base UI: <Field.Label> expected a <label> element because the `nativeLabel` prop is true. ' +
+            'Obstudio: <Field.Label> expected a <label> element because the `nativeLabel` prop is true. ' +
               'Rendering a non-<label> disables native label association, so `htmlFor` will not ' +
               'work. Use a real <label> in the `render` prop, or set `nativeLabel` to `false`.',
           ),
@@ -175,8 +175,8 @@ describe('<Field.Label />', () => {
         expect(errorSpy).toHaveBeenCalledTimes(1);
         expect(errorSpy).toHaveBeenCalledWith(
           expect.stringContaining(
-            'Base UI: <Field.Label> expected a non-<label> element because the `nativeLabel` prop is false. ' +
-              'Rendering a <label> assumes native label behavior while Base UI treats it as ' +
+            'Obstudio: <Field.Label> expected a non-<label> element because the `nativeLabel` prop is false. ' +
+              'Rendering a <label> assumes native label behavior while Obstudio treats it as ' +
               'non-native, which can cause unexpected pointer behavior. Use a non-<label> in the ' +
               '`render` prop, or set `nativeLabel` to `true`.',
           ),

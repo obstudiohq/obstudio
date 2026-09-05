@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { Toolbar } from '@base-ui/react/toolbar';
-import { ToggleGroup } from '@base-ui/react/toggle-group';
-import { Toggle } from '@base-ui/react/toggle';
-import { Select } from '@base-ui/react/select';
+import { Toolbar } from '@obstudio/react/toolbar';
+import { ToggleGroup } from '@obstudio/react/toggle-group';
+import { Toggle } from '@obstudio/react/toggle';
+import { Select } from '@obstudio/react/select';
 import styles from './index.module.css';
 
 export default function ExampleToolbar() {

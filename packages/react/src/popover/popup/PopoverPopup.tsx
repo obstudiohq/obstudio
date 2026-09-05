@@ -1,12 +1,12 @@
 'use client';
 import * as React from 'react';
-import { InteractionType } from '@base-ui/utils/useEnhancedClickHandler';
+import { InteractionType } from '@obstudio/utils/useEnhancedClickHandler';
 import { isHTMLElement } from '@floating-ui/utils/dom';
 import { FloatingFocusManager, useHoverFloatingInteraction } from '../../floating-ui-react';
 import { usePopoverRootContext } from '../root/PopoverRootContext';
 import { usePopoverPositionerContext } from '../positioner/PopoverPositionerContext';
 import type { Side, Align } from '../../internals/useAnchorPositioning';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import type { TransitionStatus } from '../../internals/useTransitionStatus';
 import { popupTransitionStateMapping } from '../../utils/popupStateMapping';
 import { useOpenChangeComplete } from '../../internals/useOpenChangeComplete';
@@ -22,7 +22,7 @@ import { FOCUSABLE_POPUP_PROPS, createDefaultInitialFocus } from '../../utils/po
  * A container for the popover contents.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Popover](https://base-ui.com/react/components/popover)
+ * Documentation: [Obstudio Popover](https://obstudio.co/react/components/popover)
  */
 export const PopoverPopup = React.forwardRef(function PopoverPopup(
   componentProps: PopoverPopup.Props,
@@ -147,7 +147,7 @@ export interface PopoverPopupState {
   instant: 'dismiss' | 'click' | 'focus' | 'trigger-change' | undefined;
 }
 
-export interface PopoverPopupProps extends BaseUIComponentProps<'div', PopoverPopupState> {
+export interface PopoverPopupProps extends ObstudioComponentProps<'div', PopoverPopupState> {
   /**
    * Determines the element to focus when the popover is opened.
    * By default, focus moves to the first tabbable element inside the popup, except when the popover

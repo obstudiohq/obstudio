@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { FloatingPortal } from '../../floating-ui-react';
-import { type BaseUIComponentProps } from '../../internals/types';
+import { type ObstudioComponentProps } from '../../internals/types';
 import { useComboboxRootContext } from '../root/ComboboxRootContext';
 import { ComboboxPortalContext } from './ComboboxPortalContext';
 
@@ -10,7 +10,7 @@ import { ComboboxPortalContext } from './ComboboxPortalContext';
  * By default, the portal element is appended to `<body>`.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)
+ * Documentation: [Obstudio Combobox](https://obstudio.co/react/components/combobox)
  */
 export const ComboboxPortal = React.forwardRef(function ComboboxPortal(
   props: ComboboxPortal.Props,
@@ -37,7 +37,7 @@ export const ComboboxPortal = React.forwardRef(function ComboboxPortal(
 
 export interface ComboboxPortalState {}
 
-export interface ComboboxPortalProps extends BaseUIComponentProps<'div', ComboboxPortalState> {
+export interface ComboboxPortalProps extends ObstudioComponentProps<'div', ComboboxPortalState> {
   /**
    * Whether to keep the portal mounted in the DOM while the popup is hidden.
    * @default false

@@ -1,5 +1,5 @@
 import { expect, vi, describe, it } from 'vitest';
-import { Switch } from '@base-ui/react/switch';
+import { Switch } from '@obstudio/react/switch';
 import { createRenderer, describeConformance } from '#test-utils';
 import { SwitchRootContext } from '../root/SwitchRootContext';
 
@@ -32,7 +32,7 @@ describe('<Switch.Thumb />', () => {
 
     try {
       await expect(render(<Switch.Thumb />)).rejects.toThrow(
-        'Base UI: SwitchRootContext is missing. Switch parts must be placed within <Switch.Root>.',
+        'Obstudio: SwitchRootContext is missing. Switch parts must be placed within <Switch.Root>.',
       );
     } finally {
       errorSpy.mockRestore();

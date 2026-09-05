@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import type { BaseUIComponentProps } from '../../internals/types';
-import { useBaseUiId } from '../../internals/useBaseUiId';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import type { ObstudioComponentProps } from '../../internals/types';
+import { useObstudioId } from '../../internals/useObstudioId';
 import { useSelectGroupContext } from '../group/SelectGroupContext';
 import { useRenderElement } from '../../internals/useRenderElement';
 
@@ -10,7 +10,7 @@ import { useRenderElement } from '../../internals/useRenderElement';
  * An accessible label that is automatically associated with its parent group.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ * Documentation: [Obstudio Select](https://obstudio.co/react/components/select)
  */
 export const SelectGroupLabel = React.forwardRef(function SelectGroupLabel(
   componentProps: SelectGroupLabel.Props,
@@ -20,7 +20,7 @@ export const SelectGroupLabel = React.forwardRef(function SelectGroupLabel(
 
   const { setLabelId } = useSelectGroupContext();
 
-  const id = useBaseUiId(idProp);
+  const id = useObstudioId(idProp);
 
   useIsoLayoutEffect(() => {
     setLabelId(id);
@@ -39,7 +39,10 @@ export const SelectGroupLabel = React.forwardRef(function SelectGroupLabel(
 
 export interface SelectGroupLabelState {}
 
-export interface SelectGroupLabelProps extends BaseUIComponentProps<'div', SelectGroupLabelState> {}
+export interface SelectGroupLabelProps extends ObstudioComponentProps<
+  'div',
+  SelectGroupLabelState
+> {}
 
 export namespace SelectGroupLabel {
   export type State = SelectGroupLabelState;

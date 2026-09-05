@@ -1,4 +1,4 @@
-import { Menu } from '@base-ui/react/menu';
+import { Menu } from '@obstudio/react/menu';
 import { Link } from 'react-router';
 import styles from './LinkItemNavigation.module.css';
 

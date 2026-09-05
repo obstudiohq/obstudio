@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { ReactStore } from '@base-ui/utils/store';
-import { Timeout } from '@base-ui/utils/useTimeout';
-import { NOOP } from '@base-ui/utils/empty';
-import { type InteractionType } from '@base-ui/utils/useEnhancedClickHandler';
+import { ReactStore } from '@obstudio/utils/store';
+import { Timeout } from '@obstudio/utils/useTimeout';
+import { NOOP } from '@obstudio/utils/empty';
+import { type InteractionType } from '@obstudio/utils/useEnhancedClickHandler';
 import { type PopoverRoot } from '../root/PopoverRoot';
 import { REASONS } from '../../internals/reasons';
 import { NullStore } from '../../utils/NullStore';

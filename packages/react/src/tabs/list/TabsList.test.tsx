@@ -1,7 +1,7 @@
 import { expect, describe, it } from 'vitest';
 import * as React from 'react';
 import { act, fireEvent, flushMicrotasks, screen } from '@mui/internal-test-utils';
-import { Tabs } from '@base-ui/react/tabs';
+import { Tabs } from '@obstudio/react/tabs';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Tabs.List />', () => {

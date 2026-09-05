@@ -38,7 +38,7 @@
   margin: 0;
   padding: 0 0.5rem;
   border: 1px solid oklch(14.5% 0 0deg);
-  border-radius: 0;
+  border-radius: 8px;
   width: 7ch;
   height: 100%;
   font-family: inherit;
@@ -85,7 +85,7 @@
   outline: 0;
   padding: 0;
   border: 1px solid oklch(14.5% 0 0deg);
-  border-radius: 0;
+  border-radius: 8px;
   background-color: white;
   background-clip: padding-box;
   color: oklch(14.5% 0 0deg);

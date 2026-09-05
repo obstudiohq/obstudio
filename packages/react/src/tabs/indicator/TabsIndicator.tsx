@@ -1,14 +1,14 @@
 'use client';
 import * as React from 'react';
 import { getParentNode, isHTMLElement, isLastTraversableNode } from '@floating-ui/utils/dom';
-import { useForcedRerendering } from '@base-ui/utils/useForcedRerendering';
-import { ownerWindow } from '@base-ui/utils/owner';
+import { useForcedRerendering } from '@obstudio/utils/useForcedRerendering';
+import { ownerWindow } from '@obstudio/utils/owner';
 import { script as prehydrationScript } from '#prehydration/tabs/indicator';
 import { PrehydrationScript } from '../../internals/PrehydrationScript';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { getCssDimensions } from '../../utils/getCssDimensions';
 import { getElementTransform } from '../../utils/getElementTransform';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import type { TabsRoot, TabsRootState } from '../root/TabsRoot';
 import { useTabsRootContext } from '../root/TabsRootContext';
 import { tabsStateAttributesMapping } from '../root/stateAttributesMapping';
@@ -30,7 +30,7 @@ const MAX_LAYOUT_ROUNDING_ERROR = 2;
  * A visual indicator that can be styled to match the position of the currently active tab.
  * Renders a `<span>` element.
  *
- * Documentation: [Base UI Tabs](https://base-ui.com/react/components/tabs)
+ * Documentation: [Obstudio Tabs](https://obstudio.co/react/components/tabs)
  */
 export const TabsIndicator = React.forwardRef(function TabsIndicator(
   componentProps: TabsIndicator.Props,
@@ -187,7 +187,7 @@ export interface TabsIndicatorState extends TabsRootState {
   orientation: TabsRoot.Orientation;
 }
 
-export interface TabsIndicatorProps extends BaseUIComponentProps<'span', TabsIndicatorState> {
+export interface TabsIndicatorProps extends ObstudioComponentProps<'span', TabsIndicatorState> {
   /**
    * Whether to render itself before React hydrates.
    * This minimizes the time that the indicator isn't visible after server-side rendering.

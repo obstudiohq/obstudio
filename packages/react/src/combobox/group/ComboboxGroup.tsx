@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { BaseUIComponentProps } from '../../internals/types';
+import { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { ComboboxGroupContext } from './ComboboxGroupContext';
 import { GroupCollectionProvider } from '../collection/GroupCollectionContext';
@@ -10,7 +10,7 @@ import { useComboboxRootContext } from '../root/ComboboxRootContext';
  * Groups related items with the corresponding label.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)
+ * Documentation: [Obstudio Combobox](https://obstudio.co/react/components/combobox)
  */
 export const ComboboxGroup = React.forwardRef(function ComboboxGroup(
   componentProps: ComboboxGroup.Props,
@@ -58,7 +58,7 @@ export const ComboboxGroup = React.forwardRef(function ComboboxGroup(
 
 export interface ComboboxGroupState {}
 
-export interface ComboboxGroupProps extends BaseUIComponentProps<'div', ComboboxGroupState> {
+export interface ComboboxGroupProps extends ObstudioComponentProps<'div', ComboboxGroupState> {
   /**
    * Items to be rendered within this group.
    * When provided, child `Collection` components will use these items.

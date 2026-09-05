@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ScrollArea } from '@base-ui/react/scroll-area';
+import { ScrollArea } from '@obstudio/react/scroll-area';
 import { benchmark } from '@mui/internal-benchmark';
 import { createRows, MountList } from './shared';
 

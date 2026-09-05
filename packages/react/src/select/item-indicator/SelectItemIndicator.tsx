@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useSelectItemContext } from '../item/SelectItemContext';
 import { type TransitionStatus, useTransitionStatus } from '../../internals/useTransitionStatus';
 import { useOpenChangeComplete } from '../../internals/useOpenChangeComplete';
@@ -11,7 +11,7 @@ import { transitionStatusMapping } from '../../internals/stateAttributesMapping'
  * Indicates whether the select item is selected.
  * Renders a `<span>` element.
  *
- * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ * Documentation: [Obstudio Select](https://obstudio.co/react/components/select)
  */
 export const SelectItemIndicator = React.forwardRef(function SelectItemIndicator(
   componentProps: SelectItemIndicator.Props,
@@ -89,7 +89,7 @@ export interface SelectItemIndicatorState {
   transitionStatus: TransitionStatus;
 }
 
-export interface SelectItemIndicatorProps extends BaseUIComponentProps<
+export interface SelectItemIndicatorProps extends ObstudioComponentProps<
   'span',
   SelectItemIndicatorState
 > {

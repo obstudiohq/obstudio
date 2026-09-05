@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { FloatingPortal } from '../../floating-ui-react';
-import { type BaseUIComponentProps } from '../../internals/types';
+import { type ObstudioComponentProps } from '../../internals/types';
 import { useSelectRootContext } from '../root/SelectRootContext';
 
 /**
@@ -9,7 +9,7 @@ import { useSelectRootContext } from '../root/SelectRootContext';
  * By default, the portal element is appended to `<body>`.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ * Documentation: [Obstudio Select](https://obstudio.co/react/components/select)
  */
 export const SelectPortal = React.forwardRef(function SelectPortal(
   portalProps: SelectPortal.Props,
@@ -29,7 +29,7 @@ export const SelectPortal = React.forwardRef(function SelectPortal(
 
 export interface SelectPortalState {}
 
-export interface SelectPortalProps extends BaseUIComponentProps<'div', SelectPortalState> {
+export interface SelectPortalProps extends ObstudioComponentProps<'div', SelectPortalState> {
   /**
    * A parent element to render the portal element into.
    */

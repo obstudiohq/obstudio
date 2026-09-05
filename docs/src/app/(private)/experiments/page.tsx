@@ -7,7 +7,7 @@ export default async function Experiments() {
     <div className={clsx(classes.root, classes.withSidebar)}>
       <Sidebar className={classes.sidebar} />
       <main className={clsx(classes.main, classes.landing)}>
-        <h1>Base UI experiments</h1>
+        <h1>Obstudio experiments</h1>
         <p>← Choose an experiment from the list</p>
       </main>
     </div>

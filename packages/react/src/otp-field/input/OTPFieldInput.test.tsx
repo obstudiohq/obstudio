@@ -1,11 +1,11 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
 import userEvent from '@testing-library/user-event';
-import { SafeReact } from '@base-ui/utils/safeReact';
+import { SafeReact } from '@obstudio/utils/safeReact';
 import { act, fireEvent, screen } from '@mui/internal-test-utils';
-import { OTPField } from '@base-ui/react/otp-field';
-import { Field } from '@base-ui/react/field';
-import { DirectionProvider } from '@base-ui/react/direction-provider';
+import { OTPField } from '@obstudio/react/otp-field';
+import { Field } from '@obstudio/react/field';
+import { DirectionProvider } from '@obstudio/react/direction-provider';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 
 describe('<OTPField.Input />', () => {
@@ -549,7 +549,7 @@ describe('<OTPField.Input />', () => {
       expect(inputs.map((input) => input.value)).toEqual(['1', '2', '', '', '', '']);
       expect(warnSpy).toHaveBeenCalledTimes(1);
       expect(warnSpy.mock.calls[0]?.[0]).toContain(
-        'Base UI: <OTPField.Input> could not read clipboard text during paste handling.',
+        'Obstudio: <OTPField.Input> could not read clipboard text during paste handling.',
       );
     } finally {
       ownerStackSpy?.mockRestore();
@@ -833,7 +833,7 @@ describe('<OTPField.Input />', () => {
 
       expect(warnSpy).toHaveBeenCalledTimes(1);
       expect(warnSpy.mock.calls[0]?.[0]).toContain(
-        'Base UI: <OTPField.Input> ignores `aria-label` on the first input.',
+        'Obstudio: <OTPField.Input> ignores `aria-label` on the first input.',
       );
     } finally {
       ownerStackSpy?.mockRestore();
@@ -894,7 +894,7 @@ describe('<OTPField.Input />', () => {
 
     try {
       await expect(render(<OTPField.Input />)).rejects.toThrow(
-        'Base UI: OTPFieldRootContext is missing. OTPField parts must be placed within <OTPField.Root>.',
+        'Obstudio: OTPFieldRootContext is missing. OTPField parts must be placed within <OTPField.Root>.',
       );
     } finally {
       errorSpy.mockRestore();

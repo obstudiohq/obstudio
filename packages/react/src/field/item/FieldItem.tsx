@@ -3,7 +3,7 @@ import * as React from 'react';
 import { type FieldRootState } from '../root/FieldRoot';
 import { useFieldRootContext } from '../../internals/field-root-context/FieldRootContext';
 import { fieldValidityMapping } from '../../internals/field-constants/constants';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { FieldItemContext } from './FieldItemContext';
 import { LabelableProvider } from '../../internals/labelable-provider';
@@ -12,7 +12,7 @@ import { LabelableProvider } from '../../internals/labelable-provider';
  * Groups individual items in a checkbox group or radio group with a label and description.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Field](https://base-ui.com/react/components/field)
+ * Documentation: [Obstudio Field](https://obstudio.co/react/components/field)
  */
 export const FieldItem = React.forwardRef(function FieldItem(
   componentProps: FieldItem.Props,
@@ -49,7 +49,7 @@ export const FieldItem = React.forwardRef(function FieldItem(
 
 export interface FieldItemState extends FieldRootState {}
 
-export interface FieldItemProps extends BaseUIComponentProps<'div', FieldItemState> {
+export interface FieldItemProps extends ObstudioComponentProps<'div', FieldItemState> {
   /**
    * Whether the wrapped control should ignore user interaction.
    * The `disabled` prop on `<Field.Root>` takes precedence over this.

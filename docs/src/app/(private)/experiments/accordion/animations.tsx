@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import clsx from 'clsx';
-import type { Accordion as BaseAccordion } from '@base-ui/react/accordion';
+import type { Accordion as BaseAccordion } from '@obstudio/react/accordion';
 import * as Accordion from './_components/Accordion';
 import layoutStyles from './accordion.module.css';
 import styles from './animations.module.css';
@@ -19,9 +19,9 @@ export const settingsMetadata: SettingsMetadata<Settings> = {
 
 const ITEMS = [
   {
-    title: 'What is Base UI?',
+    title: 'What is Obstudio?',
     content:
-      'Base UI is a library of high-quality unstyled React components for design systems and web apps.',
+      'Obstudio is a library of high-quality unstyled React components for design systems and web apps.',
   },
   {
     title: 'How do I get started?',
@@ -30,7 +30,7 @@ const ITEMS = [
   },
   {
     title: 'Can I use it for my project?',
-    content: 'Of course! Base UI is free and open source.',
+    content: 'Of course! Obstudio is free and open source.',
   },
 ] as const;
 

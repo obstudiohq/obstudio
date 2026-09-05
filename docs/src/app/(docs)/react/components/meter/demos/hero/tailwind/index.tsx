@@ -1,4 +1,4 @@
-import { Meter } from '@base-ui/react/meter';
+import { Meter } from '@obstudio/react/meter';
 
 export default function ExampleMeter() {
   return (

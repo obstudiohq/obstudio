@@ -63,7 +63,7 @@ describe('PopupTriggerMap', () => {
     try {
       map.add('first', button);
       expect(() => map.add('second', button)).toThrow(
-        'Base UI: A trigger element cannot be registered under multiple IDs in PopupTriggerMap.',
+        'Obstudio: A trigger element cannot be registered under multiple IDs in PopupTriggerMap.',
       );
     } finally {
       process.env.NODE_ENV = originalEnv;
@@ -92,7 +92,7 @@ describe('PopupTriggerMap', () => {
     map.delete('second');
 
     expect(() => map.add('other', first)).toThrow(
-      'Base UI: A trigger element cannot be registered under multiple IDs in PopupTriggerMap.',
+      'Obstudio: A trigger element cannot be registered under multiple IDs in PopupTriggerMap.',
     );
   });
 
@@ -119,7 +119,7 @@ describe('PopupTriggerMap', () => {
     map.add('first', button);
 
     expect(() => map.add('second', button)).toThrow(
-      'Base UI: A trigger element cannot be registered under multiple IDs in PopupTriggerMap.',
+      'Obstudio: A trigger element cannot be registered under multiple IDs in PopupTriggerMap.',
     );
   });
 

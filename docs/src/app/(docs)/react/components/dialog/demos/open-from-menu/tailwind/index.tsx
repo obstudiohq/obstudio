@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { Dialog } from '@base-ui/react/dialog';
-import { Menu } from '@base-ui/react/menu';
+import { Dialog } from '@obstudio/react/dialog';
+import { Menu } from '@obstudio/react/menu';
 
 export default function ExampleDialog() {
   const [dialogOpen, setDialogOpen] = React.useState(false);

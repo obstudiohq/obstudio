@@ -2,14 +2,14 @@
 import * as React from 'react';
 import { useDialogRootContext } from '../root/DialogRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';
-import { useBaseUiId } from '../../internals/useBaseUiId';
-import { type BaseUIComponentProps } from '../../internals/types';
+import { useObstudioId } from '../../internals/useObstudioId';
+import { type ObstudioComponentProps } from '../../internals/types';
 
 /**
  * A heading that labels the dialog.
  * Renders an `<h2>` element.
  *
- * Documentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)
+ * Documentation: [Obstudio Dialog](https://obstudio.co/react/components/dialog)
  */
 export const DialogTitle = React.forwardRef(function DialogTitle(
   componentProps: DialogTitle.Props,
@@ -19,7 +19,7 @@ export const DialogTitle = React.forwardRef(function DialogTitle(
 
   const store = useDialogRootContext();
 
-  const id = useBaseUiId(idProp);
+  const id = useObstudioId(idProp);
 
   store.useSyncedValueWithCleanup('titleElementId', id);
 
@@ -29,7 +29,7 @@ export const DialogTitle = React.forwardRef(function DialogTitle(
   });
 });
 
-export interface DialogTitleProps extends BaseUIComponentProps<'h2', DialogTitleState> {}
+export interface DialogTitleProps extends ObstudioComponentProps<'h2', DialogTitleState> {}
 
 export interface DialogTitleState {}
 

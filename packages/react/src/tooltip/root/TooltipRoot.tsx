@@ -1,14 +1,14 @@
 'use client';
 import * as React from 'react';
-import { fastComponent } from '@base-ui/utils/fastHooks';
-import { EMPTY_OBJECT } from '@base-ui/utils/empty';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { fastComponent } from '@obstudio/utils/fastHooks';
+import { EMPTY_OBJECT } from '@obstudio/utils/empty';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
 import { TooltipRootContext } from './TooltipRootContext';
 import { useClientPoint, useDismiss } from '../../floating-ui-react';
 import {
-  type BaseUIChangeEventDetails,
+  type ObstudioChangeEventDetails,
   createChangeEventDetails,
-} from '../../internals/createBaseUIEventDetails';
+} from '../../internals/createObstudioEventDetails';
 import {
   PopupHandleAttachment,
   useImplicitActiveTrigger,
@@ -26,7 +26,7 @@ import { REASONS } from '../../internals/reasons';
  * Groups all parts of the tooltip.
  * Doesn't render its own HTML element.
  *
- * Documentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)
+ * Documentation: [Obstudio Tooltip](https://obstudio.co/react/components/tooltip)
  */
 export const TooltipRoot = fastComponent(function TooltipRoot<Payload>(
   props: TooltipRoot.Props<Payload>,
@@ -232,7 +232,7 @@ export type TooltipRootChangeEventReason =
   | typeof REASONS.none;
 
 export type TooltipRootChangeEventDetails =
-  BaseUIChangeEventDetails<TooltipRoot.ChangeEventReason> & {
+  ObstudioChangeEventDetails<TooltipRoot.ChangeEventReason> & {
     preventUnmountOnClose(): void;
   };
 

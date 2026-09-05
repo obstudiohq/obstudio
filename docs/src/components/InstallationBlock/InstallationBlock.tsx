@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
 import clsx from 'clsx';
-import { Tabs } from '@base-ui/react/tabs';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { Tabs } from '@obstudio/react/tabs';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
 import { usePackageManagerSnippetContext } from 'docs/src/blocks/PackageManagerSnippet/PackageManagerSnippetProvider';
 import * as CodeBlock from '../CodeBlock';
 import { Code } from '../Code';

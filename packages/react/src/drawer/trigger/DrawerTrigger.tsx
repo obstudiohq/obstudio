@@ -2,13 +2,13 @@
 import type * as React from 'react';
 import { DialogTrigger } from '../../dialog/trigger/DialogTrigger';
 import type { DrawerHandle } from '../handle';
-import type { BaseUIComponentProps, NativeButtonProps } from '../../internals/types';
+import type { ObstudioComponentProps, NativeButtonProps } from '../../internals/types';
 
 /**
  * A button that opens the drawer.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+ * Documentation: [Obstudio Drawer](https://obstudio.co/react/components/drawer)
  */
 export const DrawerTrigger = DialogTrigger as DrawerTrigger;
 
@@ -19,7 +19,7 @@ export interface DrawerTrigger {
 }
 
 export interface DrawerTriggerProps<Payload = unknown>
-  extends NativeButtonProps, BaseUIComponentProps<'button', DrawerTriggerState> {
+  extends NativeButtonProps, ObstudioComponentProps<'button', DrawerTriggerState> {
   /**
    * A handle to associate the trigger with a drawer.
    * Can be created with the Drawer.createHandle() method.

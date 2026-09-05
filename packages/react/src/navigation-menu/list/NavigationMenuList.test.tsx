@@ -1,7 +1,7 @@
 import { vi, describe, it, expect } from 'vitest';
 import * as React from 'react';
 import { act, fireEvent, flushMicrotasks, screen } from '@mui/internal-test-utils';
-import { NavigationMenu } from '@base-ui/react/navigation-menu';
+import { NavigationMenu } from '@obstudio/react/navigation-menu';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<NavigationMenu.List />', () => {
@@ -19,7 +19,7 @@ describe('<NavigationMenu.List />', () => {
 
     try {
       await expect(render(<NavigationMenu.List />)).rejects.toThrow(
-        'Base UI: NavigationMenuRootContext is missing. Navigation Menu parts must be placed within <NavigationMenu.Root>.',
+        'Obstudio: NavigationMenuRootContext is missing. Navigation Menu parts must be placed within <NavigationMenu.Root>.',
       );
     } finally {
       errorSpy.mockRestore();

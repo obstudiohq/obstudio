@@ -1,7 +1,7 @@
 import { expect, vi, describe, it } from 'vitest';
 import { reactMajor, screen, waitFor } from '@mui/internal-test-utils';
 import * as React from 'react';
-import { Accordion } from '@base-ui/react/accordion';
+import { Accordion } from '@obstudio/react/accordion';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 
 const PANEL_CONTENT = 'This is panel content';
@@ -43,7 +43,7 @@ describe('<Accordion.Panel />', () => {
       );
 
       expect(warnSpy).toHaveBeenCalledWith(
-        'Base UI: The `keepMounted={false}` prop on an `Accordion.Panel` is ignored when `hiddenUntilFound` is enabled on the panel or root, since the panel must remain mounted while closed.',
+        'Obstudio: The `keepMounted={false}` prop on an `Accordion.Panel` is ignored when `hiddenUntilFound` is enabled on the panel or root, since the panel must remain mounted while closed.',
       );
       expect(screen.getByText(PANEL_CONTENT).getAttribute('hidden')).toBe('until-found');
     } finally {

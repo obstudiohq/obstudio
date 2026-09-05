@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Dialog } from '@base-ui/react/dialog';
+import { Dialog } from '@obstudio/react/dialog';
 import { benchmark } from '@mui/internal-benchmark';
 import { createRows, MountList } from './shared';
 

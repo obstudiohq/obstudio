@@ -1,9 +1,9 @@
 'use client';
 
 import * as React from 'react';
-import { Select } from '@base-ui/react/select';
-import { Menu } from '@base-ui/react/menu';
-import { Dialog } from '@base-ui/react/dialog';
+import { Select } from '@obstudio/react/select';
+import { Menu } from '@obstudio/react/menu';
+import { Dialog } from '@obstudio/react/dialog';
 import styles from './modality.module.css';
 
 export default function Modality() {

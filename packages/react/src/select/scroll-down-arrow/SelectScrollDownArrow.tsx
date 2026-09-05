@@ -1,13 +1,13 @@
 'use client';
 import * as React from 'react';
 import { SelectScrollArrow } from '../scroll-arrow/SelectScrollArrow';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 
 /**
  * An element that scrolls the select popup down when hovered. Does not render when using touch input.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ * Documentation: [Obstudio Select](https://obstudio.co/react/components/select)
  */
 export const SelectScrollDownArrow = React.forwardRef(function SelectScrollDownArrow(
   props: SelectScrollDownArrow.Props,
@@ -18,7 +18,7 @@ export const SelectScrollDownArrow = React.forwardRef(function SelectScrollDownA
 
 export interface SelectScrollDownArrowState {}
 
-export interface SelectScrollDownArrowProps extends BaseUIComponentProps<
+export interface SelectScrollDownArrowProps extends ObstudioComponentProps<
   'div',
   SelectScrollDownArrowState
 > {

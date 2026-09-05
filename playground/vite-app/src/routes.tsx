@@ -29,14 +29,14 @@ export const routes: RouteEntry[] = [
   {
     type: 'route',
     path: '/perf/contained-triggers',
-    label: 'Base UI contained triggers',
+    label: 'Obstudio contained triggers',
     element: <ContainedTriggers />,
     showInNav: true,
   },
   {
     type: 'route',
     path: '/perf/detached-triggers',
-    label: 'Base UI detached triggers',
+    label: 'Obstudio detached triggers',
     element: <DetachedTriggers />,
     showInNav: true,
   },

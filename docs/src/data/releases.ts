@@ -119,7 +119,7 @@ export const releases: Release[] = [
     highlights: [
       'Stable 🎉',
       '35 unstyled UI components.',
-      'New `@base-ui/react` npm package.',
+      'New `@obstudio/react` npm package.',
       'New website.',
       'Fixed focus and transition issues across multiple components.',
       'Improved accessibility and form submission handling.',

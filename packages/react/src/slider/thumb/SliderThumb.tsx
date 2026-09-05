@@ -1,16 +1,16 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
-import { visuallyHidden } from '@base-ui/utils/visuallyHidden';
-import { ownerWindow } from '@base-ui/utils/owner';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useMergedRefs } from '@obstudio/utils/useMergedRefs';
+import { visuallyHidden } from '@obstudio/utils/visuallyHidden';
+import { ownerWindow } from '@obstudio/utils/owner';
 import { script as prehydrationScript } from '#prehydration/slider/thumb';
-import { clamp } from '@base-ui/utils/clamp';
-import { formatNumber } from '@base-ui/utils/formatNumber';
-import { BaseUIComponentProps } from '../../internals/types';
+import { clamp } from '@obstudio/utils/clamp';
+import { formatNumber } from '@obstudio/utils/formatNumber';
+import { ObstudioComponentProps } from '../../internals/types';
 import { mergeProps } from '../../merge-props';
-import { useBaseUiId } from '../../internals/useBaseUiId';
+import { useObstudioId } from '../../internals/useObstudioId';
 import { useIsHydrating } from '../../utils/useIsHydrating';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { valueToPercent } from '../../utils/valueToPercent';
@@ -83,7 +83,7 @@ function getNewValue(
  * The draggable part of the slider at the tip of the indicator.
  * Renders a `<div>` element and a nested `<input type="range">`.
  *
- * Documentation: [Base UI Slider](https://base-ui.com/react/components/slider)
+ * Documentation: [Obstudio Slider](https://obstudio.co/react/components/slider)
  */
 export const SliderThumb = React.forwardRef(function SliderThumb(
   componentProps: SliderThumb.Props,
@@ -111,7 +111,7 @@ export const SliderThumb = React.forwardRef(function SliderThumb(
     ...elementProps
   } = componentProps;
 
-  const id = useBaseUiId(idProp);
+  const id = useObstudioId(idProp);
 
   const {
     active: activeIndex,
@@ -172,7 +172,7 @@ export const SliderThumb = React.forwardRef(function SliderThumb(
     onBlurProp?.(event);
   });
 
-  const defaultInputId = useBaseUiId();
+  const defaultInputId = useObstudioId();
   const labelableId = useLabelableId();
   const inputId = range ? defaultInputId : labelableId;
 
@@ -500,7 +500,7 @@ export interface ThumbMetadata {
 export interface SliderThumbState extends SliderRootState {}
 
 export interface SliderThumbProps extends Omit<
-  BaseUIComponentProps<'div', SliderThumbState>,
+  ObstudioComponentProps<'div', SliderThumbState>,
   'onBlur' | 'onFocus' | 'onKeyDown'
 > {
   /**

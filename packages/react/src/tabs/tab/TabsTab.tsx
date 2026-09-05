@@ -1,11 +1,11 @@
 'use client';
 import * as React from 'react';
-import { ownerDocument } from '@base-ui/utils/owner';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useBaseUiId } from '../../internals/useBaseUiId';
+import { ownerDocument } from '@obstudio/utils/owner';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useObstudioId } from '../../internals/useObstudioId';
 import { useRenderElement } from '../../internals/useRenderElement';
-import type { BaseUIComponentProps, NativeButtonProps } from '../../internals/types';
+import type { ObstudioComponentProps, NativeButtonProps } from '../../internals/types';
 import { useButton } from '../../internals/use-button';
 import { ACTIVE_COMPOSITE_ITEM } from '../../internals/composite/constants';
 import { useCompositeItem } from '../../internals/composite/item/useCompositeItem';
@@ -14,7 +14,7 @@ import type { TabsRoot } from '../root/TabsRoot';
 import { useTabsRootContext } from '../root/TabsRootContext';
 import { tabsStateAttributesMapping } from '../root/stateAttributesMapping';
 import { useTabsListContext } from '../list/TabsListContext';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { activeElement, contains } from '../../floating-ui-react/utils';
 
@@ -22,7 +22,7 @@ import { activeElement, contains } from '../../floating-ui-react/utils';
  * An individual interactive tab button that toggles the corresponding panel.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Tabs](https://base-ui.com/react/components/tabs)
+ * Documentation: [Obstudio Tabs](https://obstudio.co/react/components/tabs)
  */
 export const TabsTab = React.forwardRef(function TabsTab(
   componentProps: TabsTab.Props,
@@ -52,7 +52,7 @@ export const TabsTab = React.forwardRef(function TabsTab(
 
   const { highlightedIndex, onHighlightedIndexChange } = useCompositeRootContext();
 
-  const id = useBaseUiId(idProp);
+  const id = useObstudioId(idProp);
 
   const tabMetadata = React.useMemo(() => ({ disabled, id, value }), [disabled, id, value]);
 
@@ -252,7 +252,7 @@ export interface TabsTabState {
 }
 
 export interface TabsTabProps
-  extends NativeButtonProps, BaseUIComponentProps<'button', TabsTabState> {
+  extends NativeButtonProps, ObstudioComponentProps<'button', TabsTabState> {
   /**
    * The value of the Tab.
    */

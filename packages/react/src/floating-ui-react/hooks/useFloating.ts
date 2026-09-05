@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
 import { useFloating as usePosition, type VirtualElement } from '@floating-ui/react-dom';
 import { isElement } from '@floating-ui/utils/dom';
 import { FloatingRootStore } from '../components/FloatingRootStore';
@@ -26,10 +26,10 @@ export function useFloating(options: UseFloatingOptions = {}): UseFloatingReturn
 }
 
 /**
- * Base UI's private `useFloating` path. The caller must supply the root store, so this skips the
+ * Obstudio's private `useFloating` path. The caller must supply the root store, so this skips the
  * internal root-context hook used by the public Floating UI-compatible API.
  */
-export function useBaseUIFloating(
+export function useObstudioFloating(
   options: UseFloatingOptions & { rootContext: FloatingRootStore },
 ): UseFloatingReturn {
   return useFloatingWithStore(options, options.rootContext);

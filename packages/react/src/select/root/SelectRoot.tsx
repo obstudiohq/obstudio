@@ -1,17 +1,17 @@
 'use client';
 import * as React from 'react';
-import { visuallyHidden, visuallyHiddenInput } from '@base-ui/utils/visuallyHidden';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
-import { useOnFirstRender } from '@base-ui/utils/useOnFirstRender';
-import { usePreviousValue } from '@base-ui/utils/usePreviousValue';
-import { isElementDisabled } from '@base-ui/utils/isElementDisabled';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useValueAsRef } from '@base-ui/utils/useValueAsRef';
-import { ReactStore } from '@base-ui/utils/store';
-import { EMPTY_ARRAY, EMPTY_OBJECT } from '@base-ui/utils/empty';
+import { visuallyHidden, visuallyHiddenInput } from '@obstudio/utils/visuallyHidden';
+import { useMergedRefs } from '@obstudio/utils/useMergedRefs';
+import { useRefWithInit } from '@obstudio/utils/useRefWithInit';
+import { useOnFirstRender } from '@obstudio/utils/useOnFirstRender';
+import { usePreviousValue } from '@obstudio/utils/usePreviousValue';
+import { isElementDisabled } from '@obstudio/utils/isElementDisabled';
+import { useControlled } from '@obstudio/utils/useControlled';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useValueAsRef } from '@obstudio/utils/useValueAsRef';
+import { ReactStore } from '@obstudio/utils/store';
+import { EMPTY_ARRAY, EMPTY_OBJECT } from '@obstudio/utils/empty';
 import {
   useClick,
   useDismiss,
@@ -31,9 +31,9 @@ import { useLabelableId } from '../../internals/labelable-provider/useLabelableI
 import { useTransitionStatus } from '../../internals/useTransitionStatus';
 import { selectors, type SelectStoreContext, type State as StoreState } from '../store';
 import {
-  type BaseUIChangeEventDetails,
+  type ObstudioChangeEventDetails,
   createChangeEventDetails,
-} from '../../internals/createBaseUIEventDetails';
+} from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { useOpenChangeComplete } from '../../internals/useOpenChangeComplete';
 import { useFormContext } from '../../internals/form-context/FormContext';
@@ -54,7 +54,7 @@ import { NOOP } from '../../internals/noop';
  * Groups all parts of the select.
  * Doesn't render its own HTML element.
  *
- * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ * Documentation: [Obstudio Select](https://obstudio.co/react/components/select)
  */
 export function SelectRoot<Value, Multiple extends boolean | undefined = false>(
   props: SelectRoot.Props<Value, Multiple>,
@@ -734,7 +734,7 @@ export type SelectRootChangeEventReason =
   | typeof REASONS.cancelOpen
   | typeof REASONS.none;
 
-export type SelectRootChangeEventDetails = BaseUIChangeEventDetails<SelectRootChangeEventReason>;
+export type SelectRootChangeEventDetails = ObstudioChangeEventDetails<SelectRootChangeEventReason>;
 
 export namespace SelectRoot {
   export type Props<Value, Multiple extends boolean | undefined = false> = SelectRootProps<

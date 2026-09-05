@@ -1,13 +1,13 @@
 'use client';
 import * as React from 'react';
 import { isHTMLElement } from '@floating-ui/utils/dom';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { error } from '@base-ui/utils/error';
-import { SafeReact } from '@base-ui/utils/safeReact';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { error } from '@obstudio/utils/error';
+import { SafeReact } from '@obstudio/utils/safeReact';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
 import { makeEventPreventable, mergeProps } from '../../merge-props';
 import { useCompositeRootContext } from '../composite/root/CompositeRootContext';
-import { BaseUIEvent, HTMLProps } from '../types';
+import { ObstudioEvent, HTMLProps } from '../types';
 import { useFocusableWhenDisabled } from '../../utils/useFocusableWhenDisabled';
 import { dispatchClickWithModifiers } from '../../utils/dispatchClickWithModifiers';
 
@@ -56,7 +56,7 @@ export function useButton(parameters: UseButtonParameters = {}): UseButtonReturn
         const ownerStackMessage = SafeReact.captureOwnerStack?.() || '';
         const message =
           'A component that acts as a button expected a non-<button> because the `nativeButton` ' +
-          'prop is false. Rendering a <button> keeps native behavior while Base UI applies ' +
+          'prop is false. Rendering a <button> keeps native behavior while Obstudio applies ' +
           'non-native attributes and handlers, which can add unintended extra attributes (such ' +
           'as `role` or `aria-disabled`). Use a non-<button> in the `render` prop, or set ' +
           '`nativeButton` to `true`.';
@@ -113,14 +113,14 @@ export function useButton(parameters: UseButtonParameters = {}): UseButtonReturn
               externalOnMouseDown?.(event);
             }
           },
-          onKeyDown(event: BaseUIEvent<React.KeyboardEvent>) {
+          onKeyDown(event: ObstudioEvent<React.KeyboardEvent>) {
             if (disabled) {
               return;
             }
 
             makeEventPreventable(event);
             externalOnKeyDown?.(event);
-            if (event.baseUIHandlerPrevented) {
+            if (event.obstudioHandlerPrevented) {
               return;
             }
 
@@ -144,7 +144,7 @@ export function useButton(parameters: UseButtonParameters = {}): UseButtonReturn
 
               // Only a native-mode item that isn't a real <button> is excluded.
               if (!isNativeButton || isButton) {
-                event.preventBaseUIHandler();
+                event.preventObstudioHandler();
                 dispatchClickWithModifiers(currentTarget, event);
               }
 
@@ -170,11 +170,11 @@ export function useButton(parameters: UseButtonParameters = {}): UseButtonReturn
             event.preventDefault();
 
             if (isEnterKey) {
-              event.preventBaseUIHandler();
+              event.preventObstudioHandler();
               dispatchClickWithModifiers(currentTarget, event);
             }
           },
-          onKeyUp(event: BaseUIEvent<React.KeyboardEvent>) {
+          onKeyUp(event: ObstudioEvent<React.KeyboardEvent>) {
             if (disabled) {
               return;
             }
@@ -195,7 +195,7 @@ export function useButton(parameters: UseButtonParameters = {}): UseButtonReturn
               return;
             }
 
-            if (event.baseUIHandlerPrevented) {
+            if (event.obstudioHandlerPrevented) {
               return;
             }
 
@@ -211,7 +211,7 @@ export function useButton(parameters: UseButtonParameters = {}): UseButtonReturn
               !event.defaultPrevented &&
               event.key === ' '
             ) {
-              event.preventBaseUIHandler();
+              event.preventObstudioHandler();
               dispatchClickWithModifiers(event.currentTarget as Element, event);
             }
           },

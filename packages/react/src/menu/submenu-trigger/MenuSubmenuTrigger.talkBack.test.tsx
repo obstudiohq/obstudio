@@ -2,14 +2,15 @@ import * as React from 'react';
 import { act, fireEvent, screen } from '@mui/internal-test-utils';
 import { vi, describe, it, expect } from 'vitest';
 import { createRenderer, isJSDOM } from '#test-utils';
-import { Menu } from '@base-ui/react/menu';
+import { Menu } from '@obstudio/react/menu';
 
 // Kept in a separate file so the module mock doesn't leak into `MenuSubmenuTrigger.test.tsx`.
 // `isVirtualPointerEvent` only recognizes the TalkBack press shape when the platform reports
 // Android, which desktop Chromium does not.
-vi.mock('@base-ui/utils/platform', async () => {
-  const actual =
-    await vi.importActual<typeof import('@base-ui/utils/platform')>('@base-ui/utils/platform');
+vi.mock('@obstudio/utils/platform', async () => {
+  const actual = await vi.importActual<typeof import('@obstudio/utils/platform')>(
+    '@obstudio/utils/platform',
+  );
 
   return {
     platform: {

@@ -1,14 +1,14 @@
 'use client';
 import * as React from 'react';
 import { FieldsetRootContext, useFieldsetRootContext } from './FieldsetRootContext';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 
 /**
  * Groups a shared legend with related controls.
  * Renders a `<fieldset>` element.
  *
- * Documentation: [Base UI Fieldset](https://base-ui.com/react/components/fieldset)
+ * Documentation: [Obstudio Fieldset](https://obstudio.co/react/components/fieldset)
  */
 export const FieldsetRoot = React.forwardRef(function FieldsetRoot(
   componentProps: FieldsetRoot.Props,
@@ -64,7 +64,7 @@ export interface FieldsetRootState {
   disabled: boolean;
 }
 
-export interface FieldsetRootProps extends BaseUIComponentProps<'fieldset', FieldsetRootState> {}
+export interface FieldsetRootProps extends ObstudioComponentProps<'fieldset', FieldsetRootState> {}
 
 export namespace FieldsetRoot {
   export type State = FieldsetRootState;

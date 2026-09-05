@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { warn } from '@base-ui/utils/warn';
-import { BaseUIComponentProps } from '../../internals/types';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { warn } from '@obstudio/utils/warn';
+import { ObstudioComponentProps } from '../../internals/types';
 import { resolveStyle } from '../../utils/resolveStyle';
 import { useCollapsibleRootContext } from '../../collapsible/root/CollapsibleRootContext';
 import { useCollapsiblePanel } from '../../collapsible/panel/useCollapsiblePanel';
@@ -19,7 +19,7 @@ import type { TransitionStatus } from '../../internals/useTransitionStatus';
  * A collapsible panel with the accordion item contents.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Accordion](https://base-ui.com/react/components/accordion)
+ * Documentation: [Obstudio Accordion](https://obstudio.co/react/components/accordion)
  */
 export const AccordionPanel = React.forwardRef(function AccordionPanel(
   componentProps: AccordionPanel.Props,
@@ -149,7 +149,7 @@ export interface AccordionPanelState extends AccordionItemState {
 
 export interface AccordionPanelProps
   extends
-    BaseUIComponentProps<'div', AccordionPanelState>,
+    ObstudioComponentProps<'div', AccordionPanelState>,
     Pick<AccordionRoot.Props, 'hiddenUntilFound' | 'keepMounted'> {}
 
 export namespace AccordionPanel {

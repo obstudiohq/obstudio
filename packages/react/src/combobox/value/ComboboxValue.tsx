@@ -7,7 +7,7 @@ import { resolveMultipleLabels, resolveSelectedLabel } from '../../internals/res
  * The current value of the combobox.
  * Doesn't render its own HTML element.
  *
- * Documentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)
+ * Documentation: [Obstudio Combobox](https://obstudio.co/react/components/combobox)
  */
 export function ComboboxValue(props: ComboboxValue.Props): React.ReactElement {
   const { children: childrenProp, placeholder } = props;

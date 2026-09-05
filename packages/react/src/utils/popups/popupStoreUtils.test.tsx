@@ -2,8 +2,8 @@ import { describe, expect, it, vi } from 'vitest';
 import * as React from 'react';
 import { act, render, screen, waitFor } from '@testing-library/react';
 import { flushMicrotasks } from '@mui/internal-test-utils';
-import { ReactStore } from '@base-ui/utils/store';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { ReactStore } from '@obstudio/utils/store';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
 import {
   applyPopupOpenChange,
   createInitialPopupStoreState,
@@ -19,16 +19,16 @@ import {
   useTriggerRegistration,
 } from './';
 import { useSyncedFloatingRootContext } from '../../floating-ui-react';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
-import type { BaseUIChangeEventDetails } from '../../types';
+import type { ObstudioChangeEventDetails } from '../../types';
 
 type TestStore = ReactStore<
   PopupStoreState<unknown>,
   PopupStoreContext<unknown>,
   PopupStoreSelectors
 > & {
-  setOpen: (open: boolean, eventDetails: BaseUIChangeEventDetails<string>) => void;
+  setOpen: (open: boolean, eventDetails: ObstudioChangeEventDetails<string>) => void;
 };
 
 function createStore() {
@@ -111,7 +111,7 @@ function PopupIdTest({
 }: {
   store: ReactStore<PopupStoreState<unknown>, PopupStoreContext<unknown>, PopupStoreSelectors>;
   floatingId: string | undefined;
-  onOpenChange(open: boolean, eventDetails: BaseUIChangeEventDetails<string>): void;
+  onOpenChange(open: boolean, eventDetails: ObstudioChangeEventDetails<string>): void;
 }) {
   useSyncedFloatingRootContext({
     popupStore: store,
@@ -864,7 +864,7 @@ describe('applyPopupOpenChange', () => {
     instantType?: 'delay' | 'dismiss' | 'focus' | undefined;
     openChangeReason?: string;
   };
-  type OpenChangeDetails = BaseUIChangeEventDetails<string> & { preventUnmountOnClose(): void };
+  type OpenChangeDetails = ObstudioChangeEventDetails<string> & { preventUnmountOnClose(): void };
 
   function createOpenChangeStore() {
     const order: string[] = [];
@@ -879,7 +879,7 @@ describe('applyPopupOpenChange', () => {
       .mockImplementation(() => {
         order.push('dispatchOpenChange');
       });
-    const onOpenChange = vi.fn((_open: boolean, _details: BaseUIChangeEventDetails<string>) => {
+    const onOpenChange = vi.fn((_open: boolean, _details: ObstudioChangeEventDetails<string>) => {
       order.push('onOpenChange');
     });
     const update = vi.fn(

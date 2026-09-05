@@ -31,9 +31,9 @@
       }
     ],
     "paths": {
-      "@base-ui/react": ["../packages/react/src"],
-      "@base-ui/react/*": ["../packages/react/src/*"],
-      "@base-ui/utils/*": ["../packages/utils/src/*"]
+      "@obstudio/react": ["../packages/react/src"],
+      "@obstudio/react/*": ["../packages/react/src/*"],
+      "@obstudio/utils/*": ["../packages/utils/src/*"]
     },
     "strictNullChecks": true,
     "jsx": "preserve"

@@ -9,12 +9,12 @@ import {
   screen,
   waitFor,
 } from '@mui/internal-test-utils';
-import { DirectionProvider } from '@base-ui/react/direction-provider';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
-import { Menu } from '@base-ui/react/menu';
-import { Dialog } from '@base-ui/react/dialog';
-import { AlertDialog } from '@base-ui/react/alert-dialog';
-import { platform } from '@base-ui/utils/platform';
+import { DirectionProvider } from '@obstudio/react/direction-provider';
+import { useRefWithInit } from '@obstudio/utils/useRefWithInit';
+import { Menu } from '@obstudio/react/menu';
+import { Dialog } from '@obstudio/react/dialog';
+import { AlertDialog } from '@obstudio/react/alert-dialog';
+import { platform } from '@obstudio/utils/platform';
 import userEvent from '@testing-library/user-event';
 import {
   createRenderer,
@@ -32,7 +32,7 @@ describe('<Menu.Root />', () => {
   beforeEach(resetBrowserPointer);
 
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
   });
 
   const { render } = createRenderer();
@@ -86,7 +86,7 @@ describe('<Menu.Root />', () => {
     await render(<NestedMenuWithModalProp />);
 
     expect(warnSpy).toHaveBeenCalledWith(
-      'Base UI: The `modal` prop is not supported on nested menus. It will be ignored.',
+      'Obstudio: The `modal` prop is not supported on nested menus. It will be ignored.',
     );
   });
 
@@ -837,7 +837,7 @@ describe('<Menu.Root />', () => {
         await user.click(mainTrigger);
 
         const menu = await screen.findByTestId('menu');
-        const menuPortal = menu.closest('[data-base-ui-portal]');
+        const menuPortal = menu.closest('[data-obstudio-portal]');
         const menuPortalId = menuPortal?.id ?? '';
         const owner = menu.ownerDocument.querySelector('span[aria-owns]');
 
@@ -857,7 +857,7 @@ describe('<Menu.Root />', () => {
         await user.click(submenuTrigger);
 
         const submenu = await screen.findByTestId('submenu');
-        const submenuPortal = submenu.closest('[data-base-ui-portal]');
+        const submenuPortal = submenu.closest('[data-obstudio-portal]');
         const submenuPortalId = submenuPortal?.id ?? '';
         const owner = menu.querySelector('span[aria-owns]');
 
@@ -1416,7 +1416,7 @@ describe('<Menu.Root />', () => {
       it.skipIf(isJSDOM)(
         'focuses the trigger after Escape when the closing menu receives mouseleave',
         async () => {
-          globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+          globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
           const { user } = await render(
             <React.Fragment>
@@ -1768,7 +1768,7 @@ describe('<Menu.Root />', () => {
 
           const isScrollLocked =
             doc.documentElement.style.overflow === 'hidden' ||
-            doc.documentElement.hasAttribute('data-base-ui-scroll-locked') ||
+            doc.documentElement.hasAttribute('data-obstudio-scroll-locked') ||
             doc.body.style.overflow === 'hidden';
 
           expect(isScrollLocked).toBe(false);
@@ -1785,7 +1785,7 @@ describe('<Menu.Root />', () => {
 
           const isScrollLocked =
             doc.documentElement.style.overflow === 'hidden' ||
-            doc.documentElement.hasAttribute('data-base-ui-scroll-locked') ||
+            doc.documentElement.hasAttribute('data-obstudio-scroll-locked') ||
             doc.body.style.overflow === 'hidden';
 
           expect(isScrollLocked).toBe(true);
@@ -1818,7 +1818,7 @@ describe('<Menu.Root />', () => {
           await waitFor(() => {
             const isScrollLocked =
               doc.documentElement.style.overflow === 'hidden' ||
-              doc.documentElement.hasAttribute('data-base-ui-scroll-locked') ||
+              doc.documentElement.hasAttribute('data-obstudio-scroll-locked') ||
               doc.body.style.overflow === 'hidden';
 
             expect(isScrollLocked).toBe(true);
@@ -1855,7 +1855,7 @@ describe('<Menu.Root />', () => {
 
           const isScrollLocked =
             doc.documentElement.style.overflow === 'hidden' ||
-            doc.documentElement.hasAttribute('data-base-ui-scroll-locked') ||
+            doc.documentElement.hasAttribute('data-obstudio-scroll-locked') ||
             doc.body.style.overflow === 'hidden';
 
           expect(isScrollLocked).toBe(false);
@@ -1942,7 +1942,7 @@ describe('<Menu.Root />', () => {
       });
 
       it('is called on close when the exit animation finishes', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         const onOpenChangeComplete = vi.fn();
 
@@ -2020,7 +2020,7 @@ describe('<Menu.Root />', () => {
       });
 
       it('is called on open when the enter animation finishes', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         const onOpenChangeComplete = vi.fn();
 
@@ -2685,7 +2685,7 @@ describe('<Menu.Root />', () => {
       });
     });
 
-    describe('BaseUIChangeEventDetails', () => {
+    describe('ObstudioChangeEventDetails', () => {
       it('onOpenChange cancel() prevents opening while uncontrolled', async () => {
         await render(
           <TestMenu

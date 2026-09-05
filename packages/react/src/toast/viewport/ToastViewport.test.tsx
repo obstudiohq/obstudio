@@ -1,7 +1,7 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Toast } from '@base-ui/react/toast';
+import { Toast } from '@obstudio/react/toast';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { act, fireEvent, screen, waitFor } from '@mui/internal-test-utils';
 import { List, Button } from '../utils/test-utils';
@@ -143,7 +143,7 @@ describe('<Toast.Viewport />', () => {
 
     try {
       await expect(render(<Toast.Viewport />)).rejects.toThrow(
-        'Base UI: useToastManager must be used within <Toast.Provider>.',
+        'Obstudio: useToastManager must be used within <Toast.Provider>.',
       );
     } finally {
       errorSpy.mockRestore();
@@ -870,8 +870,8 @@ describe('<Toast.Viewport />', () => {
       'collapses a deferred mouseleave after a closing toast is removed while blurred',
       async () => {
         const addEventListenerSpy = vi.spyOn(window, 'addEventListener');
-        const animationsDisabled = globalThis.BASE_UI_ANIMATIONS_DISABLED;
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        const animationsDisabled = globalThis.OBSTUDIO_ANIMATIONS_DISABLED;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         try {
           function CloseNewestButton() {
@@ -947,7 +947,7 @@ describe('<Toast.Viewport />', () => {
           expect(viewport).not.toHaveAttribute('data-expanded');
         } finally {
           addEventListenerSpy.mockRestore();
-          globalThis.BASE_UI_ANIMATIONS_DISABLED = animationsDisabled;
+          globalThis.OBSTUDIO_ANIMATIONS_DISABLED = animationsDisabled;
         }
       },
     );
@@ -988,7 +988,7 @@ describe('<Toast.Viewport />', () => {
       fireEvent.keyDown(document.activeElement as HTMLElement, { key: 'F6' });
 
       const viewport = screen.getByTestId('viewport');
-      const guard = document.querySelector('[data-base-ui-focus-guard]') as HTMLElement;
+      const guard = document.querySelector('[data-obstudio-focus-guard]') as HTMLElement;
       fireEvent.focus(guard, { relatedTarget: viewport });
 
       expect(survivor).toHaveFocus();
@@ -1014,7 +1014,7 @@ describe('<Toast.Viewport />', () => {
       const viewport = screen.getByTestId('viewport');
       expect(viewport).toHaveFocus();
 
-      const guard = document.querySelector('[data-base-ui-focus-guard]') as HTMLElement;
+      const guard = document.querySelector('[data-obstudio-focus-guard]') as HTMLElement;
       fireEvent.focus(guard, { relatedTarget: viewport });
 
       expect(button).toHaveFocus();
@@ -1038,7 +1038,7 @@ describe('<Toast.Viewport />', () => {
 
       fireEvent.keyDown(button, { key: 'F6' });
       const viewport = screen.getByTestId('viewport');
-      const guard = document.querySelector('[data-base-ui-focus-guard]') as HTMLElement;
+      const guard = document.querySelector('[data-obstudio-focus-guard]') as HTMLElement;
       fireEvent.focus(guard, { relatedTarget: viewport });
 
       expect(screen.getByTestId('root')).toHaveFocus();
@@ -1079,7 +1079,7 @@ describe('<Toast.Viewport />', () => {
 
       fireEvent.keyDown(button, { key: 'F6' });
       const viewport = screen.getByTestId('viewport');
-      const guard = document.querySelector('[data-base-ui-focus-guard]') as HTMLElement;
+      const guard = document.querySelector('[data-obstudio-focus-guard]') as HTMLElement;
       fireEvent.focus(guard, { relatedTarget: viewport });
 
       expect(newest).toHaveFocus();

@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { useMenuRadioItemContext } from '../radio-item/MenuRadioItemContext';
 import { useRenderElement } from '../../internals/useRenderElement';
-import { BaseUIComponentProps } from '../../internals/types';
+import { ObstudioComponentProps } from '../../internals/types';
 import { itemMapping } from '../utils/stateAttributesMapping';
 import { TransitionStatus, useTransitionStatus } from '../../internals/useTransitionStatus';
 import { useOpenChangeComplete } from '../../internals/useOpenChangeComplete';
@@ -11,7 +11,7 @@ import { useOpenChangeComplete } from '../../internals/useOpenChangeComplete';
  * Indicates whether the radio item is selected.
  * Renders a `<span>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Obstudio Menu](https://obstudio.co/react/components/menu)
  */
 export const MenuRadioItemIndicator = React.forwardRef(function MenuRadioItemIndicator(
   componentProps: MenuRadioItemIndicator.Props,
@@ -58,7 +58,7 @@ export const MenuRadioItemIndicator = React.forwardRef(function MenuRadioItemInd
   return element;
 });
 
-export interface MenuRadioItemIndicatorProps extends BaseUIComponentProps<
+export interface MenuRadioItemIndicatorProps extends ObstudioComponentProps<
   'span',
   MenuRadioItemIndicatorState
 > {

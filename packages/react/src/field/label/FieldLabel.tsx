@@ -1,11 +1,11 @@
 'use client';
 import * as React from 'react';
-import { error } from '@base-ui/utils/error';
-import { SafeReact } from '@base-ui/utils/safeReact';
+import { error } from '@obstudio/utils/error';
+import { SafeReact } from '@obstudio/utils/safeReact';
 import type { FieldRootState } from '../root/FieldRoot';
 import { useFieldRootContext } from '../../internals/field-root-context/FieldRootContext';
 import { fieldValidityMapping } from '../../internals/field-constants/constants';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useLabelableContext } from '../../internals/labelable-provider/LabelableContext';
 import { useLabel } from '../../internals/labelable-provider/useLabel';
@@ -15,7 +15,7 @@ import { useFieldItemContext } from '../item/FieldItemContext';
  * An accessible label that is automatically associated with the field control.
  * Renders a `<label>` element.
  *
- * Documentation: [Base UI Field](https://base-ui.com/react/components/field)
+ * Documentation: [Obstudio Field](https://obstudio.co/react/components/field)
  */
 export const FieldLabel = React.forwardRef(function FieldLabel(
   componentProps: FieldLabel.Props,
@@ -67,7 +67,7 @@ export const FieldLabel = React.forwardRef(function FieldLabel(
         const ownerStackMessage = SafeReact.captureOwnerStack?.() || '';
         const message =
           '<Field.Label> expected a non-<label> element because the `nativeLabel` prop is false. ' +
-          'Rendering a <label> assumes native label behavior while Base UI treats it as ' +
+          'Rendering a <label> assumes native label behavior while Obstudio treats it as ' +
           'non-native, which can cause unexpected pointer behavior. Use a non-<label> in the ' +
           '`render` prop, or set `nativeLabel` to `true`.';
         error(`${message}${ownerStackMessage}`);
@@ -87,7 +87,7 @@ export const FieldLabel = React.forwardRef(function FieldLabel(
 
 export interface FieldLabelState extends FieldRootState {}
 
-export interface FieldLabelProps extends BaseUIComponentProps<'label', FieldLabelState> {
+export interface FieldLabelProps extends ObstudioComponentProps<'label', FieldLabelState> {
   /**
    * Whether the component renders a native `<label>` element when replacing it via the `render` prop.
    * Set to `false` if the rendered element is not a label (for example, `<div>`).

@@ -1,6 +1,6 @@
 import { expect, describe, it } from 'vitest';
 import { fireEvent, screen, waitFor } from '@mui/internal-test-utils';
-import { NavigationMenu } from '@base-ui/react/navigation-menu';
+import { NavigationMenu } from '@obstudio/react/navigation-menu';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 
 describe('<NavigationMenu.Link />', () => {

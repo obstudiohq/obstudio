@@ -1,11 +1,11 @@
 'use client';
 import * as React from 'react';
 import clsx from 'clsx';
-import { Popover } from '@base-ui/react/popover';
-import { Field } from '@base-ui/react/field';
-import { fastObjectShallowCompare } from '@base-ui/utils/fastObjectShallowCompare';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { Popover } from '@obstudio/react/popover';
+import { Field } from '@obstudio/react/field';
+import { fastObjectShallowCompare } from '@obstudio/utils/fastObjectShallowCompare';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
 import { Switch } from './Switch';
 import { Input } from './Input';
 import { Select } from './Select';
@@ -110,7 +110,7 @@ export interface ExperimentSettingsProviderProps<Settings> extends React.PropsWi
   applySettingsAfterHydration?: boolean;
 }
 
-const STORAGE_KEY_PREFIX = 'base-ui-experiment-settings:';
+const STORAGE_KEY_PREFIX = 'obstudio-experiment-settings:';
 
 function getStorageKey() {
   return `${STORAGE_KEY_PREFIX}${window.location.pathname.replace(/\/$/, '')}`;

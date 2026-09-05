@@ -9,7 +9,7 @@ A big thanks to the 7 contributors who made this release possible. Here are some
 - ⭐ We added several new components: CheckboxGroup, RadioGroup, Form, Separator
 - ⭐ Menu has new parts: CheckboxItem, RadioItem, and Group
 
-### `@base_ui/react@1.0.0-alpha.3`
+### `@obstudio/react@1.0.0-alpha.3`
 
 - [AlertDialog] Move types to namespaces (#591) @michaldudak
 - [Checkbox] Modernize implementation (#594) @atomiks
@@ -39,7 +39,7 @@ A big thanks to the 7 contributors who made this release possible. Here are some
 ### Docs
 
 - [docs] Fix 301 redirections in docs @oliviertassinari
-- [docs] Make the readme specific to @base_ui/react (#633) @michaldudak
+- [docs] Make the readme specific to @obstudio/react (#633) @michaldudak
 - [docs] Copy vale-action.yml from main repo @oliviertassinari
 - [docs] Fix 301 to chromium (#636) @oliviertassinari
 - [docs] Avoid dead links in demos (#610) @oliviertassinari
@@ -74,7 +74,7 @@ A big thanks to the 7 contributors who made this release possible. Here are some
 - [test] Run Browserstack tests on master only (#578) @michaldudak
 - [test] Use `waitFor` instead of fixed timeout in tests (#632) @michaldudak
 - [website] Improve utm_source strategy @oliviertassinari
-- [website] Modernize the Base UI website (#538) @michaldudak
+- [website] Modernize the Obstudio website (#538) @michaldudak
 
 All contributors of this release in alphabetical order: @atomiks, @Janpot, @michaldudak, @michelengelen, @mj12albert, @oliviertassinari, @sai6855
 
@@ -86,7 +86,7 @@ A big thanks to the 10 contributors who made this release possible. Here are som
 
 ⭐ We added many new components: AlertDialog, Dialog, Field, Menu, Popover, PreviewCard, Progress, Slider, and Tooltip.
 
-### `@base_ui/react@1.0.0-alpha.2`
+### `@obstudio/react@1.0.0-alpha.2`
 
 - [Checkbox] Fix checked change when clicking button with wrapping label (#467) @atomiks
 - [Dialog] Create new component and hook (#372) @michaldudak
@@ -153,7 +153,7 @@ A big thanks to the 10 contributors who made this release possible. Here are som
 - [test] Update test-utils and remove enzyme (#473) @michaldudak
 - [test] Use internal-test-utils from npm (#424) @michaldudak
 - [typescript] Add `type` to export statements (#544) @michaldudak
-- [website] Fix /base-ui/ code duplication (#416) @oliviertassinari- [infra] Add support donation button @oliviertassinari
+- [website] Fix /obstudio/ code duplication (#416) @oliviertassinari- [infra] Add support donation button @oliviertassinari
 - [website] Redirect to an existing page on dev (#445) @michaldudak
 
 All contributors of this release in alphabetical order: @atomiks, @colmtuite, @danilo-leal, @Janpot, @LukasTy, @marcpachecog, @michaldudak, @mj12albert, @oliviertassinari, @sai6855
@@ -168,7 +168,7 @@ A big thanks to the 4 contributors who made this release possible. Here are some
 
 ⭐ We overhauled the Tabs components' API and added a few exciting new features to them (#245).
 
-### `@base_ui/react@1.0.0-alpha.1`
+### `@obstudio/react@1.0.0-alpha.1`
 
 - [NumberField] Fix failing browser tests (#317) @atomiks
 - [Tabs] Overhaul Tabs API (#245) @michaldudak
@@ -186,7 +186,7 @@ A big thanks to the 4 contributors who made this release possible. Here are some
 ## Core
 
 - Rely on @mui/monorepo/.eslintrc (#352) @oliviertassinari
-- Use Base UI repo in the release changelog script (#355) @michaldudak
+- Use Obstudio repo in the release changelog script (#355) @michaldudak
 - Export NumberField components and hooks (#400) @atomiks
 - Config cleanup (#377) @michaldudak
 - Make dependency updates less frequent (#375) @michaldudak
@@ -197,7 +197,7 @@ A big thanks to the 4 contributors who made this release possible. Here are some
 - Clean up unnecessary files (#324) @michaldudak
 - Describe how to publish the docs (#320) @michaldudak
 - Change the references to the Material UI repo in the releaseTag script (#319) @michaldudak
-- Port e2e infra back to Base UI (#395) @oliviertassinari
+- Port e2e infra back to Obstudio (#395) @oliviertassinari
 - Fix Firefox browser version in karma profile config and resolve user-event test TODOs (#353) @ZeeshanTamboli
 - Update Karma config (#322) @michaldudak
 - Use absolute URLs for non-Base pages (#321) @michaldudak
@@ -208,13 +208,13 @@ All contributors of this release in alphabetical order: @atomiks, @michaldudak, 
 
 _Apr 15, 2024_
 
-This is an initial release of Base UI as the @base_ui/react package.
+This is an initial release of Obstudio as the @obstudio/react package.
 It features the Checkbox, Number Field, and Switch as the first components to be rewritten with a fresh new API. 🚀
 
-### `@base_ui/react@1.0.0-alpha.0`
+### `@obstudio/react@1.0.0-alpha.0`
 
 - [Checkbox] Component and Hook (#159) @atomiks
 - [NumberField] Component and Hook (#186) @atomiks
 - [Switch] Implement the component-per-node API (#135) @michaldudak
-- [core] Rename package to @base_ui/react (#287) @michaldudak
+- [core] Rename package to @obstudio/react (#287) @michaldudak
 - [core] Exclude legacy components from the package (#288) @michaldudak

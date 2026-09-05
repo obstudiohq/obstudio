@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Collapsible } from '@base-ui/react/collapsible';
+import { Collapsible } from '@obstudio/react/collapsible';
 import * as ScrollArea from '../ScrollArea';
 
 interface DemoCodeBlockProps {

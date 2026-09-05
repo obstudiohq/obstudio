@@ -1,14 +1,14 @@
 'use client';
 import * as React from 'react';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { warn } from '@base-ui/utils/warn';
-import { EMPTY_ARRAY } from '@base-ui/utils/empty';
-import { BaseUIComponentProps, Orientation } from '../../internals/types';
+import { useControlled } from '@obstudio/utils/useControlled';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { warn } from '@obstudio/utils/warn';
+import { EMPTY_ARRAY } from '@obstudio/utils/empty';
+import { ObstudioComponentProps, Orientation } from '../../internals/types';
 import { CompositeList } from '../../internals/composite/list/CompositeList';
 import { AccordionRootContext } from './AccordionRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';
-import { type BaseUIChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { type ObstudioChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 
 const rootStateAttributesMapping = {
@@ -19,7 +19,7 @@ const rootStateAttributesMapping = {
  * Groups all parts of the accordion.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Accordion](https://base-ui.com/react/components/accordion)
+ * Documentation: [Obstudio Accordion](https://obstudio.co/react/components/accordion)
  */
 export const AccordionRoot = React.forwardRef(function AccordionRoot<Value = any>(
   componentProps: AccordionRoot.Props<Value>,
@@ -157,7 +157,7 @@ export interface AccordionRootState<Value = any> {
   orientation: Orientation;
 }
 
-export interface AccordionRootProps<Value = any> extends BaseUIComponentProps<
+export interface AccordionRootProps<Value = any> extends ObstudioComponentProps<
   'div',
   AccordionRoot.State<Value>
 > {
@@ -226,7 +226,7 @@ export interface AccordionRootProps<Value = any> extends BaseUIComponentProps<
 export type AccordionRootChangeEventReason = typeof REASONS.triggerPress | typeof REASONS.none;
 
 export type AccordionRootChangeEventDetails =
-  BaseUIChangeEventDetails<AccordionRoot.ChangeEventReason>;
+  ObstudioChangeEventDetails<AccordionRoot.ChangeEventReason>;
 
 export namespace AccordionRoot {
   export type Value<TValue = any> = AccordionValue<TValue>;

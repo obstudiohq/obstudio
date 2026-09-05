@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PreviewCard } from '@base-ui/react/preview-card';
+import { PreviewCard } from '@obstudio/react/preview-card';
 import styles from './nested.module.css';
 
 export default function ExamplePreviewCard({ levels = 2 }: { levels?: number }) {

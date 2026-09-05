@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { useDialogRootContext } from '../../dialog/root/DialogRootContext';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { DRAWER_CONTENT_ATTRIBUTE } from './drawerContentAttribute';
 
@@ -9,7 +9,7 @@ import { DRAWER_CONTENT_ATTRIBUTE } from './drawerContentAttribute';
  * A container for the drawer contents.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+ * Documentation: [Obstudio Drawer](https://obstudio.co/react/components/drawer)
  */
 export const DrawerContent = React.forwardRef(function DrawerContent(
   componentProps: DrawerContent.Props,
@@ -25,7 +25,7 @@ export const DrawerContent = React.forwardRef(function DrawerContent(
   });
 });
 
-export interface DrawerContentProps extends BaseUIComponentProps<'div', DrawerContentState> {}
+export interface DrawerContentProps extends ObstudioComponentProps<'div', DrawerContentState> {}
 
 export interface DrawerContentState {}
 

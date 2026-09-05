@@ -9,7 +9,7 @@ export function isMouseWithinBounds(
   // Safari randomly fires `mouseleave` incorrectly when the item is
   // aligned to the trigger. This is a workaround to prevent the highlight
   // from being removed while the cursor is still within the bounds of the item.
-  // https://github.com/mui/base-ui/issues/869
+  // https://github.com/obstudiohq/obstudio/issues/869
   const isWithinBounds =
     targetRect.top + 1 <= event.clientY &&
     event.clientY <= targetRect.bottom - 1 &&

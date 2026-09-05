@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { Toolbar } from '@base-ui/react/toolbar';
-import { DirectionProvider } from '@base-ui/react/direction-provider';
+import { Toolbar } from '@obstudio/react/toolbar';
+import { DirectionProvider } from '@obstudio/react/direction-provider';
 import toolbarClasses from './toolbar.module.css';
 import inputClasses from '../../../(docs)/react/components/input/demos/hero/css-modules/index.module.css';
 import '../../../../demo-data/theme/css-modules/theme.css';
@@ -66,7 +66,7 @@ export default function App() {
 
             <Toolbar.Link
               className={styles.toolbar.Button}
-              href="https://base-ui.com"
+              href="https://obstudio.co"
               target="_blank"
             >
               Link

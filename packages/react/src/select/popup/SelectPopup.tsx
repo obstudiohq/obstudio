@@ -1,17 +1,17 @@
 'use client';
 import * as React from 'react';
 import { rectToClientRect } from '@floating-ui/utils';
-import { addEventListener } from '@base-ui/utils/addEventListener';
-import { platform } from '@base-ui/utils/platform';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { ownerDocument, ownerWindow } from '@base-ui/utils/owner';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useAnimationFrame } from '@base-ui/utils/useAnimationFrame';
-import type { InteractionType } from '@base-ui/utils/useEnhancedClickHandler';
-import { clamp } from '@base-ui/utils/clamp';
+import { addEventListener } from '@obstudio/utils/addEventListener';
+import { platform } from '@obstudio/utils/platform';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { ownerDocument, ownerWindow } from '@obstudio/utils/owner';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useAnimationFrame } from '@obstudio/utils/useAnimationFrame';
+import type { InteractionType } from '@obstudio/utils/useEnhancedClickHandler';
+import { clamp } from '@obstudio/utils/clamp';
 import { FloatingFocusManager, platform as floatingPlatform } from '../../floating-ui-react';
 import type { ClientRectObject } from '../../floating-ui-react';
-import type { BaseUIComponentProps, HTMLProps } from '../../internals/types';
+import type { ObstudioComponentProps, HTMLProps } from '../../internals/types';
 import {
   useSelectFloatingContext,
   useSelectRootContext,
@@ -27,7 +27,7 @@ import { transitionStatusMapping } from '../../internals/stateAttributesMapping'
 import { useOpenChangeComplete } from '../../internals/useOpenChangeComplete';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { clearStyles, LIST_FUNCTIONAL_STYLES } from './utils';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { useToolbarRootContext } from '../../toolbar/root/ToolbarRootContext';
 import { COMPOSITE_KEYS } from '../../internals/composite/composite';
@@ -46,7 +46,7 @@ const stateAttributesMapping: StateAttributesMapping<SelectPopupState> = {
  * A container for the select list.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ * Documentation: [Obstudio Select](https://obstudio.co/react/components/select)
  */
 export const SelectPopup = React.forwardRef(function SelectPopup(
   componentProps: SelectPopup.Props,
@@ -492,7 +492,7 @@ export const SelectPopup = React.forwardRef(function SelectPopup(
   );
 });
 
-export interface SelectPopupProps extends BaseUIComponentProps<'div', SelectPopupState> {
+export interface SelectPopupProps extends ObstudioComponentProps<'div', SelectPopupState> {
   children?: React.ReactNode;
   /**
    * Determines the element to focus when the select popup is closed.

@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { EMPTY_OBJECT } from '@base-ui/utils/empty';
+import { EMPTY_OBJECT } from '@obstudio/utils/empty';
 import { useRenderElement } from '../../internals/useRenderElement';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { ComboboxChipsContext } from './ComboboxChipsContext';
 import { CompositeList } from '../../internals/composite/list/CompositeList';
 import { useComboboxRootContext } from '../root/ComboboxRootContext';
@@ -12,7 +12,7 @@ import { handleInputPress } from '../utils/handleInputPress';
  * A container for the chips in a multiselectable input.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)
+ * Documentation: [Obstudio Combobox](https://obstudio.co/react/components/combobox)
  */
 export const ComboboxChips = React.forwardRef(function ComboboxChips(
   componentProps: ComboboxChips.Props,
@@ -68,7 +68,7 @@ export const ComboboxChips = React.forwardRef(function ComboboxChips(
 
 export interface ComboboxChipsState {}
 
-export interface ComboboxChipsProps extends BaseUIComponentProps<'div', ComboboxChipsState> {}
+export interface ComboboxChipsProps extends ObstudioComponentProps<'div', ComboboxChipsState> {}
 
 export namespace ComboboxChips {
   export type State = ComboboxChipsState;

@@ -1,5 +1,5 @@
-import type { ReactStore } from '@base-ui/utils/store';
-import { EMPTY_OBJECT } from '@base-ui/utils/empty';
+import type { ReactStore } from '@obstudio/utils/store';
+import { EMPTY_OBJECT } from '@obstudio/utils/empty';
 import { FloatingRootContext } from '../../floating-ui-react';
 import { FloatingRootStore } from '../../floating-ui-react/components/FloatingRootStore';
 import { TransitionStatus } from '../../internals/useTransitionStatus';

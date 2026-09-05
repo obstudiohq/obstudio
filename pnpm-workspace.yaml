@@ -14,7 +14,7 @@ allowBuilds:
 
 # Advisories in transitive dev-tooling dependencies that we can't reach through a direct bump,
 # because the parent package pins the vulnerable version. None of these are reachable from the
-# published packages (`@base-ui/react`, `@base-ui/utils`), so the impact is limited to CI and
+# published packages (`@obstudio/react`, `@obstudio/utils`), so the impact is limited to CI and
 # local development.
 #
 # Every entry is constrained to the major its dependents already expect. Do not relax these to a
@@ -60,7 +60,7 @@ updateNotifier: false
 blockExoticSubdeps: true
 minimumReleaseAge: 4320
 minimumReleaseAgeExclude:
-  - '@base-ui/*'
+  - '@obstudio/*'
   - '@mui/internal-*'
 trustPolicy: no-downgrade
 # Skip trust-policy checks for packages published more than 365 days ago.

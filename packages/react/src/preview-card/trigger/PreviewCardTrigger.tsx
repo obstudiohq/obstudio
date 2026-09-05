@@ -1,11 +1,11 @@
 'use client';
 import * as React from 'react';
-import { fastComponentRef } from '@base-ui/utils/fastHooks';
+import { fastComponentRef } from '@obstudio/utils/fastHooks';
 import { usePreviewCardRootContext } from '../root/PreviewCardContext';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { triggerOpenStateMapping } from '../../utils/popupStateMapping';
 import { useRenderElement } from '../../internals/useRenderElement';
-import { useBaseUiId } from '../../internals/useBaseUiId';
+import { useObstudioId } from '../../internals/useObstudioId';
 import { PreviewCardHandle } from '../store/PreviewCardHandle';
 import {
   getInlineRectTriggerProps,
@@ -19,7 +19,7 @@ import { safePolygon, useFocus, useHoverReferenceInteraction } from '../../float
  * A link that opens the preview card.
  * Renders an `<a>` element.
  *
- * Documentation: [Base UI Preview Card](https://base-ui.com/react/components/preview-card)
+ * Documentation: [Obstudio Preview Card](https://obstudio.co/react/components/preview-card)
  */
 export const PreviewCardTrigger = fastComponentRef(function PreviewCardTrigger(
   componentProps: PreviewCardTrigger.Props,
@@ -42,11 +42,11 @@ export const PreviewCardTrigger = fastComponentRef(function PreviewCardTrigger(
   const store = handleStore ?? rootContext;
   if (!store) {
     throw new Error(
-      'Base UI: <PreviewCard.Trigger> must be either used within a <PreviewCard.Root> component or provided with a handle.',
+      'Obstudio: <PreviewCard.Trigger> must be either used within a <PreviewCard.Root> component or provided with a handle.',
     );
   }
 
-  const thisTriggerId = useBaseUiId(idProp);
+  const thisTriggerId = useObstudioId(idProp);
   const isTriggerActive = store.useState('isTriggerActive', thisTriggerId);
   const isOpenedByThisTrigger = store.useState('isOpenedByTrigger', thisTriggerId);
   const floatingRootContext = store.useState('floatingRootContext');
@@ -117,7 +117,7 @@ export interface PreviewCardTriggerState {
   open: boolean;
 }
 
-export interface PreviewCardTriggerProps<Payload = unknown> extends BaseUIComponentProps<
+export interface PreviewCardTriggerProps<Payload = unknown> extends ObstudioComponentProps<
   'a',
   PreviewCardTriggerState,
   React.ComponentPropsWithRef<'a'>

@@ -14,7 +14,7 @@ describe('ComboboxPortalContext', () => {
     const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
 
     try {
-      await expect(render(<Consumer />)).rejects.toThrow('Base UI: <Combobox.Portal> is missing.');
+      await expect(render(<Consumer />)).rejects.toThrow('Obstudio: <Combobox.Portal> is missing.');
     } finally {
       errorSpy.mockRestore();
     }

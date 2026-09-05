@@ -18,7 +18,7 @@ export function useSelectPositionerContext() {
   const context = React.useContext(SelectPositionerContext);
   if (!context) {
     throw new Error(
-      'Base UI: SelectPositionerContext is missing. SelectPositioner parts must be placed within <Select.Positioner>.',
+      'Obstudio: SelectPositionerContext is missing. SelectPositioner parts must be placed within <Select.Positioner>.',
     );
   }
   return context;

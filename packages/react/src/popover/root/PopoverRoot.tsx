@@ -1,14 +1,14 @@
 'use client';
 import * as React from 'react';
-import { fastComponent } from '@base-ui/utils/fastHooks';
+import { fastComponent } from '@obstudio/utils/fastHooks';
 import { useDismiss, FloatingTree } from '../../floating-ui-react';
 import { PopoverRootContext, usePopoverRootContext } from './PopoverRootContext';
 import { PopoverStore, type State as PopoverStoreState } from '../store/PopoverStore';
 import { PopoverHandle } from '../store/PopoverHandle';
 import {
   createChangeEventDetails,
-  type BaseUIChangeEventDetails,
-} from '../../internals/createBaseUIEventDetails';
+  type ObstudioChangeEventDetails,
+} from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import {
   PopupHandleAttachment,
@@ -95,7 +95,7 @@ const PopoverRootComponent = fastComponent(function PopoverRootComponent<Payload
  * Groups all parts of the popover.
  * Doesn't render its own HTML element.
  *
- * Documentation: [Base UI Popover](https://base-ui.com/react/components/popover)
+ * Documentation: [Obstudio Popover](https://obstudio.co/react/components/popover)
  */
 export function PopoverRoot<Payload = unknown>(props: PopoverRoot.Props<Payload>) {
   if (usePopoverRootContext(true)) {
@@ -212,7 +212,7 @@ export type PopoverRootChangeEventReason =
   | typeof REASONS.imperativeAction
   | typeof REASONS.none;
 export type PopoverRootChangeEventDetails =
-  BaseUIChangeEventDetails<PopoverRoot.ChangeEventReason> & {
+  ObstudioChangeEventDetails<PopoverRoot.ChangeEventReason> & {
     preventUnmountOnClose(): void;
   };
 

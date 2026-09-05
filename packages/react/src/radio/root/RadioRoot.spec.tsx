@@ -1,4 +1,4 @@
-import { Radio } from '@base-ui/react/radio';
+import { Radio } from '@obstudio/react/radio';
 
 const value = 'a';
 

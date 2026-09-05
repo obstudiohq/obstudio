@@ -22,7 +22,7 @@ import { DemoComboboxHero } from './demos/hero';
 Import the components and place them together:
 
 ```jsx title="Anatomy"
-import { Combobox } from '@base-ui/react/combobox';
+import { Combobox } from '@obstudio/react/combobox';
 
 <Combobox.Root>
   <Combobox.Label />
@@ -95,7 +95,7 @@ The following example shows a typed wrapper around the Combobox component with c
 
 ```tsx title="Specifying generic type parameters"
 import * as React from 'react';
-import { Combobox } from '@base-ui/react/combobox';
+import { Combobox } from '@obstudio/react/combobox';
 
 export function MyCombobox<Value, Multiple extends boolean | undefined = false, Item = Value>(
   props: Combobox.Root.Props<Value, Multiple, Item>,
@@ -184,7 +184,7 @@ import { DemoComboboxMultiple } from './demos/multiple';
 <DemoComboboxMultiple />
 
 In order for screen readers to announce how to reach and remove the chips, add `aria-description` to `<Combobox.Chip>` and `<Combobox.Input>`, alongside the `aria-label` on `<Combobox.Chips>` and `<Combobox.ChipRemove>`.
-Base UI does not ship these strings. Translate them together with the rest of your interface.
+Obstudio does not ship these strings. Translate them together with the rest of your interface.
 
 Visible chips can be limited by slicing the selected values rendered in `<Combobox.Value>`:
 
@@ -505,6 +505,6 @@ export const metadata = {
     'Multiple Select Combobox',
     'Async Combobox',
     'Accessible Combobox',
-    'Base UI',
+    'Obstudio',
   ],
 };

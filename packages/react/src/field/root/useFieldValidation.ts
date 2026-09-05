@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { EMPTY_OBJECT } from '@base-ui/utils/empty';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
+import { EMPTY_OBJECT } from '@obstudio/utils/empty';
+import { useTimeout } from '@obstudio/utils/useTimeout';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useRefWithInit } from '@obstudio/utils/useRefWithInit';
 import { useLabelableContext } from '../../internals/labelable-provider/LabelableContext';
 import { mergeProps } from '../../merge-props';
 import { DEFAULT_VALIDITY_STATE } from '../../internals/field-constants/constants';
@@ -23,7 +23,7 @@ export type RegisteredInput = {
 export type RegisteredInputs = Map<HTMLInputElement, RegisteredInput>;
 
 /**
- * Whether an input participates in the surrounding Base UI Form. Inputs that are effectively
+ * Whether an input participates in the surrounding Obstudio Form. Inputs that are effectively
  * disabled, or whose `form` attribute explicitly associates them with another form, are excluded.
  * DOM position only matters when it associates the input with a different form. Otherwise, field
  * registration is context-driven, so portaled inputs (for example inside a dialog) still belong to
@@ -97,7 +97,7 @@ export function useFieldValidation(
   const inputRef = React.useRef<HTMLInputElement | null>(null);
   const registeredInputs = useRefWithInit<RegisteredInputs>(() => new Map()).current;
   const validationCommitIdRef = React.useRef(0);
-  // Tracks the message installed by Base UI and the custom message it displaced.
+  // Tracks the message installed by Obstudio and the custom message it displaced.
   const customValidityRef = React.useRef<
     [element: HTMLInputElement, message: string, displaced: string] | null
   >(null);
@@ -277,7 +277,7 @@ export function useFieldValidation(
 
     timeout.clear();
 
-    // Do not read Base UI's previous message back as a native constraint.
+    // Do not read Obstudio's previous message back as a native constraint.
     clearCustomValidity();
 
     let nextState: FieldValidityData['state'] = refreshState();

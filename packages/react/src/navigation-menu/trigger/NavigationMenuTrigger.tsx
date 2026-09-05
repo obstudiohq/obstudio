@@ -1,14 +1,14 @@
 'use client';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { addEventListener } from '@base-ui/utils/addEventListener';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { ownerWindow } from '@base-ui/utils/owner';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import { useAnimationFrame } from '@base-ui/utils/useAnimationFrame';
-import { useValueAsRef } from '@base-ui/utils/useValueAsRef';
-import { EMPTY_ARRAY } from '@base-ui/utils/empty';
+import { addEventListener } from '@obstudio/utils/addEventListener';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { ownerWindow } from '@obstudio/utils/owner';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useTimeout } from '@obstudio/utils/useTimeout';
+import { useAnimationFrame } from '@obstudio/utils/useAnimationFrame';
+import { useValueAsRef } from '@obstudio/utils/useValueAsRef';
+import { EMPTY_ARRAY } from '@obstudio/utils/empty';
 import {
   safePolygon,
   useClick,
@@ -30,13 +30,13 @@ import {
   stopEvent,
 } from '../../floating-ui-react/utils';
 import type { HandleCloseContextBase } from '../../floating-ui-react/hooks/useHoverShared';
-import type { BaseUIComponentProps, NativeButtonProps, HTMLProps } from '../../internals/types';
+import type { ObstudioComponentProps, NativeButtonProps, HTMLProps } from '../../internals/types';
 import { useNavigationMenuItemContext } from '../item/NavigationMenuItemContext';
 import {
   useNavigationMenuRootContext,
   useNavigationMenuTreeContext,
 } from '../root/NavigationMenuRootContext';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { ownerVisuallyHidden, PATIENT_CLICK_THRESHOLD } from '../../internals/constants';
 import { FocusGuard } from '../../utils/FocusGuard';
@@ -63,7 +63,7 @@ const DEFAULT_SIZE = { width: 0, height: 0 };
  * associated content.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+ * Documentation: [Obstudio Navigation Menu](https://obstudio.co/react/components/navigation-menu)
  */
 export const NavigationMenuTrigger = React.forwardRef(function NavigationMenuTrigger(
   componentProps: NavigationMenuTrigger.Props,
@@ -795,7 +795,7 @@ export interface NavigationMenuTriggerState {
 }
 
 export interface NavigationMenuTriggerProps
-  extends NativeButtonProps, BaseUIComponentProps<'button', NavigationMenuTriggerState> {
+  extends NativeButtonProps, ObstudioComponentProps<'button', NavigationMenuTriggerState> {
   /**
    * Whether the component should ignore user interaction.
    * @default false

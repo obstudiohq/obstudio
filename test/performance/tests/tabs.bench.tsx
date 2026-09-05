@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Tabs } from '@base-ui/react/tabs';
+import { Tabs } from '@obstudio/react/tabs';
 import { benchmark } from '@mui/internal-benchmark';
 import { createRows, MountList } from './shared';
 

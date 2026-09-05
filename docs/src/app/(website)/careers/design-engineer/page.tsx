@@ -21,8 +21,8 @@ export default function DesignEngineerPage() {
       <section className="bui-d-c">
         <div className="bui-d-f bui-fd-c bui-g-4 bui-gcs-1 bui-gce-9 bp2:bui-gcs-3 bp4:bui-gce-7">
           <p className="Text sz-2">
-            Help us make Base UI the most intuitive, accessible, and powerful open-source UI library
-            for React.
+            Help us make Obstudio the most intuitive, accessible, and powerful open-source UI
+            library for React.
           </p>
         </div>
       </section>
@@ -33,18 +33,18 @@ export default function DesignEngineerPage() {
 
       <section className="bui-d-c">
         <div className="bui-gcs-1 bui-gce-9 bp2:bui-gce-3">
-          <h2 className="Text sz-2">About Base UI</h2>
+          <h2 className="Text sz-2">About Obstudio</h2>
         </div>
         <div className="bui-d-f bui-fd-c bui-g-4 bui-gcs-1 bui-gce-9 bp2:bui-gcs-3 bp4:bui-gce-7">
           <p className="Text sz-2">
-            From the creators of Radix, Material UI, and Floating UI, Base UI is an unstyled React
+            From the creators of Radix, Material UI, and Floating UI, Obstudio is an unstyled React
             component library for building accessible user interfaces. Our focus is on
             accessibility, performance, and developer experience. Our goal is to provide a complete
             set of open-source UI components, with a delightful developer experience, in a
             sustainable way.
           </p>
           <p className="Text sz-2">
-            The Base UI team is a small group of engineers, designers, and product people, working
+            The Obstudio team is a small group of engineers, designers, and product people, working
             to solve incredibly complex and challenging UI problems on the web. In our work, we
             value craft, flexibility, and accessibility.
           </p>
@@ -90,7 +90,7 @@ export default function DesignEngineerPage() {
               Lead the docs design and user experience. Design and implement new features, new
               content, a11y enhancements, and visual language enhancements.
             </li>
-            <li>Build and maintain the Base UI website.</li>
+            <li>Build and maintain the Obstudio website.</li>
             <li>
               Build out our test environment by composing and styling component examples, then
               rigorously testing them in many different environments including desktop, mobile, and
@@ -101,7 +101,7 @@ export default function DesignEngineerPage() {
               improvements to accessibility, usability, and performance.
             </li>
             <li>
-              Champion Base UI both internally and externally, contributing to marketing efforts
+              Champion Obstudio both internally and externally, contributing to marketing efforts
               through social media, blogs, conference talks, podcasts, and other communication
               channels.
             </li>
@@ -182,7 +182,7 @@ export default function DesignEngineerPage() {
             <li>45 minute Phone screen.</li>
             <li>React challenge (asynchronous).</li>
             <li>60 minute meeting with Product lead.</li>
-            <li>90 minute meeting with the Base UI team.</li>
+            <li>90 minute meeting with the Obstudio team.</li>
             <li>60 minute culture-fit interview.</li>
           </ul>
           <p className="Text sz-2">

@@ -1,5 +1,5 @@
 import { createLogOnce } from './createLogOnce';
 
-export const warn = createLogOnce('warn', 'Base UI');
+export const warn = createLogOnce('warn', 'Obstudio');
 
 export { reset } from './createLogOnce';

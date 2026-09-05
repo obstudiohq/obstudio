@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
-import { ownerDocument } from '@base-ui/utils/owner';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import { useValueAsRef } from '@base-ui/utils/useValueAsRef';
+import { ownerDocument } from '@obstudio/utils/owner';
+import { useTimeout } from '@obstudio/utils/useTimeout';
+import { useValueAsRef } from '@obstudio/utils/useValueAsRef';
 import { useSelectRootContext, useSelectRootPropsContext } from '../root/SelectRootContext';
-import { BaseUIComponentProps, HTMLProps, NativeButtonProps } from '../../internals/types';
+import { ObstudioComponentProps, HTMLProps, NativeButtonProps } from '../../internals/types';
 import { useFieldRootContext } from '../../internals/field-root-context/FieldRootContext';
 import { useLabelableContext } from '../../internals/labelable-provider/LabelableContext';
 import { pressableTriggerOpenStateMapping } from '../../utils/popupStateMapping';
@@ -16,7 +16,7 @@ import { contains, getFloatingFocusElement } from '../../floating-ui-react/utils
 import { mergeProps } from '../../merge-props';
 import { useButton } from '../../internals/use-button';
 import type { FieldRootState } from '../../field/root/FieldRoot';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { useLabelableId } from '../../internals/labelable-provider/useLabelableId';
 import { resolveAriaLabelledBy } from '../../utils/resolveAriaLabelledBy';
@@ -37,7 +37,7 @@ const stateAttributesMapping: StateAttributesMapping<SelectTriggerState> = {
  * A button that opens the select popup.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ * Documentation: [Obstudio Select](https://obstudio.co/react/components/select)
  */
 export const SelectTrigger = React.forwardRef(function SelectTrigger(
   componentProps: SelectTrigger.Props,
@@ -254,7 +254,7 @@ export interface SelectTriggerState extends FieldRootState {
 }
 
 export interface SelectTriggerProps
-  extends NativeButtonProps, BaseUIComponentProps<'button', SelectTriggerState> {
+  extends NativeButtonProps, ObstudioComponentProps<'button', SelectTriggerState> {
   children?: React.ReactNode;
   /**
    * Whether the component should ignore user interaction.

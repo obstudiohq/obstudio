@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { ReactStore } from '@base-ui/utils/store';
+import { ReactStore } from '@obstudio/utils/store';
 import type { FloatingEvents, ContextData, ReferenceType } from '../types';
-import { type BaseUIChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { type ObstudioChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { createEventEmitter } from '../utils/createEventEmitter';
 import { type FloatingUIOpenChangeDetails } from '../../internals/types';
 import { type PopupTriggerMap } from '../../utils/popups';
@@ -23,7 +23,7 @@ export interface FloatingRootState {
 
 export interface FloatingRootStoreContext {
   onOpenChange:
-    ((open: boolean, eventDetails: BaseUIChangeEventDetails<string>) => void) | undefined;
+    ((open: boolean, eventDetails: ObstudioChangeEventDetails<string>) => void) | undefined;
   readonly dataRef: React.RefObject<ContextData>;
   readonly events: FloatingEvents;
   nested: boolean;
@@ -53,7 +53,7 @@ interface FloatingRootStoreOptions {
   syncOnly: boolean;
   nested: boolean;
   onOpenChange:
-    ((open: boolean, eventDetails: BaseUIChangeEventDetails<string>) => void) | undefined;
+    ((open: boolean, eventDetails: ObstudioChangeEventDetails<string>) => void) | undefined;
 }
 
 export class FloatingRootStore extends ReactStore<
@@ -103,7 +103,7 @@ export class FloatingRootStore extends ReactStore<
   /**
    * Runs the root-owned side effects for an open state change.
    */
-  dispatchOpenChange = (newOpen: boolean, eventDetails: BaseUIChangeEventDetails<string>) => {
+  dispatchOpenChange = (newOpen: boolean, eventDetails: ObstudioChangeEventDetails<string>) => {
     this.syncOpenEvent(newOpen, eventDetails.event);
 
     const details: FloatingUIOpenChangeDetails = {
@@ -123,7 +123,7 @@ export class FloatingRootStore extends ReactStore<
    * @param newOpen The new open state.
    * @param eventDetails Details about the event that triggered the open state change.
    */
-  setOpen = (newOpen: boolean, eventDetails: BaseUIChangeEventDetails<string>) => {
+  setOpen = (newOpen: boolean, eventDetails: ObstudioChangeEventDetails<string>) => {
     if (this.syncOnly) {
       this.context.onOpenChange?.(newOpen, eventDetails);
       return;

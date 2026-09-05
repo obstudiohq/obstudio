@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Popover } from '@base-ui/react/popover';
+import { Popover } from '@obstudio/react/popover';
 import { benchmark } from '@mui/internal-benchmark';
 import { createRows, MountList } from './shared';
 

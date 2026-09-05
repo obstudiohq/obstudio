@@ -1,7 +1,7 @@
 import { afterEach, expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
 import { act, screen } from '@mui/internal-test-utils';
-import { Menu } from '@base-ui/react/menu';
+import { Menu } from '@obstudio/react/menu';
 import { createRenderer, describeConformance } from '#test-utils';
 import { MenuGroupContext } from '../group/MenuGroupContext';
 
@@ -33,7 +33,7 @@ describe('<Menu.GroupLabel />', () => {
 
     try {
       await expect(render(<Menu.GroupLabel />)).rejects.toThrow(
-        'Base UI: MenuGroupContext is missing. Menu group parts must be used within <Menu.Group> or <Menu.RadioGroup>.',
+        'Obstudio: MenuGroupContext is missing. Menu group parts must be used within <Menu.Group> or <Menu.RadioGroup>.',
       );
     } finally {
       errorSpy.mockRestore();

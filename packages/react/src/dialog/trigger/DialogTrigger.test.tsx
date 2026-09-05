@@ -1,5 +1,5 @@
 import { expect, vi, describe, it } from 'vitest';
-import { Dialog } from '@base-ui/react/dialog';
+import { Dialog } from '@obstudio/react/dialog';
 import { screen } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance } from '#test-utils';
 
@@ -24,7 +24,7 @@ describe('<Dialog.Trigger />', () => {
 
     try {
       await expect(render(<Dialog.Trigger />)).rejects.toThrow(
-        'Base UI: <Dialog.Trigger> must be used within <Dialog.Root> or provided with a handle.',
+        'Obstudio: <Dialog.Trigger> must be used within <Dialog.Root> or provided with a handle.',
       );
     } finally {
       errorSpy.mockRestore();

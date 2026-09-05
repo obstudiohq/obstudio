@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { formatNumber } from '@base-ui/utils/formatNumber';
-import type { BaseUIComponentProps } from '../../internals/types';
+import { formatNumber } from '@obstudio/utils/formatNumber';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useSliderRootContext } from '../root/SliderRootContext';
 import { sliderStateAttributesMapping } from '../root/stateAttributesMapping';
@@ -11,7 +11,7 @@ import type { SliderRootState } from '../root/SliderRoot';
  * Displays the current value of the slider as text.
  * Renders an `<output>` element.
  *
- * Documentation: [Base UI Slider](https://base-ui.com/react/components/slider)
+ * Documentation: [Obstudio Slider](https://obstudio.co/react/components/slider)
  */
 export const SliderValue = React.forwardRef(function SliderValue(
   componentProps: SliderValue.Props,
@@ -63,7 +63,7 @@ export const SliderValue = React.forwardRef(function SliderValue(
 export interface SliderValueState extends SliderRootState {}
 
 export interface SliderValueProps extends Omit<
-  BaseUIComponentProps<'output', SliderValueState>,
+  ObstudioComponentProps<'output', SliderValueState>,
   'children'
 > {
   children?:

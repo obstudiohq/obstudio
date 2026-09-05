@@ -1,4 +1,4 @@
-import { Dialog } from '@base-ui/react/dialog';
+import { Dialog } from '@obstudio/react/dialog';
 import styles from './index.module.css';
 
 export default function ExampleDialog() {

@@ -14,7 +14,7 @@ export function useSelectItemContext() {
   const context = React.useContext(SelectItemContext);
   if (!context) {
     throw new Error(
-      'Base UI: SelectItemContext is missing. SelectItem parts must be placed within <Select.Item>.',
+      'Obstudio: SelectItemContext is missing. SelectItem parts must be placed within <Select.Item>.',
     );
   }
   return context;

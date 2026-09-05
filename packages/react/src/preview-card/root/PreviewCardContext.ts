@@ -14,7 +14,7 @@ export function usePreviewCardRootContext(optional?: boolean) {
   const context = React.useContext(PreviewCardRootContext);
   if (context === undefined && !optional) {
     throw new Error(
-      'Base UI: PreviewCardRootContext is missing. PreviewCard parts must be placed within <PreviewCard.Root>.',
+      'Obstudio: PreviewCardRootContext is missing. PreviewCard parts must be placed within <PreviewCard.Root>.',
     );
   }
 

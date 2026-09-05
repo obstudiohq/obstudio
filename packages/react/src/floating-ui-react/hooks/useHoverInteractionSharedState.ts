@@ -1,7 +1,7 @@
 'use client';
-import { useOnMount } from '@base-ui/utils/useOnMount';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
-import { Timeout } from '@base-ui/utils/useTimeout';
+import { useOnMount } from '@obstudio/utils/useOnMount';
+import { useRefWithInit } from '@obstudio/utils/useRefWithInit';
+import { Timeout } from '@obstudio/utils/useTimeout';
 
 import type { ContextData, FloatingRootContext, SafePolygonOptions } from '../types';
 import { isInteractiveElement } from '../utils';

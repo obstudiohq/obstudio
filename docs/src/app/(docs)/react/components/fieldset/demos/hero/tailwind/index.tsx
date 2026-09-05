@@ -1,5 +1,5 @@
-import { Field } from '@base-ui/react/field';
-import { Fieldset } from '@base-ui/react/fieldset';
+import { Field } from '@obstudio/react/field';
+import { Fieldset } from '@obstudio/react/fieldset';
 
 export default function ExampleField() {
   return (

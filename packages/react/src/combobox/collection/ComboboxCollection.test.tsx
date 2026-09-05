@@ -1,5 +1,5 @@
 import { expect, describe, it } from 'vitest';
-import { Combobox } from '@base-ui/react/combobox';
+import { Combobox } from '@obstudio/react/combobox';
 import { createRenderer } from '#test-utils';
 import { screen } from '@mui/internal-test-utils';
 

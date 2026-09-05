@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { Tabs } from '@base-ui/react/tabs';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useTimeout } from '@base-ui/utils/useTimeout';
+import { Tabs } from '@obstudio/react/tabs';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useTimeout } from '@obstudio/utils/useTimeout';
 import classes from './tabs-3d-transform.module.css';
 
 const TABS = [

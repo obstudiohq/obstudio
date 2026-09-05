@@ -15,7 +15,7 @@ describe('ComboboxItemContext', () => {
 
     try {
       await expect(render(<Consumer />)).rejects.toThrow(
-        'Base UI: ComboboxItemContext is missing. ComboboxItem parts must be placed within <Combobox.Item>.',
+        'Obstudio: ComboboxItemContext is missing. ComboboxItem parts must be placed within <Combobox.Item>.',
       );
     } finally {
       errorSpy.mockRestore();

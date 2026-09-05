@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { fastComponent } from '@base-ui/utils/fastHooks';
-import type { BaseUIChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { fastComponent } from '@obstudio/utils/fastHooks';
+import type { ObstudioChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { DialogHandle } from '../store/DialogHandle';
 import { type PayloadChildRenderFunction } from '../../utils/popups';
@@ -11,7 +11,7 @@ import { useRenderDialogRoot } from './useRenderDialogRoot';
  * Groups all parts of the dialog.
  * Doesn't render its own HTML element.
  *
- * Documentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)
+ * Documentation: [Obstudio Dialog](https://obstudio.co/react/components/dialog)
  */
 export const DialogRoot = fastComponent(function DialogRoot<Payload>(
   props: DialogRoot.Props<Payload>,
@@ -104,7 +104,7 @@ export type DialogRootChangeEventReason =
   | typeof REASONS.none;
 
 export type DialogRootChangeEventDetails =
-  BaseUIChangeEventDetails<DialogRoot.ChangeEventReason> & {
+  ObstudioChangeEventDetails<DialogRoot.ChangeEventReason> & {
     preventUnmountOnClose(): void;
   };
 

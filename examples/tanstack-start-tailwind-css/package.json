@@ -1,5 +1,5 @@
 {
-  "name": "base-ui-tanstack-start",
+  "name": "obstudio-tanstack-start",
   "private": true,
   "type": "module",
   "scripts": {
@@ -11,8 +11,8 @@
     "typescript": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@base-ui/react": "latest",
-    "@base-ui/utils": "latest",
+    "@obstudio/react": "latest",
+    "@obstudio/utils": "latest",
     "@tanstack/react-devtools": "^0.10.0",
     "@tanstack/react-router": "^1.168.3",
     "@tanstack/react-router-devtools": "^1.166.11",

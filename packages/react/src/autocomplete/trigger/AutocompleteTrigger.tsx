@@ -3,13 +3,13 @@ import type * as React from 'react';
 import { ComboboxTrigger } from '../../combobox/trigger/ComboboxTrigger';
 import type { FieldRootState } from '../../field/root/FieldRoot';
 import type { Side } from '../../internals/useAnchorPositioning';
-import type { BaseUIComponentProps, NativeButtonProps } from '../../internals/types';
+import type { ObstudioComponentProps, NativeButtonProps } from '../../internals/types';
 
 /**
  * A button that opens the popup.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Autocomplete](https://base-ui.com/react/components/autocomplete)
+ * Documentation: [Obstudio Autocomplete](https://obstudio.co/react/components/autocomplete)
  */
 export const AutocompleteTrigger = ComboboxTrigger as AutocompleteTrigger;
 
@@ -37,7 +37,7 @@ export interface AutocompleteTriggerState extends FieldRootState {
 }
 
 export interface AutocompleteTriggerProps
-  extends NativeButtonProps, BaseUIComponentProps<'button', AutocompleteTriggerState> {
+  extends NativeButtonProps, ObstudioComponentProps<'button', AutocompleteTriggerState> {
   /**
    * Whether the component should ignore user interaction.
    * @default false

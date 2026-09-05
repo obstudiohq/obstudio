@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { ownerDocument } from '@base-ui/utils/owner';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useTimeout } from '@base-ui/utils/useTimeout';
+import { useControlled } from '@obstudio/utils/useControlled';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { ownerDocument } from '@obstudio/utils/owner';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useTimeout } from '@obstudio/utils/useTimeout';
 import { type FieldRootState } from '../root/FieldRoot';
 import { useFieldRootContext } from '../../internals/field-root-context/FieldRootContext';
 import { useRegisterFieldControl } from '../../internals/field-register-control/useRegisterFieldControl';
@@ -12,23 +12,23 @@ import { useFormContext } from '../../internals/form-context/FormContext';
 import { useLabelableContext } from '../../internals/labelable-provider/LabelableContext';
 import { useLabelableId } from '../../internals/labelable-provider/useLabelableId';
 import { fieldValidityMapping } from '../../internals/field-constants/constants';
-import { BaseUIComponentProps } from '../../internals/types';
+import { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useValueChanged } from '../../internals/useValueChanged';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
-import type { BaseUIChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import type { ObstudioChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { activeElement } from '../../floating-ui-react/utils';
 
 /**
  * The form control to label and validate.
  * Renders an `<input>` element.
  *
- * You can omit this part and use any Base UI input component instead. For example,
- * [Input](https://base-ui.com/react/components/input), [Checkbox](https://base-ui.com/react/components/checkbox),
- * or [Select](https://base-ui.com/react/components/select), among others, will work with Field out of the box.
+ * You can omit this part and use any Obstudio input component instead. For example,
+ * [Input](https://obstudio.co/react/components/input), [Checkbox](https://obstudio.co/react/components/checkbox),
+ * or [Select](https://obstudio.co/react/components/select), among others, will work with Field out of the box.
  *
- * Documentation: [Base UI Field](https://base-ui.com/react/components/field)
+ * Documentation: [Obstudio Field](https://obstudio.co/react/components/field)
  */
 export const FieldControl = React.forwardRef(function FieldControl(
   componentProps: FieldControl.Props,
@@ -217,7 +217,7 @@ export const FieldControl = React.forwardRef(function FieldControl(
 
 export interface FieldControlState extends FieldRootState {}
 
-export interface FieldControlProps extends BaseUIComponentProps<'input', FieldControlState> {
+export interface FieldControlProps extends ObstudioComponentProps<'input', FieldControlState> {
   /**
    * Callback fired when the `value` changes. Use when controlled.
    */
@@ -229,7 +229,7 @@ export interface FieldControlProps extends BaseUIComponentProps<'input', FieldCo
 export type FieldControlChangeEventReason = typeof REASONS.none;
 
 export type FieldControlChangeEventDetails =
-  BaseUIChangeEventDetails<FieldControl.ChangeEventReason>;
+  ObstudioChangeEventDetails<FieldControl.ChangeEventReason>;
 
 export namespace FieldControl {
   export type State = FieldControlState;

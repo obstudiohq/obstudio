@@ -36,7 +36,7 @@ export function useOTPFieldRootContext() {
 
   if (context === undefined) {
     throw new Error(
-      'Base UI: OTPFieldRootContext is missing. OTPField parts must be placed within <OTPField.Root>.',
+      'Obstudio: OTPFieldRootContext is missing. OTPField parts must be placed within <OTPField.Root>.',
     );
   }
 

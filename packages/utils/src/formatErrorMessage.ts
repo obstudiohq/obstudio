@@ -1,7 +1,7 @@
 /**
  * Creates a formatErrorMessage function with a custom URL and prefix.
- * @param baseUrl - The base URL for the error page (e.g., 'https://base-ui.com/production-error')
- * @param prefix - The prefix for the error message (e.g., 'Base UI')
+ * @param baseUrl - The base URL for the error page (e.g., 'https://obstudio.co/production-error')
+ * @param prefix - The prefix for the error message (e.g., 'Obstudio')
  * @returns A function that formats error messages with the given URL and prefix
  */
 export function createFormatErrorMessage(
@@ -26,8 +26,8 @@ export function createFormatErrorMessage(
  *   ...
  */
 const formatErrorMessage = createFormatErrorMessage(
-  'https://base-ui.com/production-error',
-  'Base UI',
+  'https://obstudio.co/production-error',
+  'Obstudio',
 );
 
 export default formatErrorMessage;

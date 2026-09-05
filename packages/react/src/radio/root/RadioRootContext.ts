@@ -10,7 +10,7 @@ export function useRadioRootContext() {
   const value = React.useContext(RadioRootContext);
   if (value === undefined) {
     throw new Error(
-      'Base UI: RadioRootContext is missing. Radio parts must be placed within <Radio.Root>.',
+      'Obstudio: RadioRootContext is missing. Radio parts must be placed within <Radio.Root>.',
     );
   }
 

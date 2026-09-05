@@ -11,7 +11,7 @@ export function useDialogRootContext(optional?: boolean) {
 
   if (!optional && store === undefined) {
     throw new Error(
-      'Base UI: DialogRootContext is missing. Dialog parts must be placed within <Dialog.Root>.',
+      'Obstudio: DialogRootContext is missing. Dialog parts must be placed within <Dialog.Root>.',
     );
   }
 

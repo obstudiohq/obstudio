@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { Menubar } from '@base-ui/react/menubar';
-import { Menu } from '@base-ui/react/menu';
+import { Menubar } from '@obstudio/react/menubar';
+import { Menu } from '@obstudio/react/menu';
 
 export default function ExampleMenubar() {
   return (

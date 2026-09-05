@@ -15,7 +15,7 @@ import { DemoMenuHero } from './demos/hero';
 Import the component and assemble its parts:
 
 ```jsx title="Anatomy"
-import { Menu } from '@base-ui/react/menu';
+import { Menu } from '@obstudio/react/menu';
 
 <Menu.Root>
   <Menu.Trigger />
@@ -151,8 +151,8 @@ In order to open a dialog using a menu, control the dialog state and open it imp
 
 ```tsx title="Connecting a dialog to a menu"
 import * as React from 'react';
-import { Dialog } from '@base-ui/react/dialog';
-import { Menu } from '@base-ui/react/menu';
+import { Dialog } from '@obstudio/react/dialog';
+import { Menu } from '@obstudio/react/menu';
 
 function ExampleMenu() {
   const [dialogOpen, setDialogOpen] = React.useState(false);
@@ -450,6 +450,6 @@ export const metadata = {
     'Flyout Menu',
     'Context Actions',
     'Headless React Components',
-    'Base UI',
+    'Obstudio',
   ],
 };

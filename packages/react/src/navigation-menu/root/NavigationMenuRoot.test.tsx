@@ -1,10 +1,10 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
 import { fireEvent, screen, flushMicrotasks, act, within, waitFor } from '@mui/internal-test-utils';
-import { NavigationMenu } from '@base-ui/react/navigation-menu';
-import { Dialog } from '@base-ui/react/dialog';
-import { DirectionProvider, type TextDirection } from '@base-ui/react/direction-provider';
-import { Popover } from '@base-ui/react/popover';
+import { NavigationMenu } from '@obstudio/react/navigation-menu';
+import { Dialog } from '@obstudio/react/dialog';
+import { DirectionProvider, type TextDirection } from '@obstudio/react/direction-provider';
+import { Popover } from '@obstudio/react/popover';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { PATIENT_CLICK_THRESHOLD } from '../../internals/constants';
 import { OPEN_DELAY } from '../utils/constants';
@@ -1775,7 +1775,7 @@ describe('<NavigationMenu.Root />', () => {
     async function assertPopupSizeIsPreservedWhenControlledValueClosesExternally(
       keepMountedPortal = false,
     ) {
-      const previousAnimationsDisabled = globalThis.BASE_UI_ANIMATIONS_DISABLED;
+      const previousAnimationsDisabled = globalThis.OBSTUDIO_ANIMATIONS_DISABLED;
       const originalOffsetWidth = Object.getOwnPropertyDescriptor(
         HTMLElement.prototype,
         'offsetWidth',
@@ -1784,7 +1784,7 @@ describe('<NavigationMenu.Root />', () => {
         HTMLElement.prototype,
         'offsetHeight',
       );
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       try {
         function isPopupOpen() {
@@ -1837,7 +1837,7 @@ describe('<NavigationMenu.Root />', () => {
           await flushMicrotasks();
         });
       } finally {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = previousAnimationsDisabled;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = previousAnimationsDisabled;
         if (originalOffsetWidth) {
           Object.defineProperty(HTMLElement.prototype, 'offsetWidth', originalOffsetWidth);
         } else {
@@ -1860,8 +1860,8 @@ describe('<NavigationMenu.Root />', () => {
     });
 
     it('clears activation direction when controlled value closes externally after switching triggers', async () => {
-      const previousAnimationsDisabled = globalThis.BASE_UI_ANIMATIONS_DISABLED;
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      const previousAnimationsDisabled = globalThis.OBSTUDIO_ANIMATIONS_DISABLED;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       try {
         function ControlledNavigationMenu(props: { value: string | null }) {
@@ -1895,7 +1895,7 @@ describe('<NavigationMenu.Root />', () => {
           await flushMicrotasks();
         });
       } finally {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = previousAnimationsDisabled;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = previousAnimationsDisabled;
       }
     });
   });
@@ -2040,8 +2040,8 @@ describe('<NavigationMenu.Root />', () => {
     });
 
     it('unmounts immediately when called while the popup is closing', async () => {
-      const previousAnimationsDisabled = globalThis.BASE_UI_ANIMATIONS_DISABLED;
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      const previousAnimationsDisabled = globalThis.OBSTUDIO_ANIMATIONS_DISABLED;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       try {
         const actionsRef = React.createRef<NavigationMenu.Root.Actions>();
@@ -2073,7 +2073,7 @@ describe('<NavigationMenu.Root />', () => {
           await flushMicrotasks();
         });
       } finally {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = previousAnimationsDisabled;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = previousAnimationsDisabled;
       }
     });
   });
@@ -2249,7 +2249,7 @@ describe('<NavigationMenu.Root />', () => {
       fireEvent.click(trigger);
       await flushMicrotasks();
 
-      const guards = trigger.parentElement?.querySelectorAll('[data-base-ui-focus-guard]');
+      const guards = trigger.parentElement?.querySelectorAll('[data-obstudio-focus-guard]');
       const afterTriggerGuard = guards?.[1] as HTMLElement;
       await act(async () => afterTriggerGuard.focus());
 
@@ -3134,8 +3134,8 @@ describe('<NavigationMenu.Root />', () => {
 
       it('updates popup sizing when inline nested content is inserted while active', async () => {
         const originalResizeObserver = globalThis.ResizeObserver;
-        const previousAnimationsDisabled = globalThis.BASE_UI_ANIMATIONS_DISABLED;
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        const previousAnimationsDisabled = globalThis.OBSTUDIO_ANIMATIONS_DISABLED;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         if (typeof originalResizeObserver === 'function') {
           globalThis.ResizeObserver = undefined as unknown as typeof ResizeObserver;
@@ -3188,7 +3188,7 @@ describe('<NavigationMenu.Root />', () => {
             expect(positioner.style.getPropertyValue('--positioner-height')).toBe('220px');
           });
         } finally {
-          globalThis.BASE_UI_ANIMATIONS_DISABLED = previousAnimationsDisabled;
+          globalThis.OBSTUDIO_ANIMATIONS_DISABLED = previousAnimationsDisabled;
           if (typeof originalResizeObserver === 'function') {
             globalThis.ResizeObserver = originalResizeObserver;
           }
@@ -3196,8 +3196,8 @@ describe('<NavigationMenu.Root />', () => {
       });
 
       it('does not animate popup sizing when nested default content mounts during opening', async () => {
-        const previousAnimationsDisabled = globalThis.BASE_UI_ANIMATIONS_DISABLED;
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        const previousAnimationsDisabled = globalThis.OBSTUDIO_ANIMATIONS_DISABLED;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         try {
           await render(<TestInlineNestedNavigationMenu />);
@@ -3238,13 +3238,13 @@ describe('<NavigationMenu.Root />', () => {
             expect(positioner.style.getPropertyValue('--positioner-height')).toBe('220px');
           });
         } finally {
-          globalThis.BASE_UI_ANIMATIONS_DISABLED = previousAnimationsDisabled;
+          globalThis.OBSTUDIO_ANIMATIONS_DISABLED = previousAnimationsDisabled;
         }
       });
 
       it('does not animate popup sizing when kept nested default content first moves into the portal', async () => {
-        const previousAnimationsDisabled = globalThis.BASE_UI_ANIMATIONS_DISABLED;
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        const previousAnimationsDisabled = globalThis.OBSTUDIO_ANIMATIONS_DISABLED;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         let setPopupPropertySpy: ReturnType<typeof vi.spyOn> | undefined;
 
@@ -3301,14 +3301,14 @@ describe('<NavigationMenu.Root />', () => {
           expect(fixedPopupHeightCalls.every((value) => value === '220px')).toBe(true);
         } finally {
           setPopupPropertySpy?.mockRestore();
-          globalThis.BASE_UI_ANIMATIONS_DISABLED = previousAnimationsDisabled;
+          globalThis.OBSTUDIO_ANIMATIONS_DISABLED = previousAnimationsDisabled;
         }
       });
 
       it('updates popup sizing when switching kept inline nested content', async () => {
         const restoreResizeObserver = mockResizeObserver();
-        const previousAnimationsDisabled = globalThis.BASE_UI_ANIMATIONS_DISABLED;
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        const previousAnimationsDisabled = globalThis.OBSTUDIO_ANIMATIONS_DISABLED;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         try {
           await render(<TestInlineNestedNavigationMenu keepMountedContent />);
@@ -3362,15 +3362,15 @@ describe('<NavigationMenu.Root />', () => {
             expect(positioner.style.getPropertyValue('--positioner-height')).toBe('300px');
           });
         } finally {
-          globalThis.BASE_UI_ANIMATIONS_DISABLED = previousAnimationsDisabled;
+          globalThis.OBSTUDIO_ANIMATIONS_DISABLED = previousAnimationsDisabled;
           restoreResizeObserver();
         }
       });
 
       it('updates popup sizing when a kept nested content hidden attribute changes', async () => {
         const restoreResizeObserver = mockResizeObserver();
-        const previousAnimationsDisabled = globalThis.BASE_UI_ANIMATIONS_DISABLED;
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        const previousAnimationsDisabled = globalThis.OBSTUDIO_ANIMATIONS_DISABLED;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         try {
           await render(<TestInlineNestedNavigationMenu keepMountedContent />);
@@ -3410,14 +3410,14 @@ describe('<NavigationMenu.Root />', () => {
             expect(positioner.style.getPropertyValue('--positioner-height')).toBe('300px');
           });
         } finally {
-          globalThis.BASE_UI_ANIMATIONS_DISABLED = previousAnimationsDisabled;
+          globalThis.OBSTUDIO_ANIMATIONS_DISABLED = previousAnimationsDisabled;
           restoreResizeObserver();
         }
       });
 
       it('keeps inline mutation resize interruptible when content updates again mid-transition', async () => {
-        const previousAnimationsDisabled = globalThis.BASE_UI_ANIMATIONS_DISABLED;
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        const previousAnimationsDisabled = globalThis.OBSTUDIO_ANIMATIONS_DISABLED;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         try {
           await render(
@@ -3482,7 +3482,7 @@ describe('<NavigationMenu.Root />', () => {
 
           setPropertySpy.mockRestore();
         } finally {
-          globalThis.BASE_UI_ANIMATIONS_DISABLED = previousAnimationsDisabled;
+          globalThis.OBSTUDIO_ANIMATIONS_DISABLED = previousAnimationsDisabled;
         }
       });
 
@@ -3586,8 +3586,8 @@ describe('<NavigationMenu.Root />', () => {
 
       it('updates popup sizing immediately when switching to a keepMounted trigger', async () => {
         const restoreResizeObserver = mockResizeObserver();
-        const previousAnimationsDisabled = globalThis.BASE_UI_ANIMATIONS_DISABLED;
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        const previousAnimationsDisabled = globalThis.OBSTUDIO_ANIMATIONS_DISABLED;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         try {
           await render(<TestNavigationMenuWithKeepMountedContent />);
@@ -3634,15 +3634,15 @@ describe('<NavigationMenu.Root />', () => {
             expect(positioner.style.getPropertyValue('--positioner-height')).toBe('180px');
           });
         } finally {
-          globalThis.BASE_UI_ANIMATIONS_DISABLED = previousAnimationsDisabled;
+          globalThis.OBSTUDIO_ANIMATIONS_DISABLED = previousAnimationsDisabled;
           restoreResizeObserver();
         }
       });
 
       it('ignores the initial open size reset once a trigger switch has started', async () => {
         const restoreResizeObserver = mockResizeObserver();
-        const previousAnimationsDisabled = globalThis.BASE_UI_ANIMATIONS_DISABLED;
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        const previousAnimationsDisabled = globalThis.OBSTUDIO_ANIMATIONS_DISABLED;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         try {
           function waitForAnimationFrame() {
@@ -3716,14 +3716,14 @@ describe('<NavigationMenu.Root />', () => {
             expect(popupRoot.style.getPropertyValue('--popup-height')).toBe('auto');
           });
         } finally {
-          globalThis.BASE_UI_ANIMATIONS_DISABLED = previousAnimationsDisabled;
+          globalThis.OBSTUDIO_ANIMATIONS_DISABLED = previousAnimationsDisabled;
           restoreResizeObserver();
         }
       });
 
       it('seeds the popup width from the exiting panel when reopening after hovering a top-level link', async () => {
-        const previousAnimationsDisabled = globalThis.BASE_UI_ANIMATIONS_DISABLED;
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        const previousAnimationsDisabled = globalThis.OBSTUDIO_ANIMATIONS_DISABLED;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         let popupWidthSpy: ReturnType<typeof vi.spyOn> | undefined;
 
@@ -3836,13 +3836,13 @@ describe('<NavigationMenu.Root />', () => {
           });
         } finally {
           popupWidthSpy?.mockRestore();
-          globalThis.BASE_UI_ANIMATIONS_DISABLED = previousAnimationsDisabled;
+          globalThis.OBSTUDIO_ANIMATIONS_DISABLED = previousAnimationsDisabled;
         }
       });
 
       it.skipIf(isJSDOM)('closes on the short exit path after switching content', async () => {
-        const animationsDisabled = globalThis.BASE_UI_ANIMATIONS_DISABLED;
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        const animationsDisabled = globalThis.OBSTUDIO_ANIMATIONS_DISABLED;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         try {
           function waitForAnimationFrame() {
@@ -3910,7 +3910,7 @@ describe('<NavigationMenu.Root />', () => {
 
           expect(performance.now() - closeStart).toBeLessThan(325);
         } finally {
-          globalThis.BASE_UI_ANIMATIONS_DISABLED = animationsDisabled;
+          globalThis.OBSTUDIO_ANIMATIONS_DISABLED = animationsDisabled;
         }
       });
 

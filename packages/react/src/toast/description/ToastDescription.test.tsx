@@ -1,5 +1,5 @@
 import { expect, describe, it } from 'vitest';
-import { Toast } from '@base-ui/react/toast';
+import { Toast } from '@obstudio/react/toast';
 import { createRenderer, describeConformance } from '#test-utils';
 import { screen } from '@mui/internal-test-utils';
 import { List, Button } from '../utils/test-utils';

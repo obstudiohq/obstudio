@@ -1,9 +1,9 @@
 ---
-name: base-ui-review
-description: 'Review the current diff for regressions, correctness bugs, tests, simplifications, and docs issues, scaling depth to a low/medium/high/xhigh/max effort level. Use ONLY when explicitly requested by name: the user runs /base-ui-review, writes $base-ui-review, or asks for "the Base UI review skill". Do NOT use for general review requests such as "review my changes", "review this diff/branch/PR", or after finishing an implementation — handle those without this skill unless the user names it. Pass --comment to post a top-level PR comment, --comment inline for inline PR comments, or --fix to apply findings.'
+name: obstudio-review
+description: 'Review the current diff for regressions, correctness bugs, tests, simplifications, and docs issues, scaling depth to a low/medium/high/xhigh/max effort level. Use ONLY when explicitly requested by name: the user runs /obstudio-review, writes $obstudio-review, or asks for "the Obstudio review skill". Do NOT use for general review requests such as "review my changes", "review this diff/branch/PR", or after finishing an implementation — handle those without this skill unless the user names it. Pass --comment to post a top-level PR comment, --comment inline for inline PR comments, or --fix to apply findings.'
 ---
 
-# Base UI Review
+# Obstudio Review
 
 Review current diff. Find **regressions and correctness bugs** first. Also find
 **cleanup** (reuse / simplification / efficiency). Default effort: `medium`. See
@@ -12,7 +12,7 @@ Review current diff. Find **regressions and correctness bugs** first. Also find
 Argument hint: `[low|medium|high|xhigh|max] [--fix] [--comment [inline]] [<target>]`
 
 This skill is **opt-in only**: run it when the user explicitly asks for it by
-name (`/base-ui-review`, `$base-ui-review`, "the Base UI review skill", or a CI
+name (`/obstudio-review`, `$obstudio-review`, "the Obstudio review skill", or a CI
 job configured to use it). A plain "review my changes" or "review this PR", or
 wrapping up an implementation, is not an invocation — review without this
 workflow unless the user names it.
@@ -102,7 +102,7 @@ Core regression + correctness pass. Cover all sub-angles:
   interactions, keyboard/focus flows, controlled/uncontrolled contracts, SSR,
   integrations between components, public API examples.
 - **Repository/framework correctness lens.** Apply invariants of codebase
-  under review, not just generic language bugs. For Base UI / React component
+  under review, not just generic language bugs. For Obstudio / React component
   changes: controlled vs uncontrolled behavior, event ordering, ref
   forwarding/merging, context registration cleanup, nested component coordination,
   portals, focus management, keyboard navigation, ARIA attributes, disabled/read-only
@@ -308,7 +308,7 @@ Prefix every finding title with one severity marker:
 - ℹ️ **note.** Informational — observation, heads-up, optional suggestion the
   maintainer may reasonably decline.
 
-Base UI has stricter quality bar than most apps — small component-library
+Obstudio has stricter quality bar than most apps — small component-library
 regressions multiplied across many downstream products. When choosing between
 adjacent severities, choose higher severity if failure reaches realistic
 consumer usage, accessibility behavior, form behavior, focus management, SSR,

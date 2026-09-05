@@ -1,12 +1,12 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
 import { createRenderer, screen, fireEvent, waitFor } from '@mui/internal-test-utils';
-import { CheckboxGroup } from '@base-ui/react/checkbox-group';
-import { Checkbox } from '@base-ui/react/checkbox';
-import { Field } from '@base-ui/react/field';
-import { Form } from '@base-ui/react/form';
+import { CheckboxGroup } from '@obstudio/react/checkbox-group';
+import { Checkbox } from '@obstudio/react/checkbox';
+import { Field } from '@obstudio/react/field';
+import { Form } from '@obstudio/react/form';
 import { describeConformance, isJSDOM } from '#test-utils';
 
 describe('<CheckboxGroup />', () => {

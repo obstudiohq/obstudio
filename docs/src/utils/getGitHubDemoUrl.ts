@@ -23,7 +23,7 @@ function getGitHubBaseUrl() {
   if (!sourceCodeRepo || !sourceCodeRef) {
     warnInDevelopment(
       [
-        'Base UI: Demo source links cannot be generated because SOURCE_CODE_REPO or LIB_VERSION is missing.',
+        'Obstudio: Demo source links cannot be generated because SOURCE_CODE_REPO or LIB_VERSION is missing.',
         'Ensure docs/next.config.mjs injects both values.',
       ].join(' '),
     );
@@ -75,7 +75,7 @@ export function getGitHubDemoUrl(
 
     return `${githubBase}/${dirPath}`;
   } catch (error) {
-    warnInDevelopment('Base UI: Demo source link could not be generated.', error);
+    warnInDevelopment('Obstudio: Demo source link could not be generated.', error);
     return null;
   }
 }

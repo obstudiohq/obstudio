@@ -1,4 +1,4 @@
-import { NOOP } from '@base-ui/utils/empty';
+import { NOOP } from '@obstudio/utils/empty';
 import type { FocusableElement } from './tabbable';
 
 interface Options {

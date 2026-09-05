@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
 import { isHTMLElement } from '@floating-ui/utils/dom';
-import { ownerDocument } from '@base-ui/utils/owner';
+import { ownerDocument } from '@obstudio/utils/owner';
 import { focusElementWithVisible, useLabel } from '../../internals/labelable-provider/useLabel';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import type { SliderRoot } from '../root/SliderRoot';
 import { useSliderRootContext } from '../root/SliderRootContext';
@@ -13,7 +13,7 @@ import { sliderStateAttributesMapping } from '../root/stateAttributesMapping';
  * An accessible label that is automatically associated with the slider thumbs.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Slider](https://base-ui.com/react/components/slider)
+ * Documentation: [Obstudio Slider](https://obstudio.co/react/components/slider)
  */
 export const SliderLabel = React.forwardRef(function SliderLabel(
   componentProps: SliderLabel.Props,
@@ -59,7 +59,7 @@ export const SliderLabel = React.forwardRef(function SliderLabel(
 export type SliderLabelState = SliderRoot.State;
 
 export interface SliderLabelProps extends Omit<
-  BaseUIComponentProps<'div', SliderLabel.State>,
+  ObstudioComponentProps<'div', SliderLabel.State>,
   'id'
 > {}
 

@@ -25,7 +25,7 @@
   padding: 0 0.5rem 0 0.75rem;
   margin: 0;
   border: 1px solid oklch(14.5% 0 0deg);
-  border-radius: 0;
+  border-radius: 8px;
   background-color: white;
   color: oklch(14.5% 0 0deg);
   font-family: inherit;

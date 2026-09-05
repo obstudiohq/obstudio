@@ -1,6 +1,6 @@
 import * as React from 'react';
 import clsx from 'clsx';
-import { Switch } from '@base-ui/react/switch';
+import { Switch } from '@obstudio/react/switch';
 
 export function Root({ className, ...props }: Switch.Root.Props) {
   return (

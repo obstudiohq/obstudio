@@ -29,7 +29,7 @@ Same code as 0.3.0.
 
 _Jun 11, 2026_
 
-- **Breaking change:** Replace `@base-ui/utils/detectBrowser` with the new `@base-ui/utils/platform` namespace (#4920) by @romgrk
+- **Breaking change:** Replace `@obstudio/utils/detectBrowser` with the new `@obstudio/utils/platform` namespace (#4920) by @romgrk
 - Fix `useStore` returning stale values when the store or selector arguments change (#4866) by @chuganzy
 - Update `reselect` to 5.2.0 (#4910) by @IzumiSy
 - Build the package with a flat output structure (#4959) by @brijeshb42
@@ -85,7 +85,7 @@ _Jan 15, 2026_
 
 _Dec 11, 2025_
 
-- Rename package from `@base-ui-components/utils` to `@base-ui/utils` (#3462) by @mnajdova
+- Rename package from `@obstudio/utils` to `@obstudio/utils` (#3462) by @mnajdova
 
 ## 0.2.2
 

@@ -66,9 +66,9 @@ type DialogRootChangeEventDetails = (
   | { reason: 'imperative-action'; event: Event }
   | { reason: 'none'; event: Event }
 ) & {
-  /** Cancels Base UI from handling the event. */
+  /** Cancels Obstudio from handling the event. */
   cancel: () => void;
-  /** Allows the event to propagate in cases where Base UI will stop the propagation. */
+  /** Allows the event to propagate in cases where Obstudio will stop the propagation. */
   allowPropagation: () => void;
   /** Indicates whether the event has been canceled. */
   isCanceled: boolean;

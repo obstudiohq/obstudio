@@ -2,14 +2,14 @@
 import * as React from 'react';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useFieldsetRootContext } from '../root/FieldsetRootContext';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useRegisteredLabelId } from '../../utils/useRegisteredLabelId';
 
 /**
  * An accessible label that is automatically associated with the fieldset.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Fieldset](https://base-ui.com/react/components/fieldset)
+ * Documentation: [Obstudio Fieldset](https://obstudio.co/react/components/fieldset)
  */
 export const FieldsetLegend = React.forwardRef(function FieldsetLegend(
   componentProps: FieldsetLegend.Props,
@@ -41,7 +41,7 @@ export interface FieldsetLegendState {
   disabled: boolean;
 }
 
-export interface FieldsetLegendProps extends BaseUIComponentProps<'div', FieldsetLegendState> {}
+export interface FieldsetLegendProps extends ObstudioComponentProps<'div', FieldsetLegendState> {}
 
 export namespace FieldsetLegend {
   export type State = FieldsetLegendState;

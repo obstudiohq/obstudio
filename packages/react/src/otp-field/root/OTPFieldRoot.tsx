@@ -1,13 +1,13 @@
 'use client';
 import * as React from 'react';
-import { SafeReact } from '@base-ui/utils/safeReact';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useValueAsRef } from '@base-ui/utils/useValueAsRef';
-import { visuallyHidden, visuallyHiddenInput } from '@base-ui/utils/visuallyHidden';
-import { warn } from '@base-ui/utils/warn';
-import { ownerDocument } from '@base-ui/utils/owner';
+import { SafeReact } from '@obstudio/utils/safeReact';
+import { useControlled } from '@obstudio/utils/useControlled';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useValueAsRef } from '@obstudio/utils/useValueAsRef';
+import { visuallyHidden, visuallyHiddenInput } from '@obstudio/utils/visuallyHidden';
+import { warn } from '@obstudio/utils/warn';
+import { ownerDocument } from '@obstudio/utils/owner';
 import { contains } from '../../floating-ui-react/utils';
 import { CompositeList } from '../../internals/composite/list/CompositeList';
 import { useFieldRootContext } from '../../internals/field-root-context/FieldRootContext';
@@ -19,13 +19,13 @@ import { useAriaLabelledBy } from '../../internals/labelable-provider/useAriaLab
 import { useLabelableId } from '../../internals/labelable-provider/useLabelableId';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useValueChanged } from '../../internals/useValueChanged';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import {
   createChangeEventDetails,
   createGenericEventDetails,
-  type BaseUIChangeEventDetails,
-  type BaseUIGenericEventDetails,
-} from '../../internals/createBaseUIEventDetails';
+  type ObstudioChangeEventDetails,
+  type ObstudioGenericEventDetails,
+} from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { OTPFieldRootContext } from './OTPFieldRootContext';
 import { rootStateAttributesMapping } from '../utils/stateAttributesMapping';
@@ -40,7 +40,7 @@ import {
  * Groups all OTP field parts and manages their state.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI OTP Field](https://base-ui.com/react/components/otp-field)
+ * Documentation: [Obstudio OTP Field](https://obstudio.co/react/components/otp-field)
  */
 export const OTPFieldRoot = React.forwardRef(function OTPFieldRoot(
   componentProps: OTPFieldRoot.Props,
@@ -460,7 +460,7 @@ export const OTPFieldRoot = React.forwardRef(function OTPFieldRoot(
 });
 
 export interface OTPFieldRootProps extends Omit<
-  BaseUIComponentProps<'div', OTPFieldRootState>,
+  ObstudioComponentProps<'div', OTPFieldRootState>,
   'onChange'
 > {
   /**
@@ -611,16 +611,16 @@ export type OTPFieldRootChangeEventReason =
   | typeof REASONS.inputPaste
   | typeof REASONS.keyboard;
 export type OTPFieldRootChangeEventDetails =
-  BaseUIChangeEventDetails<OTPFieldRoot.ChangeEventReason>;
+  ObstudioChangeEventDetails<OTPFieldRoot.ChangeEventReason>;
 
 export type OTPFieldRootInvalidEventReason = typeof REASONS.inputChange | typeof REASONS.inputPaste;
 export type OTPFieldRootInvalidEventDetails =
-  BaseUIGenericEventDetails<OTPFieldRoot.InvalidEventReason>;
+  ObstudioGenericEventDetails<OTPFieldRoot.InvalidEventReason>;
 
 export type OTPFieldRootCompleteEventReason =
   typeof REASONS.inputChange | typeof REASONS.inputPaste;
 export type OTPFieldRootCompleteEventDetails =
-  BaseUIGenericEventDetails<OTPFieldRoot.CompleteEventReason>;
+  ObstudioGenericEventDetails<OTPFieldRoot.CompleteEventReason>;
 
 export namespace OTPFieldRoot {
   export type State = OTPFieldRootState;

@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { Autocomplete } from '@base-ui/react/autocomplete';
-import { Combobox } from '@base-ui/react/combobox';
-import { Field } from '@base-ui/react/field';
-import { Select } from '@base-ui/react/select';
+import { Autocomplete } from '@obstudio/react/autocomplete';
+import { Combobox } from '@obstudio/react/combobox';
+import { Field } from '@obstudio/react/field';
+import { Select } from '@obstudio/react/select';
 import styles from './autofill.module.css';
 
 const states = ['NSW', 'VIC', 'QLD', 'WA', 'SA', 'TAS', 'ACT', 'NT'];

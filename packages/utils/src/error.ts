@@ -1,5 +1,5 @@
 import { createLogOnce } from './createLogOnce';
 
-export const error = createLogOnce('error', 'Base UI');
+export const error = createLogOnce('error', 'Obstudio');
 
 export { reset } from './createLogOnce';

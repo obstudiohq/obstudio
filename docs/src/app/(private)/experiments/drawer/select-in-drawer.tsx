@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { Drawer } from '@base-ui/react/drawer';
-import { Select } from '@base-ui/react/select';
+import { Drawer } from '@obstudio/react/drawer';
+import { Select } from '@obstudio/react/select';
 import drawerStyles from './drawer-controlled-opening.module.css';
 import selectStyles from '../long-select.module.css';
 

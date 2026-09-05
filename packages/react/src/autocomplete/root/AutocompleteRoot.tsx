@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { AriaCombobox, type AriaComboboxState } from '../../combobox/root/AriaCombobox';
 import { useCoreFilter } from '../../combobox/root/utils/useFilter';
-import type { BaseUIChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import type { ObstudioChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { stringifyAsLabel, type Group } from '../../internals/resolveValueLabel';
 import { REASONS } from '../../internals/reasons';
 
@@ -10,7 +10,7 @@ import { REASONS } from '../../internals/reasons';
  * Groups all parts of the autocomplete.
  * Doesn't render its own HTML element.
  *
- * Documentation: [Base UI Autocomplete](https://base-ui.com/react/components/autocomplete)
+ * Documentation: [Obstudio Autocomplete](https://obstudio.co/react/components/autocomplete)
  */
 export function AutocompleteRoot<Items extends readonly { items: readonly any[] }[]>(
   props: Omit<AutocompleteRoot.Props<Items[number]['items'][number]>, 'items'> & {
@@ -131,7 +131,7 @@ export interface AutocompleteRootActions {
 
 export type AutocompleteRootChangeEventReason = AriaCombobox.ChangeEventReason;
 export type AutocompleteRootChangeEventDetails =
-  BaseUIChangeEventDetails<AutocompleteRootChangeEventReason>;
+  ObstudioChangeEventDetails<AutocompleteRootChangeEventReason>;
 
 export type AutocompleteRootHighlightEventReason = AriaCombobox.HighlightEventReason;
 export type AutocompleteRootHighlightEventDetails = AriaCombobox.HighlightEventDetails;

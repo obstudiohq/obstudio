@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { NavigationMenu } from '@base-ui/react/navigation-menu';
+import { NavigationMenu } from '@obstudio/react/navigation-menu';
 
 export default function ExampleNavigationMenu() {
   return (
@@ -54,7 +54,7 @@ export default function ExampleNavigationMenu() {
         </NavigationMenu.Item>
 
         <NavigationMenu.Item>
-          <Link className={triggerClassName} href="https://github.com/mui/base-ui">
+          <Link className={triggerClassName} href="https://github.com/obstudiohq/obstudio">
             GitHub
           </Link>
         </NavigationMenu.Item>
@@ -139,12 +139,12 @@ const overviewLinks = [
   {
     href: '/react/overview/releases',
     title: 'Releases',
-    description: 'See what’s new in the latest Base UI versions.',
+    description: 'See what’s new in the latest Obstudio versions.',
   },
   {
     href: '/react/overview/about',
     title: 'About',
-    description: 'Learn more about Base UI and our mission.',
+    description: 'Learn more about Obstudio and our mission.',
   },
 ] as const;
 
@@ -153,18 +153,18 @@ const handbookLinks = [
     href: '/react/handbook/styling',
     title: 'Styling',
     description:
-      'Base UI components can be styled with plain CSS, Tailwind CSS, CSS-in-JS, or CSS Modules.',
+      'Obstudio components can be styled with plain CSS, Tailwind CSS, CSS-in-JS, or CSS Modules.',
   },
   {
     href: '/react/handbook/animation',
     title: 'Animation',
     description:
-      'Base UI components can be animated with CSS transitions, CSS animations, or JavaScript libraries.',
+      'Obstudio components can be animated with CSS transitions, CSS animations, or JavaScript libraries.',
   },
   {
     href: '/react/handbook/composition',
     title: 'Composition',
     description:
-      'Base UI components can be replaced and composed with your own existing components.',
+      'Obstudio components can be replaced and composed with your own existing components.',
   },
 ] as const;

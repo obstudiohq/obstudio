@@ -1,6 +1,6 @@
 import { expect, vi, describe, it } from 'vitest';
-import { Combobox } from '@base-ui/react/combobox';
-import { Autocomplete } from '@base-ui/react/autocomplete';
+import { Combobox } from '@obstudio/react/combobox';
+import { Autocomplete } from '@obstudio/react/autocomplete';
 import { createRenderer, describeConformance } from '#test-utils';
 import { act, screen } from '@mui/internal-test-utils';
 

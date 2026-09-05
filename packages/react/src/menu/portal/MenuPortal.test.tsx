@@ -1,6 +1,6 @@
 import { describe } from 'vitest';
 import * as React from 'react';
-import { Menu } from '@base-ui/react/menu';
+import { Menu } from '@obstudio/react/menu';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Menu.Portal />', () => {

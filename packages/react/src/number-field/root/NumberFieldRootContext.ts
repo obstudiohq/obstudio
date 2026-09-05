@@ -43,7 +43,7 @@ export function useNumberFieldRootContext() {
   const context = React.useContext(NumberFieldRootContext);
   if (context === undefined) {
     throw new Error(
-      'Base UI: NumberFieldRootContext is missing. NumberField parts must be placed within <NumberField.Root>.',
+      'Obstudio: NumberFieldRootContext is missing. NumberField parts must be placed within <NumberField.Root>.',
     );
   }
 

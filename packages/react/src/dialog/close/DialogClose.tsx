@@ -2,16 +2,16 @@
 import * as React from 'react';
 import { useDialogRootContext } from '../root/DialogRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';
-import type { BaseUIComponentProps, NativeButtonProps } from '../../internals/types';
+import type { ObstudioComponentProps, NativeButtonProps } from '../../internals/types';
 import { useButton } from '../../internals/use-button';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 
 /**
  * A button that closes the dialog.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)
+ * Documentation: [Obstudio Dialog](https://obstudio.co/react/components/dialog)
  */
 export const DialogClose = React.forwardRef(function DialogClose(
   componentProps: DialogClose.Props,
@@ -50,7 +50,7 @@ export const DialogClose = React.forwardRef(function DialogClose(
 });
 
 export interface DialogCloseProps
-  extends NativeButtonProps, BaseUIComponentProps<'button', DialogCloseState> {}
+  extends NativeButtonProps, ObstudioComponentProps<'button', DialogCloseState> {}
 
 export interface DialogCloseState {
   /**

@@ -1,9 +1,9 @@
 'use client';
 import type * as React from 'react';
 import { ListboxSeparator } from '../../utils/listbox-separator/ListboxSeparator';
-import type { BaseUIComponentProps, Orientation } from '../../internals/types';
+import type { ObstudioComponentProps, Orientation } from '../../internals/types';
 
-export interface AutocompleteSeparatorProps extends BaseUIComponentProps<
+export interface AutocompleteSeparatorProps extends ObstudioComponentProps<
   'div',
   AutocompleteSeparatorState
 > {
@@ -25,7 +25,7 @@ export interface AutocompleteSeparatorState {
  * A visual separator between items or groups.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Autocomplete](https://base-ui.com/react/components/autocomplete)
+ * Documentation: [Obstudio Autocomplete](https://obstudio.co/react/components/autocomplete)
  */
 export const AutocompleteSeparator = ListboxSeparator as React.ForwardRefExoticComponent<
   AutocompleteSeparatorProps & React.RefAttributes<HTMLDivElement>

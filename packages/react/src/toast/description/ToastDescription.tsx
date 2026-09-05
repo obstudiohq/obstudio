@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useToastLabelElement, useToastLabelPart } from '../utils/useToastLabelPart';
 
@@ -9,7 +9,7 @@ import { useToastLabelElement, useToastLabelPart } from '../utils/useToastLabelP
  * Can be used as the default message for the toast when no title is provided.
  * Renders a `<p>` element.
  *
- * Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+ * Documentation: [Obstudio Toast](https://obstudio.co/react/components/toast)
  */
 export const ToastDescription = React.forwardRef(function ToastDescription(
   componentProps: ToastDescription.Props,
@@ -44,7 +44,7 @@ export interface ToastDescriptionState {
   type: string | undefined;
 }
 
-export interface ToastDescriptionProps extends BaseUIComponentProps<'p', ToastDescriptionState> {}
+export interface ToastDescriptionProps extends ObstudioComponentProps<'p', ToastDescriptionState> {}
 
 export namespace ToastDescription {
   export type State = ToastDescriptionState;

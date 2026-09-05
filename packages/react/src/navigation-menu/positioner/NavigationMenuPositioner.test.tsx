@@ -1,5 +1,5 @@
 import { beforeEach, expect, vi, describe, it } from 'vitest';
-import { NavigationMenu } from '@base-ui/react/navigation-menu';
+import { NavigationMenu } from '@obstudio/react/navigation-menu';
 import { createRenderer, describeConformance } from '#test-utils';
 
 const useNavigationMenuAnchorPositioningSpy = vi.hoisted(() => vi.fn());
@@ -62,7 +62,7 @@ describe('<NavigationMenu.Positioner />', () => {
             <NavigationMenu.Positioner />
           </NavigationMenu.Root>,
         ),
-      ).rejects.toThrow('Base UI: <NavigationMenu.Portal> is missing.');
+      ).rejects.toThrow('Obstudio: <NavigationMenu.Portal> is missing.');
     } finally {
       errorSpy.mockRestore();
     }

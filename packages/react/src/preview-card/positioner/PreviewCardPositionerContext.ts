@@ -15,7 +15,7 @@ export function usePreviewCardPositionerContext() {
   const context = React.useContext(PreviewCardPositionerContext);
   if (context === undefined) {
     throw new Error(
-      'Base UI: PreviewCardPositionerContext is missing. PreviewCardPositioner parts must be placed within <PreviewCard.Positioner>.',
+      'Obstudio: PreviewCardPositionerContext is missing. PreviewCardPositioner parts must be placed within <PreviewCard.Positioner>.',
     );
   }
 

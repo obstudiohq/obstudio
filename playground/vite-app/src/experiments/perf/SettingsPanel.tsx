@@ -17,7 +17,7 @@ export const defaultSettings: Settings = {
   renderTooltip: true,
 };
 
-const settingsStorageKey = 'base-ui:perf-settings';
+const settingsStorageKey = 'obstudio:perf-settings';
 
 const settingRows: Array<{ key: keyof Settings; label: string }> = [
   { key: 'renderDialog', label: 'Dialog' },

@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { useComboboxInputValueContext, useComboboxRootContext } from '../root/ComboboxRootContext';
-import type { BaseUIComponentProps, NativeButtonProps } from '../../internals/types';
+import type { ObstudioComponentProps, NativeButtonProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useButton } from '../../internals/use-button';
 import { useFieldRootContext } from '../../internals/field-root-context/FieldRootContext';
@@ -9,7 +9,7 @@ import { TransitionStatus, useTransitionStatus } from '../../internals/useTransi
 import { transitionStatusMapping } from '../../internals/stateAttributesMapping';
 import { StateAttributesMapping } from '../../internals/getStateAttributesProps';
 import { useOpenChangeComplete } from '../../internals/useOpenChangeComplete';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { triggerOpenStateMapping } from '../../utils/popupStateMapping';
 
@@ -22,7 +22,7 @@ const stateAttributesMapping: StateAttributesMapping<ComboboxClearState> = {
  * Clears the value when clicked.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)
+ * Documentation: [Obstudio Combobox](https://obstudio.co/react/components/combobox)
  */
 export const ComboboxClear = React.forwardRef(function ComboboxClear(
   componentProps: ComboboxClear.Props,
@@ -157,7 +157,7 @@ export interface ComboboxClearState {
 }
 
 export interface ComboboxClearProps
-  extends NativeButtonProps, BaseUIComponentProps<'button', ComboboxClearState> {
+  extends NativeButtonProps, ObstudioComponentProps<'button', ComboboxClearState> {
   /**
    * Whether the component should ignore user interaction.
    * @default false

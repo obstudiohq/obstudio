@@ -1,11 +1,11 @@
 'use client';
 import * as React from 'react';
-import { EMPTY_ARRAY, EMPTY_OBJECT } from '@base-ui/utils/empty';
+import { EMPTY_ARRAY, EMPTY_OBJECT } from '@obstudio/utils/empty';
 import { CompositeList, type CompositeMetadata } from '../list/CompositeList';
 import { useCompositeRoot } from './useCompositeRoot';
 import { CompositeRootContext } from './CompositeRootContext';
 import { useRenderElement } from '../../useRenderElement';
-import type { BaseUIComponentProps, BaseUIEvent } from '../../types';
+import type { ObstudioComponentProps, ObstudioEvent } from '../../types';
 import type { ModifierKey } from '../composite';
 import type { CompositeGridNavigator } from './gridNavigation';
 import { useDirection } from '../../direction-context/DirectionContext';
@@ -98,7 +98,7 @@ export function CompositeRoot<Metadata extends {}, State extends Record<string, 
 export interface CompositeRootState {}
 
 export interface CompositeRootProps<Metadata, State extends Record<string, any>> extends Pick<
-  BaseUIComponentProps<'div', State>,
+  ObstudioComponentProps<'div', State>,
   'render' | 'className' | 'children' | 'style'
 > {
   props?: Array<Record<string, any> | (() => Record<string, any>)> | undefined;
@@ -121,7 +121,7 @@ export interface CompositeRootProps<Metadata, State extends Record<string, any>>
   onHighlightedIndexChange?: ((index: number) => void) | undefined;
   enableHomeAndEndKeys?: boolean | undefined;
   onMapChange?: ((newMap: Map<Node, CompositeMetadata<Metadata>>) => void) | undefined;
-  onKeyDown?: ((event: BaseUIEvent<React.KeyboardEvent>) => void) | undefined;
+  onKeyDown?: ((event: ObstudioEvent<React.KeyboardEvent>) => void) | undefined;
   stopEventPropagation?: boolean | undefined;
   rootRef?: React.RefObject<HTMLElement | null> | undefined;
   disabledIndices?: number[] | undefined;

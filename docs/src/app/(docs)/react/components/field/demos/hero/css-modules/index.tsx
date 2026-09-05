@@ -1,4 +1,4 @@
-import { Field } from '@base-ui/react/field';
+import { Field } from '@obstudio/react/field';
 import styles from './index.module.css';
 
 export default function ExampleField() {

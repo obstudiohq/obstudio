@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Slider } from '@base-ui/react/slider';
+import { Slider } from '@obstudio/react/slider';
 import { benchmark } from '@mui/internal-benchmark';
 import { createRows, MountList } from './shared';
 

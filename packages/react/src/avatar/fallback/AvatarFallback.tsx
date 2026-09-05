@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import { BaseUIComponentProps } from '../../internals/types';
+import { useTimeout } from '@obstudio/utils/useTimeout';
+import { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useAvatarRootContext } from '../root/AvatarRootContext';
 import type { AvatarRootState } from '../root/AvatarRoot';
@@ -11,7 +11,7 @@ import { avatarStateAttributesMapping } from '../root/stateAttributesMapping';
  * Rendered when the image fails to load or when no image is provided.
  * Renders a `<span>` element.
  *
- * Documentation: [Base UI Avatar](https://base-ui.com/react/components/avatar)
+ * Documentation: [Obstudio Avatar](https://obstudio.co/react/components/avatar)
  */
 export const AvatarFallback = React.forwardRef(function AvatarFallback(
   componentProps: AvatarFallback.Props,
@@ -51,7 +51,7 @@ export const AvatarFallback = React.forwardRef(function AvatarFallback(
 
 export interface AvatarFallbackState extends AvatarRootState {}
 
-export interface AvatarFallbackProps extends BaseUIComponentProps<'span', AvatarFallbackState> {
+export interface AvatarFallbackProps extends ObstudioComponentProps<'span', AvatarFallbackState> {
   /**
    * How long to wait before showing the fallback. Specified in milliseconds.
    *

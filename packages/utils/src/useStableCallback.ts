@@ -56,7 +56,7 @@ function assertNotCalled() {
     // TODO: fix mui/no-guarded-throw
     // eslint-disable-next-line mui/no-guarded-throw
     throw /* minify-error-disabled */ new Error(
-      'Base UI: Cannot call an event handler while rendering.',
+      'Obstudio: Cannot call an event handler while rendering.',
     );
   }
 }

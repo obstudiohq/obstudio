@@ -9,17 +9,17 @@ import { defineConfig } from '@mui/internal-bundle-size-checker';
 
 const rootDir = path.resolve(import.meta.dirname, '../..');
 
-async function getBaseUiExports() {
+async function getObstudioExports() {
   // Read the package.json to get exports
   const packageJsonPath = path.join(rootDir, 'packages/react/package.json');
   const packageJsonContent = await fs.readFile(packageJsonPath, 'utf8');
   const packageJson = JSON.parse(packageJsonContent);
 
-  // Get all export paths from @base-ui/react package.json
+  // Get all export paths from @obstudio/react package.json
   const exports = packageJson.exports;
   const entrypoints = Object.keys(exports).map((exportKey) => {
-    // Convert from "./accordion" to "@base-ui/react/accordion"
-    const entrypoint = exportKey === '.' ? '@base-ui/react' : `@base-ui/react${exportKey.slice(1)}`;
+    // Convert from "./accordion" to "@obstudio/react/accordion"
+    const entrypoint = exportKey === '.' ? '@obstudio/react' : `@obstudio/react${exportKey.slice(1)}`;
     return entrypoint;
   });
 
@@ -52,7 +52,7 @@ async function getUtilsExports() {
       }
       return true;
     })
-    .map(({ file }) => `@base-ui/utils/${file.replace(/\.(js|ts|tsx)$/, '')}`);
+    .map(({ file }) => `@obstudio/utils/${file.replace(/\.(js|ts|tsx)$/, '')}`);
 
   return entrypoints;
 }
@@ -62,7 +62,7 @@ async function getUtilsExports() {
  */
 export default defineConfig(async () => {
   return {
-    entrypoints: [...(await getBaseUiExports()), ...(await getUtilsExports())],
+    entrypoints: [...(await getObstudioExports()), ...(await getUtilsExports())],
     upload: !!process.env.CI,
     comment: true,
   };

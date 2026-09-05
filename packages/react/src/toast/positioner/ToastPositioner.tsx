@@ -1,14 +1,14 @@
 'use client';
 import * as React from 'react';
 import { isElement } from '@floating-ui/utils/dom';
-import { EMPTY_OBJECT } from '@base-ui/utils/empty';
+import { EMPTY_OBJECT } from '@obstudio/utils/empty';
 import {
   useAnchorPositioning,
   type Side,
   type Align,
   type UseAnchorPositioningSharedParameters,
 } from '../../internals/useAnchorPositioning';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { POPUP_COLLISION_AVOIDANCE } from '../../internals/constants';
 import { ToastPositionerContext } from './ToastPositionerContext';
 import { useFloatingRootContext } from '../../floating-ui-react';
@@ -22,7 +22,7 @@ import * as ToastRootCssVars from '../root/ToastRootCssVars';
  * Positions the toast against the anchor.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+ * Documentation: [Obstudio Toast](https://obstudio.co/react/components/toast)
  */
 export const ToastPositioner = React.forwardRef(function ToastPositioner(
   componentProps: ToastPositioner.Props,
@@ -128,7 +128,7 @@ export interface ToastPositionerState {
 
 export interface ToastPositionerProps
   extends
-    BaseUIComponentProps<'div', ToastPositionerState>,
+    ObstudioComponentProps<'div', ToastPositionerState>,
     Omit<UseAnchorPositioningSharedParameters, 'side' | 'anchor'> {
   /**
    * An element to position the toast against.

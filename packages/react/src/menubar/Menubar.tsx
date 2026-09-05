@@ -7,10 +7,10 @@ import {
   useFloatingTree,
 } from '../floating-ui-react';
 import { type MenuRoot } from '../menu/root/MenuRoot';
-import { BaseUIComponentProps } from '../internals/types';
+import { ObstudioComponentProps } from '../internals/types';
 import { MenubarContext, useMenubarContext } from './MenubarContext';
 import { CompositeRoot } from '../internals/composite/root/CompositeRoot';
-import { useBaseUiId } from '../internals/useBaseUiId';
+import { useObstudioId } from '../internals/useObstudioId';
 import { MenuOpenEventDetails } from '../menu/utils/types';
 import { StateAttributesMapping } from '../internals/getStateAttributesProps';
 import * as MenubarDataAttributes from './MenubarDataAttributes';
@@ -25,7 +25,7 @@ const menubarStateAttributesMapping: StateAttributesMapping<MenubarState> = {
 /**
  * The container for menus.
  *
- * Documentation: [Base UI Menubar](https://base-ui.com/react/components/menubar)
+ * Documentation: [Obstudio Menubar](https://obstudio.co/react/components/menubar)
  */
 export const Menubar = React.forwardRef(function Menubar(
   props: Menubar.Props,
@@ -46,7 +46,7 @@ export const Menubar = React.forwardRef(function Menubar(
   const [contentElement, setContentElement] = React.useState<HTMLElement | null>(null);
   const [hasSubmenuOpen, setHasSubmenuOpen] = React.useState(false);
 
-  const id = useBaseUiId(idProp);
+  const id = useObstudioId(idProp);
 
   const state: MenubarState = {
     orientation,
@@ -143,7 +143,7 @@ export interface MenubarState {
   hasSubmenuOpen: boolean;
 }
 
-export interface MenubarProps extends BaseUIComponentProps<'div', MenubarState> {
+export interface MenubarProps extends ObstudioComponentProps<'div', MenubarState> {
   /**
    * Whether the menubar is modal.
    * @default true

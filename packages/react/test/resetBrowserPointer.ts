@@ -1,4 +1,4 @@
-import { isJSDOM } from '@base-ui/utils/testUtils';
+import { isJSDOM } from '@obstudio/utils/testUtils';
 
 /**
  * Resets the Playwright/WebDriver pointer state that persists between browser tests.

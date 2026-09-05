@@ -8,8 +8,8 @@ import {
   screen,
   waitFor,
 } from '@mui/internal-test-utils';
-import { Field } from '@base-ui/react/field';
-import { Form } from '@base-ui/react/form';
+import { Field } from '@obstudio/react/field';
+import { Form } from '@obstudio/react/form';
 import { describeConformance, isJSDOM } from '#test-utils';
 
 describe('<Field.Control />', () => {

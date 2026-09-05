@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
-import { Avatar } from '@base-ui/react/avatar';
-import { Checkbox } from '@base-ui/react/checkbox';
-import { Field } from '@base-ui/react/field';
-import { Radio } from '@base-ui/react/radio';
-import { RadioGroup } from '@base-ui/react/radio-group';
+import { Avatar } from '@obstudio/react/avatar';
+import { Checkbox } from '@obstudio/react/checkbox';
+import { Field } from '@obstudio/react/field';
+import { Radio } from '@obstudio/react/radio';
+import { RadioGroup } from '@obstudio/react/radio-group';
 import styles from './transition-attrs.module.css';
 
 const AVATAR_SRC =

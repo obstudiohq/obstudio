@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Select } from '@base-ui/react/select';
-import { ScrollArea } from '@base-ui/react/scroll-area';
+import { Select } from '@obstudio/react/select';
+import { ScrollArea } from '@obstudio/react/scroll-area';
 import styles from './inside-select.module.css';
 
 export default function ExampleSelect() {

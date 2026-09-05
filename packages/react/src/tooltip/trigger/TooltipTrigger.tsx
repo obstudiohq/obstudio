@@ -1,15 +1,15 @@
 'use client';
 import * as React from 'react';
 import { isElement } from '@floating-ui/utils/dom';
-import { fastComponentRef } from '@base-ui/utils/fastHooks';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import { useValueAsRef } from '@base-ui/utils/useValueAsRef';
+import { fastComponentRef } from '@obstudio/utils/fastHooks';
+import { useTimeout } from '@obstudio/utils/useTimeout';
+import { useValueAsRef } from '@obstudio/utils/useValueAsRef';
 import { useTooltipRootContext } from '../root/TooltipRootContext';
-import type { BaseUIComponentProps, BaseUIEvent } from '../../internals/types';
+import type { ObstudioComponentProps, ObstudioEvent } from '../../internals/types';
 import { triggerOpenStateMapping } from '../../utils/popupStateMapping';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { usePopupHandleStore, useTriggerDataForwarding } from '../../utils/popups';
-import { useBaseUiId } from '../../internals/useBaseUiId';
+import { useObstudioId } from '../../internals/useObstudioId';
 import { TooltipHandle } from '../store/TooltipHandle';
 import { useTooltipProviderContext } from '../provider/TooltipProviderContext';
 import {
@@ -20,7 +20,7 @@ import {
 } from '../../floating-ui-react';
 import { contains } from '../../floating-ui-react/utils/element';
 import { isMouseLikePointerType } from '../../floating-ui-react/utils/event';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { useHoverInteractionSharedState } from '../../floating-ui-react/hooks/useHoverInteractionSharedState';
 import { getDelay } from '../../floating-ui-react/hooks/useHoverShared';
@@ -28,7 +28,7 @@ import * as TooltipTriggerDataAttributes from './TooltipTriggerDataAttributes';
 
 import { OPEN_DELAY } from '../utils/constants';
 
-const TOOLTIP_TRIGGER_IDENTIFIER = 'data-base-ui-tooltip-trigger';
+const TOOLTIP_TRIGGER_IDENTIFIER = 'data-obstudio-tooltip-trigger';
 
 function getTargetElement(event: Event): Element | null {
   if ('composedPath' in event) {
@@ -68,7 +68,7 @@ function closestEnabledTooltipTrigger(element: Element | null): Element | null {
  * An element to attach the tooltip to.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)
+ * Documentation: [Obstudio Tooltip](https://obstudio.co/react/components/tooltip)
  */
 export const TooltipTrigger = fastComponentRef(function TooltipTrigger(
   componentProps: TooltipTrigger.Props,
@@ -93,11 +93,11 @@ export const TooltipTrigger = fastComponentRef(function TooltipTrigger(
   const store = handleStore ?? rootContext;
   if (!store) {
     throw new Error(
-      'Base UI: <Tooltip.Trigger> must be either used within a <Tooltip.Root> component or provided with a handle.',
+      'Obstudio: <Tooltip.Trigger> must be either used within a <Tooltip.Root> component or provided with a handle.',
     );
   }
 
-  const thisTriggerId = useBaseUiId(idProp);
+  const thisTriggerId = useObstudioId(idProp);
   const isTriggerActive = store.useState('isTriggerActive', thisTriggerId);
   const isOpenedByThisTrigger = store.useState('isOpenedByTrigger', thisTriggerId);
   const floatingRootContext = store.useState('floatingRootContext');
@@ -260,7 +260,7 @@ export const TooltipTrigger = fastComponentRef(function TooltipTrigger(
         },
         onFocus(event: React.FocusEvent) {
           if (isEnabledNestedTriggerTarget(getTargetElement(event.nativeEvent))) {
-            (event as BaseUIEvent<React.FocusEvent<Element>>).preventBaseUIHandler();
+            (event as ObstudioEvent<React.FocusEvent<Element>>).preventObstudioHandler();
           }
         },
         onMouseLeave() {
@@ -308,7 +308,7 @@ export interface TooltipTriggerState {
   open: boolean;
 }
 
-export interface TooltipTriggerProps<Payload = unknown> extends BaseUIComponentProps<
+export interface TooltipTriggerProps<Payload = unknown> extends ObstudioComponentProps<
   'button',
   TooltipTriggerState
 > {

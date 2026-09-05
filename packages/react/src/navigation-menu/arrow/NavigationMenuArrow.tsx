@@ -3,7 +3,7 @@ import * as React from 'react';
 import { useNavigationMenuPositionerContext } from '../positioner/NavigationMenuPositionerContext';
 import { useNavigationMenuRootContext } from '../root/NavigationMenuRootContext';
 import type { Align, Side } from '../../internals/useAnchorPositioning';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { popupStateMapping } from '../../utils/popupStateMapping';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { getDisabledMountTransitionStyles } from '../../internals/getDisabledMountTransitionStyles';
@@ -12,7 +12,7 @@ import { getDisabledMountTransitionStyles } from '../../internals/getDisabledMou
  * Displays an element pointing toward the navigation menu's current anchor.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+ * Documentation: [Obstudio Navigation Menu](https://obstudio.co/react/components/navigation-menu)
  */
 export const NavigationMenuArrow = React.forwardRef(function NavigationMenuArrow(
   componentProps: NavigationMenuArrow.Props,
@@ -64,7 +64,7 @@ export interface NavigationMenuArrowState {
   uncentered: boolean;
 }
 
-export interface NavigationMenuArrowProps extends BaseUIComponentProps<
+export interface NavigationMenuArrowProps extends ObstudioComponentProps<
   'div',
   NavigationMenuArrowState
 > {}

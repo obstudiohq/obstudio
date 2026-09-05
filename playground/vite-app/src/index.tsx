@@ -23,11 +23,11 @@ export function App() {
         <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-6 py-4">
           <Link className="flex items-center gap-3 text-lg font-semibold" to="/">
             <img
-              src={`${baseUrl}base-ui-logo.svg`}
-              alt="Base UI logo"
+              src={`${baseUrl}obstudio-logo.svg`}
+              alt="Obstudio logo"
               className="h-6 w-6 relative -top-0.5"
             />
-            Base UI playground
+            Obstudio playground
           </Link>
         </div>
       </header>

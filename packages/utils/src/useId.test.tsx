@@ -1,7 +1,7 @@
 import { expect, describe, it } from 'vitest';
 import * as React from 'react';
 import { createRenderer, screen } from '@mui/internal-test-utils';
-import { useId } from '@base-ui/utils/useId';
+import { useId } from '@obstudio/utils/useId';
 
 interface TestComponentProps {
   id?: string;
@@ -100,7 +100,7 @@ describe('useId', () => {
   });
 
   it('can be prefixed', () => {
-    const PREFIX = 'base-ui';
+    const PREFIX = 'obstudio';
     function Widget() {
       const id = useId(undefined, PREFIX);
 

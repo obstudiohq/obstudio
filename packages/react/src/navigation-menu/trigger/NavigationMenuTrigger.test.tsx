@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { expect, vi, describe, it } from 'vitest';
-import { NavigationMenu } from '@base-ui/react/navigation-menu';
-import { DirectionProvider } from '@base-ui/react/direction-provider';
+import { NavigationMenu } from '@obstudio/react/navigation-menu';
+import { DirectionProvider } from '@obstudio/react/direction-provider';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { screen, flushMicrotasks, waitFor, act, fireEvent } from '@mui/internal-test-utils';
 import userEvent from '@testing-library/user-event';
@@ -248,7 +248,7 @@ describe('<NavigationMenu.Trigger />', () => {
           <NavigationMenu.Item>
             <NavigationMenu.Trigger>Handbook</NavigationMenu.Trigger>
             <NavigationMenu.Content>
-              <NavigationMenu.Link href="#">Styling Base UI components</NavigationMenu.Link>
+              <NavigationMenu.Link href="#">Styling Obstudio components</NavigationMenu.Link>
             </NavigationMenu.Content>
             <NavigationMenu.Content>
               <NavigationMenu.Link href="#">Second Link</NavigationMenu.Link>
@@ -316,7 +316,7 @@ describe('<NavigationMenu.Trigger />', () => {
       ).toBeLessThanOrEqual(1);
     });
 
-    const handbookLink = screen.getByRole('link', { name: 'Styling Base UI components' });
+    const handbookLink = screen.getByRole('link', { name: 'Styling Obstudio components' });
     await waitFor(() => {
       expect(handbookButton).toHaveFocus();
     });
@@ -361,7 +361,7 @@ describe('<NavigationMenu.Trigger />', () => {
           <NavigationMenu.Item>
             <NavigationMenu.Trigger>withContent</NavigationMenu.Trigger>
             <NavigationMenu.Content>
-              <NavigationMenu.Link href="#">Styling Base UI components</NavigationMenu.Link>
+              <NavigationMenu.Link href="#">Styling Obstudio components</NavigationMenu.Link>
             </NavigationMenu.Content>
           </NavigationMenu.Item>
         </NavigationMenu.List>
@@ -385,7 +385,7 @@ describe('<NavigationMenu.Trigger />', () => {
     ]);
 
     await waitFor(() => {
-      const handbookLink = screen.getByRole('link', { name: 'Styling Base UI components' });
+      const handbookLink = screen.getByRole('link', { name: 'Styling Obstudio components' });
 
       expect(handbookLink).toBeVisible();
     });

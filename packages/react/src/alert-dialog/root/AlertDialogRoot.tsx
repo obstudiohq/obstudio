@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { BaseUIChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { ObstudioChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import type { DialogRoot } from '../../dialog/root/DialogRoot';
 import { useRenderDialogRoot } from '../../dialog/root/useRenderDialogRoot';
 import type { AlertDialogHandle } from '../handle';
@@ -9,7 +9,7 @@ import type { AlertDialogHandle } from '../handle';
  * Groups all parts of the alert dialog.
  * Doesn't render its own HTML element.
  *
- * Documentation: [Base UI Alert Dialog](https://base-ui.com/react/components/alert-dialog)
+ * Documentation: [Obstudio Alert Dialog](https://obstudio.co/react/components/alert-dialog)
  */
 export function AlertDialogRoot<Payload>(props: AlertDialogRoot.Props<Payload>) {
   return useRenderDialogRoot('alert-dialog', props);
@@ -45,7 +45,7 @@ export type AlertDialogRootActions = DialogRoot.Actions;
 
 export type AlertDialogRootChangeEventReason = DialogRoot.ChangeEventReason;
 export type AlertDialogRootChangeEventDetails =
-  BaseUIChangeEventDetails<AlertDialogRoot.ChangeEventReason> & {
+  ObstudioChangeEventDetails<AlertDialogRoot.ChangeEventReason> & {
     preventUnmountOnClose(): void;
   };
 

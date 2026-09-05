@@ -20,15 +20,15 @@ export default defineConfig(() => {
     },
     resolve: {
       alias: {
-        '@base-ui/react': path.resolve(__dirname, '..', '..', 'packages', 'react', 'src'),
-        '@base-ui/utils': path.resolve(__dirname, '..', '..', 'packages', 'utils', 'src'),
+        '@obstudio/react': path.resolve(__dirname, '..', '..', 'packages', 'react', 'src'),
+        '@obstudio/utils': path.resolve(__dirname, '..', '..', 'packages', 'utils', 'src'),
         ...(isProfiling ? { 'react-dom/client': 'react-dom/profiling' } : {}),
         docs: path.resolve(__dirname, '..', '..', 'docs'),
       },
     },
     server: {
       fs: {
-        // Allow serving Base UI source from the monorepo root.
+        // Allow serving Obstudio source from the monorepo root.
         allow: [path.resolve(__dirname, '..', '..')],
       },
     },

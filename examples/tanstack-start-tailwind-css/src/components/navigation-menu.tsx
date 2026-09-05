@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { NavigationMenu } from '@base-ui/react/navigation-menu';
+import { NavigationMenu } from '@obstudio/react/navigation-menu';
 import { ChevronDown } from 'lucide-react';
 
 export function Root({ className, ...props }: NavigationMenu.Root.Props) {

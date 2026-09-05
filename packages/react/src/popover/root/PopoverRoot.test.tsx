@@ -1,9 +1,9 @@
 import { expect, vi, describe, beforeEach, it } from 'vitest';
 import * as React from 'react';
-import { Popover } from '@base-ui/react/popover';
-import { Combobox } from '@base-ui/react/combobox';
-import { Menu } from '@base-ui/react/menu';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
+import { Popover } from '@obstudio/react/popover';
+import { Combobox } from '@obstudio/react/combobox';
+import { Menu } from '@obstudio/react/menu';
+import { useRefWithInit } from '@obstudio/utils/useRefWithInit';
 import { act, fireEvent, flushMicrotasks, screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, isJSDOM, popupConformanceTests, wait } from '#test-utils';
 import { OPEN_DELAY } from '../utils/constants';
@@ -12,7 +12,7 @@ import { REASONS } from '../../internals/reasons';
 
 describe('<Popover.Root />', () => {
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
   });
 
   const { render, clock } = createRenderer();
@@ -532,7 +532,7 @@ describe('<Popover.Root />', () => {
       it.skipIf(isJSDOM)(
         'reopens immediately when re-hovering the trigger during a hover close transition',
         async () => {
-          globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+          globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
           const closeTransitionMs = 50;
           const style = `
@@ -589,7 +589,7 @@ describe('<Popover.Root />', () => {
       );
     });
 
-    describe('BaseUIChangeEventDetails', () => {
+    describe('ObstudioChangeEventDetails', () => {
       it('onOpenChange cancel() prevents opening while uncontrolled', async () => {
         await render(
           <TestPopover
@@ -1453,13 +1453,13 @@ describe('<Popover.Root />', () => {
         });
 
         expect(
-          trigger.previousElementSibling?.hasAttribute('data-base-ui-focus-guard') ?? false,
+          trigger.previousElementSibling?.hasAttribute('data-obstudio-focus-guard') ?? false,
         ).toBe(false);
-        expect(trigger.nextElementSibling?.hasAttribute('data-base-ui-focus-guard') ?? false).toBe(
+        expect(trigger.nextElementSibling?.hasAttribute('data-obstudio-focus-guard') ?? false).toBe(
           false,
         );
         expect(
-          document.querySelectorAll('[data-base-ui-focus-guard][data-type="inside"]'),
+          document.querySelectorAll('[data-obstudio-focus-guard][data-type="inside"]'),
         ).toHaveLength(2);
       });
 
@@ -1475,8 +1475,8 @@ describe('<Popover.Root />', () => {
         );
 
         const trigger = screen.getByRole('button', { name: 'Toggle' });
-        expect(trigger.previousElementSibling).toHaveAttribute('data-base-ui-focus-guard');
-        expect(trigger.nextElementSibling).toHaveAttribute('data-base-ui-focus-guard');
+        expect(trigger.previousElementSibling).toHaveAttribute('data-obstudio-focus-guard');
+        expect(trigger.nextElementSibling).toHaveAttribute('data-obstudio-focus-guard');
 
         await act(async () => {
           screen.getByTestId('input-inside').focus();
@@ -1612,7 +1612,7 @@ describe('<Popover.Root />', () => {
           await waitFor(() => {
             const isScrollLocked =
               doc.documentElement.style.overflow === 'hidden' ||
-              doc.documentElement.hasAttribute('data-base-ui-scroll-locked') ||
+              doc.documentElement.hasAttribute('data-obstudio-scroll-locked') ||
               doc.body.style.overflow === 'hidden';
 
             expect(isScrollLocked).toBe(true);
@@ -1648,7 +1648,7 @@ describe('<Popover.Root />', () => {
 
           const isScrollLocked =
             doc.documentElement.style.overflow === 'hidden' ||
-            doc.documentElement.hasAttribute('data-base-ui-scroll-locked') ||
+            doc.documentElement.hasAttribute('data-obstudio-scroll-locked') ||
             doc.body.style.overflow === 'hidden';
 
           expect(isScrollLocked).toBe(false);
@@ -1687,7 +1687,7 @@ describe('<Popover.Root />', () => {
       });
 
       it('is called on close when the exit animation finishes', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         const onOpenChangeComplete = vi.fn();
 
@@ -1768,7 +1768,7 @@ describe('<Popover.Root />', () => {
       });
 
       it('is called on open when the enter animation finishes', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
         const onOpenChangeComplete = vi.fn();
 

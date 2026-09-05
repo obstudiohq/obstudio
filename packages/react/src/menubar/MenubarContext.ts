@@ -22,7 +22,7 @@ export function useMenubarContext(optional?: boolean) {
   const context = React.useContext(MenubarContext);
   if (context === null && !optional) {
     throw new Error(
-      'Base UI: MenubarContext is missing. Menubar parts must be placed within <Menubar>.',
+      'Obstudio: MenubarContext is missing. Menubar parts must be placed within <Menubar>.',
     );
   }
 

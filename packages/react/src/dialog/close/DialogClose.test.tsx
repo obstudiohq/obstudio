@@ -1,5 +1,5 @@
 import { expect, vi, describe, it } from 'vitest';
-import { Dialog } from '@base-ui/react/dialog';
+import { Dialog } from '@obstudio/react/dialog';
 import { fireEvent, screen } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance } from '#test-utils';
 
@@ -115,14 +115,14 @@ describe('<Dialog.Close />', () => {
     expect(handleOpenChange.mock.calls[1][0]).toBe(false);
   });
 
-  it('does not close the dialog when the Base UI click handler is prevented', async () => {
+  it('does not close the dialog when the Obstudio click handler is prevented', async () => {
     const handleOpenChange = vi.fn();
 
     const { user } = await render(
       <Dialog.Root defaultOpen modal={false} onOpenChange={handleOpenChange}>
         <Dialog.Portal>
           <Dialog.Popup>
-            <Dialog.Close onClick={(event) => event.preventBaseUIHandler()}>Close</Dialog.Close>
+            <Dialog.Close onClick={(event) => event.preventObstudioHandler()}>Close</Dialog.Close>
           </Dialog.Popup>
         </Dialog.Portal>
       </Dialog.Root>,

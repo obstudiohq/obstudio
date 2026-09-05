@@ -1,14 +1,14 @@
 'use client';
 import * as React from 'react';
-import { addEventListener } from '@base-ui/utils/addEventListener';
-import { ownerDocument } from '@base-ui/utils/owner';
-import { useTimeout } from '@base-ui/utils/useTimeout';
+import { addEventListener } from '@obstudio/utils/addEventListener';
+import { ownerDocument } from '@obstudio/utils/owner';
+import { useTimeout } from '@obstudio/utils/useTimeout';
 import { contains, getTarget, stopEvent } from '../../floating-ui-react/utils';
-import type { BaseUIComponentProps } from '../../internals/types';
+import type { ObstudioComponentProps } from '../../internals/types';
 import { useContextMenuRootContext } from '../root/ContextMenuRootContext';
 import { useMenuRootContext } from '../../menu/root/MenuRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';
-import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../internals/createObstudioEventDetails';
 import { pressableTriggerOpenStateMapping } from '../../utils/popupStateMapping';
 import { REASONS } from '../../internals/reasons';
 import { findRootOwnerId } from '../../menu/utils/findRootOwnerId';
@@ -19,7 +19,7 @@ const LONG_PRESS_DELAY = 500;
  * An area that opens the menu on right click or long press.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Context Menu](https://base-ui.com/react/components/context-menu)
+ * Documentation: [Obstudio Context Menu](https://obstudio.co/react/components/context-menu)
  */
 export const ContextMenuTrigger = React.forwardRef(function ContextMenuTrigger(
   componentProps: ContextMenuTrigger.Props,
@@ -224,7 +224,7 @@ export interface ContextMenuTriggerState {
   open: boolean;
 }
 
-export interface ContextMenuTriggerProps extends BaseUIComponentProps<
+export interface ContextMenuTriggerProps extends ObstudioComponentProps<
   'div',
   ContextMenuTriggerState
 > {}

@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import * as React from 'react';
-import { Drawer } from '@base-ui/react/drawer';
+import { Drawer } from '@obstudio/react/drawer';
 import { act, fireEvent, flushMicrotasks, screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, isJSDOM } from '#test-utils';
 import { useDrawerVirtualKeyboardContext } from './DrawerVirtualKeyboardContext';
@@ -1270,7 +1270,7 @@ describe('<Drawer.VirtualKeyboardProvider />', () => {
   });
 
   it.skipIf(isJSDOM)(
-    'focuses a keyboard input with data-base-ui-swipe-ignore without starting drawer swipe',
+    'focuses a keyboard input with data-obstudio-swipe-ignore without starting drawer swipe',
     async () => {
       await render(
         <Drawer.Root open modal={false}>
@@ -1279,7 +1279,7 @@ describe('<Drawer.VirtualKeyboardProvider />', () => {
               <Drawer.Backdrop data-testid="backdrop" />
               <Drawer.Viewport>
                 <Drawer.Popup>
-                  <input data-testid="input" data-base-ui-swipe-ignore type="text" />
+                  <input data-testid="input" data-obstudio-swipe-ignore type="text" />
                 </Drawer.Popup>
               </Drawer.Viewport>
             </Drawer.Portal>

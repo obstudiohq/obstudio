@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
 import c from 'clsx';
-import { useMergedRefsN } from '@base-ui/utils/useMergedRefs';
+import { useMergedRefsN } from '@obstudio/utils/useMergedRefs';
 import { useTestInteractions } from '#test-utils';
-import { useBaseUiId } from '../../src/internals/useBaseUiId';
+import { useObstudioId } from '../../src/internals/useObstudioId';
 import { CompositeList } from '../../src/internals/composite/list/CompositeList';
 import { useCompositeListItem } from '../../src/internals/composite/list/useCompositeListItem';
 import { getEmptyRootContext } from '../../src/floating-ui-react/utils/getEmptyRootContext';
@@ -88,7 +88,7 @@ export const MenuComponent = React.forwardRef<
 
   const parent = React.useContext(MenuContext);
   const item = useCompositeListItem();
-  const triggerId = useBaseUiId();
+  const triggerId = useObstudioId();
 
   const { floatingStyles, refs, context } = useFloating({
     nodeId,

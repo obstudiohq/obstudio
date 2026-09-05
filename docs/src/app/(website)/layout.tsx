@@ -37,19 +37,19 @@ export default function Layout({ children }: React.PropsWithChildren) {
           >
             <header className="bui-d-c">
               <div className="bui-gcs-1 bui-gce-4">
-                <Logo aria-label="Base UI" />
+                <Logo aria-label="Obstudio" />
               </div>
               <nav
                 className="bui-d-f bui-fd-c bui-g-2 bui-gcs-5 bui-gce-8 bp2:bui-gcs-5 bp2:bui-gce-9 bp3:bui-gcs-5 bp3:bui-gce-7"
                 aria-label="social links"
               >
-                <Link className="Text sz-1" href="https://x.com/base_ui">
+                <Link className="Text sz-1" href="https://x.com/obstudio">
                   X
                 </Link>
-                <Link className="Text sz-1" href="https://github.com/mui/base-ui">
+                <Link className="Text sz-1" href="https://github.com/obstudiohq/obstudio">
                   GitHub
                 </Link>
-                <Link className="Text sz-1" href="https://base-ui.com/r/discord">
+                <Link className="Text sz-1" href="https://obstudio.co/r/discord">
                   Discord
                 </Link>
               </nav>
@@ -65,25 +65,25 @@ export default function Layout({ children }: React.PropsWithChildren) {
             </div>
             <footer className="bui-d-c">
               <div className="bui-gcs-1 bui-gce-9 bp2:bui-gce-3">
-                <span className="Text sz-1">© Base UI</span>
+                <span className="Text sz-1">© Obstudio</span>
               </div>
               <nav
                 className="bui-d-f bui-fd-c bui-g-2 bui-gcs-1 bui-gce-9 bp2:bui-gcs-3 bp4:bui-gce-7"
                 aria-label="social links"
               >
-                <Link className="Text sz-1" href="https://x.com/base_ui">
+                <Link className="Text sz-1" href="https://x.com/obstudio">
                   X
                 </Link>
-                <Link className="Text sz-1" href="https://github.com/mui/base-ui">
+                <Link className="Text sz-1" href="https://github.com/obstudiohq/obstudio">
                   GitHub
                 </Link>
-                <Link className="Text sz-1" href="https://base-ui.com/r/discord">
+                <Link className="Text sz-1" href="https://obstudio.co/r/discord">
                   Discord
                 </Link>
-                <Link className="Text sz-1" href="https://www.npmjs.com/package/@base-ui/react">
+                <Link className="Text sz-1" href="https://www.npmjs.com/package/@obstudio/react">
                   npm
                 </Link>
-                <Link className="Text sz-1" href="https://bsky.app/profile/base-ui.com">
+                <Link className="Text sz-1" href="https://bsky.app/profile/obstudio.co">
                   Bluesky
                 </Link>
               </nav>
@@ -95,15 +95,15 @@ export default function Layout({ children }: React.PropsWithChildren) {
   );
 }
 
-const SITE_TITLE = 'Unstyled UI components for accessible design systems · Base UI';
+const SITE_TITLE = 'Unstyled UI components for accessible design systems · Obstudio';
 
 export const metadata: Metadata = {
   title: {
-    template: '%s · Base UI',
+    template: '%s · Obstudio',
     default: SITE_TITLE,
   },
   twitter: {
-    site: '@base_ui',
+    site: '@obstudio',
     card: 'summary_large_image',
   },
   openGraph: {
@@ -111,7 +111,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: './',
     title: {
-      template: '%s · Base UI',
+      template: '%s · Obstudio',
       default: SITE_TITLE,
     },
     ttl: 604800,

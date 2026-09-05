@@ -1,5 +1,5 @@
 import { expect, describe, it } from 'vitest';
-import { Select } from '@base-ui/react/select';
+import { Select } from '@obstudio/react/select';
 import { createRenderer, describeConformance } from '#test-utils';
 import { screen } from '@mui/internal-test-utils';
 

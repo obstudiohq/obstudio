@@ -1,4 +1,4 @@
-import { Fieldset } from '@base-ui/react/fieldset';
+import { Fieldset } from '@obstudio/react/fieldset';
 import { createMultipleTypes } from 'docs/src/utils/createTypes';
 
 const { types, AdditionalTypes } = createMultipleTypes(import.meta.url, Fieldset);

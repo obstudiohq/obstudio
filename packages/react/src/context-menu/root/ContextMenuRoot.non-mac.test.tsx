@@ -6,12 +6,13 @@ import {
   screen,
   waitFor,
 } from '@mui/internal-test-utils';
-import { ContextMenu } from '@base-ui/react/context-menu';
+import { ContextMenu } from '@obstudio/react/context-menu';
 import { createRenderer } from '#test-utils';
 
-vi.mock('@base-ui/utils/platform', async () => {
-  const actual =
-    await vi.importActual<typeof import('@base-ui/utils/platform')>('@base-ui/utils/platform');
+vi.mock('@obstudio/utils/platform', async () => {
+  const actual = await vi.importActual<typeof import('@obstudio/utils/platform')>(
+    '@obstudio/utils/platform',
+  );
 
   return {
     ...actual,
@@ -24,7 +25,7 @@ vi.mock('@base-ui/utils/platform', async () => {
 
 describe('<ContextMenu.Root /> (non-Mac)', () => {
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
   });
 
   const { render, clock } = createRenderer({

@@ -1,5 +1,5 @@
 import { expect, vi, describe, it } from 'vitest';
-import { Select } from '@base-ui/react/select';
+import { Select } from '@obstudio/react/select';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { fireEvent, ignoreActWarnings, screen, waitFor } from '@mui/internal-test-utils';
 
@@ -19,7 +19,7 @@ describe('<Select.Trigger />', () => {
 
     try {
       await expect(render(<Select.Trigger />)).rejects.toThrow(
-        'Base UI: SelectRootContext is missing. Select parts must be placed within <Select.Root>.',
+        'Obstudio: SelectRootContext is missing. Select parts must be placed within <Select.Root>.',
       );
     } finally {
       errorSpy.mockRestore();

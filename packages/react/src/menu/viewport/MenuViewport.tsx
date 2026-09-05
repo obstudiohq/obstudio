@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { useMenuRootContext } from '../root/MenuRootContext';
 import { useMenuPositionerContext } from '../positioner/MenuPositionerContext';
-import { BaseUIComponentProps } from '../../internals/types';
+import { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { popupViewportStateMapping, usePopupViewport } from '../../utils/usePopupViewport';
 
@@ -12,7 +12,7 @@ import { popupViewportStateMapping, usePopupViewport } from '../../utils/usePopu
  * changes based on the trigger, and switching between them is animated.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Obstudio Menu](https://obstudio.co/react/components/menu)
  */
 export const MenuViewport = React.forwardRef(function MenuViewport(
   componentProps: MenuViewport.Props,
@@ -60,7 +60,7 @@ export interface MenuViewportState {
   instant: 'dismiss' | 'click' | 'group' | 'trigger-change' | undefined;
 }
 
-export interface MenuViewportProps extends BaseUIComponentProps<'div', MenuViewportState> {
+export interface MenuViewportProps extends ObstudioComponentProps<'div', MenuViewportState> {
   /**
    * The content to render inside the transition container.
    */

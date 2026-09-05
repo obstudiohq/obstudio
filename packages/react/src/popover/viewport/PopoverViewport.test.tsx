@@ -1,7 +1,7 @@
 import { expect, describe, it, beforeEach, afterEach } from 'vitest';
 import * as React from 'react';
-import { DirectionProvider } from '@base-ui/react/direction-provider';
-import { Popover } from '@base-ui/react/popover';
+import { DirectionProvider } from '@obstudio/react/direction-provider';
+import { Popover } from '@obstudio/react/popover';
 import { screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import type { Side } from '../../internals/useAnchorPositioning';
@@ -204,11 +204,11 @@ describe('<Popover.Viewport />', () => {
 
   describe.skipIf(isJSDOM)('morphing containers with multiple triggers and payloads', () => {
     beforeEach(() => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
     });
 
     afterEach(() => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
     });
 
     it('should create morphing containers during transitions', async () => {

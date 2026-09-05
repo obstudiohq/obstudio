@@ -1,4 +1,4 @@
-import { Drawer } from '@base-ui/react/drawer';
+import { Drawer } from '@obstudio/react/drawer';
 import styles from './index.module.css';
 
 export default function ExampleDrawer() {

@@ -1,6 +1,6 @@
 import { expect, describe, it } from 'vitest';
 import * as React from 'react';
-import { Combobox } from '@base-ui/react/combobox';
+import { Combobox } from '@obstudio/react/combobox';
 import { createRenderer, describeConformance } from '#test-utils';
 import { fireEvent, screen, waitFor } from '@mui/internal-test-utils';
 

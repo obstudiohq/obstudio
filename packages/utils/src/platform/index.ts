@@ -14,7 +14,7 @@
  * Import as a namespace and pick the most precise group for the quirk:
  *
  * ```ts
- * import { platform } from '@base-ui/utils/platform';
+ * import { platform } from '@obstudio/utils/platform';
  * if (platform.os.mac) { ... }
  * if (platform.engine.webkit) { ... }
  * ```

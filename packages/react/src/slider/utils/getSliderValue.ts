@@ -1,4 +1,4 @@
-import { clamp } from '@base-ui/utils/clamp';
+import { clamp } from '@obstudio/utils/clamp';
 import { asc } from './asc';
 
 export function getSliderValue(

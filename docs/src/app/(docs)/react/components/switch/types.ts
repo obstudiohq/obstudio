@@ -1,4 +1,4 @@
-import { Switch } from '@base-ui/react/switch';
+import { Switch } from '@obstudio/react/switch';
 import { createMultipleTypes } from 'docs/src/utils/createTypes';
 
 const { types, AdditionalTypes } = createMultipleTypes(import.meta.url, Switch);

@@ -1,7 +1,7 @@
 import { expect, describe, it } from 'vitest';
 import * as React from 'react';
 import { screen } from '@mui/internal-test-utils';
-import { Combobox } from '@base-ui/react/combobox';
+import { Combobox } from '@obstudio/react/combobox';
 import { createRenderer } from '#test-utils';
 
 describe('<Combobox.Value />', () => {

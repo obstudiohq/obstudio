@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { warn } from '@base-ui/utils/warn';
-import { BaseUIComponentProps } from '../../internals/types';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { warn } from '@obstudio/utils/warn';
+import { ObstudioComponentProps } from '../../internals/types';
 import { resolveStyle } from '../../utils/resolveStyle';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useCollapsibleRootContext } from '../root/CollapsibleRootContext';
@@ -16,7 +16,7 @@ import type { TransitionStatus } from '../../internals/useTransitionStatus';
  * A panel with the collapsible contents.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Collapsible](https://base-ui.com/react/components/collapsible)
+ * Documentation: [Obstudio Collapsible](https://obstudio.co/react/components/collapsible)
  */
 export const CollapsiblePanel = React.forwardRef(function CollapsiblePanel(
   componentProps: CollapsiblePanel.Props,
@@ -139,7 +139,10 @@ export interface CollapsiblePanelState extends CollapsibleRootState {
   transitionStatus: TransitionStatus;
 }
 
-export interface CollapsiblePanelProps extends BaseUIComponentProps<'div', CollapsiblePanelState> {
+export interface CollapsiblePanelProps extends ObstudioComponentProps<
+  'div',
+  CollapsiblePanelState
+> {
   /**
    * Allows the browser's built-in page search to find and expand the panel contents.
    *

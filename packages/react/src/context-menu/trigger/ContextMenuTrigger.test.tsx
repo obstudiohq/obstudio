@@ -1,12 +1,12 @@
 import { expect, vi, describe, beforeEach, it } from 'vitest';
 import * as React from 'react';
 import { act, fireEvent, flushMicrotasks, screen } from '@mui/internal-test-utils';
-import { ContextMenu } from '@base-ui/react/context-menu';
+import { ContextMenu } from '@obstudio/react/context-menu';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 
 describe('<ContextMenu.Trigger />', () => {
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
   });
 
   const { render, clock } = createRenderer({
@@ -29,7 +29,7 @@ describe('<ContextMenu.Trigger />', () => {
 
     try {
       await expect(render(<ContextMenu.Trigger />)).rejects.toThrow(
-        'Base UI: ContextMenuRootContext is missing. ContextMenu parts must be placed within <ContextMenu.Root>.',
+        'Obstudio: ContextMenuRootContext is missing. ContextMenu parts must be placed within <ContextMenu.Root>.',
       );
     } finally {
       errorSpy.mockRestore();
@@ -309,7 +309,7 @@ describe('<ContextMenu.Trigger />', () => {
     await flushMicrotasks();
 
     const internalBackdrop = document.querySelector(
-      '[data-base-ui-portal] > [data-base-ui-inert][role="presentation"]',
+      '[data-obstudio-portal] > [data-obstudio-inert][role="presentation"]',
     )!;
     const externalBackdrop = screen.getByTestId('backdrop');
     const internalEvent = new MouseEvent('contextmenu', { bubbles: true, cancelable: true });
@@ -348,12 +348,12 @@ describe('<ContextMenu.Trigger />', () => {
     expect(event.defaultPrevented).toBe(true);
   });
 
-  it('blocks the native context menu when onContextMenu skips the Base UI handler', async () => {
+  it('blocks the native context menu when onContextMenu skips the Obstudio handler', async () => {
     await render(
       <ContextMenu.Root>
         <ContextMenu.Trigger
           data-testid="trigger"
-          onContextMenu={(event) => event.preventBaseUIHandler()}
+          onContextMenu={(event) => event.preventObstudioHandler()}
         >
           Right click me
         </ContextMenu.Trigger>

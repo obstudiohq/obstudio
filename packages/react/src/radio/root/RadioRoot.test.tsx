@@ -1,7 +1,7 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
-import { Radio } from '@base-ui/react/radio';
-import { RadioGroup } from '@base-ui/react/radio-group';
+import { Radio } from '@obstudio/react/radio';
+import { RadioGroup } from '@obstudio/react/radio-group';
 import { fireEvent, screen, waitFor } from '@mui/internal-test-utils';
 import { describeConformance, createRenderer } from '#test-utils';
 

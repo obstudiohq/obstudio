@@ -24,7 +24,7 @@ const structure = {
   ],
 };
 
-const preamble = ['# Base UI', '', 'Introduction.', ''];
+const preamble = ['# Obstudio', '', 'Introduction.', ''];
 const pageRenderer = (page) => [page.content];
 
 it('matches whole-document formatting when pages are formatted separately', async () => {
@@ -43,7 +43,7 @@ it('matches whole-document formatting when pages are formatted separately', asyn
   });
 
   expect(separatePages).toBe(wholeDocument);
-  expect(separatePages).toBe(`# Base UI
+  expect(separatePages).toBe(`# Obstudio
 
 Introduction.
 

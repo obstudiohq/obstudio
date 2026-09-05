@@ -1,21 +1,21 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { EMPTY_ARRAY } from '@base-ui/utils/empty';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useControlled } from '@obstudio/utils/useControlled';
+import { EMPTY_ARRAY } from '@obstudio/utils/empty';
 import { useRenderElement } from '../internals/useRenderElement';
-import type { BaseUIComponentProps, HTMLProps, Orientation } from '../internals/types';
+import type { ObstudioComponentProps, HTMLProps, Orientation } from '../internals/types';
 import { CompositeRoot } from '../internals/composite/root/CompositeRoot';
 import { useToolbarRootContext } from '../toolbar/root/ToolbarRootContext';
 import { useToolbarGroupContext } from '../toolbar/group/ToolbarGroupContext';
 import { ToggleGroupContext } from './ToggleGroupContext';
-import type { BaseUIChangeEventDetails } from '../internals/createBaseUIEventDetails';
+import type { ObstudioChangeEventDetails } from '../internals/createObstudioEventDetails';
 import { REASONS } from '../internals/reasons';
 
 /**
  * Provides a shared state to a series of toggle buttons.
  *
- * Documentation: [Base UI Toggle Group](https://base-ui.com/react/components/toggle-group)
+ * Documentation: [Obstudio Toggle Group](https://obstudio.co/react/components/toggle-group)
  */
 export const ToggleGroup = React.forwardRef(function ToggleGroup<Value extends string>(
   componentProps: ToggleGroup.Props<Value>,
@@ -56,7 +56,7 @@ export const ToggleGroup = React.forwardRef(function ToggleGroup<Value extends s
     (
       newValue: Value,
       nextPressed: boolean,
-      eventDetails: BaseUIChangeEventDetails<typeof REASONS.none>,
+      eventDetails: ObstudioChangeEventDetails<typeof REASONS.none>,
     ) => {
       let newGroupValue: Value[];
       if (multiple) {
@@ -146,7 +146,7 @@ export interface ToggleGroupState {
   orientation: Orientation;
 }
 
-export interface ToggleGroupProps<Value extends string> extends BaseUIComponentProps<
+export interface ToggleGroupProps<Value extends string> extends ObstudioComponentProps<
   'div',
   ToggleGroupState
 > {
@@ -193,7 +193,8 @@ export interface ToggleGroupProps<Value extends string> extends BaseUIComponentP
 
 export type ToggleGroupChangeEventReason = typeof REASONS.none;
 
-export type ToggleGroupChangeEventDetails = BaseUIChangeEventDetails<ToggleGroup.ChangeEventReason>;
+export type ToggleGroupChangeEventDetails =
+  ObstudioChangeEventDetails<ToggleGroup.ChangeEventReason>;
 
 export namespace ToggleGroup {
   export type State = ToggleGroupState;

@@ -1,7 +1,7 @@
 import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
-import { Toast } from '@base-ui/react/toast';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { Toast } from '@obstudio/react/toast';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
 import { fireEvent, flushMicrotasks, screen } from '@mui/internal-test-utils';
 import { createRenderer } from '#test-utils';
 import { useToastProviderContext } from './ToastProviderContext';

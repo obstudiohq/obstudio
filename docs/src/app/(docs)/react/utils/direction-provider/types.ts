@@ -1,4 +1,4 @@
-import * as DirectionProviderNamespace from '@base-ui/react/direction-provider';
+import * as DirectionProviderNamespace from '@obstudio/react/direction-provider';
 import { createMultipleTypes } from 'docs/src/utils/createTypes';
 
 const { types, AdditionalTypes } = createMultipleTypes(import.meta.url, DirectionProviderNamespace);

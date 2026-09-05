@@ -1,6 +1,6 @@
 import { expect, vi, describe, it, beforeEach, afterEach } from 'vitest';
 import * as React from 'react';
-import { PreviewCard } from '@base-ui/react/preview-card';
+import { PreviewCard } from '@obstudio/react/preview-card';
 import { act, ignoreActWarnings, screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance, isJSDOM, waitSingleFrame } from '#test-utils';
 
@@ -36,7 +36,7 @@ describe('<PreviewCard.Viewport />', () => {
           </PreviewCard.Root>,
         ),
       ).rejects.toThrow(
-        'Base UI: PreviewCardPositionerContext is missing. PreviewCardPositioner parts must be placed within <PreviewCard.Positioner>.',
+        'Obstudio: PreviewCardPositionerContext is missing. PreviewCardPositioner parts must be placed within <PreviewCard.Positioner>.',
       );
     } finally {
       errorSpy.mockRestore();
@@ -116,11 +116,11 @@ describe('<PreviewCard.Viewport />', () => {
 
   describe.skipIf(isJSDOM)('morphing containers with multiple triggers and payloads', () => {
     beforeEach(() => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
     });
 
     afterEach(() => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
     });
 
     it('should create morphing containers during transitions', async () => {

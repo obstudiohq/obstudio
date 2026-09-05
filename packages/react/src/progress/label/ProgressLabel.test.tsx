@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { expect, vi, describe, it } from 'vitest';
-import { Progress } from '@base-ui/react/progress';
+import { Progress } from '@obstudio/react/progress';
 import { fireEvent, screen } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance } from '#test-utils';
 
@@ -51,7 +51,7 @@ describe('<Progress.Label />', () => {
 
     try {
       await expect(render(<Progress.Label />)).rejects.toThrow(
-        'Base UI: ProgressRootContext is missing. Progress parts must be placed within <Progress.Root>.',
+        'Obstudio: ProgressRootContext is missing. Progress parts must be placed within <Progress.Root>.',
       );
     } finally {
       errorSpy.mockRestore();

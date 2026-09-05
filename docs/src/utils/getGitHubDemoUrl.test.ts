@@ -2,14 +2,14 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { getGitHubDemoUrl } from './getGitHubDemoUrl';
 
 describe('getGitHubDemoUrl', () => {
-  const GITHUB_BASE = 'https://github.com/mui/base-ui/tree/v1.6.0';
+  const GITHUB_BASE = 'https://github.com/obstudiohq/obstudio/tree/v1.6.0';
   const unixUrl =
-    'file:///home/user/base-ui/docs/src/app/(docs)/react/components/accordion/demos/hero/index.ts';
+    'file:///home/user/obstudio/docs/src/app/(docs)/react/components/accordion/demos/hero/index.ts';
   const windowsUrl =
-    'file:///C:/Users/Dev/base-ui/docs/src/app/(docs)/react/components/accordion/demos/hero/index.ts';
+    'file:///C:/Users/Dev/obstudio/docs/src/app/(docs)/react/components/accordion/demos/hero/index.ts';
 
   beforeEach(() => {
-    vi.stubEnv('SOURCE_CODE_REPO', 'https://github.com/mui/base-ui');
+    vi.stubEnv('SOURCE_CODE_REPO', 'https://github.com/obstudiohq/obstudio');
     vi.stubEnv('LIB_VERSION', '1.6.0');
   });
 
@@ -107,9 +107,9 @@ describe('getGitHubDemoUrl', () => {
     it('returns null and warns in development when the file URL cannot be decoded', () => {
       const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
 
-      expect(getGitHubDemoUrlFresh('file:///home/user/base-ui/docs/%E0%A4%A/index.ts')).toBeNull();
+      expect(getGitHubDemoUrlFresh('file:///home/user/obstudio/docs/%E0%A4%A/index.ts')).toBeNull();
       expect(warn).toHaveBeenCalledWith(
-        'Base UI: Demo source link could not be generated.',
+        'Obstudio: Demo source link could not be generated.',
         expect.any(URIError),
       );
     });

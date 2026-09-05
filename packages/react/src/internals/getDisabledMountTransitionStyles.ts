@@ -1,4 +1,4 @@
-import { EMPTY_OBJECT } from '@base-ui/utils/empty';
+import { EMPTY_OBJECT } from '@obstudio/utils/empty';
 import { DISABLED_TRANSITIONS_STYLE } from './constants';
 import type { TransitionStatus } from './useTransitionStatus';
 

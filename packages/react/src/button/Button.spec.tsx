@@ -1,4 +1,4 @@
-import { Button } from '@base-ui/react/button';
+import { Button } from '@obstudio/react/button';
 
 <Button />;
 <Button type="submit" form="form-id" name="action" />;

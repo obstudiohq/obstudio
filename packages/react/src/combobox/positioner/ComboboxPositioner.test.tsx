@@ -2,7 +2,7 @@ import { expect, vi, describe, it } from 'vitest';
 import * as React from 'react';
 import * as ReactDOMClient from 'react-dom/client';
 import { screen, waitFor } from '@mui/internal-test-utils';
-import { Combobox } from '@base-ui/react/combobox';
+import { Combobox } from '@obstudio/react/combobox';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 
 describe('<Combobox.Positioner />', () => {
@@ -74,7 +74,7 @@ describe('<Combobox.Positioner />', () => {
     },
   }));
 
-  // https://github.com/mui/base-ui/issues/5118
+  // https://github.com/obstudiohq/obstudio/issues/5118
   it.skipIf(isJSDOM)(
     'keeps the popup on the preferred side when its capped height fits below tall content',
     async () => {

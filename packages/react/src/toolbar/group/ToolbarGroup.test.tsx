@@ -1,5 +1,5 @@
 import { expect, describe, it } from 'vitest';
-import { Toolbar } from '@base-ui/react/toolbar';
+import { Toolbar } from '@obstudio/react/toolbar';
 import { screen } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance } from '#test-utils';
 import { NOOP } from '../../internals/noop';
@@ -52,7 +52,7 @@ describe('<Toolbar.Group />', () => {
         <Toolbar.Root>
           <Toolbar.Group disabled>
             <Toolbar.Button />
-            <Toolbar.Link href="https://base-ui.com">Link</Toolbar.Link>
+            <Toolbar.Link href="https://obstudio.co">Link</Toolbar.Link>
             <Toolbar.Input defaultValue="" />
           </Toolbar.Group>
         </Toolbar.Root>,

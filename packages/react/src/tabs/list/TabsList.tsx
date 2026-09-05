@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { EMPTY_ARRAY } from '@base-ui/utils/empty';
-import { BaseUIComponentProps, HTMLProps } from '../../internals/types';
+import { useStableCallback } from '@obstudio/utils/useStableCallback';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
+import { EMPTY_ARRAY } from '@obstudio/utils/empty';
+import { ObstudioComponentProps, HTMLProps } from '../../internals/types';
 import type { TabsRootState } from '../root/TabsRoot';
 import { CompositeRoot } from '../../internals/composite/root/CompositeRoot';
 import { tabsStateAttributesMapping } from '../root/stateAttributesMapping';
@@ -14,7 +14,7 @@ import { TabsListContext } from './TabsListContext';
  * Groups the individual tab buttons.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Tabs](https://base-ui.com/react/components/tabs)
+ * Documentation: [Obstudio Tabs](https://obstudio.co/react/components/tabs)
  */
 export const TabsList = React.forwardRef(function TabsList(
   componentProps: TabsList.Props,
@@ -130,7 +130,7 @@ export const TabsList = React.forwardRef(function TabsList(
 
 export interface TabsListState extends TabsRootState {}
 
-export interface TabsListProps extends BaseUIComponentProps<'div', TabsListState> {
+export interface TabsListProps extends ObstudioComponentProps<'div', TabsListState> {
   /**
    * Whether to automatically change the active tab on arrow key focus.
    * Otherwise, tabs will be activated using <kbd>Enter</kbd> or <kbd>Space</kbd> key press.

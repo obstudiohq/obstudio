@@ -1,5 +1,5 @@
 import { expectType } from '#test-utils';
-import { Collapsible } from '@base-ui/react/collapsible';
+import { Collapsible } from '@obstudio/react/collapsible';
 import type {
   CollapsiblePanelProps,
   CollapsiblePanelState,
@@ -9,7 +9,7 @@ import type {
   CollapsibleRootState,
   CollapsibleTriggerProps,
   CollapsibleTriggerState,
-} from '@base-ui/react/collapsible';
+} from '@obstudio/react/collapsible';
 
 const rootProps = {} as Collapsible.Root.Props;
 const triggerProps = {} as Collapsible.Trigger.Props;

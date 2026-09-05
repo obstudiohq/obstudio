@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import clsx from 'clsx';
-import { Tabs } from '@base-ui/react/tabs';
+import { Tabs } from '@obstudio/react/tabs';
 import '../../../../demo-data/theme/css-modules/theme.css';
 import { Button } from '../_components/Button';
 import { Input } from '../_components/Input';

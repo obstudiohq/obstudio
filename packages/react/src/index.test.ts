@@ -4,16 +4,16 @@ import { describe, it, expect } from 'vitest';
  * import the entire lib for coverage reporting
  */
 import { isJSDOM } from '#test-utils';
-import * as BaseUI from './index';
+import * as Obstudio from './index';
 
-describe('@base-ui/react', () => {
+describe('@obstudio/react', () => {
   it('should have exports', () => {
-    expect(typeof BaseUI).toBe('object');
+    expect(typeof Obstudio).toBe('object');
   });
 
   it('should not have undefined exports', () => {
-    Object.keys(BaseUI).forEach((exportKey) => {
-      const value = (BaseUI as Record<string, unknown>)[exportKey];
+    Object.keys(Obstudio).forEach((exportKey) => {
+      const value = (Obstudio as Record<string, unknown>)[exportKey];
       expect(Boolean(value)).toBe(true);
     });
   });
@@ -28,7 +28,7 @@ describe('@base-ui/react', () => {
 
     await Promise.all(
       internalKeys.map(async (subpath) => {
-        const importSpecifier = `@base-ui/react/${subpath.replace('./', '')}`;
+        const importSpecifier = `@obstudio/react/${subpath.replace('./', '')}`;
         const module = await import(/* @vite-ignore */ importSpecifier);
         expect(module, `${subpath} failed to resolve`).toBeDefined();
       }),
@@ -48,11 +48,11 @@ describe('@base-ui/react', () => {
             !key.startsWith('./internals/'),
         )
         .map(async (subpath) => {
-          const importSpecifier = `@base-ui/react/${subpath.replace('./', '')}`;
+          const importSpecifier = `@obstudio/react/${subpath.replace('./', '')}`;
           const module = await import(/* @vite-ignore */ importSpecifier);
 
           Object.keys(module).forEach((exportKey) => {
-            expect((BaseUI as Record<string, unknown>)[exportKey]).not.toBeUndefined();
+            expect((Obstudio as Record<string, unknown>)[exportKey]).not.toBeUndefined();
           });
         }),
     );

@@ -1,4 +1,4 @@
-import { Switch as BaseSwitch } from '@base-ui/react/switch';
+import { Switch as BaseSwitch } from '@obstudio/react/switch';
 import clsx from 'clsx';
 import styles from './Switch.module.css';
 

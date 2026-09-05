@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { InteractionType } from '@base-ui/utils/useEnhancedClickHandler';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { InteractionType } from '@obstudio/utils/useEnhancedClickHandler';
+import { useIsoLayoutEffect } from '@obstudio/utils/useIsoLayoutEffect';
 import { FloatingFocusManager } from '../../floating-ui-react';
-import { BaseUIComponentProps } from '../../internals/types';
+import { ObstudioComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useComboboxFloatingContext, useComboboxRootContext } from '../root/ComboboxRootContext';
 import { popupStateMapping } from '../../utils/popupStateMapping';
@@ -28,7 +28,7 @@ const stateAttributesMapping: StateAttributesMapping<ComboboxPopupState> = {
  * A container for the list.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)
+ * Documentation: [Obstudio Combobox](https://obstudio.co/react/components/combobox)
  */
 export const ComboboxPopup = React.forwardRef(function ComboboxPopup(
   componentProps: ComboboxPopup.Props,
@@ -172,7 +172,7 @@ export interface ComboboxPopupState {
   empty: boolean;
 }
 
-export interface ComboboxPopupProps extends BaseUIComponentProps<'div', ComboboxPopupState> {
+export interface ComboboxPopupProps extends ObstudioComponentProps<'div', ComboboxPopupState> {
   /**
    * Determines the element to focus when the popup is opened.
    *

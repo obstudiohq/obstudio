@@ -1,5 +1,5 @@
 {
-  "name": "vite-css-base-ui-example",
+  "name": "vite-css-obstudio-example",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@base-ui/react": "latest",
+    "@obstudio/react": "latest",
     "clsx": "^2.1.1",
     "react": "^19",
     "react-dom": "^19"

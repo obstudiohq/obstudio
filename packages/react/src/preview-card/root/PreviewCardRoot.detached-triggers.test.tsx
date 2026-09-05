@@ -2,7 +2,7 @@ import { expect, vi, describe, beforeEach, it } from 'vitest';
 import * as React from 'react';
 import * as ReactDOMClient from 'react-dom/client';
 import { createRenderer, isJSDOM, resetBrowserPointer } from '#test-utils';
-import { PreviewCard } from '@base-ui/react/preview-card';
+import { PreviewCard } from '@obstudio/react/preview-card';
 import {
   screen,
   waitFor,
@@ -22,7 +22,7 @@ describe('<PreviewCard.Root />', () => {
   beforeEach(resetBrowserPointer);
 
   beforeEach(async () => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.OBSTUDIO_ANIMATIONS_DISABLED = true;
   });
 
   const { render, clock } = createRenderer();
@@ -1356,7 +1356,7 @@ describe('<PreviewCard.Root />', () => {
     });
 
     it('should not have inline scale style after switching triggers', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       const testPreviewCard = PreviewCard.createHandle<number>();
 
@@ -1412,7 +1412,7 @@ describe('<PreviewCard.Root />', () => {
     });
 
     it('opens immediately when entering trigger B during trigger A close transition', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
       const testPreviewCard = PreviewCard.createHandle<number>();
       const style = `
         @keyframes preview-card-a-to-b-close-transition {
@@ -1473,7 +1473,7 @@ describe('<PreviewCard.Root />', () => {
     });
 
     it('still respects trigger B open delay after trigger A close transition finishes', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
       const testPreviewCard = PreviewCard.createHandle<number>();
       const style = `
         @keyframes preview-card-a-to-b-post-close-delay {
@@ -1550,7 +1550,7 @@ describe('<PreviewCard.Root />', () => {
     });
 
     it('reopens immediately when re-hovering trigger A during its close transition', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       const testPreviewCard = PreviewCard.createHandle<number>();
       const style = `
@@ -1610,7 +1610,7 @@ describe('<PreviewCard.Root />', () => {
     });
 
     it('respects open delay on later same-trigger hovers after close lifecycle finishes', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.OBSTUDIO_ANIMATIONS_DISABLED = false;
 
       const testPreviewCard = PreviewCard.createHandle<number>();
       const style = `

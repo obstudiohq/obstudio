@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { expect, vi, describe, it } from 'vitest';
-import { Combobox } from '@base-ui/react/combobox';
+import { Combobox } from '@obstudio/react/combobox';
 import { fireEvent, flushMicrotasks, screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { useComboboxRootContext } from '../root/ComboboxRootContext';
@@ -102,8 +102,8 @@ describe('<Combobox.Item />', () => {
       expect(handleClick.mock.calls.length).toBe(1);
     });
 
-    it('does not select the item when onClick prevents Base UI handler', async () => {
-      const handleClick = vi.fn((event) => event.preventBaseUIHandler());
+    it('does not select the item when onClick prevents Obstudio handler', async () => {
+      const handleClick = vi.fn((event) => event.preventObstudioHandler());
       const { user } = await render(
         <Combobox.Root defaultOpen>
           <Combobox.Input data-testid="input" />
@@ -672,7 +672,7 @@ describe('<Combobox.Item />', () => {
   });
 
   describe('prop: index', () => {
-    // Regression test for https://github.com/mui/base-ui/issues/4657 — explicitly
+    // Regression test for https://github.com/obstudiohq/obstudio/issues/4657 — explicitly
     // indexed items in a non-virtualized list previously skipped CompositeList
     // registration, so hover could not resolve the item in `listRef` and
     // `data-highlighted` stayed on the previous item.

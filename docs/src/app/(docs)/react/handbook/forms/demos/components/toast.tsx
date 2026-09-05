@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { Toast } from '@base-ui/react/toast';
+import { Toast } from '@obstudio/react/toast';
 
 function Toasts() {
   const { toasts } = Toast.useToastManager();
@@ -15,7 +15,7 @@ function Toasts() {
         <Toast.Description className="text-sm text-neutral-700 dark:text-neutral-300" />
         <div
           className="mt-2 border border-neutral-950 p-2 text-xs select-text dark:border-white"
-          data-base-ui-swipe-ignore
+          data-obstudio-swipe-ignore
         >
           <pre className="whitespace-pre-wrap">{JSON.stringify(toast.data, null, 2)}</pre>
         </div>
